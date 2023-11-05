@@ -65,6 +65,15 @@ function ThemeProvider({
     );
   }, [theme]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(prefersDarkMQ);
+    const handleChange = () => {
+      setTheme(mediaQuery.matches ? Theme.DARK : Theme.LIGHT);
+    };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       {children}
@@ -90,17 +99,36 @@ const clientThemeCode = `
   if (themeAlreadyApplied) {
     // this script shouldn't exist if the theme is already applied!
     console.warn(
-      "Hi there, could you let Matt know you're seeing this message? Thanks!",
+      "Hi there, could you let Zain know you're seeing this message? Thanks!",
     );
   } else {
     cl.add(theme);
+  }
+
+  const meta = document.querySelector('meta[name=color-scheme]');
+  if (meta) {
+    if (theme === 'dark') {
+      meta.content = 'dark light';
+    } else if (theme === 'light') {
+      meta.content = 'light dark';
+    }
+  } else {
+    console.warn(
+      "Hey, could you let Zain know you're seeing this message? Thanks!",
+    );
   }
 })();
 `;
 
 function NonFlashOfWrongTheme({ ssrTheme }: { ssrTheme: boolean }) {
+  const [theme] = useTheme();
+
   return (
     <>
+      <meta
+        name="color-scheme"
+        content={theme === "light" ? "light dark" : "dark light"}
+      />
       {ssrTheme ? null : (
         <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
       )}
