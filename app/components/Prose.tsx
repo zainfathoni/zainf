@@ -8,6 +8,8 @@ export function Prose({
   className?: string;
 }) {
   return (
-    <div className={clsx(className, "prose dark:prose-invert")}>{children}</div>
+    <article className={clsx(className, "prose dark:prose-invert")}>
+      {children}
+    </article>
   );
 }
