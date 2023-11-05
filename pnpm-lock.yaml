@@ -20,9 +20,6 @@ dependencies:
   '@remix-run/serve':
     specifier: ^2.2.0
     version: 2.2.0(typescript@5.2.2)
-  '@vercel/analytics':
-    specifier: ^1.1.1
-    version: 1.1.1
   '@vercel/remix':
     specifier: ^2.2.0
     version: 2.2.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)
@@ -1678,12 +1675,6 @@ packages:
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
     dev: true
-
-  /@vercel/analytics@1.1.1:
-    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
-    dependencies:
-      server-only: 0.0.1
-    dev: false
 
   /@vercel/remix@2.2.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2):
     resolution: {integrity: sha512-FmaGaJCLM8H3UrvYN9IPtdPgzJHhPeVl43Yt4g9cC/FKQGVLnGLsd5pAwWUl9ylkQGZxyfRx80UZ2+ByFP4PMA==}
@@ -5697,10 +5688,6 @@ packages:
       send: 0.18.0
     transitivePeerDependencies:
       - supports-color
-
-  /server-only@0.0.1:
-    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
-    dev: false
 
   /set-cookie-parser@2.6.0:
     resolution: {integrity: sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==}

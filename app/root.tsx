@@ -7,7 +7,6 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import { Analytics } from "@vercel/analytics/react";
 import type {
   LinksFunction,
   LoaderFunction,
@@ -82,9 +81,8 @@ function App() {
         </div>
         <Outlet />
         <ScrollRestoration />
-        <Scripts />
         <LiveReload />
-        <Analytics />
+        <Scripts />
       </body>
     </html>
   );
