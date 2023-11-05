@@ -14,10 +14,10 @@ import {
   MailIcon,
   TwitterIcon,
 } from "app/components/Icons";
-import bukalapakLogo from "app/images/logos/bukalapak.png";
+import bukalapakLogo from "app/images/logos/bukalapak.webp";
 import ninjavanLogo from "app/images/logos/ninjavan.svg";
 import pejuangKodeLogo from "app/images/logos/pejuang-kode.svg";
-import xtremaxLogo from "app/images/logos/xtremax.png";
+import xtremaxLogo from "app/images/logos/xtremax.webp";
 import cityJsConf2023 from "app/images/photos/cityjs-conf-2023.webp";
 import ddc2023 from "app/images/photos/ddc-2023.webp";
 import jsconfAsia2019 from "app/images/photos/jsconf-asia-2019.webp";
