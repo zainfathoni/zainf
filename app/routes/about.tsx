@@ -51,7 +51,7 @@ function MailIcon(
 }
 
 const linkClassName =
-  "text-teal-500 underline transition hover:text-teal-600 dark:hover:text-teal-400";
+  "text-teal-700 dark:text-teal-400 underline transition hover:text-teal-800 dark:hover:text-teal-300";
 
 function ExternalLink({
   children,
