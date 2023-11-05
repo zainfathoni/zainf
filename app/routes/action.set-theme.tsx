@@ -1,5 +1,5 @@
-import type { ActionFunction, LoaderFunction } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import type { ActionFunction, LoaderFunction } from "@vercel/remix";
+import { json, redirect } from "@vercel/remix";
 import { isTheme } from "~/contexts/theme";
 import { getThemeSession } from "~/utils/theme.server";
 
