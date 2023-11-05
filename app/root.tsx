@@ -10,7 +10,11 @@ import { Analytics } from "@vercel/analytics/react";
 import type { LinksFunction } from "@vercel/remix";
 import clsx from "clsx";
 import { Header } from "./components/Header";
-import { ThemeProvider, useTheme } from "./contexts/theme";
+import {
+  NonFlashOfWrongTheme,
+  ThemeProvider,
+  useTheme,
+} from "./contexts/theme";
 import styles from "./tailwind.css";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
@@ -25,6 +29,7 @@ function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <NonFlashOfWrongTheme />
       </head>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <div className="fixed inset-0 flex justify-center sm:px-8">
