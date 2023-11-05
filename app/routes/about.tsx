@@ -73,6 +73,10 @@ export const meta: MetaFunction = () => [
   {
     title: `About - ${metadata.title}`,
   },
+  {
+    name: "description",
+    content: metadata.description,
+  },
 ];
 
 export default function About() {
