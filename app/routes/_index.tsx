@@ -18,11 +18,11 @@ import bukalapakLogo from "app/images/logos/bukalapak.png";
 import ninjavanLogo from "app/images/logos/ninjavan.svg";
 import pejuangKodeLogo from "app/images/logos/pejuang-kode.svg";
 import xtremaxLogo from "app/images/logos/xtremax.png";
+import cityJsConf2023 from "app/images/photos/cityjs-conf-2023.jpg";
 import ddc2023 from "app/images/photos/ddc-2023.jpg";
 import jsconfAsia2019 from "app/images/photos/jsconf-asia-2019.jpg";
 import pianoWithKids from "app/images/photos/piano-with-kids.jpg";
 import pianoWithWife from "app/images/photos/piano-with-wife.jpg";
-import webUnconf2019 from "app/images/photos/web-unconf-2019.jpg";
 import { metadata } from "app/models/metadata";
 import { formatDate } from "app/utils/format-date";
 import clsx from "clsx";
@@ -61,8 +61,8 @@ function Photos() {
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
         {[
           pianoWithKids,
+          cityJsConf2023,
           jsconfAsia2019,
-          webUnconf2019,
           ddc2023,
           pianoWithWife,
         ].map((image, imageIndex) => (
