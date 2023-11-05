@@ -1,27 +1,7 @@
 import { Link } from "@remix-run/react";
-import type { MdxAttributes, MdxModule, Post } from "~/models/posts";
+import { extractPostAttributes, type MdxAttributes } from "~/models/posts";
 import { formatDate } from "~/utils/format-date";
 import { ArrowLeftIcon } from "./Icons";
-
-function extractPostAttributes(attributes: MdxAttributes) {
-  return {
-    title: attributes.meta.find((m) => m.title)?.title,
-    description: attributes.meta.find((m) => m.name === "description")?.content,
-    date: attributes.meta.find((m) => m.date)?.date,
-    ...attributes.meta,
-  };
-}
-
-export function getPostFromMdxModule(mod: MdxModule): Post {
-  return {
-    slug: mod.filename.replace(/^blog\._post\./, "").replace(/\.mdx?$/, ""),
-    title: mod.attributes.meta.find((m) => m.title)?.title,
-    description: mod.attributes.meta.find((m) => m.name === "description")
-      ?.content,
-    date: mod.attributes.meta.find((m) => m.date)?.date,
-    ...mod.attributes.meta,
-  };
-}
 
 export function PostHeader(props: MdxAttributes) {
   const post = extractPostAttributes(props);

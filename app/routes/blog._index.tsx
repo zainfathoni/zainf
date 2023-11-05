@@ -2,11 +2,9 @@ import { useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@vercel/remix";
 import { json } from "@vercel/remix";
 import { Card } from "~/components/Card";
-import { getPostFromMdxModule } from "~/components/PostHeader";
 import { SimpleLayout } from "~/components/SimpleLayout";
-import type { Post } from "~/models/posts";
+import { getAllPosts, type Post } from "~/models/posts";
 import { formatDate } from "~/utils/format-date";
-import * as reactDomJsx from "./blog._post.react-dom-jsx.mdx";
 
 export const meta: MetaFunction = () => [
   {
@@ -24,7 +22,7 @@ export async function loader() {
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
-  return json([getPostFromMdxModule(reactDomJsx)]);
+  return json(getAllPosts());
 }
 
 function Excerpt(post: Post) {

@@ -23,11 +23,10 @@ import jsconfAsia2019 from "app/images/photos/jsconf-asia-2019.jpg";
 import pianoWithKids from "app/images/photos/piano-with-kids.jpg";
 import pianoWithWife from "app/images/photos/piano-with-wife.jpg";
 import webUnconf2019 from "app/images/photos/web-unconf-2019.jpg";
-import type { ArticleAttributes } from "app/models/articles";
-import { getAllArticles } from "app/models/articles";
 import { metadata } from "app/models/metadata";
 import { formatDate } from "app/utils/format-date";
 import clsx from "clsx";
+import { getAllPosts, type Post } from "~/models/posts";
 import { subscribe } from "~/services/mailgun.server";
 
 function SocialLink({
@@ -94,24 +93,17 @@ export function loader() {
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
-  return json(getAllArticles());
+  return json(getAllPosts(5));
 }
 
-function Article({
-  article: {
-    slug,
-    attributes: { meta },
-  },
-}: {
-  article: ArticleAttributes;
-}) {
+function Excerpt(post: Post) {
   return (
     <Card as="article">
-      <Card.Title to={`/articles/${slug}`}>{meta.title}</Card.Title>
-      <Card.Eyebrow as="time" dateTime={meta.date} decorate>
-        {formatDate(meta.date)}
+      <Card.Title to={`/blog/${post.slug}`}>{post.title}</Card.Title>
+      <Card.Eyebrow as="time" dateTime={post.date} decorate>
+        {formatDate(post.date)}
       </Card.Eyebrow>
-      <Card.Description>{meta.description}</Card.Description>
+      <Card.Description>{post.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
     </Card>
   );
@@ -307,7 +299,7 @@ function Resume() {
   );
 }
 export default function Index() {
-  const articles = useLoaderData<typeof loader>();
+  const posts = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -347,8 +339,8 @@ export default function Index() {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
+            {posts.map((post) => (
+              <Excerpt key={post.slug} {...post} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
