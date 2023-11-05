@@ -1,5 +1,6 @@
+import { useFetcher } from "@remix-run/react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 enum Theme {
   DARK = "dark",
@@ -14,8 +15,22 @@ const prefersDarkMQ = "(prefers-color-scheme: dark)";
 const getPreferredTheme = () =>
   window.matchMedia(prefersDarkMQ).matches ? Theme.DARK : Theme.LIGHT;
 
-function ThemeProvider({ children }: { children: ReactNode }) {
+function ThemeProvider({
+  children,
+  specifiedTheme,
+}: {
+  children: ReactNode;
+  specifiedTheme: Theme | null;
+}) {
   const [theme, setTheme] = useState<Theme | null>(() => {
+    if (specifiedTheme) {
+      if (themes.includes(specifiedTheme)) {
+        return specifiedTheme;
+      } else {
+        return null;
+      }
+    }
+
     // there's no way for us to know what the theme should be in this context
     // the client will have to figure it out before hydration.
     if (typeof window !== "object") {
@@ -24,6 +39,31 @@ function ThemeProvider({ children }: { children: ReactNode }) {
 
     return getPreferredTheme();
   });
+
+  const persistTheme = useFetcher();
+
+  // TODO: remove this when persistTheme is memoized properly
+  const persistThemeRef = useRef(persistTheme);
+  useEffect(() => {
+    persistThemeRef.current = persistTheme;
+  }, [persistTheme]);
+
+  const mountRun = useRef(false);
+
+  useEffect(() => {
+    if (!mountRun.current) {
+      mountRun.current = true;
+      return;
+    }
+    if (!theme) {
+      return;
+    }
+
+    persistThemeRef.current.submit(
+      { theme },
+      { action: "action/set-theme", method: "post" },
+    );
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
@@ -58,8 +98,20 @@ const clientThemeCode = `
 })();
 `;
 
-function NonFlashOfWrongTheme() {
-  return <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />;
+function NonFlashOfWrongTheme({ ssrTheme }: { ssrTheme: boolean }) {
+  return (
+    <>
+      {ssrTheme ? null : (
+        <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+      )}
+    </>
+  );
 }
 
-export { NonFlashOfWrongTheme, Theme, ThemeProvider, useTheme };
+const themes: Array<Theme> = Object.values(Theme);
+
+function isTheme(value: unknown): value is Theme {
+  return typeof value === "string" && themes.includes(value as Theme);
+}
+
+export { NonFlashOfWrongTheme, Theme, ThemeProvider, isTheme, useTheme };

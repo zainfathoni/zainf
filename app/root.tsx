@@ -5,21 +5,39 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
-import type { LinksFunction } from "@vercel/remix";
+import type { LinksFunction, LoaderFunction } from "@vercel/remix";
 import clsx from "clsx";
 import { Header } from "./components/Header";
+import type { Theme } from "./contexts/theme";
 import {
   NonFlashOfWrongTheme,
   ThemeProvider,
   useTheme,
 } from "./contexts/theme";
 import styles from "./tailwind.css";
+import { getThemeSession } from "./utils/theme.server";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
+export type LoaderData = {
+  theme: Theme | null;
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request);
+
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+  };
+
+  return data;
+};
+
 function App() {
+  const data = useLoaderData<LoaderData>();
   const [theme] = useTheme();
 
   return (
@@ -29,7 +47,7 @@ function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <NonFlashOfWrongTheme />
+        <NonFlashOfWrongTheme ssrTheme={Boolean(data.theme)} />
       </head>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -51,8 +69,10 @@ function App() {
 }
 
 export default function AppWithProviders() {
+  const data = useLoaderData<LoaderData>();
+
   return (
-    <ThemeProvider>
+    <ThemeProvider specifiedTheme={data.theme}>
       <App />
     </ThemeProvider>
   );
