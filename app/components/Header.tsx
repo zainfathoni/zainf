@@ -3,7 +3,7 @@ import { Link, NavLink, useMatches } from "@remix-run/react";
 import clsx from "clsx";
 import React, { Fragment, useEffect, useRef } from "react";
 import { Theme, useTheme } from "~/contexts/theme";
-import avatarImage from "../images/avatar.jpg";
+import avatarImage from "../images/avatar.webp";
 import type { ContainerProps } from "./Container";
 import { Container } from "./Container";
 

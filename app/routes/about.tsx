@@ -10,7 +10,7 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from "../components/Icons";
-import portraitImage from "../images/portrait.jpg";
+import portraitImage from "../images/portrait.webp";
 import { metadata } from "../models/metadata";
 
 function SocialLink({
