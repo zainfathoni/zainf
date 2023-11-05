@@ -2,7 +2,9 @@ import { useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@vercel/remix";
 import { json } from "@vercel/remix";
 import { Card } from "~/components/Card";
+import { getPostFromMdxModule } from "~/components/PostHeader";
 import { SimpleLayout } from "~/components/SimpleLayout";
+import type { Post } from "~/models/posts";
 import { formatDate } from "~/utils/format-date";
 import * as reactDomJsx from "./blog._post.react-dom-jsx.mdx";
 
@@ -17,40 +19,15 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-type MdxModule = {
-  filename: string;
-  attributes: {
-    meta: Array<Record<string, any>>;
-  };
-};
-
-type Post = {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-};
-
-function postFromModule(mod: MdxModule): Post {
-  return {
-    slug: mod.filename.replace(/^blog\._post\./, "").replace(/\.mdx?$/, ""),
-    title: mod.attributes.meta.find((m) => m.title)?.title,
-    description: mod.attributes.meta.find((m) => m.name === "description")
-      ?.content,
-    date: mod.attributes.meta.find((m) => m.date)?.date,
-    ...mod.attributes.meta,
-  };
-}
-
 export async function loader() {
   // Return metadata about each of the posts for display on the index page.
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
-  return json([postFromModule(reactDomJsx)]);
+  return json([getPostFromMdxModule(reactDomJsx)]);
 }
 
-function Post(post: Post) {
+function Excerpt(post: Post) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
@@ -78,7 +55,7 @@ function Post(post: Post) {
 }
 
 export default function Component() {
-  const posts = useLoaderData() as Array<ReturnType<typeof postFromModule>>;
+  const posts = useLoaderData<typeof loader>();
 
   return (
     <SimpleLayout
@@ -88,7 +65,7 @@ export default function Component() {
       <section className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
           {posts.map((post) => (
-            <Post key={post.slug} {...post} />
+            <Excerpt key={post.slug} {...post} />
           ))}
         </div>
       </section>
