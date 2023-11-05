@@ -8,7 +8,11 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import { Analytics } from "@vercel/analytics/react";
-import type { LinksFunction, LoaderFunction } from "@vercel/remix";
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+} from "@vercel/remix";
 import clsx from "clsx";
 import { Header } from "./components/Header";
 import type { Theme } from "./contexts/theme";
@@ -17,8 +21,26 @@ import {
   ThemeProvider,
   useTheme,
 } from "./contexts/theme";
+import { metadata } from "./models/metadata";
 import styles from "./tailwind.css";
 import { getThemeSession } from "./utils/theme.server";
+
+export const meta: MetaFunction = () => [
+  {
+    title: metadata.title,
+  },
+  {
+    name: "description",
+    content: metadata.description,
+  },
+  {
+    charset: "utf-8",
+  },
+  {
+    name: "viewport",
+    content: "width=device-width,initial-scale=1",
+  },
+];
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
