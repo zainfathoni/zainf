@@ -23,6 +23,7 @@ import ddc2023 from "app/images/photos/ddc-2023.webp";
 import jsconfAsia2019 from "app/images/photos/jsconf-asia-2019.webp";
 import pianoWithKids from "app/images/photos/piano-with-kids.webp";
 import pianoWithWife from "app/images/photos/piano-with-wife.webp";
+import webUnconf2019 from "app/images/photos/web-unconf-2019.webp";
 import { metadata } from "app/models/metadata";
 import { formatDate } from "app/utils/format-date";
 import clsx from "clsx";
@@ -58,18 +59,19 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+      <div className="-my-4 flex gap-5 overflow-x-scroll snap-x py-4 sm:gap-8">
         {[
           pianoWithKids,
           cityJsConf2023,
           jsconfAsia2019,
+          webUnconf2019,
           ddc2023,
           pianoWithWife,
         ].map((image, imageIndex) => (
           <div
             key={image}
             className={clsx(
-              "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
+              "snap-center relative aspect-[9/10] w-44 flex-none justify-center overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length],
             )}
           >
