@@ -62,7 +62,7 @@ function App() {
   const [theme] = useTheme();
 
   return (
-    <html className={clsx("h-full antialiased", theme)} lang="en">
+    <html className={clsx("h-full antialiased scroll-smooth", theme)} lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

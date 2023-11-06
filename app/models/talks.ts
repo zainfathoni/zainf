@@ -1,4 +1,5 @@
 export type Talk = {
+  slug: string;
   date: string;
   title: string;
   description: string;
@@ -8,6 +9,7 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "jsconf-asia-2019",
     date: "2019-06-15",
     title: "State Machines Meet React Hooks",
     description:
@@ -36,6 +38,7 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "react-knowledgeable-meetup-5",
     date: "2019-12-05",
     title: "React Knowledgeable - Navigating i18n in SEA with Gatsby",
     description:
@@ -61,6 +64,7 @@ export const meetups: Talk[] = [
     ],
   },
   {
+    slug: "react-knowledgeable-meetup-4",
     date: "2019-11-07",
     title: "Gaining Confidence in React App through Testing",
     description: "Rethinking approaches in testing React applications",
@@ -85,6 +89,7 @@ export const meetups: Talk[] = [
     ],
   },
   {
+    slug: "reactjs-id-meetup-1",
     date: "2019-07-16",
     title: "Gaining Confidence in React App through Testing",
     description: "Rethinking approaches in testing React applications",
@@ -105,6 +110,7 @@ export const meetups: Talk[] = [
     ],
   },
   {
+    slug: "makers-institute",
     date: "2017-11-01",
     title: "How Working in IT Looks Like",
     description: 'Find the "why" you should work in it',
@@ -125,6 +131,7 @@ export const meetups: Talk[] = [
     ],
   },
   {
+    slug: "dev-c-bandung-meetup-3",
     date: "2017-10-01",
     title: "Bukalapak Bandung Journey with Go",
     description: "Bukalapak journey with Go, particularly in Bandung office.",
@@ -145,6 +152,7 @@ export const meetups: Talk[] = [
     ],
   },
   {
+    slug: "bandung-js-meetup-4",
     date: "2017-07-24",
     title: "Redux Fundamentals",
     description: "My journey in learning Redux as a backend developer",

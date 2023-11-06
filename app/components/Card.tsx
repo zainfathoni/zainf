@@ -6,13 +6,16 @@ export function Card({
   as: Component = "div",
   className,
   children,
+  id,
 }: {
   as?: React.ElementType;
   className?: string;
   children: React.ReactNode;
+  id?: string;
 }) {
   return (
     <Component
+      id={id}
       className={clsx(className, "group relative flex flex-col items-start")}
     >
       {children}

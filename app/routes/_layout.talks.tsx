@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => [
   {
     name: "description",
     content:
-      "I’ve spoken at events in Indonesia and Singapore and been interviewed for a handful of podcasts.",
+      "I’ve spoken at local and international events and been interviewed for a handful of podcasts.",
   },
 ];
 
@@ -26,12 +26,14 @@ function TalksSection({ children, ...props }: SectionProps) {
 }
 
 function Appearance({
+  id,
   title,
   description,
   event,
   cta,
   href,
 }: {
+  id: string;
   title: string;
   description: string;
   event: string;
@@ -39,7 +41,7 @@ function Appearance({
   href: string;
 }) {
   return (
-    <Card as="article">
+    <Card as="article" id={id}>
       <Card.Title as="h3" to={href}>
         {title}
       </Card.Title>
@@ -54,7 +56,8 @@ function mapTalkToAppearance(talk: Talk) {
   // TODO: Render more resources if available
   return (
     <Appearance
-      key={talk.title}
+      key={talk.slug}
+      id={talk.slug}
       href={talk.resources[0].href}
       title={talk.title}
       description={talk.description}
@@ -71,7 +74,7 @@ function mapTalkToAppearance(talk: Talk) {
 export default function Talks() {
   return (
     <SimpleLayout
-      title="I’ve spoken at events in Indonesia and Singapore and been interviewed for a handful of podcasts."
+      title="I’ve spoken at local and international events and been interviewed for a handful of podcasts."
       intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
     >
       <div className="space-y-20">
