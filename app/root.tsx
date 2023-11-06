@@ -13,6 +13,7 @@ import type {
   MetaFunction,
 } from "@vercel/remix";
 import clsx from "clsx";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import type { Theme } from "./contexts/theme";
 import {
@@ -78,8 +79,11 @@ function App() {
         </div>
         <div className="relative">
           <Header />
+          <main>
+            <Outlet />
+          </main>
+          <Footer />
         </div>
-        <Outlet />
         <ScrollRestoration />
         <LiveReload />
         <Scripts />

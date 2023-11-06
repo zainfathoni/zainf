@@ -315,22 +315,22 @@ export default function Index() {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com"
-              aria-label="Follow on Twitter"
+              href="https://x.com/zainfathoni/"
+              aria-label="Follow on Twitter/X"
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://instagram.com"
+              href="https://instagram.com/zain.fathoni"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/zainfathoni/"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/zainfathoni"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
