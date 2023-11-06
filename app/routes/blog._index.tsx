@@ -8,7 +8,7 @@ import { formatDate } from "~/utils/format-date";
 
 export const meta: MetaFunction = () => [
   {
-    title: "Articles - Zain Fathoni",
+    title: "Blog - Zain Fathoni",
   },
   {
     name: "description",

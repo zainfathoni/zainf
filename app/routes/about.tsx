@@ -111,7 +111,7 @@ export default function About() {
             <p>
               Hello! I am Zain. You might know me from{" "}
               <Link
-                to="/speaking"
+                to="/talks"
                 aria-label="My JSConf Asia 2019 talk"
                 className={linkClassName}
               >
@@ -173,18 +173,14 @@ export default function About() {
                 Frontend Developer community in Indonesia
               </ExternalLink>
               . I love sharing my learning journey to the community by giving{" "}
-              <Link to="/speaking" className={linkClassName}>
+              <Link to="/talks" className={linkClassName}>
                 a few talks
               </Link>{" "}
               and writing some articles in Bahasa Indonesia at{" "}
-              <ExternalLink href="https://medium.com/pejuang-kode">
+              <ExternalLink href="https://www.pejuangkode.com">
                 Pejuang Kode
               </ExternalLink>{" "}
-              Medium publication and{" "}
-              <ExternalLink href="https://www.pejuangkode.com">
-                pejuangkode.com
-              </ExternalLink>{" "}
-              website to help my fellow Indonesian developers learn.
+              Medium publication to help my fellow Indonesian developers learn.
             </p>
             <p>
               I have been leading the tech team of{" "}
