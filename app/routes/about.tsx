@@ -162,7 +162,7 @@ export default function About() {
               <span role="img" aria-label="Indonesian Flag">
                 🇮🇩
               </span>{" "}
-              wife 👰🏻 and two kids 👧🏻👦🏻.
+              wife 👰🏻 and three kids 👧🏻👦🏻👶🏻.
             </p>
             <p>
               To channel my enthusiasm for React, JavaScript, & frontend
