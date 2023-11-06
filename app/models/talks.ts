@@ -9,6 +9,24 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "web-constraints",
+    date: "2023-07-28",
+    title: "Navigating The Web in A World Full of Constraints",
+    description:
+      "How I architected multiple websites using various sets of technologies to meet the objectives at hand with the given constraints at the time.",
+    event: "CityJS Singapore 2023",
+    resources: [
+      {
+        href: "https://zainf.dev/web-constraints-recording",
+        label: "Watch Video",
+      },
+      {
+        href: "https://zainf.dev/web-constraints",
+        label: "Open Slides",
+      },
+    ],
+  },
+  {
     slug: "jsconf-asia-2019",
     date: "2019-06-15",
     title: "State Machines Meet React Hooks",
