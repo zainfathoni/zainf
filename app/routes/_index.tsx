@@ -59,7 +59,7 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex gap-5 overflow-x-scroll snap-x py-4 sm:gap-8">
+      <div className="-my-4 flex gap-5 xl:justify-center overflow-x-scroll snap-x py-4 sm:gap-8">
         {[
           pianoWithKids,
           cityJsConf2023,
