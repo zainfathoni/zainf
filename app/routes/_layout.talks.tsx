@@ -74,17 +74,17 @@ function mapTalkToAppearance(talk: Talk) {
 export default function Talks() {
   return (
     <SimpleLayout
-      title="I’ve spoken at local and international events and been interviewed for a handful of podcasts."
+      title="I’ve spoken at local and international events and been interviewed in a few podcasts."
       intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
     >
       <div className="space-y-20">
-        <TalksSection title="Conferences">
+        <TalksSection title={`${conferences.length} Conferences`}>
           {conferences.map(mapTalkToAppearance)}
         </TalksSection>
-        <TalksSection title="Podcasts">
+        <TalksSection title={`${podcasts.length} Podcasts`}>
           {podcasts.map(mapTalkToAppearance)}
         </TalksSection>
-        <TalksSection title="Meetups">
+        <TalksSection title={`${meetups.length} Meetups`}>
           {meetups.map(mapTalkToAppearance)}
         </TalksSection>
       </div>
