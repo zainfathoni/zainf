@@ -1,4 +1,4 @@
-import * as reactDomJsx from "../routes/blog._post.react-dom-jsx.mdx";
+import * as reactDomJsx from "../routes/blog.react-dom-jsx.mdx";
 
 export type MdxAttributes = { meta: Array<Record<string, any>> };
 
@@ -25,7 +25,7 @@ export function extractPostAttributes(attributes: MdxAttributes) {
 
 export function getPostFromMdxModule(mod: MdxModule): Post {
   return {
-    slug: mod.filename.replace(/^blog\._post\./, "").replace(/\.mdx?$/, ""),
+    slug: mod.filename.replace(/^blog\./, "").replace(/\.mdx?$/, ""),
     ...extractPostAttributes(mod.attributes),
   };
 }
