@@ -30,7 +30,8 @@ export const conferences: Talk[] = [
     slug: "ddc-2023",
     date: "2023-02-11",
     title: "Menyongsong Transisi Web",
-    description: "What I think will be the next transition of the web.",
+    description:
+      "What I believe will be the next transition of the web. In the talk, I dug into the latest streaming features of Remix and Next.js.",
     event: "Dicoding Developer Conference 2023",
     resources: [
       {
