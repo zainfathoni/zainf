@@ -239,6 +239,20 @@ export const podcasts: Talk[] = [
     ],
   },
   {
+    slug: "metro-tv-2020",
+    date: "2020-10-28",
+    title: "Pemuda Tekno Harapan Bangsa",
+    description:
+      "My first appearance on Metro TV, a national TV in Indonesia. I talked about my technological contribution in KawalCOVID19 for Indonesia during the pandemic.",
+    event: "Metro TV 15 Minutes",
+    resources: [
+      {
+        href: "https://zainf.dev/pemuda-tekno-harapan-bangsa",
+        label: "Watch Now",
+      },
+    ],
+  },
+  {
     slug: "ceritanya-developer-podcast-2-6",
     date: "2020-04-09",
     title: "devs[2][6] = Zain Fathoni",
