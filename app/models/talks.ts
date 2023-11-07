@@ -58,7 +58,7 @@ export const meetups: Talk[] = [
   {
     slug: "react-knowledgeable-meetup-5",
     date: "2019-12-05",
-    title: "React Knowledgeable - Navigating i18n in SEA with Gatsby",
+    title: "Navigating i18n in SEA with Gatsby",
     description:
       "A story about managing internationalization on Ninja Van website across multiple countries in South East Asia",
     event: "React Knowledgeable",
@@ -187,6 +187,54 @@ export const meetups: Talk[] = [
       {
         href: "https://www.meetup.com/BandungJS/events/241542959/",
         label: "Event Link",
+      },
+    ],
+  },
+];
+
+export const webinars: Talk[] = [];
+
+export const podcasts: Talk[] = [
+  {
+    slug: "codevcast-2023",
+    date: "2023-08-14",
+    title:
+      'DevStory - "From Local to International Conferences" ft. Zain Fathoni',
+    description:
+      "My learning-in-public story about speaking in local meetups and international conferences.",
+    event: "Codevcast",
+    resources: [
+      {
+        href: "https://podcasters.spotify.com/pod/show/codevcast/episodes/DevStory---From-Local-To-International-Conferences-ft--Zain-Fathoni-e2831k5",
+        label: "Listen Now",
+      },
+    ],
+  },
+  {
+    slug: "cerita-gagal-bareng-sigit-2021",
+    date: "2021-10-18",
+    title:
+      "Cerita Gagal dari Zain Fathoni - Co-Maintainer ReactJS & Frontend Indonesia Community",
+    description:
+      "My failure stories in maintaining ReactJS and Frontend Indonesia communities.",
+    event: "Cerita Gagal Bareng Sigit",
+    resources: [
+      {
+        href: "https://podcasters.spotify.com/pod/show/cerita-gagal-bareng-sigit/episodes/Cerita-Gagal-dari-Zain-Fathoni---Co-Maintainer-ReactJS--Frontend-Indonesia-Community-e18t8k1",
+        label: "Listen Now",
+      },
+    ],
+  },
+  {
+    slug: "ceritanya-developer-podcast-2-6",
+    date: "2020-04-09",
+    title: "devs[2][6] = Zain Fathoni",
+    description: "How I became a developer, and what I learned in my journey.",
+    event: "Ceritanya Developer Podcast",
+    resources: [
+      {
+        href: "https://podcasters.spotify.com/pod/show/ceritanya-developer/episodes/devs26--Zain-Fathoni-ecg9ed",
+        label: "Listen Now",
       },
     ],
   },

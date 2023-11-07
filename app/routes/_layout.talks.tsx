@@ -4,7 +4,7 @@ import type { SectionProps } from "~/components/Section";
 import { Section } from "~/components/Section";
 import { SimpleLayout } from "~/components/SimpleLayout";
 import type { Talk } from "~/models/talks";
-import { conferences, meetups } from "~/models/talks";
+import { conferences, meetups, podcasts } from "~/models/talks";
 
 export const meta: MetaFunction = () => [
   {
@@ -80,6 +80,9 @@ export default function Talks() {
       <div className="space-y-20">
         <TalksSection title="Conferences">
           {conferences.map(mapTalkToAppearance)}
+        </TalksSection>
+        <TalksSection title="Podcasts">
+          {podcasts.map(mapTalkToAppearance)}
         </TalksSection>
         <TalksSection title="Meetups">
           {meetups.map(mapTalkToAppearance)}
