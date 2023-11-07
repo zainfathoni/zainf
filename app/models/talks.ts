@@ -27,6 +27,19 @@ export const conferences: Talk[] = [
     ],
   },
   {
+    slug: "ddc-2023",
+    date: "2023-02-11",
+    title: "Menyongsong Transisi Web",
+    description: "What I think will be the next transition of the web.",
+    event: "Dicoding Developer Conference 2023",
+    resources: [
+      {
+        href: "https://zainf.dev/ddc-2023",
+        label: "Open Slides",
+      },
+    ],
+  },
+  {
     slug: "jsconf-asia-2019",
     date: "2019-06-15",
     title: "State Machines Meet React Hooks",
