@@ -1,7 +1,7 @@
-import { Form, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import type { ActionFunctionArgs } from "@vercel/remix";
 import { json, redirect } from "@vercel/remix";
-import { Button, ButtonLink } from "app/components/Button";
+import { ButtonLink } from "app/components/Button";
 import { Card } from "app/components/Card";
 import { Container } from "app/components/Container";
 import type { Icon } from "app/components/Icons";
@@ -149,36 +149,30 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   return redirect("/thank-you");
 };
 
-// TODO: Render Newsletter
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function Newsletter({ email }: { email?: string }) {
+function AskMeAnything({ email }: { email?: string }) {
   return (
-    <Form
-      method="post"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
+        <span className="ml-3">Ask Me Anything</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        Anonymously ask me any questions you might have, and I&apos;ll try my
+        best to answer them publicly.
       </p>
-      <div className="mt-6 flex">
-        {/* TODO: Add name and style the form responsively */}
-        <input
-          name="email"
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
-        </Button>
-      </div>
-    </Form>
+      <ButtonLink
+        href="https://tanyaaja.in/p/zain"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 flex-none"
+      >
+        Ask Me Anonymously
+      </ButtonLink>
+      <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+        I usually share my answers in Twitter/X. But I plan to build such
+        functionality into this website. Stay tuned!
+      </p>
+    </div>
   );
 }
 
@@ -346,7 +340,7 @@ export default function Index() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* TODO: <Newsletter /> */}
+            <AskMeAnything />
             <Resume />
           </div>
         </div>
