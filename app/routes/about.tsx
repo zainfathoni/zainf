@@ -28,7 +28,7 @@ function SocialLink({
     <li className={clsx(className, "flex")}>
       <Link
         to={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-600 dark:text-zinc-200 dark:hover:text-teal-400"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
@@ -211,7 +211,7 @@ export default function About() {
               href="https://twitter.com/zainfathoni/"
               icon={TwitterIcon}
             >
-              Follow on Twitter
+              Follow on Twitter/X
             </SocialLink>
             <SocialLink
               href="https://instagram.com/zain.fathoni"
