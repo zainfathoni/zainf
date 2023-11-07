@@ -115,16 +115,9 @@ export default function About() {
                 aria-label="My JSConf Asia 2019 talk"
                 className={linkClassName}
               >
-                my talk
+                my talks
               </Link>{" "}
-              at{" "}
-              <ExternalLink
-                href="https://2019.jsconf.asia#program"
-                aria-label="JSConf Asia 2019 program"
-              >
-                JSConf Asia 2019
-              </ExternalLink>{" "}
-              or my recent contribution at the{" "}
+              at conferences or my contributions at{" "}
               <ExternalLink href="https://www.wargabantuwarga.com/">
                 WargaBantuWarga
               </ExternalLink>{" "}
@@ -135,7 +128,7 @@ export default function About() {
               >
                 KawalCOVID19
               </ExternalLink>{" "}
-              community.
+              .
             </p>
             <p>
               I currently work as a{" "}
@@ -183,20 +176,12 @@ export default function About() {
               Medium publication to help my fellow Indonesian developers learn.
             </p>
             <p>
-              I have been leading the tech team of{" "}
-              <ExternalLink href="https://kawalcovid19.id">
-                KawalCOVID19
-              </ExternalLink>{" "}
-              community for the past few months to disseminate valid information
-              regarding the COVID-19 pandemic in Indonesia.
-            </p>
-            <p>
-              Recently, I also gathered a community of Indonesian learners
-              around me in a{" "}
+              Other than that, I also gathered a community of Indonesian
+              learners around me in a{" "}
               <ExternalLink href="https://zainf.dev/discord">
                 Discord Server
               </ExternalLink>
-              . If you have any question for me, join us at my brand new{" "}
+              . If you have any question for me, join us at my{" "}
               <ExternalLink href="https://zainf.dev/discord">
                 <strong>Pejuang Kode</strong> Discord Server
               </ExternalLink>{" "}
