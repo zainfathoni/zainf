@@ -25,14 +25,26 @@ import { metadata } from "./models/metadata";
 import styles from "./tailwind.css";
 import { getThemeSession } from "./utils/theme.server";
 
+const { title, description, url, image, locale } = metadata;
+
 export const meta: MetaFunction = () => [
   {
-    title: metadata.title,
+    title: title,
   },
   {
     name: "description",
-    content: metadata.description,
+    content: description,
   },
+  { property: "og:title", content: title },
+  { property: "og:description", content: description },
+  { property: "og:url", content: url },
+  { property: "og:type", content: "website" },
+  { property: "og:site_name", content: title },
+  { property: "og:image", content: image.src },
+  { property: "og:image:alt", content: image.alt },
+  { property: "og:image:width", content: `${image.width}` },
+  { property: "og:image:height", content: `${image.height}` },
+  { property: "og:locale", content: locale },
   {
     charset: "utf-8",
   },
@@ -42,7 +54,10 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+  { rel: "canonical", href: url },
+];
 
 export type LoaderData = {
   theme: Theme | null;

@@ -1,4 +1,12 @@
 {
   "title": "Zain Fathoni - Senior Software Engineer at Ninja Van",
-  "description": "I'm Zain, an Indonesian developer living in Singapore. I love spending my spare time building user-centric products and giving talks in meetups and conferences. Besides sharing my open-source activities, I co-organize ReactJS Indonesia and Frontend Indonesia communities to help my fellow Indonesian developers learn."
+  "description": "I'm Zain, an Indonesian developer living in Singapore. I love spending my spare time building user-centric products and giving talks in meetups and conferences. Besides sharing my open-source activities, I co-organize ReactJS Indonesia and Frontend Indonesia communities to help my fellow Indonesian developers learn.",
+  "url": "https://www.zainfathoni.com",
+  "image": {
+    "src": "https://www.zainfathoni.com/zain-fathoni-portrait.jpg",
+    "alt": "Zain Fathoni",
+    "width": 300,
+    "height": 300
+  },
+  "locale": "en_SG"
 }
