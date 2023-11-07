@@ -1,6 +1,10 @@
+import type { LinksFunction } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
+import styles from "highlight.js/styles/night-owl.css";
 import { Container } from "~/components/Container";
 import { Prose } from "~/components/Prose";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export default function Component() {
   return (
