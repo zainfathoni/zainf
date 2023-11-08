@@ -193,7 +193,7 @@ function Resume() {
   const resume: ResumeType[] = [
     {
       company: "Ninja Van",
-      title: "Senior Software Engineer",
+      title: "Senior Software Engineer 2",
       logo: ninjavanLogo,
       start: "2018",
       end: {

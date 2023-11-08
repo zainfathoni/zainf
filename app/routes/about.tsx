@@ -133,7 +133,7 @@ export default function About() {
             <p>
               I currently work as a{" "}
               <ExternalLink href="https://www.linkedin.com/in/zainfathoni/">
-                Senior Software Engineer
+                Senior Software Engineer 2
               </ExternalLink>{" "}
               at{" "}
               <ExternalLink href="https://www.ninjavan.co/en-sg/">
