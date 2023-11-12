@@ -166,12 +166,20 @@ function AskMeAnything({ email }: { email?: string }) {
         rel="noopener noreferrer"
         className="mt-4 flex-none"
       >
-        Ask Me Anonymously
+        Ask me anonymously
       </ButtonLink>
       <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
-        I usually share my answers in Twitter/X. But I plan to build such
-        functionality into this website. Stay tuned!
+        I used to share my answers in Twitter/X. But now I publish them as
+        podcast episodes.
       </p>
+      <ButtonLink
+        href="https://anchor.fm/zainfathoni"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 flex-none"
+      >
+        Listen to my answers
+      </ButtonLink>
     </div>
   );
 }
