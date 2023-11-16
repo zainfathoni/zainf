@@ -50,7 +50,7 @@ export const productivity: Tool[] = [
     title: "Raycast",
     href: "https://www.raycast.com/",
     description:
-      "I used Raycast to replace Apple's Spotlight since it provides more features with its rich plugins ecosystem.",
+      "I use Raycast to replace Apple's Spotlight since it provides more features with its rich plugins ecosystem.",
   },
 ];
 
