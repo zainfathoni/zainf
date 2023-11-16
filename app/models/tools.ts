@@ -33,7 +33,7 @@ export const developmentTools: Tool[] = [
   },
   {
     title: "Warp terminal",
-    href: "https://app.warp.dev/referral/E86EQ",
+    href: "https://zainf.dev/warp",
     description:
       "I have been using Warp since 2022. It replaces iTerm2 that I had been using since I started using Mac",
   },
@@ -51,5 +51,26 @@ export const productivity: Tool[] = [
     href: "https://www.raycast.com/",
     description:
       "I used Raycast to replace Apple's Spotlight since it provides more features with its rich plugins ecosystem.",
+  },
+];
+
+export const finance: Tool[] = [
+  {
+    title: "Wise",
+    href: "https://zainf.dev/wise",
+    description:
+      "I use Wise to convert currencies, mainly from SGD to IDR. Sign up using my referral code to get a fee-free transfer of up to 500 GBP.",
+  },
+  {
+    title: "Revolut",
+    href: "https://zainf.dev/revolut",
+    description:
+      "I use Revolut's wallet functionality to regularly save money to achieve certain financial goals.",
+  },
+  {
+    title: "Actual Budget",
+    href: "https://actualbudget.com/",
+    description:
+      "I used to be using the Wallet app from BudgetBakers. But then I turned to using Actual Budget since 2019 to track my expenses and plan my budgets.",
   },
 ];

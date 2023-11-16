@@ -4,7 +4,12 @@ import type { SectionProps } from "~/components/Section";
 import { Section } from "~/components/Section";
 import { SimpleLayout } from "~/components/SimpleLayout";
 import type { Tool } from "~/models/tools";
-import { developmentTools, productivity, workstation } from "~/models/tools";
+import {
+  developmentTools,
+  finance,
+  productivity,
+  workstation,
+} from "~/models/tools";
 
 export const meta: MetaFunction = () => [
   {
@@ -61,6 +66,9 @@ export default function Uses() {
         </ToolsSection>
         <ToolsSection title="Productivity">
           {productivity.map(mapToolToCard)}
+        </ToolsSection>
+        <ToolsSection title="Finance">
+          {finance.map(mapToolToCard)}
         </ToolsSection>
       </div>
     </SimpleLayout>
