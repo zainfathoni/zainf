@@ -29,9 +29,9 @@ function ToolsSection({ children, ...props }: SectionProps) {
   );
 }
 
-function ToolCard({ title, href, description }: Tool) {
+function ToolCard({ slug, title, href, description }: Tool) {
   return (
-    <Card as="li">
+    <Card as="li" id={slug}>
       <Card.Title as="h3" to={href}>
         {title}
       </Card.Title>
@@ -44,6 +44,7 @@ function mapToolToCard(tool: Tool) {
   return (
     <ToolCard
       key={tool.title}
+      slug={tool.slug}
       title={tool.title}
       href={tool.href}
       description={tool.description}
