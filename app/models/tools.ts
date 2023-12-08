@@ -56,7 +56,7 @@ export const productivity: Tool[] = [
   {
     slug: "arc",
     title: "Arc browser",
-    href: "https://arc.net/gift/85b48156",
+    href: "https://zainf.dev/arc",
     description:
       "I have been a heavy user of Arc. After exploring many other Chromium alternatives, I settled on Arc since early 2023.",
   },
