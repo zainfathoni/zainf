@@ -43,6 +43,13 @@ export const developmentTools: Tool[] = [
     description:
       "I have been using Warp since 2022. It replaces iTerm2 that I had been using since I started using Mac",
   },
+  {
+    slug: "gitkraken",
+    title: "GitKraken",
+    href: "https://zainf.dev/gitkraken",
+    description:
+      "I found GitKraken instrumental to help me navigate repositories with many contributors. Therefore, I have also been subscribing to the GitKraken Pro plan since 2019.",
+  },
 ];
 
 export const productivity: Tool[] = [
