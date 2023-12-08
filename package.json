@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.17",
-    "@remix-run/css-bundle": "^2.2.0",
-    "@remix-run/node": "^2.2.0",
-    "@remix-run/react": "^2.2.0",
-    "@remix-run/serve": "^2.2.0",
-    "@vercel/remix": "^2.2.0",
+    "@remix-run/css-bundle": "^2.3.1",
+    "@remix-run/node": "^2.3.1",
+    "@remix-run/react": "^2.3.1",
+    "@remix-run/serve": "^2.3.1",
+    "@vercel/remix": "^2.3.1",
     "clsx": "2.0.0",
     "highlight.js": "11.9.0",
     "isbot": "^3.6.8",
@@ -24,8 +24,8 @@
     "rehype-highlight": "7.0.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.2.0",
-    "@remix-run/eslint-config": "^2.2.0",
+    "@remix-run/dev": "^2.3.1",
+    "@remix-run/eslint-config": "^2.3.1",
     "@tailwindcss/typography": "0.5.10",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
