@@ -54,6 +54,13 @@ export const developmentTools: Tool[] = [
 
 export const productivity: Tool[] = [
   {
+    slug: "obsidian",
+    title: "Obsidian",
+    href: "https://obsidian.md/",
+    description:
+      "I used Obsidian since February 2023 to take notes, manage my knowledge base, and write my personal journey.",
+  },
+  {
     slug: "arc",
     title: "Arc browser",
     href: "https://zainf.dev/arc",
