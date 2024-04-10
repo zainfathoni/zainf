@@ -17,6 +17,7 @@ import {
 import bukalapakLogo from "app/images/logos/bukalapak.webp";
 import ninjavanLogo from "app/images/logos/ninjavan.svg";
 import pejuangKodeLogo from "app/images/logos/pejuang-kode.svg";
+import relayCommerceLogo from "app/images/logos/relay-commerce.jpeg";
 import xtremaxLogo from "app/images/logos/xtremax.webp";
 import cityJsConf2023 from "app/images/photos/cityjs-conf-2023.webp";
 import ddc2023 from "app/images/photos/ddc-2023.webp";
@@ -200,14 +201,21 @@ type ResumeType = {
 function Resume() {
   const resume: ResumeType[] = [
     {
-      company: "Ninja Van",
-      title: "Senior Software Engineer 2",
-      logo: ninjavanLogo,
-      start: "2018",
+      company: "Relay Commerce",
+      title: "Senior Front-End Engineer",
+      logo: relayCommerceLogo,
+      start: "2024",
       end: {
         label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+    {
+      company: "Ninja Van",
+      title: "Senior Software Engineer 2",
+      logo: ninjavanLogo,
+      start: "2018",
+      end: "2024",
     },
     {
       company: "Bukalapak",
