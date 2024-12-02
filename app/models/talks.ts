@@ -9,6 +9,63 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "gdg-devfest-2024-yogyakarta",
+    date: "2024-12-01",
+    title: "Embracing #nobuild in Modern Web",
+    description:
+      "A deep dive on the #nobuild movement in the modern web development.",
+    event: "GDG DevFest Yogyakarta 2024",
+    resources: [
+      {
+        href: "https://zainf.dev/fest-2024-yogyakarta",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "gdg-devfest-2024-semarang",
+    date: "2024-11-30",
+    title: "Embracing #nobuild in Modern Web",
+    description:
+      "A deep dive on the #nobuild movement in the modern web development.",
+    event: "GDG DevFest Semarang 2024",
+    resources: [
+      {
+        href: "https://zainf.dev/fest-2024-semarang",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "bdd-2024",
+    date: "2024-10-06",
+    title: "Proving Rails + Hotwire as a One-Person Framework",
+    description:
+      "Exploring the Rails and Hotwire stack to build a full-fledged web application with simple concepts to be beared by a single person.",
+    event: "Baparekraf Developer Day 2024",
+    resources: [
+      {
+        href: "https://zainf.dev/bdd-2024",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "google-io-extended-2024",
+    date: "2024-05-18",
+    title:
+      "Building Performant Web using Remix with Public Google Sheets-Backed Database",
+    description:
+      "A workshop on building a performant web application using Remix with a public Google Sheets-backed database.",
+    event: "Google I/O Extended 2024",
+    resources: [
+      {
+        href: "https://zainf.dev/google-io-2024",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
     slug: "web-constraints",
     date: "2023-07-28",
     title: "Navigating The Web in A World Full of Constraints",
