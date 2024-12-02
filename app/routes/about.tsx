@@ -97,19 +97,23 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Zain Fathoni, an Indonesian{" "}
+            I’m Zain Fathoni, a front-end developer living in Indonesia{" "}
             <span role="img" aria-label="Indonesian Flag">
               🇮🇩
-            </span>{" "}
-            Developer Living in Singapore{" "}
-            <span role="img" aria-label="Singaporean Flag">
-              🇸🇬
             </span>
             .
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              Hello! I am Zain. You might know me from{" "}
+              Hello! I am Zain. I used to live in Singapore{" "}
+              <span role="img" aria-label="Singaporean Flag">
+                🇸🇬
+              </span>{" "}
+              for 6 years during my tenure in{" "}
+              <ExternalLink href="https://www.ninjavan.co/en-sg/">
+                Ninja Van
+              </ExternalLink>
+              . You might know me from{" "}
               <Link
                 to="/talks"
                 aria-label="My JSConf Asia 2019 talk"
@@ -131,31 +135,31 @@ export default function About() {
               .
             </p>
             <p>
-              I currently work as a{" "}
+              I currently work remotely as a{" "}
               <ExternalLink href="https://www.linkedin.com/in/zainfathoni/">
-                Senior Software Engineer 2
+                Senior Front-End Engineer
               </ExternalLink>{" "}
               at{" "}
-              <ExternalLink href="https://www.ninjavan.co/en-sg/">
-                Ninja Van
+              <ExternalLink href="https://www.relaycommerce.io/">
+                Relay Commerce
               </ExternalLink>
               , previously venturing at{" "}
               <ExternalLink href="https://www.xtremax.com/">
                 Xtremax
-              </ExternalLink>{" "}
-              and{" "}
+              </ExternalLink>
+              ,{" "}
               <ExternalLink href="https://www.bukalapak.com/">
                 Bukalapak
               </ExternalLink>
-              . I live in Singapore{" "}
-              <span role="img" aria-label="Singaporean Flag">
-                🇸🇬
-              </span>{" "}
-              with my Indonesian{" "}
+              , and{" "}
+              <ExternalLink href="https://www.ninjavan.co/en-sg/">
+                Ninja Van
+              </ExternalLink>
+              . I live in Yogyakarta, Indonesia{" "}
               <span role="img" aria-label="Indonesian Flag">
                 🇮🇩
               </span>{" "}
-              wife 👰🏻 and three kids 👧🏻👦🏻👶🏻.
+              with my wife 👰🏻 and three kids 👧🏻👦🏻👶🏻.
             </p>
             <p>
               To channel my enthusiasm for React, JavaScript, & frontend

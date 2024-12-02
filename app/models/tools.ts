@@ -8,9 +8,10 @@ export type Tool = {
 export const workstation: Tool[] = [
   {
     slug: "mbp",
-    title: 'MacBook Pro 13" M1 2020 16/256GB',
-    href: "https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-m1-8-core-13-2020-specs.html",
-    description: "Workstation laptop provided by Ninja Van.",
+    title: 'MacBook Pro 16" M3 Pro 2023 18/512GB',
+    href: "https://everymac.com/systems/apple/macbook_pro/specs/macbook-pro-m3-pro-12-core-cpu-18-core-gpu-16-late-2023-specs.html",
+    description:
+      "I need the power of the M3 Pro chip to run my development environment smoothly and the 16-inch display size to perform my front-end works comfortably.",
   },
   {
     slug: "keychron",
@@ -67,13 +68,6 @@ export const productivity: Tool[] = [
     description:
       "I have been a heavy user of Arc. After exploring many other Chromium alternatives, I settled on Arc since early 2023.",
   },
-  {
-    slug: "raycast",
-    title: "Raycast",
-    href: "https://www.raycast.com/",
-    description:
-      "I use Raycast to replace Apple's Spotlight since it provides more features with its rich plugins ecosystem.",
-  },
 ];
 
 export const finance: Tool[] = [
@@ -94,8 +88,8 @@ export const finance: Tool[] = [
   {
     slug: "actual",
     title: "Actual Budget",
-    href: "https://actualbudget.com/",
+    href: "https://actualbudget.org/",
     description:
-      "I used to be using the Wallet app from BudgetBakers. But then I turned to using Actual Budget since 2019 to track my expenses and plan my budgets.",
+      "I used to be using the Wallet app from BudgetBakers. But then I turned to using Actual Budget since 2019 to track my expenses and plan my budgets. Now it's open source and I self-host it using PikaPods.",
   },
 ];
