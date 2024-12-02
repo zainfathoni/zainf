@@ -52,7 +52,7 @@ export const conferences: Talk[] = [
   },
   {
     slug: "google-io-extended-2024",
-    date: "2024-05-18",
+    date: "2024-07-21",
     title:
       "Building Performant Web using Remix with Public Google Sheets-Backed Database",
     description:
