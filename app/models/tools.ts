@@ -49,7 +49,7 @@ export const developmentTools: Tool[] = [
     title: "GitKraken",
     href: "https://zainf.dev/gitkraken",
     description:
-      "I found GitKraken instrumental to help me navigate repositories with many contributors. Therefore, I have also been subscribing to the GitKraken Pro plan since 2019.",
+      "I found GitKraken instrumental to help me navigate repositories with many contributors. Therefore, I have also been subscribing to the GitKraken Pro plan since 2019. Sign up using my referral code to get a 50% discount.",
   },
 ];
 
@@ -91,5 +91,19 @@ export const finance: Tool[] = [
     href: "https://actualbudget.org/",
     description:
       "I used to be using the Wallet app from BudgetBakers. But then I turned to using Actual Budget since 2019 to track my expenses and plan my budgets. Now it's open source and I self-host it using PikaPods.",
+  },
+  {
+    slug: "jago",
+    title: "Bank Jago Syariah",
+    href: "https://zainf.dev/jago-rame-rame",
+    description:
+      "I have been using Bank Jago Syariah since the pandemic when it was still called Jago 0%. Sign up using this link, and enter this referral code 'ZAIAF9FA' to earn Rp50.000!",
+  },
+  {
+    slug: "tokocrypto",
+    title: "Tokocrypto",
+    href: "https://zainf.dev/tokocrypto",
+    description:
+      "I have been using Tokocrypto to purchase Bitcoin daily using their DCA feature. Sign up using this referral link to get discounts on your transaction fees.",
   },
 ];
