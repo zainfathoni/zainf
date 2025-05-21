@@ -34,7 +34,7 @@ Card.Link = function CardLink({
   const external = to.startsWith("http");
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl cursor-pointer" />
       {external ? (
         <a href={to} target="_blank" rel="noopener noreferrer" {...props}>
           <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
@@ -60,7 +60,7 @@ Card.Title = function CardTitle({
   children: React.ReactNode;
 }) {
   return (
-    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 cursor-pointer">
       {to ? <Card.Link to={to}>{children}</Card.Link> : children}
     </Component>
   );
@@ -72,7 +72,7 @@ Card.Description = function CardDescription({
   children: React.ReactNode;
 }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 cursor-pointer">
       {children}
     </p>
   );
