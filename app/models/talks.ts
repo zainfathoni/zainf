@@ -171,12 +171,12 @@ export const meetups: Talk[] = [
     event: "Hijra Engineering Talks",
     resources: [
       {
-        href: "https://zainf.dev/het-4-recording",
-        label: "Watch video",
-      },
-      {
         href: "https://zainf.dev/het-4-epic",
         label: "GitHub issue",
+      },
+      {
+        href: "https://zainf.dev/het-4-recording",
+        label: "Watch video",
       },
     ],
   },
