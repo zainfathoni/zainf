@@ -316,7 +316,7 @@ export const meetups: Talk[] = [
     event: "ReactJS Indonesia",
     resources: [
       {
-        href: "https://confident-react-testing.netlify.com/",
+        href: "https://confident-react-testing.netlify.app/",
         label: "Open slides",
       },
       {
