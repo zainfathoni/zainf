@@ -163,6 +163,28 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "/reliable-tests-with-ai",
+    date: "2025-07-03",
+    title: "Writing Reliable Tests for React using AI",
+    description:
+      "An interactive live coding session to demonstrate how to write reliable React tests with AI assistance.",
+    event: "Hacktiv8 Technical Workshop",
+    resources: [
+      {
+        href: "https://github.com/zainfathoni/reliable-tests-with-ai/blob/main/deck.pdf",
+        label: "Open slides",
+      },
+      {
+        href: "https://zainf.dev/reliable-tests-with-ai",
+        label: "GitHub repository",
+      },
+      {
+        href: "https://x.com/hacktiv8id/status/1940247093987484116",
+        label: "Announcement",
+      },
+    ],
+  },
+  {
     slug: "hijra-engineering-talk-4",
     date: "2022-09-24",
     title: "Pengujian untuk Aplikasi Web yang Andal",
