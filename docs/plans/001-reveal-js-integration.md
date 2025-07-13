@@ -32,23 +32,26 @@ This plan outlines the implementation of RevealJS slides integration into the ex
 - [x] Document detailed implementation plan
 
 #### 1.2 Dependencies Installation
-- [ ] Install RevealJS core package: `reveal.js`
-- [ ] Add RevealJS plugins: `@types/reveal.js`
-- [ ] Install markdown processing: `remark`, `remark-html`
-- [ ] Add syntax highlighting integration
+- [x] Install RevealJS core package: `reveal.js`
+- [x] Add RevealJS TypeScript types: `@types/reveal.js`
+- [ ] Import RevealJS plugins (included in main package)
+- [ ] Configure existing syntax highlighting integration
 
 ```bash
 pnpm add reveal.js
 pnpm add -D @types/reveal.js
 ```
 
+**Note**: RevealJS plugins (Markdown, Highlight, Notes) are included in the main package and imported as ES modules.
+
 ### Phase 2: Core Infrastructure
 
 #### 2.1 RevealJS Component System
-- [ ] Create `app/components/slides/RevealSlideShow.tsx`
-- [ ] Implement theme integration (dark/light mode)
-- [ ] Add slide navigation controls
-- [ ] Configure RevealJS with custom settings
+- [ ] Create `app/components/slides/RevealSlideShow.tsx` following official React patterns
+- [ ] Use recommended `useEffect` pattern with proper cleanup
+- [ ] Implement theme integration using RevealJS API methods
+- [ ] Add dynamic configuration via `Reveal.configure()`
+- [ ] Implement slide navigation using `Reveal.slide()`, `Reveal.next()`, `Reveal.prev()`
 
 #### 2.2 Slide Content Structure
 - [ ] Create `app/slides/` directory
@@ -97,25 +100,71 @@ pnpm add -D @types/reveal.js
 
 ### RevealJS Configuration
 
-```javascript
-// Proposed RevealJS config
-const revealConfig = {
-  hash: true,
-  controls: true,
-  progress: true,
-  center: true,
-  touch: true,
-  transition: 'slide',
-  backgroundTransition: 'fade',
-  plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-  markdown: {
-    smartypants: true
-  },
-  highlight: {
-    highlightOnLoad: false // Use existing highlight.js setup
-  }
-}
+Based on the [official React documentation][react-docs], here's the recommended React integration pattern:
+
+```typescript
+// React Component Integration (Official Pattern)
+// Reference: https://revealjs.com/react/
+useEffect(() => {
+  if (deckRef.current) return; // Prevent double initialization
+
+  deckRef.current = new Reveal(deckDivRef.current!, {
+    // Core settings
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    touch: true,
+    
+    // Transitions
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    
+    // Plugins (Reference: https://revealjs.com/installation/)
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    
+    // Plugin configurations
+    markdown: {
+      smartypants: true
+    },
+    highlight: {
+      highlightOnLoad: false // Use existing highlight.js setup
+    },
+    
+    // Responsive design
+    width: 960,
+    height: 700,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0
+  });
+
+  deckRef.current.initialize();
+
+  return () => {
+    deckRef.current?.destroy();
+    deckRef.current = null;
+  };
+}, []);
 ```
+
+### Alternative Integration Approaches
+
+The [RevealJS React documentation][react-docs] mentions several alternative integration options:
+
+1. **Third-party Packages** (for complex scenarios):
+   - `revealjs-react`
+   - `react-reveal-slides`
+   - `revealjs-react-boilerplate`
+
+2. **React Portals** (for component integration):
+   - Use React Portals to render React components within slides
+   - Useful for interactive slide content
+
+3. **Dynamic Theme Management** (Reference: [JavaScript API][api-docs]):
+   - Use `Reveal.configure()` for runtime theme changes
+   - Leverage `Reveal.getConfig()` for state inspection
+   - Apply CSS classes dynamically based on theme state
 
 ### Slide Content Format
 
@@ -149,7 +198,7 @@ const example = "syntax highlighted code";
 
 ### Directory Structure
 
-```
+```text
 app/
 ├── slides/
 │   ├── example-presentation/
@@ -231,3 +280,17 @@ app/
 ---
 
 **Next Steps**: Begin Phase 1 implementation with dependency installation and basic component structure.
+
+## References
+
+- [RevealJS Official Documentation][main-docs]
+- [RevealJS React Integration Guide][react-docs]
+- [RevealJS Installation Guide][install-docs]
+- [RevealJS JavaScript API][api-docs]
+- [RevealJS Initialization Guide][init-docs]
+
+[main-docs]: https://revealjs.com/
+[react-docs]: https://revealjs.com/react/
+[install-docs]: https://revealjs.com/installation/
+[api-docs]: https://revealjs.com/api/
+[init-docs]: https://revealjs.com/initialization/
