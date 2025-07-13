@@ -1,22 +1,26 @@
 # RevealJS Integration Implementation Plan
 
-**Plan ID**: 001
-**Created**: 2025-07-13
-**Status**: In Progress
+**Plan ID**: 001 **Created**: 2025-07-13 **Status**: In Progress
 
 ## Overview
 
-This plan outlines the implementation of RevealJS slides integration into the existing Remix portfolio website. The goal is to enable local hosting of presentation slides while maintaining the existing architecture and design consistency.
+This plan outlines the implementation of RevealJS slides integration into the
+existing Remix portfolio website. The goal is to enable local hosting of
+presentation slides while maintaining the existing architecture and design
+consistency.
 
 ## Current State Analysis
 
 ### Existing Talk System
+
 - Talk model with external slide links (`app/models/talks.ts`)
 - Route redirection system (`app/routes/talk.$slug.tsx`)
 - Three categories: conferences, meetups, podcasts
-- External links to slides hosted on various platforms (zainf.dev, speakerdeck, etc.)
+- External links to slides hosted on various platforms (zainf.dev, speakerdeck,
+  etc.)
 
 ### Architecture Foundation
+
 - **Framework**: Remix with TypeScript
 - **Styling**: Tailwind CSS with custom theme system
 - **Routing**: File-based routing with layout patterns
@@ -28,10 +32,12 @@ This plan outlines the implementation of RevealJS slides integration into the ex
 ### Phase 1: Foundation Setup ✅
 
 #### 1.1 Documentation Structure
+
 - [x] Create `docs/plans/` directory
 - [x] Document detailed implementation plan
 
 #### 1.2 Dependencies Installation
+
 - [x] Install RevealJS core package: `reveal.js`
 - [x] Add RevealJS TypeScript types: `@types/reveal.js`
 - [ ] Import RevealJS plugins (included in main package)
@@ -42,24 +48,30 @@ pnpm add reveal.js
 pnpm add -D @types/reveal.js
 ```
 
-**Note**: RevealJS plugins (Markdown, Highlight, Notes) are included in the main package and imported as ES modules.
+**Note**: RevealJS plugins (Markdown, Highlight, Notes) are included in the main
+package and imported as ES modules.
 
 ### Phase 2: Core Infrastructure
 
 #### 2.1 RevealJS Component System
-- [ ] Create `app/components/slides/RevealSlideShow.tsx` following official React patterns
+
+- [ ] Create `app/components/slides/RevealSlideShow.tsx` following official
+      React patterns
 - [ ] Use recommended `useEffect` pattern with proper cleanup
 - [ ] Implement theme integration using RevealJS API methods
 - [ ] Add dynamic configuration via `Reveal.configure()`
-- [ ] Implement slide navigation using `Reveal.slide()`, `Reveal.next()`, `Reveal.prev()`
+- [ ] Implement slide navigation using `Reveal.slide()`, `Reveal.next()`,
+      `Reveal.prev()`
 
 #### 2.2 Slide Content Structure
+
 - [ ] Create `app/slides/` directory
 - [ ] Set up MDX-based slide authoring
 - [ ] Create slide asset management system
 - [ ] Implement slide metadata structure
 
 #### 2.3 Theme Integration
+
 - [ ] Extend existing theme context for slides
 - [ ] Create RevealJS-compatible CSS variables
 - [ ] Implement transition animations matching site design
@@ -67,18 +79,21 @@ pnpm add -D @types/reveal.js
 ### Phase 3: Data & Routing Integration
 
 #### 3.1 Talk Model Extension
+
 - [ ] Add `hasLocalSlides: boolean` to Talk type
 - [ ] Add `localSlidePath?: string` for local slide content
 - [ ] Update existing talk data to mark local vs external slides
 - [ ] Create slide content loader
 
 #### 3.2 Routing System
+
 - [ ] Create `/slides` index route (`app/routes/_layout.slides.tsx`)
 - [ ] Implement `/slides/$slug` route for presentations
 - [ ] Update `/talk/$slug` to conditionally render local slides
 - [ ] Add slide-specific layout components
 
 #### 3.3 Navigation Updates
+
 - [ ] Add "Slides" section to main navigation
 - [ ] Update talk pages to indicate local vs external slides
 - [ ] Create slide preview thumbnails
@@ -86,11 +101,13 @@ pnpm add -D @types/reveal.js
 ### Phase 4: Content & Features
 
 #### 4.1 Content Migration
+
 - [ ] Convert 2-3 existing presentations to local format
 - [ ] Create slide templates for common presentation patterns
 - [ ] Implement slide asset optimization
 
 #### 4.2 Advanced Features
+
 - [ ] Add speaker notes support
 - [ ] Implement presenter mode
 - [ ] Create PDF export functionality
@@ -100,7 +117,8 @@ pnpm add -D @types/reveal.js
 
 ### RevealJS Configuration
 
-Based on the [official React documentation][react-docs], here's the recommended React integration pattern:
+Based on the [official React documentation][react-docs], here's the recommended
+React integration pattern:
 
 ```typescript
 // React Component Integration (Official Pattern)
@@ -115,28 +133,28 @@ useEffect(() => {
     progress: true,
     center: true,
     touch: true,
-    
+
     // Transitions
-    transition: 'slide',
-    backgroundTransition: 'fade',
-    
+    transition: "slide",
+    backgroundTransition: "fade",
+
     // Plugins (Reference: https://revealjs.com/installation/)
     plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-    
+
     // Plugin configurations
     markdown: {
-      smartypants: true
+      smartypants: true,
     },
     highlight: {
-      highlightOnLoad: false // Use existing highlight.js setup
+      highlightOnLoad: false, // Use existing highlight.js setup
     },
-    
+
     // Responsive design
     width: 960,
     height: 700,
     margin: 0.04,
     minScale: 0.2,
-    maxScale: 2.0
+    maxScale: 2.0,
   });
 
   deckRef.current.initialize();
@@ -150,14 +168,17 @@ useEffect(() => {
 
 ### Alternative Integration Approaches
 
-The [RevealJS React documentation][react-docs] mentions several alternative integration options:
+The [RevealJS React documentation][react-docs] mentions several alternative
+integration options:
 
 1. **Third-party Packages** (for complex scenarios):
+
    - `revealjs-react`
    - `react-reveal-slides`
    - `revealjs-react-boilerplate`
 
 2. **React Portals** (for component integration):
+
    - Use React Portals to render React components within slides
    - Useful for interactive slide content
 
@@ -168,7 +189,7 @@ The [RevealJS React documentation][react-docs] mentions several alternative inte
 
 ### Slide Content Format
 
-```markdown
+````markdown
 ---
 title: "Presentation Title"
 date: "2025-07-13"
@@ -194,7 +215,7 @@ More content
 ```javascript
 const example = "syntax highlighted code";
 ```
-```
+````
 
 ### Directory Structure
 
@@ -230,11 +251,13 @@ app/
 ## Migration Strategy
 
 ### Immediate Candidates for Local Hosting
+
 1. **"Writing Reliable Tests for React using AI"** (latest, GitHub-hosted)
 2. **"Embracing #nobuild in Modern Web"** (recent, multiple events)
 3. **"State Machines Meet React Hooks"** (GitHub repo available)
 
 ### External Links to Maintain
+
 - Legacy presentations without source code
 - Platform-specific presentations (Speaker Deck, etc.)
 - Video recordings and demos
@@ -279,7 +302,8 @@ app/
 
 ---
 
-**Next Steps**: Begin Phase 1 implementation with dependency installation and basic component structure.
+**Next Steps**: Begin Phase 1 implementation with dependency installation and
+basic component structure.
 
 ## References
 
