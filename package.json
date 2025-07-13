@@ -21,7 +21,8 @@
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rehype-highlight": "7.0.0"
+    "rehype-highlight": "7.0.0",
+    "reveal.js": "5.2.1"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.3.1",
@@ -29,6 +30,7 @@
     "@tailwindcss/typography": "0.5.10",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "@types/reveal.js": "5.2.0",
     "eslint": "^8.38.0",
     "tailwindcss": "3.3.5",
     "typescript": "^5.1.6"
