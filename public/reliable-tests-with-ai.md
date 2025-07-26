@@ -15,9 +15,9 @@ A comprehensive guide to building robust test suites with AI assistance
 
 ## Introduction
 
-![bg left](assets/jsconf-asia-2019.jpg)
+![bg left](zain-fathoni-portrait.jpg)
 
-https://www.zainfathoni.com/about
+<https://www.zainfathoni.com/about>
 
 ---
 
@@ -28,7 +28,7 @@ https://www.zainfathoni.com/about
 - Use AI to **enhance** your productivity
 - Be the **pilot**, not the passenger
 - Iron Man **suit**, not ~~robot~~ :robot:
-- https://x.com/zainfathoni/status/1938256445663023244
+- <https://x.com/zainfathoni/status/1938256445663023244>
 
 ---
 
@@ -65,7 +65,7 @@ https://www.zainfathoni.com/about
 
 - ✅ Test user interactions
 - ❌ Avoid testing implementation details
-- https://confident-react-testing.netlify.app/
+- <https://confident-react-testing.netlify.app/>
 
 ---
 
@@ -99,4 +99,4 @@ https://www.zainfathoni.com/about
 
 ## Thank You
 
-https://zainf.dev/reliable-tests-with-ai
+<https://zainf.dev/reliable-tests-with-ai>
