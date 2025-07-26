@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:revealjs.com)"
+      "WebFetch(domain:revealjs.com)",
+      "WebFetch(domain:refactoring.fm)"
     ],
     "deny": []
   }
