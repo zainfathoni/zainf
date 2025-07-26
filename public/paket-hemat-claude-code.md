@@ -20,9 +20,10 @@ efektif :arrow_up: dan efisien :moneybag: dalam penggunaan AI
 
 <https://www.zainfathoni.com/about>
 
-- 📍 Jember :arrow_right: Bandung :arrow_right: SG :arrow_right: Jogja
-- 🛠️ Backend :arrow_right: Manager :arrow_right: Frontend
-- 📆 1 bulan++ menggunakan Claude Code
+- :round_pushpin: Jember :arrow_right: Bandung :arrow_right: SG :arrow_right:
+  Jogja
+- :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend
+- :calendar: 1 bulan++ menggunakan Claude Code
 
 ---
 
@@ -87,12 +88,14 @@ efektif :arrow_up: dan efisien :moneybag: dalam penggunaan AI
 - Instruksi yang kabur → hasil yang tidak konsisten
 - Konteks yang hilang → halusinasi
 - Terlalu bergantung → kehilangan kontrol
+- Contoh nyata kegagalan saya dalam membuat slide ini kemarin
+  - :see_no_evil: <https://app.warp.dev/block/K5VB2RoKQHyki2Erjub0fU>
 
 ---
 
 ## :x: Contoh Kasus Kegagalan AI
 
-### Belajar dari Kesalahan
+### Belajar dari Kesalahan Orang Lain
 
 - <https://x.com/albertadevs/status/1947095566736904562>
 - <https://x.com/anothercohen/status/1948878534262575430>
@@ -107,23 +110,25 @@ efektif :arrow_up: dan efisien :moneybag: dalam penggunaan AI
 
 ### Strategi Validasi
 
-- ✅ **Selalu review output AI**
-- 🧪 Terapkan pengujian otomatis
-- 👥 Jangan lupakan proses peer review
-- 📊 Metrik kualitas
+- :white_check_mark: **Selalu review output AI**
+- :test_tube: Terapkan pengujian otomatis
+- :busts_in_silhouette: Jangan lupakan proses peer review
+- :bar_chart: Terapkan standar kualitas metrik
 
 <https://x.com/zainfathoni/status/1946533504252289377>
 
 ---
 
-## Testing Otomatis
+## :test_tube: Pengujian Otomatis
 
-### Jaring Pengaman
+- :gear: Otomasi pengujian
+- :rotating_light: Pengawasan berkelanjutan
 
-- 🔍 Unit test untuk komponen
-- 🌐 Testing integrasi
-- 🎭 Validasi end-to-end
-- 🚨 Monitoring berkelanjutan
+### :wrench: Tools
+
+- :performing_arts: Playwright MCP
+- :test_tube: Vitest
+- :clipboard: Storybook
 
 ---
 
@@ -131,34 +136,22 @@ efektif :arrow_up: dan efisien :moneybag: dalam penggunaan AI
 
 ### Rencana Berbasis Markdown
 
-- 📋 **Perencanaan terstruktur**
-- 🎯 Tujuan yang jelas
-- 📈 Pelacakan progress
-- 🔄 Perbaikan iteratif
+- :clipboard: **Perencanaan terstruktur**
+- :dart: Tujuan yang jelas
+- :chart_with_upwards_trend: Pelacakan progress
+- :arrows_counterclockwise: Perbaikan iteratif
 
 ---
 
-## Konsep Specs dari Kiro
+## :clipboard: Contoh: Specs dari Kiro
 
-### Pendekatan Terstruktur
+### 3 File Utama
 
-- 📝 **Dokumentasi sebagai kode**
-- 🔧 Pengembangan berbasis spesifikasi
-- 🎯 Requirement yang jelas
-- 🔄 Perbaikan iteratif
+- :memo: **requirements.md** - EARS notation untuk requirement yang testable
+- :art: **design.md** - Arsitektur teknis dan data flow
+- :clipboard: **tasks.md** - Rencana implementasi yang detail dan trackable
 
 <https://kiro.dev/docs/specs/concepts/>
-
----
-
-## :test_tube: Integrasi Playwright MCP
-
-### Alur Kerja Automated Testing
-
-- 🎭 **Testing visual**
-- 🔄 Interaksi otomatis
-- 📊 Monitoring performa
-- 🐛 Deteksi bug
 
 ---
 
@@ -166,11 +159,11 @@ efektif :arrow_up: dan efisien :moneybag: dalam penggunaan AI
 
 ![bg right](assets/ccusage-example.png)
 
-- 💰 **Output token itu mahal**
-- 📋 SELALU gunakan `⏸️ plan mode`
-- 🎯 Prompt yang spesifik dan ringkas
-- 🔄 Rangkum pola berulang
-- 🖥️ Pantau dengan [ccusage](https://ccusage.com/)
+- :moneybag: **Output token itu mahal**
+- :clipboard: SELALU gunakan `⏸️ plan mode`
+- :dart: Prompt yang spesifik dan ringkas
+- :arrows_counterclockwise: Rangkum pola berulang
+- :desktop_computer: Pantau dengan [ccusage](https://ccusage.com/)
 
 ---
 
@@ -178,20 +171,22 @@ efektif :arrow_up: dan efisien :moneybag: dalam penggunaan AI
 
 ### Alur Kerja Efisien
 
-1. 📋 **Mulai dengan plan mode**
-2. 🎯 Definisikan tujuan yang jelas
-3. 🔄 Iterasi pada requirement
-4. ⚡ Eksekusi dengan efisien
+1. :clipboard: **Mulai dengan `⏸️ plan mode`**
+2. :dart: Definisikan tujuan yang jelas
+3. :arrows_counterclockwise: Iterasi pada requirement
+4. :zap: Eksekusi dengan efisien
 
 ---
 
 ## Kesimpulan
 
-- 🧠 **Bangun kesadaran AI** - Pahami kemampuan dan keterbatasan
-- 🛡️ **Percaya tapi verifikasi** - Selalu validasi output AI
-- 📋 **Gunakan plan mode** - Hemat token, tingkatkan hasil
-- 🎯 **Jadilah spesifik** - Konteks yang jelas untuk hasil yang lebih baik
-- 🔄 **Iterasi dan perbaiki** - Perbaikan berkelanjutan
+- :brain: **Bangun kesadaran AI** - AI sukses di mana manusia sukses
+- :hammer_and_wrench: **Buat tech stack AI-friendly** - Constraints, code,
+  konteks terbatas
+- :shield: **Percaya tapi verifikasi** - Review output + testing otomatis
+- :clipboard: **Gunakan `⏸️ plan mode`** - Hemat token dengan perencanaan
+  terstruktur
+- :test_tube: **Integrasikan testing** - Playwright MCP untuk validasi visual
 
 ---
 
