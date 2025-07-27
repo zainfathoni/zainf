@@ -1,0 +1,16 @@
+{
+  "title": "Navigating The Web in A World Full of Constraints",
+  "description": "How I architected multiple websites using various sets of technologies to meet the objectives at hand with the given constraints at the time.",
+  "date": "2023-07-28",
+  "event": "CityJS Singapore 2023",
+  "author": "Zain Fathoni",
+  "theme": "auto",
+  "revealConfig": {
+    "transition": "slide",
+    "backgroundTransition": "fade",
+    "controls": true,
+    "progress": true,
+    "center": true,
+    "touch": true
+  }
+}

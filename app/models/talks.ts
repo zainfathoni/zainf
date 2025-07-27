@@ -5,6 +5,8 @@ export type Talk = {
   description: string;
   event: string;
   resources: Array<{ href: string; label: string }>;
+  hasLocalSlides?: boolean; // Indicates if slides are hosted locally
+  localSlideSlug?: string; // Slug for local slides (if different from talk slug)
 };
 
 export const conferences: Talk[] = [
@@ -72,14 +74,20 @@ export const conferences: Talk[] = [
     description:
       "How I architected multiple websites using various sets of technologies to meet the objectives at hand with the given constraints at the time.",
     event: "CityJS Singapore 2023",
+    hasLocalSlides: true,
+    localSlideSlug: "web-constraints",
     resources: [
+      {
+        href: "/slides/web-constraints",
+        label: "View slides",
+      },
       {
         href: "https://zainf.dev/web-constraints-recording",
         label: "Watch video",
       },
       {
         href: "https://zainf.dev/web-constraints",
-        label: "Open slides",
+        label: "External slides",
       },
     ],
   },
@@ -140,14 +148,20 @@ export const conferences: Talk[] = [
     description:
       "A journey in using State Machines along with React Hooks at Ninja Van",
     event: "JSConf Asia 2019",
+    hasLocalSlides: true,
+    localSlideSlug: "jsconf-asia-2019",
     resources: [
+      {
+        href: "/slides/jsconf-asia-2019",
+        label: "View slides",
+      },
       {
         href: "https://zainf.dev/state-machines-recording",
         label: "Watch video",
       },
       {
         href: "https://bit.ly/jsconf-asia-2019-state-machines",
-        label: "Open slides",
+        label: "External slides",
       },
       {
         href: "https://github.com/zainfathoni/state-machines-meet-react-hooks",
@@ -163,16 +177,22 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
-    slug: "/reliable-tests-with-ai",
+    slug: "reliable-tests-with-ai",
     date: "2025-07-03",
     title: "Writing Reliable Tests for React using AI",
     description:
       "An interactive live coding session to demonstrate how to write reliable React tests with AI assistance.",
     event: "Hacktiv8 Technical Workshop",
+    hasLocalSlides: true,
+    localSlideSlug: "reliable-tests-with-ai",
     resources: [
       {
+        href: "/slides/reliable-tests-with-ai",
+        label: "View slides",
+      },
+      {
         href: "https://github.com/zainfathoni/reliable-tests-with-ai/blob/main/deck.pdf",
-        label: "Open slides",
+        label: "PDF slides",
       },
       {
         href: "https://zainf.dev/reliable-tests-with-ai",
