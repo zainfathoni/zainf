@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Paket Hemat Claude Code - Interactive Slides</title>
+	<meta name="description" content="Membangun alur kerja dan belajar yang efektif dan efisien dalam penggunaan AI">
+	<meta name="author" content="Zain Fathoni">
+
+	<!-- Reveal.js CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css" id="theme">
+	
+	<!-- Syntax highlighting -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css">
+
+	<!-- Custom styles -->
+	<style>
+		:root {
+			--r-background-color: #fff;
+			--r-main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+			--r-heading-font: var(--r-main-font);
+			--r-main-font-size: 32px;
+			--r-heading-color: #333;
+			--r-main-color: #333;
+			--r-link-color: #2563eb;
+			--r-link-color-hover: #1d4ed8;
+		}
+
+		.reveal .slides section {
+			text-align: left;
+		}
+
+		.reveal h1, .reveal h2, .reveal h3 {
+			text-align: center;
+			margin-bottom: 1em;
+		}
+
+		.reveal h1 {
+			font-size: 2.5em;
+			line-height: 1.2;
+		}
+
+		.reveal h2 {
+			font-size: 2em;
+		}
+
+		.reveal ul {
+			margin: 1em 0;
+		}
+
+		.reveal li {
+			margin-bottom: 0.5em;
+			font-size: 0.9em;
+		}
+
+		/* Custom styling for Indonesian content */
+		.reveal {
+			font-family: var(--r-main-font);
+		}
+
+		/* Background image positioning */
+		.reveal .slides section[data-background-position="left"] {
+			padding-left: 35%;
+		}
+
+		.reveal .slides section[data-background-position="right center"] {
+			padding-right: 46%;
+		}
+
+		/* Additional background positioning for different image sizes */
+		.reveal .slides section[data-background-size="44% auto"] {
+			padding-right: 46%;
+		}
+
+		.reveal .slides section[data-background-size="54% auto"] {
+			padding-right: 56%;
+		}
+
+		.reveal .slides section[data-background-size="50% auto"] {
+			padding-right: 52%;
+		}
+
+		/* Fragment animations */
+		.reveal .fragment.fade-in {
+			opacity: 0;
+		}
+
+		.reveal .fragment.fade-in.visible {
+			opacity: 1;
+		}
+
+		/* Emoji support */
+		.reveal .slides section {
+			font-feature-settings: "liga" 1, "kern" 1;
+		}
+
+		/* Links styling */
+		.reveal a {
+			word-break: break-word;
+			font-size: 0.8em;
+		}
+
+		/* Code blocks */
+		.reveal pre code {
+			font-size: 0.7em;
+		}
+
+		/* Navigation controls */
+		.reveal .controls {
+			color: #666;
+		}
+
+		.reveal .progress {
+			color: #2563eb;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Markdown content will be loaded here -->
+			<section data-markdown="paket-hemat-claude-code-reveal.md"  
+					 data-separator="^---"  
+					 data-separator-vertical="^--"
+					 data-separator-notes="^Note:"
+					 data-charset="utf-8">
+			</section>
+		</div>
+	</div>
+
+	<!-- Reveal.js JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/markdown/markdown.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/zoom/zoom.js"></script>
+
+	<script>
+		// Initialize Reveal.js
+		Reveal.initialize({
+			// Basic configuration
+			width: 1280,
+			height: 720,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2.0,
+
+			// Display controls
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			navigationMode: 'default',
+			shuffle: false,
+
+			// Presentation mode
+			showNotes: false,
+			autoPlayMedia: null,
+			preloadIframes: null,
+			autoAnimate: true,
+			autoAnimateEasing: 'ease',
+			autoAnimateUnmatched: true,
+
+			// Transition
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'fade',
+
+			// Plugins
+			plugins: [ 
+				RevealMarkdown, 
+				RevealHighlight, 
+				RevealNotes, 
+				RevealZoom 
+			],
+
+			// Plugin configuration
+			markdown: {
+				smartypants: true,
+				smartLists: true,
+				pedantic: false,
+				gfm: true,
+				breaks: false
+			},
+
+			highlight: {
+				beforeHighlight: (hljs) => hljs.configure({ classPrefix: 'hljs-' })
+			},
+
+			// Keyboard shortcuts
+			keyboard: {
+				13: 'next', // Enter
+				32: 'next', // Space
+				37: 'left', // Left arrow
+				39: 'right', // Right arrow
+				38: 'up',   // Up arrow
+				40: 'down'  // Down arrow
+			}
+		});
+
+		// Add some custom event handlers
+		Reveal.on('ready', event => {
+			console.log('Reveal.js presentation ready');
+			
+			// Add Indonesian language attribute
+			document.documentElement.lang = 'id';
+			
+			// Log total slides
+			console.log(`Total slides: ${Reveal.getTotalSlides()}`);
+		});
+
+		Reveal.on('slidechanged', event => {
+			// Log slide changes for debugging
+			console.log(`Slide changed to: ${event.indexh}.${event.indexv || 0}`);
+		});
+
+		// Handle fragment changes
+		Reveal.on('fragmentshown', event => {
+			console.log('Fragment shown:', event.fragment);
+		});
+
+		Reveal.on('fragmenthidden', event => {
+			console.log('Fragment hidden:', event.fragment);
+		});
+	</script>
+</body>
+</html>
