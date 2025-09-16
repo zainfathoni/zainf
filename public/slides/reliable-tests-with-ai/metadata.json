@@ -1,0 +1,16 @@
+{
+  "title": "Writing Reliable Tests for React using AI",
+  "description": "An interactive live coding session to demonstrate how to write reliable React tests with AI assistance.",
+  "date": "2025-07-03",
+  "event": "Hacktiv8 Technical Workshop",
+  "author": "Zain Fathoni",
+  "theme": "auto",
+  "revealConfig": {
+    "transition": "slide",
+    "backgroundTransition": "fade",
+    "controls": true,
+    "progress": true,
+    "center": true,
+    "touch": true
+  }
+}
