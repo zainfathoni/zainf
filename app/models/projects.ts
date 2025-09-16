@@ -24,8 +24,8 @@ export const projects = [
     description:
       "A crowdsourcing website for COVID-19 medical facilities information.",
     link: {
-      href: "https://wargabantuwarga.netlify.app",
-      label: "wargabantuwarga.netlify.app",
+      href: "https://www.wargabantuwarga.com",
+      label: "www.wargabantuwarga.com",
     },
     logo: wbwLogo,
   },
