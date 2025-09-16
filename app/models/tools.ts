@@ -27,6 +27,13 @@ export const workstation: Tool[] = [
     description:
       "I like macOS multi-touch gestures a lot. Therefore, once I solve my hiperheroes problem, I bought Magic Trackpad and use it everyday.",
   },
+  {
+    slug: "starlink",
+    title: "Starlink",
+    href: "https://zainf.dev/starlink",
+    description:
+      "I have been using Starlink since early-2025. It provides me with a reliable internet connection with good speed, and I can use it even when I'm out of town. I use it to work from my parents' house in the rural area as well. Sign up using my referral link to get 1-month free subscription!",
+  },
 ];
 
 export const developmentTools: Tool[] = [
