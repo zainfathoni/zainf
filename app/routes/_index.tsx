@@ -15,6 +15,7 @@ import {
   TwitterIcon,
 } from "app/components/Icons";
 import bukalapakLogo from "app/images/logos/bukalapak.webp";
+import bookThatAppLogo from "app/images/logos/bookthatapp.png";
 import ninjavanLogo from "app/images/logos/ninjavan.svg";
 import pejuangKodeLogo from "app/images/logos/pejuang-kode.svg";
 import relayCommerceLogo from "app/images/logos/relay-commerce.jpeg";
@@ -201,14 +202,21 @@ type ResumeType = {
 function Resume() {
   const resume: ResumeType[] = [
     {
-      company: "Relay Commerce",
-      title: "Senior Front-End Engineer",
-      logo: relayCommerceLogo,
-      start: "2024",
+      company: "BookThatApp",
+      title: "Senior Software Engineer",
+      logo: bookThatAppLogo,
+      start: "2025",
       end: {
         label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+    {
+      company: "Relay Commerce",
+      title: "Senior Front-End Engineer",
+      logo: relayCommerceLogo,
+      start: "2024",
+      end: "2025",
     },
     {
       company: "Ninja Van",
