@@ -137,11 +137,11 @@ export default function About() {
             <p>
               I currently work remotely as a{" "}
               <ExternalLink href="https://www.linkedin.com/in/zainfathoni/">
-                Senior Front-End Engineer
+                Senior Software Engineer
               </ExternalLink>{" "}
               at{" "}
-              <ExternalLink href="https://www.relaycommerce.io/">
-                Relay Commerce
+              <ExternalLink href="https://www.bookthatapp.com/">
+                BookThatApp
               </ExternalLink>
               , previously venturing at{" "}
               <ExternalLink href="https://www.xtremax.com/">
@@ -151,9 +151,13 @@ export default function About() {
               <ExternalLink href="https://www.bukalapak.com/">
                 Bukalapak
               </ExternalLink>
-              , and{" "}
+              ,{" "}
               <ExternalLink href="https://www.ninjavan.co/en-sg/">
                 Ninja Van
+              </ExternalLink>
+              , and{" "}
+              <ExternalLink href="https://www.relaycommerce.io/">
+                Relay Commerce
               </ExternalLink>
               . I live in Yogyakarta, Indonesia{" "}
               <span role="img" aria-label="Indonesian Flag">
