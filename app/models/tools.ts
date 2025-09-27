@@ -75,6 +75,13 @@ export const productivity: Tool[] = [
     description:
       "I have been a heavy user of Arc. After exploring many other Chromium alternatives, I settled on Arc since early 2023.",
   },
+  {
+    slug: "nordvpn",
+    title: "NordVPN",
+    href: "https://zainf.dev/nordvpn",
+    description:
+      "I have been using NordVPN since 2024 to secure my internet connection, especially when I use public Wi-Fi. Sign up using my referral link to get up to 3 months free on your subscription!",
+  },
 ];
 
 export const finance: Tool[] = [
