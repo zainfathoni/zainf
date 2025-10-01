@@ -163,6 +163,20 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "jagoan-hosting-tech-corner-2025",
+    date: "2025-10-01",
+    title: "Vibe Coding vs AI-Assisted Engineering",
+    description:
+      "Understanding when to 'give in to the vibes' and when to apply engineering discipline in AI-assisted development.",
+    event: "Jagoan Hosting Tech Corner 2025",
+    resources: [
+      {
+        href: "https://zainf.dev/vibe-coding-vs-ai-assisted-engineering",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
     slug: "/reliable-tests-with-ai",
     date: "2025-07-03",
     title: "Writing Reliable Tests for React using AI",
@@ -181,6 +195,24 @@ export const meetups: Talk[] = [
       {
         href: "https://x.com/hacktiv8id/status/1940247093987484116",
         label: "Announcement",
+      },
+    ],
+  },
+  {
+    slug: "swe-growth-vibe-coding-2",
+    date: "2025-06-27",
+    title: "Paket Hemat Claude Code",
+    description:
+      "Building effective and efficient workflows and learning practices in AI usage with Claude Code.",
+    event: "SWE Growth Vibe Coding #2",
+    resources: [
+      {
+        href: "https://zainf.dev/pahe-cc",
+        label: "Watch video",
+      },
+      {
+        href: "https://zainf.dev/paket-hemat-claude-code",
+        label: "Open slides",
       },
     ],
   },
