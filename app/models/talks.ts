@@ -146,7 +146,7 @@ export const conferences: Talk[] = [
         label: "Watch video",
       },
       {
-        href: "https://bit.ly/jsconf-asia-2019-state-machines",
+        href: "https://zainf.dev/state-machines-meet-react-hooks",
         label: "Open slides",
       },
       {
