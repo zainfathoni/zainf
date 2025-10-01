@@ -199,6 +199,29 @@ export const meetups: Talk[] = [
     ],
   },
   {
+    slug: "hacktiv8-context-engineering-2025",
+    date: "2025-08-28",
+    title: "Context Engineering in React with AI",
+    description:
+      "A workshop covering prompting AI for testable components, automated debugging, refactoring legacy components, and AI-driven component decomposition.",
+    event: "Hacktiv8 Technical Workshop",
+    resources: [
+      {
+        href: "https://zainf.dev/context-engineering-in-react",
+        label: "GitHub repository",
+      },
+    ],
+  },
+  {
+    slug: "jagoan-hosting-jhic-2025",
+    date: "2025-08-27",
+    title: "Kickoff JHIC: Career Journey Talkshow",
+    description:
+      "A talkshow discussing career journey, remote work opportunities, essential skills, and mindset for software engineers.",
+    event: "Jagoan Hosting Indonesia Challenge",
+    resources: [],
+  },
+  {
     slug: "swe-growth-vibe-coding-2",
     date: "2025-06-27",
     title: "Paket Hemat Claude Code",
@@ -212,6 +235,66 @@ export const meetups: Talk[] = [
       },
       {
         href: "https://zainf.dev/paket-hemat-claude-code",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "balijs-react-router-v7-2025",
+    date: "2025-01-18",
+    title: "Exploring React Router v7 as a Bridge to React 19",
+    description:
+      "Exploring the migration path from Remix to React Router v7 and new React 19 features including Server Components, useOptimistic, and document metadata.",
+    event: "BaliJS Meetup",
+    resources: [
+      {
+        href: "https://zainf.dev/react-router-7-react-19",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "compfest-15-2023",
+    date: "2023-08-25",
+    title: "Open Source Contribution",
+    description:
+      "A talk about contributing to open source projects and building a career in tech through open source.",
+    event: "Compfest 15",
+    resources: [
+      {
+        href: "https://zainf.dev/open-source",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "quarterly-tech-talk-2023",
+    date: "2023-06-27",
+    title: "Monorepo with Turborepo, Vite, and React Router",
+    description:
+      "A technical talk about building and managing monorepo projects using Turborepo, Vite, and React Router.",
+    event: "Quarterly Tech Talk",
+    resources: [
+      {
+        href: "https://docs.google.com/presentation/d/1QOzjPGpvHs_A4igOa3w1bCDiGjvSESuPo4CNyMoh8aQ/edit",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "coding-id-javascript-react-2023",
+    date: "2023-03-14",
+    title: "Why We Have To Learn JavaScript & React?",
+    description:
+      "An introduction to web development, JavaScript, and React, covering learning strategies and fundamental concepts through practical demos.",
+    event: "Coding.ID",
+    resources: [
+      {
+        href: "https://zainf.dev/coding.id-2023-recording",
+        label: "Watch video",
+      },
+      {
+        href: "https://zainf.dev/coding.id-2023",
         label: "Open slides",
       },
     ],
