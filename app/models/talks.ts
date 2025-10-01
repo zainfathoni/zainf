@@ -213,15 +213,6 @@ export const meetups: Talk[] = [
     ],
   },
   {
-    slug: "jagoan-hosting-jhic-2025",
-    date: "2025-08-27",
-    title: "Kickoff JHIC: Career Journey Talkshow",
-    description:
-      "A talkshow discussing career journey, remote work opportunities, essential skills, and mindset for software engineers.",
-    event: "Jagoan Hosting Indonesia Challenge",
-    resources: [],
-  },
-  {
     slug: "swe-growth-vibe-coding-2",
     date: "2025-06-27",
     title: "Paket Hemat Claude Code",
