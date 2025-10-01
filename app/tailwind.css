@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Reveal.js custom styles for embedded mode */
+.reveal-container {
+  @apply relative;
+}
+
+.reveal-container .reveal {
+  /* Ensure Reveal.js doesn't interfere with page scrolling */
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+.reveal-container .reveal .slides {
+  /* Center the slides within the container */
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* Theme integration */
+.reveal.theme-dark {
+  --r-background-color: #18181b;
+  --r-main-color: #f4f4f5;
+  --r-heading-color: #fafafa;
+  --r-link-color: #14b8a6;
+  --r-link-color-hover: #0d9488;
+}
+
+.reveal.theme-light {
+  --r-background-color: #ffffff;
+  --r-main-color: #27272a;
+  --r-heading-color: #18181b;
+  --r-link-color: #0d9488;
+  --r-link-color-hover: #14b8a6;
+}

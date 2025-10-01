@@ -57,6 +57,9 @@ export const meta: MetaFunction = () => [
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   { rel: "canonical", href: url },
+  // Reveal.js CSS
+  { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css" },
+  { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/white.css" },
 ];
 
 export type LoaderData = {

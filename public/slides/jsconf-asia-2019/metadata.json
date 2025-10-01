@@ -1,0 +1,16 @@
+{
+  "title": "State Machines Meet React Hooks",
+  "description": "A journey in using State Machines along with React Hooks at Ninja Van",
+  "date": "2019-06-15",
+  "event": "JSConf Asia 2019",
+  "author": "Zain Fathoni",
+  "theme": "auto",
+  "revealConfig": {
+    "transition": "slide",
+    "backgroundTransition": "fade",
+    "controls": true,
+    "progress": true,
+    "center": true,
+    "touch": true
+  }
+}
