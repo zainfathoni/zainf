@@ -32,6 +32,7 @@ function Appearance({
   event,
   cta,
   href,
+  additionalResources,
 }: {
   id: string;
   title: string;
@@ -39,6 +40,7 @@ function Appearance({
   event: string;
   cta: string;
   href: string;
+  additionalResources?: Array<{ href: string; label: string }>;
 }) {
   return (
     <Card as="article" id={id}>
@@ -48,20 +50,69 @@ function Appearance({
       <Card.Eyebrow decorate>{event}</Card.Eyebrow>
       <Card.Description>{description}</Card.Description>
       <Card.Cta>{cta}</Card.Cta>
+      {additionalResources && additionalResources.length > 0 && (
+        <div className="relative z-30 mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+          {additionalResources.map((resource, index) => (
+            <a
+              key={index}
+              href={resource.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-teal-600 dark:hover:text-teal-400 transition cursor-pointer"
+            >
+              {resource.label}
+            </a>
+          ))}
+        </div>
+      )}
     </Card>
   );
 }
 
+function prioritizeResources(resources: Talk["resources"]) {
+  // Priority order: video > slides > repository > other
+  const priority = {
+    video: 0,
+    slides: 1,
+    repository: 2,
+    other: 3,
+  };
+
+  const getResourceType = (label: string) => {
+    const lowerLabel = label.toLowerCase();
+    if (lowerLabel.includes("video") || lowerLabel.includes("watch")) {
+      return "video";
+    }
+    if (lowerLabel.includes("slide")) {
+      return "slides";
+    }
+    if (lowerLabel.includes("repository") || lowerLabel.includes("github")) {
+      return "repository";
+    }
+    return "other";
+  };
+
+  return [...resources].sort((a, b) => {
+    const typeA = getResourceType(a.label);
+    const typeB = getResourceType(b.label);
+    return priority[typeA] - priority[typeB];
+  });
+}
+
 function mapTalkToAppearance(talk: Talk) {
-  // TODO: Render more resources if available
+  const sortedResources = prioritizeResources(talk.resources);
+  const primaryResource = sortedResources[0];
+  const additionalResources = sortedResources.slice(1);
+
   return (
     <Appearance
       key={talk.slug}
       id={talk.slug}
-      href={talk.resources[0].href}
+      href={primaryResource.href}
       title={talk.title}
       description={talk.description}
-      cta={talk.resources[0].label}
+      cta={primaryResource.label}
+      additionalResources={additionalResources}
       event={`${talk.event}, ${new Date(talk.date).toLocaleDateString("en-SG", {
         day: "numeric",
         month: "long",
