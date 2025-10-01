@@ -469,10 +469,6 @@ export const meetups: Talk[] = [
         label: "Open slides",
       },
       {
-        href: "https://github.com/zainfathoni/makers-institute",
-        label: "Slides repository",
-      },
-      {
         href: "https://www.facebook.com/photo.php?fbid=10212575629776987&set=a.4285339262978&type=3&theater",
         label: "Event link",
       },
