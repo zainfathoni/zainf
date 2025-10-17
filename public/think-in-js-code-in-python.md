@@ -693,14 +693,11 @@ ACTION:
 
 **Three key shifts:**
 
-1. 🚀 You don't need to pick one language anymore → Ship your next project in
-   Python, Go, or Rust without fear
+1. 🚀 You don't need to pick one language anymore → Ship your next project in Python, Go, or Rust without fear
 
-2. 🧠 Your mental model is your strongest asset → React patterns apply
-   everywhere; syntax is implementation detail
+1. 🧠 Your mental model is your strongest asset → React patterns apply everywhere; syntax is implementation detail
 
-3. ⏩ You learn by doing, not by studying → Build first, understand the idioms
-   through context
+1. ⏩ You learn by doing, not by studying → Build first, understand the idioms through context
 
 <!--
 TIMING: 90-120 seconds
