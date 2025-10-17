@@ -331,25 +331,51 @@ STORYTELLING:
 
 ## What if AI Could Bridge the Gap?
 
-**Prompt:**
+```jsx
+<App>
+  <Header title="Chat Dashboard" />
+  <MessageList messages={messages} />
+  <InputBox onSend={handleSend} />
+</App>
+```
+
+**↓ AI Translation ↓**
 
 > "Turn this React-style structure into a Python Streamlit app."
 
 <!--
-TIMING: 15-20 seconds
+TIMING: 20-30 seconds
 
-SPEAKER NOTES:
-"What if I could just describe my React mental model, and AI translated it to Python?
+SPEAKER NOTES (Bahasa Indonesia):
+"Apa jika saya bisa hanya mendeskripsikan mental model React saya, dan AI menerjemahkannya ke Python?
 
-[Point to prompt]
+[Tunjuk ke JSX code]
 
-That's it. That's the whole idea.
+Inilah yang saya pikirkan. Itu adalah struktur React klasik.
 
-I give AI my intent in React terms. AI hands back Python code that works.
+[Tunjuk ke prompt]
 
-And here's what I realized: I didn't need to learn Streamlit syntax first. I just needed to describe what I wanted, and Claude/ChatGPT filled in the gaps.
+Dan inilah yang saya katakan ke Claude Code. Hanya deskripsi sederhana dalam bahasa saya.
 
-Let me show you what that looks like."
+[Pause]
+
+Itu saja. Itu adalah seluruh ide.
+
+Saya memberikan AI intent saya dalam istilah React. AI mengembalikan code Python yang bekerja.
+
+Dan inilah yang saya sadari: Saya tidak perlu mempelajari syntax Streamlit terlebih dahulu. Saya hanya perlu mendeskripsikan apa yang saya inginkan, dan Claude mengisinya.
+
+Mari saya tunjukkan kepada Anda apa yang terjadi."
+
+TECHNICAL DEPTH:
+- This shows the INPUT (React mental model)
+- The prompt shows the TRANSLATION REQUEST
+- Sets up for the magic moment: AI generates Python
+
+ENGAGEMENT TIP:
+- Point to JSX: "This is how I think"
+- Point to prompt: "This is what I say to AI"
+- Pause before showing the result
 -->
 
 ---
@@ -374,38 +400,48 @@ if st.button("Send"):
 ```
 
 <!--
-TIMING: 45 seconds
+TIMING: 60-75 seconds
 
-SPEAKER NOTES:
-"And this is what AI generated from that React description.
+SPEAKER NOTES (Bahasa Indonesia):
+"Dan inilah yang AI generate dari deskripsi React saya.
 
-[Point to imports]
+[Tunjuk ke imports]
 
-I didn't need to know 'import streamlit as st.' AI just knew.
+Saya tidak perlu tahu 'import streamlit as st.' AI tahu sendiri.
 
-[Point to st.title()]
+[Tunjuk ke st.title()]
 
-st.title is Streamlit's way of saying <Header />. AI translated it.
+st.title adalah cara Streamlit untuk mengatakan <Header />. AI menerjemahkannya.
 
-[Point to session_state]
+[Tunjuk ke session_state]
 
-st.session_state is Streamlit's answer to useState. AI recognized this from my React mental model.
+st.session_state adalah jawaban Streamlit untuk useState. AI mengenali ini dari mental model React saya.
 
-[Point to for loop]
+[Tunjuk ke for loop]
 
-The for loop is how Streamlit renders things—iterate and call st.write(). That's the translation of map().
+The for loop adalah bagaimana Streamlit render things—iterate dan call st.write(). Itu adalah terjemahan dari map().
 
-[Point to button logic]
+[Tunjuk ke button logic]
 
-The button and rerun is the translation of onClick and re-render.
+The button dan rerun adalah terjemahan dari onClick dan re-render.
 
-Here's the key: [pause]
+Inilah kuncinya: [pause]
 
-I didn't think in Streamlit. I thought in React. AI did the translation.
+Saya tidak berpikir dalam Streamlit. Saya berpikir dalam React. AI melakukan terjemahan.
 
-I wasn't memorizing Streamlit docs. I was describing patterns.
+Saya tidak menghafal Streamlit docs. Saya mendeskripsikan pola.
 
-And everything I need—imports, boilerplate, framework idioms—AI filled in automatically."
+Dan semua yang saya butuhkan—imports, boilerplate, framework idioms—AI mengisinya secara otomatis."
+
+TECHNICAL DEPTH:
+- Show the line-by-line translation
+- Each Streamlit construct maps to a React concept
+- Boilerplate (imports) is automatic—no memorization needed
+
+ENGAGEMENT TIP:
+- Point at each line deliberately
+- Pause before the summary (3-5 seconds)
+- Let the translation sink in
 -->
 
 ---
@@ -420,24 +456,34 @@ And everything I need—imports, boilerplate, framework idioms—AI filled in au
 | CSS            | Markdown + HTML       | Translates styling intent        |
 
 <!--
-TIMING: 45 seconds
+TIMING: 60-75 seconds
 
-SPEAKER NOTES:
-"This table is your mental model anchor. Remember this.
+SPEAKER NOTES (Bahasa Indonesia):
+"Tabel ini adalah mental model anchor Anda. Ingat ini.
 
-[Point to each row]
+[Tunjuk ke setiap row]
 
-In React, I think in component trees. In Python/Streamlit, it's sequential function calls. Same intent, different execution model. AI translates.
+Di React, saya berpikir dalam component trees. Di Python/Streamlit, itu adalah sequential function calls. Sama intent, berbeda execution model. AI menerjemahkan.
 
-useState in React becomes st.session_state in Streamlit. Same pattern—'I need persistent state'—different name. AI knows this.
+useState di React menjadi st.session_state di Streamlit. Pola yang sama—'Saya butuh persistent state'—nama berbeda. AI tahu ini.
 
-JSX is declarative markup. Function calls are imperative. But they express the same thing. AI sees past the syntax to the intent.
+JSX adalah declarative markup. Function calls adalah imperatif. Tetapi mereka mengekspresikan hal yang sama. AI melihat melampaui syntax ke intent.
 
-CSS is styling intent. st.markdown() with HTML/CSS is styling implementation. Different syntax, same desire: 'Make this look a certain way.' AI fills the gap.
+CSS adalah styling intent. st.markdown() dengan HTML/CSS adalah styling implementation. Syntax berbeda, desire yang sama: 'Buat ini terlihat seperti cara tertentu.' AI mengisi celahnya.
 
 [Pause]
 
-This table is why the whole thing works. The pattern exists independent of the language. AI just translates the surface syntax."
+Tabel inilah mengapa semuanya berhasil. Pola ada independen dari bahasa. AI hanya menerjemahkan surface syntax."
+
+TECHNICAL DEPTH:
+- This is the anchor for remembering the concepts
+- Each row shows the pattern independence from syntax
+- Drives home the thesis
+
+ENGAGEMENT TIP:
+- Let them absorb each row
+- Don't rush through the table
+- The pause before the final statement is crucial
 -->
 
 ---
@@ -702,6 +748,124 @@ STORYTELLING:
 
 ---
 
+## 🎓 Learn by Doing with Claude Code
+
+Ask Claude Code to use **Learning mode**
+→ `TODO(human)` markers show where you code
+→ You write the logic, Claude guides
+
+🤖 AI: boilerplate + complexity
+👤 You: core logic + decisions
+
+📖 Learn more: [docs.claude.com/output-styles](https://docs.claude.com/en/docs/claude-code/output-styles)
+
+<!--
+TIMING: 90-120 seconds
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Ada satu lagi cara untuk menggunakan AI dalam pembelajaran.
+
+[Tunjuk ke slide]
+
+Anda tidak harus hanya menonton AI code. Anda bisa meminta Claude Code untuk menggunakan mode 'Learning.'
+
+Dalam mode ini, Claude tidak menulis semua code untuk Anda. Sebaliknya, ini menempatkan TODO(human) markers—tempat untuk Anda ketik.
+
+Jadi Anda mendapatkan:
+- AI menangani boilerplate—imports, setup, kompleksitas framework
+- Anda menulis logic inti—keputusan algoritma, business logic
+- Claude menjelaskan setiap langkah sambil Anda bekerja
+
+Ini adalah cara terbaik untuk belajar. Bukan syntax memorization, tapi active coding dengan guidance.
+
+[Pause]
+
+Jadi ringkasannya: Ada tiga cara untuk bekerja dengan AI:
+1. Tingkat pemula: 'Tulis semua code untuk saya' (AI generates everything)
+2. Tingkat menengah: 'Guide saya saat saya code' (Claude Code Learning mode)
+3. Tingkat expert: 'Mari kita pair program' (You and Claude collaborate on complex problems)
+
+Ketiga-tiganya valid. Tergantung apa yang Anda butuhkan hari itu."
+
+TECHNICAL DEPTH:
+- Learning mode bridges passive consumption and active learning
+- TODO(human) markers create strategic learning moments
+- Boilerplate handled automatically, core logic stays with you
+- This is how you truly internalize patterns
+
+ENGAGEMENT TIP:
+- Ask: "Ada yang pengen lebih hands-on?" (Anyone want more hands-on learning?)
+- Show the practical benefit: get guidance without losing ownership
+- Connect to earlier message: "Syntax osmosis melalui active typing"
+
+STORYTELLING:
+- This is the practical call-to-action slide
+- Moves from theoretical (the demo) to actionable (what they can do tonight)
+- Three-tier model gives them options based on their comfort level
+-->
+
+---
+
+## ⚠️ VIBE Coding vs VIBE Debugging
+
+![bg right:50%](./assets/vibe-coding-vs-vibe-debugging.png)
+
+**AI can help you write code fast**
+
+But you MUST understand what you wrote
+
+→ Otherwise: Welcome to VIBE Debugging (the nightmare)
+
+<!--
+TIMING: 60-90 seconds
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Ada satu caveat penting yang harus saya sebutkan.
+
+[Tunjuk ke slide]
+
+Ada perbedaan antara VIBE Coding dan VIBE Debugging.
+
+VIBE Coding adalah—Anda menggunakan AI untuk generate code. Anda percaya pada vibes. Kode bekerja. Masalah? Tidak ada yang memahami kenapa, tapi tidak penting.
+
+Itu berfungsi... sampai tidak.
+
+[Pause]
+
+Kemudian datang VIBE Debugging. Anda perlu memperbaiki bug di code yang Anda tidak sepenuhnya mengerti. Sekarang Anda menggali melalui stack traces, mencoba random fixes, berharap sesuatu berhasil.
+
+Itulah VIBE Debugging. Dan itu adalah mimpi buruk.
+
+[Pause]
+
+Jadi inilah rule saya: AI dapat menghasilkan 80% code untuk Anda. Tapi Anda HARUS memahami 100% dari itu.
+
+Baca code yang AI generate. Pahami alur. Tanyakan pertanyaan. Modifikasi untuk kebutuhan Anda.
+
+VIBE Coding hanya aman jika Anda tidak pernah perlu VIBE Debugging.
+
+Dan dengan pendekatan Learning mode yang kami bicarakan, Anda punya jaminan itu—karena Anda menulis parts penting."
+
+TECHNICAL DEPTH:
+- VIBE Coding = fast iteration without understanding
+- VIBE Debugging = painful technical debt
+- Understanding code prevents future pain
+- This ties back to why Learning mode is better than full generation
+
+ENGAGEMENT TIP:
+- Use the meme for levity, but make the point serious
+- Ask: "Siapa di sini yang pernah VIBE Debugging?" (Anyone ever done VIBE Debugging?)
+- They'll laugh because they recognize it
+- Then the serious point lands harder
+
+STORYTELLING:
+- This is the reality check after the excitement
+- Balances "AI makes you faster" with "you need to own your code"
+- Circles back to why understanding patterns matters
+-->
+
+---
+
 ## The Deeper Shift
 
 > "Frameworks abstract code.
@@ -793,6 +957,7 @@ STORYTELLING:
 [@zainfathoni](https://twitter.com/zainfathoni) •
 [zainfathoni.com](https://zainfathoni.com)
 
+🔗 **Slides:** [zainf.dev/think-js-code-python](https://zainf.dev/think-js-code-python)
 🔗 **Demo code:** [github.com/zainfathoni/streamlit-trial](https://github.com/zainfathoni/streamlit-trial)
 
 💡 "The next generation of programmers will think in patterns, not languages."
