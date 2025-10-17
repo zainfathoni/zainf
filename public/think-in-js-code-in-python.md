@@ -1,10 +1,8 @@
 ---
-theme: gaia
-_class: lead
-paginate: true
-backgroundColor: #fff
-backgroundImage: url('https://marp.app/assets/hero-background.svg')
-marp: true
+
+theme: gaia \_class: lead paginate: true backgroundColor: #fff backgroundImage:
+url('https://marp.app/assets/hero-background.svg') marp: true
+
 ---
 
 # **Think in JS, Code in Python — with AI**
@@ -230,9 +228,7 @@ STORYTELLING:
 
 ## The Core Idea
 
-**JS is how I _think_.**
-**Python is how I _ship_.**
-**AI is how I _bridge_.**
+**JS is how I _think_.** **Python is how I _ship_.** **AI is how I _bridge_.**
 
 🧠 → 💬 → 🐍
 
@@ -490,14 +486,14 @@ ENGAGEMENT TIP:
 
 ## 💻 Live Demo Time
 
+**Starting from a blank template.**
+
 **Goal:** Build a chat dashboard using Streamlit
 **Mindset:** React
 **Language:** Python
 **Tool:** Claude Code (AI pair-programmer)
 
-🧠 → Describe intent
-🧩 → Let AI translate
-⚙️ → Run it live
+🧠 → Describe intent 🧩 → Let AI translate ⚙️ → Run it live
 
 <!--
 Notes: Outline the game plan before typing (30s).
@@ -507,23 +503,29 @@ SETUP (before this slide):
 - Browser ready to view localhost:8501
 - Claude Code open and visible to audience
 - Have these prompts ready to paste
+- app.py is a blank boilerplate (just imports + page config)
 
 FLOW:
-1. Intro (current slide): "We're thinking in React, coding in Python with AI assistance"
-2. Show app.py running (20s): "This is my starting point—a basic chat app I thought about as React components"
-3. Go back to slides for Step 1
+1. Intro (current slide): "We're thinking in React, coding in Python with AI assistance. Starting from a blank template."
+2. Show app.py running (10s): "This is my starting point—a blank boilerplate ready to build"
+3. Go back to slides for Step 1 and live-code
 -->
 
 ---
 
-## Step 1 — Describe the Intent
+## Step 1 — Live Code the Intent
 
-> "Build a simple chat dashboard using Streamlit.
-> It should have a header, a list of messages, and an input box to send new
-> messages."
+**Build a simple chat dashboard with state + rendering + input + send**
+
+> React thinking:
+> - `<Header />` title
+> - `<MessageList messages={messages} />`
+> - `<InputBox onSend={handleSend} />`
+>
+> Python: Let's live-code this into `app.py`
 
 <!--
-Notes: Show React thinking BEFORE code (1 min).
+Notes: Show React thinking BEFORE coding (1 min), then live-code (3-4 min).
 
 SPEAKER NOTES:
 "I'm thinking about this as three React components:
@@ -531,7 +533,7 @@ SPEAKER NOTES:
 - A <MessageList /> that maps over messages from state
 - An <InputBox /> with an onClick send handler
 
-I'll describe this to Claude Code using React concepts, and it'll translate to Python for me."
+I'll think in React, describe the patterns to Claude Code, and we'll build it live."
 
 ACTION:
 1. (Optional) Show JSX pseudocode in editor first:
@@ -541,81 +543,84 @@ ACTION:
      <InputBox onSend={handleSend} />
    </App>
 
-2. Then paste this prompt to Claude Code (make it visible):
+2. Open app.py (currently blank) in editor so audience sees it
+
+3. Then paste this prompt to Claude Code (make it visible):
    "Build me a chat dashboard with:
    - A header component showing 'Chat Dashboard'
    - A message list that maps over messages from state
    - An input box with a send button (like an onClick handler)
-   - State management for messages (like useState)"
+   - State management for messages (like useState)
+   - A Clear button to reset chat"
 
-3. Claude generates code → open app.py
-4. Run `streamlit run app.py` → show it working
-5. Point out key lines and their React equivalents:
-   - st.session_state = useState()
-   - for msg in messages = map()
+4. Claude generates code → copy into app.py
+5. Save and watch Streamlit auto-reload → show it working
+6. Point out key lines and their React equivalents:
+   - if "messages" not in st.session_state = useState initialization
+   - for msg in st.session_state.messages = map()
    - st.button() + st.rerun() = onClick + re-render
 
-TIMING: ~4-5 minutes total (slower pace, more explanation)
+TIMING: ~4-5 minutes total (show intent, get code, demo, explain mappings)
 
 EXTENDED DEMO NOTES (12-15 min total for all 3 steps):
 - Take time to point out React↔Python mappings
 - If something works perfectly, celebrate it—show audience the working code
 - If there are errors, use them as teaching moments: "Look how AI errors are helpful"
 - Don't rush—this is the centerpiece of your 30-minute talk
+- Audience sees the THINKING process, not just the final code
 -->
-
 
 ---
 
-## Step 2 — Add Interactivity
+## Step 2 — Add Timestamps (Show `app_v2_timestamps.py`)
 
 > "Add timestamps and show messages newest first."
 
 <!--
-Notes: Show state enrichment thinking (1-2 min).
+Notes: Show state enrichment thinking (1 min), then switch to backup (2 min).
 
 SPEAKER NOTES:
 "In React, when I enrich state from simple strings to objects, I add properties.
 In this case, I'm adding a timestamp property to each message object.
 Then I display it using reversed() — just like calling array.reverse() before map()."
 
-ACTION (choose one):
+ACTION:
 
-OPTION A - Live coding (more impressive, if Step 1 went smooth):
-1. Say out loud: "I need to enrich my state structure with timestamps"
-2. Paste to Claude Code (visible):
-   "Modify the app to store messages as objects with {text, timestamp} properties.
-   Display them as 'HH:MM:SS — message text'.
-   Show newest messages first (like reversing array before map)."
-3. Claude generates → copy to app.py
-4. Save → Streamlit auto-reloads
-5. Send a message → shows timestamp
-6. Point to the code:
+Recommended: Switch to backup (safer for timing):
+1. In terminal: Ctrl+C (stop current Streamlit)
+2. Run: streamlit run app_v2_timestamps.py
+3. Show the updated app with timestamps
+4. Send 2-3 messages with ~5 second gaps
+5. Point to the code sections:
    msg_obj = {"text": new_message, "timestamp": datetime.now().strftime("%H:%M:%S")}
    "This is enriching state — like useState with an object instead of a string"
 
    for msg_obj in reversed(st.session_state.messages):
    "This is like messages.reverse().map(msg => ...)"
 
-OPTION B - Switch to backup (safer):
-1. In terminal: Ctrl+C
-2. Run: streamlit run app_v2_timestamps.py
-3. Show the updated app with timestamps
-4. Point to the same code sections above
+Alternative: If Step 1 went smooth, live-code instead:
+1. Say out loud: "I need to enrich my state structure with timestamps"
+2. Paste to Claude Code (visible):
+   "Modify app.py to store messages as objects with {text, timestamp} properties.
+   Display them as 'HH:MM:SS — message text'.
+   Show newest messages first (like reversing array before map)."
+3. Claude generates → copy into app.py
+4. Save → Streamlit auto-reloads
+5. Send a message → shows timestamp
+6. Point to the same code sections
 
-TIMING: ~4-5 minutes (extended, slower pace)
+TIMING: ~3-4 minutes total
 
 EXTENDED DEMO TACTICS:
-- After Streamlit updates, take 30 seconds to point out the code changes
+- After changes load, pause to let the timestamp display sink in
 - Specifically highlight: "Look at this structure—it's the reversed() function, just like array.reverse() in React"
-- If you're live-coding: point out where you got stuck, ask Claude, and show the thinking process
+- If live-coding: point out the thinking process with Claude
 - This demonstrates AI as your thinking partner, not your replacement
 
-FALLBACK: If something breaks, switch to app_v2_timestamps.py backup
+FALLBACK: If anything breaks, say:
 "Ini kenapa kita punya version control! Mari saya tunjukkan versi yang sudah selesai."
 (This is why we have version control! Let me show you the completed version.)
 -->
-
 
 ---
 
@@ -669,7 +674,6 @@ Saya mendeskripsikan konsepnya (conditional styling seperti React className),
 dan Claude menerjemahkannya ke Python."
 -->
 
-
 ---
 
 ## Demo Recap
@@ -703,14 +707,14 @@ ACTION:
 
 **Three key shifts:**
 
-1. 🚀 You don't need to pick one language anymore
-   → Ship your next project in Python, Go, or Rust without fear
+1. 🚀 You don't need to pick one language anymore → Ship your next project in
+   Python, Go, or Rust without fear
 
-2. 🧠 Your mental model is your strongest asset
-   → React patterns apply everywhere; syntax is implementation detail
+2. 🧠 Your mental model is your strongest asset → React patterns apply
+   everywhere; syntax is implementation detail
 
-3. ⏩ You learn by doing, not by studying
-   → Build first, understand the idioms through context
+3. ⏩ You learn by doing, not by studying → Build first, understand the idioms
+   through context
 
 <!--
 TIMING: 90-120 seconds
@@ -750,14 +754,13 @@ STORYTELLING:
 
 ## 🎓 Learn by Doing with Claude Code
 
-Ask Claude Code to use **Learning mode**
-→ `TODO(human)` markers show where you code
-→ You write the logic, Claude guides
+Ask Claude Code to use **Learning mode** → `TODO(human)` markers show where you
+code → You write the logic, Claude guides
 
-🤖 AI: boilerplate + complexity
-👤 You: core logic + decisions
+🤖 AI: boilerplate + complexity 👤 You: core logic + decisions
 
-📖 Learn more: [docs.claude.com/output-styles](https://docs.claude.com/en/docs/claude-code/output-styles)
+📖 Learn more:
+[docs.claude.com/output-styles](https://docs.claude.com/en/docs/claude-code/output-styles)
 
 <!--
 TIMING: 90-120 seconds
@@ -868,8 +871,7 @@ STORYTELLING:
 
 ## The Deeper Shift
 
-> "Frameworks abstract code.
-> **AI abstracts languages.**"
+> "Frameworks abstract code. **AI abstracts languages.**"
 
 🤯
 
@@ -953,12 +955,13 @@ STORYTELLING:
 
 ## Thank You
 
-**Zain Fathoni**
-[@zainfathoni](https://twitter.com/zainfathoni) •
+**Zain Fathoni** [@zainfathoni](https://twitter.com/zainfathoni) •
 [zainfathoni.com](https://zainfathoni.com)
 
-🔗 **Slides:** [zainf.dev/think-js-code-python](https://zainf.dev/think-js-code-python)
-🔗 **Demo code:** [github.com/zainfathoni/streamlit-trial](https://github.com/zainfathoni/streamlit-trial)
+🔗 **Slides:**
+[zainf.dev/think-js-code-python](https://zainf.dev/think-js-code-python) 🔗
+**Demo code:**
+[github.com/zainfathoni/streamlit-trial](https://github.com/zainfathoni/streamlit-trial)
 
 💡 "The next generation of programmers will think in patterns, not languages."
 
