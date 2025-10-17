@@ -163,6 +163,24 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "pyjogja-2025-think-js-code-python",
+    date: "2025-10-18",
+    title: "Think in JS, Code in Python — with AI",
+    description:
+      "Learn how to leverage AI to bridge your JavaScript/React thinking patterns to Python code. Discover how patterns are universal and only syntax differs, enabling you to code in any language without extensive syntax memorization.",
+    event: "PyJogja Meetup",
+    resources: [
+      {
+        href: "https://zainf.dev/think-js-code-python",
+        label: "Open slides",
+      },
+      {
+        href: "https://www.instagram.com/p/DPVJfrRk6J7/?img_index=2",
+        label: "Event link",
+      },
+    ],
+  },
+  {
     slug: "jagoan-hosting-tech-corner-2025",
     date: "2025-10-01",
     title: "Vibe Coding vs AI-Assisted Engineering",
