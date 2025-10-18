@@ -207,7 +207,7 @@ export const meetups: Talk[] = [
     event: "Hacktiv8 Technical Workshop",
     resources: [
       {
-        href: "https://github.com/zainfathoni/reliable-tests-with-ai/blob/main/deck.pdf",
+        href: "https://www.zainfathoni.com/reliable-tests-with-ai.html",
         label: "Open slides",
       },
       {
