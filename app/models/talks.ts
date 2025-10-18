@@ -178,6 +178,10 @@ export const meetups: Talk[] = [
         href: "https://www.instagram.com/p/DPVJfrRk6J7/?img_index=2",
         label: "Event link",
       },
+      {
+        href: "https://github.com/zainfathoni/streamlit-trial",
+        label: "GitHub repository",
+      },
     ],
   },
   {
