@@ -7,7 +7,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
 ---
 
-# **Think in JS, Code in Python — with AI**
+# Think in JS, Code in Python — with AI
 
 ### Zain Fathoni
 
@@ -38,9 +38,13 @@ NOTES FOR YOU:
 
 ---
 
+![bg](./assets/most-used-languages.png)
+
+---
+
 ## Why This Talk?
 
-- I’ve been a JS/TS dev for years — React, Remix, Tailwind.
+- I’ve been a JS/TS dev for years — React, Node.js, Remix, etc.
 - Recently I’ve been working in the backend parts of the stack.
   - Ruby on Rails
   - Python for data tasks
