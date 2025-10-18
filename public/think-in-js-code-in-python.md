@@ -488,10 +488,14 @@ ENGAGEMENT TIP:
 
 ## 💻 Live Demo Time
 
-**Goal:** Build a chat dashboard using Streamlit **Mindset:** React
-**Language:** Python **Tool:** Claude Code (AI pair-programmer)
+**Starting from a blank template with React references.**
 
-🧠 → Describe intent 🧩 → Let AI translate ⚙️ → Run it live
+**Goal:** Build a chat dashboard using Streamlit
+**Mindset:** React
+**Language:** Python
+**Tool:** Claude Code (AI pair-programmer)
+
+🧠 → Show React code → 💬 Describe intent → 🤖 Let AI translate → ⚙️ Run it live
 
 <!--
 Notes: Outline the game plan before typing (30s).
@@ -500,164 +504,226 @@ SETUP (before this slide):
 - Terminal open, ready to run `streamlit run app.py`
 - Browser ready to view localhost:8501
 - Claude Code open and visible to audience
-- Have these prompts ready to paste
+- Have React reference files visible for each step (in separate tabs/editor)
+  - react_step_1_basic.jsx
+  - react_step_2_timestamps.jsx
+  - react_step_3_styled.jsx
+- Have REACT_REFERENCE_GUIDE.md as reference
 
 FLOW:
-1. Intro (current slide): "We're thinking in React, coding in Python with AI assistance"
-2. Show app.py running (20s): "This is my starting point—a basic chat app I thought about as React components"
-3. Go back to slides for Step 1
+1. Intro (current slide): "We're thinking in React, coding in Python with AI assistance. Starting from a blank template."
+2. Show app.py running (10s): "This is my starting point—a blank boilerplate ready to build"
+3. Go back to slides for Step 1 - show React reference and live-code
 -->
 
 ---
 
-## Step 1 — Describe the Intent
+## Step 1 — Live Code the Intent
 
-> "Build a simple chat dashboard using Streamlit. It should have a header, a
-> list of messages, and an input box to send new messages."
+**React Reference: `react_step_1_basic.jsx`**
+
+> "Build a simple chat dashboard with state, rendering, and send button."
 
 <!--
-Notes: Show React thinking BEFORE code (1 min).
+Notes: Show React thinking BEFORE code (1-2 min), then live-code (3-4 min).
 
 SPEAKER NOTES:
-"I'm thinking about this as three React components:
+"Look at this React code in react_step_1_basic.jsx. I'm thinking about this as three components:
 - A <Header /> showing 'Chat Dashboard'
 - A <MessageList /> that maps over messages from state
 - An <InputBox /> with an onClick send handler
 
-I'll describe this to Claude Code using React concepts, and it'll translate to Python for me."
+This is how my brain works. Now let's translate it to Python."
 
 ACTION:
-1. (Optional) Show JSX pseudocode in editor first:
-   <App>
-     <Header title="Chat Dashboard" />
-     <MessageList messages={messages} />
-     <InputBox onSend={handleSend} />
-   </App>
+1. SHOW the React file to audience (or have it visible on screen)
+   - Point to: useState([]), messages.map(), onClick handlers
+   - Say: "This is my mental model—stateful, functional, reactive"
 
-2. Then paste this prompt to Claude Code (make it visible):
-   "Build me a chat dashboard with:
-   - A header component showing 'Chat Dashboard'
-   - A message list that maps over messages from state
-   - An input box with a send button (like an onClick handler)
-   - State management for messages (like useState)"
+2. Then describe to Claude Code (make visible):
+   "Look at react_step_1_basic.jsx.
+   - useState([]) → st.session_state for messages
+   - messages.map() → for loop in Python
+   - onClick + onKeyPress → st.button() + st.text_input()
 
-3. Claude generates code → open app.py
-4. Run `streamlit run app.py` → show it working
-5. Point out key lines and their React equivalents:
-   - st.session_state = useState()
-   - for msg in messages = map()
-   - st.button() + st.rerun() = onClick + re-render
+   Build this same logic in app.py using Streamlit."
 
-TIMING: ~4-5 minutes total (slower pace, more explanation)
+3. Claude generates code → copy to app.py
+4. Save → Streamlit auto-reloads → show it working
+5. Point out the mappings side-by-side:
+   - React: useState([]) | Python: if "messages" not in st.session_state
+   - React: messages.map(msg => ...) | Python: for msg in st.session_state.messages
+   - React: st.button() + st.rerun() | Python: onClick + re-render
+
+React→Python Mappings to Highlight:
+- `useState([])` → `st.session_state`
+- `.map()` → `for` loop
+- `onClick` + `onKeyPress` → `st.button()` + `st.text_input()`
+- `.append()` → state update + `st.rerun()`
+
+TIMING: ~4-5 minutes total (show intent, get code, demo, explain mappings)
 
 EXTENDED DEMO NOTES (12-15 min total for all 3 steps):
-- Take time to point out React↔Python mappings
+- Always compare React code to Python result side-by-side
+- Emphasize: "Same pattern, different syntax"
 - If something works perfectly, celebrate it—show audience the working code
 - If there are errors, use them as teaching moments: "Look how AI errors are helpful"
 - Don't rush—this is the centerpiece of your 30-minute talk
+- Audience sees the THINKING process, not just the final code
 -->
 
 ---
 
-## Step 2 — Add Interactivity
+## Step 2 — Add Timestamps & Newest-First
 
-> "Add timestamps and show messages newest first."
+**React Reference: `react_step_2_timestamps.jsx`**
+
+> "Enrich state with timestamps and show newest messages first."
 
 <!--
-Notes: Show state enrichment thinking (1-2 min).
+Notes: Show state enrichment thinking (1 min), then switch to backup or live-code (2-3 min).
 
 SPEAKER NOTES:
 "In React, when I enrich state from simple strings to objects, I add properties.
-In this case, I'm adding a timestamp property to each message object.
-Then I display it using reversed() — just like calling array.reverse() before map()."
+Look at react_step_2_timestamps.jsx—I'm adding a timestamp property.
+Then I display it using reversed() — just like calling array.reverse() before map().
+
+This is state enrichment, a fundamental pattern in React. Now let's see it in Python."
 
 ACTION (choose one):
 
-OPTION A - Live coding (more impressive, if Step 1 went smooth):
-1. Say out loud: "I need to enrich my state structure with timestamps"
-2. Paste to Claude Code (visible):
-   "Modify the app to store messages as objects with {text, timestamp} properties.
+OPTION A - Live coding (if Step 1 went smooth):
+1. SHOW react_step_2_timestamps.jsx to audience
+   - Point to: { text, timestamp } object structure
+   - Point to: [...messages].reverse().map()
+   - Say: "Same pattern, just richer data"
+
+2. Say out loud: "I need to enrich my state structure with timestamps"
+3. Paste to Claude Code (visible):
+   "Look at react_step_2_timestamps.jsx.
+   I want to store messages as objects with {text, timestamp} properties.
    Display them as 'HH:MM:SS — message text'.
-   Show newest messages first (like reversing array before map)."
-3. Claude generates → copy to app.py
-4. Save → Streamlit auto-reloads
-5. Send a message → shows timestamp
-6. Point to the code:
-   msg_obj = {"text": new_message, "timestamp": datetime.now().strftime("%H:%M:%S")}
-   "This is enriching state — like useState with an object instead of a string"
+   Show newest messages first (like reversing array before map).
 
-   for msg_obj in reversed(st.session_state.messages):
-   "This is like messages.reverse().map(msg => ...)"
+   Update app.py with this same logic."
 
-OPTION B - Switch to backup (safer):
+4. Claude generates → copy to app.py
+5. Save → Streamlit auto-reloads
+6. Send a message → shows timestamp
+7. Point to the code side-by-side:
+   React: { text, timestamp } object
+   Python: {"text": new_message, "timestamp": datetime.now().strftime("%H:%M:%S")}
+   "Same structure, different syntax"
+
+   React: [...messages].reverse().map()
+   Python: reversed(st.session_state.messages)
+   "Same pattern—reverse then iterate"
+
+OPTION B - Switch to backup (safer for timing):
 1. In terminal: Ctrl+C
 2. Run: streamlit run app_v2_timestamps.py
 3. Show the updated app with timestamps
-4. Point to the same code sections above
+4. Point to the same code sections and React patterns
 
-TIMING: ~4-5 minutes (extended, slower pace)
+React→Python Mappings to Highlight:
+- Rich state objects: `{ text, timestamp }` → dict with keys
+- `new Date().toLocaleTimeString()` → `datetime.now().strftime("%H:%M:%S")`
+- `[...arr].reverse().map()` → `reversed(st.session_state.messages)` in for loop
+- Accessing properties: `msg.timestamp` → `msg_obj["timestamp"]`
+
+TIMING: ~3-4 minutes total
 
 EXTENDED DEMO TACTICS:
-- After Streamlit updates, take 30 seconds to point out the code changes
+- Show React file and Python result side-by-side
 - Specifically highlight: "Look at this structure—it's the reversed() function, just like array.reverse() in React"
-- If you're live-coding: point out where you got stuck, ask Claude, and show the thinking process
-- This demonstrates AI as your thinking partner, not your replacement
+- Emphasize: "The pattern is universal. Only syntax changes."
+- If live-coding: point out where you got stuck, ask Claude, show the thinking process
 
-FALLBACK: If something breaks, switch to app_v2_timestamps.py backup
+FALLBACK: If something breaks:
 "Ini kenapa kita punya version control! Mari saya tunjukkan versi yang sudah selesai."
 (This is why we have version control! Let me show you the completed version.)
 -->
 
 ---
 
-## Step 3 — Add Visual Polish
+## Step 3 — Visual Polish with Styling
 
-> "Make it look like a chat app with colored message bubbles."
+**React Reference: `react_step_3_styled.jsx`**
+
+> "Add conditional styling with component extraction and role-based bubbles."
 
 <!--
-Notes: Show conditional rendering thinking (1-2 min).
+Notes: Show component extraction thinking (1 min), then show or live-code (2-3 min).
 
 SPEAKER NOTES:
-"Now I'm adding conditional styling — like className={isUser ? 'user' : 'assistant'} in React.
-Instead of CSS classes, I'm using inline styles with Streamlit's st.markdown()."
+"Now I'm adding conditional styling and component extraction.
+Look at react_step_3_styled.jsx—I have a MessageBubble component with conditional className.
+Like className={isUser ? 'user' : 'assistant'} in React.
+
+Let's translate this component pattern to Python."
 
 ACTION (choose based on time/confidence):
 
-OPTION A - Live coding:
-1. Say: "I want conditional styling based on message role"
-2. Paste to Claude Code (visible):
-   "Add conditional styling to messages:
-   - User messages: blue bubbles, aligned right
-   - Assistant messages: gray bubbles, aligned left
-   Like className={isUser ? 'user' : 'assistant'} in React
-   Use st.markdown() with inline HTML/CSS"
-3. Claude generates → copy to app.py
-4. Save → Streamlit reloads
-5. Send messages → see styled bubbles
-6. Point to the conditional logic:
-   color = "#DCF8C6" if is_user else "#E8E8E8"
-   "This is conditional styling — same concept as className conditionals"
+OPTION A - Live coding (if time allows):
+1. SHOW react_step_3_styled.jsx to audience
+   - Point to: MessageBubble component with props
+   - Point to: Conditional className based on role
+   - Point to: CSS-in-JS or inline styles
+   - Say: "Same component thinking—different syntax"
+
+2. Say: "I want to extract message rendering into a function with conditional styling"
+3. Paste to Claude Code (visible):
+   "Look at react_step_3_styled.jsx.
+   Create a render_message() function (like the MessageBubble component).
+   Add conditional styling for user vs assistant:
+   - User messages: green bubbles (#DCF8C6), right-aligned
+   - Assistant messages: gray bubbles (#E8E8E8), left-aligned
+   Like className={isUser ? 'user' : 'assistant'} in React.
+   Use st.markdown() with inline HTML/CSS.
+
+   Update app.py with this component function."
+
+4. Claude generates → copy to app.py
+5. Save → Streamlit reloads
+6. Send messages as both User and Assistant → see styled bubbles
+7. Point to the code side-by-side:
+   React: function MessageBubble({ role, text, timestamp }) { ... }
+   Python: def render_message(timestamp: str, text: str, role: str) -> None: ...
+   "Same pattern—function/component receives props/parameters"
+
+   React: className={isUser ? 'user' : 'assistant'}
+   Python: color = "#DCF8C6" if is_user else "#E8E8E8"
+   "Conditional styling—same logic, different expression"
 
 OPTION B - Switch to backup (recommended for timing):
 1. In terminal: Ctrl+C
 2. Run: streamlit run app_v3_styled.py
 3. Show the fully styled chat app
-4. Point to render_message() function as component extraction example
+4. Demo the role toggle: send as "User", then as "Assistant"
+5. Point to render_message() function as component extraction
 
-TIMING: ~4-5 minutes (extended, slower pace, showmanship)
+React→Python Mappings to Highlight:
+- Component: `<MessageBubble props />` → `render_message(args)` function
+- Conditional classnames: `isUser ? 'bubble--user' : 'bubble--assistant'` → ternary inline CSS
+- Inline styles: `style={{backgroundColor: color}}` → `f"style='background-color: {color}'"`
+- Props: `role={msg.role}` → function parameter
+- Select/dropdown: `<select onChange>` → `st.radio()`
+
+TIMING: ~3-4 minutes total
 
 EXTENDED DEMO TACTICS:
-- After bubbles render, take a moment to let the WOW land
-- "Lihat ini—tidak ada syntax memorization. Hanya intent + AI translation." (Look at this—no syntax memorization. Just intent + AI translation.)
+- After bubbles render, take a moment to let the visual polish land
+- "Lihat ini—tidak ada syntax memorization. Hanya intent + AI translation."
+- (Look at this—no syntax memorization. Just intent + AI translation.)
 - Point to specific lines:
   - color = "#DCF8C6" if is_user else "#E8E8E8"
   "Ini adalah conditional styling dari React className={...?...:...}"
-- Emphasize: "I never memorized st.markdown(). I just described what I wanted, and AI knew how to implement it in Streamlit."
+- Emphasize: "I never memorized st.markdown(). I just described the component pattern, and AI translated it."
 
 KEY POINT TO EMPHASIZE (Bahasa Indonesia):
-"Saya tidak pernah menghafal bagaimana st.markdown() bekerja atau HTML/CSS dalam Streamlit.
-Saya mendeskripsikan konsepnya (conditional styling seperti React className),
-dan Claude menerjemahkannya ke Python."
+"Saya tidak pernah menghafal bagaimana st.markdown() bekerja.
+Saya mendeskripsikan konsepnya (component extraction, conditional styling seperti React),
+dan Claude menerjemahkannya ke Python idioms."
 -->
 
 ---
