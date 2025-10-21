@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@vercel/remix";
+import type { MetaFunction } from "react-router";
 import { Card } from "~/components/Card";
 import { SimpleLayout } from "~/components/SimpleLayout";
 import { projects } from "~/models/projects";

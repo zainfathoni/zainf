@@ -1,6 +1,5 @@
-import { useLoaderData } from "@remix-run/react";
-import type { ActionFunctionArgs } from "@vercel/remix";
-import { json, redirect } from "@vercel/remix";
+import { useLoaderData, redirect, data } from "react-router";
+import type { ActionFunctionArgs } from "react-router";
 import { ButtonLink } from "app/components/Button";
 import { Card } from "app/components/Card";
 import { Container } from "app/components/Container";
@@ -97,7 +96,7 @@ export function loader() {
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
-  return json(getAllPosts(5));
+  return data(getAllPosts(5));
 }
 
 function Excerpt(post: Post) {
@@ -135,17 +134,17 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
   // TODO: show a warning message for errors
   if (response.status !== 200) {
-    const payload = response.json();
+    const payload = await response.json();
     return { payload, formError: "Something went wrong" };
   }
 
-  const data = await response.json();
+  const responseData = await response.json();
 
   if (
-    data.message !== `Address already exists '${email}'` &&
-    data.message !== "Mailing list member has been created"
+    responseData.message !== `Address already exists '${email}'` &&
+    responseData.message !== "Mailing list member has been created"
   ) {
-    return json(data, { status: response.status });
+    return data(responseData, { status: response.status });
   }
 
   return redirect("/thank-you");

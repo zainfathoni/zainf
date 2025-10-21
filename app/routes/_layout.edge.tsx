@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@vercel/remix";
+import type { MetaFunction } from "react-router";
 
 export const config = { runtime: "edge" };
 

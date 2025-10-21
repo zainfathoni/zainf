@@ -1,6 +1,5 @@
-import { useLoaderData } from "@remix-run/react";
-import type { MetaFunction } from "@vercel/remix";
-import { json } from "@vercel/remix";
+import { useLoaderData, data } from "react-router";
+import type { MetaFunction } from "react-router";
 import { Card } from "~/components/Card";
 import { SimpleLayout } from "~/components/SimpleLayout";
 import { getAllPosts, type Post } from "~/models/posts";
@@ -22,7 +21,7 @@ export async function loader() {
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
-  return json(getAllPosts());
+  return data(getAllPosts());
 }
 
 function Excerpt(post: Post) {

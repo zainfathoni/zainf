@@ -1,4 +1,4 @@
-import { redirect, type LoaderFunction } from "@vercel/remix";
+import { redirect, type LoaderFunction } from "react-router";
 import { conferences, meetups } from "~/models/talks";
 
 export const loader: LoaderFunction = ({ params }) => {

@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@vercel/remix";
+import type { MetaFunction } from "react-router";
 import { SimpleLayout } from "app/components/SimpleLayout";
 import { metadata } from "app/models/metadata";
 

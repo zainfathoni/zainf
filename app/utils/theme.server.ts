@@ -1,32 +1,34 @@
-import { createCookieSessionStorage } from "@vercel/remix";
 import type { Theme } from "~/contexts/theme";
 import { isTheme } from "~/contexts/theme";
 
-const sessionSecret = process.env.SESSION_SECRET;
-if (!sessionSecret) {
-  throw new Error("SESSION_SECRET must be set");
-}
-
-const themeStorage = createCookieSessionStorage({
-  cookie: {
-    name: "my_remix_theme",
-    secure: true,
-    secrets: [sessionSecret],
-    sameSite: "lax",
-    path: "/",
-    httpOnly: true,
-  },
-});
-
+// For static site generation, we handle cookies manually
 async function getThemeSession(request: Request) {
-  const session = await themeStorage.getSession(request.headers.get("Cookie"));
+  // Parse cookie manually from request headers
+  const cookieHeader = request.headers.get("Cookie");
+  const cookies = cookieHeader?.split(";").reduce((acc, cookie) => {
+    const [key, value] = cookie.trim().split("=");
+    acc[key] = value;
+    return acc;
+  }, {} as Record<string, string>) || {};
+
+  const theme = cookies["my_react_router_theme"];
+
   return {
     getTheme: () => {
-      const themeValue = session.get("theme");
-      return isTheme(themeValue) ? themeValue : null;
+      return isTheme(theme) ? theme : null;
     },
-    setTheme: (theme: Theme) => session.set("theme", theme),
-    commit: () => themeStorage.commitSession(session),
+    setTheme: async (newTheme: Theme) => {
+      // Return Set-Cookie header value
+      return `my_react_router_theme=${newTheme}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax${
+        process.env.NODE_ENV === "production" ? "; Secure" : ""
+      }`;
+    },
+    commit: async () => {
+      // Return current cookie value
+      return `my_react_router_theme=${theme || ""}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax${
+        process.env.NODE_ENV === "production" ? "; Secure" : ""
+      }`;
+    },
   };
 }
 

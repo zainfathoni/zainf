@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website built with **Remix** and deployed to Vercel. The site features a blog, talks, projects showcase, and uses system. It supports dark/light theme switching and is built with TypeScript and Tailwind CSS.
+This is a personal portfolio website built with **React Router v7 Framework** and deployed to Netlify as a statically generated site. The site features a blog, talks, projects showcase, and uses system. It supports dark/light theme switching and is built with TypeScript, Vite, and Tailwind CSS.
 
 ## Development Commands
 
@@ -15,10 +15,10 @@ pnpm install
 # Start development server
 pnpm run dev
 
-# Build for production
+# Build for production (static site generation)
 pnpm run build
 
-# Start production server
+# Preview production build locally
 pnpm run start
 
 # Type checking
@@ -28,10 +28,11 @@ pnpm run typecheck
 ## Architecture
 
 ### Framework & Routing
-- **Remix** with file-based routing in `app/routes/`
+- **React Router v7 Framework** with file-based routing in `app/routes/`
 - Route convention: `_layout.*` files provide nested layouts
 - MDX support for blog posts with `rehype-highlight` for code syntax highlighting
-- Server-side rendering with TypeScript
+- Static site generation (SSG) with prerendering configured in `vite.config.ts`
+- Built with Vite for fast development and optimized production builds
 
 ### Theme System
 - Custom theme context (`app/contexts/theme.tsx`) with dark/light mode support
@@ -59,7 +60,8 @@ pnpm run typecheck
 - `app/root.tsx`: Main app wrapper with theme provider and global layout
 - `app/routes/_layout.tsx`: Base layout for most pages
 - `app/tailwind.css`: Global styles and Tailwind imports
-- `remix.config.js`: MDX configuration with syntax highlighting
+- `vite.config.ts`: Vite configuration with React Router plugin and prerender settings
+- `netlify.toml`: Netlify deployment configuration
 
 ## Content Management
 - Blog posts as MDX files in `app/routes/blog.*.mdx`
@@ -69,5 +71,7 @@ pnpm run typecheck
 ## Development Notes
 - Uses `~/*` path alias for `app/*` imports
 - Volta for Node.js version management (v18.19.0)
-- ESLint with Remix configuration for code quality
+- ESLint for code quality
 - Bundle targeting ES2022 with React JSX transform
+- Deployed to Netlify with static site generation
+- Prerendered routes configured in `vite.config.ts`
