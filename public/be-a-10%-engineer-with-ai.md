@@ -537,11 +537,6 @@ Call to action: "Pick one workflow TODAY. Apply AI. Measure. Iterate."
 
 ## 🙏 Thank You
 
-**Zain Fathoni**
+🔗 **Slides:** [zainf.dev/10-percent-engineer](https://zainf.dev/10-percent-engineer)
 
-- [@zainfathoni](https://twitter.com/zainfathoni)
-- [zainfathoni.com](https://zainfathoni.com)
-
-🔗 **Slides:**
-
-- [zainf.dev/10-percent-engineer](https://zainf.dev/10-percent-engineer)
+![w:400](assets/10-percent-engineer-qr.png)
