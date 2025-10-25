@@ -20,7 +20,7 @@ Mention that this might sound impossible, but by the end of this talk, you'll se
 
 ---
 
-## Introduction
+## 👋 Introduction
 
 ![bg left:33%](assets/zain-1280.jpeg)
 
@@ -34,7 +34,7 @@ Mention that this might sound impossible, but by the end of this talk, you'll se
 
 ---
 
-## The Phenomenon
+## ✨ The Phenomenon
 
 ![bg right:40%](assets/working-on-the-train.png)
 
@@ -63,7 +63,7 @@ Then: "The answer might surprise you. It's not about IQ or luck—it's about lev
 
 ---
 
-## The Data
+## 📊 The Data
 
 **4,867 developers:** AI coding assistants → **+26% more PRs per week**
 
@@ -83,7 +83,7 @@ Introduce the idea of 10% engineer as achievable: "This is why the 10% engineer 
 
 ---
 
-## Today's Journey
+## 🗺️ Today's Journey
 
 1. Why this matters **now**
 2. What AI changes (and what it doesn't)
@@ -108,7 +108,7 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ---
 
-## What is 10x Engineer?
+## 🚀 What is 10x Engineer?
 
 > It's an engineer who's **10 times better** at their job than their peers.
 
@@ -116,7 +116,7 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ---
 
-### What is 10% Engineer?
+### 💡 What is 10% Engineer?
 
 > 10% engineer is a **10x engineer** who has **high degree of efficiency** thus
 > only requiring to work 10% of the time to accomplish similar result
@@ -126,7 +126,7 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ---
 
-### Be a 10x Engineer
+### 🎯 Be a 10x Engineer
 
 ![bg right:56%](assets/generalist-archetype.png)
 
@@ -139,7 +139,7 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ---
 
-### Be Insanely Efficient
+### ⚡ Be Insanely Efficient
 
 ![h:350](assets/10-engineer-flywheel.webp)
 
@@ -147,7 +147,7 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ---
 
-## Why Now?
+## ⏰ Why Now?
 
 **The AI Shift** has inverted the difficulty landscape:
 
@@ -169,7 +169,7 @@ The key: "If you're still doing easy tasks manually, you're leaving 10x efficien
 
 ---
 
-## How Zapier Measure AI Fluency
+## 📈 How Zapier Measure AI Fluency
 
 ![h:800](assets/ai-fluency.jpeg)
 
@@ -187,7 +187,7 @@ But you MUST understand what you wrote
 
 ---
 
-## Introducing: AI-Assisted Engineering
+## 🤖 Introducing: AI-Assisted Engineering
 
 ![h:400](./assets/vibe-coding-ai-assisted-engineering.webp)
 
@@ -211,7 +211,7 @@ But you MUST understand what you wrote
 
 ---
 
-## Why Expertise Matters
+## 🎓 Why Expertise Matters
 
 **What expertise brings:**
 
@@ -229,7 +229,7 @@ But you MUST understand what you wrote
 
 ---
 
-## The Path Forward
+## 🛤️ The Path Forward
 
 **The trajectory:**
 
@@ -247,7 +247,7 @@ But you MUST understand what you wrote
 
 ---
 
-## 3 Core Habits to Unlock Efficiency
+## 🔑 3 Core Habits to Unlock Efficiency
 
 1. **Identify** leverage points (where does your time go?)
 2. **Automate** with AI (build your stack)
@@ -265,7 +265,7 @@ Emphasize iteration: "You don't need to master all 3 at once. Start with one, th
 
 ---
 
-## Habit 1: Find Your Leverage Points
+## 🎯 Habit 1: Find Your Leverage Points
 
 **Week 1 Time Audit - Example:**
 
@@ -291,7 +291,7 @@ Ask: "What would you do with 8 extra hours a week?"
 
 ---
 
-## Habit 2: Master Your AI Tool
+## 🛠️ Habit 2: Master Your AI Tool
 
 | Task                     | How I Use Claude Code | Time Saved |
 | ------------------------ | --------------------- | ---------- |
@@ -326,13 +326,51 @@ The lesson: "Start with ONE tool. Master it. Then decide if you need more."
 
 ---
 
-## Tip: Always use **Plan Mode**
+## 📊 Habit 3: Measure & Iterate
+
+## 💰 Tip 1: Optimize Token Usage & Costs
+
+- AI tools cost money (personal budget or company spend)
+- Better prompts = fewer tokens = better results + lower costs
+
+**Track your usage:**
+
+- Run `ccusage` in your project to see token consumptions history
+- Check [claude.ai/settings/usage](https://claude.ai/settings/usage) for overall usage
+
+→ **Smart usage = sustainable AI workflow**
+
+<!--
+Speaker notes:
+"Let's talk about something practical: costs."
+"Whether you're paying yourself or your company is paying, AI tools aren't free."
+"The good news: optimizing for cost also optimizes for results."
+
+How to track:
+"In Claude Code, run `ccusage` to see your token consumption for the current session."
+"Check claude.ai/settings/usage to see your overall monthly usage and costs."
+
+How to optimize:
+"Be specific and concise in your prompts. Rambling prompts waste tokens and confuse the AI."
+"Use Plan Mode - it lets you review the plan before executing, saving you from costly mistakes."
+"Provide relevant context only. Don't dump your entire codebase - be strategic about what context matters."
+"Iterate on your prompts. A well-refined prompt gets you the right answer in one shot instead of 5 back-and-forths."
+
+The win-win:
+"Better prompts = fewer tokens = lower costs AND better results."
+"This is what 10% engineers do - they're strategic about everything, including AI costs."
+"A sustainable AI workflow is one you can afford to maintain long-term."
+-->
+
+---
+
+## ✅ Tip 2: Always use **Plan Mode**
 
 ![h:500](assets/plan-mode.png)
 
 ---
 
-## Pitfalls to Avoid
+## ⚠️ Pitfalls to Avoid
 
 1. **Over-reliance** without review
 2. **NOT learning** - losing understanding of your code
@@ -347,7 +385,7 @@ Speaker notes:
 
 ---
 
-## Case Study: The Never Ending Bug
+## 🐛 Case Study: The Never Ending Bug
 
 **What happened:**
 
@@ -371,14 +409,14 @@ The key: "Treat AI like a junior dev. Trust, but verify."
 
 ---
 
-## Case Study: The Forgotten Function
+## 🤦 Case Study: The Forgotten Function
 
-- ❓ Anyone knows `setTimeout` in JavaScript?
-- 🙋🏻 How to make it repeat instead of once?
+* ❓ Anyone knows `setTimeout` in JavaScript?
+* 🙋🏻 How to make it repeat instead of once?
 
-### Sad fact
+### 😢 Sad fact
 
-- 🤕 I just failed an interview because I forgot that `setInterval` exists.
+* 🤕 I just failed an interview because I forgot that `setInterval` exists.
 
 ---
 
@@ -393,9 +431,9 @@ Ask Claude Code to use **Learning mode** → `TODO(human)` markers show where yo
 
 ---
 
-## Your 90-Day Action Plan
+## 📅 Your 90-Day Action Plan
 
-### Month 1: Foundation
+### 🏗️ Month 1: Foundation
 
 **Week 1:** Time audit + identify leverage points
 
@@ -419,14 +457,14 @@ Speaker notes:
 
 ---
 
-## Months 2 & 3: Scale & Multiply
+## 📈 Months 2 & 3: Scale & Multiply
 
-### Month 2: Scale
+### 📈 Month 2: Scale
 
 - Week 5-6: Add 2 more AI workflows
 - Week 7-8: Redesign one major process end-to-end
 
-### Month 3: Multiply
+### 🔄 Month 3: Multiply
 
 - Week 9-10: Optimize & refine all workflows
 - Week 11-12: Teach your team (multiply impact)
@@ -447,7 +485,7 @@ Speaker notes:
 
 ---
 
-## Start Today
+## 🚀 Start Today
 
 **Quick wins (each <1 hour):**
 
@@ -473,7 +511,7 @@ Action: "Raise your hand if you'll commit to 2 of these this week."
 
 ---
 
-## Key Takeaways
+## 💡 Key Takeaways
 
 **AI shifts the difficulty landscape** → Efficiency matters more than ever
 
@@ -501,7 +539,7 @@ Call to action: "Pick one workflow TODAY. Apply AI. Measure. Iterate."
 
 ---
 
-## Thank You
+## 🙏 Thank You
 
 **Zain Fathoni**
 
@@ -510,4 +548,4 @@ Call to action: "Pick one workflow TODAY. Apply AI. Measure. Iterate."
 
 🔗 **Slides:**
 
-- [zainf.dev/10-percent-engineer-with-ai](https://zainf.dev/be-a-10-percent-engineer-with-ai)
+- [zainf.dev/10-percent-engineer](https://zainf.dev/be-a-10-percent-engineer)
