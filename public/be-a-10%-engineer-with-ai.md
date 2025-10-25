@@ -9,7 +9,11 @@ marp: true
 
 # Be a **10% Engineer** with AI
 
-Working ~10% of the time, achieving ~100% of the output  
+Working ~10% of the time, achieving ~100% of the output
+
+## Jatim Developer Day 2025
+
+### Sea of Tech Talent
 
 <!--
 Speaker notes:
@@ -91,8 +95,7 @@ Introduce the idea of 10% engineer as achievable: "This is why the 10% engineer 
 4. **Pitfalls** to avoid
 5. Your **action plans**
 
-→ **North star:** 10% time = 100% output → **Reality:** 20-80% time saved is
-already huge
+→ **North star:** 10% time = 100% output → **Reality:** 20-80% time saved is already huge
 
 <!--
 Speaker notes:
@@ -118,9 +121,7 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ### 💡 What is 10% Engineer?
 
-> 10% engineer is a **10x engineer** who has **high degree of efficiency** thus
-> only requiring to work 10% of the time to accomplish similar result
-> **expected** out of them.
+> 10% engineer is a **10x engineer** who has **high degree of efficiency** thus only requiring to work 10% of the time to accomplish similar result **expected** out of them.
 
 - <https://newsletter.lwastuargo.com/p/what-is-10-engineer>
 
@@ -328,15 +329,14 @@ The lesson: "Start with ONE tool. Master it. Then decide if you need more."
 
 ## 📊 Habit 3: Measure & Iterate
 
-## 💰 Tip 1: Optimize Token Usage & Costs
-
 - AI tools cost money (personal budget or company spend)
 - Better prompts = fewer tokens = better results + lower costs
 
 **Track your usage:**
 
 - Run `ccusage` in your project to see token consumptions history
-- Check [claude.ai/settings/usage](https://claude.ai/settings/usage) for overall usage
+- Check [claude.ai/settings/usage](https://claude.ai/settings/usage) for overall
+  usage
 
 → **Smart usage = sustainable AI workflow**
 
@@ -364,7 +364,7 @@ The win-win:
 
 ---
 
-## ✅ Tip 2: Always use **Plan Mode**
+## ✅ Tip: Always use **Plan Mode**
 
 ![h:500](assets/plan-mode.png)
 
@@ -411,12 +411,12 @@ The key: "Treat AI like a junior dev. Trust, but verify."
 
 ## 🤦 Case Study: The Forgotten Function
 
-* ❓ Anyone knows `setTimeout` in JavaScript?
-* 🙋🏻 How to make it repeat instead of once?
+- ❓ Anyone knows `setTimeout` in JavaScript?
+- 🙋🏻 How to make it repeat instead of once?
 
 ### 😢 Sad fact
 
-* 🤕 I just failed an interview because I forgot that `setInterval` exists.
+- 🤕 I just failed an interview because I forgot that `setInterval` exists.
 
 ---
 
@@ -515,11 +515,9 @@ Action: "Raise your hand if you'll commit to 2 of these this week."
 
 **AI shifts the difficulty landscape** → Efficiency matters more than ever
 
-**BUT: You MUST understand what you wrote** → Avoid VIBE Debugging, practice
-AI-Assisted Engineering
+**BUT: You MUST understand what you wrote** → Avoid VIBE Debugging, practice AI-Assisted Engineering
 
-**The path:** 3 habits (Identify, Automate, Measure) + avoid 4 pitfalls + 90-day
-plan
+**The path:** 3 habits (Identify, Automate, Measure) + avoid 4 pitfalls + 90-day plan
 
 → **Even 20-80% time saved is already huge**
 
