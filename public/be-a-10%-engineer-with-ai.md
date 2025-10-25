@@ -212,17 +212,11 @@ But you MUST understand what you wrote
 
 ## 🎓 Why Expertise Matters
 
-**What expertise brings:**
+**Expertise enables AI leverage:**
 
-- Domain knowledge, pattern recognition, judgment, trade-offs, system thinking
-- You ask good questions, choose right abstractions, understand context
-- AI generates options → **YOU decide** which path makes sense
-
-**How expertise leverages AI:**
-
-- Frame problems, break into sub-problems, assess options, apply constraints
-- AI codes, reduces repetitive work → **You interpret**, catch edge cases, know
-  when to trust
+- Good judgment: frame problems, assess options, decide which path matters
+- Pattern recognition: spot edge cases, catch what AI misses
+- System thinking: understand context, ask right questions, validate results
 
 → **Without expertise, AI is just a faster way to fail**
 
@@ -230,16 +224,10 @@ But you MUST understand what you wrote
 
 ## 🛤️ The Path Forward
 
-**The trajectory:**
-
-- Tools raise the ceiling of what engineers can do
-- AI frees you to focus on higher-level tasks
-- Ramp your core capabilities → use AI to accelerate reach
-
 **Better expertise = better AI partnership:**
 
+- Tools raise the ceiling of what you can do
 - Rich skillset → better feedback → better AI contribution
-- Prompt design, context engineering, constraints, validation
 - Black-box oracle = misuse risk. **Critical eye remains vital.**
 
 → **Expertise is the foundation. AI is the amplifier.**
@@ -409,12 +397,12 @@ The key: "Treat AI like a junior dev. Trust, but verify."
 
 ## 🤦 Case Study: The Forgotten Function
 
-- ❓ Anyone knows `setTimeout` in JavaScript?
-- 🙋🏻 How to make it repeat instead of once?
+* ❓ Anyone knows `setTimeout` in JavaScript?
+* 🙋🏻 How to make it repeat instead of once?
 
 ### 😢 Sad fact
 
-- 🤕 I just failed an interview because I forgot that `setInterval` exists.
+* 🤕 I just failed an interview because I forgot that `setInterval` exists.
 
 ---
 
