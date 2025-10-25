@@ -11,9 +11,7 @@ marp: true
 
 Working ~10% of the time, achieving ~100% of the output
 
-## Jatim Developer Day 2025
-
-### Sea of Tech Talent
+![w:200](assets/jdd.jpeg)
 
 <!--
 Speaker notes:
@@ -546,4 +544,4 @@ Call to action: "Pick one workflow TODAY. Apply AI. Measure. Iterate."
 
 🔗 **Slides:**
 
-- [zainf.dev/10-percent-engineer](https://zainf.dev/be-a-10-percent-engineer)
+- [zainf.dev/10-percent-engineer](https://zainf.dev/10-percent-engineer)
