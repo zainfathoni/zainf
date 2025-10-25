@@ -174,6 +174,10 @@ The key: "If you're still doing easy tasks manually, you're leaving 10x efficien
 
 ---
 
+![bg](assets/gibran-ai.jpg)
+
+---
+
 ## ⚠️ VIBE Coding vs VIBE Debugging
 
 ![bg right:50%](./assets/vibe-coding-vs-vibe-debugging.png)
