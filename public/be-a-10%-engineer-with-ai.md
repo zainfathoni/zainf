@@ -40,11 +40,8 @@ Mention that this might sound impossible, but by the end of this talk, you'll se
 
 ![bg right:40%](assets/working-on-the-train.png)
 
-Yesterday I worked for ~3 hours on the train. By the time I arrived I was done
-for the day.
-
-**Ever notice a coworker who spends less time working** **yet delivers more
-results?**
+Ever notice a coworker who spends less time working yet delivers more
+results?
 
 <!--
 Speaker notes:
