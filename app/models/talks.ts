@@ -9,6 +9,23 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "jdd-2025-10-percent-engineer",
+    date: "2025-10-25",
+    title: "Be a 10% Engineer with AI",
+    description: "Working ~10% of the time, achieving ~100% of the output",
+    event: "Jatim Developer Day 2025",
+    resources: [
+      {
+        href: "https://zainf.dev/10-percent-engineer",
+        label: "Open slides",
+      },
+      {
+        href: "https://www.instagram.com/p/DQEzbMMElW9/?img_index=1",
+        label: "Event link",
+      },
+    ],
+  },
+  {
     slug: "gdg-devfest-2024-yogyakarta",
     date: "2024-12-01",
     title: "Embracing #nobuild in Modern Web",
