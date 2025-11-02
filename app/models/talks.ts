@@ -180,6 +180,24 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "gdg-jogja-road-to-devfest-2025",
+    date: "2025-11-02",
+    title: "MCP Fundamentals: Building a Frontend for LLMs",
+    description:
+      "Learn the fundamentals of building MCP as a frontend for LLMs.",
+    event: "Road to DevFest Jogjakarta 2025 x TLab",
+    resources: [
+      {
+        href: "https://zainf.dev/mcp-fundamentals",
+        label: "Open slides",
+      },
+      {
+        href: "https://www.instagram.com/p/DQEgzN8ErR0/",
+        label: "Event link",
+      }
+    ]
+  },
+  {
     slug: "pyjogja-2025-think-js-code-python",
     date: "2025-10-18",
     title: "Think in JS, Code in Python — with AI",

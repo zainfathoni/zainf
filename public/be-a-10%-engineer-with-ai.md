@@ -40,8 +40,7 @@ Mention that this might sound impossible, but by the end of this talk, you'll se
 
 ![bg right:40%](assets/working-on-the-train.png)
 
-Ever notice a coworker who spends less time working yet delivers more
-results?
+Ever notice a coworker who spends less time working yet delivers more results?
 
 <!--
 Speaker notes:
@@ -90,7 +89,8 @@ Introduce the idea of 10% engineer as achievable: "This is why the 10% engineer 
 4. **Pitfalls** to avoid
 5. Your **action plans**
 
-→ **North star:** 10% time = 100% output → **Reality:** 20-80% time saved is already huge
+→ **North star:** 10% time = 100% output → **Reality:** 20-80% time saved is
+already huge
 
 <!--
 Speaker notes:
@@ -116,7 +116,9 @@ Transition: "Now let's dive into why this matters right now—and how AI has cha
 
 ### 💡 What is 10% Engineer?
 
-> 10% engineer is a **10x engineer** who has **high degree of efficiency** thus only requiring to work 10% of the time to accomplish similar result **expected** out of them.
+> 10% engineer is a **10x engineer** who has **high degree of efficiency** thus
+> only requiring to work 10% of the time to accomplish similar result
+> **expected** out of them.
 
 - <https://newsletter.lwastuargo.com/p/what-is-10-engineer>
 
@@ -398,18 +400,19 @@ The key: "Treat AI like a junior dev. Trust, but verify."
 
 ## 🤦 Case Study: The Forgotten Function
 
-* ❓ Anyone knows `setTimeout` in JavaScript?
-* 🙋🏻 How to make it repeat instead of once?
+- ❓ Anyone knows `setTimeout` in JavaScript?
+- 🙋🏻 How to make it repeat instead of once?
 
 ### 😢 Sad fact
 
-* 🤕 I just failed an interview because I forgot that `setInterval` exists.
+- 🤕 I just failed an interview because I forgot that `setInterval` exists.
 
 ---
 
 ## 🎓 Learn by Doing with Claude Code
 
-Ask Claude Code to use **Learning mode** → `TODO(human)` markers show where you code → You write the logic, Claude guides
+Ask Claude Code to use **Learning mode** → `TODO(human)` markers show where you
+code → You write the logic, Claude guides
 
 🤖 AI: boilerplate + complexity 👤 You: core logic + decisions
 
@@ -502,9 +505,11 @@ Action: "Raise your hand if you'll commit to 2 of these this week."
 
 **AI shifts the difficulty landscape** → Efficiency matters more than ever
 
-**BUT: You MUST understand what you wrote** → Avoid VIBE Debugging, practice AI-Assisted Engineering
+**BUT: You MUST understand what you wrote** → Avoid VIBE Debugging, practice
+AI-Assisted Engineering
 
-**The path:** 3 habits (Identify, Automate, Measure) + avoid 4 pitfalls + 90-day plan
+**The path:** 3 habits (Identify, Automate, Measure) + avoid 4 pitfalls + 90-day
+plan
 
 → **Even 20-80% time saved is already huge**
 
@@ -526,6 +531,7 @@ Call to action: "Pick one workflow TODAY. Apply AI. Measure. Iterate."
 
 ## 🙏 Thank You
 
-🔗 **Slides:** [zainf.dev/10-percent-engineer](https://zainf.dev/10-percent-engineer)
+🔗 **Slides:**
+[zainf.dev/10-percent-engineer](https://zainf.dev/10-percent-engineer)
 
 ![w:400](assets/10-percent-engineer-qr.png)
