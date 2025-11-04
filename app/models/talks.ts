@@ -37,6 +37,10 @@ export const conferences: Talk[] = [
         href: "https://zainf.dev/fest-2024-yogyakarta",
         label: "Open slides",
       },
+      {
+        href: "https://gdg.community.dev/events/details/google-gdg-jogjakarta-presents-devfest-yogyakarta-2024-responsible-ai/",
+        label: "Event link",
+      },
     ],
   },
   {
@@ -50,6 +54,10 @@ export const conferences: Talk[] = [
       {
         href: "https://zainf.dev/fest-2024-semarang",
         label: "Open slides",
+      },
+      {
+        href: "https://gdg.community.dev/events/details/google-gdg-semarang-presents-devfest-2024-semarang/",
+        label: "Event link",
       },
     ],
   },
