@@ -12,7 +12,7 @@ Always add blank lines before and after these elements
 - Tables
 - Block quotes
 
-### Example:
+### Example
 
 Some text here
 
@@ -49,7 +49,7 @@ const x = 1;
 const x = 1;
 ```
 
-### Common Languages:
+### Common Languages
 
 - `javascript` / `js` - JavaScript
 - `python` / `py` - Python
