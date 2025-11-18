@@ -1,3 +1,4 @@
 {
-  "ul-style": false
+  "ul-style": false,
+  "line-length": false
 }
