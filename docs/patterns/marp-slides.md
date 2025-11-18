@@ -623,6 +623,47 @@ But you MUST understand what you wrote
 - :brain: Intelligent design
 ```
 
+**Fragmented Lists (for progressive reveal):**
+
+Use asterisk (`*`) instead of hyphen (`-`) to create progressive reveals during presentation:
+
+```markdown
+* First point (reveals on click 1)
+* Second point (reveals on click 2)
+* Third point (reveals on click 3)
+```
+
+**Use cases:**
+
+- Interactive Q&A sequences where you reveal answers progressively
+- Building suspense or narrative tension
+- Audience engagement (pause between reveals for responses)
+- Step-by-step reveals where timing matters
+- Combining with emoji for emphasis on interactive moments
+
+**Example with emoji (Q&A pattern):**
+
+```markdown
+## 🤦 Case Study: The Forgotten Function
+
+* ❓ Anyone knows `setTimeout` in JavaScript?
+* 🙋🏻 How to make it repeat instead of once?
+
+### 😢 Sad fact
+
+* 🤕 I just failed an interview because I forgot that `setInterval` exists.
+```
+
+**Best Practices:**
+
+- Use fragmented lists sparingly (every 5-7 slides max) to maintain pacing
+- Combine with emoji bullets for visual emphasis and clarity
+- Ideal for case studies, lessons learned, and interactive moments
+- Not recommended for standard bullet points - use standard lists instead
+- Provide speaker notes about timing expectations
+
+**Reference:** [Marp Fragmented List Syntax](https://marpit.marp.app/fragmented-list)
+
 ### Code Blocks
 
 **JavaScript/React Example:**

@@ -181,7 +181,7 @@ The key: "If you're still doing easy tasks manually, you're leaving 10x efficien
 
 ![bg right:50%](./assets/vibe-coding-vs-vibe-debugging.png)
 
-**AI can help you write code fast**
+Key point: **AI can help you write code fast**
 
 But you MUST understand what you wrote
 
@@ -400,12 +400,12 @@ The key: "Treat AI like a junior dev. Trust, but verify."
 
 ## 🤦 Case Study: The Forgotten Function
 
-- ❓ Anyone knows `setTimeout` in JavaScript?
-- 🙋🏻 How to make it repeat instead of once?
+* ❓ Anyone knows `setTimeout` in JavaScript?
+* 🙋🏻 How to make it repeat instead of once?
 
 ### 😢 Sad fact
 
-- 🤕 I just failed an interview because I forgot that `setInterval` exists.
+* 🤕 I just failed an interview because I forgot that `setInterval` exists.
 
 ---
 
@@ -485,7 +485,7 @@ Speaker notes:
 - :white_check_mark: Draft ONE AI prompt for a common task
 - :white_check_mark: Set weekly review habit (Friday, 15 mins)
 
-**Pick 2-3 to do this week**
+Action: **Pick 2-3 to do this week**
 
 <!--
 Speaker notes:
