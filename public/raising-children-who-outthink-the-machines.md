@@ -7,12 +7,14 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 ---
 
-# Raising Children Who Outthink the Machines
+# Raising Children 🧑‍🧒‍🧒
 
-## How AI can improve your kids' learning experience
+## Who Outthink the Machines 🤖
 
-Indonesia Software Developer Conference 2025
-Zain Fathoni
+![w:200](assets/idsw-2025.jpg)
+
+**Zain Fathoni**
+Senior Software Engineer at BookThatApp
 
 ---
 
@@ -22,34 +24,26 @@ Zain Fathoni
 
 <https://www.zainfathoni.com>
 
-- :hammer_and_wrench: Software engineer (full-stack)
-- :family: Homeschooling parent of three
-- :robot: AI enthusiast & daily experimenter
-- :globe_with_meridians: Jember → Bandung → SG → Jogja
+* :family: Parent of three :girl::boy::girl:
+* :school: Homeschooling family :books:
+* :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend :arrow_right: Fullstack
+* :round_pushpin: Jember :arrow_right: Bandung :arrow_right: :singapore: SG :arrow_right: Jogja
+* :airplane: Jogja :arrow_right: :malaysia: KL :arrow_right: :singapore: SG :arrow_right: :indonesia: Jakarta
 
 ---
 
-## 📚 Agenda
-
-1. **The Parent Anxiety** — Your fears are valid
-2. **Resilience Mindset** — We've adapted before
-3. **Three Core Strategies**
-   - Support learning
-   - Build literacy
-   - Preserve connection
-4. **Practical Examples** — What we do at home
-5. **Your Action Plan** — Start this week
+![bg fit](assets/js-luwansa-hotel.jpg)
 
 ---
 
-## The AI Dilemma: Two Visions
+## AI Dilemma ⚖️: Dystopia 🤖 or Utopia 🌍?
 
-### 🤖 vs 🌍 Dystopian or Utopian?
+![bg right](assets/jokowi-ai-revolution.webp)
 
 There are two schools of thought about AI's future:
 
-- **Dystopian**: AI will take over humanity
-- **Utopian**: Humanity will survive and thrive
+* **Dystopian**: AI will take over humanity
+* **Utopian**: Humanity will survive and thrive
 
 ---
 
@@ -58,6 +52,7 @@ There are two schools of thought about AI's future:
 > The utopian future is possible—**but only if we raise resilient children.**
 
 Human resilience has evolved throughout history:
+
 - TV era → we adapted
 - Internet era → we adapted
 - Smartphone era → we adapted
@@ -66,72 +61,64 @@ Human resilience has evolved throughout history:
 
 ---
 
-## The Parent Anxiety
-
-### 🤔 Three Fears
-
-- Will AI take my child's **future job**?
-- Will screens **destroy their focus**?
-- Will AI **replace thinking** instead of improving it?
+![bg](assets/gibran-ai.jpg)
 
 ---
 
-### 💡 The Deeper Truth
-
-> Screens steal **attention**.
-> AI steals **cognition**—your child's ability to think.
-
-Because AI thinks like a human, we instinctively delegate our thinking to it. That's the real danger.
-
-Our job is to raise **humans** who think critically alongside AI, not through it.
-
-**Lifelong learners > lifelong scrollers.**
+![bg fit](assets/children-and-gadgets.png)
 
 ---
 
 ## Gen Alpha: Digital Natives Facing AI
 
-### 📱 The Gen Alpha Reality
+### 📱 The Reality
 
-Gen Alpha have never known a world without interactive screens and connectivity.
+Gen Alpha never knew life without screens—speech delays, attention spans, addiction are real.
 
-**The negative impacts are real:**
-- Speech delays
-- Shortened attention spans
-- Addiction to digital stimulation
-
-But here's the key: **Humanity adapted before. We can adapt again.**
+But humanity adapted before. **We can adapt again.**
 
 ---
 
-### 🔄 The Pattern: Problem → Guidance → Resilience
-
-| Era            | The Problem              | Our Response                 | Result                  |
-| -------------- | ------------------------ | ---------------------------- | ----------------------- |
-| **TV**         | Attention-grabbing       | Set limits + choose content  | Kids learned & played   |
-| **Internet**   | Information overload     | Teach critical thinking      | Kids created & explored |
-| **Smartphones**| Addiction & distraction  | Manage usage + model behavior| Kids adapted with boundaries |
-| **AI**         | Cognition theft          | ??? (This is our challenge)  | TBD—depends on us       |
-
-→ **The difference with AI:** It's not just stealing attention—it's stealing thinking itself.
+![bg fit](assets/kids-screen-time-1.png)
 
 ---
 
-## Strategy 1: Make Learning Joyful
-
-### 📖 The Problem with Shortcuts
-
-If your child uses AI to skip thinking:
-
-- Math becomes "paste the answer"
-- Learning becomes outsourcing
-- Cognition gets stolen
-
-**That's not supporting learning. That's enabling cognitive atrophy.**
+![bg fit](assets/kids-screen-time-2.png)
 
 ---
 
-### 🎯 The Right Way: Learning Tools, Not Answer Machines
+### 🔄 The Pattern
+
+| Era             | Problem                 | Response                |
+| --------------- | ----------------------- | ----------------------- |
+| **TV**          | Attention-grabbing      | Set limits + content    |
+| **Internet**    | Information overload    | Teach critical thinking |
+| **Smartphones** | Addiction & distraction | Manage + model behavior |
+| **AI**          | Cognition theft         | ???                     |
+
+**The pattern:** Problem → Response → Resilience.
+
+**The question:** What's our response to AI?
+
+---
+
+![bg fit](assets/outsourcing-your-brain.png)
+
+---
+
+## 1️⃣ Digital & AI Literacy
+
+### 📖 Literacy Starts with Intent
+
+AI to skip thinking → cognitive atrophy
+
+AI to understand better → real learning
+
+**Literacy = knowing the difference.**
+
+---
+
+### 🎯 Know Your Tools: Learning Tools, Not Answer Machines
 
 **Old way:**
 Student → Textbook → Confusion → Give up
@@ -139,32 +126,30 @@ Student → Textbook → Confusion → Give up
 **With AI used correctly:**
 Student → Ask AI → **Understand better** → Try again → **Own the learning**
 
-The difference? **Your child must do the thinking, not the AI.**
+**This is literacy:** Understanding how tools should be used.
 
 ---
 
-### 🎓 Tools That Make Learning Joyful (Not Lazy)
+### 🎓 Tools Designed for Learning
 
 **ChatGPT Study Mode** and **Claude Learning Mode** are built for this:
 
 - AI explains concepts multiple ways
 - Guides learning, doesn't provide answers
 - Students work at their own pace
-- Transforms boredom into engagement
+- Designed to support, not replace, thinking
 
-→ **Learning becomes joyful because your child owns it.**
+→ **Being literate means knowing these tools exist and how they work.**
 
 ---
 
-## Strategy 2: Build Literacy
+## 2️⃣ Critical Thinking
 
 ### 🧠 Critical Thinking Matters Most
 
-> Not just knowing **what** is right, but **why**.
+Not just knowing **what** is right, but **why**.
 
-AI can answer any question.
-
-But can your child:
+Can your child:
 
 - Challenge the answer?
 - Detect hidden assumptions?
@@ -186,49 +171,23 @@ But can your child:
 
 ---
 
-### 🎯 Digital Literacy in Practice
-
-- Understand what AI can vs cannot do
-- Know the difference: **Information** (what) vs **Understanding** (why)
-- Recognize: **Speed** is not **Wisdom**
-- Manage screen time intentionally, not fearfully
-
-→ **Kids become informed users, not passive consumers.**
-
----
-
-## Strategy 3: Preserve Human Connection
+## 3️⃣ Communication & Collaboration
 
 ### ⚠️ The AI Delusion Problem
 
 AI is **confident even when wrong.**
 
-Your child reads: "The capital of Indonesia is Surabaya" (it's not—it's Jakarta).
+Your child reads: "The capital of Indonesia is Surabaya" (wrong—it's Jakarta). They believed it.
 
-AI said it clearly. It sounded right. Your child believed it.
-
-**You can't avoid this.** Gen Alpha can't avoid AI any more than they can avoid screens.
-
-**But parents can guide them.**
+**You can't avoid this. But parents can guide them.**
 
 ---
 
 ### 👨‍👩‍👧‍👦 AI Should Strengthen Family Bonds
 
-**The Wrong Way:**
+**Wrong:** Kid uses AI alone → Parent unaware → Wrong answers believed
 
-Kid: "I have homework"
-→ Kid uses AI alone
-→ Parent unaware
-→ Kid believes wrong answers
-
-**The Right Way:**
-
-Kid: "I have homework"
-→ Family asks AI together
-→ **Parent evaluates with them**
-→ Learn side-by-side
-→ Child learns to question AI
+**Right:** Family asks AI together → Parent evaluates → Learn side-by-side
 
 → **Human connection + critical thinking together.**
 
@@ -249,71 +208,115 @@ When your child says: "Based on AI…"
 
 ---
 
-## Practical Problem-Solving
+## Live Demo
 
-### 🧩 Example: Reduce Screen Time
+* Conference Date :x:
+* Conference Trip :white_check_mark:
 
-Instead of just saying "No screens!"—use AI to break down the problem:
-
-```text
-Goal: Reduce screen time
-├─ Change environment (remove devices from bedroom)
-├─ Change routines (screen-free mornings)
-└─ Change motivation (earn time as reward)
-```
-
-→ **Your child becomes a problem-solver, not just a rule-follower.**
+![bg right fit](assets/conference-date.png)
 
 ---
 
-### 🔍 Teach Them to Think in Systems
+## Live Demo: Learning in Action
 
-AI helps you:
+### 🎤 Meet Najmi and Isa
 
-- Expand the branches
-- Suggest experiments
-- Compare pros & cons
+My children will show you what this looks like in practice.
 
-**But your child:**
+They're not actors. They're real kids figuring out how to deal with AI.
 
-- Chooses a solution
-- Tries it
-- Reflects on what worked
-
-→ **AI expands options. Your child decides.**
+![bg right fit](assets/problem-solving-101.webp)
 
 ---
 
-## Character & Agency
+![bg fit](assets/what-do-you-do-with-a-chance.jpg)
+
+---
+
+### 🧪 Najmi's Story: Testing AI Accuracy
+
+**The Challenge:** Can you trust what ChatGPT tells you?
+
+→ **This is AI Literacy in action.**
+
+---
+
+![bg fit](assets/what-do-you-do-with-a-problem.jpg)
+
+---
+
+## 4️⃣ Problem Solving
+
+### 💭 Isa's Story: Solving Problems Through Connection
+
+**The Challenge:** Managing health and feelings across countries (Malaysia → Singapore)
+
+→ **This is what AI can never do: be present with a child.\***
+
+---
+
+#### 🤖 Actually, AI can be present for humans
+
+- :warning: But it might lead to delusion if unmonitored
+
+![bg right:65%](assets/chatbots-delusion.png)
+
+---
+
+## 5️⃣ Character & Agency
 
 ### 🛡️ Machines Can Be Trained, Humans Are Raised
 
-- AI can generate answers
-- AI cannot build character
-- AI cannot choose values
-- AI cannot decide who they become
+![bg right fit](assets/family-rules.webp)
 
-Your child needs:
+Character is built through **real responsibilities** and clear values—not algorithms.
 
-- Reflection on their choices
-- Ownership of decisions
-- Identity work (who am I, not just what grade?)
-- Real responsibility in the family
+---
+
+![bg fit](assets/ai-agency-human-agency.webp)
+
+---
+
+### 🎯 Nurture Agency
+
+AI is **trained** to output.
+
+Humans are **raised** to choose.
+
+**Your child's choices define who they become.**
+
+→ **Protect space for genuine decision-making.**
 
 ---
 
 ### 👶 Children Are Not Trophies
 
-AI might help them get better grades.
-
-But the goal is not perfect output—it's **becoming more human**:
+The goal is not perfect output—it's **becoming more human**:
 
 - Curious
 - Resilient
 - Thoughtful
 - Kind
 
-→ **Protect their agency. Let them choose, fail, and learn.**
+**These qualities come from agency, not grades.**
+
+---
+
+![bg](assets/isa-vlog.jpg)
+
+---
+
+## 6️⃣ Creativity: Hands-On Work > Passive Consumption
+
+AI can generate content. But only humans can truly create through practice and presence.
+
+Examples from our family:
+
+- **Isa's vlog** — narrative practice, storytelling decisions
+- **Najmi's knitting** — tactile craft, patience, personal expression
+- **Music performances** — live presence, practice, emotion
+
+→ **These can't be outsourced to AI.**
 
 ---
 
@@ -321,12 +324,12 @@ But the goal is not perfect output—it's **becoming more human**:
 
 ### 🎯 To Raise Kids Who Outthink the Machines
 
-1. :shield: **Support their learning** — Make hard things manageable
-2. :brain: **Build critical thinking** — Question everything, including AI
-3. :unlock: **Keep them literate** — Understand tools, don't fear them
-4. :family: **Stay connected** — Learn together, not alone
-5. :gear: **Teach problem-solving** — Systems thinking, not rules
-6. :sparkles: **Protect character** — Agency matters more than grades
+1️⃣ **Digital & AI Literacy** — Understand tools, use them correctly
+2️⃣ **Critical Thinking** — Question everything, including AI
+3️⃣ **Communication & Collaboration** — Learn together, not alone
+4️⃣ **Problem Solving** — Systems thinking, not rules
+5️⃣ **Character & Agency** — Protect their choices, their identity
+6️⃣ **Creativity** — Hands-on work beats passive consumption
 
 ---
 
@@ -344,6 +347,8 @@ Pick **ONE** thing to try:
 ---
 
 ### 💭 Final Thought
+
+![bg right fit](assets/what-do-you-do-with-an-idea.jpg)
 
 > The future doesn't belong to the smartest machine.
 > It belongs to the most **deeply human child**.
