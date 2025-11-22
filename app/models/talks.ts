@@ -20,6 +20,10 @@ export const conferences: Talk[] = [
         href: "https://zainf.dev/raising-children",
         label: "Open slides",
       },
+      {
+        href: "https://idsw.dev/",
+        label: "Event link",
+      }
     ],
   },
   {

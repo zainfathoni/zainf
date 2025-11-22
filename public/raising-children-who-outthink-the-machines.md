@@ -24,11 +24,11 @@ Senior Software Engineer at BookThatApp
 
 <https://www.zainfathoni.com>
 
-* :family: Parent of three :girl::boy::girl:
-* :school: Homeschooling family :books:
-* :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend :arrow_right: Fullstack
-* :round_pushpin: Jember :arrow_right: Bandung :arrow_right: :singapore: SG :arrow_right: Jogja
-* :airplane: Jogja :arrow_right: :malaysia: KL :arrow_right: :singapore: SG :arrow_right: :indonesia: Jakarta
+- :family: Parent of three :girl::boy::girl:
+- :school: Homeschooling family :books:
+- :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend :arrow_right: Fullstack
+- :round_pushpin: Jember :arrow_right: Bandung :arrow_right: :singapore: SG :arrow_right: Jogja
+- :airplane: Jogja :arrow_right: :malaysia: KL :arrow_right: :singapore: SG :arrow_right: :indonesia: Jakarta
 
 ---
 
@@ -42,8 +42,8 @@ Senior Software Engineer at BookThatApp
 
 There are two schools of thought about AI's future:
 
-* **Dystopian**: AI will take over humanity
-* **Utopian**: Humanity will survive and thrive
+- **Dystopian**: AI will take over humanity
+- **Utopian**: Humanity will survive and thrive
 
 ---
 
@@ -208,10 +208,14 @@ When your child says: "Based on AI…"
 
 ---
 
+![bg fit](assets/what-do-you-do-with-an-idea.jpg)
+
+---
+
 ## Live Demo
 
-* Conference Date :x:
-* Conference Trip :white_check_mark:
+- Conference Date :x:
+- Conference Trip :white_check_mark:
 
 ![bg right fit](assets/conference-date.png)
 
@@ -279,30 +283,20 @@ Character is built through **real responsibilities** and clear values—not algo
 
 ### 🎯 Nurture Agency
 
-AI is **trained** to output.
+AI is **trained** to output. Humans are **raised** to choose.
 
-Humans are **raised** to choose.
-
-**Your child's choices define who they become.**
-
-→ **Protect space for genuine decision-making.**
-
----
-
-### 👶 Children Are Not Trophies
-
-The goal is not perfect output—it's **becoming more human**:
+**Becoming more human means:**
 
 - Curious
 - Resilient
 - Thoughtful
 - Kind
 
-**These qualities come from agency, not grades.**
+→ **These qualities come from agency, not grades.**
 
 ---
 
-![bg](assets/isa-vlog.jpg)
+![bg](assets/isas-camping-trip-vlog.jpg)
 
 ---
 
@@ -324,12 +318,12 @@ Examples from our family:
 
 ### 🎯 To Raise Kids Who Outthink the Machines
 
-1️⃣ **Digital & AI Literacy** — Understand tools, use them correctly
-2️⃣ **Critical Thinking** — Question everything, including AI
-3️⃣ **Communication & Collaboration** — Learn together, not alone
-4️⃣ **Problem Solving** — Systems thinking, not rules
-5️⃣ **Character & Agency** — Protect their choices, their identity
-6️⃣ **Creativity** — Hands-on work beats passive consumption
+1. **Digital & AI Literacy** — Understand tools, use them correctly
+2. **Critical Thinking** — Question everything, including AI
+3. **Communication & Collaboration** — Learn together, not alone
+4. **Problem Solving** — Systems thinking, not rules
+5. **Character & Agency** — Protect their choices, their identity
+6. **Creativity** — Hands-on work beats passive consumption
 
 ---
 
@@ -348,7 +342,7 @@ Pick **ONE** thing to try:
 
 ### 💭 Final Thought
 
-![bg right fit](assets/what-do-you-do-with-an-idea.jpg)
+![bg right fit](assets/core-skills-in-2025.png)
 
 > The future doesn't belong to the smartest machine.
 > It belongs to the most **deeply human child**.
