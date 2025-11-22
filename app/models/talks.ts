@@ -9,7 +9,21 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
-    slug: "jdd-2025-10-percent-engineer",
+    slug: "idsw-2025",
+    date: "2025-11-23",
+    title: "Raising Children Who Outthink the Machines",
+    description:
+      "How AI can improve your kids' learning experience while building resilience, critical thinking, and human connection in the age of AI.",
+    event: "Indonesia Software Developer Conference 2025",
+    resources: [
+      {
+        href: "https://zainf.dev/raising-children",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "jdd-2025",
     date: "2025-10-25",
     title: "Be a 10% Engineer with AI",
     description: "Working ~10% of the time, achieving ~100% of the output",
