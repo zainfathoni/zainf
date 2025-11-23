@@ -393,6 +393,10 @@ Pick **ONE** thing to try:
 
 ---
 
+![bg fit](assets/no-single-right-turn.png)
+
+---
+
 ## 🙏 Thank You
 
 🔗 [zainf.dev/raising-children](https://zainf.dev/raising-children)
