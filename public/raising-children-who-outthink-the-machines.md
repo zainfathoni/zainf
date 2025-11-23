@@ -18,6 +18,21 @@ Senior Software Engineer at BookThatApp
 
 ---
 
+![bg fit](assets/vibe-standup.png)
+
+<!-- Selamat sore, Usmar Imail! -->
+
+---
+
+![bg fit](assets/standup-comedy-or-meeting.png)
+
+<!--
+Akhirnya, setelah belasan tahun menyaksikan panggung ini di layar kaca, saya bisa menirukan gaya para komika di sini.
+Mari kita buktikan, apakah sesi ini jadi stand-up comedy? Atau malah stand-up meeting?
+-->
+
+---
+
 ## 👋 Introduction
 
 ![bg left:33%](assets/zain-1280.jpeg)
@@ -223,9 +238,15 @@ When your child says: "Based on AI…"
 ## Live Demo
 
 * Conference Date :x:
-* Conference Trip :white_check_mark:
+* Conference Family Trip :white_check_mark:
 
 ![bg right fit](assets/conference-date.png)
+
+<!--
+Siapa yang nggak kenal pasangan techbro-techsis ini?
+Di IDSW 2025 ini, mereka Conference Date, lho!
+Karena nggak mau kalah, saya ajak keluarga saya Conference Family Trip!
+-->
 
 ---
 
