@@ -84,10 +84,6 @@ Human resilience has evolved throughout history:
 
 ---
 
-![bg](assets/gibran-ai.jpg)
-
----
-
 ![bg fit](assets/children-and-gadgets.png)
 
 ---
@@ -125,7 +121,21 @@ But humanity adapted before. **We can adapt again.**
 
 ---
 
+![bg](assets/gibran-ai.jpg)
+
+---
+
 ![bg fit](assets/outsourcing-your-brain.png)
+
+---
+
+### 📖 Literacy
+
+![bg right:45%](assets/books.jpeg)
+
+* 🌋 AI without literacy steals your thinking
+* 🧠 Literacy = understanding, not outsourcing
+* 📚 Books build the foundation AI can't replace
 
 ---
 
@@ -290,7 +300,8 @@ They're not actors. They're real kids figuring out how to deal with AI.
 
 #### 🤖 Actually, AI can be present for humans
 
-- :warning: But it might lead to delusion if unmonitored
+* :warning: But it might lead to delusion if unmonitored
+* :point_up: That's why, children need to experience **real empathy** from **real humans**
 
 ![bg right:65%](assets/chatbots-delusion.png)
 
@@ -300,7 +311,7 @@ They're not actors. They're real kids figuring out how to deal with AI.
 
 ### 🛡️ Machines Can Be Trained, Humans Are Raised
 
-![bg right fit](assets/family-rules.webp)
+![bg right:40%](assets/family-rules.webp)
 
 Character is built through **real responsibilities** and clear values—not algorithms.
 
@@ -322,6 +333,10 @@ AI is **trained** to output. Humans are **raised** to choose.
 - Kind
 
 → **These qualities come from agency, not grades.**
+
+---
+
+![bg fit](assets/building-character-and-agency.png)
 
 ---
 
