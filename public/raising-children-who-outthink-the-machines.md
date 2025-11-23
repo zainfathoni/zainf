@@ -24,15 +24,23 @@ Senior Software Engineer at BookThatApp
 
 <https://www.zainfathoni.com>
 
-- :family: Parent of three :girl::boy::girl:
-- :school: Homeschooling family :books:
-- :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend :arrow_right: Fullstack
-- :round_pushpin: Jember :arrow_right: Bandung :arrow_right: :singapore: SG :arrow_right: Jogja
-- :airplane: Jogja :arrow_right: :malaysia: KL :arrow_right: :singapore: SG :arrow_right: :indonesia: Jakarta
+* :family: Parent of three :girl::boy::girl:
+* :school: Homeschooling family :books:
+* :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend :arrow_right: Fullstack
+* :round_pushpin: Jember :arrow_right: Bandung :arrow_right: :singapore: SG :arrow_right: Jogja
+* :airplane: Jogja :arrow_right: :malaysia: KL :arrow_right: :singapore: SG :arrow_right: :indonesia: Jakarta
 
 ---
 
 ![bg fit](assets/js-luwansa-hotel.jpg)
+
+---
+
+## 🙋 Quick Survey
+
+* Are you worried machines might take **your** jobs?
+* Anyone here **raising children**?
+* Are you worried machines might take **your kids'** jobs?
 
 ---
 
@@ -42,8 +50,8 @@ Senior Software Engineer at BookThatApp
 
 There are two schools of thought about AI's future:
 
-- **Dystopian**: AI will take over humanity
-- **Utopian**: Humanity will survive and thrive
+* **Dystopian**: AI will take over humanity
+* **Utopian**: Humanity will survive and thrive
 
 ---
 
@@ -214,8 +222,8 @@ When your child says: "Based on AI…"
 
 ## Live Demo
 
-- Conference Date :x:
-- Conference Trip :white_check_mark:
+* Conference Date :x:
+* Conference Trip :white_check_mark:
 
 ![bg right fit](assets/conference-date.png)
 
@@ -318,12 +326,12 @@ Examples from our family:
 
 ### 🎯 To Raise Kids Who Outthink the Machines
 
-1. **Digital & AI Literacy** — Understand tools, use them correctly
-2. **Critical Thinking** — Question everything, including AI
-3. **Communication & Collaboration** — Learn together, not alone
-4. **Problem Solving** — Systems thinking, not rules
-5. **Character & Agency** — Protect their choices, their identity
-6. **Creativity** — Hands-on work beats passive consumption
+* 1️⃣ **Digital & AI Literacy** — Understand tools, use them correctly
+* 2️⃣ **Critical Thinking** — Question everything, including AI
+* 3️⃣ **Communication & Collaboration** — Learn together, not alone
+* 4️⃣ **Problem Solving** — Systems thinking, not rules
+* 5️⃣ **Character & Agency** — Protect their choices, their identity
+* 6️⃣ **Creativity** — Hands-on work beats passive consumption
 
 ---
 
