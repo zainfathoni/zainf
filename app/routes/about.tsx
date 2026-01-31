@@ -122,7 +122,7 @@ export default function About() {
                 my talks
               </Link>{" "}
               at conferences or my contributions at{" "}
-              <ExternalLink href="https://www.wargabantuwarga.com/">
+              <ExternalLink href="https://wargabantuwarga.id/">
                 WargaBantuWarga
               </ExternalLink>{" "}
               and{" "}

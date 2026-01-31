@@ -24,8 +24,8 @@ export const projects = [
     description:
       "A crowdsourcing website for COVID-19 medical facilities information.",
     link: {
-      href: "https://www.wargabantuwarga.com",
-      label: "www.wargabantuwarga.com",
+      href: "https://wargabantuwarga.id",
+      label: "wargabantuwarga.id",
     },
     logo: wbwLogo,
   },
