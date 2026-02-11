@@ -1,0 +1,170 @@
+---
+meta:
+  - title: AI Tools SWE Growth Summary (Jan 25 - Feb 11, 2026)
+  - name: description
+    content: Summary of AI tools SWE Growth WhatsApp group discussions from Jan 25 to Feb 11, 2026.
+  - author: Zain Fathoni
+  - date: 2026-02-11
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+<PostHeader {...attributes} />
+
+## Scope
+
+- Date range: January 25 to February 11, 2026
+- Source: WhatsApp group "AI Tools SWE GROWTH"
+
+## Key topics discussed
+
+### OpenClaw dominance
+
+OpenClaw continues to be the primary topic of discussion. Members are actively using it for:
+
+- Agent orchestration via Telegram, WhatsApp, and Discord
+- Running coding agents on Mac Mini or VPS
+- Automated nightly development workflows
+- Multi-agent coordination (for example, Wheeljack for coding)
+
+**Notable quote:** "Openclaw boros bgt asli" (OpenClaw uses a lot of tokens), highlighting token consumption concerns.
+
+### Claude Code memory issues
+
+Several members reported Claude Code CLI consuming excessive RAM:
+
+- One user reported 90 GB memory consumption causing a MacBook freeze
+- Discussion about memory leaks and auto-compaction
+- Tip: Regular hard restarts help prevent issues
+- Running multiple CLI sessions (5+) compounds the problem
+
+### AmpCode free credits strategy
+
+- Free tier offers $20 per day with ads
+- Members shared strategies to maximize free credits
+- AmpCode Threads feature helps share coding sessions publicly
+- "Amp deep mode bagus bgt" received positive reviews
+- Free tier currently closed for new users (as of Feb 11)
+
+### Agent orchestration wars
+
+New tools are emerging rapidly:
+
+- NanoClaw, a lightweight version (reported as unreliable)
+- TinyClaw, another lightweight alternative
+- PicoClaw, even smaller (some calling it "hype-based development")
+- Warp Oz, Warp's new agent orchestration feature
+- AugmentCode teasing upcoming features
+
+### Model comparisons and usage
+
+| Model | Use case | Notes |
+| --- | --- | --- |
+| Opus 4.5/4.6 | Complex planning, ADR | Fast but expensive |
+| Codex 5.3 | Major features, refactoring | More thorough than Opus |
+| Kimi K2.5 | Daily coding | DHH testimonial, good price |
+| GPT 5.2 | OpenClaw continuous ops | Free tier available |
+| Gemini | UI and frontend design | "Melempem" (underperforming) |
+
+## Tools and products mentioned
+
+### Coding agents
+
+- OpenClaw, the primary orchestration platform
+- AmpCode, a CLI with free credits and thread sharing
+- Claude Code CLI, the main coding agent
+- Codex CLI, OpenAI's coding agent
+- Kimi CLI, a Chinese AI for budget coding
+- Gemini CLI, Google's offering (criticized as "anak tiri")
+- Cursor CLI, VS Code-based coding
+- GitHub Copilot CLI with the `/fleet` feature for parallel subagents
+
+### Supporting tools
+
+- supacode.sh, session management for multiple repos and worktrees
+- Ghostty, a terminal emulator (memory leak issues in v1.2.3)
+- opencode zen, Kimi integration with CPT guarantee
+- Antigravity, an AI coding platform
+
+### Hardware
+
+- Mac Mini, popular for hosting OpenClaw
+- Beelink Mini PC, an AMD 255 series alternative
+- VPS, a cloud hosting option
+
+## Notable tips and insights
+
+### Vibe coding to vibe user testing
+
+Using Claude Code Agents Team to spawn multiple user personas for UX testing:
+
+```text
+Main agent -> spawns 3 user personas -> tests app via Chrome -> provides UX research report
+```
+
+**Warning:** Token consumption is "luar biasa" (extraordinary).
+
+### Nightly bot instructions
+
+Prompt used to make a bot build features autonomously:
+
+> I need an employee taking as much off my plate and being as proactive as possible. Every night when I go to bed, build something cool I can test. Schedule time to work every night at 11pm.
+
+### AmpCode and tmux trick
+
+Running AmpCode in tmux allows using free credits without watching ads:
+
+- OpenClaw can spawn tmux sessions
+- AmpCode interactive mode works in tmux
+- Credits are not consumed (uses free tier)
+
+### Token management
+
+- Use different models for different tasks (Opus for planning, Codex for review)
+- Split workload: "saya kasih akses cursor cli & gemini cli biar bagi tugas (token)"
+- Consider a $200 per month Claude subscription for unlimited Opus
+
+### Skills for the AI era
+
+- Generalist versus specialist debate
+- Sales and marketing skills are becoming important
+- "Banyak orang belum tau AI kegunaannya apa"
+
+## Notable links shared
+
+1. [Nolan Lawson's "We Mourn Our Craft"](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/) - Reflection on software development in the AI era
+2. [O'Reilly: Reverse Engineering with Claude Code](https://www.oreilly.com/radar/reverse-engineering-your-software-architecture-with-claude-code-to-help-claude-code/) - Architecture reverse engineering
+3. [Claude Code Agents Team documentation](https://code.claude.com/docs/en/agent-teams)
+4. [Raising An Agent podcast](https://www.youtube.com/watch?v=4rx36wc9ugw) - AmpCode testing with tmux
+
+## Sentiment and trends
+
+### Positive
+
+- OpenClaw and Claude Code combination is highly productive
+- Kimi K2.5 receives good reviews for price and performance
+- Agent Team features enable new workflows
+
+### Concerns
+
+- "Mulai rame bikin platform agent orchestration ya? Bentar lagi jadi hype baru nih"
+- Token costs add up quickly
+- Fear of layoffs due to AI advancement
+- Memory leaks and stability issues
+
+### Humor of the week
+
+> "flexingnya skrg: lambo lu warna apa bos? token Opus lu unlimited gak bos?"
+
+## Action items and recommendations
+
+1. Try supacode.sh for managing multiple coding sessions across repos
+2. Consider Kimi K2.5 for budget-conscious coding tasks
+3. Set up tmux and AmpCode integration for free credits
+4. Implement regular restarts to prevent Claude Code memory issues
+5. Explore Claude Code Agents Team for UX testing workflows
+6. Watch the Raising An Agent podcast for AmpCode tips
+
+*Summary generated by Prowl.*
+
+*Last updated: February 11, 2026.*

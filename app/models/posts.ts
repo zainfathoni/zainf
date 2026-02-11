@@ -1,3 +1,4 @@
+import * as aiToolsSwegrowthSummary from "../routes/blog.ai-tools-swe-growth-summary-jan-25-feb-11-2026.mdx";
 import * as reactDomJsx from "../routes/blog.react-dom-jsx.mdx";
 
 export type MdxAttributes = { meta: Array<Record<string, any>> };
@@ -31,6 +32,9 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 }
 
 export const getAllPosts = (limit?: number) => {
-  const allPosts = [getPostFromMdxModule(reactDomJsx)];
+  const allPosts = [
+    getPostFromMdxModule(aiToolsSwegrowthSummary),
+    getPostFromMdxModule(reactDomJsx),
+  ];
   return limit ? allPosts.slice(0, limit) : allPosts;
 };
