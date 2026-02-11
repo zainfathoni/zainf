@@ -2,10 +2,12 @@
 export default {
   ignoredRouteFiles: ["**/.*"],
   mdx: async () => {
-    const [rehypeHighlight] = await Promise.all([
+    const [rehypeHighlight, remarkGfm] = await Promise.all([
       import("rehype-highlight").then((mod) => mod.default),
+      import("remark-gfm").then((mod) => mod.default),
     ]);
     return {
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [rehypeHighlight],
     };
   },

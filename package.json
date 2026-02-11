@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-highlight": "7.0.0",
+    "remark-gfm": "^4.0.1",
     "reveal.js": "5.2.1"
   },
   "devDependencies": {
