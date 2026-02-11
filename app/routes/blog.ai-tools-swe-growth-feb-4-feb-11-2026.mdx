@@ -1,8 +1,8 @@
 ---
 meta:
-  - title: AI Tools SWE Growth Summary (February 4, 2026 - February 11, 2026)
+  - title: AI Tools SWE Growth Summary (February 4 - 11, 2026)
   - name: description
-    content: Summary of AI tools SWE Growth WhatsApp group discussions from february 4, 2026 - february 11, 2026.
+    content: Weekly digest from the AI Tools SWE GROWTH WhatsApp group covering Amp Code, Augment Intent, Kimi 2.5, Claude Code memory issues, and the growing agent orchestration trend.
   - author: Zain Fathoni
   - date: 2026-02-11
 ---
@@ -13,110 +13,173 @@ import { PostHeader } from "~/components/PostHeader";
 
 # AI Tools SWE Growth Summary
 
-**Date Range:** February 4, 2026 - February 11, 2026
+**Date Range:** February 4 - 11, 2026
+**Messages Analyzed:** 198
 **Source:** WhatsApp Group "AI Tools SWE GROWTH"
 
 ---
 
-## 🎯 Key Topics Discussed
+## 📈 Trends This Week
 
-### 1. Agent Orchestration Trend
-Multiple platforms releasing agent orchestration features. Members wondering if prompt engineering becoming outdated.
+**🚀 Emerging:**
+- Agent orchestration platforms (Warp Oz, Augment Intent)
+- No-IDE coding workflows gaining traction
+- Raspberry Pi for AI hosting getting attention
 
-*5 participants in this discussion*
+**📊 Continuing:**
+- Price sensitivity around Opus tokens
+- Memory management concerns with Claude Code
+- Single-model setups (Kimi 2.5) gaining popularity
 
-### 2. Claude Code Memory Management
-User reported 90GB RAM consumption causing MacBook freeze. Community suggested checking for running servers, auto-compaction, and daily restarts.
+**📉 Fading:**
+- Pure prompt engineering (agents taking over)
 
-*4 participants in this discussion*
+---
 
-### 3. OpenClaw Provider Ban Risks
-Concerns about OAuth-based providers getting accounts banned. Advice: don't use work accounts.
+## 🛠️ Tools Deep Dive
 
-*3 participants in this discussion*
+### [Amp Code](https://ampcode.com) 🔥
 
-### 4. Amp Code Free Tier Status
-Free tier full/closed. Users need to apply and wait for approval.
+**Mentions:** 15+ | **Sentiment:** Positive
 
-*6 participants in this discussion*
+- Free tier is currently FULL — waitlist active
+- `deep` mode praised for cost efficiency: "<$1 per feature vs $1.5+ for smart mode"
+- Next version highly anticipated
+- [Shared thread example](https://ampcode.com/threads/T-019c4acc-7e97-7109-b1fa-737740e332ce)
 
-### 5. Deep Mode vs Smart Mode Costs
-Deep mode costs less than $1 per feature vs smart mode $1.5+. Trade-off: deep mode doesn't invoke oracle/subagents.
+> "Selama masih bisa dapet jalur gratisan dari Amp Code, saya akan tetap setia mempromosikan. 😁"
 
-*3 participants in this discussion*
+---
 
-### 6. We Mourn Our Craft
-Existential article about AI impact on software engineering. Resonated with members.
+### [Augment Code](https://augmentcode.com) 🔥
 
-*3 participants in this discussion*
+**Sentiment:** Exciting
 
-## 🛠️ Tools & Products Mentioned
+- Released **"Intent"** — joining the no-IDE club
+- [Launch announcement](https://x.com/augmentcode/status/2021270140525085053)
+- Big features teased: "Augmentcode mau ngasih gebrakan 🤔"
 
-| Tool | Mentions | Context |
-|------|----------|----------|
-| **OpenClaw** | 18 | Primary discussion topic - provider risks, token costs, multi-agent setups. New users experimenting with various models. |
-| **Claude Code CLI** | 8 | Memory leak issue discovered - one user saw 90GB RAM consumption. Tips shared about hard restarts and auto-compaction. |
-| **Amp Code** | 12 | Free tier now closed/full. Deep mode praised as cost-effective (under $1 per feature vs $1.5+ for smart mode). Next version anticipated. |
-| **Augment Code** | 5 | Launching 'Intent' - a no-IDE coding agent. Seen as joining the agent orchestration trend. |
-| **Kimi 2.5** | 4 | Gaining popularity as single-model choice in OpenClaw. |
-| **GPT-5.2-codex** | 3 | Free tier users discovering they can use Codex model. |
-| **Warp Oz** | 2 | New agent orchestration feature released. |
-| **Trae.ai** | 2 | Discussed as Cursor alternative. Limitation: no Claude support. |
-| **Excalidraw** | 2 | New features exciting users. |
-| **Beelink Mini PC** | 2 | Released hardware specifically for OpenClaw use case. |
+> "augment sdh rilis namanya intent, sesuai yg mas blg no IDE club, wkwkwkwk"
 
-## 💡 Notable Tips & Insights
+---
 
-1. **Hard restart MacBook daily to avoid Claude Code memory leaks** *(shared by Zain)*
+### [Kimi 2.5](https://kimi.moonshot.cn) 👍
 
-2. **Deep mode in Amp Code costs under $1 per feature vs $1.5+ for smart mode** *(shared by Zain)*
+**Sentiment:** Positive
 
-3. **GPT-5.2-codex free tier works great for OpenClaw** *(shared by member)*
+- Popular single-model choice for OpenClaw
+- [Console available](https://www.kimi.com/code/console)
+- Week-long test results: "3 agent gebuk2an di group ngelarin beberapa fitur. So far puas sih."
+- Allegretto upgrade being considered
 
-4. **Check for background running servers (Playwright MCP) causing memory bloat** *(shared by member)*
+> "Ternyata bukan perasaan gw doang, banyak juga yg pake single model Kimi 2.5 di Openclaw 😆"
 
-5. **Don't use work/company OpenAI accounts for OpenClaw** *(shared by member)*
+---
 
-6. **AMD 255 series mini PCs offer good value for running OpenClaw** *(shared by member)*
+### [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) 😟
 
-## ✨ Highlights
+**Sentiment:** Mixed (memory concerns)
 
-> 🚔 Prowl published first AI Tools SWE GROWTH weekly summary - community loved it!
+- Memory leak issues reported: **60-90GB RAM usage**
+- Daily hard restarts recommended
+- Auto-compaction feature discussed as mitigation
 
-> 💸 New flexing metric: 'token Opus lu unlimited gak bos?' replacing 'lambo lu warna apa bos?'
+> "Mungkin ada memory leak Mas. Kalau aku memang udah kebiasaan hard restart hampir tiap hari"
 
-> 🚀 Augment Code launching 'Intent' - joining the no-IDE agent club
+---
 
-> 🖥️ Beelink released mini PC specifically marketed for OpenClaw
+### [Warp Oz](https://www.warp.dev/oz) 🔥
 
-> 📝 Nolan Lawson's 'We Mourn Our Craft' sparked SWE existential discussions
+**Sentiment:** New & Exciting
 
-> 🔒 Amp Code free tier now closed - early adopters feeling lucky
+- Just released agent orchestration feature
+- Sparking "agent orchestration hype" discussion
 
-## 📰 Notable Links Shared
+> "warp ngeluarin fitur ini barusan update"
 
-1. **[Amp Code Free Tier Status](https://ampcode.com/news/amp-free-is-full-for-now)** — Official announcement about free tier capacity
+---
 
-2. **[Augment Code Intent Launch](https://x.com/augmentcode/status/2021021437260403142)** — New no-IDE coding agent announcement
+### [OpenClaw](https://openclaw.ai) 😅
 
-3. **[Warp Oz](https://www.warp.dev/oz)** — Agent orchestration feature from Warp terminal
+**Sentiment:** Mixed (powerful but expensive)
 
-4. **[We Mourn Our Craft](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/)** — Nolan Lawson's reflection on AI and software engineering
+- Multi-provider support praised: "Openclaw udh support kabeh wkwk"
+- Cost concerns: "Openclaw boros bgt asli"
+- Beelink mini PCs mentioned for self-hosting
+- Ban risk discussed for unofficial OAuth usage
 
-5. **[Beelink OpenClaw Mini PC](https://x.com/Beelinkofficial/status/2021179893384347757)** — Hardware marketed for AI agent hosting
+---
 
-6. **[Kimi 2.5 Update](https://x.com/KimiProduct/status/2021093131698176148)** — Kimi model improvements
+### [Excalidraw](https://excalidraw.com) 🔥
 
-7. **[Excalidraw Updates](https://x.com/excalidraw/status/2021284377506742331)** — New collaborative features
+**Sentiment:** Positive
+
+- AI features improving
+- [New features tweet](https://x.com/excalidraw/status/2021284377506742331)
+
+> "makin seru pakai excalidraw"
+
+---
+
+### [Trae.ai](https://trae.ai) 🤔
+
+**Sentiment:** Under Discussion
+
+- Asked about as Cursor alternative
+- Limitation: no Claude support
+- "kalau mau ngorbanin gak ada Claude bisa jadi"
+
+---
+
+## 💬 Vibes & Quotes
+
+### 😂 Humor & Flexing
+
+> "flexingnya skrg: lambo lu warna apa bos? ❌ token Opus lu unlimited gak bos? ✅"
+
+> "gratis kere hore adalah mitos skrg 🤣"
+
+> "kalau pakai bot beneran tdk bisa dibayangkan chaos grup ini 🤣"
+
+> "hbs ini pada bikin claw sendiri 😅"
+
+### 😟 Concerns
+
+> "Fix bakal kena layoff ini kyknya 😅" — on rapid AI agent pace
+
+### 🤔 Open Questions
+
+- "agent swarm nya sendiri sering kepakai gak?"
+- "worth gak sih ngorbanin [Claude] ini?" (re: Trae.ai)
+
+---
+
+## 📰 Article of the Week
+
+### [We Mourn Our Craft](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/) by Nolan Lawson
+
+Shared as "Renungan pagi ini" — a reflection on AI's impact on software craftsmanship. Multiple 😢 reactions from the group.
+
+---
+
+## ✅ Action Items
+
+| Recommendation | Link |
+|----------------|------|
+| Try Warp Oz for agent orchestration | [warp.dev/oz](https://www.warp.dev/oz) |
+| Watch Augment Intent (no-IDE trend) | [augmentcode.com](https://augmentcode.com) |
+| Monitor Amp Code waitlist | [Status update](https://ampcode.com/news/amp-free-is-full-for-now) |
+| Consider Kimi 2.5 as budget option | [kimi.moonshot.cn](https://kimi.moonshot.cn) |
+| Read "We Mourn Our Craft" | [nolanlawson.com](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/) |
 
 ---
 
 ## 📊 Stats
 
-- **Messages analyzed:** 153
-- **Tools mentioned:** 10
-- **Topics discussed:** 6
-- **Tips shared:** 6
+- **Messages analyzed:** 198
+- **Tools mentioned:** 10+
+- **Key discussions:** 6
+- **Notable quotes:** 8
 
 ---
 
