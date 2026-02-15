@@ -1,3 +1,4 @@
+import * as post20260215AiToolsDigestWeek2 from "../routes/blog.2026-02-15.ai-tools-digest-week-2.mdx";
 import * as aiToolsSwegrowthSummary from "../routes/blog.ai-tools-swe-growth-summary-jan-25-feb-11-2026.mdx";
 import * as reactDomJsx from "../routes/blog.react-dom-jsx.mdx";
 
@@ -33,6 +34,7 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(post20260215AiToolsDigestWeek2),
     getPostFromMdxModule(aiToolsSwegrowthSummary),
     getPostFromMdxModule(reactDomJsx),
   ];
