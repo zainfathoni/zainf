@@ -1,3 +1,4 @@
+import * as post20260215AiToolsDigestWeek2 from "../routes/blog.2026-02-15.ai-tools-digest-week-2.mdx";
 import * as aiToolsSwegrowthSummaryFeb4 from "../routes/blog.ai-tools-swe-growth-feb-4-feb-11-2026.mdx";
 import * as aiToolsSwegrowthSummary from "../routes/blog.ai-tools-swe-growth-summary-jan-25-feb-11-2026.mdx";
 import * as reactDomJsx from "../routes/blog.react-dom-jsx.mdx";
@@ -27,13 +28,19 @@ export function extractPostAttributes(attributes: MdxAttributes) {
 
 export function getPostFromMdxModule(mod: MdxModule): Post {
   return {
-    slug: mod.filename.replace(/^blog\./, "").replace(/\.mdx?$/, ""),
+    slug: mod.filename
+      .replace(/^blog\./, "")
+      .replace(/\.mdx?$/, "")
+      // Remix flat-routes use dots as path separators in route filenames.
+      // Normalize post slugs accordingly so links match generated routes.
+      .replace(/\./g, "/"),
     ...extractPostAttributes(mod.attributes),
   };
 }
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(post20260215AiToolsDigestWeek2),
     getPostFromMdxModule(aiToolsSwegrowthSummaryFeb4),
     getPostFromMdxModule(aiToolsSwegrowthSummary),
     getPostFromMdxModule(reactDomJsx),

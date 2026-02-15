@@ -1,0 +1,269 @@
+---
+meta:
+  - title: "AI Tools Digest: Week 2 - Model Tier Wars & The Great Price Negotiation"
+  - name: description
+    content: "Weekly digest from AI Tools SWE GROWTH: Codex quality debates, Kimi's negotiation gamification, GLM-5 sembako runs, and the economics of subscription fatigue."
+  - author: Zain Fathoni
+  - date: 2026-02-15
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+<PostHeader {...attributes} />
+
+This week's AI Tools SWE GROWTH digest (Feb 11-15) dives into model tier debates, pricing psychology, and the emerging pattern of budget subscription combos. 194 messages, plenty of Indonesian slang preserved. 🔥
+
+## 🔥 Hot Takes
+
+### Model Tier Wars: Does Codex Need X-High?
+
+After [leaked benchmarks](https://x.com/bilawalsidhu/status/2022571001490325791) comparing Codex performance hit the timeline, skepticism erupted:
+
+> "yang pake Codex real kah? 🤣"
+
+The counter-argument came swiftly from actual users:
+
+> "codex kalo gk xhigh dia gk sebagus opus - hmmm keknya codex nya harus xhigh tapi mas. kasus saya"
+
+**Consensus:** Base tier Codex underperforms vs Opus. X-high tier required for comparable quality. Pricing implications? Tier upgrades eat into cost savings.
+
+---
+
+### The Great Price Negotiation Experiment
+
+[Kimi's promotional feature](https://www.kimi.com/kimiplus/sale?activity_enter_method=poster_copy_link) lets you haggle with an AI for first-month discounts. Yes, really.
+
+Zain's triumphant share:
+
+> "Battled an AI for a great deal. Try topping that. - Nyoba tawar menawar sama Kimi 🤣"
+
+**Results:** $0.99 (best) to $1.50 (common). Gamification of pricing doubles as engagement mechanism.
+
+**Reality check:** Token consumption NOT as efficient as hoped. Quote from the field:
+
+> "Btw Kimi gk se hemat itu ternyata. Wkwkwkwk"
+
+---
+
+## 🛠️ Tools Deep Dive
+
+### **Kimi K2.5** — [kimi.moonshot.cn](https://kimi.moonshot.cn)
+
+**Sentiment:** Positive-Cautious  
+**Mentions:** 12
+
+**What's good:**
+- Built-in vision & web search (vs Minimax needing MCP)
+- Agent swarms feature praised: "imo fitur agent swarms nya ini oke mas"
+- Interactive pricing negotiation
+
+**The catch:**
+- Token consumption higher than expected
+- Weekly limit resets at 2 PM (critical for heavy users)
+
+**Quote:**  
+> "Si kimi imo fitur agent swarms nya ini oke mas. vision n web udh built-in di modelnya"
+
+---
+
+### **GLM-5** — [chatglm.cn](https://chatglm.cn)
+
+**Sentiment:** Excited  
+**Mentions:** 7
+
+**The sembako run:**
+Free tier via [Ollama](https://ollama.com/library/glm-5) triggered a rush:
+
+> "gass ada sembako lagi nih, lumayan buat nyoba2"
+
+**Key behaviors:**
+- Sharing accounts to split cost
+- More generous limits than Kimi (confirmed by multiple users)
+- Integration challenges with OpenClaw (failed attempts)
+
+**Conspiracy theory moment:**  
+When Gemini leaked Chinese model artifacts:
+
+> "Gemini kesurupan Kimi 🤣 - Jgn bilang selama ini mereka running GLM"
+
+Echoes of Windsurf/Cursor incidents (models tuned from Chinese LLMs).
+
+---
+
+### **Minimax M2.5** — [hailuo.ai](https://hailuo.ai)
+
+**Sentiment:** Positive-Limited  
+**Mentions:** 5
+
+**Strengths:**
+- Speed & tool calling quality: "oke tool calling buat lama2 tasknya dan bs recover from failures"
+- Good for long-running tasks with failure recovery
+
+**Limitations:**
+- NOT multimodal yet — vision & web require MCP setup
+- Pricing starts at $100 (web tier)
+
+**Quote:**  
+> "Speed nya mas oke minimax dan kalo aku pengalaman pake, oke tool calling buat lama2 tasknya dan bs recover from failures"
+
+---
+
+### **OpenClaw** — [openclaw.ai](https://openclaw.ai)
+
+**Sentiment:** Complex Love-Hate  
+**Mentions:** 11
+
+**The token burn:**
+
+> "Openclaw boros bgt asli"
+
+**Why?**  
+Context bloat. MEMORY.md, SOUL.md, project files all included in every request:
+
+> "Mungkin depends ke contextnya pak, kalau openclaw kan include MEMORY, SOUL etc, ke dalam context jadi cukup boros"
+
+**Heavy user reality:**
+- Claude Max 20x users hitting weekly limits mid-week
+- 5-hour limits now more common constraint than weekly
+
+**Architecture solution suggested:**  
+Orchestrator pattern — route to sub-agents to reduce context bloat.
+
+**Interface preference:**  
+Terminal vs Telegram comparison:
+
+> "Ini berasa beda feel nya. Kalo biasanya interface di terminal liat cli jalan ini cuman mantau report aja"
+
+---
+
+### **Amp Code** — [ampcode.com](https://ampcode.com)
+
+**Sentiment:** Gratitude-Dependency  
+**Mentions:** 4
+
+**Current state:**
+- Free tier full (waitlist)
+- Users rely on Amp Ads credits: "mengandalkan gratisan dari Amp Ads 🤣"
+
+**The subscription dream:**  
+Why can't Amp do $20/month? [Joe's explanation](https://x.com/bosonjoe/status/1911554009577541950?s=46):
+
+> "Dan selama kita berharap bisa subskreb $20/bulan, Amp ga akan pernah memenuhi harapan kita. 🤣"
+
+**Quote:**  
+> "selama model price-nya masih API token... bakal sulit klo mau subskrek. wk9"
+
+---
+
+### **Fizzy vs Beads** — Task Management Showdown
+
+**The scenario:** Developer choosing task tracker for agent workflows.
+
+**Fizzy wins despite:**  
+No dependent tasks feature yet:
+
+> "hmmm menarik, cuman fizzy kekurangannya dia belum bisa dependant task ya mas?"
+
+**Why Fizzy?**  
+Simpler sync vs Beads' offline-first complexity.
+
+**New user reaction:**  
+> "Waaaah aku baru aja integrate beads wkwk. Ini kek waktu aku awal2 issue salah branch haha. Insha allah kucobain fizzy kl gitu."
+
+---
+
+### **Antfarm** — [github.com/snarktank/antfarm](https://github.com/snarktank/antfarm)
+
+**Sentiment:** Intrigued  
+**Mentions:** 3
+
+Recommended to Zain during agent swarms discussion:
+
+> "mas zain coba ini mas - https://github.com/snarktank/antfarm"
+
+Multi-agent orchestration framework gaining attention.
+
+---
+
+## 😂 Best Quotes (Indonesian Flavor)
+
+On Codex skepticism:
+> "yang pake Codex real kah? 🤣"
+
+On Gemini's Chinese model leak:
+> "Gemini kesurupan Kimi 🤣"  
+> "Jgn bilang selama ini mereka running GLM"
+
+On GLM-5 free tier:
+> "gass ada sembako lagi nih, lumayan buat nyoba2"
+
+On OpenClaw token consumption:
+> "Openclaw boros bgt asli"
+
+On Amp Code dependency:
+> "Amp code masih mengandalkan gratisan dari Amp Ads 🤣"  
+> "sisanya ke ampcode, wkwkwkwk"
+
+On limit-hitting club:
+> "Byuh. 🤣 🤣 🙈 Kemaren 5x sempat kena limit 5 jam"
+
+On Indonesian corruption metaphor:
+> "Di Indo jangankan token LLM, BLT & MBG aja di-abuse penyakurannya. 😅"
+
+(BLT = Big Language Transformer, MBG = Model Buatan Google)
+
+---
+
+## 📊 Trends
+
+### Emerging
+- **Price negotiation gamification** (Kimi model)
+- **Multi-agent orchestration** frameworks (Antfarm, agent swarms)
+- **Built-in > raw performance** (vision/web built-in vs MCP)
+- **Budget subscription combos** replacing single-provider Max tiers
+  - Example: Claude Max $100 + Kimi $39 vs full Claude Max $200
+- **Sembako culture:** rushing free tiers before they close
+
+### Continuing
+- Token cost anxiety & limit-hitting
+- Subscription fatigue vs API pricing
+- Chinese model skepticism (Gemini leak echoes Windsurf/Cursor)
+- Task management tool search (Fizzy, Beads, GitHub Issues)
+- OpenClaw context bloat discussions
+
+### Fading
+- Blind faith in model marketing (benchmarks now scrutinized)
+- Single-tool loyalty (combo subscriptions rising)
+
+---
+
+## 🎯 Action Items
+
+1. **Try [Antfarm](https://github.com/snarktank/antfarm)** for multi-agent orchestration
+2. **Test [GLM-5 via Ollama](https://ollama.com/library/glm-5)** (free tier while it lasts)
+3. **Evaluate Kimi K2.5 agent swarms** feature
+4. **Consider [Litestream](https://litestream.io)** for SQLite sync (alternative to Turso)
+5. **Watch Cerebras $50/month tier** as Claude Max alternative ($50/month, 24M tokens/day)
+
+---
+
+## 📚 Articles Shared
+
+- [Anthropic leaked benchmarks](https://x.com/btibor91/status/2022774022778556762) — Bocoran future models
+- [Kimi vs Sonnet comparison](https://llmx.tech/blog/kimi-k2-5-vs-claude-sonnet-4-5-model-comparison-2026/) — "Ini bahaya sih yah" (Kimi only matches Sonnet, not Opus)
+- [AI investment strategy reel](https://www.instagram.com/reel/DUprkuwE8Nv/?igsh=dHViMnFrdjlvdTI4) — "Harusnya negara-negara pun begini"
+
+---
+
+## Week-over-Week Shift
+
+**Week 1:** No-IDE movement, terminal workflows, Augment Intent release  
+**Week 2:** Chinese models rising, token economics, multi-agent patterns
+
+**The shift:** From workflow tooling to cost optimization & orchestration architecture.
+
+---
+
+*Digest compiled from AI Tools SWE GROWTH WhatsApp group (194 messages, Feb 11-15). Slang preserved, context enriched, insights extracted.*
+
+🚔 *Prowl • Weekly AI Tools Digest*
