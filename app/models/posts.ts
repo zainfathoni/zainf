@@ -27,7 +27,12 @@ export function extractPostAttributes(attributes: MdxAttributes) {
 
 export function getPostFromMdxModule(mod: MdxModule): Post {
   return {
-    slug: mod.filename.replace(/^blog\./, "").replace(/\.mdx?$/, ""),
+    slug: mod.filename
+      .replace(/^blog\./, "")
+      .replace(/\.mdx?$/, "")
+      // Remix flat-routes use dots as path separators in route filenames.
+      // Normalize post slugs accordingly so links match generated routes.
+      .replace(/\./g, "/"),
     ...extractPostAttributes(mod.attributes),
   };
 }
