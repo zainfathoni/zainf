@@ -188,8 +188,8 @@ module.exports = {
             paddingLeft: theme("spacing.6"),
           },
           li: {
-            marginTop: theme("spacing.6"),
-            marginBottom: theme("spacing.6"),
+            marginTop: "0.25em",
+            marginBottom: "0.25em",
             paddingLeft: theme("spacing[3.5]"),
           },
           "li::marker": {
