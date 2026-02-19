@@ -164,6 +164,8 @@ module.exports = {
             borderLeftWidth: theme("borderWidth.2"),
             borderLeftColor: "var(--tw-prose-quote-borders)",
             fontStyle: "italic",
+            marginTop: "0.5em",
+            marginBottom: "0.5em",
           },
 
           // Figures
