@@ -93,8 +93,8 @@ module.exports = {
             marginBottom: theme("spacing.10"),
           },
           p: {
-            marginTop: theme("spacing.7"),
-            marginBottom: theme("spacing.7"),
+            marginTop: "1.25em",
+            marginBottom: "1.25em",
           },
 
           // Headings
@@ -105,13 +105,13 @@ module.exports = {
           h2: {
             fontSize: theme("fontSize.xl")[0],
             lineHeight: theme("lineHeight.7"),
-            marginTop: theme("spacing.20"),
+            marginTop: "2.5em",
             marginBottom: theme("spacing.4"),
           },
           h3: {
             fontSize: theme("fontSize.base")[0],
             lineHeight: theme("lineHeight.7"),
-            marginTop: theme("spacing.16"),
+            marginTop: "2em",
             marginBottom: theme("spacing.4"),
           },
           ":is(h2, h3) + *": {
