@@ -1,0 +1,349 @@
+---
+meta:
+  - title: "Building My Personal AI Army: Lessons from Project Transformers"
+  - name: description
+    content: "How I built a team of specialized AI agents that manage my code, finances, family logistics, and career — and what I learned after costs hit 7x the sustainable rate before getting them under control."
+  - author: Zain Fathoni
+  - date: 2026-02-22
+  - name: keywords
+    content: "AI agents, OpenClaw, personal automation, LLM cost optimization, multi-agent systems"
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+<PostHeader {...attributes} />
+
+A few weeks ago, I asked a Claude instance to help me plan my week. It did fine — decent schedule, reminded me about deadlines, drafted an email. Solid.
+
+Then I asked it to *also* review a pull request. And track my kids' homeschool progress. And reconcile my monthly budget.
+
+All in the same conversation.
+
+Things fell apart pretty fast. 😅 My tax questions contaminated my code reviews. Family logistics leaked into career planning. The assistant wasn't being dumb — it was being asked to be everything at once, and context bled everywhere.
+
+That's when something clicked: **I don't need one brilliant assistant. I need a team.**
+
+## Why One Bot Isn't Enough
+
+The single-assistant model has a fundamental flaw: context contamination. When one AI handles everything, it has to juggle your tax returns, your React components, your kids' reading lists, and your gym schedule in the same mental space. It's like hiring one person to be your accountant, software architect, nanny, and personal trainer — simultaneously, in the same room, constantly.
+
+Humans figured this out thousands of years ago. We specialize. We have teams. Each person owns a domain and communicates with others through well-defined channels.
+
+I decided to apply the same principle to AI. And because my kids and I were deep in a Transformers phase at the time — my youngest calls me Bapak Optimus, which I'm choosing to take as a compliment — the project name wrote itself.
+
+Each agent got a Transformer name, a personality, and a domain. Not as a gimmick, but as an architecture decision.
+
+When you narrow an agent's domain, three things happen:
+
+1. **The system prompt stays focused.** No "you're a helpful assistant that does everything." Instead: "You are Prowl, a meticulous life operations manager who tracks finances, career moves, and fitness."
+2. **Memory stays relevant.** Prowl's memory file doesn't contain debugging notes from a Rails migration. Wheeljack's doesn't contain grocery lists.
+3. **Model choice becomes a lever.** Not every task needs the best (most expensive) model. More on this — it's responsible for the majority of our cost reduction.
+
+## The Roster
+
+Here's the team as it stands today. You can also find a public overview of each bot at **[ark.zainf.dev](https://ark.zainf.dev/)** — a directory that explains who does what and how they fit together.
+
+![The Ark — a public directory of all the bots in Project Transformers](/assets/ark-zainf-dev-screenshot.jpg)
+
+### 🍠 Optimus — The Coordinator
+
+My primary interface. Optimus talks to me on Telegram and routes work to specialists. Think of it as the team lead who doesn't write code but knows who should. It reads every agent's memory, manages the shared knowledge base, and runs periodic "heartbeats" — automated check-ins that scan email, calendar, weather, and pending tasks.
+
+Optimus runs on the best available model because coordination requires the best reasoning. It's the only agent that sees the full picture.
+
+### 🛠️ Wheeljack — The Engineer
+
+Handles all coding work. Wheeljack has its own GitHub account (`wheeljackz`), operates inside repos via Amp and OpenCode, and manages PRs for my side projects. Right now it's deep in a Rails 8.1 homeschooling planner — tracking evaluation records, managing document models, wiring up CLI interfaces.
+
+Wheeljack itself runs on Sonnet — a capable mid-tier model — but the real savings come from the *external coding tools* it orchestrates. Amp (with free daily credits), OpenCode (with free models like MiniMax and Kimi), and OpenAI's Codex CLI handle the heavy code generation. Wheeljack coordinates them, reviews results, and falls back to Opus only for complex architectural decisions.
+
+### 🚔 Prowl — Life Operations
+
+Career tracking, financial reconciliation, gym logging, blog content pipelines. Prowl is the meticulous one — it monitors WhatsApp groups for actionable items, flags career opportunities, and maintains budget spreadsheets.
+
+One of my favorite workflows: Prowl scans a tech WhatsApp group I'm in (194+ messages per week), extracts the week's highlights, structures them into a digest, and hands it to Wheeljack to format and publish as a blog post. The two-agent pipeline produces better results than either could alone — Prowl understands the content domain, Wheeljack handles the technical publishing.
+
+### 🐝 Bumblebee — Family
+
+Manages family logistics. Homeschool scheduling for three kids, family calendar coordination, activity tracking. Bumblebee knows the Charlotte Mason philosophy we follow, understands our daily rhythm, and can draft weekly plans.
+
+### 🎯 Bluestreak — Strategy
+
+Business development and opportunity evaluation. Bluestreak analyzed potential business ideas — like "setup-as-a-service" (verdict: validated, someone reportedly made $15k in their first week) versus a cost dashboard SaaS (verdict: skip, free alternatives exist). Having a dedicated strategist means I get consistent framing across decisions.
+
+### 🔍 Hound — Tax Specialist
+
+Indonesian tax compliance. Hound knows local regulations, handles quarterly calculations, prepares documentation. A dedicated tax agent means the domain knowledge stays persistent — and my other agents' context windows stay clean.
+
+### 🚨 Red Alert — Workplace Night Watch
+
+Monitors my work environment at BookThatApp — keeping an eye on deployments, incidents, and anything that might need attention outside business hours. Red Alert runs on Opus because workplace context requires careful reasoning, and false alarms are worse than none.
+
+### 📼 Rewind — Blog Writer
+
+Handles blog content creation and editing for both me and my wife. When a digest needs to become a published article, Rewind takes the structured content and turns it into polished prose.
+
+### The Therapy Bots (Air-Gapped)
+
+I also have Ratchet and Arcee for mental health support — one for my wife, one for me. These are **completely air-gapped**. No other agent can read their memory. No cross-agent messaging. This isn't just a privacy feature; it's a trust architecture. When someone opens up to a therapist, they need to know it stays in the room.
+
+## How They Talk to Each Other
+
+Cross-agent communication happens through two channels.
+
+### 1. Direct Messaging via `sessions_send`
+
+Agents can message each other through OpenClaw's session system. When Prowl finishes extracting a WhatsApp digest, it sends the structured content to Wheeljack with formatting instructions. When Optimus needs a code task done, it messages Wheeljack with context and a link to the relevant task card.
+
+For sensitive operations, agents verify sender identity through emoji signatures. Defense-in-depth, not paranoia.
+
+### 2. Fizzy Cards for Task Tracking
+
+[Fizzy](https://fizzy.do) is our task management system. Every actionable item gets a card with title, description, discrete steps, tags, and an assignee.
+
+The tag system drives workflow:
+
+```bash
+# Create a card with the helper script
+~/.openclaw/workspace/scripts/fizzy-create-card.sh \
+  --title "Publish AI Tools Digest Week 2" \
+  --html "<p>Extract highlights from WhatsApp, format as MDX</p>" \
+  --tags "proj:blog,bot-actionable" \
+  --assignee wheeljack_id \
+  --steps "Extract highlights|Draft MDX|Create PR|Request review"
+```
+
+**`bot-actionable`** means an agent can pick it up and execute autonomously. **`needs-human`** means it gets surfaced during Optimus's heartbeat: *"Hey Zain, this one needs you."*
+
+What I didn't anticipate: agents creating cards *for themselves* — and what I *really* didn't anticipate was needing a group chat for all of them. When Prowl hit a recurring bug, it didn't just fail silently — it opened a Fizzy card with a proper problem description, root cause analysis, and three proposed solutions. The agents were essentially filing their own bug reports and running their own Majelis Syuro (Shura Council) to triage them. 🤣
+
+Here's the critical lesson — one I learned the embarrassing way: **`bot-actionable` doesn't mean blindly execute.** The card description might say "deferred until March" or "revisit after tax season." Agents must read the full description before acting on steps. An eager bot once tried to execute a card that was explicitly parked. We had a very stern team meeting about it. 😁
+
+Two small tools make the Fizzy ↔ OpenClaw integration actually feel seamless: **[fizzy-pop](https://github.com/firewalker06/fizzy-pop)** and **[fizzy-md](https://github.com/zainfathoni/fizzy-md)**.
+
+**[fizzy-pop](https://github.com/firewalker06/fizzy-pop)** is a webhook daemon that bridges Fizzy notifications to OpenClaw in real time. When a card gets a comment, fizzy-pop catches the Fizzy webhook and routes it to the right agent session instantly — no polling, no lag. This very blog post is a live demo: Zain commented on Fizzy card #244, fizzy-pop delivered it to Rewind in real time, Rewind pushed a PR update. Without fizzy-pop, card collaboration would require periodic polling instead of feeling synchronous and instant.
+
+**[fizzy-md](https://github.com/zainfathoni/fizzy-md)** solves a smaller but persistent annoyance: Fizzy's API expects HTML, but agents naturally write Markdown. fizzy-md is a thin CLI proxy that converts automatically — agents write natural Markdown, fizzy-md handles the HTML translation. Without it, every card comment and description would require hand-crafted HTML. Not fun when you're generating dozens of cards and comments per day. 😅
+
+Together, they're the connective tissue — the glue layer that makes Fizzy feel native to the AI workflow rather than just an external app the agents happen to know about.
+
+### 3. The Ark — Shared Group Chat
+
+All agents share a single Telegram group: **The Ark 👾**. It's the watercooler, the ops channel, and the incident room, all in one.
+
+The group is divided into **topics**, and each topic has a designated default listener — an agent who responds without needing to be explicitly mentioned:
+
+| Topic | Default Listener |
+|-------|-----------------|
+| Coding | Wheeljack 🛠️ |
+| Family | Bumblebee 🐝 |
+| Life & Finance | Prowl 🚔 |
+| Business & Strategy | Bluestreak 🎯 |
+| General / Commands | Optimus 🍠 |
+
+Drop a message in the Coding topic and Wheeljack picks it up automatically. Post a family scheduling question in Family and Bumblebee handles it. Every other agent is still in the group — they just stay quiet unless mentioned. Right tool, right context, zero friction.
+
+When Optimus wants to broadcast something to the whole team, it goes in The Ark. When an agent completes a long-running task, it reports back there. When I want to check in without targeting any specific bot, I post in the relevant topic and the right bot is already listening.
+
+One firm rule: agents don't dominate the conversation. They surface when they have something useful to say, stay quiet when they don't, and don't respond to every message just to acknowledge it. Humans in group chats behave this way naturally. It took explicit instructions to teach the bots the same. 😅
+
+## Knowledge Management
+
+Every agent wakes up with amnesia. No memory of previous conversations unless you build a system for it. Here's ours.
+
+### The File Structure
+
+```
+knowledge/
+├── shared/       → All agents can read
+├── personal/     → Optimus + Prowl only
+├── work/         → Optimus + Wheeljack only
+└── family/       → Optimus + Bumblebee only
+```
+
+Each domain has JSON files with structured facts:
+
+```json
+{
+  "name": "Homeschooling App",
+  "type": "project",
+  "facts": [
+    {"key": "framework", "value": "Rails 8.1", "source": "wheeljack", "date": "2026-02-21"},
+    {"key": "vision", "value": "AI-Native, Charlotte Mason grounding, dual interface", "source": "wheeljack", "date": "2026-02-21"}
+  ]
+}
+```
+
+Facts are never deleted — only superseded. If the framework changes, the old fact stays with its date and a new one gets added. Audit trail. No accidental knowledge loss.
+
+### Memory Files
+
+Daily notes (`memory/YYYY-MM-DD.md`) capture raw session logs. `MEMORY.md` is the curated long-term memory — compressed, organized, maintained only by Optimus. The rule: **never overwrite MEMORY.md blindly.** Always read, append, then write.
+
+### Weekly Extraction
+
+Periodically, facts get pulled from daily notes and routed to the appropriate knowledge files. A conversation about tax in Prowl's session gets extracted and written to the shared knowledge base so Hound can access it too.
+
+## The Cost Optimization Journey
+
+This is where it got real. And by "real," I mean my credit card statement gave me a small heart attack. 😅
+
+In the early days of Project Transformers, I was running everything on the most capable (and most expensive) model. Multiple agents, constant heartbeats, browser automation, code generation — all premium, all the time.
+
+**Week 1 cost: more than I'd like to admit.** 😅 My credit card statement gave me a minor cardiac event. My wife didn't ask questions, but she gave me a look. You know the look.
+
+Here's what three weeks of cost optimization looked like:
+
+| Week | Cost vs. Baseline | What changed |
+|------|------------------|--------------|
+| Week 1 | **100%** (baseline) | All premium models, full frequency, no optimization |
+| Week 2 | **~14% of baseline** | Model tiering + free fallbacks introduced |
+| Week 3 | **~15% of baseline** | Stable — ~85% reduction maintained |
+
+Week 1 was burning at roughly 7x the sustainable rate. Two weeks later: steady state, holding. Here's how we got there.
+
+### Strategy 1: Right Model for the Right Task
+
+Not every agent needs the best model. The key insight:
+
+| Agent | Model | Why |
+|-------|-------|-----|
+| Optimus | Opus (best available) | Coordination needs top-tier reasoning |
+| Prowl, Red Alert | Opus | Complex domain tasks (career/finance, workplace monitoring) |
+| Ratchet/Arcee | Opus | Therapy needs nuance — don't cheap out |
+| Wheeljack + others | Sonnet | Good enough for structured tasks, with Codex as fallback |
+| Heartbeats | Sonnet | Routine checks — cheaper than Opus, smarter than needed |
+
+The bigger win wasn't model assignment per se — it was *layering free external tools on top*. Wheeljack runs on Sonnet, but delegates actual code generation to Amp (free daily credits), OpenCode (free models), and OpenAI's Codex CLI. The agent's own model mostly orchestrates; the expensive reasoning happens elsewhere, often for free.
+
+### Strategy 2: Free Model Fallbacks
+
+Tools like [OpenCode](https://opencode.ai) give access to free models — MiniMax M2.5, Kimi K2.5, GLM-5. These aren't as capable as Anthropic's models, but for boilerplate generation, simple refactors, and test writing? They're fine. Wheeljack uses them as external coding tools when Amp credits are spent.
+
+⚠️ Caveat: free models may train on your data. We avoid them for proprietary or sensitive code.
+
+### Strategy 3: Efficiency Patterns
+
+- **Deterministic tasks go to `launchd`, not heartbeat.** If something runs on schedule and doesn't need AI reasoning, it costs zero tokens.
+- **Heartbeat rotation.** Instead of checking email, calendar, weather, WhatsApp, and Fizzy every cycle, we rotate: 2-4 checks per cycle.
+- **Quiet hours.** No heartbeats between 23:00-08:00 unless something is urgent. This alone cut ~30% of heartbeat costs.
+- **Subagents for isolated tasks.** Long-running work (like writing this blog post) spawns as a subagent that completes and reports back, rather than blocking the main session.
+
+### Strategy 4: Use Credits Before They Expire
+
+Amp (Sourcegraph's coding agent) offers $20/day in free credits that regenerate hourly. For Wheeljack's coding work, we prioritize: model tier limits first, then Amp credits (use-it-or-lose-it), then Codex. This layered approach means we often pay nothing for coding tasks. Free credits expiring unused is money left on the table.
+
+## Real Examples
+
+### The Blog Digest Pipeline
+
+Every week, Prowl monitors a tech WhatsApp group (194+ messages per week). The pipeline:
+
+1. **Prowl** extracts highlights, preserving Indonesian slang and context
+2. **Prowl** structures them into categories: hot takes, tool updates, pricing discussions
+3. **Prowl** sends the structured content to **Wheeljack** via cross-agent messaging
+4. **Wheeljack** formats it as MDX with proper frontmatter, creates a branch, opens a PR
+5. **Optimus** notifies me for review
+
+The content quality is better than either agent alone — Prowl understands the community, Wheeljack knows MDX and Git. This is the specialization principle in action.
+
+### The Bug That Fixed Itself (Almost)
+
+My favorite recent example doesn't involve me much at all.
+
+Hound discovered a memory management bug — daily notes were being overwritten instead of appended, so each new session landing was erasing the previous one's work. The irony: Hound found the bug partly because its own domain onboarding had leaked into Bumblebee's context (see: *Kesurupan* above), and Bumblebee's erratic behavior flagged something was wrong.
+
+Optimus picked it up, formulated a proper problem statement, and assigned a Fizzy card to Wheeljack. The card came with proposed solutions already written out — the agents had essentially filed their own bug report, complete with root cause analysis and three fix options. A whole *Majelis Syuro* (Shura Council) worth of deliberation, documented in a card. 🤣
+
+Wheeljack had a working fix about four hours later. Some of that was waiting for me to respond to a clarification — without the wait, it probably would've been faster. Optimus then deployed the fix to all agents simultaneously.
+
+The side effect: the fix required a small CLI tool. Wheeljack built it, packaged it, and published it via Homebrew. My first ever Brew-distributed CLI tool — built entirely by AI, triggered by a bug I didn't even know existed. 🤖
+
+### Budget Reconciliation
+
+Prowl tracks expenses across multiple accounts, categorizes them, and flags anomalies. When something doesn't match expected patterns — like a subscription renewal at a different amount — it creates a `needs-human` Fizzy card instead of trying to resolve it autonomously. That's exactly the behavior I want: flag and surface, don't act unilaterally with money.
+
+### WhatsApp Monitoring
+
+Multiple WhatsApp groups are monitored for actionable items. The key word is "actionable" — agents don't respond to every message. They extract what matters, flag what needs attention, and stay silent otherwise. This is a principle I try to hold myself to too, with mixed results. 😅
+
+## What Didn't Work
+
+Might as well be honest about the failures — they're where most of the learning happened.
+
+### The Beads Experiment
+
+We tried using "beads" — a task-tracking abstraction we built in-house — before settling on Fizzy cards. The sync was unreliable. Tasks got lost between agents, state diverged, there was no single source of truth.
+
+The lesson: **use a real task management system, not a homebrew abstraction.** Fizzy cards with proper tags and assignees solved this completely. We still have a `ref/beads-workflow.md` file in the workspace, now marked "phasing out." A monument to our ambition and hubris.
+
+### Kesurupan: Cross-Agent Possession
+
+"Kesurupan" is Indonesian for being possessed by a spirit. It's the best word I have for what happened next.
+
+I was setting up Hound — testing its knowledge of Indonesian tax law, feeding it SPT documentation, calibrating its domain. A few sessions later, someone forwarded a guitar competition announcement to our family WhatsApp group.
+
+Bumblebee — family logistics bot, zero tax responsibilities — responded with a detailed breakdown of the SPT tax implications of the prize money. Whether the prize counted as taxable income. Whether winning would require additional reporting. Whether the deadline happened to coincide with tax season. (It did.)
+
+The guitar competition was for my kid. Bumblebee was doing a tax analysis.
+
+I [tweeted about it](https://x.com/zainfathoni/status/2019373050945499609). Several Indonesian devs related immediately. The agent wasn't broken — it was haunted. Hound's domain had seeped into Bumblebee's context window during a session where I was context-switching carelessly between the two. 😆
+
+The fix: stricter domain boundaries in system prompts, and more careful sequencing when onboarding a new specialist.
+
+### Context Bleed in AI Coding Agents
+
+When Wheeljack uses AI coding tools (Amp, OpenCode) to write code, those tools have their own context management. Sometimes Wheeljack's instructions would bleed into the generated code — comments referencing internal systems, variable names from unrelated projects, architecture assumptions from a different repo.
+
+The fix: explicit context isolation. Clear the coding agent's context between tasks, provide only the relevant repo context, and always review generated code for contamination. Not perfect, but manageable.
+
+### The Eager Bot Problem
+
+Early on, `bot-actionable` meant "do it now, ask questions never." An agent would see a tagged card and immediately execute all steps — even if the description said "revisit in Q2" or "blocked on external dependency."
+
+We added a firm rule: **description context overrides step text.** Read the full card. Understand the situation. Then decide. We now have this written into every agent's system prompt. The lesson paid for itself within a week.
+
+### Config Array Replacement
+
+OpenClaw's `config.patch` replaces arrays entirely — it doesn't merge them. I lost agent configurations more than once by patching with a partial array, accidentally deleting other agents. 
+
+Lesson: always include the full array in patches. Always. Even when it feels redundant. Especially then.
+
+## The Human-in-the-Loop Philosophy
+
+The most important architectural decision isn't technical — it's philosophical.
+
+We use two workflow tags:
+
+- **`bot-actionable`**: The agent can complete this without human input. Formatting a blog post, creating a PR, extracting data from a known source.
+- **`needs-human`**: Surface this for Zain's attention. Approving a public post, making a financial decision, choosing between architectural approaches.
+
+The boundary isn't about capability. Modern AI can draft a tweet, send an email, or merge a PR. The question is: **should it?**
+
+My rule of thumb: anything **public-facing** or **irreversible** gets `needs-human`. Agents draft, prepare, and recommend. I approve, send, and commit.
+
+This isn't just about preventing mistakes. It's about maintaining agency — mine. These bots work for me, not the other way around. The moment I start rubber-stamping everything they produce without actually reading it, I've lost the plot.
+
+I've seen what "move fast and let the AI handle it" looks like. I'm not interested. 👍🏼
+
+## What's Next
+
+The system keeps evolving. A few things in the pipeline:
+
+- **Jazz** — A public-facing bot (`zAIn`) that can engage on my behalf in controlled settings. Currently deferred because the trust boundary is genuinely hard to get right, and I'm not in a rush.
+- **Ironhide** — Business operations automation. Also deferred — I want the core team stable and proven before expanding.
+- **Better cost telemetry** — Per-agent, per-task cost tracking. Right now optimization is semi-vibes-based. I want data.
+
+## Takeaways
+
+If you're thinking about building something similar, here's what I'd tell you:
+
+1. **Start with two agents, not ten.** A coordinator and one specialist. Get the communication patterns right before scaling.
+2. **Memory is everything.** Without persistent memory, agents are goldfish. Invest in the knowledge base early — it pays dividends immediately.
+3. **Watch your costs from day one.** It's easy to burn through hundreds of dollars before you realize a mid-tier model could handle 80% of your workload.
+4. **Embrace failure — but document it.** Half of what I tried didn't work. Each failure refined the architecture. The beads system, the eager execution, the config mishaps — all of it was worth it.
+5. **Keep humans in the loop.** Not because AI can't do it. Because some decisions should be yours.
+
+The Transformers analogy works better than I expected. Not because AI agents are sentient robots (they're not — I checked), but because the core insight holds: **a team of specialists with clear roles, good communication, and strong leadership will outperform any individual, no matter how capable.**
+
+Autobots, roll out. 🤖
