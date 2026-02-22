@@ -13,7 +13,7 @@ import { PostHeader } from "~/components/PostHeader";
 
 <PostHeader {...attributes} />
 
-Six months ago, I asked a Claude instance to help me plan my week. It did fine — decent schedule, reminded me about deadlines, drafted an email. Solid.
+A few weeks ago, I asked a Claude instance to help me plan my week. It did fine — decent schedule, reminded me about deadlines, drafted an email. Solid.
 
 Then I asked it to *also* review a pull request. And track my kids' homeschool progress. And reconcile my monthly budget.
 
@@ -55,7 +55,7 @@ Optimus runs on the best available model because coordination requires the best 
 
 Handles all coding work. Wheeljack has its own GitHub account (`wheeljackz`), operates inside repos via Amp and OpenCode, and manages PRs for my side projects. Right now it's deep in a Rails 8.1 homeschooling planner — tracking evaluation records, managing document models, wiring up CLI interfaces.
 
-Wheeljack primarily runs on Codex (Anthropic's coding agent, generous free tier) with a premium fallback for complex architectural decisions. This alone saves hundreds of dollars per week.
+Wheeljack itself runs on Sonnet — a capable mid-tier model — but the real savings come from the *external coding tools* it orchestrates. Amp (with free daily credits), OpenCode (with free models like MiniMax and Kimi), and OpenAI's Codex CLI handle the heavy code generation. Wheeljack coordinates them, reviews results, and falls back to Opus only for complex architectural decisions.
 
 ### 🚔 Prowl — Life Operations
 
@@ -74,6 +74,14 @@ Business development and opportunity evaluation. Bluestreak analyzed potential b
 ### 🔍 Hound — Tax Specialist
 
 Indonesian tax compliance. Hound knows local regulations, handles quarterly calculations, prepares documentation. A dedicated tax agent means the domain knowledge stays persistent — and my other agents' context windows stay clean.
+
+### 🚨 Red Alert — Workplace Night Watch
+
+Monitors my work environment at BookThatApp — keeping an eye on deployments, incidents, and anything that might need attention outside business hours. Red Alert runs on Opus because workplace context requires careful reasoning, and false alarms are worse than none.
+
+### 📼 Rewind — Blog Writer
+
+Handles blog content creation and editing for both me and my wife. When a digest needs to become a published article, Rewind takes the structured content and turns it into polished prose.
 
 ### The Therapy Bots (Air-Gapped)
 
@@ -171,16 +179,16 @@ Not every agent needs the best model. The key insight:
 | Agent | Model | Why |
 |-------|-------|-----|
 | Optimus | Opus (best available) | Coordination needs top-tier reasoning |
-| Wheeljack | Codex (free) | Coding agent with generous free tier |
+| Prowl, Red Alert | Opus | Complex domain tasks (career/finance, workplace monitoring) |
 | Ratchet/Arcee | Opus | Therapy needs nuance — don't cheap out |
-| Everyone else | Sonnet | Good enough for structured tasks |
-| Heartbeats | Haiku | Routine checks don't need heavy intelligence |
+| Wheeljack + others | Sonnet | Good enough for structured tasks, with Codex as fallback |
+| Heartbeats | Sonnet | Routine checks — cheaper than Opus, smarter than needed |
 
-Wheeljack on Codex was the single biggest win. Coding tasks are high-volume, and the free tier handles most of them. The premium model falls back only for genuinely complex architectural decisions.
+The bigger win wasn't model assignment per se — it was *layering free external tools on top*. Wheeljack runs on Sonnet, but delegates actual code generation to Amp (free daily credits), OpenCode (free models), and OpenAI's Codex CLI. The agent's own model mostly orchestrates; the expensive reasoning happens elsewhere, often for free.
 
 ### Strategy 2: Free Model Fallbacks
 
-Tools like [OpenCode](https://opencode.ai) give access to free models — MiniMax M2.5, Kimi K2.5, GLM-5. These aren't as capable as Anthropic's models, but for boilerplate generation, simple refactors, and test writing? They're fine. We use them as Wheeljack's secondary fallback.
+Tools like [OpenCode](https://opencode.ai) give access to free models — MiniMax M2.5, Kimi K2.5, GLM-5. These aren't as capable as Anthropic's models, but for boilerplate generation, simple refactors, and test writing? They're fine. Wheeljack uses them as external coding tools when Amp credits are spent.
 
 ⚠️ Caveat: free models may train on your data. We avoid them for proprietary or sensitive code.
 
@@ -276,7 +284,7 @@ If you're thinking about building something similar, here's what I'd tell you:
 
 1. **Start with two agents, not ten.** A coordinator and one specialist. Get the communication patterns right before scaling.
 2. **Memory is everything.** Without persistent memory, agents are goldfish. Invest in the knowledge base early — it pays dividends immediately.
-3. **Watch your costs from day one.** It's easy to burn through hundreds of dollars before you realize Haiku could handle 80% of your workload.
+3. **Watch your costs from day one.** It's easy to burn through hundreds of dollars before you realize a mid-tier model could handle 80% of your workload.
 4. **Embrace failure — but document it.** Half of what I tried didn't work. Each failure refined the architecture. The beads system, the eager execution, the config mishaps — all of it was worth it.
 5. **Keep humans in the loop.** Not because AI can't do it. Because some decisions should be yours.
 
