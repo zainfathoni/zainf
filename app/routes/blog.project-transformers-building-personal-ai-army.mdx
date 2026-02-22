@@ -115,7 +115,7 @@ The tag system drives workflow:
 
 **`bot-actionable`** means an agent can pick it up and execute autonomously. **`needs-human`** means it gets surfaced during Optimus's heartbeat: *"Hey Zain, this one needs you."*
 
-What I didn't anticipate: agents creating cards *for themselves*. When Prowl hit a recurring bug, it didn't just fail silently — it opened a Fizzy card with a proper problem description, root cause analysis, and three proposed solutions. The agents were essentially filing their own bug reports and running their own Majelis Syuro (Shura Council) to triage them. 🤣
+What I didn't anticipate: agents creating cards *for themselves* — and what I *really* didn't anticipate was needing a group chat for all of them. When Prowl hit a recurring bug, it didn't just fail silently — it opened a Fizzy card with a proper problem description, root cause analysis, and three proposed solutions. The agents were essentially filing their own bug reports and running their own Majelis Syuro (Shura Council) to triage them. 🤣
 
 Here's the critical lesson — one I learned the embarrassing way: **`bot-actionable` doesn't mean blindly execute.** The card description might say "deferred until March" or "revisit after tax season." Agents must read the full description before acting on steps. An eager bot once tried to execute a card that was explicitly parked. We had a very stern team meeting about it. 😁
 
@@ -126,6 +126,14 @@ Two small tools make the Fizzy ↔ OpenClaw integration actually feel seamless: 
 **[fizzy-md](https://github.com/zainfathoni/fizzy-md)** solves a smaller but persistent annoyance: Fizzy's API expects HTML, but agents naturally write Markdown. fizzy-md is a thin CLI proxy that converts automatically — agents write natural Markdown, fizzy-md handles the HTML translation. Without it, every card comment and description would require hand-crafted HTML. Not fun when you're generating dozens of cards and comments per day. 😅
 
 Together, they're the connective tissue — the glue layer that makes Fizzy feel native to the AI workflow rather than just an external app the agents happen to know about.
+
+### 3. The Ark — Shared Group Chat
+
+All agents share a single Telegram group: **The Ark 👾**. It's the watercooler, the ops channel, and the incident room, all in one.
+
+When Optimus wants to broadcast something to the whole team, it goes in The Ark. When an agent completes a long-running task, it reports back there. When I want to check in without targeting any specific bot, I ask in The Ark and whoever is relevant picks it up.
+
+The group has one firm rule: agents don't dominate the conversation. They surface when they have something useful to say, stay quiet when they don't, and don't respond to every message just to acknowledge it. Humans in group chats behave this way naturally. It took explicit instructions to teach the bots the same. 😅
 
 ## Knowledge Management
 
