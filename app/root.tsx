@@ -27,32 +27,34 @@ import { getThemeSession } from "./utils/theme.server";
 
 const { title, description, url, image, locale } = metadata;
 
-export const meta: MetaFunction = () => [
-  {
-    title: title,
-  },
-  {
-    name: "description",
-    content: description,
-  },
-  { property: "og:title", content: title },
-  { property: "og:description", content: description },
-  { property: "og:url", content: url },
-  { property: "og:type", content: "website" },
-  { property: "og:site_name", content: title },
-  { property: "og:image", content: image.src },
-  { property: "og:image:alt", content: image.alt },
-  { property: "og:image:width", content: `${image.width}` },
-  { property: "og:image:height", content: `${image.height}` },
-  { property: "og:locale", content: locale },
-  {
-    charset: "utf-8",
-  },
-  {
-    name: "viewport",
-    content: "width=device-width,initial-scale=1",
-  },
-];
+export const meta: MetaFunction = ({ matches }) => {
+  // If a child route already sets og:image, don't override it with the global default
+  const childOgImage = matches
+    .slice(1)
+    .flatMap((m) => (m.meta ?? []) as Array<Record<string, string>>)
+    .find((m) => m.property === "og:image");
+
+  return [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: url },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: title },
+    ...(!childOgImage
+      ? [
+          { property: "og:image", content: image.src },
+          { property: "og:image:alt", content: image.alt },
+          { property: "og:image:width", content: `${image.width}` },
+          { property: "og:image:height", content: `${image.height}` },
+        ]
+      : []),
+    { property: "og:locale", content: locale },
+    { charset: "utf-8" },
+    { name: "viewport", content: "width=device-width,initial-scale=1" },
+  ];
+};
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
