@@ -1,8 +1,8 @@
 ---
 meta:
-  - title: AI Tools SWE Growth Summary (February 15 - 22, 2026)
+  - title: "AI Tools Digest: Minggu Ini Anthropic Main Blokir, AmpCode Ganti Haluan, dan Pi.dev Mulai Naik Daun"
   - name: description
-    content: Summary of AI tools SWE Growth WhatsApp group discussions from February 15 - 22, 2026.
+    content: "Ringkasan diskusi grup AI Tools SWE GROWTH minggu 15-22 Februari 2026 — dari drama ban OAuth Anthropic, Sonnet 4.6 yang tiba-tiba muncul, sampai terminal agent baru yang mulai seliweran."
   - author: Zain Fathoni
   - date: 2026-02-22
 ---
@@ -11,92 +11,178 @@ import { PostHeader } from "~/components/PostHeader";
 
 <PostHeader {...attributes} />
 
-# AI Tools SWE Growth Summary
+Minggu ini grupnya rame. Bukan karena ada model baru yang rilis (walaupun ada juga sih), tapi karena Anthropic bikin keputusan yang langsung nge-impact ribuan developer Indonesia: **OAuth login ke Claude lewat tools pihak ketiga — diblokir.**
 
-**Date Range:** February 15 - 22, 2026
-**Source:** WhatsApp Group "AI Tools SWE GROWTH"
-**Messages Processed:** 200
+OpenClaw, OpenCode, Codebuff, semua yang selama ini menikmati gratis-gratis-an Claude Max via OAuth — selesai. Dan grup langsung ramai mendiskusikan jalan ninja selanjutnya.
 
 ---
 
-## 🎯 Key Topics Discussed
+## 🔒 Anthropic Nge-Slam Pintu OAuth
 
-### 1. Anthropic OAuth Crackdown & Budget Model Hunt
-Anthropic banned OAuth-based access for third-party tools, triggering a community-wide hunt for affordable alternatives to power OpenClaw.
+Mas Michael yang pertama share beritanya — lengkap dengan link warning-nya:
 
-### 2. Codex Desktop Free Tier Discovery
-Mas Riza discovered that free ChatGPT accounts can run Codex Desktop — and even integrate with OpenClaw via OAuth. Community excited but uncertain how long it'll last.
+> *"hati2 buat yg jalanin claude code di tools lain sdh dikasih peringatan"*
 
-### 3. The Claw Ecosystem Grows
-Multiple 'claw' projects now exist — OpenClaw, NullClaw (Zig), CodexBar, Pi.dev. Community jokes about Java/Kotlin version joining.
+Dan dalam hitungan menit, diskusi meledak. Mas Rahmad nanya langsung: *"claude udh ga aman lagi kalo dipake di openclaw ya?"* Mas Michael jawab tanpa basa-basi: *"bakal kena ban akun sdh keluar kemarin aturan mereka."*
 
-### 4. Claude Hackathon — Indonesian Winners
-Indonesian diaspora won Claude's hackathon, sparking pride and discussion about Claude Code creativity in the community.
+Ternyata Mas Iqbal juga sudah duluan kena: *"Aku kena banned krn pake codebuff kemarin lewat oauthnya claude."*
 
-### 5. Autocomplete is Dead, Agents Rise
-Mas Andrel asked for autocomplete IDE recommendations — told the paradigm has shifted to agentic coding.
+Yang menarik: bukan semua tools kena. AmpCode, Augment Code, Warp — aman. Mereka bayar ke Anthropic as company. Yang diblokir adalah model DIY: pasang akun Claude Max sendiri terus disambungin ke OpenClaw atau OpenCode via OAuth.
 
-### 6. MCP Tools: Exa AI vs Context7
-Discussion about MCP integrations for documentation browsing in coding agents.
+Mas Michael baca situasinya dengan tepat: *"makanya banyak skrg yg openclaw nya itu dialihkan ke openAI — karena openAI gak ada ban2 akun di third party."* Dan langsung ada yang nambahin konteks: *"om Sam liat peluang sedikit 🤣🤣🤣"*
 
-### 7. Lovable + Supabase Migration Pain
-Mas Shamir built entire project with Lovable but struggling to migrate Supabase backend to self-managed instance.
+OpenCode pun langsung reposisi. Mereka commit untuk tidak pakai OAuth sama sekali — dan grup bereaksi dengan tawa tapi juga respect: *"opencode bener2 gak mau cari masalah sama anthropic ikutin aja aturannya 🤣"*
 
-### 8. ChatGPT Premium Account Trading
-Discussion about cheap ChatGPT premium accounts sold via organization invites — community debates ethics and risks.
-
-
+Artinya? Buat kita yang pakai Claude Code via jalur resmi atau via tools yang bayar ke Anthropic — tenang. Buat yang pakai OAuth gratisan... sudah saatnya cari alternatif.
 
 ---
 
-## 🛠️ Tools & Products Mentioned
+## 🔥 AmpCode Ganti Haluan: Extension Mati, Terminal Hidup
 
-- [Amp Code](https://ampcode.com) (25 mentions) - Deep mode praised as very cost-effective — free quota consumed first before credits,Free tier now requires credit card / payment info (changed around Friday Feb 20),$10 daily free limit discussed — duration depends on usage mode (smart vs deep),Smart mode can cost up to $8 per prompt, deep mode much cheaper,Free quota auto-replenishes after a few hours,One power user grinding so hard that adding work takes longer than spending tokens
-- [OpenClaw](https://openclaw.ai) (18 mentions) - OAuth method for Claude models no longer allowed — community seeking budget alternatives,Token consumption described as heavy ('nyerap tokennya gak main2'),Codex Desktop integration discovered — free ChatGPT accounts can use it via OAuth,OpenAI acquired OpenClaw — makes integration safer long-term,Kimi recommended at $39/month tier for OpenClaw usage,GLM suggested as budget ('kere hore') option via OpenRouter,Pi.dev identified as core dependency of OpenClaw,CodexBar made by OpenClaw's creator Peter
-- [Codex (OpenAI)](https://openai.com/index/codex) (14 mentions) - Codex Desktop can work with free ChatGPT accounts via OAuth,GPT-5.2 model works on freemium but GPT-5.3 burns through credits fast,Deep mode uses GPT-5.3 Codex model — paid but very capable,Free tier expanded when Codex Desktop launched,Some members now prefer GPT subscription over Kimi for the value
-- [CodexBar](https://codexbar.app) (5 mentions) - macOS menubar app showing usage limits for Codex, Claude Code, Cursor, Gemini, Antigravity, etc.,Made by Peter (creator of OpenClaw),Free, supports Apple Silicon + Intel, macOS 14+,Mac only — Windows users disappointed
-- [NullClaw](https://nullclaw.github.io/) (3 mentions) - Lightweight AI assistant written in Zig — 1MB binary, zero dependencies,Positioned as memory-efficient alternative in the 'claw' ecosystem,Community amused by the growing 'per-claw-an' (claw ecosystem)
-- [GLM](https://chatglm.cn) (5 mentions) - Recommended as the budget option for OpenClaw ('sobat kere hore'),Slow but generous token allocation ('lelet tapi tokennya bejibun'),Can be connected via OpenRouter with BYOK,Setup chain: GLM → OpenRouter → ClipProxy
-- [Kimi](https://kimi.moonshot.cn) (5 mentions) - $39/month package recommended for OpenClaw usage,Standard tier reportedly insufficient,$0.99 promo deals available (via mobile app referral links),Web interface missing some features available on mobile
-- [Pi.dev](https://pi.dev) (4 mentions) - Core dependency of OpenClaw — Pi is the engine under the hood,Gaining traction as standalone coding agent (like Amp Code, OpenCode),Someone already made a bot out of Pi,Package ecosystem praised — easy to install, lots of community contributions
-- [Zo Computer](https://zo.computer) (2 mentions) - Cloud-based AI companion — 'vibe servering as a product',One member exploring it as alternative to OpenClaw,Security concerns raised about cloud-based agent access
-- [Lovable](https://lovable.dev) (4 mentions) - Used for 100% AI-developed projects with Supabase backend,Challenge: migrating Lovable-managed Supabase to self-managed Supabase,Edge functions and tables don't transfer to own dashboard
-- [Directory of Bots](https://directoryofbots.com) (2 mentions) - New community project — 'LinkedIn for OpenClaw Bots and Agents',Has skill.md integration — OpenClaw can register itself,Still in beta, accepting feature requests
-- [Exa AI](https://exa.ai/) (2 mentions) - MCP server available for AI coding tools,$10 free credit on signup,Alternative/complement to Context7 for documentation browsing
-- [Context7](https://context7.com) (3 mentions) - MCP for browsing documentation in Claude Code,Can be triggered with 'browse docs' or similar keywords,Some users unsure if it runs automatically or needs triggering
-- [Antigravity](https://antigravity.dev) (3 mentions) - Family plan at ~300k IDR considered worth it — can add 6 family members,Each member gets separate limits,Can run 2-3 laptops simultaneously with different accounts
-- [Trae.ai](https://trae.ai) (1 mentions) - Mentioned as budget-friendly IDE option for autocomplete
-- [Cursor](https://cursor.sh) (2 mentions) - Mentioned alongside Windsurf as premium IDE options for those with bigger budgets
-- [Gemini](https://gemini.google.com) (3 mentions) - Gemini 3.1 Pro released — compared to Opus 4.6,Some members still skeptical about Gemini quality,Mentioned in CodexBar as supported platform
-- [Kiro](https://kiro.dev) (1 mentions) - One member received 2000 credits, asking about shared account options
-- [OpenCode](https://opencode.ai) (4 mentions) - Complying with Anthropic's rules on OAuth — removed Claude support proactively,Upcoming 'Black' tier anticipated — unclear if Claude will be included,Creator combining Codex + GLM + MiniMax for good results,Oh My OpenCode creator showcased effective budget model stacking
+Dua pengumuman penting dari AmpCode minggu ini yang di-share Mas Michael:
 
+1. [The Coding Agent is Dead](https://ampcode.com/news/the-coding-agent-is-dead) — VS Code extension resmi deprecated
+2. [GPT-5.3 Codex](https://ampcode.com/news/gpt-5.3-codex) — model baru powering AmpCode
+3. [Large Mode](https://ampcode.com/news/large-mode) — mode context besar baru
 
+Kalau kamu masih pakai AmpCode extension — bersiap migrasi ke terminal. *"yg pakai extension ampcode bersiap bakal dihapus, saya udah pakai terminal 🤣"* kata Mas Michael sambil santai-santai.
+
+Yang rame juga: deep mode sekarang perlu input kartu kredit. Mas Sem yang nanya pertama: *"amp mode deep udah gabisa ya?"* — dan ternyata iya, syaratnya jadi harus setor payment info mulai hari Jumat.
+
+Tapi ada nuansa yang menarik dari cara Zain describe experience-nya:
+
+> *"Ini saya sampai kewalahan ngehabisinnya. Lebih cepet habis waktu saya buat nambahin kerjaan (request fitur via OpenClaw) daripada habisnya token buat ngerjain fitur yg diminta. 😅"*
+
+Selama kuota free-nya ada, deep mode tetap makan kuota free duluan sebelum nyentuh credits berbayar. Kalau budget gede mau pakai smart mode? *"aku beberapa kali bisa sampai $8 sekali prompt"* kata Mas Michael — jadi perlu strategi.
+
+Dan soal leaderboard yang sekarang sudah dihapus: Mas Zahid menang telak. *"beda memang beliau yg satu itu real grinding ampcode 🤣🤣🤣"* — dan dia memang dari awal sudah jago: langsung execute via `$(echo "instructions" | amp)` tanpa perlu IDE.
 
 ---
 
-## 💡 Notable Tips & Insights
+## ✨ Sonnet 4.6 Muncul (Diam-Diam tapi Gede)
 
-> No tips shared this week.
+Di tengah drama OAuth, Anthropic juga rilis Sonnet 4.6 — dan buat yang paham konteksnya, ini besar.
 
+Zain share diagram: sejak Oktober 2024, kecerdasan Sonnet naik sekitar 5 kali lipat. Bukan sembarangan. Dan Mas Zahid yang biasanya skeptis langsung bilang: *"Tapi lebih percaya sonnet 4.6 irit banget quota usage nya dan masih oke lah dibanding opus."*
 
----
+Model sudah muncul di Claude Code dan Windsurf dalam hitungan hari. Mas Michael yang pantau: *"di Windsurf semalam udah muncul untuk sonnet-4.6, wkwkwk."*
 
-## 📰 Notable Links Shared
-
-> No notable links this week.
-
+Untuk yang evaluasi budget model: Mas Mukhlis punya formula yang menarik — Opus untuk arsitektur dan plan.md, Codex untuk eksekusi. Total: sekitar $15/bulan. Mas Zahid masih menempatkan: `opus > gpt > kimi > sonnet` untuk quality — tapi Sonnet 4.6 sudah sangat dekat untuk kebanyakan use case.
 
 ---
 
+## 🆕 Pi.dev: Terminal Agent Ketiga yang Naik Daun
 
+Kalau minggu-minggu sebelumnya cuma dua pilihan (Claude Code atau AmpCode), minggu ini ada nama baru yang terus disebut: **Pi.dev**.
 
-## ✅ Action Items / Recommendations
+*"lagi main2 sama pi.dev ternyata menyenangkan 🔥"* kata Mas Michael — dan ini bukan endorsement sembarangan. Mas Michael yang biasanya jadi barometer tool di grup.
 
-> Review the tools and discussions above for actionable insights.
+Mas Michael yang lain (dari perspektif teknis) nambahin: *"betul lagi pake daily enaknya install packagenya gak susah dan banyak yg contribute buat packagenya."* Bahkan ada yang sudah bikin bot dari Pi.
+
+Yang bikin lebih menarik: OpenClaw ternyata depends on Pi under the hood — Zain confirm langsung dengan link ke `package.json`. Jadi bukan cuma kompetitor, ini ekosistem yang sama.
+
+Mas Fajar sempat nanya: *"Pi dev ini yg dalemannya openclaw kan yah?"* — Mas Michael koreksi: *"beda mas ini coding agent mirip ampcode, opencode, dsb."* Tapi secara teknologi, keduanya saling terhubung.
+
+Oh-my-pi ([github.com/can1357/oh-my-pi](https://github.com/can1357/oh-my-pi)) juga mulai seliweran di chat. Mas Zahid bilang: *"Lebih menarik daripada omo dan oh my claude."*
+
+Terminal agent landscape sekarang: Claude Code, AmpCode, Pi.dev. Persaingan makin seru.
 
 ---
 
-*Summary generated by Prowl 🚔*
-*Article compiled by Wheeljack 🛠️*
-*Last updated: 2026-02-22*
+## 💰 Free Tier Hunt: OpenCode Zen dan Model Alternatif
+
+Di tengah semua drama, the #kerehore culture tetap kuat. Mas Ivan share daftar model gratis di OpenCode Zen:
+
+- MiniMax M2.1 Free
+- MiniMax M2.5 Free  
+- GLM 5 Free
+- Kimi K2.5 Free
+
+*"kere hore is the key 🔥"* kata Mas Michael — dan ini bukan bercanda, ini filosofi hidup.
+
+Mas Ivan juga share gem tersembunyi: **Groq Whisper API** untuk transcription — gratis dan luar biasa cepat. Dia sudah pakai untuk transcribe podcast Ngobrolin ([ngobrol.in](https://ngobrol.in)). *"Another underrated 'Free Tier' via Groq API. Whisper nya luar biasa kencang, dan FREE! Hidup #kerehore 😁"*
+
+Yang juga menarik: Mas Aria cerita soal GLM gratisan dari Sumopod yang dia pakai untuk "kepiting rebus" buatan sendiri. Hasilnya? *"habis 4 milyar token per hari, creditku $10k dari byteplus habis 3 hari, sadis kepiting2 ini."* 
+
+Ada anggapan model China itu murah — ternyata tergantung cara pakainya. *"model macam glm, minmax, sama kimi k2.5 boros banget memang wkwk."*
+
+---
+
+## 🤖 Claude Agent Teams: Keren, Tapi Ada Catatan Kecil
+
+Mas Mamed share fitur baru yang bikin grup excited: **Claude Agent Teams** — multi-agent paralel di Claude Code. *"makin gila aja claude. ada agent lead nya segala sekarang. ngerjain task2 yg gede makin cepet, semuanya dikerjain paralel wkwkwkwk"*
+
+Mas Zahid langsung nanya: *"Ini dia udah bisa select model berdasarkan task kah mas?"*
+
+Tapi Mas Michael langsung kasih konteks yang penting: *"mestinya didokumentasi tambahin note kecil: ini hanya berlaku untuk paket sultan $100 keatas 🤣🤣🤣"*
+
+Mas Eka yang coba juga konfirmasi: *"Ini baru kedip, jatah mingguan udah abis kayanya kalo akun yg 20$."* Jadi fitur keren, tapi gated di Max plan yang paling mahal.
+
+---
+
+## 🏆 Mas Asep Bagja Menang Hackathon Claude
+
+Di tengah semua drama tools, ada kabar yang bikin grup bangga: **Mas Asep Bagja menang hackathon Claude**. Mas Michael yang pertama share link-nya.
+
+*"pengguna Claude code ini kreatifnya beda ya"* kata Mas Fajar. Mas Michael kasih konteks menarik: *"yg ketiga itu mas Asep kerjaannya software engineer tapi memang basicnya gak kuliah di IT."*
+
+Mas Tegar punya kenangan tersendiri: *"Aku bangga pernah merasakan tangan dinginnya Kang Asep pegangin mic waktu meetup, lagi live coding eh maksudnya live debugging 😬"*
+
+Dan dari situ lahir ide: untuk hackathon berikutnya, mungkin lebih baik cari teman tim non-IT yang punya ide di luar kerangka SWE. *"ini ide untuk mau ikut tahun depan nyari teman tim non IT yg idenya gak kepikiran SWE 🤣🤣🤣"*
+
+Selamat Mas Asep! 🎉
+
+---
+
+## ⚡ Quick Hits
+
+- **Context7 MCP** perlu di-trigger manual (keyword: "browse docs" atau sebut context7) — tidak otomatis. Mas Eka kasih klarifikasi setelah Mas Fajar bingung.
+
+- **Exa MCP** ([exa.ai](https://exa.ai)) sebagai alternatif Context7 — signup dapet $10 credit gratis, masih belum habis menurut Mas Michael.
+
+- **Codex Bar** ([codexbar.app](https://codexbar.app)) — macOS menu bar app untuk Codex, buatan Peter (creator OpenClaw). Mac-only. Mas Tegar yang Windows langsung: *"Ahh Mac only wkwk"*
+
+- **Directory of Bots** ([directoryofbots.com](https://directoryofbots.com)) — "LinkedIn for OpenClaw bots." Mas Aurelius share: kasih URL `skill.md` ke OpenClaw, bot daftar sendiri. Beta, open for feature requests.
+
+- **Nullclaw** ([nullclaw.github.io](https://nullclaw.github.io)) — Mas Zahid fork OpenClaw dengan tagline: *"Meramaikan per claw an. Lebih hemat memory 🤣 🤣 🤣"* Mas Iqbal: *"Ga kuat mas haha malah makin heavy resources wkwk"*
+
+- **Groq** juga dibandingkan dengan Cerebras soal kecepatan — ada yang bilang masih kencengan Cerebras ([x.com/i/status/2025347748028133690](https://x.com/i/status/2025347748028133690))
+
+---
+
+## 📰 Artikel Menarik Minggu Ini
+
+- [The Coding Agent is Dead](https://ampcode.com/news/the-coding-agent-is-dead) — AmpCode announce shift ke terminal-only
+- [DHH Reviews OpenCode Zen](https://x.com/dhh/status/2023867831239295192) — endorsement yang signifikan
+- [What Developers Actually Need to Know Right Now](https://www.oreilly.com/radar/what-developers-actually-need-to-know-right-now/) — Tim O'Reilly + Addy Osmani, di-share Mas Tunggul
+- [Codex vs Opus](https://every.to/vibe-check/codex-vs-opus) — comparison yang relevan banget untuk pilihan model
+- [AI Promo Tracker Komunitas](https://ai-promo.zainf.dev/) — kalau belum tahu, ini resource yang dikelola komunitas kita sendiri
+
+---
+
+## 👥 Kontributor Minggu Ini
+
+Terima kasih untuk yang aktif share dan diskusi minggu ini:
+
+- **Mas Michael** — Jadi barometer utama tools, share hampir semua breaking news
+- **Mas Zahid** — Top of the AmpCode leaderboard 🏆, insights mendalam soal model quality
+- **Mas Ivan** — Share OpenCode Zen free models + Groq Whisper gem
+- **Mas Riza** — Quote of the week soal konspirasi penjual token 😂
+- **Mas Aria** — Cerita dramatis 4 miliar token per hari
+- **Mas Iqbal** — Early victim OAuth ban, important warning
+- **Mas Tegar** — Kenangan meetup Mas Asep yang bikin senyum
+- **Mas Mamed** — Share fitur Claude Agent Teams
+- **Mbak Naswa** — Ikut aktif diskusi Kimi
+- **Mas Eka** — Klarifikasi Context7 trigger behavior
+- **Mas Mukhlis** — Formula budget optimal yang praktis
+- **Mas Fajar** — Pertanyaan yang mewakili banyak orang
+- **Mas Aurelius** — Share Directory of Bots
+- **Mas Tunggul** — Artikel O'Reilly yang underrated
+
+---
+
+Minggu depan: AmpCode sudah fully terminal-only, OAuth Anthropic enforcement makin kencang, dan Pi.dev terus naik. Yang masih belum setup OpenCode Zen dengan free models — mungkin saatnya.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl) dan [Kang Re 📼](https://ark.zainf.dev/#rewind) — 22 Februari 2026*
