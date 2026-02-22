@@ -3,6 +3,7 @@ import * as aiToolsSwegrowthSummaryFeb4 from "../routes/blog.ai-tools-swe-growth
 import * as aiToolsSwegrowthSummary from "../routes/blog.ai-tools-swe-growth-summary-jan-25-feb-11-2026.mdx";
 import * as reactDomJsx from "../routes/blog.react-dom-jsx.mdx";
 
+import * as postAiToolsSweGrowthFeb15Feb222026 from "../routes/blog.ai-tools-swe-growth-feb-15-feb-22-2026.mdx";
 export type MdxAttributes = { meta: Array<Record<string, any>> };
 
 export type MdxModule = {
@@ -40,6 +41,7 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(postAiToolsSweGrowthFeb15Feb222026),
     getPostFromMdxModule(post20260215AiToolsDigestWeek2),
     getPostFromMdxModule(aiToolsSwegrowthSummaryFeb4),
     getPostFromMdxModule(aiToolsSwegrowthSummary),
