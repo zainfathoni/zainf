@@ -2,7 +2,7 @@
 meta:
   - title: "Building My Personal AI Army: Lessons from Project Transformers"
   - name: description
-    content: "How I built a team of specialized AI agents that manage my code, finances, family logistics, and career — and what I learned burning $1,078/week before getting it under control."
+    content: "How I built a team of specialized AI agents that manage my code, finances, family logistics, and career — and what I learned after costs hit 7x the sustainable rate before getting them under control."
   - author: Zain Fathoni
   - date: 2026-02-21
   - name: keywords
@@ -37,11 +37,13 @@ When you narrow an agent's domain, three things happen:
 
 1. **The system prompt stays focused.** No "you're a helpful assistant that does everything." Instead: "You are Prowl, a meticulous life operations manager who tracks finances, career moves, and fitness."
 2. **Memory stays relevant.** Prowl's memory file doesn't contain debugging notes from a Rails migration. Wheeljack's doesn't contain grocery lists.
-3. **Model choice becomes a lever.** Not every task needs the best (most expensive) model. More on this — it saved me ~$900/week.
+3. **Model choice becomes a lever.** Not every task needs the best (most expensive) model. More on this — it's responsible for the majority of our cost reduction.
 
 ## The Roster
 
-Here's the team as it stands today.
+Here's the team as it stands today. You can also find a public overview of each bot at **[ark.zainf.dev](https://ark.zainf.dev/)** — a directory that explains who does what and how they fit together.
+
+![The Ark — a public directory of all the bots in Project Transformers](./assets/ark-zainf-dev-screenshot.jpg)
 
 ### 🍠 Optimus — The Coordinator
 
@@ -150,11 +152,17 @@ This is where it got real. And by "real," I mean my credit card statement gave m
 
 In the early days of Project Transformers, I was running everything on the most capable (and most expensive) model. Multiple agents, constant heartbeats, browser automation, code generation — all premium, all the time.
 
-**Week 1 cost: $1,078.**
+**Week 1 cost: more than I'd like to admit.** 😅 My credit card statement gave me a minor cardiac event. My wife didn't ask questions, but she gave me a look. You know the look.
 
-For a personal project. From my own pocket. My wife didn't ask questions, but she gave me a look. You know the look.
+Here's what three weeks of cost optimization looked like:
 
-Here's how we got it down to ~$146/week — an 86% reduction.
+| Week | Cost vs. Baseline | What changed |
+|------|------------------|--------------|
+| Week 1 | **100%** (baseline) | All premium models, full frequency, no optimization |
+| Week 2 | **~14% of baseline** | Model tiering + free fallbacks introduced |
+| Week 3 | **~15% of baseline** | Stable — ~85% reduction maintained |
+
+An ~85% reduction in two weeks — and it held. Here's how we got there.
 
 ### Strategy 1: Right Model for the Right Task
 
