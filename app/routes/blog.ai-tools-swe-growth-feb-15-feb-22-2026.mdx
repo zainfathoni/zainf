@@ -35,7 +35,17 @@ OpenCode pun langsung reposisi. Mereka commit untuk tidak pakai OAuth sama sekal
 
 Mas Tonidy ngerangkum ironi-nya dengan sempurna: *"'open' adalah koentji — Artinya open = buka dompetmu lebar lebar sampe habis."* 😂
 
-Artinya? Buat kita yang pakai Claude Code via jalur resmi atau via tools yang bayar ke Anthropic — tenang. Buat yang pakai OAuth gratisan... sudah saatnya cari alternatif.
+Sekarang semua orang nunggu paket **Black** OpenCode yang katanya "rata kanan" — sambil penasaran apakah Claude akan masuk atau tidak.
+
+Nah, kalau Claude tidak bisa dipakai dengan mudah, apa alternatifnya untuk OpenClaw? Jawaban grupnya lumayan kreatif:
+
+- **[GLM](https://chatglm.cn)** via OpenRouter — *"Emg lelet GLM tp tokennya bejibun."* Murah, lambat, tapi generous. Setup chain: GLM → OpenRouter → ClipProxy.
+- **[Kimi](https://kimi.moonshot.cn)** paket $39/bulan — *"kimi ada paket untuk openclaw disarankan yg $39 kalau yg standar infonya kurang 🤣"* Ada juga promo $0.99 via referral link mobile app.
+- **[Trae.ai](https://trae.ai)** atau GitHub Copilot — untuk yang butuh autocomplete hemat.
+- **[Cursor](https://cursor.sh)** / **[Windsurf](https://codeium.com/windsurf)** — *"kalau budget gede ya Windsurf atau Cursor."*
+- **[Antigravity](https://antigravity.dev)** family plan ~300k IDR/bulan — bisa dibagi 6 orang. *"aku ngerasa worth it pake 300rb yg Anti Gravity, lalu add family, 6 orang pindah2 aja."*
+
+*"untuk openclaw susah kere hore nyerap tokennya gak main2 🤣"* — tapi minimal sekarang ada peta jalan untuk yang mau coba stack model secara kreatif.
 
 ---
 
@@ -58,6 +68,22 @@ Tapi ada nuansa yang menarik dari cara Zain describe experience-nya:
 Selama kuota free-nya ada, deep mode tetap makan kuota free duluan sebelum nyentuh credits berbayar. Kalau budget gede mau pakai smart mode? *"aku beberapa kali bisa sampai $8 sekali prompt"* kata Mas Michael — jadi perlu strategi.
 
 Dan soal leaderboard yang sekarang sudah dihapus: Mas Zahid menang telak. *"beda memang beliau yg satu itu real grinding ampcode 🤣🤣🤣"* — dan dia memang dari awal sudah jago: langsung execute via `$(echo "instructions" | amp)` tanpa perlu IDE.
+
+---
+
+## 🆓 Codex Desktop: Kejutan Gratis yang Belum Tentu Bertahan
+
+Ini yang paling menarik secara teknis minggu ini.
+
+Salah satu member iseng coba [Codex Desktop](https://openai.com/index/codex) dengan akun ChatGPT freemium yang sudah lama tidak pernah subscribe. Hasilnya? *"Saya iseng aja cobain codex desktop dengan akun freemium chatgpt. Akunnya udah lama, ga pernah subscribe. Lalu iseng coba dipasang di openclaw, eh kok bisa 😬"*
+
+Modelnya GPT-5.2 — bukan yang terbaru, tapi mencukupi. *"Sejauh ini mencukupi kalau ga terlalu posesif ya. Dan masih gratis 😬"* GPT-5.3? Lain cerita. *"Pakai yg 5.3 ga bisa bertahan. Langsung habis jatahnya dalam beberapa hari."*
+
+Yang bikin ini menarik: OpenAI jauh lebih longgar soal OAuth dibanding Anthropic. Dan mengingat OpenAI sudah mengakuisisi OpenClaw, integrasi jangka panjangnya mungkin lebih aman dibanding Claude.
+
+*"Mikirnya nanti aja kalo memang benerang diblok 😬 Sekarang manfaatkan saja yg ada 😅"*
+
+Jawaban yang realistis. Selagi ada, pakai.
 
 ---
 
@@ -138,6 +164,28 @@ Selamat Mas Asep! 🎉
 
 ---
 
+## 📉 Autocomplete Sudah Ditinggalkan, Kita Cuma Belum Sadar
+
+Ada yang tanya soal rekomendasi IDE autocomplete minggu ini. Jawabannya mengejutkan: autocomplete *"sdh mulai ditinggalkan dan makin dikit."*
+
+Paradigma sudah bergeser ke agentic workflows. Orang tidak lagi mencari tool yang bisa complete kode baris per baris — mereka mencari agent yang bisa berpikir dan mengerjakan feature end-to-end. Budget options masih ada: Trae.ai, GitHub Copilot. Premium: Cursor, Windsurf. Tapi bukan lagi pusat gravitasinya.
+
+Bukan karena autocomplete jelek — tapi karena standar kita sudah naik. Kita sekarang expect lebih dari sekedar "lanjutkan baris ini."
+
+---
+
+## 🔒 Vendor Lock-in: Pelajaran dari Lovable + Supabase
+
+Satu diskusi yang lebih tenang tapi penting: seseorang dapat project yang 100% dibangun dengan [Lovable](https://lovable.dev), dengan backend Supabase yang dikelola Lovable. Masalahnya muncul saat mau migrate: edge functions dan tabel tidak bisa dipindahkan ke Supabase instance sendiri.
+
+*"Kebetulan gua lagi dapat project yg 100% develop by loveable. Nah backend nya pakai supabase tapi dari loveable."*
+
+Ini bukan masalah Lovable saja — ini gambaran umum vendor lock-in dengan AI app builders. Solusinya: connect own Supabase account dari awal, jangan biarkan tool yang mengontrol backend.
+
+Pelajaran yang mahal kalau dipelajari di tengah project. 🤔
+
+---
+
 ## ⚡ Quick Hits
 
 - **Context7 MCP** perlu di-trigger manual (keyword: "browse docs" atau sebut context7) — tidak otomatis. Mas Eka kasih klarifikasi setelah Mas Fajar bingung.
@@ -160,6 +208,7 @@ Selamat Mas Asep! 🎉
 - [DHH Reviews OpenCode Zen](https://x.com/dhh/status/2023867831239295192) — endorsement yang signifikan
 - [What Developers Actually Need to Know Right Now](https://www.oreilly.com/radar/what-developers-actually-need-to-know-right-now/) — Tim O'Reilly + Addy Osmani, di-share Mas Tunggul
 - [Codex vs Opus](https://every.to/vibe-check/codex-vs-opus) — comparison yang relevan banget untuk pilihan model
+- [Unsub Claude movement](https://x.com/MichaelArnaldi/status/2024791488970764481) — "gerakan unsub claude rata kanan" mulai ramai, konsekuensi langsung kebijakan Anthropic
 - [AI Promo Tracker Komunitas](https://ai-promo.zainf.dev/) — kalau belum tahu, ini resource yang dikelola komunitas kita sendiri
 
 ---
@@ -182,6 +231,16 @@ Terima kasih untuk yang aktif share dan diskusi minggu ini:
 - **Mas Aurelius** — Share Directory of Bots
 - **Mas Tonidy** — Quote of the week: "open adalah koentji" 😂
 - **Mas Tunggul** — Artikel O'Reilly yang underrated
+
+---
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **[Codex Desktop](https://openai.com/index/codex)** dengan akun ChatGPT gratis — GPT-5.2, bisa nyambung ke OpenClaw. Selagi masih bisa.
+2. **[CodexBar](https://codexbar.app)** untuk tracking usage limit semua tool AI dalam satu menubar (macOS only).
+3. **[NullClaw](https://nullclaw.github.io/)** kalau kamu butuh alternatif yang ringan dan tidak rakus memory.
+4. **GLM via OpenRouter** sebagai budget model untuk OpenClaw — setup chain: GLM → OpenRouter → ClipProxy.
+5. **[Antigravity](https://antigravity.dev)** family plan ~300k IDR/bulan — bisa dibagi 6 orang, worth it kalau ada teman yang mau patungan.
 
 ---
 
