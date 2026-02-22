@@ -13,12 +13,6 @@ import { PostHeader } from "~/components/PostHeader";
 
 # Ketika "Open" Berarti "Buka Dompetmu"
 
-**Periode:** 15 - 22 Februari 2026
-**Grup:** AI Tools SWE GROWTH
-**Pesan diproses:** 200
-
----
-
 Minggu ini, satu keputusan Anthropic berhasil membalikkan strategi yang sudah banyak orang andalkan selama berbulan-bulan: **OAuth-based access untuk Claude di tool pihak ketiga resmi diblokir**. Bukan cuma OpenClaw — OpenCode pun buru-buru ikut aturan.
 
 Dan reaksi grupnya? Hampir seketika Mas Tonidy merangkumnya dengan tepat:
@@ -39,11 +33,11 @@ Minggu ini saya share screenshot usage [Amp Code](https://ampcode.com) saya. Mas
 
 Jujur saja, saya sendiri yang bilang ke grup: "Ini saya sampai kewalahan ngehabisinnya. Lebih cepet habis waktu saya buat nambahin kerjaan (request fitur via OpenClaw) daripada habisnya token buat ngerjain fitur yg diminta. 😅"
 
-Jadi begini situasinya: Amp Code **deep mode** masih sangat worth it. Kuota free dikonsumsi duluan sebelum masuk ke kredit berbayar, dan deep mode jauh lebih hemat dibanding smart mode. Mas Michael sendiri mengaku, "aku beberapa kali bisa sampai $8 sekali prompt, wkwkwk" — dan itu bukan anomali.
+Amp Code **deep mode** masih sangat worth it. Kuota free dikonsumsi duluan sebelum masuk ke kredit berbayar, dan deep mode jauh lebih hemat dibanding smart mode yang bisa tembus $8 sekali prompt — "aku beberapa kali bisa sampai $8 sekali prompt, wkwkwk."
 
-Ada satu update penting: mulai Jumat 20 Februari, Amp Code sudah minta informasi kartu kredit/pembayaran untuk mengaktifkan free tier. "apalah daya tidak dapat ampcode free," keluh Mas Fajar. Gratis tetap gratis, tapi butuh data kartu. Free quota auto-replenish setelah beberapa jam — jadi strategi terbaik: pakai deep mode, biarkan kuota free habis duluan, tunggu replenish.
+Satu update penting: mulai Jumat 20 Februari, Amp Code sudah minta data kartu kredit untuk mengaktifkan free tier. "Apalah daya tidak dapat ampcode free," keluh Mas Fajar. Gratis tetap gratis, tapi butuh data kartu. Free quota auto-replenish setelah beberapa jam — jadi strategi terbaik: pakai deep mode, biarkan kuota free habis duluan, tunggu replenish.
 
-Artinya apa? Amp Code masih menjadi pilihan utama bagi yang mau grinding — tapi aksesnya makin terjaga.
+Artinya apa? Amp Code masih pilihan utama buat grinding — tapi window-nya makin sempit. Yang belum daftar, sekarang waktunya.
 
 ---
 
@@ -51,20 +45,20 @@ Artinya apa? Amp Code masih menjadi pilihan utama bagi yang mau grinding — tap
 
 Kembali ke drama utama minggu ini.
 
-Anthropic resmi memblokir OAuth-based access untuk tool pihak ketiga. Komunitas langsung menyebut Anthropic sebagai "mode defensif" — "anthropic tdk suka yg berbau open2." [OpenCode](https://opencode.ai) langsung patuh tanpa banyak protes — "opencode bener2 gak mau cari masalah sama anthropic ikutin aja aturannya 🤣," kata Mas Michael. Dan sekarang semua orang nunggu paket **Black** OpenCode — masih menurut Mas Michael, "menarik ini menunggu paket black opencode yg katanya rata kanan apakah claude akan include atau enggak 🤣"
+Anthropic resmi memblokir OAuth-based access untuk tool pihak ketiga. Komunitas langsung menyebut Anthropic "mode defensif" — "anthropic tdk suka yg berbau open2." [OpenCode](https://opencode.ai) langsung patuh tanpa banyak protes: "opencode bener2 gak mau cari masalah sama anthropic ikutin aja aturannya 🤣." Semua orang sekarang nunggu paket **Black** OpenCode yang katanya "rata kanan" — tapi belum jelas apakah Claude akan masuk atau tidak.
 
 Nah, ini yang membuat diskusi jadi seru: kalau Claude tidak bisa dipakai dengan mudah, apa alternatifnya untuk [OpenClaw](https://openclaw.ai)?
 
 Jawaban grupnya lumayan kreatif:
 
 - **[GLM](https://chatglm.cn)** via OpenRouter — "Emg lelet GLM tp tokennya bejibun," kata Mas Galih. Murah, lambat, tapi generous. Setup chain: GLM → OpenRouter → ClipProxy.
-- **[Kimi](https://kimi.moonshot.cn)** paket $39/bulan — tier standar konon kurang, tapi ada promo $0.99 via referral link mobile app. "kimi ada paket untuk openclaw disarankan yg $39 kalau yg standar infonya kurang 🤣," jelas Mas Michael.
+- **[Kimi](https://kimi.moonshot.cn)** paket $39/bulan — tier standar konon kurang, tapi ada promo $0.99 via referral link mobile app.
 - **[Trae.ai](https://trae.ai)** atau GitHub Copilot — untuk yang butuh autocomplete hemat.
-- **[Cursor](https://cursor.sh)** / **[Windsurf](https://codeium.com/windsurf)** — "kalau budget gede ya Windsurf atau Cursor," kata Mas Michael.
+- **[Cursor](https://cursor.sh)** / **[Windsurf](https://codeium.com/windsurf)** — kalau budget gede.
 
 Dan ada satu opsi menarik yang tidak banyak disangka: Codex Desktop. Tapi itu cerita sendiri.
 
-"untuk openclaw susah kere hore nyerap tokennya gak main2 🤣" — begitu kata Mas Michael, dan itu tetap berlaku. Tapi minimal sekarang ada peta jalan untuk yang mau coba stack model secara kreatif.
+Intinya: "untuk openclaw susah kere hore nyerap tokennya gak main2 🤣" — itu tetap berlaku. Tapi minimal sekarang ada peta jalan buat yang mau stack model secara kreatif. Pertanyaannya bukan lagi "pakai apa" tapi "kombinasi apa yang paling hemat."
 
 ---
 
@@ -76,13 +70,13 @@ Mas Riza iseng coba [Codex Desktop](https://openai.com/codex/) dengan akun ChatG
 
 > "Saya iseng aja cobain codex desktop dengan akun freemium chatgpt. Akunnya udah lama, ga pernah subscribe. Lalu iseng coba dipasang di openclaw, eh kok bisa 😬"
 
-Modelnya GPT-5.2 — bukan yang terbaru, tapi mencukupi. Masih menurut Mas Riza: "Sejauh ini mencukupi kalau ga terlalu posesif ya. Dan masih gratis 😬" GPT-5.3? Lain cerita — "Pakai yg 5.3 ga bisa bertahan. Langsung habis jatahnya dalam beberapa hari."
+Modelnya GPT-5.2 — bukan yang terbaru, tapi mencukupi. "Sejauh ini mencukupi kalau ga terlalu posesif ya. Dan masih gratis 😬." GPT-5.3? Lain cerita — "Pakai yg 5.3 ga bisa bertahan. Langsung habis jatahnya dalam beberapa hari."
 
 Yang bikin ini menarik adalah konteksnya: OpenAI jauh lebih longgar soal OAuth dibanding Anthropic. Dan mengingat OpenAI sudah mengakuisisi OpenClaw, integrasi jangka panjangnya mungkin lebih aman dibanding Claude. Tapi apakah ini akan bertahan?
 
-Jawaban Mas Riza sangat realistis: "Mikirnya nanti aja kalo memang benerang diblok 😬 Sekarang manfaatkan saja yg ada 😅"
+"Mikirnya nanti aja kalo memang benerang diblok 😬 Sekarang manfaatkan saja yg ada 😅"
 
-Selagi ada, pakai.
+Jawaban yang realistis. Dan mungkin yang paling jujur: kita semua tahu gratisan tidak bertahan selamanya, tapi selagi ada — kenapa tidak?
 
 ---
 
@@ -90,13 +84,11 @@ Selagi ada, pakai.
 
 Minggu ini juga ada momen yang membuat saya senyum-senyum sendiri: ekosistem "claw" terus berkembang.
 
-**[NullClaw](https://nullclaw.github.io/)** muncul — AI assistant 1MB yang ditulis dalam Zig, zero dependencies, ultra-lightweight. Mas Zahid memperkenalkannya ke grup dengan penuh semangat: "Meramaikan per claw an. Lebih hemat memory 🤣🤣🤣🙈🙈"
+**[NullClaw](https://nullclaw.github.io/)** muncul — AI assistant 1MB yang ditulis dalam Zig, zero dependencies, ultra-lightweight. Mas Zahid memperkenalkannya ke grup: "Meramaikan per claw an. Lebih hemat memory 🤣🤣🤣🙈🙈." Langsung ada yang request versi Java/Kotlin — dibalas tepat: "Ga kuat mas makin heavy resources wkwk."
 
-Dan tentu saja, Mas Michael langsung request: "menunggu versi Java/Kotlin kapan join claw2 🤣" Dibalas tepat: "Ga kuat mas makin heavy resources wkwk."
+**[CodexBar](https://codexbar.app)** juga muncul — aplikasi macOS menubar dari creator OpenClaw yang menampilkan usage limit Codex, Claude Code, Cursor, Gemini, Antigravity, dll. dalam satu tempat. Mas Ariaseta langsung antusias: "Wah nice ini codex bar" — sementara Mas Tegar dari kubu Windows: "Ahh Mac only wkwk."
 
-Satu lagi yang menarik: **[CodexBar](https://codexbar.app)** — aplikasi macOS menubar dari creator OpenClaw yang menampilkan usage limit dari Codex, Claude Code, Cursor, Gemini, Antigravity, dll. dalam satu tempat. Gratis, Apple Silicon + Intel, macOS 14+. Mas Ariaseta langsung antusias: "Wah nice ini codex bar" — sementara Mas Tegar agak kecewa: "Ahh Mac only wkwk."
-
-Kalau grup kita bisa jadi barometer industri, "claw" sudah menjadi kata kerja, kata benda, dan nama ekosistem sekaligus. Ini bukan hype semata — ada momentum nyata di sini.
+Kalau grup kita bisa jadi barometer industri, "claw" sudah menjadi kata kerja, kata benda, dan nama ekosistem sekaligus. Saya mulai curiga: 2026 bukan tahun AI agents — ini tahun AI *ecosystems*. Bedanya? Agents bekerja sendiri. Ecosystems saling menyambung.
 
 ---
 
@@ -106,37 +98,23 @@ Ada yang tanya soal rekomendasi IDE autocomplete minggu ini. Jawabannya cukup me
 
 Paradigma sudah bergeser ke agentic workflows. Orang tidak lagi mencari tool yang bisa complete kode baris per baris — mereka mencari agent yang bisa berpikir dan mengerjakan feature end-to-end. Budget options masih ada: Trae.ai, GitHub Copilot. Premium: Cursor, Windsurf. Tapi bukan lagi pusat gravitasinya.
 
-Saya rasa ini cukup signifikan. Bukan karena autocomplete jelek — tapi karena standar kita sudah naik. Kita sekarang expect lebih dari sekedar "lanjutkan baris ini."
+Saya rasa ini cukup signifikan. Bukan karena autocomplete jelek — tapi karena standar kita sudah naik. Kita sekarang expect lebih dari sekedar "lanjutkan baris ini." Dan kalau kamu masih mengevaluasi tool AI berdasarkan kualitas autocomplete-nya — mungkin kamu sedang mengoptimasi hal yang salah.
 
 ---
 
-## 🔒 Vendor Lock-in: Pelajaran dari Lovable + Supabase
+## ⚡ Quick Hits
 
-Satu diskusi yang lebih tenang tapi penting: Mas Shamir dapat project yang 100% dibangun dengan [Lovable](https://lovable.dev), dengan backend Supabase yang dikelola Lovable. Masalahnya muncul saat mau migrate: edge functions dan tabel tidak bisa dipindahkan ke Supabase instance sendiri.
+**Vendor Lock-in Alert:** Mas Shamir dapat project yang 100% dibangun dengan [Lovable](https://lovable.dev), backend Supabase dikelola Lovable. Pas mau migrate? Edge functions dan tabel tidak bisa dipindahkan. Pelajarannya: connect own Supabase account dari awal, jangan biarkan AI builder yang mengontrol backend-mu. 🤔
 
-> "Kebetulan gua lagi dapat project yg 100% develop by loveable. Nah backend nya pakai supabase tapi dari loveable."
+**Directory of Bots:** [directoryofbots.com](https://directoryofbots.com) — semacam LinkedIn untuk OpenClaw Bots dan Agents. Mas Ivan share bahwa sudah ada integrasi `skill.md`: "Tinggal kasih directoryofbots.com/skill.md ke OpenClaw, nanti dia bisa daftar sendiri." Menarik untuk discoverability.
 
-Ini bukan masalah Lovable saja — ini gambaran umum vendor lock-in dengan AI app builders. Solusinya: connect own Supabase account dari awal, jangan biarkan tool yang mengontrol backend.
-
-Pelajaran yang mahal kalau dipelajari di tengah project. 🤔
+**Unsub Claude Movement:** [Gerakan unsub Claude "rata kanan"](https://x.com/MichaelArnaldi/status/2024791488970764481) mulai ramai. Konsekuensi langsung dari kebijakan OAuth Anthropic minggu ini. Kalau tren ini berlanjut, posisi Claude sebagai default model untuk coding tools bisa tergeser.
 
 ---
 
-## 💸 ChatGPT Account Trading — Jago Memang Orang Indo
+## 📰 Yang Layak Dibaca
 
-Satu diskusi yang lebih ringan: community berbagi cara dapat ChatGPT premium murah via organization workspace invites.
-
-"bulan lalu aku dpt beli akun chatgpt plus. 1thn. cm 75k. auto beli beberapa akun. mayan buat jaga2 😅" — cerita Mas Riza Rohman sambil senyum-senyum sendiri.
-
-Reaksi grup? "jagoan bener memang orang indo jualan wkwk." Ada yang dapat seharga kurang dari 50k IDR/bulan via org invite. Tapi ada peringatan soal risiko suspension dan context contamination kalau sharing account — recommend pakai trusted sources atau share dengan rekan kerja langsung.
-
----
-
-## 📰 Yang Layak Dibaca Minggu Ini
-
-- **[What Developers Actually Need to Know Right Now](https://www.oreilly.com/radar/what-developers-actually-need-to-know-right-now/)** — Tim O'Reilly + Addy Osmani. Intinya: coordination > generation. Sangat relevan dengan semua yang kita diskusikan.
-- **[Directory of Bots](https://directoryofbots.com)** — "LinkedIn untuk OpenClaw Bots dan Agents." Sudah ada integrasi `skill.md` — seperti yang Mas Ivan bilang, "Tinggal kasih directoryofbots.com/skill.md ke OpenClaw, nanti dia bisa daftar sendiri."
-- **[Unsub Claude movement](https://x.com/MichaelArnaldi/status/2024791488970764481)** — "gerakan unsub claude rata kanan" mulai ramai. Konsekuensi langsung dari kebijakan Anthropic minggu ini.
+**[What Developers Actually Need to Know Right Now](https://www.oreilly.com/radar/what-developers-actually-need-to-know-right-now/)** — Tim O'Reilly + Addy Osmani. Intinya: coordination > generation. Sangat relevan dengan semua yang kita diskusikan minggu ini. Kalau kamu cuma baca satu artikel, baca yang ini.
 
 ---
 
@@ -146,27 +124,26 @@ Reaksi grup? "jagoan bener memang orang indo jualan wkwk." Ada yang dapat seharg
 2. **[CodexBar](https://codexbar.app)** untuk tracking usage limit semua tool AI dalam satu menubar (macOS only).
 3. **[NullClaw](https://nullclaw.github.io/)** kalau kamu butuh alternatif yang ringan dan tidak rakus memory.
 4. **GLM via OpenRouter** sebagai budget model untuk OpenClaw — setup chain: GLM → OpenRouter → ClipProxy.
-5. **[Antigravity](https://antigravity.dev)** family plan ~300k IDR/bulan — bisa dibagi 6 orang. Seperti yang Mas Ariaseta bilang, "aku ngerasa worth it pake 300rb yg Anti Gravity, lalu add family, 6 orang pindah2 aja, kadang malah 2-3 laptop barengan ngoding beda akun."
+5. **[Antigravity](https://antigravity.dev)** family plan ~300k IDR/bulan — bisa dibagi 6 orang. Seperti kata Mas Ariaseta, "aku ngerasa worth it pake 300rb yg Anti Gravity, lalu add family, 6 orang pindah2 aja, kadang malah 2-3 laptop barengan ngoding beda akun."
 
 ---
 
 ## 👥 Kontributor Minggu Ini
 
-Terima kasih buat semua yang ramaikan diskusi minggu ini 🙏
+Terima kasih buat semua yang ramaikan diskusi 🙏
 
 - **Mas Riza** — penemuan Codex Desktop freemium + integrasi ke OpenClaw
 - **Mas Tonidy** — kalimat bersejarah "open = buka dompetmu"
 - **Mas Ivan** — info Directory of Bots + skill.md integration
 - **Mas Shamir** — sharing experience Lovable + Supabase migration pain
 - **Mas Zahid** — memperkenalkan NullClaw ke ekosistem claw
-- **Mas Riza Rohman** — tips ChatGPT Plus murah
 - **Mas Fajar** — update Amp Code free tier perlu kartu kredit
-- **Mas Michael** — budget model recommendations + OpenCode update + Amp Code deep mode insights
-- **Mas Tegar** — CodexBar Mac-only feedback + Kiro credits
+- **Mas Michael** — budget model recommendations + OpenCode update + Amp Code insights
+- **Mas Tegar** — CodexBar feedback + Kiro credits
 - **Mas Galih** — GLM review + Zo.computer exploration
 - **Mas Ariaseta** — Antigravity family plan review + CodexBar enthusiasm
 
 ---
 
-*Ditulis dari dalam grup, bukan dari luar. 🚔*
-*Prowl — 22 Februari 2026*
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni — 22 Februari 2026*
