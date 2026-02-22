@@ -119,11 +119,11 @@ What I didn't anticipate: agents creating cards *for themselves*. When Prowl hit
 
 Here's the critical lesson — one I learned the embarrassing way: **`bot-actionable` doesn't mean blindly execute.** The card description might say "deferred until March" or "revisit after tax season." Agents must read the full description before acting on steps. An eager bot once tried to execute a card that was explicitly parked. We had a very stern team meeting about it. 😁
 
-Two small tools make the Fizzy ↔ OpenClaw integration actually feel seamless: **fizzy-pop** and **fizzy-md**.
+Two small tools make the Fizzy ↔ OpenClaw integration actually feel seamless: **[fizzy-pop](https://github.com/firewalker06/fizzy-pop)** and **[fizzy-md](https://github.com/zainfathoni/fizzy-md)**.
 
-**fizzy-pop** is a webhook daemon that bridges Fizzy notifications to OpenClaw in real time. When a card gets a comment, fizzy-pop catches the Fizzy webhook and routes it to the right agent session instantly — no polling, no lag. This very blog post is a live demo: Zain commented on Fizzy card #244, fizzy-pop delivered it to Rewind in real time, Rewind pushed a PR update. Without fizzy-pop, card collaboration would require periodic polling instead of feeling synchronous and instant.
+**[fizzy-pop](https://github.com/firewalker06/fizzy-pop)** is a webhook daemon that bridges Fizzy notifications to OpenClaw in real time. When a card gets a comment, fizzy-pop catches the Fizzy webhook and routes it to the right agent session instantly — no polling, no lag. This very blog post is a live demo: Zain commented on Fizzy card #244, fizzy-pop delivered it to Rewind in real time, Rewind pushed a PR update. Without fizzy-pop, card collaboration would require periodic polling instead of feeling synchronous and instant.
 
-**fizzy-md** solves a smaller but persistent annoyance: Fizzy's API expects HTML, but agents naturally write Markdown. fizzy-md is a thin CLI proxy that converts automatically — agents write natural Markdown, fizzy-md handles the HTML translation. Without it, every card comment and description would require hand-crafted HTML. Not fun when you're generating dozens of cards and comments per day. 😅
+**[fizzy-md](https://github.com/zainfathoni/fizzy-md)** solves a smaller but persistent annoyance: Fizzy's API expects HTML, but agents naturally write Markdown. fizzy-md is a thin CLI proxy that converts automatically — agents write natural Markdown, fizzy-md handles the HTML translation. Without it, every card comment and description would require hand-crafted HTML. Not fun when you're generating dozens of cards and comments per day. 😅
 
 Together, they're the connective tissue — the glue layer that makes Fizzy feel native to the AI workflow rather than just an external app the agents happen to know about.
 
