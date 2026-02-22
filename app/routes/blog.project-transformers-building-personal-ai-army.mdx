@@ -115,6 +115,8 @@ The tag system drives workflow:
 
 **`bot-actionable`** means an agent can pick it up and execute autonomously. **`needs-human`** means it gets surfaced during Optimus's heartbeat: *"Hey Zain, this one needs you."*
 
+What I didn't anticipate: agents creating cards *for themselves*. When Prowl hit a recurring bug, it didn't just fail silently — it opened a Fizzy card with a proper problem description, root cause analysis, and three proposed solutions. The agents were essentially filing their own bug reports and running their own Majelis Syuro (Shura Council) to triage them. 🤣
+
 Here's the critical lesson — one I learned the embarrassing way: **`bot-actionable` doesn't mean blindly execute.** The card description might say "deferred until March" or "revisit after tax season." Agents must read the full description before acting on steps. An eager bot once tried to execute a card that was explicitly parked. We had a very stern team meeting about it. 😁
 
 ## Knowledge Management
@@ -217,6 +219,18 @@ Every week, Prowl monitors a tech WhatsApp group (194+ messages per week). The p
 
 The content quality is better than either agent alone — Prowl understands the community, Wheeljack knows MDX and Git. This is the specialization principle in action.
 
+### The Bug That Fixed Itself (Almost)
+
+My favorite recent example doesn't involve me much at all.
+
+Hound discovered a memory management bug — daily notes were being overwritten instead of appended, so each new session landing was erasing the previous one's work. The irony: Hound found the bug partly because its own domain onboarding had leaked into Bumblebee's context (see: *Kesurupan* above), and Bumblebee's erratic behavior flagged something was wrong.
+
+Optimus picked it up, formulated a proper problem statement, and assigned a Fizzy card to Wheeljack. The card came with proposed solutions already written out — the agents had essentially filed their own bug report, complete with root cause analysis and three fix options. A whole *Majelis Syuro* (Shura Council) worth of deliberation, documented in a card. 🤣
+
+Wheeljack had a working fix about four hours later. Some of that was waiting for me to respond to a clarification — without the wait, it probably would've been faster. Optimus then deployed the fix to all agents simultaneously.
+
+The side effect: the fix required a small CLI tool. Wheeljack built it, packaged it, and published it via Homebrew. My first ever Brew-distributed CLI tool — built entirely by AI, triggered by a bug I didn't even know existed. 🤖
+
 ### Budget Reconciliation
 
 Prowl tracks expenses across multiple accounts, categorizes them, and flags anomalies. When something doesn't match expected patterns — like a subscription renewal at a different amount — it creates a `needs-human` Fizzy card instead of trying to resolve it autonomously. That's exactly the behavior I want: flag and surface, don't act unilaterally with money.
@@ -234,6 +248,20 @@ Might as well be honest about the failures — they're where most of the learnin
 We tried using "beads" — a task-tracking abstraction we built in-house — before settling on Fizzy cards. The sync was unreliable. Tasks got lost between agents, state diverged, there was no single source of truth.
 
 The lesson: **use a real task management system, not a homebrew abstraction.** Fizzy cards with proper tags and assignees solved this completely. We still have a `ref/beads-workflow.md` file in the workspace, now marked "phasing out." A monument to our ambition and hubris.
+
+### Kesurupan: Cross-Agent Possession
+
+"Kesurupan" is Indonesian for being possessed by a spirit. It's the best word I have for what happened next.
+
+I was setting up Hound — testing its knowledge of Indonesian tax law, feeding it SPT documentation, calibrating its domain. A few sessions later, someone forwarded a guitar competition announcement to our family WhatsApp group.
+
+Bumblebee — family logistics bot, zero tax responsibilities — responded with a detailed breakdown of the SPT tax implications of the prize money. Whether the prize counted as taxable income. Whether winning would require additional reporting. Whether the deadline happened to coincide with tax season. (It did.)
+
+The guitar competition was for my kid. Bumblebee was doing a tax analysis.
+
+I [tweeted about it](https://x.com/zainfathoni/status/2019373050945499609). Several Indonesian devs related immediately. The agent wasn't broken — it was haunted. Hound's domain had seeped into Bumblebee's context window during a session where I was context-switching carelessly between the two. 😆
+
+The fix: stricter domain boundaries in system prompts, and more careful sequencing when onboarding a new specialist.
 
 ### Context Bleed in AI Coding Agents
 
