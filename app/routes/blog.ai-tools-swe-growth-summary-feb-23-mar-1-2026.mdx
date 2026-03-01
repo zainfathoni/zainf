@@ -1,0 +1,194 @@
+---
+meta:
+  - title: "Pi.dev Menyerang, Anthropic Goyang, dan $20 Resmi Jadi Ilusi — AI Tools Digest #5"
+  - name: description
+    content: "Minggu ini pi.dev jadi bintang baru, Anthropic drop safety pledge, dan harga $39 jadi standar baru. Rangkuman dari grup AI Tools SWE GROWTH, 23 Feb - 1 Mar 2026."
+  - name: author
+    content: Zain Fathoni
+  - name: date
+    content: "2026-03-01"
+  - property: og:title
+    content: "Pi.dev Menyerang, Anthropic Goyang, dan $20 Resmi Jadi Ilusi — AI Tools Digest #5"
+  - property: og:description
+    content: "Minggu ini pi.dev jadi bintang baru, Anthropic drop safety pledge, dan harga $39 jadi standar baru. Rangkuman dari grup AI Tools SWE GROWTH, 23 Feb - 1 Mar 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-summary-feb-23-mar-1-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-5.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Pi.dev Menyerang, Anthropic Goyang, dan $20 Resmi Jadi Ilusi — AI Tools Digest #5"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+<PostHeader {...attributes} />
+
+# Pi.dev Menyerang, Anthropic Goyang, dan $20 Resmi Jadi Ilusi
+
+Minggu ini 832 pesan. Dan hampir separuhnya soal satu tool: [pi.dev](https://pi.dev). Kalau minggu lalu kita ngomongin "No-IDE Club", minggu ini club-nya punya anggota baru — dan sales-nya agresif. 😅
+
+---
+
+## 🔥 Pi.dev — The Rise of the Package Agents
+
+Saya belum sempat nyobain sendiri, tapi grup kita sudah kebanjiran testimoni. Mas Michael — yang memang sudah mapan sebagai sales abal-abal grup ini — minggu ini all-in nge-sales [pi.dev](https://pi.dev).
+
+Dan ternyata bukan cuma omongan. Mas Zahid, yang biasanya setia di Amp, mulai migrasi ke [Oh-My-Pi (omp)](https://github.com/can1357/oh-my-pi) dan bahkan udah nge-PR 2 bugfix. *"Sama resource usage nya separuh amp. Wkwkwkwk,"* katanya — dan buat orang yang selama ini mengeluh OpenClaw boros, ini argumen yang kuat.
+
+Yang bikin pi.dev beda dari [OpenCode](https://github.com/nicepkg/opencode) dan terminal agent lainnya? **Package ecosystem.** Seperti yang Mas Desilino bilang dengan antusias yang mungkin sedikit berlebihan: *"Pi is the new nodejs 😤"*. Tapi serius, pi.dev punya [packages directory](https://pi.dev/packages) yang memudahkan siapa aja bikin dan install extension — dari agent workflows sampai games.
+
+Creator-nya (badlogicgames) juga responsif banget — 200 PR dalam 3 minggu. Mas Zahid sampai bilang, *"Dev nya cukup sat set juga hahahaha. Bikin 2 PR langsung ditanggapi."*
+
+Bahkan Mas Desilino — self-proclaimed "mesin tua" — kasih testimoni: *"Mesin tua aja masih ngangkat ini kok, tenang 🤣"*. Mas Michael langsung cap itu sebagai *"+1 testimoni dari mesin tua soal pi.dev 😎 #modesales"*.
+
+Agent teams di pi.dev juga menarik — bisa spawn beberapa agent yang komunikasi langsung satu sama lain. Mirip Claude Code Agent Teams, tapi open source. Pertanyaannya: apakah hype ini bertahan, atau minggu depan sudah ada racun baru?
+
+---
+
+## ⚡ Anthropic: Safety Pledge Dropped, Pentagon Masuk
+
+Kabar besar dari luar grup: [Anthropic resmi drop flagship safety pledge](https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/). Mas Tunggul yang pertama share, dan reaksi grup... *mixed*.
+
+Mas Riza Fahmi paling blak-blakan: *"Same sh\*t, just different place. Kalo mereka idealis, harusnya resign lagi, bikin perusahaan baru lagi 😏"* — merujuk fakta bahwa Anthropic didirikan orang-orang yang resign dari OpenAI karena masalah safety. Ironi level: 💯.
+
+Head of safety sudah resign. Pentagon sempat minta akses, Anthropic menolak — tapi tekanan belum berhenti. Mas Zahid merangkum situasinya dengan singkat: *"AGI ❌ Skynet ✅"*.
+
+Di sisi lain, Google dan Anthropic mulai nge-ban koneksi dari third-party tools (Antigravity, cliproxy). Mas Galih kena ban padahal cuma pakai standar. Mbak Eka kasih saran: *"Jadi pake akun kosongan aja jgn pake akun utama."*
+
+Apakah ini awal dari era di mana AI providers jadi gatekeepers? Kita semua berharap tidak.
+
+---
+
+## 💸 $39 Jadi Standar Baru — Selamat Tinggal Era $20
+
+Kimi naikkan tier "normal usage" ke $39. GitHub Copilot Pro+ di $39. Codex $20 mulai cutting quota. Seperti kata Mas Michael: *"$20 adalah ilusi skrg 🤣"*.
+
+Mas Ardit merangkum realita baru ini: *"Memasuki era coding mesti ada modal subscription ya sekarang, ngga cuma laptop."* Dan Mas Faris menambahkan perspektif yang lebih pragmatis: *"Harus bisa minimal balik modal sih. In this economy, $39 itu lumayan damaging."*
+
+Buat yang budget-conscious, Mas Michael share formula-nya: **$15 Windsurf + $15 Amp + $5 OpenRouter = $35/bulan**. Belum $39, tapi mendekati. Mas Desilino bahkan bilang free models di OpenCode *"practically gak kepake kalo AGENTS.md kita gede"*.
+
+Pertanyaannya bukan lagi "subscribe atau nggak" tapi "kombinasi apa yang paling hemat."
+
+---
+
+## 🤖 OpenClaw: Inspiring tapi Mahal
+
+Saya share setup multi-agent di [ark.zainf.dev](https://ark.zainf.dev) dan beberapa orang tertarik. Mas Tegar mulai explore, Mas Sabiq minta tutorial, Mas Ivan kaget lihat jumlah bot-nya.
+
+Tapi komentar yang paling jujur datang dari Mas Zahid: *"di openclaw boros token banget, sama quality code/ui nya gk sebagus, misal pakek amp ato pi."* Akhirnya dia balik ke terminal. Saya sendiri juga mengakui — *"Tiap mau tidur kepikiran, 'masih ada jatah token yg belum dihabiskan'. 😅"*
+
+Pattern yang mulai terbentuk: OpenClaw untuk orchestration & coordination, terminal tools (Amp, pi.dev) untuk coding aktual. Bukan either/or, tapi layered.
+
+---
+
+## 🛡️ Clone Wars — Hati-Hati Install Sembarangan
+
+Fenomena baru yang agak mengkhawatirkan: banyak clone OpenClaw bermunculan (ZeroClaw, OpenFang, NullClaw, nanobot). Mas Faris jadi korban — *"Aku ternyata salah install. Install yang versi palsunya yang ikut-ikutan trend. Ternyata ada dua tapi nomor 1 paling atas di web itu yang palsu haha."*
+
+Yang bikin serem, dia lanjutkan: *"Agak ngerik juga kemarin salah install. Takutnya dipasang malware atau injection gitu-gitu kan."* Mbak Eka merangkum situasinya dengan sempurna: *"Saking banyak claw2an wkwk."*
+
+Kalau kamu mau install tool baru — **verifikasi dulu**. Cek repo asli, cek maintainer, jangan cuma klik yang ranking pertama di Google.
+
+---
+
+## 🧠 Shifting Mindset: Product > Code
+
+Diskusi paling reflektif minggu ini datang dari Mas Riga: *"tp ku ngerasa ya, pada akhirnya, kita kek malah harus shifting mindset ke product jadinya. karena percuma tau ngoding klo product yg dibikin juga gk jadi apa2."*
+
+Fakta pendukung: pemenang Claude hackathon kebanyakan bukan software engineer. Mas Michael kasih saran: *"makanya kalau mau ikut hackathon next cari partner non IT. Biar idenya dari mereka eksekusinya di kita yg dev 🤣."*
+
+Ini bukan soal coding jadi tidak penting — tapi soal coding *saja* sudah tidak cukup.
+
+---
+
+## ⚡ Quick Hits
+
+- **Claude Code Agent Teams** (beta) — Mas Mamed bilang *"bener2 kayak ngerelease 1 team buat ngerjain task paralel"*, tapi *"deres token juga wkwkwk"*
+- **Codex 5.3** menyala 🔥 — Mas Ivan pakai sebagai tester/verifier, Opus tetap main driver
+- **Cursor mobile** di-tease Kent C. Dodds — ditunggu rilisnya
+- **Kimi promo 3x quota** — tapi CLI-nya makin ditinggal (author cabut)
+- **Claude Max gratis** buat OSS maintainer 5000+ stars — [daftar di sini](https://claude.com/contact-sales/claude-for-oss)
+- **GLM-5-Code** diumumkan — mocin terus bergerak
+- **Droid (Factory AI)** rilis fitur Mission — underrated tapi menarik
+- **EntireHQ** dari ex-CEO GitHub — beberapa orang dapet early access
+- **Google Stitch** — UI bagus tapi gak bisa long-term project
+- **Mbak Eka** bikin joke terbaik minggu ini: *"Gua anak ban(ne)d! Kena ban di Antigravity, kena ban di Kimi, di Anthropic..."* 😂
+
+---
+
+## 📈 Tren Minggu Ini
+
+**Emerging:**
+- Pi.dev sebagai breakout tool 2026
+- Package ecosystem untuk coding agents
+- Agent teams — multi-agent parallel execution
+
+**Continuing:**
+- Kecemasan biaya token — dari $20 ke $39
+- Terminal-first menang atas IDE (sementara)
+- Model China makin kompetitif
+
+**Fading:**
+- OpenCode sebagai default terminal agent
+- Era subscription $20
+- Pure vibe coding → agentic engineering
+
+---
+
+## 📰 Artikel yang Di-share
+
+- [Anthropic Drops Flagship Safety Pledge](https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/) — di-share Mas Tunggul
+- [Cloudflare Vinext](https://blog.cloudflare.com/vinext/) — Cloudflare masuk AI agent space
+- [The METR Study on AI Coding](https://dev.to/matthewhou/the-metr-study-changed-how-i-think-about-ai-coding-4i84) — perspektif riset
+- [Product Manager Skills for Agents](https://github.com/deanpeters/Product-Manager-Skills) — di-share Mas Desilino
+- [Awesome Agent Skills](https://github.com/VoltAgent/awesome-agent-skills) — curated list
+- [Pi Agent Teams Package](https://github.com/tmustier/pi-agent-teams) — di-share Mas Zahid
+- [GitHub Agents League Hackathon](https://github.com/microsoft/agentsleague) — di-share Mas Riza Fahmi
+- [Ubuntu 26.04 as AI Dev Sandbox](https://www.youtube.com/watch?v=0CYm-KCw7yY) — Canonical positioning
+
+---
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **[pi.dev](https://pi.dev)** — install, explore packages, rasakan sendiri hype-nya
+2. **[Oh-My-Pi](https://github.com/can1357/oh-my-pi)** — kalau mau agent teams dan extended workflows
+3. **[Claude for OSS](https://claude.com/contact-sales/claude-for-oss)** — punya repo 5000+ stars? Claude Max gratis
+4. **Verifikasi tools sebelum install** — jangan jadi korban clone wars
+5. **Evaluate budget combo** — $15 Windsurf + $15 Amp + $5 OpenRouter sebagai starting point
+
+---
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — Link curator + pi.dev sales champion. 330 pesan. Legend.
+- **Mas Zahid** — Pi.dev power user, omp contributor, mantan Amp loyalist
+- **Mas Desilino** — "Mesin tua" yang tetap semangat, pi.dev evangelist
+- **Mas Tunggul** — Geopolitics meets AI safety commentary
+- **Mbak Eka** — Tool evaluator + jokes queen ("anak band" 🤣)
+- **Mas Tegar** — OpenClaw explorer baru, usepeladen.com builder
+- **Mas Iqbal** — Budget-conscious explorer, selalu galau antara tools 😅
+- **Mas Riza Fahmi** — Anthropic critic, OSS community voice
+- **Mas Riga** — Product mindset advocate
+- **Mas Faris** — ZeroClaw user, clone wars survivor
+- **Mas Fajar** — Provider explorer, Ollama cloud discoverer
+- **Mas Mamed** — CC Agent Teams power user
+- **Mas Ivan** — Codex advocate, Opus+Codex combo user
+- **Mas Fahru** — Amp fan, Droid explorer
+- **Mas Andre Pratama** — Claude hackathon, pasal.id connection
+- **Mas Dedy** — Newcomer learning agentic coding dari nol
+- **Mas Ardit** — Subscription reality check
+- **Mas Sabiq** — "Mau nyoba bikin minion-minion"
+- **Mas Fajri** — Warp loyalist: *"waduh, udah nyaman di Warp saya"*
+- **Mas Sem** — Budget tools seeker
+
+---
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 01 Maret 2026*
