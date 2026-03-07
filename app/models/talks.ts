@@ -260,7 +260,7 @@ export const meetups: Talk[] = [
     ],
   },
   {
-    slug: "/reliable-tests-with-ai",
+    slug: "reliable-tests-with-ai",
     date: "2025-07-03",
     title: "Writing Reliable Tests for React using AI",
     description:
