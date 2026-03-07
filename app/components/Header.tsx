@@ -275,7 +275,7 @@ function Avatar({
 export function Header() {
   const matches = useMatches();
 
-  const isHomePage = matches[1].pathname === "/";
+  const isHomePage = matches.some((match) => match.pathname === "/");
 
   const headerRef = useRef<HTMLDivElement>(null);
   const avatarRef = useRef<HTMLDivElement>(null);
