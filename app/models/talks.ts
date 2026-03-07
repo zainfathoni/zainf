@@ -9,6 +9,20 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "techrawih-reactid-2026",
+    date: "2026-03-07",
+    title: "React dengan AI-Assisted Workflow",
+    description:
+      "A hands-on talk about building React applications using AI-assisted workflows, covering component development, state management, and practical AI integration techniques.",
+    event: "Techrawih x ReactID",
+    resources: [
+      {
+        href: "/react-with-ai-assistance",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
     slug: "idsw-2025",
     date: "2025-11-23",
     title: "Raising Children Who Outthink the Machines",
