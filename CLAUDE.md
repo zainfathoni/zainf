@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website built with **Remix** and deployed to Vercel. The site features a blog, talks, projects showcase, and uses system. It supports dark/light theme switching and is built with TypeScript and Tailwind CSS.
+This is a personal portfolio website built with **React Router v7** (migrated from Remix) and deployed to Vercel. The site features a blog, talks, projects showcase, and uses system. It supports dark/light theme switching and is built with TypeScript and Tailwind CSS.
 
 ## Development Commands
 
@@ -29,10 +29,11 @@ pnpm run typecheck
 
 ### Framework & Routing
 
-- **Remix** with file-based routing in `app/routes/`
+- **React Router v7** with file-based routing in `app/routes/`
 - Route convention: `_layout.*` files provide nested layouts
 - MDX support for blog posts with `rehype-highlight` for code syntax highlighting
 - Server-side rendering with TypeScript
+- Configured via `react-router.config.ts` (Vercel preset)
 
 ### Theme System
 
@@ -65,7 +66,8 @@ pnpm run typecheck
 - `app/root.tsx`: Main app wrapper with theme provider and global layout
 - `app/routes/_layout.tsx`: Base layout for most pages
 - `app/tailwind.css`: Global styles and Tailwind imports
-- `remix.config.js`: MDX configuration with syntax highlighting
+- `react-router.config.ts`: React Router v7 config (SSR + Vercel preset)
+- `vite.config.ts`: Vite config with MDX, React Router, and path alias plugins
 
 ## Content Management
 
@@ -77,7 +79,7 @@ pnpm run typecheck
 
 - Uses `~/*` path alias for `app/*` imports
 - Volta for Node.js version management (v18.19.0)
-- ESLint with Remix configuration for code quality
+- ESLint for code quality
 - Bundle targeting ES2022 with React JSX transform
 
 ## Git Conventions
