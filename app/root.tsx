@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
   useLoaderData,
 } from "@remix-run/react";
 import type {
@@ -80,6 +81,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 function App() {
   const data = useLoaderData<LoaderData>();
   const [theme] = useTheme();
+  const location = useLocation();
+  const isBlogPath = location.pathname.startsWith("/blog");
 
   return (
     <html className={clsx("h-full antialiased scroll-smooth", theme)} lang="en">
@@ -87,6 +90,12 @@ function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
+        {!isBlogPath ? (
+          <link
+            rel="canonical"
+            href={`https://www.zainfathoni.com${location.pathname}`}
+          />
+        ) : null}
         <Links />
         <NonFlashOfWrongTheme ssrTheme={Boolean(data.theme)} />
       </head>
