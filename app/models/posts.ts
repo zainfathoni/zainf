@@ -9,7 +9,7 @@ import * as postAiToolsSweGrowthFeb23Mar12026 from "../routes/blog.ai-tools-swe-
 export type MdxAttributes = { meta: Array<Record<string, any>> };
 
 export type MdxModule = {
-  filename: string;
+  filename?: string;
   attributes: MdxAttributes;
 };
 
@@ -29,14 +29,49 @@ export function extractPostAttributes(attributes: MdxAttributes) {
   };
 }
 
+function getSlugFromFilename(filename?: string) {
+  if (!filename) {
+    return;
+  }
+
+  return filename
+    .replace(/^blog\./, "")
+    .replace(/\.mdx?$/, "")
+    // Remix flat-routes use dots as path separators in route filenames.
+    // Normalize post slugs accordingly so links match generated routes.
+    .replace(/\./g, "/");
+}
+
+function getSlugFromMetadata(attributes: MdxAttributes) {
+  const canonicalUrl = attributes.meta.find((m) => m.property === "og:url")
+    ?.content;
+
+  if (typeof canonicalUrl !== "string") {
+    return;
+  }
+
+  try {
+    const { pathname } = new URL(canonicalUrl);
+    if (pathname.startsWith("/blog/")) {
+      return pathname.replace(/^\/blog\//, "");
+    }
+  } catch {
+    // Ignore invalid URLs and continue to regex fallback.
+  }
+
+  const pathMatch = canonicalUrl.match(/\/blog\/(.+)$/);
+  return pathMatch?.[1];
+}
+
 export function getPostFromMdxModule(mod: MdxModule): Post {
+  const slug = getSlugFromFilename(mod.filename) ?? getSlugFromMetadata(mod.attributes);
+
+  if (!slug) {
+    throw new Error("Unable to derive blog post slug from MDX module metadata");
+  }
+
   return {
-    slug: mod.filename
-      .replace(/^blog\./, "")
-      .replace(/\.mdx?$/, "")
-      // Remix flat-routes use dots as path separators in route filenames.
-      // Normalize post slugs accordingly so links match generated routes.
-      .replace(/\./g, "/"),
+    slug,
     ...extractPostAttributes(mod.attributes),
   };
 }
