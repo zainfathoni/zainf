@@ -1,0 +1,226 @@
+---
+meta:
+  - title: AI Tools SWE Growth Summary (March 2, 2026 - March 8, 2026)
+  - name: description
+    content: Summary of AI tools SWE Growth WhatsApp group discussions from march 2, 2026 - march 8, 2026.
+  - author: Zain Fathoni
+  - date: 2026-03-08
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+<PostHeader {...attributes} />
+
+# AI Tools SWE Growth Summary
+
+**Date Range:** March 2, 2026 - March 8, 2026
+**Source:** WhatsApp Group "AI Tools SWE GROWTH"
+
+---
+
+## 📈 Trends
+
+**🚀 Emerging:**
+- Copilot CLI sebagai legitimate alternative — bukan lagi 'second class'
+- Per-request pricing model (Codex) vs per-token (Opus) — pricing war baru
+- Cross-tool OAuth interop (Copilot auth di pi.dev, Opencode, dll)
+- Oh My OpenAgent — agent orchestration evolving from tool wrappers
+- M-shaped people — AI push PM dan SWE jadi generalist
+
+**📊 Continuing:**
+- Subscription fatigue & regional pricing inequality
+- Multi-provider strategy — jangan taruh semua telur di satu keranjang
+- Agent harness > model choice consensus makin kuat
+- Budget combo hunting (Claude + Amp free + Copilot $10)
+
+**📉 Fading:**
+- Single-tool loyalty — semua orang mix & match sekarang
+- Antigravity/Windsurf hype — makin banyak complaint
+- IDE-first approach — CLI tools makin dominan
+
+## 🎯 Key Topics Discussed
+
+### 1. Claude Suspension Wave & Multi-Provider Survival
+
+- Mas Faris dapat email suspension dari Anthropic — investigasi 'suspicious signals'
+- Claude down bersamaan dengan AWS data center incident (Middle East)
+- Respons komunitas: jangan ketergantungan 1 provider
+- Subscription pricing war dimulai — siapa yg bisa combine paling hemat
+
+### 2. Subscription Economics & 'Kere Hore' Status
+
+- Di Brazil: $200 = 60% gaji. Di Indonesia: bisa full gaji
+- Regional pricing masih jauh — provider masih cari cuan
+- Strategy: combine Claude Max $100 + kantor punya Teams + Amp gratis
+- Mas Desilino akhirnya uninstall OpenClaw — budget vs kebutuhan reality check
+- Kilo sering kasih 'bansos' free credits — tapi tidak reliable
+- 'Sobat mentok kanan' vs 'kaum mendang mending' — class divide di AI tools semakin terasa
+
+### 3. Agent Harness > Model Choice
+
+- Sama-sama Opus, beda harnessing = beda hasil drastis
+- System prompt bukan satu-satunya faktor — kapan dipanggil, context apa, kapan cache hit
+- Compound engineering di Amp — tiap beads punya field skill dan mode, tinggal handoff
+- Claude Code plugin compound-engineering makin populer tapi boros token
+
+### 4. Singapore AI Bansos vs Indonesia Reality
+
+- Singapore: free premium AI subs dari pemerintah, H2 2026
+- Indonesia: subs AI bisa setengah sampai full gaji
+- Regional pricing discussion — kapan semua adopt?
+- Leverage sebagai business expense jadi solusi pragmatis
+
+### 5. Security Concerns: Supply Chain + Fake Clones
+
+- Supply chain attack + prompt injection case study — simple theory, scary execution
+- Mas Faris salah install fake OpenClaw clone — nomor 1 di web ternyata palsu
+- Pindah ke nanobot + ZeroClaw sebagai alternative
+- Perlu double-triple waspada kalau serahkan prod infra ke LLM
+
+### 6. Code Reviews Are Dead & M-Shaped People
+
+- SWEs perlu product thinking, PMs perlu technical depth
+- AI push semua orang jadi M-shaped person
+- Quality vs YOLO tension — agent di deploy ke prod gantiin software
+- Concern: kecepatan agent coding > kecepatan JS framework era
+
+### 7. GPT 5.4 Release & Model Wars
+
+- GPT 5.4 bisa 1M context window
+- Amp deep mode langsung upgrade ke Oracle (5.4)
+- Codex ga lolos tes 🍓 — lucu tapi Opus aman
+- Opus fast mode di Windsurf: 30x multiplier credits 😱
+
+### 8. Qwen 3.5 Local & Chinese Model Ecosystem
+
+- Qwen 3.5 run local di iPhone 17 Pro — mobile AI makin real
+- Di Mac mini: ditanya nama aja overthinking 1 menit
+- GLM-5-Code akan ada — Chinese model ecosystem berkembang
+- Alibaba $3 multimodel deal — cuma ada referral-nya
+
+## 🛠️ Tools & Products Mentioned
+
+### [GitHub Copilot CLI](https://github.com/features/copilot) *(37 mentions)*
+
+- Copilot CLI makin diakui sebagai coding tool yg legit — support skills, commands, plugins compatible dengan Claude Code
+- Mas Tunggul dapat free Copilot Pro secara misterius — eligibility-nya masih misteri
+- Pricing model per-request (bukan token) bikin budgeting lebih predictable
+- Bisa login OAuth di opencode dan pi.dev — multi-tool interop makin lancar
+
+### [Codex (GPT-5.3 / 5.4)](https://openai.com/codex/) *(34 mentions)*
+
+- Head-to-head test: Codex 5.3 High vs Opus 4.6 — Codex mulus sukses explore Aspire project, Opus malah bikin workaround
+- GPT 5.4 dirilis dengan 1M context window — Amp Code langsung dapet Oracle mode
+- Quota mulai diperketat untuk $20 plan — ada counter-info bahwa quota sedang di-double sampai April
+- Per-request pricing bikin Codex lebih ekonomis daripada Opus yg 3x premium request
+
+### [Amp Code](https://ampcode.com) *(14 mentions)*
+
+- Deep mode dengan Codex semakin jadi combo andalan — bisa 1 feature medium dari awal sampai akhir
+- GPT 5.4 sebagai Oracle mode baru di deep — makin powerful
+- Smart mode tetap mahal, deep mode lebih hemat
+- Gratisan per-thread ($10 per thread, reset per hari) — bikin strategi penggunaan penting
+- Compound engineering plugin bikin workflow multi-agent di Amp
+
+### [pi.dev](https://pi.dev) *(18 mentions)*
+
+- Pi.dev makin direkomendasikan — bisa login pakai GitHub Copilot OAuth untuk dapetin model premium
+- Perbandingan pi.dev vs Claude Code vs Amp Code: pi.dev lebih kreatif dan teliti di hal kecil
+- Rho — TUI baru kayak OpenClaw tapi langsung chat di pi (lagi dijajal Mas Riza Fahmi)
+- Copilot auth bisa dipakai di pi.dev — cross-pollination antar tools makin mulus
+
+### [OpenClaw](https://openclaw.ai) *(29 mentions)*
+
+- Streaming feature baru di OpenClaw — Zain demo video di grup
+- OpenClaw ga mau tidur — 'Sleep is a feature we haven't shipped yet'
+- Skill evolution penting — ga ada skill pamungkas, perlu adaptasi terus
+- Mas Desilino uninstall OpenClaw karena budget & kebutuhan — balik ke CLI
+- Obrolan soal cara setup dari 0, Mac mini vs VPS, multi-agent architecture
+
+### [Kimi](https://kimi.moonshot.cn) *(27 mentions)*
+
+- Kilocode kasih bansos Kimi 2.5 gratis di weekend — tapi udah abis
+- Kimi CLI authornya cabut dari project — bikin was-was
+- Tetap jadi opsi budget alternative populer
+
+### [GLM](https://chatglm.cn) *(10 mentions)*
+
+- GLM baik banget refund — refund total tanpa alasan, dari Lite ke Pro
+- GLM-5-Code bakal ada — bikin komunitas excited
+- Mas Faris pakai GLM di ZeroClaw + nanobot
+
+### [Gemini / Gemini CLI](https://gemini.google.com) *(11 mentions)*
+
+- Gemini 3.1 sering error di Antigravity — pas pakai Claude langsung lancar
+- Gemini CLI lebih oke daripada di Antigravity (IDE)
+- Gemini siap rilis model baru lagi
+
+### [Antigravity (Windsurf)](https://codeium.com/windsurf) *(10 mentions)*
+
+- Unusable untuk beberapa user — error terus-terusan
+- Lapar RAM — user complaint memory usage
+- Opus fast mode ada tapi 30x multiplier credits — bikin ngeri
+
+### [Opencode](https://opencode.ai) *(21 mentions)*
+
+- Opencode desktop app makin stable — dulu buggy, sekarang ada subagent
+- Semua subscription bisa masuk — paling versatile dari segi provider support
+- Oh My Opencode evolve jadi Oh My OpenAgent
+
+### [Augment Code / Intent](https://augmentcode.com) *(5 mentions)*
+
+- Intent — editor AI baru dari Augment, diinstal tapi langsung diuninstal Mas Michael
+- Belum buka BYOK — nilai minus
+- Tapi bisa numpang model dari Opencode sebagai workaround
+
+### [Fizzy](https://fizzy.do) *(5 mentions)*
+
+- Fizzy CLI resmi dirilis — disadur dari robzolkos punya
+- Self-host consumption lumayan berat (2GB) — bayar $20/bulan lebih worth it
+
+## 💬 Notable Quotes
+
+> "Aku 2 hari ini ngetest head to head Codex 5.3 High vs Opus 4.6 1M context di Copilot CLI.. hasilnya Codex mulus sukses.. Opus banyak ngedit existing code untuk bikin workaround, dan tetep gak jalan 😂"
+> 
+> *— Head-to-head model test*
+
+> "Dan setelah mempertimbangkan budget dan kebutuhan kerja gw pun balik ke cli aja, uninstall openclaw 🥲"
+> 
+> *— Budget reality check*
+
+> "Baca ini, jadi makin yakin SWEs semakin perlu skills product thinking juga. Tapi, di sisi lain saya sebagai PM pun merasa perlu makin paham technical. AI memang ngepush semua orang jadi M-shaped person"
+> 
+> *— On evolving skillset*
+
+> "Sama-sama Opus, kalau beda harnessing-nya, beda juga hasilnya."
+> 
+> *— Agent harness > model choice*
+
+> "down satu masih ada yg lain asal jgn down semua 😭😂"
+> 
+> *— Multi-provider survival strategy*
+
+> "definisi jadi tamu dirumah sendiri, sering bgt error kalau pakai model gemini 3.1 di antigravity"
+> 
+> *— Gemini in Windsurf/Antigravity*
+
+> "Bansos-nya Singapore memang beda level 👍🏼"
+> 
+> *— Singapore free AI subs*
+
+> "semenjak claw2 ini paket naik kere hore statusnya naik juga 😭"
+> 
+> *— Subscription fatigue*
+
+## 📊 Stats
+
+- **Messages analyzed:** 804
+- **Tools mentioned:** 12
+- **Topics discussed:** 8
+- **Tips shared:** 0
+
+---
+
+*Summary extracted by Prowl 🚔*
+*Compiled by Wheeljack 🛠️*
+*Last updated: 2026-03-08*
