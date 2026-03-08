@@ -1,0 +1,210 @@
+---
+meta:
+  - title: "Codex Naik Tahta, Kere Hore Naik Kelas, dan Semua Orang Jadi Multi-Tool — AI Tools Digest #6"
+  - name: description
+    content: "Minggu ini Codex menang head-to-head lawan Opus, Droid Mission Control bikin geleng-geleng, dan batas 'kere hore' resmi naik ke $40. Rangkuman dari grup AI Tools SWE GROWTH, 2-8 Mar 2026."
+  - author: Zain Fathoni
+  - date: "2026-03-08"
+  - property: og:title
+    content: "Codex Naik Tahta, Kere Hore Naik Kelas, dan Semua Orang Jadi Multi-Tool — AI Tools Digest #6"
+  - property: og:description
+    content: "Minggu ini Codex menang head-to-head lawan Opus, Droid Mission Control bikin geleng-geleng, dan batas 'kere hore' naik ke $40. Rangkuman dari grup AI Tools SWE GROWTH, 2-8 Mar 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-mar-2-mar-8-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-6.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Codex Naik Tahta, Kere Hore Naik Kelas, dan Semua Orang Jadi Multi-Tool — AI Tools Digest #6"
+  - name: twitter:card
+    content: summary_large_image
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+<PostHeader {...attributes} />
+
+# Codex Naik Tahta, Kere Hore Naik Kelas, dan Semua Orang Jadi Multi-Tool
+
+Minggu ini 850 pesan. Dan yang paling menarik bukan satu tool baru — tapi kenyataan bahwa tidak ada yang pakai cuma satu tool lagi. Semua orang sudah punya "combo" masing-masing, kayak pemain fighting game yang hafal movesetnya. 😅
+
+---
+
+## ⚔️ Codex vs Opus — Head-to-Head yang Mengejutkan
+
+Kalau minggu lalu masih soal hype tools baru, minggu ini kita masuk fase yang lebih matang: **benchmark sendiri**. Dan hasilnya mengejutkan beberapa orang.
+
+Mas Oshi bikin head-to-head langsung antara Codex 5.3 High dan Opus 4.6 di [Copilot CLI](https://github.com/features/copilot). Task-nya: explore cara running project [Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/) yang banyak dependency. Hasilnya? *"Codex mulus sukses.. Opus banyak ngedit existing code untuk bikin workaround, dan tetep gak jalan 😂"*
+
+Tapi cerita tidak berhenti di situ. Mas Riza Rohman punya pengalaman sebaliknya: *"masih bingung implementasi Codex 5.3 ini dimana. Buat planning dan casual exploration juga jelek banget. Cuma kasih bullet points."* Jadi bukan soal mana yang lebih bagus secara absolut — tapi soal **di mana masing-masing bersinar**.
+
+Mas Michael merangkum konsensusnya dengan elegan: Opus untuk brainstorming dan planning, Codex untuk execution. Dan dia sendiri sudah menjalankan flow itu — *"so far cukup puas dengan brainstorming dan plan sama Opus"*, lalu eksekusi pakai Codex di [Amp Code](https://ampcode.com) deep mode.
+
+Yang paling penting dari diskusi ini: **agent harness matters.** Seperti yang saya bilang di grup, *"Sama-sama Opus, kalau beda harnessing-nya, beda juga hasilnya."* Bukan cuma model yang penting, tapi cara mempekerjakan LLM end-to-end — kapan dipanggil, context-nya apa, kapan cache hit. Ini yang bikin [Amp Code](https://ampcode.com) dan [pi.dev](https://pi.dev) terasa berbeda meskipun pakai model yang sama.
+
+Pertanyaan yang lebih menarik: kalau Codex sudah bisa execute dengan baik, apakah kita masih butuh Opus untuk semuanya? Atau kita sudah masuk era **model specialization** — Opus mikir, Codex ngerjain?
+
+---
+
+## 🔥 Multi-Tool Workflows — Masa Depan yang Sudah Terjadi
+
+Ini tren paling jelas minggu ini: **tidak ada yang pakai satu tool lagi.** Semua orang punya combo, dan tiap combo unik sesuai kebutuhan dan budget.
+
+Mas Ivan share workflow-nya yang paling mature: Codex sebagai *"hammer"* untuk medium features — *"Codex bagi saya jd 'hammer' buat yg ngerjain 1 feature medium size. Dr awal sampai akhir. Dengan implementation yg solid + prompting untuk kerjakan sampai selesai, code review, test, dan review dengan model lain. Sampai create PR."* Satu feature kelar dalam 45-60 menit, dan di Copilot cuma 1 premium request. Setelah itu refinement pakai [Kimi](https://kimi.com) untuk frontend — *"si Kimi eksekusi nya lebih cepat dan tepat"*. Terakhir, [Gemini CLI](https://blog.google/technology/google-deepmind/gemini-cli-open-source/) untuk browser tests dengan Chrome MCP tool. Tiga model, tiga tugas, satu workflow.
+
+Mas Andre Pratama — yang baru kenal [pi.dev](https://pi.dev) minggu lalu — langsung all-in: *"Terima kasih untuk mas mas yang sudah rekomendasi pi.dev — asli mantep banget wkwk."* Workflow-nya: Claude Code + Amp Code Free + pi.dev login pakai Copilot kantor. Bahkan untuk task kecil, pi.dev terasa *"lebih kreatif dan teliti sama hal-hal kecil"*.
+
+Mas Riza Rohman punya pendekatan paling eklektik: *"mix claude+copilot+codex+kimi+opencode free model 😂"*. Lima tools sekaligus. Dan ini bukan anomali — ini jadi norma baru.
+
+Saya sendiri sekarang turun ke Claude Max $100 karena kantor sudah kasih Claude Teams. Untuk OpenClaw saja, plus coding kerjaan pakai plan kantor dan gratisan Amp deep mode. *Sejauh ini masih cukup sih, selama pakainya yang deep mode. Karena kalau smart mode cepet habis juga credits gratisannya.* 😅
+
+Artinya apa? Era single-tool loyalty sudah berakhir. Pertanyaannya sekarang bukan "pakai apa" tapi "kombinasi apa yang optimal untuk use case kamu."
+
+---
+
+## 🤖 Droid Mission Control — Orchestrator Baru yang Bikin Geleng
+
+[Droid dari Factory AI](https://factory.ai/news/missions) rilis fitur Mission Control, dan Mas Zahid langsung coba. Reviewnya? *"So far cukup bagus, dia di awal planning dulu, terus misal di tengah-tengah perlu alignment masih bisa, otomatis adjust artifact plan-nya, terus re-organize worker-nya."*
+
+Yang bikin unik: sebelum eksekusi, Droid bikin skill dulu untuk worker-nya. *"Instead of kita taruh docs di plan, untuk framework/libs related dia masukin ke skill,"* kata Mas Zahid. Ini pendekatan yang berbeda dari omo yang agentnya sudah punya spesialisasi bawaan.
+
+Dan yang paling penting buat kaum mendang-mending: **jauh lebih hemat token** dibanding omo. Mas Zahid sendiri bandingkan langsung — omo *"token nya bocor banget 🤣"*, sementara Droid bisa di-tinggal tidur, bangun-bangun kelar semua.
+
+Bonus: Droid support BYOK (Bring Your Own Key), jadi tidak harus subscribe service mereka. Meskipun Mas Michael sinis — *"ya namanya jualan mesti subs service mereka 😂"* — ternyata memang bisa pakai key sendiri.
+
+Sementara itu, [Oh-My-Pi (omp)](https://github.com/can1357/oh-my-pi) berevolusi jadi Oh-My-OpenAgent — tanda bahwa ekosistem agent CLI makin mature. Pertanyaannya: dalam 3 bulan, berapa banyak orchestrator yang bakal survive?
+
+---
+
+## 💸 "Sobat Mentok Kanan" dan Naiknya Batas Kere Hore
+
+Diskusi paling lucu sekaligus paling menyakitkan minggu ini. Dimulai dari Mas Michael yang share tweet soal biaya AI tools di berbagai negara. Mas Iqbal langsung respon: *"Full gaji mas wkwk"* — soal berapa persen gaji yang habis buat subscription.
+
+Lalu muncul istilah baru yang langsung viral di grup: **"sobat mentok kanan"** — orang-orang yang gajinya cukup besar sampai subscription AI berasa kayak jajan. Mas Mukhlis yang memulai: *"New tier unlocked: sobat mentok kanan 😂"*, setelah Mas Michael bilang *"subs max mungkin sama dia sama kek subs pro di kita 😂"*.
+
+Mas Zahid memberikan perspektif yang paling real: *"yg jadi masalah bukan mentok kananya, tapi kurs mata uang kita aja yg terlalu mentok bawah. wkwkkw"*
+
+Dan batas "kere hore" resmi naik. Mas Michael menganalisis: *"sepertinya kere hore di waktu skrg sdh naik ke angka under $40 deh. Dulu kan awal-awal kere hore dibawah $20."* Mas Desilino — yang subscribe $39 — kaget: *"Gw pikir gw yg subscribe $39 an udah lepas dari title kere hore 🙈"*
+
+Sementara itu, Singapura kasih [bansos AI premium gratis](https://www.straitstimes.com/singapore/politics/singaporeans-to-receive-free-premium-ai-subscriptions-from-second-half-of-2026) ke warganya. *Bansos-nya Singapore memang beda level* 👍🏼. Mas Desilino pun akhirnya menyerah: *"Dan setelah mempertimbangkan budget dan kebutuhan kerja gw pun balik ke cli aja, uninstall openclaw 🥲"*
+
+Ide bisnis paling kreatif? Mas Ivan: *"Jualan token ketengan pakai kartu untuk Claude Code enak kayaknya 😅. Kayak wifi di rumahan. Jam-jaman 😁"* — dan Mas Michael langsung bilang *"ini market di daerah dijamin laku keras 🔥"*. Saya rasa ini bukan cuma lelucon. Dengan kondisi kurs saat ini, model bisnis kayak gini mungkin memang ada pasarnya.
+
+---
+
+## 🛡️ Claude Down, Akun Kena Suspend, dan OpenClaw Manggil Miner
+
+Minggu security yang cukup ramai. Claude sempat down — sepertinya terkait insiden data center AWS. Mas Zahid malah memanfaatkan situasinya: *"Tapi gara-gara itu bisa nge-spam subagent dan gk kena limit 🤣 🤣 🙈"*
+
+Yang lebih serius: Mas Ahsan kena suspend akun Claude. Email dari Anthropic cukup dingin — *"An internal investigation of suspicious signals associated with your account indicates a violation of our Usage Policy."* Belum jelas karena pakai tools apa, tapi ini bikin beberapa orang nervous.
+
+Di sisi lain, Mas Tegar share bahwa [OpenClaw](https://openclaw.ai)-nya manggil crypto miner. 😱 Pertanyaannya: *"Hardening OpenClaw nya gimana ya biar gak exec apapun yang dia baca?"*
+
+Jawaban saya sederhana tapi fundamental: **pakai model frontier.** Ibarat kata, kalau kita kasih SOP yang kompleks ke anak intern, pasti puyeng dan tetep gampang ketipu maling. Tapi kalau yang pegang SOP itu senior engineer, bakalan lebih gampang menaatinya — bahkan tanpa SOP pun sudah punya sense of security yang lebih baik.
+
+Selain itu, Mas Shofy share case study menarik soal [supply chain attack yang ketemu prompt injection](https://www.linkedin.com/posts/feross_a-supply-chain-security-vendors-own-supply-activity-7434295145853861889). *"Teorinya sebenarnya simpel. Tapi justru itu yg bikin ngeri,"* katanya.
+
+Pelajarannya: kita semua makin tergantung pada tools yang bisa execute arbitrary code. Kalau belum punya defense layer, sekarang waktunya mulai. 🛡️
+
+---
+
+## 📣 Claude Ambassador Program — Siapa Mau Jadi Duta?
+
+Anthropic buka [program ambassador](https://claude.com/community/ambassadors) dan grup langsung heboh. Mas Michael, saya, Mas Faris, dan Mas Galih langsung daftar. Mas Faris bahkan bilang: *"Saya siap jadi marketer dan sales handal"* — dan kita semua tahu dia serius. 😂
+
+Mas Michael tetap humble: *"gak bakal ekspetasi apa-apa kok saya mah. Sama yg lain remahan rengginang 😂"*. Tapi kemudian dia bilang sesuatu yang mungkin prophetic: *"org Anthropic pas buka applicant yg Indonesia bakal shock. Pendaftar banyak banget pastin 🤣"*
+
+Mas Mukhlis saran ke Mas Michael: *"kalaupun gak dapat bisa check ombak itu. Jadi kebayang spec BA Anthropic itu sampai mana 😂"*
+
+Siapapun yang dapat dari grup ini, satu hal pasti: **share promo Anthropic ke sini.** Seperti kata Mas Michael, *"yg anggota grup sini misal ada yg tembus jgn lupa share-share promo anthropic 😂"*
+
+---
+
+## ⚡ Quick Hits
+
+- **GPT-5.4 rilis** — 1M context window, Amp deep mode langsung dapet Oracle. Mas Zahid: *"sampek habis 2 akun GPT ku quota-nya"*
+- **Claude Code voice mode** — Sekarang bisa ngobrol sama Claude Code. Ga perlu WisprFlow lagi 🎤
+- **[Compound engineering plugin](https://github.com/EveryInc/compound-engineering-plugin)** untuk Claude Code — Mas Michael pakai dedicated agent untuk brainstorming dan planning. Catatan: *"works sama CC rata kanan karena konsumsi tokennya luar biasa dahsyat 🙈"*
+- **Google Workspace CLI (gws)** — CLI untuk Gmail, Calendar, Drive. Di-share [via tweet Addy Osmani](https://x.com/addyosmani/status/2029372736267805081). Mas Riza Fahmi: *"Cocok dikonsumsi oleh si kepiting rebus nih"*. Mbak Eka senang: *"Akhirnya ada juga yg official"* — meskipun ternyata bukan resmi dari Google 😅
+- **Kimi K2.5** — positioning antara Opus dan Sonnet. Mas Zahid review: *"bagus mas dia diantara Opus 4.6 dan Sonnet 4.6"*. Bansos dari Kilo Code sudah abis.
+- **[Lovable.dev](https://shebuilds.lovable.app/) free 24 jam** + $100 Anthropic API credits — Minggu 12:00 - Senin 12:59. Di-share Mas Mukhlis.
+- **Qwen 3.5 running local** di iPhone 17 Pro 😱 — On-device LLM makin nyata
+- **[Overstory](https://github.com/jayminwest/overstory)** — Mas Tunggul sebut ini "si mbahe treehouse"
+- **Codex fast mode** — [Diumumkan OpenAI](https://x.com/OpenAIDevs/status/2029635632918843610), tapi app only untuk sekarang
+- **[Fizzy CLI](https://github.com/basecamp/fizzy-cli)** — CLI resmi untuk project management. Self-host butuh 2GB RAM — mending bayar $20/bulan 😅
+- **Oh-My-Pi evolusi jadi [Oh-My-OpenAgent](https://x.com/justsisyphus/status/2030334245026316647)** — dari pi-specific ke multi-agent 🔥
+
+---
+
+## 📈 Tren Minggu Ini
+
+**Emerging:**
+- Multi-model workflows jadi norma — Codex + Kimi + Gemini dalam satu pipeline
+- Agent orchestration wars — Droid Mission Control, omo, compound engineering berlomba
+- CLI tools makan pasar IDE — bahkan [Cursor rilis versi CLI](https://x.com/cursor_ai/status/2029222015736197205)
+
+**Continuing:**
+- Kere hore threshold naik dari $20 ke $40 — dan masih naik
+- Pi.dev fanbase solid — Mas Michael sebagai unofficial ambassador 😆
+- Model China (Kimi, GLM, Qwen) sebagai alternatif budget
+
+**Fading:**
+- Single-tool loyalty — semua orang mixing 3-5 tools
+- Opus sebagai default tanpa pikir — Codex gaining ground serius
+- IDE-first approach — terminal menang (untuk sekarang)
+
+---
+
+## 📰 Artikel yang Di-share
+
+- [Welcome to the Wasteland: A Thousand Gas Towns](https://steve-yegge.medium.com/welcome-to-the-wasteland-a-thousand-gas-towns-a5eb9bc8dc1f) — Sekuel Steve Yegge. Mas Michael: *"kecepatan ngalahin framework js pada masanya 🤣"*
+- [Building Claude Code with Boris Cherny](https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny) — Di-share Mas Riza Fahmi. Ada kuis: apa app pertama sang creator Claude Code? 🤔
+- [Are Code Reviews Dead?](https://www.latent.space/p/reviews-dead) — Latent Space. Di-share Mas Shofy.
+- **Supply Chain Security meets Prompt Injection** — Case study ngeri soal vendor security kena jailbreak. Di-share Mas Shofy.
+- [Rewrite Your CLI for AI Agents](https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/) — Artikel dari pembuat gws.
+- [Singaporeans to Receive Free Premium AI Subscriptions](https://www.straitstimes.com/singapore/politics/singaporeans-to-receive-free-premium-ai-subscriptions-from-second-half-of-2026) — Bansos Singapore yang bikin iri.
+
+---
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **[Droid Mission Control](https://factory.ai/news/missions)** — Long-horizon task orchestration. BYOK supported, lebih hemat token dari omo.
+2. **Head-to-head test Codex vs Opus** — Coba di use case sendiri. [Copilot CLI](https://github.com/features/copilot) bisa jadi starting point murah.
+3. **Google Workspace CLI (gws)** — Bikin agent kamu bisa akses Gmail, Calendar, Drive via terminal. [Cek tweetnya](https://x.com/addyosmani/status/2029372736267805081).
+4. **Evaluasi multi-tool combo** — Codex (execution) + Opus/Kimi (planning) + free tier Amp (coding). Sesuaikan dengan budget.
+5. **[Claude Ambassador Program](https://claude.com/community/ambassadors)** — Nothing to lose. Apply aja.
+
+---
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — 271 pesan. Link curator supreme. Pi.dev unofficial ambassador. *"kecepatan ngalahin framework js"* 🤣
+- **Mas Zahid** — Droid reviewer, Kimi evaluator, hot take machine. *"kurs mata uang kita terlalu mentok bawah"*
+- **Mas Ivan** — Multi-tool workflow maestro. Codex sebagai hammer, Kimi untuk refinement. Token ketengan visionary.
+- **Mas Riza Rohman** — Codex skeptic turned pragmatist. Mix 5 tools sekaligus.
+- **Mas Iqbal** — Budget reality check. *"Full gaji mas wkwk"*
+- **Mas Faris** — Claude ambassador candidate. GLM refund success story.
+- **Mas Galih** — Ollama Cloud explorer. Claude ambassador applicant.
+- **Mas Desilino** — Honest review: uninstall OpenClaw karena budget. $39 belum cukup lepas kere hore.
+- **Mas Tunggul** — AWS incident analyst. Overstory = "mbahe treehouse".
+- **Mbak Eka** — Pi.dev skeptic-turned-user. Ampcode FOMO. gws cheerleader.
+- **Mas Riza Fahmi** — Boris Cherny quiz master. gws discoverer.
+- **Mas Oshi** — Codex vs Opus head-to-head tester. Data-driven approach.
+- **Mas Andre Pratama** — Pi.dev convert. Multi-tool workflow pioneer.
+- **Mas Ahsan** — Amp deep mode user. Claude suspension victim 😢.
+- **Mas Shofy** — Security awareness champion. Supply chain + prompt injection.
+- **Mas Tegar** — OpenClaw hardening explorer. Crypto miner discovery.
+- **Mas Mukhlis** — Lovable.dev info + "sobat mentok kanan" coiner. Claude BA spec check.
+- **Mas Cecep** — Full opencode + Kimi workflow. Terminal purist.
+- **Mas Ardit** — Factory/Droid power user. Mission Control early adopter.
+- **Mas Budi** — Alibaba Cloud AI referral sharer.
+- **Mas Wali** — M-shaped person advocate. Product thinking + AI.
+- **Mas Joko** — Gemini CLI early adopter. Weekly digest reader.
+
+---
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 8 Maret 2026*
