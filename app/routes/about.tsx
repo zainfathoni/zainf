@@ -1,5 +1,4 @@
-import { Link } from "@remix-run/react";
-import type { MetaFunction } from "@vercel/remix";
+import { Link, type MetaFunction } from "react-router";
 import clsx from "clsx";
 
 import { Container } from "../components/Container";

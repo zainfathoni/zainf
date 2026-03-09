@@ -1,45 +1,52 @@
 {
-  "name": "my-remix-app",
+  "name": "zainf",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev --manual",
-    "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc"
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/nodejs_*/index.js",
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "@headlessui/react": "1.7.17",
-    "@remix-run/css-bundle": "^2.3.1",
-    "@remix-run/node": "^2.3.1",
-    "@remix-run/react": "^2.3.1",
-    "@remix-run/serve": "^2.3.1",
-    "@vercel/remix": "^2.3.1",
+    "@react-router/node": "7.12.0",
+    "@react-router/serve": "7.12.0",
+    "@vercel/react-router": "^1.2.5",
     "clsx": "2.0.0",
     "highlight.js": "11.9.0",
-    "isbot": "^3.6.8",
+    "isbot": "^5.1.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "7.12.0",
     "rehype-highlight": "7.0.0",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.1",
     "reveal.js": "5.2.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.3.1",
-    "@remix-run/eslint-config": "^2.3.1",
+    "@mdx-js/rollup": "^3.1.1",
+    "@react-router/dev": "7.12.0",
+    "@react-router/fs-routes": "7.12.0",
     "@tailwindcss/typography": "0.5.10",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
+    "@types/node": "^22.19.15",
+    "@types/react": "^18.2.34",
+    "@types/react-dom": "^18.2.14",
     "@types/reveal.js": "5.2.0",
-    "eslint": "^8.38.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.53.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0",
     "tailwindcss": "3.3.5",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2",
+    "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "volta": {
-    "node": "18.19.0"
+    "node": "20.19.0"
   }
 }

@@ -1,16 +1,13 @@
-import { createCookieSessionStorage } from "@vercel/remix";
+import { createCookieSessionStorage } from "react-router";
 import type { Theme } from "~/contexts/theme";
 import { isTheme } from "~/contexts/theme";
 
-const sessionSecret = process.env.SESSION_SECRET;
-if (!sessionSecret) {
-  throw new Error("SESSION_SECRET must be set");
-}
+const sessionSecret = process.env.SESSION_SECRET ?? "dev-session-secret";
 
 const themeStorage = createCookieSessionStorage({
   cookie: {
     name: "my_remix_theme",
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     secrets: [sessionSecret],
     sameSite: "lax",
     path: "/",
