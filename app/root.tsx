@@ -1,18 +1,17 @@
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useLocation,
   useLoaderData,
-} from "@remix-run/react";
+} from "react-router";
 import type {
   LinksFunction,
   LoaderFunction,
   MetaFunction,
-} from "@vercel/remix";
+} from "react-router";
 import clsx from "clsx";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -23,7 +22,7 @@ import {
   useTheme,
 } from "./contexts/theme";
 import { metadata } from "./models/metadata";
-import styles from "./tailwind.css";
+import styles from "./tailwind.css?url";
 import { getThemeSession } from "./utils/theme.server";
 
 const { title, description, url, image, locale } = metadata;
@@ -113,7 +112,6 @@ function App() {
           <Footer />
         </div>
         <ScrollRestoration />
-        <LiveReload />
         <Scripts />
       </body>
     </html>

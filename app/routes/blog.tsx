@@ -1,6 +1,5 @@
-import type { LinksFunction } from "@remix-run/node";
-import { Outlet, useLocation } from "@remix-run/react";
-import styles from "highlight.js/styles/night-owl.css";
+import { Outlet, useLocation, type LinksFunction } from "react-router";
+import styles from "highlight.js/styles/night-owl.css?url";
 import { Container } from "~/components/Container";
 import { Prose } from "~/components/Prose";
 

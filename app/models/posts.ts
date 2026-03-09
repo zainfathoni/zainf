@@ -38,7 +38,7 @@ function getSlugFromFilename(filename?: string) {
   return filename
     .replace(/^blog\./, "")
     .replace(/\.mdx?$/, "")
-    // Remix flat-routes use dots as path separators in route filenames.
+    // React Router flat-routes use dots as path separators in route filenames.
     // Normalize post slugs accordingly so links match generated routes.
     .replace(/\./g, "/");
 }

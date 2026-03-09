@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { extractPostAttributes, type MdxAttributes } from "~/models/posts";
 import { formatDate } from "~/utils/format-date";
 import { ArrowLeftIcon } from "./Icons";
