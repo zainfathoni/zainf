@@ -9,7 +9,7 @@ marp: true
 
 # Build a React App in 20 Minutes with **AI Assistance**
 
-Faster, more practical, right on target
+From zero to a multi-page React app — with AI by your side
 
 ![w:200](assets/techrawih-qr.png)
 
