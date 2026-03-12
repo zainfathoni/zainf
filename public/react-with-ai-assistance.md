@@ -113,7 +113,6 @@ Tekankan: React bukan hanya untuk enterprise. Freelancer, startup, side project 
 **Stack Overflow Survey 2024:**
 
 - React: most popular web framework **12 years running**
-- React Native: top 3 mobile framework
 
 → Large ecosystem = **more resources, libraries, and answers on the internet**
 
@@ -319,35 +318,7 @@ SPEAKER NOTES (Bahasa Indonesia):
 "Jadi ketika user buka `/product/3`, useParams akan return `{ id: '3' }` — kita pakai itu untuk cari produk yang tepat."
 "Perhatikan juga handling kalau produk tidak ditemukan — ini contoh sederhana error handling yang penting."
 "React Router punya banyak fitur lain: nested routes, layout routes, loader, action — tapi untuk mulai, ini sudah cukup."
-Transisi: "Sekarang, bagaimana React bisa dipakai untuk mobile juga?"
--->
-
----
-
-## 📱 React Native — Mobile with the Same Skills
-
-```jsx
-// Web (React)                    // Mobile (React Native)
-<div>Hello World</div>           <View>
-<p>This is a paragraph</p> →       <Text>Hello World</Text>
-<button>Click</button>              <Text>This is a paragraph</Text>
-                                    <TouchableOpacity>Click</TouchableOpacity>
-                                 </View>
-```
-
-**Same:** Components, State, Props, Hooks, Business logic
-
-**Different:** UI components (native vs web), styling
-
-<!--
-TIMING: 4 menit
-
-SPEAKER NOTES (Bahasa Indonesia):
-"Ini yang membuat React investasi yang sangat efisien: skill-nya transfer ke mobile."
-"React Native bukan compile web ke mobile — dia render komponen native sungguhan. Jadi performanya bagus."
-"Perbedaan utama: div jadi View, p jadi Text, button jadi TouchableOpacity. Logic JavaScript-nya sama persis."
-"Ini artinya kalian yang belajar React hari ini sudah punya fondasi untuk bikin aplikasi Android dan iOS juga."
-Ekspektasi yang realistis: "Tentu ada kurva belajar tambahan untuk mobile-specific things: navigasi, permissions, push notification. Tapi fondasinya sudah ada."
+Transisi: "Sekarang kita lihat ekosistem React secara keseluruhan."
 -->
 
 ---
@@ -564,43 +535,108 @@ ACTION:
 
 ---
 
-## Step 3 — ProductCard & Routes
+## Step 3a — ProductCard Prompt
 
 **Prompt to AI:**
 
-> "Create a `ProductCard` component with image, name, price in Rupiah, an 'Add to Cart' button, and a Link to `/product/:id` for details. Then set up React Router in App.jsx with a Home page showing products in a grid and a Cart page. Use inline styles."
+> "Create a `ProductCard` component with image, name, price in Rupiah, an 'Add to Cart' button, and a Link to `/product/:id`. Use inline styles."
+
+<!--
+TIMING: 2 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Perhatikan prompt saya sangat spesifik: nama komponen, props yang diterima, format harga, dan yang penting — ada Link ke halaman detail."
+"Prompt yang efisien itu minta beberapa hal sekaligus tapi tetap jelas."
+
+ACTION:
+1. Copy prompt ke AI tool (live demo)
+2. Tunggu output AI
+-->
+
+---
+
+## Step 3b — ProductCard Result
 
 ```jsx
 // src/components/ProductCard.jsx — AI output
 import { Link } from 'react-router-dom'
 
 function ProductCard({ product, onAddToCart }) {
-  const formatRupiah = (price) =>
-    new Intl.NumberFormat('id-ID', {
-      style: 'currency', currency: 'IDR', maximumFractionDigits: 0
-    }).format(price)
+  return (
+    <div style={{ border: '1px solid #e2e8f0', borderRadius: 8 }}>
+      <Link to={`/product/${product.id}`}>
+        <img src={product.image} alt={product.name} />
+      </Link>
+      <h3><Link to={`/product/${product.id}`}>{product.name}</Link></h3>
+      <p>{formatRupiah(product.price)}</p>
+      <button onClick={() => onAddToCart(product)}>Add to Cart</button>
+    </div>
+  )
+}
+```
+
+<!--
+TIMING: 3 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Perhatikan ada yang baru di sini — kita pakai `Link` dari React Router."
+"Setiap kartu produk sekarang bisa di-klik untuk buka halaman detail. Ini cara kerja navigasi di React — tanpa reload halaman."
+
+ACTION:
+1. Tunjukkan output AI — highlight penggunaan Link
+2. Review kode bersama audiens — tanya "ada yang mau diubah?"
+3. Copy ke src/components/ProductCard.jsx
+4. Tunjukkan hasilnya di browser
+
+ENGAGEMENT TIP:
+Libatkan audiens: "Menurut kalian, format Rupiah-nya sudah benar belum? Ada yang bisa improve?"
+-->
+
+---
+
+## Step 4a — Routes & Cart Prompt
+
+**Prompt to AI:**
+
+> "Set up App.jsx with BrowserRouter, cart state, and routes for Home, Cart, and Product Detail pages."
+
+<!--
+TIMING: 2 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Sekarang kita minta AI gabungkan React Router dengan state management dalam satu file."
+"Perhatikan: kita tidak jelaskan detail implementasi — kita biarkan AI yang tentukan. Nanti kita review hasilnya."
+
+ACTION:
+1. Copy prompt ke AI tool
+2. Tunggu output AI
+-->
+
+---
+
+## Step 4b — Routes & Cart Result
+
+```jsx
+// src/App.jsx — AI output
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+
+export default function App() {
+  const [cart, setCart] = useState([])
+  const addToCart = (product) => { /* handle duplicates */ }
 
   return (
-    <div style={{ border: '1px solid #e2e8f0', borderRadius: 8,
-      overflow: 'hidden', background: '#fff' }}>
-      <Link to={`/product/${product.id}`}>
-        <img src={product.image} alt={product.name}
-          style={{ width: '100%', height: 160, objectFit: 'cover' }} />
-      </Link>
-      <div style={{ padding: 16 }}>
-        <h3 style={{ margin: '0 0 8px', fontSize: 16 }}>
-          <Link to={`/product/${product.id}`}>{product.name}</Link>
-        </h3>
-        <p style={{ color: '#64748b', margin: '0 0 12px' }}>
-          {formatRupiah(product.price)}
-        </p>
-        <button onClick={() => onAddToCart(product)}
-          style={{ width: '100%', padding: '8px 16px', background: '#3b82f6',
-            color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' }}>
-          Add to Cart
-        </button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to="/">🏠 Home</Link>
+        <Link to="/cart">🛒 Cart ({cart.length})</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home onAddToCart={addToCart} />} />
+        <Route path="/cart" element={<Cart cart={cart} />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 ```
@@ -609,86 +645,14 @@ function ProductCard({ product, onAddToCart }) {
 TIMING: 5 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
-"Perhatikan ada yang baru di sini — kita pakai `Link` dari React Router."
-"Setiap kartu produk sekarang bisa di-klik untuk buka halaman detail. Ini cara kerja navigasi di React — tanpa reload halaman."
-"Prompt saya juga minta AI sekalian setup routing di App.jsx — ini contoh prompt yang efisien, minta beberapa hal sekaligus."
-
-ACTION:
-1. Copy prompt ke AI tool (live demo)
-2. Tunjukkan output AI — highlight penggunaan Link
-3. Review kode bersama audiens — tanya "ada yang mau diubah?"
-4. Copy ke src/components/ProductCard.jsx
-5. Tunjukkan hasilnya di browser
-
-ENGAGEMENT TIP:
-Libatkan audiens: "Menurut kalian, format Rupiah-nya sudah benar belum? Ada yang bisa improve?"
--->
-
----
-
-## Step 4 — Routes & Shopping Cart
-
-**Prompt to AI:**
-
-> "Set up App.jsx with BrowserRouter. Create a Home page showing products in a grid, a Cart page showing cart items with quantities and total, and a Product detail page using useParams. Add cart state with useState, an addToCart function that handles duplicates by increasing quantity, and a nav bar with Links to Home and Cart."
-
-```jsx
-// src/App.jsx — AI output
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { products } from './data/products'
-import ProductCard from './components/ProductCard'
-
-export default function App() {
-  const [cart, setCart] = useState([])
-
-  const addToCart = (product) => {
-    setCart(prev => {
-      const existing = prev.find(i => i.id === product.id)
-      if (existing)
-        return prev.map(i => i.id === product.id
-          ? { ...i, qty: i.qty + 1 } : i)
-      return [...prev, { ...product, qty: 1 }]
-    })
-  }
-
-  const totalItems = cart.reduce((sum, i) => sum + i.qty, 0)
-
-  return (
-    <BrowserRouter>
-      <nav style={{ display: 'flex', gap: 16, padding: 16,
-        borderBottom: '1px solid #e2e8f0' }}>
-        <Link to="/">🏠 Home</Link>
-        <Link to="/cart">🛒 Cart ({totalItems})</Link>
-      </nav>
-      <div style={{ maxWidth: 1000, margin: '0 auto', padding: 24 }}>
-        <Routes>
-          <Route path="/" element={<Home onAddToCart={addToCart} />} />
-          <Route path="/cart" element={<Cart cart={cart} />} />
-          <Route path="/product/:id" element={<ProductDetail
-            onAddToCart={addToCart} />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  )
-}
-```
-
-<!--
-TIMING: 7 menit
-
-SPEAKER NOTES (Bahasa Indonesia):
-"Ini adalah bagian paling menarik — kita gabungkan React Router dengan state management."
 "Perhatikan: cart state ada di App.jsx karena dia harus shared antara Home dan Cart page. Ini konsep 'lifting state up'."
 "Nav bar menunjukkan jumlah item di keranjang — dan angka ini update real-time karena React re-render saat state berubah."
 "Kita punya 3 route: Home untuk browsing, Cart untuk lihat keranjang, dan Product detail dengan dynamic route `/product/:id`."
 
 ACTION:
-1. Copy prompt ke AI tool
-2. Tunjukkan bagaimana AI memecah masalah: routes → state → nav
-3. Review: apakah cart state posisinya sudah benar? (harus di level App supaya bisa diakses semua route)
-4. Test navigasi antar halaman
-5. Test klik produk dan lihat counter di nav bar update
+1. Review: apakah cart state posisinya sudah benar? (harus di level App supaya bisa diakses semua route)
+2. Test navigasi antar halaman
+3. Test klik produk dan lihat counter di nav bar update
 
 STORYTELLING:
 "Perhatikan: kita tidak tulis satu baris logika routing dan keranjang ini sendiri. Tapi kita review dan paham setiap barisnya. Inilah AI-assisted engineering."
@@ -770,43 +734,50 @@ Pesan inti: "Pakai AI dengan sadar — bukan dengan buta."
 
 ---
 
-## 🧠 How to Learn React with AI
-
-**AI as a tutor:**
+## 🧠 AI as a Tutor
 
 > "Explain useEffect to me like I'm a junior developer just learning React. Give me a real-world example."
 
-**AI as a review partner:**
-
-> "Review this code and give feedback: what can be improved in terms of performance, readability, and React best practices?"
-
-**AI as a debugging partner:**
-
-> "This code is supposed to fetch data from an API but it's causing an infinite loop. Help me debug."
+→ **AI is infinitely patient — it can explain the same thing in different ways**
 
 <!--
-TIMING: 5 menit
+TIMING: 2 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
-"Ada tiga peran AI yang paling berguna untuk belajar React."
-"Sebagai tutor: AI sabar tanpa batas, bisa dijelaskan berkali-kali dengan cara berbeda."
-"Sebagai review partner: ini yang sering tidak dilakukan developer — minta AI review kode sebelum PR. Sangat efektif untuk menemukan masalah yang tidak kita sadari."
-"Sebagai debugging partner: deskripsikan masalahnya, tunjukkan kodenya, tanyakan hipotesis. AI sangat baik untuk rubber duck debugging yang interaktif."
+"Peran pertama AI yang paling berguna untuk belajar React: sebagai tutor."
+"AI sabar tanpa batas, bisa dijelaskan berkali-kali dengan cara berbeda."
+"Kalau penjelasan pertama tidak masuk, minta ulang dengan analogi lain — AI tidak pernah kesal."
+-->
+
+---
+
+## 🧠 AI as a Review & Debug Partner
+
+**Review:**
+
+> "Review this code: what can be improved for performance and React best practices?"
+
+**Debug:**
+
+> "This code fetches data from an API but causes an infinite loop. Help me debug."
+
+<!--
+TIMING: 3 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Peran kedua: review partner. Ini yang sering tidak dilakukan developer — minta AI review kode sebelum PR. Sangat efektif untuk menemukan masalah yang tidak kita sadari."
+"Peran ketiga: debugging partner. Deskripsikan masalahnya, tunjukkan kodenya, tanyakan hipotesis. AI sangat baik untuk rubber duck debugging yang interaktif."
 -->
 
 ---
 
 ## 🗺️ React Learning Roadmap
 
-```
-WEEK 1-2      WEEK 3-4      MONTH 2        MONTH 3+
-─────────────────────────────────────────────────
-JSX &         State &       React Router   React Native
-Components  → Props &    → API Fetch    → State Mgmt
-              Events        Forms          Testing
+| Week 1-2 | Week 3-4 | Month 2 | Month 3+ |
+|----------|----------|---------|----------|
+| JSX & Components | State & Props | React Router & API | React Native |
 
-              [AI helps at every stage]
-```
+**AI helps at every stage**
 
 → **Consistent 1 hour/day beats an 8-hour marathon once a week**
 
