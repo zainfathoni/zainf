@@ -883,7 +883,7 @@ Walk through setiap poin dengan singkat — ini bukan pengulangan, ini reinforce
 - ✅ Build your first component: a simple `Button` or `Card`
 - ✅ Try one prompt to ChatGPT/Copilot for React
 - ✅ Bookmark: [react.dev](https://react.dev) and [vitejs.dev](https://vitejs.dev)
-- ✅ Join a community: ReactID, Kelas Terbuka, or Dicoding
+- ✅ Join a community: [ReactJS Indonesia](https://reactjs.id/), [VibeFromCafe](https://vibefromcafe.id), atau Hacktiv8 learners
 
 → **Pick 2-3 to do tonight**
 
