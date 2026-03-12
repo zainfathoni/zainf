@@ -402,8 +402,8 @@ Analogikan: "Dulu arsitek harus gambar manual setiap detail. Sekarang ada softwa
 
 | Tool | Best for | Free? |
 |------|----------|-------|
-| **GitHub Copilot** | Autocomplete in editor | 30-day trial |
-| **Claude Code** | Refactoring, analysis, multi-file | Free tier |
+| **GitHub Copilot** | Autocomplete in editor | Free plan |
+| **Claude Code** | Refactoring, analysis, multi-file | Paid (API/Subs) |
 | **Cursor** | AI-native editor | Free tier |
 | **v0 by Vercel** | Generate UI from description | Free tier |
 | **ChatGPT** | Q&A, debugging, explanations | Free |
@@ -473,7 +473,32 @@ Tekankan: ini bukan "copy paste dan jalan". Ini adalah proses iteratif.
 "Langkah REVIEW adalah yang paling penting dan paling sering diskip orang. Jangan pernah skip review."
 "Kenapa? Karena AI bisa salah. Dia bisa generate kode yang terlihat benar tapi punya bug tersembunyi, terutama di edge cases."
 "Dengan memahami kode yang AI hasilkan, kamu juga belajar. Ini yang membuat AI menjadi tool belajar yang luar biasa, bukan crutch."
-Transisi ke demo: "Sekarang kita lihat workflow ini dalam aksi nyata."
+Transisi ke demo: "Tapi sebelum langsung coding, ada satu teknik penting: Plan Mode."
+-->
+
+---
+
+## 📋 Plan Mode — Think Before You Code
+
+> "I want to build a shopping cart app with React and React Router. Plan the component structure, routes, and state management before writing any code."
+
+**AI will outline:**
+
+- Component tree and responsibilities
+- Route structure (`/`, `/cart`, `/product/:id`) and shared states
+- Step-by-step implementation order
+
+→ **Plan first, code second — fewer rewrites, better architecture**
+
+<!--
+TIMING: 3 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Salah satu kesalahan paling umum: langsung minta AI tulis kode tanpa planning."
+"Plan Mode itu sederhana — minta AI untuk berpikir dulu sebelum menulis. Hasilnya? Arsitektur yang lebih rapi dan lebih sedikit refactor."
+"Di Claude Code, kamu bisa ketik `/plan` dan AI akan outline dulu apa yang mau dia lakukan sebelum eksekusi."
+"Ini seperti arsitek yang gambar blueprint dulu sebelum mulai bangun. Kamu review blueprint-nya, setuju, baru mulai."
+Transisi: "Sekarang kita lihat workflow ini dalam aksi nyata — dimulai dari planning."
 -->
 
 ---
