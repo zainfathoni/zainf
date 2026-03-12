@@ -9,20 +9,6 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
-    slug: "techrawih-reactid-2026",
-    date: "2026-03-07",
-    title: "Build a React App in 20 Minutes with AI Assistance",
-    description:
-      "A hands-on workshop about building React applications with AI assistance, covering components, state management, React Router, and practical AI-assisted coding workflows.",
-    event: "Techrawih x ReactID",
-    resources: [
-      {
-        href: "https://zainf.dev/react-with-ai-assistance",
-        label: "Open slides",
-      },
-    ],
-  },
-  {
     slug: "idsw-2025",
     date: "2025-11-23",
     title: "Raising Children Who Outthink the Machines",
@@ -219,6 +205,20 @@ export const conferences: Talk[] = [
 ];
 
 export const meetups: Talk[] = [
+  {
+    slug: "techrawih-reactid-2026",
+    date: "2026-03-07",
+    title: "Build a React App in 20 Minutes with AI Assistance",
+    description:
+      "A hands-on workshop about building React applications with AI assistance, covering components, state management, React Router, and practical AI-assisted coding workflows.",
+    event: "Techrawih x ReactID",
+    resources: [
+      {
+        href: "https://zainf.dev/react-with-ai-assistance",
+        label: "Open slides",
+      },
+    ],
+  },
   {
     slug: "gdg-jogja-road-to-devfest-2025",
     date: "2025-11-02",
