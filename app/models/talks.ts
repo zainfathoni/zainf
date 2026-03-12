@@ -11,13 +11,13 @@ export const conferences: Talk[] = [
   {
     slug: "techrawih-reactid-2026",
     date: "2026-03-07",
-    title: "React dengan AI-Assisted Workflow",
+    title: "Build a React App in 20 Minutes with AI Assistance",
     description:
-      "A hands-on talk about building React applications using AI-assisted workflows, covering component development, state management, and practical AI integration techniques.",
+      "A hands-on workshop about building React applications with AI assistance, covering components, state management, React Router, and practical AI-assisted coding workflows.",
     event: "Techrawih x ReactID",
     resources: [
       {
-        href: "/react-with-ai-assistance",
+        href: "https://zainf.dev/react-with-ai-assistance",
         label: "Open slides",
       },
     ],
@@ -37,7 +37,7 @@ export const conferences: Talk[] = [
       {
         href: "https://idsw.dev/",
         label: "Event link",
-      }
+      },
     ],
   },
   {
@@ -234,8 +234,8 @@ export const meetups: Talk[] = [
       {
         href: "https://www.instagram.com/p/DQEgzN8ErR0/",
         label: "Event link",
-      }
-    ]
+      },
+    ],
   },
   {
     slug: "pyjogja-2025-think-js-code-python",

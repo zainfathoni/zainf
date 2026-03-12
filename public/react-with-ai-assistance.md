@@ -7,9 +7,9 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
 ---
 
-# Membangun Aplikasi Web & Mobile dengan **React + AI**
+# Build a React App in 20 Minutes with **AI Assistance**
 
-Lebih cepat, lebih praktis, tepat sasaran
+Faster, more practical, right on target
 
 ![w:200](assets/techrawih-qr.png)
 
@@ -24,7 +24,7 @@ Preview: "Di akhir sesi ini, kalian akan punya gambaran nyata bagaimana mulai bi
 
 ---
 
-## 👋 Perkenalan
+## 👋 Introduction
 
 ![bg left:33%](assets/zain-1280.jpeg)
 
@@ -32,7 +32,7 @@ Preview: "Di akhir sesi ini, kalian akan punya gambaran nyata bagaimana mulai bi
 
 - :round_pushpin: Jember → Bandung → :singapore: SG → Jogja
 - :hammer_and_wrench: Backend → Manager → Frontend → Fullstack
-- :robot: AI Enthusiast · Pembicara · Bapak Berdaya 🍠
+- :robot: AI Enthusiast · Speaker · Empowered Father 🍠
 
 <!--
 TIMING: 2 menit
@@ -45,9 +45,9 @@ Akhiri dengan: "Saya di sini bukan untuk ngajarin teori. Saya mau berbagi apa ya
 
 ---
 
-## 🤔 Pertanyaan Pembuka
+## 🤔 Opening Question
 
-> Berapa lama waktu yang kamu butuhkan untuk bikin aplikasi dari nol?
+> How long does it take you to build an app from scratch?
 
 <!--
 TIMING: 3 menit
@@ -68,13 +68,13 @@ Ini membantu kamu membaca ruangan dan menyesuaikan kedalaman materi.
 
 ## 📚 Agenda
 
-1. **Kenapa React?** — Alat utama developer modern
-2. **Fondasi React** — Konsep inti dalam 30 menit
-3. **AI sebagai Asisten Coding** — Workflow yang mengubah segalanya
-4. **Live Demo** — Membangun aplikasi nyata bersama
-5. **Takeaways** — Langkah konkret yang bisa dimulai hari ini
+1. **Why React?** — The modern developer's primary tool
+2. **React Fundamentals** — Core concepts including React Router
+3. **AI as a Coding Assistant** — A workflow that changes everything
+4. **Live Demo** — Building a real app together
+5. **Takeaways** — Concrete steps you can start today
 
-→ **Target:** Pulang dengan skill baru + workflow baru
+→ **Goal:** Go home with new skills + a new workflow
 
 <!--
 TIMING: 2 menit
@@ -87,14 +87,14 @@ Set ekspektasi: "Tidak perlu install apa-apa sekarang. Kalian bisa ikuti di laya
 
 ---
 
-## 🌍 Kenapa React?
+## 🌍 Why React?
 
-**React dipakai oleh:**
+**React is used by:**
 
 - Meta · Netflix · Airbnb · Shopify · Discord
 - Tokopedia · Gojek · Traveloka · Bukalapak
 
-→ **Bukan hanya perusahaan besar — tapi tim kecil dan freelancer juga**
+→ **Not just big companies — small teams and freelancers too**
 
 <!--
 TIMING: 3 menit
@@ -108,16 +108,14 @@ Tekankan: React bukan hanya untuk enterprise. Freelancer, startup, side project 
 
 ---
 
-## 📊 React di Dunia Developer
-
-![bg right:50%](assets/react-popularity.png)
+## 📊 React in the Developer World
 
 **Stack Overflow Survey 2024:**
 
-- React: framework web paling populer **12 tahun berturut-turut**
-- React Native: top 3 framework mobile
+- React: most popular web framework **12 years running**
+- React Native: top 3 mobile framework
 
-→ Ekosistem besar = **lebih banyak resource, library, dan jawaban di internet**
+→ Large ecosystem = **more resources, libraries, and answers on the internet**
 
 <!--
 TIMING: 3 menit
@@ -129,17 +127,16 @@ Khususnya relevan untuk AI: "Model-model AI seperti Claude, GPT, Copilot — mer
 
 ---
 
-## ⚛️ React itu Apa, Sih?
+## ⚛️ What Exactly Is React?
 
-> React adalah **library JavaScript** untuk membangun antarmuka pengguna (UI)
-> menggunakan **komponen yang bisa dipakai ulang**
+> React is a **JavaScript library** for building user interfaces (UI) using **reusable components**
 
-**Konsep utama:**
+**Core concepts:**
 
-- 🧩 **Component** — Potongan UI yang berdiri sendiri
-- 🔄 **State** — Data yang bisa berubah
-- ⬇️ **Props** — Data yang dikirim ke komponen
-- 🔁 **Re-render** — UI otomatis update saat data berubah
+- 🧩 **Component** — Self-contained pieces of UI
+- 🔄 **State** — Data that can change
+- ⬇️ **Props** — Data passed to components
+- 🔁 **Re-render** — UI automatically updates when data changes
 
 <!--
 TIMING: 5 menit
@@ -153,23 +150,23 @@ Re-render: "Yang bikin React istimewa — kamu tidak perlu manual update DOM. Sa
 
 ---
 
-## 🧩 Komponen React — Contoh Sederhana
+## 🧩 React Component — Simple Example
 
 ```jsx
-// Komponen Kartu Produk
+// Product Card Component
 function ProductCard({ name, price, image }) {
   return (
     <div className="card">
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <p>Rp {price.toLocaleString()}</p>
-      <button>Tambah ke Keranjang</button>
+      <button>Add to Cart</button>
     </div>
   )
 }
 ```
 
-→ **Satu komponen → bisa dipakai ratusan kali dengan data berbeda**
+→ **One component → can be used hundreds of times with different data**
 
 <!--
 TIMING: 5 menit
@@ -185,26 +182,23 @@ Transisi ke AI: "Dan inilah yang bisa AI buat dengan sangat cepat — boilerplat
 
 ---
 
-## 🔄 State — Komponen yang Bisa Berubah
+## 🔄 State — Components That Can Change
 
 ```jsx
 import { useState } from 'react'
 
 function Counter() {
   const [count, setCount] = useState(0)
-
   return (
     <div>
-      <p>Hitungan: {count}</p>
-      <button onClick={() => setCount(count + 1)}>
-        Tambah
-      </button>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Add</button>
     </div>
   )
 }
 ```
 
-→ **`useState` = cara React "mengingat" sesuatu antar render**
+→ **`useState` = how React "remembers" things between renders**
 
 <!--
 TIMING: 5 menit
@@ -222,21 +216,21 @@ useState adalah salah satu dari banyak hook React. Hook lain yang sering dipakai
 
 ---
 
-## 🏗️ Struktur Aplikasi React
+## 🏗️ React App Structure
 
 ```text
 my-app/
 ├── src/
-│   ├── components/     ← Komponen yang bisa dipakai ulang
+│   ├── components/     ← Reusable components
 │   │   ├── Button.jsx
 │   │   └── ProductCard.jsx
-│   ├── pages/          ← Halaman aplikasi
+│   ├── pages/          ← App pages
 │   │   ├── Home.jsx
 │   │   └── Cart.jsx
-│   ├── App.jsx         ← Komponen utama / root
+│   ├── App.jsx         ← Main / root component
 │   └── main.jsx        ← Entry point
-├── public/             ← Asset statis
-└── package.json        ← Dependensi & scripts
+├── public/             ← Static assets
+└── package.json        ← Dependencies & scripts
 ```
 
 <!--
@@ -246,25 +240,104 @@ SPEAKER NOTES (Bahasa Indonesia):
 "Ini adalah struktur tipikal proyek React modern. Tidak perlu hafal — AI akan bantu generate ini untuk kamu."
 "Yang penting dipahami: ada pemisahan yang jelas antara komponen (bisa dipakai ulang) dan halaman (biasanya sekali pakai)."
 "App.jsx adalah 'orchestrator' — di sinilah semua routing dan layout utama disusun."
+Transisi: "Sekarang, bagaimana navigasi antar halaman di React?"
+-->
+
+---
+
+## 🧭 React Router — Navigation Between Pages
+
+```jsx
+// src/App.jsx — with React Router
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+import ProductDetail from './pages/ProductDetail'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/cart">Cart</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+```
+
+→ **React Router turns your app into a multi-page experience — without full page reloads**
+
+<!--
+TIMING: 5 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"React itu single-page application — artinya tanpa routing, semua tampilan hanya di satu halaman."
+"React Router menyelesaikan masalah ini: kamu bisa punya URL berbeda untuk setiap halaman, tanpa browser harus reload."
+"Perhatikan `Link` menggantikan tag `<a>` — karena Link tidak memicu full reload."
+"Dan `:id` di path itu dynamic route — artinya `/product/1`, `/product/2`, dll. semua ditangani oleh satu komponen."
+Transisi: "React Router juga punya versi yang lebih modern — React Router v7 yang sudah include fitur framework seperti server-side rendering."
+-->
+
+---
+
+## 🧭 Dynamic Routes & useParams
+
+```jsx
+// src/pages/ProductDetail.jsx
+import { useParams } from 'react-router-dom'
+import { products } from '../data/products'
+
+function ProductDetail() {
+  const { id } = useParams()
+  const product = products.find(p => p.id === Number(id))
+
+  if (!product) return <p>Product not found</p>
+
+  return (
+    <div>
+      <img src={product.image} alt={product.name} />
+      <h1>{product.name}</h1>
+      <p>{formatRupiah(product.price)}</p>
+    </div>
+  )
+}
+```
+
+→ **`useParams` extracts dynamic values from the URL — just like reading a variable**
+
+<!--
+TIMING: 4 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"useParams adalah hook dari React Router yang mengambil parameter dari URL."
+"Jadi ketika user buka `/product/3`, useParams akan return `{ id: '3' }` — kita pakai itu untuk cari produk yang tepat."
+"Perhatikan juga handling kalau produk tidak ditemukan — ini contoh sederhana error handling yang penting."
+"React Router punya banyak fitur lain: nested routes, layout routes, loader, action — tapi untuk mulai, ini sudah cukup."
 Transisi: "Sekarang, bagaimana React bisa dipakai untuk mobile juga?"
 -->
 
 ---
 
-## 📱 React Native — Mobile dengan Skill yang Sama
+## 📱 React Native — Mobile with the Same Skills
 
 ```jsx
 // Web (React)                    // Mobile (React Native)
-<div>Halo Dunia</div>            <View>
-<p>Ini paragraf</p>      →         <Text>Halo Dunia</Text>
-<button>Klik</button>              <Text>Ini paragraf</Text>
-                                   <TouchableOpacity>Klik</TouchableOpacity>
+<div>Hello World</div>           <View>
+<p>This is a paragraph</p> →       <Text>Hello World</Text>
+<button>Click</button>              <Text>This is a paragraph</Text>
+                                    <TouchableOpacity>Click</TouchableOpacity>
                                  </View>
 ```
 
-**Sama:** Komponen, State, Props, Hooks, Logic bisnis
+**Same:** Components, State, Props, Hooks, Business logic
 
-**Berbeda:** Komponen UI (native vs web), styling
+**Different:** UI components (native vs web), styling
 
 <!--
 TIMING: 4 menit
@@ -294,17 +367,17 @@ Transisi ke AI: "Dan sekarang ada cara yang lebih cerdas untuk navigasi ekosiste
 
 ---
 
-## 🤖 Masuk: AI sebagai Asisten Coding
+## 🤖 Enter: AI as a Coding Assistant
 
-**Sebelum AI:**
+**Before AI:**
 
-- Buka dokumentasi → Baca → Coba → Error → Google → Stack Overflow → Coba lagi
+- Open docs → Read → Try → Error → Google → Stack Overflow → Try again
 
-**Dengan AI:**
+**With AI:**
 
-- Jelaskan yang kamu mau → Dapat draft kode → Review → Adjust → Done
+- Describe what you want → Get a code draft → Review → Adjust → Done
 
-→ **AI tidak menggantikan pemahaman — AI menghilangkan gesekan**
+→ **AI doesn't replace understanding — AI removes friction**
 
 <!--
 TIMING: 4 menit
@@ -318,17 +391,17 @@ Analogikan: "Dulu arsitek harus gambar manual setiap detail. Sekarang ada softwa
 
 ---
 
-## 🛠️ AI Tools untuk Developer React
+## 🛠️ AI Tools for React Developers
 
-| Tool | Terbaik untuk | Gratis? |
-|------|--------------|---------|
-| **GitHub Copilot** | Autocomplete di editor | Trial 30hr |
-| **Claude Code** | Refactor, analisis, multi-file | Free tier |
+| Tool | Best for | Free? |
+|------|----------|-------|
+| **GitHub Copilot** | Autocomplete in editor | 30-day trial |
+| **Claude Code** | Refactoring, analysis, multi-file | Free tier |
 | **Cursor** | AI-native editor | Free tier |
-| **v0 by Vercel** | Generate UI dari deskripsi | Free tier |
-| **ChatGPT** | Q&A, debugging, penjelasan | Free |
+| **v0 by Vercel** | Generate UI from description | Free tier |
+| **ChatGPT** | Q&A, debugging, explanations | Free |
 
-→ **Pilih satu, kuasai dulu — jangan loncat-loncat**
+→ **Pick one, master it first — don't jump around**
 
 <!--
 TIMING: 4 menit
@@ -343,17 +416,17 @@ Poin penting: "Yang terpenting bukan tool-nya, tapi cara kamu berinteraksi denga
 
 ---
 
-## 💬 Seni Berbicara dengan AI
+## 💬 The Art of Talking to AI
 
-**Prompt yang buruk:**
+**Bad prompt:**
 
-> "Bikin aplikasi React"
+> "Make a React app"
 
-**Prompt yang baik:**
+**Good prompt:**
 
-> "Bikin komponen React bernama `ProductList` yang menerima array `products` sebagai props, menampilkannya dalam grid 3 kolom, dengan loading state dan empty state. Gunakan Tailwind CSS."
+> "Create a React component called `ProductList` that takes an array of `products` as props, displays them in a 3-column grid, with loading state and empty state. Use Tailwind CSS."
 
-→ **Spesifik + konteks + output yang diharapkan = hasil yang akurat**
+→ **Specific + context + expected output = accurate results**
 
 <!--
 TIMING: 5 menit
@@ -367,23 +440,23 @@ Formula: "Selalu sertakan: (1) nama komponen/fungsi, (2) input/output yang dihar
 
 ---
 
-## 🔄 Workflow AI-Assisted React
+## 🔄 AI-Assisted React Workflow
 
 ```
-1. DEFINE   → Jelaskan ke AI apa yang mau dibangun
+1. DEFINE   → Tell AI what you want to build
       ↓
-2. GENERATE → AI buat draft pertama
+2. GENERATE → AI creates the first draft
       ↓
-3. REVIEW   → Baca dan pahami setiap baris
+3. REVIEW   → Read and understand every line
       ↓
-4. REFINE   → Minta AI perbaiki bagian yang kurang
+4. REFINE   → Ask AI to fix what's lacking
       ↓
-5. TEST     → Jalankan, lihat hasilnya
+5. TEST     → Run it, see the results
       ↓
-6. ITERATE  → Ulangi sampai sesuai
+6. ITERATE  → Repeat until satisfied
 ```
 
-→ **Kamu tetap pilot — AI adalah co-pilot**
+→ **You're still the pilot — AI is the co-pilot**
 
 <!--
 TIMING: 4 menit
@@ -398,16 +471,16 @@ Transisi ke demo: "Sekarang kita lihat workflow ini dalam aksi nyata."
 
 ---
 
-## 🎯 Apa yang Kita Bangun Hari Ini
+## 🎯 What We're Building Today
 
 **🛒 Mini Shopping App**
 
-- Daftar produk dari data dummy
-- Keranjang belanja dengan state management
-- Total harga otomatis
+- Product list from dummy data
+- Shopping cart with state management
+- Automatic price total
 - Responsive layout
 
-→ **Dari nol sampai jalan dalam ~30 menit dengan React + AI**
+→ **From zero to running in ~20 minutes with React + AI**
 
 <!--
 TIMING: 2 menit
@@ -421,47 +494,47 @@ Set ekspektasi demo dengan jelas. Audiens perlu tahu apa yang akan mereka lihat.
 
 ---
 
-## Step 1 — Setup Project
+## Step 1 — Project Setup
 
-**Prompt ke AI:**
+**Prompt to AI:**
 
-> "Buat project React baru dengan Vite. Berikan langkah-langkah setup dan struktur folder awal untuk aplikasi shopping cart sederhana."
+> "Create a new React project with Vite and React Router. Provide the setup steps for a shopping cart app with multiple pages."
 
 ```bash
-# Yang AI akan arahkan:
+# What AI will guide you through:
 npm create vite@latest mini-shop -- --template react
 cd mini-shop
-npm install
+npm install react-router-dom
 npm run dev
 ```
 
 <!--
-TIMING: 5 menit
+TIMING: 3 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
 Jalankan perintah ini secara live. Tunjukkan bahwa Vite sangat cepat untuk setup.
 "Dulu setup project React manual bisa makan waktu setengah jam. Sekarang dengan Vite, 2 menit sudah bisa coding."
-"Perhatikan saya tidak langsung buka editor dan mulai coding — saya tanya AI dulu untuk get the lay of the land."
+"Perhatikan kita langsung install react-router-dom — karena app kita akan punya beberapa halaman."
 "AI tidak hanya kasih perintah — dia juga bisa jelaskan kenapa setiap step itu penting."
 
 ACTION:
 1. Buka terminal
 2. Jalankan `npm create vite@latest mini-shop -- --template react`
 3. Pilih framework: React, variant: JavaScript
-4. `cd mini-shop && npm install && npm run dev`
+4. `cd mini-shop && npm install react-router-dom && npm run dev`
 5. Tunjukkan browser localhost:5173
 -->
 
 ---
 
-## Step 2 — Data Produk
+## Step 2 — Product Data
 
-**Prompt ke AI:**
+**Prompt to AI:**
 
-> "Buatkan file `src/data/products.js` berisi array 6 produk dummy dengan field: id, name, price (dalam Rupiah), image (dari picsum.photos), dan category."
+> "Create a file `src/data/products.js` containing an array of 6 dummy products with fields: id, name, price (in Rupiah), image (from picsum.photos), and category."
 
 ```js
-// src/data/products.js — AI generate ini
+// src/data/products.js — AI generated this
 export const products = [
   {
     id: 1,
@@ -470,12 +543,12 @@ export const products = [
     image: "https://picsum.photos/seed/laptop/300/200",
     category: "Electronics"
   },
-  // ... 5 produk lagi
+  // ... 5 more products
 ]
 ```
 
 <!--
-TIMING: 5 menit
+TIMING: 3 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
 "Ini adalah langkah yang sering diabaikan developer pemula — mulai dari data, bukan dari UI."
@@ -491,14 +564,16 @@ ACTION:
 
 ---
 
-## Step 3 — Komponen ProductCard
+## Step 3 — ProductCard & Routes
 
-**Prompt ke AI:**
+**Prompt to AI:**
 
-> "Buat komponen React `ProductCard` yang menerima props: product (object) dan onAddToCart (function). Tampilkan gambar, nama, harga dalam format Rupiah, dan tombol 'Tambah ke Keranjang'. Gunakan inline style sederhana."
+> "Create a `ProductCard` component with image, name, price in Rupiah, an 'Add to Cart' button, and a Link to `/product/:id` for details. Then set up React Router in App.jsx with a Home page showing products in a grid and a Cart page. Use inline styles."
 
 ```jsx
-// src/components/ProductCard.jsx — hasil AI
+// src/components/ProductCard.jsx — AI output
+import { Link } from 'react-router-dom'
+
 function ProductCard({ product, onAddToCart }) {
   const formatRupiah = (price) =>
     new Intl.NumberFormat('id-ID', {
@@ -508,17 +583,21 @@ function ProductCard({ product, onAddToCart }) {
   return (
     <div style={{ border: '1px solid #e2e8f0', borderRadius: 8,
       overflow: 'hidden', background: '#fff' }}>
-      <img src={product.image} alt={product.name}
-        style={{ width: '100%', height: 160, objectFit: 'cover' }} />
+      <Link to={`/product/${product.id}`}>
+        <img src={product.image} alt={product.name}
+          style={{ width: '100%', height: 160, objectFit: 'cover' }} />
+      </Link>
       <div style={{ padding: 16 }}>
-        <h3 style={{ margin: '0 0 8px', fontSize: 16 }}>{product.name}</h3>
+        <h3 style={{ margin: '0 0 8px', fontSize: 16 }}>
+          <Link to={`/product/${product.id}`}>{product.name}</Link>
+        </h3>
         <p style={{ color: '#64748b', margin: '0 0 12px' }}>
           {formatRupiah(product.price)}
         </p>
         <button onClick={() => onAddToCart(product)}
           style={{ width: '100%', padding: '8px 16px', background: '#3b82f6',
             color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' }}>
-          Tambah ke Keranjang
+          Add to Cart
         </button>
       </div>
     </div>
@@ -527,21 +606,19 @@ function ProductCard({ product, onAddToCart }) {
 ```
 
 <!--
-TIMING: 8 menit
+TIMING: 5 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
-"Ini adalah momen kita lihat AI bekerja untuk hal yang lebih kompleks."
-"Perhatikan prompt saya sangat spesifik: nama komponen, props yang diterima, format harga, styling yang dipakai."
-"Setelah AI generate, kita review bersama: apakah format Rupiah-nya benar? Apakah props sudah tepat? Apakah ada yang aneh?"
-"Ini adalah latihan review yang sangat penting."
+"Perhatikan ada yang baru di sini — kita pakai `Link` dari React Router."
+"Setiap kartu produk sekarang bisa di-klik untuk buka halaman detail. Ini cara kerja navigasi di React — tanpa reload halaman."
+"Prompt saya juga minta AI sekalian setup routing di App.jsx — ini contoh prompt yang efisien, minta beberapa hal sekaligus."
 
 ACTION:
 1. Copy prompt ke AI tool (live demo)
-2. Tunjukkan output AI
+2. Tunjukkan output AI — highlight penggunaan Link
 3. Review kode bersama audiens — tanya "ada yang mau diubah?"
 4. Copy ke src/components/ProductCard.jsx
-5. Import dan render di App.jsx dengan satu produk dulu
-6. Tunjukkan hasilnya di browser
+5. Tunjukkan hasilnya di browser
 
 ENGAGEMENT TIP:
 Libatkan audiens: "Menurut kalian, format Rupiah-nya sudah benar belum? Ada yang bisa improve?"
@@ -549,29 +626,18 @@ Libatkan audiens: "Menurut kalian, format Rupiah-nya sudah benar belum? Ada yang
 
 ---
 
-## Step 4 — State Keranjang Belanja
+## Step 4 — Routes & Shopping Cart
 
-**Prompt ke AI:**
+**Prompt to AI:**
 
-> "Tambahkan state `cart` ke App.jsx menggunakan useState. Buat fungsi `addToCart` yang menambah produk ke cart (jika sudah ada, tambah quantity). Buat komponen `CartSummary` yang menampilkan jumlah item dan total harga."
+> "Set up App.jsx with BrowserRouter. Create a Home page showing products in a grid, a Cart page showing cart items with quantities and total, and a Product detail page using useParams. Add cart state with useState, an addToCart function that handles duplicates by increasing quantity, and a nav bar with Links to Home and Cart."
 
 ```jsx
-// src/App.jsx — hasil AI
+// src/App.jsx — AI output
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { products } from './data/products'
 import ProductCard from './components/ProductCard'
-
-function CartSummary({ cart }) {
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0)
-  const formatRupiah = (n) => new Intl.NumberFormat('id-ID',
-    { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n)
-  return (
-    <div style={{ background: '#f0f9ff', padding: 16, borderRadius: 8 }}>
-      🛒 {cart.reduce((sum, i) => sum + i.qty, 0)} item
-      &nbsp;·&nbsp; Total: <strong>{formatRupiah(total)}</strong>
-    </div>
-  )
-}
 
 export default function App() {
   const [cart, setCart] = useState([])
@@ -579,110 +645,117 @@ export default function App() {
   const addToCart = (product) => {
     setCart(prev => {
       const existing = prev.find(i => i.id === product.id)
-      if (existing) {
+      if (existing)
         return prev.map(i => i.id === product.id
           ? { ...i, qty: i.qty + 1 } : i)
-      }
       return [...prev, { ...product, qty: 1 }]
     })
   }
 
+  const totalItems = cart.reduce((sum, i) => sum + i.qty, 0)
+
   return (
-    <div style={{ maxWidth: 1000, margin: '0 auto', padding: 24 }}>
-      <h1>🛍️ Mini Shop</h1>
-      {cart.length > 0 && <CartSummary cart={cart} />}
-      <div style={{ display: 'grid', gridTemplateColumns:
-        'repeat(auto-fill, minmax(200px, 1fr))', gap: 16, marginTop: 24 }}>
-        {products.map(p => (
-          <ProductCard key={p.id} product={p} onAddToCart={addToCart} />
-        ))}
+    <BrowserRouter>
+      <nav style={{ display: 'flex', gap: 16, padding: 16,
+        borderBottom: '1px solid #e2e8f0' }}>
+        <Link to="/">🏠 Home</Link>
+        <Link to="/cart">🛒 Cart ({totalItems})</Link>
+      </nav>
+      <div style={{ maxWidth: 1000, margin: '0 auto', padding: 24 }}>
+        <Routes>
+          <Route path="/" element={<Home onAddToCart={addToCart} />} />
+          <Route path="/cart" element={<Cart cart={cart} />} />
+          <Route path="/product/:id" element={<ProductDetail
+            onAddToCart={addToCart} />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   )
 }
 ```
 
 <!--
-TIMING: 10 menit
+TIMING: 7 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
-"Ini adalah bagian paling challenging — state management yang melibatkan logika bisnis."
-"Keranjang belanja punya aturan: kalau produk sudah ada, jangan duplikat — tambah quantity-nya."
-"Perhatikan bagaimana AI handle edge case ini. Kadang benar, kadang butuh di-refine."
+"Ini adalah bagian paling menarik — kita gabungkan React Router dengan state management."
+"Perhatikan: cart state ada di App.jsx karena dia harus shared antara Home dan Cart page. Ini konsep 'lifting state up'."
+"Nav bar menunjukkan jumlah item di keranjang — dan angka ini update real-time karena React re-render saat state berubah."
+"Kita punya 3 route: Home untuk browsing, Cart untuk lihat keranjang, dan Product detail dengan dynamic route `/product/:id`."
 
 ACTION:
 1. Copy prompt ke AI tool
-2. Tunjukkan bagaimana AI memecah masalah: state structure → addToCart function → CartSummary component
-3. Review logika addToCart: apakah sudah handle duplikat dengan benar?
-4. Integrate ke App.jsx
-5. Test dengan klik beberapa produk
-6. Tunjukkan CartSummary meng-update secara real-time
+2. Tunjukkan bagaimana AI memecah masalah: routes → state → nav
+3. Review: apakah cart state posisinya sudah benar? (harus di level App supaya bisa diakses semua route)
+4. Test navigasi antar halaman
+5. Test klik produk dan lihat counter di nav bar update
 
 STORYTELLING:
-"Perhatikan: kita tidak tulis satu baris logika keranjang ini sendiri. Tapi kita review dan paham setiap barisnya. Inilah AI-assisted engineering."
+"Perhatikan: kita tidak tulis satu baris logika routing dan keranjang ini sendiri. Tapi kita review dan paham setiap barisnya. Inilah AI-assisted engineering."
 -->
 
 ---
 
 ## Step 5 — Finishing Touches
 
-**Minta AI untuk:**
+**Ask AI to:**
 
-1. **Format harga** dengan `Intl.NumberFormat` yang benar
-2. **Loading state** saat data pertama kali dimuat
-3. **Empty state** saat keranjang kosong
-4. **Responsive grid** untuk daftar produk
+1. **Product detail page** with `useParams` to show full info
+2. **Cart page** with item list, quantities, and total price
+3. **Empty state** when cart is empty
+4. **Responsive grid** for the product list
 
-→ **AI bisa handle polish — kamu fokus ke product decisions**
+→ **AI can handle the polish — you focus on product decisions**
 
 <!--
-TIMING: 8 menit
+TIMING: 5 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
 "Ini adalah saat AI paling bersinar — detail-detail kecil yang butuh waktu tapi bukan core logic."
-"Format Rupiah yang benar itu butuh `Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' })` — siapa yang hafal ini? AI hafal."
-"Loading dan empty state adalah hal yang sering diskip developer buru-buru, padahal ini yang membuat aplikasi terasa polish dan profesional."
+"Halaman detail produk pakai useParams — persis seperti yang kita pelajari tadi di slide React Router."
+"Cart page menampilkan daftar belanjaan dengan quantity dan total harga — AI bisa generate semua ini dari satu prompt."
 "Tunjukkan bagaimana request-request kecil ini di-handle AI satu per satu — ini real workflow, bukan magic."
 
 ACTION:
-1. Minta AI format Rupiah
-2. Minta AI tambah loading state sederhana
+1. Minta AI generate ProductDetail page dengan useParams
+2. Minta AI generate Cart page dengan daftar item dan total
 3. Minta AI perbaiki grid jadi responsive
-4. Hasil akhir: tunjukkan mini app yang berfungsi lengkap
+4. Hasil akhir: tunjukkan navigasi lengkap Home → Detail → Cart
 -->
 
 ---
 
-## 🎉 Hasil Demo
+## 🎉 Demo Results
 
-**Dalam ~30 menit kita sudah punya:**
+**In ~20 minutes we built:**
 
-- ✅ Setup project dengan Vite
-- ✅ Data layer (produk dummy)
-- ✅ Komponen reusable (ProductCard)
-- ✅ State management (keranjang belanja)
-- ✅ UI yang responsive
+- ✅ Project setup with Vite + React Router
+- ✅ Data layer (dummy products)
+- ✅ Reusable component (ProductCard with navigation)
+- ✅ Multi-page routing (Home, Cart, Product Detail)
+- ✅ Shared state management (shopping cart across routes)
 
-→ **Tanpa AI: estimasi 2-3 jam. Dengan AI: 30 menit.**
+→ **Without AI: estimated 2-3 hours. With AI: 20 minutes.**
 
 <!--
-TIMING: 3 menit
+TIMING: 2 menit
 
 SPEAKER NOTES (Bahasa Indonesia):
 Berhenti sejenak dan appreciate apa yang sudah dicapai bersama.
-"Ini bukan exaggeration — 30 menit tadi menggantikan pekerjaan yang dulu makan 2-3 jam, terutama untuk yang masih belajar."
+"Ini bukan exaggeration — 20 menit tadi menggantikan pekerjaan yang dulu makan 2-3 jam, terutama untuk yang masih belajar."
 "Yang lebih penting: kita tidak hanya copy-paste. Kita paham setiap bagiannya."
+"Dan perhatikan — kita sudah pakai React Router untuk navigasi antar halaman. Konsep yang tadi kita pelajari langsung dipraktekkan."
 "Nah, sebelum kita tutup dengan takeaways, ada beberapa hal penting yang perlu kalian tahu supaya tidak jatuh ke jebakan yang sama dengan banyak developer."
 -->
 
 ---
 
-## ⚠️ Jebakan yang Harus Dihindari
+## ⚠️ Pitfalls to Avoid
 
-1. **Tidak review kode AI** → Bugs tersembunyi di produksi
-2. **Over-reliance** → Kamu jadi tidak bisa coding tanpa AI
-3. **Prompt terlalu umum** → Output yang tidak berguna
-4. **Skip testing** → "AI bilang benar" bukan jaminan
+1. **Not reviewing AI code** → Hidden bugs in production
+2. **Over-reliance** → You can't code without AI
+3. **Prompts too vague** → Useless output
+4. **Skipping tests** → "AI said it's correct" is not a guarantee
 
 <!--
 TIMING: 5 menit
@@ -697,19 +770,19 @@ Pesan inti: "Pakai AI dengan sadar — bukan dengan buta."
 
 ---
 
-## 🧠 Cara Belajar React dengan AI
+## 🧠 How to Learn React with AI
 
-**AI sebagai tutor:**
+**AI as a tutor:**
 
-> "Jelaskan useEffect kepada saya seperti saya developer junior yang baru belajar React. Berikan contoh kasus nyata."
+> "Explain useEffect to me like I'm a junior developer just learning React. Give me a real-world example."
 
-**AI sebagai review partner:**
+**AI as a review partner:**
 
-> "Review kode ini dan kasih feedback: apa yang bisa diperbaiki dari sisi performance, readability, dan best practices React?"
+> "Review this code and give feedback: what can be improved in terms of performance, readability, and React best practices?"
 
-**AI sebagai debugging partner:**
+**AI as a debugging partner:**
 
-> "Kode ini harusnya mengambil data dari API tapi malah infinite loop. Bantu saya debug."
+> "This code is supposed to fetch data from an API but it's causing an infinite loop. Help me debug."
 
 <!--
 TIMING: 5 menit
@@ -723,19 +796,19 @@ SPEAKER NOTES (Bahasa Indonesia):
 
 ---
 
-## 🗺️ Peta Jalan Belajar React
+## 🗺️ React Learning Roadmap
 
 ```
-MINGGU 1-2    MINGGU 3-4    BULAN 2        BULAN 3+
+WEEK 1-2      WEEK 3-4      MONTH 2        MONTH 3+
 ─────────────────────────────────────────────────
 JSX &         State &       React Router   React Native
 Components  → Props &    → API Fetch    → State Mgmt
               Events        Forms          Testing
-              
-              [AI membantu di setiap tahap]
+
+              [AI helps at every stage]
 ```
 
-→ **Konsisten 1 jam/hari lebih baik dari marathon 8 jam seminggu**
+→ **Consistent 1 hour/day beats an 8-hour marathon once a week**
 
 <!--
 TIMING: 4 menit
@@ -750,15 +823,15 @@ Realistis: "Belajar React butuh waktu. Tapi dengan AI sebagai learning partner, 
 
 ---
 
-## 💡 Kesimpulan
+## 💡 Key Takeaways
 
-1. 🧩 **React** adalah fondasi yang worth it — web + mobile, ekosistem matang
-2. ⚛️ **Komponen + State + Props** adalah inti yang harus dikuasai
-3. 🤖 **AI** menghilangkan gesekan, tapi bukan pengganti pemahaman
-4. 💬 **Prompt yang baik** = hasil yang akurat = waktu yang hemat
-5. 🔁 **Review, review, review** — jangan pernah skip langkah ini
+1. 🧩 **React** is a worthy foundation — web + mobile, mature ecosystem
+2. ⚛️ **Components + State + Props** are the core you must master
+3. 🤖 **AI** removes friction, but is not a substitute for understanding
+4. 💬 **Good prompts** = accurate results = time saved
+5. 🔁 **Review, review, review** — never skip this step
 
-→ **Mulai hari ini. Satu komponen. Satu prompt. Satu langkah.**
+→ **Start today. One component. One prompt. One step.**
 
 <!--
 TIMING: 5 menit
@@ -773,17 +846,17 @@ Walk through setiap poin dengan singkat — ini bukan pengulangan, ini reinforce
 
 ---
 
-## 🚀 Langkah Pertama Malam Ini
+## 🚀 First Steps Tonight
 
-**Quick wins (masing-masing < 30 menit):**
+**Quick wins (each < 30 minutes):**
 
-- ✅ Setup project React dengan Vite: `npm create vite@latest`
-- ✅ Build komponen pertama: `Button` atau `Card` sederhana
-- ✅ Coba satu prompt ke ChatGPT/Copilot untuk React
-- ✅ Bookmark: [react.dev](https://react.dev) dan [vitejs.dev](https://vitejs.dev)
-- ✅ Join komunitas: ReactID, Kelas Terbuka, atau Dicoding
+- ✅ Set up a React project with Vite: `npm create vite@latest`
+- ✅ Build your first component: a simple `Button` or `Card`
+- ✅ Try one prompt to ChatGPT/Copilot for React
+- ✅ Bookmark: [react.dev](https://react.dev) and [vitejs.dev](https://vitejs.dev)
+- ✅ Join a community: ReactID, Kelas Terbuka, or Dicoding
 
-→ **Pilih 2-3 untuk dilakukan malam ini**
+→ **Pick 2-3 to do tonight**
 
 <!--
 TIMING: 3 menit
@@ -797,13 +870,13 @@ Call to action: "Raise your hand kalau mau commit untuk build satu React compone
 
 ---
 
-## 🙏 Terima Kasih!
+## 🙏 Thank You!
 
 **Zain Fathoni** · [zainfathoni.com](https://zainfathoni.com)
 
 🔗 **Slides:** [zainf.dev/react-with-ai-assistance](https://zainf.dev/react-with-ai-assistance)
 
-![w:400](assets/react-with-ai-assistance-qr.png)
+![w:200](assets/react-with-ai-assistance-qr.png)
 
 💡 *"The best time to start learning React was 5 years ago. The second best time is now — with AI by your side."*
 
