@@ -280,7 +280,43 @@ SPEAKER NOTES (Bahasa Indonesia):
 "React Router menyelesaikan masalah ini: kamu bisa punya URL berbeda untuk setiap halaman, tanpa browser harus reload."
 "Perhatikan `Link` menggantikan tag `<a>` — karena Link tidak memicu full reload."
 "Dan `:id` di path itu dynamic route — artinya `/product/1`, `/product/2`, dll. semua ditangani oleh satu komponen."
-Transisi: "React Router juga punya versi yang lebih modern — React Router v7 yang sudah include fitur framework seperti server-side rendering."
+Transisi: "Sekarang kita lihat fitur powerful lain dari React Router — nested routes."
+-->
+
+---
+
+## 🧭 Nested Routes — Shared Layouts
+
+```jsx
+<Routes>
+  <Route element={<Layout />}>       {/* shared nav + footer */}
+    <Route path="/" element={<Home />} />
+    <Route path="/cart" element={<Cart />} />
+    <Route path="/product/:id" element={<ProductDetail />} />
+  </Route>
+  <Route path="/login" element={<Login />} />  {/* no layout */}
+</Routes>
+```
+
+```jsx
+const Layout = () => (<>
+  <Navbar />
+  <Outlet />   {/* child route renders here */}
+  <Footer />
+</>)
+```
+
+→ **`Outlet` is a placeholder where child routes render inside a parent layout**
+
+<!--
+TIMING: 4 menit
+
+SPEAKER NOTES (Bahasa Indonesia):
+"Nested routes adalah salah satu fitur paling powerful di React Router."
+"Bayangkan: hampir semua halaman punya navbar dan footer yang sama. Tanpa nested routes, kamu harus copy-paste layout di setiap halaman."
+"Dengan nested routes, kamu bungkus route-route itu di dalam parent route yang punya Layout. Komponen `Outlet` menandai tempat child route di-render."
+"Perhatikan `/login` di luar Layout — halaman login biasanya punya tampilan berbeda, tanpa navbar."
+"Contoh nyata: website ini (zainfathoni.com) pakai nested routes. File `_layout.tsx` cuma berisi Container dan Outlet — semua halaman seperti Talks, Projects, Uses otomatis dibungkus layout yang sama. Itu file-based routing di React Router v7."
 -->
 
 ---
@@ -500,12 +536,9 @@ ACTION:
 
 ## Step 2 — Product Data
 
-**Prompt to AI:**
-
 > "Create a file `src/data/products.js` containing an array of 6 dummy products with fields: id, name, price (in Rupiah), image (from picsum.photos), and category."
 
 ```js
-// src/data/products.js — AI generated this
 export const products = [
   {
     id: 1,
