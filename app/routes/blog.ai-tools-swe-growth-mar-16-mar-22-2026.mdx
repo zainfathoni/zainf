@@ -1,0 +1,167 @@
+---
+meta:
+  - title: "Hemat Token Itu Seni, Mudik Bawa Starlink Itu Dedikasi — AI Tools Digest #8"
+  - name: description
+    content: "Minggu ini: strategi hemat Opus di $20, 529 error Claude, Windsurf naik harga, Firebase Studio dimatikan, dan mudik bawa Mac mini + Starlink. Rangkuman dari grup AI Tools SWE GROWTH, 16-22 Mar 2026."
+  - author: Zain Fathoni
+  - date: "2026-03-22"
+  - property: og:title
+    content: "Hemat Token Itu Seni, Mudik Bawa Starlink Itu Dedikasi — AI Tools Digest #8"
+  - property: og:description
+    content: "Minggu ini: strategi hemat Opus di $20, 529 error Claude, Windsurf naik harga, Firebase Studio dimatikan, dan mudik bawa Mac mini + Starlink. Rangkuman dari grup AI Tools SWE GROWTH, 16-22 Mar 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-mar-16-mar-22-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-8.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Hemat Token Itu Seni, Mudik Bawa Starlink Itu Dedikasi — AI Tools Digest #8"
+  - name: twitter:card
+    content: summary_large_image
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Hemat Token Itu Seni, Mudik Bawa Starlink Itu Dedikasi
+
+Minggu ini grup kita agak unik — campuran antara diskusi teknis yang serius dan vibes lebaran yang hangat. Di satu sisi, ada perdebatan sengit soal strategi hemat token Opus. Di sisi lain, ada yang mudik bawa Mac mini dan Starlink. Yep, that's us. 😅
+
+## 🎯 Strategi Hemat Opus: Plan Sonnet, Review Opus
+
+Topik paling ramai minggu ini dimulai dari pertanyaan polos Mas Fajar: *"yg pakai Claude code opus itu setting nya gmna biar oke ya. soalnya takut pakai opus limit hariannya langsung ludes."*
+
+Mas Michael langsung menjawab dengan realita pahit: *"kalau paket $20 mau settingan gmna opus itu udah mahal mas."* Dan dia menambahkan, *"cocok2 aja kok tapi kalau mau fully opus gak usah ngimpi mas kalau $20 🤣."*
+
+Tapi justru dari sini muncul strategi yang menarik. Mas Zahid membagikan workflow-nya: *"Pakai buat review plan aja. Jadi cuman 1 shot."* Singkatnya — plan pakai Sonnet, Opus cuma untuk review. Mas Almas bahkan menambahkan referensi tools-nya: *"Saya biasanya pakai opus dan superpower skill untuk write plan. Eksekusi tasksnya pakai sonnet atau haiku tergantung kebutuhan."* Pakai [Superpowers](https://github.com/obra/superpowers) untuk structuring plan.
+
+Mas Otniel punya pendekatan lain: *"pake buat bikin plan, orchestrate agent yg lebih tidak pintar. gw pake opencode jadi bisa multi-agent orchestrator."* Jadi Opus sebagai "otak" yang mendelegasikan ke model yang lebih murah.
+
+Saya sendiri menambahkan realita Pro plan: *"Judulnya aja 'Pro', padahal kalau dipake buat Opus udah berasa 'Lite'. Buat 2-3 prompt berat udah habis limit kuota 5 jam. 😅"* Dan joke yang cukup merangkum minggu ini: *"Mungkin 'Pro' di situ maksudnya udah 'penggunanya sudah PROfessional dalam berhemat.'"* 😆
+
+Oh, dan kabar baiknya — Mas Luthfi share bahwa bulan Maret ada [promo 2x limit](https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion) di Claude. Mas Riza Rohman bahkan sudah upgrade ke Max, walau sempat bingung karena *"udah bayar tapi masih pro ya"* — ternyata perlu logout dulu. 😅
+
+Pertanyaannya bukan lagi "pakai model apa" tapi "kombinasi model apa yang paling cost-effective." Opus jadi luxury item, bukan daily driver.
+
+## 🔥 Opus Di-nerf? Atau Kita Yang Terlalu Banyak Harness?
+
+Mas Agung mengeluhkan sesuatu yang beberapa orang juga rasakan: *"bukan mas, di nerf nya itu reasoning nya. kerasa banget reasoning nya di nerf wkwk semenjak rilis yang fast."* Dan ditambah: *"yang kemarin bisa di tinggal tidur, sekarang kudu di guide lagi biar gak halu wkwk."*
+
+Tapi saya punya perspektif yang berbeda di sini. Saya share [thread dari @systematicls](https://x.com/systematicls/status/2028814227004395561) yang intinya: kalau kamu setup terlalu banyak harnessing manual (MCP, RAG, vectordb, syscall, dsb), ketika model-nya improved, beberapa harnessing itu justru jadi noise — karena model-nya sudah bisa pakai native solutions.
+
+Mas Agung merespons jujur: *"meksens, keknya harus tak audit tools yang obsolete."* Dan itu insight yang penting — kadang yang bikin "lemot" bukan model-nya yang di-nerf, tapi kita yang over-tooling.
+
+Sementara itu, Claude sendiri lagi tidak baik-baik saja — [status.claude.com](https://status.claude.com/) menunjukkan elevated errors beberapa hari terakhir. Mas Arif bahkan kena langsung: *"claude code barusan bgt dapet error code 529."* Mas El Muhammad menduga ini *"efek 2x token limit"* — terlalu banyak yang pakai promo. Dan Mas Iqbal bercanda: *"Apakah krn di ship code nya dg claude code sendiri xD."*
+
+Apakah Opus benar-benar di-nerf, atau kita yang perlu re-evaluate toolchain kita? Mungkin jawabannya: sedikit keduanya.
+
+## 💸 Windsurf Naik Harga, AI Makin Mahal
+
+Mas Dedy P membawa berita yang sudah lama diprediksi: [Windsurf mengumumkan pricing baru berbasis quota](https://www.reddit.com/r/windsurf/comments/1rxii0o/introducing_our_new_windsurf_pricing_plans/). Mas Fajar langsung merespons: *"udah mulai berasa mahal ai nya."*
+
+Mas Michael, yang memang sering memantau tren pricing, tidak kaget: *"seperti yang sudah banyak di prediksi di X tinggal tunggu waktu memang."* Dan analisisnya tajam: *"gak bakal sustain lagi kalau request AI dikasih loss tanpa hitung token yg keluar... tetap bisa pake AI tapi untuk yg premium suka gak suka memang bakal dipaksa lebih dari $20."*
+
+Mas Kevin menambahkan faktor yang sering dilupakan: *"harga energi juga mahal apalagi green energy."* Benar — infrastruktur AI bukan cuma soal GPU, tapi juga listrik.
+
+Mas Zahid punya kesimpulan yang pragmatis: *"Jadi pada akhirnya yg punya infra gede dan income subsidi yg menang. 😅"* Dan menyebut bahwa wrapper seperti OpenCode, Amp, dan AI agent wrapper lainnya yang paling terdampak.
+
+Era $20 unlimited AI sudah berakhir. Yang tersisa adalah seni berhemat — dan itu skill yang ternyata lebih penting dari prompting.
+
+## 🔄 Claude Code vs OpenCode: Cocok-cocokan
+
+Minggu ini ada momen lucu. Mas Aidityas: *"setelah 1 jam menggunakan claude code, sepertinya balik lagi ke opencode :)"* Dan saya menjawab: *"Emang cocok-cocokan sih. Saya malah sebaliknya, setelah 1 jam menggunakan OpenCode, balik lagi ke Claude Code. 🤣"*
+
+Mas Galih meanwhile sedang menikmati Claude Code Desktop yang ternyata sudah makin canggih — bisa kasih context pakai selection mode. Mas Aidityas juga menemukan alternatif menarik: *"Kalau ini saya senengnya pakai agentation.dev."*
+
+Tips session management Claude Code juga muncul minggu ini — Mas Zahid mengingatkan tentang `/resume`, dan saya menambahkan tentang `claude --continue` untuk langsung lanjut sesi terakhir, plus trick CLAUDE.md di nested folder untuk konteks per-fitur.
+
+Tool terbaik adalah tool yang cocok sama workflow kamu. Bukan yang paling trending di X.
+
+## ⚡ Quick Hits
+
+- **Firebase Studio dimatikan** — Google resmi migrasi ke AI Studio & Antigravity. Mas Iqbal prediksi *"antigravity yg mati wkwk"*, Mas Tegar lebih suka Antigravity tapi *"masih nyari cara gimana bisa nyambungin antigravity ke hp biar bisa ngoding sambil rebahan wkwk."* Mas Iqbal menyarankan [Remoat](https://github.com/optimistengineer/remoat).
+
+- **OpenAI akuisisi Astral** — fokus ke Python/UV, sementara Anthropic ambil Bun. Mas Michael: *"anthropic ambil Bun, OpenAI fokus ke python(UV) 🔥."* Persaingan ekosistem makin jelas.
+
+- **Cursor berpotensi kena masalah hukum** — Mas Michael share link tentang Composer 2 yang mungkin melanggar trademark. Mas Faris: *"keknya tiap kali provider ngeluarin model baru, ada employee masing-masing kompetitor buat nyari celah nuntut secara hukum."*
+
+- **Cerebras** — Mas Agung menemukan [chat.cerebras.ai](https://chat.cerebras.ai/) dan kagum: *"tidak fomo tapi diem diem tembus 16k token /sec."* Mas Michael mengingatkan: itu *"sebulan $50an"* untuk premium.
+
+- **Kimi Cancel Button tersembunyi** — Mas Restu frustasi: *"aku mencari button 'Cancel Plan' tidak ditemukan 😅."* Mas Desilino kasih tips: *"Di reply aja mas email failed to charge nya, minta di stop charging nya."* Mas Faris bahkan compare: *"Masih terbaik Z.ai ya. Bahkan bisa refund padahal subscription-nya lagi ongoing."*
+
+- **OpenAgentsControl** — Mas Zahid share [tool ini](https://github.com/darrenhinde/OpenAgentsControl) untuk manajemen konteks codebase. Mas Salma tertarik: *"Wah kriterianya sesuai mas, nanti sya coba."*
+
+- **MiniMax diskon** — Mas Michael share cara dapat diskon: buat artikel di X tentang MiniMax, nanti dikasih credits.
+
+- **Trae.ai Hackathon di Bali** — Mas Abdul Rahman share info hackathon tanggal 28 Maret. Yang di Bali, merapat!
+
+## 🏠 Mudik Edition: Home Server & Starlink
+
+Momen paling wholesome minggu ini: sharing setup mudik. Saya bela-belain bawa Mac mini + game console + Starlink ke rumah ortu biar tetap bisa ngoding dan main game sama anak-anak. Internet rumah ortu cuma 20 Mbps — dibanding Starlink, bagaikan bumi dan langit. 😅
+
+Mas El Muhammad level-nya lebih tinggi lagi — dia setup home server dengan UPS, dual network, dan open rack sebelum mudik. *"udah di test sebelum berangkat dengan di cabut listriknya dan dimatikan meteran listriknya dia bisa booting sendiri."* Tips penting: enable "Start up automatically after power failure" + auto login tanpa password di macOS.
+
+Mas Salma yang masih merintis bermimpi: *"Pgn punya homeserver gini, Alhamdulillah PSU nya dah kebeli 🤣."* Mas Ivan sudah mulai: *"Saya malah dah punya kabel cat 6 nya 100m. Tinggal nyicil yg lainnya 😂."*
+
+Self-hosting di era AI bukan lagi hobi niche — ini investasi infrastruktur personal yang makin masuk akal.
+
+## 📰 Artikel & Link Menarik
+
+- [Thread @systematicls tentang over-harnessing AI agents](https://x.com/systematicls/status/2028814227004395561) — Frontier companies akan selalu incorporate external solutions ke produk mereka
+- [Claude March 2026 Usage Promotion](https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion) — 2x limit bulan Maret
+- [Windsurf New Pricing Plans](https://www.reddit.com/r/windsurf/comments/1rxii0o/introducing_our_new_windsurf_pricing_plans/) — Quota-based pricing
+- [OpenCode Queue Feature](https://x.com/0xSero/status/2034243822566187014) — Fitur antrian baru
+- [OpenAI to Acquire Astral](https://openai.com/index/openai-to-acquire-astral/) — Python tooling focus
+- [Firebase Studio Migration](https://firebase.google.com/docs/studio/migrating-project) — Pindah ke AI Studio & Antigravity
+- [pi-autoresearch](https://github.com/davebcn87/pi-autoresearch) — Auto-research tool
+- [OpenAgentsControl](https://github.com/darrenhinde/OpenAgentsControl) — Codebase context manager
+- [LazyGravity](https://github.com/tokyoweb3/LazyGravity) — Alternative tool
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **[Superpowers skill](https://github.com/obra/superpowers)** untuk plan-with-Opus workflow — hemat token, hasil tetap bagus
+2. **Audit toolchain-mu** — cek apakah ada MCP/harness yang sudah obsolete karena model sudah improved
+3. **[OpenAgentsControl](https://github.com/darrenhinde/OpenAgentsControl)** untuk manajemen konteks codebase tanpa boros token
+4. **Enable auto-restart di Mac mini** — kalau kamu self-hosting, pastikan mesin bisa recovery dari power failure
+5. **Claim [Claude March 2x promo](https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion)** — bulan ini ada 2x usage limit, jangan sampai kelewat
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — News curator utama grup, selalu up-to-date dengan tren X, analisis pricing yang tajam
+- **Mas Zahid** — OpenAgentsControl, Ali code workflow, strategi Opus 1-shot review
+- **Mas Fajar** — Pertanyaan yang memicu diskusi terbaik minggu ini tentang Opus strategy
+- **Mas Agung** — Insight jujur soal Opus nerfing, Cerebras discovery, Claude Code offloading
+- **Mas Faris** — Analisis bounty hunting kompetitor, perbandingan refund policy
+- **Mas Iqbal** — Remoat recommendation, Antigravity predictions, engagement yang selalu seru
+- **Mas Otniel** — OpenCode multi-agent orchestrator workflow
+- **Mas Almas** — Superpowers skill recommendation untuk plan writing
+- **Mas El Muhammad** — Home server setup masterclass dengan UPS dan auto-boot
+- **Mas Tegar** — Happy Coder experience, Antigravity review, LazyGravity discovery
+- **Mas Galih** — Claude Code Desktop showcase
+- **Mas Aidityas** — Honest take: Claude Code → OpenCode → Claude Code
+- **Mas Dedy P** — Windsurf pricing alert pertama
+- **Mas Luthfi** — Claude March promo discovery
+- **Mas Riza Rohman** — Claude Max upgrade pioneer
+- **Mas Restu** — Kimi cancel button exposé
+- **Mas Desilino** — Kimi workaround tips, Kilo pass recommendation
+- **Mas Kevin** — Energy cost perspective
+- **Mas Salma** — Home server aspirations, Starlink questions, OpenAgentsControl interest
+- **Mas Joko** — Workflow confirmation
+- **Mbak Eka** — "ada ribuan cara untuk gagal" — the most relatable reaction ever
+- **Mas Deryalfi** — Kimi discount still available intel
+- **Mas Abdul Rahman** — Trae.ai Hackathon Bali info
+- **Mas Ivan** — Cat 6 cable ready, home server journey beginning
+- **Mas Arif** — 529 error firsthand report
+- **Mas Latief** — Engagement and humor
+- **Mas Yazid** — AGY artifact mechanism question
+
+---
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 22 Maret 2026*
