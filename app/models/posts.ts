@@ -2,6 +2,7 @@ import * as post20260215AiToolsDigestWeek2 from "../routes/blog.2026-02-15.ai-to
 import * as aiToolsSwegrowthSummaryFeb4 from "../routes/blog.ai-tools-swe-growth-feb-4-feb-11-2026.mdx";
 import * as aiToolsSwegrowthSummary from "../routes/blog.ai-tools-swe-growth-summary-jan-25-feb-11-2026.mdx";
 import * as projectTransformers from "../routes/blog.project-transformers-building-personal-ai-army.mdx";
+import * as projectTransformersPart2 from "../routes/blog.project-transformers-one-month-later.mdx";
 import * as reactDomJsx from "../routes/blog.react-dom-jsx.mdx";
 
 import * as postAiToolsSweGrowthFeb15Feb222026 from "../routes/blog.ai-tools-swe-growth-feb-15-feb-22-2026.mdx";
@@ -82,6 +83,7 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(projectTransformersPart2),
     getPostFromMdxModule(postAiToolsSweGrowthMar23Mar292026),
     getPostFromMdxModule(postAiToolsSweGrowthMar16Mar222026),
     getPostFromMdxModule(postAiToolsSweGrowthMar9Mar162026),
