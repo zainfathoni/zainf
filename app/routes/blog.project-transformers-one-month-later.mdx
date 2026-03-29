@@ -33,7 +33,7 @@ export const meta = () => attributes.meta;
 
 <PostHeader {...attributes} />
 
-A month ago, I [wrote about my team of AI agents](/blog/project-transformers-building-personal-ai-army) — nine bots with Transformer names, each with its own domain, personality, and memory. The response surprised me. Plenty of curiosity, some skepticism, and one comment that stuck: [Elvis Sun](https://x.com/elvissun) mentioned he'd been building something remarkably similar.
+A month ago, I [wrote about my team of AI agents](/blog/project-transformers-building-personal-ai-army) — nine bots with Transformer names, each with its own domain, personality, and memory. The response surprised me. Plenty of curiosity, some skepticism, and one comment that stuck: [Elvis Sun](https://x.com/elvissun) shared [his own agent swarm setup](https://x.com/elvissun/status/2025920521871716562) — an article that got 5 million views — and the architecture was remarkably similar to mine.
 
 But what surprised me most wasn't the response from outside. It was what happened *inside* the system.
 
@@ -79,9 +79,11 @@ A month later? I'm not the dispatcher anymore. I'm the *reviewer*.
 
 ### The Fizzy Dispatcher
 
+The idea for deterministic dispatch came from studying how others were solving this. OpenAI's [Symphony](https://github.com/openai/symphony) framework, [Paperclip](https://paperclip.ing), and especially Elvis's proactive task sourcing pattern — where his orchestrator "Zoe" scans Sentry errors and meeting notes to [autonomously spawn agents](https://x.com/elvissun/status/2028671336219107687) — all pointed in the same direction: **spend tokens on judgment, spend code on mechanics.**
+
 Today — literally today, March 29, 2026 — we deployed a 575-line bash script called `fizzy-dispatcher.sh`. It runs inside Optimus's heartbeat, and every time Optimus wakes up, it:
 
-1. **Queries Fizzy** — pulls all cards tagged `bot-actionable` that haven't been worked on
+1. **Queries [Fizzy](https://fizzy.do)** — pulls all cards tagged `bot-actionable` that haven't been worked on
 2. **Checks fuel** — parses codexbar to know: does Amp have remaining credits? Is Codex available? What's the Claude quota?
 3. **Dispatches** — routes cards to the right agent. Coding tasks → spawn an Amp or Codex agent. Research → queue for heartbeat. Daily limit: 5 cards per day, 2 per run.
 
@@ -97,8 +99,8 @@ If the dispatcher is how cards reach agents, the swarm is how agents solve them 
 
 Two new skills:
 
-- **amp-swarm** — takes multiple GitHub issues, groups them by conflict safety (issues that modify the same files can't run in parallel), spawns one Amp deep-mode worker per issue. Each creates a branch, implements the fix, and opens a PR.
-- **claude-swarm** — same concept, but using Claude Code (`claude --print`). Fallback when Amp credits are spent, or for repos that need deeper reasoning.
+- **amp-swarm** — takes multiple GitHub issues, groups them by conflict safety (issues that modify the same files can't run in parallel), spawns one [Amp](https://ampcode.com) deep-mode worker per issue. Each creates a branch, implements the fix, and opens a PR.
+- **claude-swarm** — same concept, but using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`claude --print`). Fallback when Amp credits are spent, or for repos that need deeper reasoning.
 
 Issues get grouped into "waves." Wave 1 might be 5 non-conflicting issues, worked in parallel. When those finish, wave 2 starts. This isn't brute force — it's *organized* parallel execution.
 
@@ -169,7 +171,7 @@ This is what I mean by "the system learned to run itself." Not sentient AI. Not 
 
 ## The System Became Observable
 
-One upgrade that isn't flashy but was *crucial*: we now have dashboards.
+One upgrade that isn't flashy but was *crucial*: we now have dashboards. [Ryan Carson's suggestion](https://x.com/ryancarson/status/2033913074772586888) to spend a full day optimizing your agentic setup hit home — and observability was the first thing we built.
 
 Two pages on [ark.zainf.dev](https://ark.zainf.dev/):
 
@@ -236,7 +238,7 @@ The lesson: **agents need to escalate their own failures, not just log them.** W
 
 One moment that convinced me this system isn't just "an overengineered hobby project" came from outside.
 
-[Elvis Sun](https://x.com/elvissun) — someone I respect in the AI tooling space — saw Part 1 and mentioned he'd been building something similar. Not an exact copy, but the same principles: specialized agents, domain separation, knowledge persistence.
+[Elvis Sun](https://x.com/elvissun) — someone I respect in the AI tooling space — had [published his own setup](https://x.com/elvissun/status/2025920521871716562) around the same time. His orchestrator "Zoe" spawns Codex and Claude Code agents in tmux worktrees, monitors them via cron, and runs triple AI code review. Not an exact copy of our system, but the same principles: specialized agents, domain separation, knowledge persistence. He later shared a [follow-up on token optimization](https://x.com/elvissun/status/2028671336219107687) that directly influenced our dispatcher design.
 
 Why does this matter? Because when you build something unusual, there's always doubt: *"Am I just over-engineering? Am I just playing around and calling it 'architecture'?"*
 
