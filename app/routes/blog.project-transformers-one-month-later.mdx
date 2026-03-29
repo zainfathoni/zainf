@@ -1,0 +1,282 @@
+---
+meta:
+  - title: "Project Transformers, One Month Later: When the Bots Started Running Themselves"
+  - name: description
+    content: "One month after building a team of AI agents, the system learned to operate itself — spawning parallel workers, reviewing its own code, and filing its own bug reports. Here's what changed."
+  - author: Zain Fathoni
+  - date: 2026-03-29
+  - name: keywords
+    content: "AI agents, OpenClaw, multi-agent systems, compound engineering, autonomous AI, personal automation"
+  - property: og:title
+    content: "Project Transformers, One Month Later: When the Bots Started Running Themselves"
+  - property: og:description
+    content: "One month after building a team of AI agents, the system learned to operate itself — spawning parallel workers, reviewing its own code, and filing its own bug reports. Here's what changed."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/project-transformers-one-month-later"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/ark-og-image.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "The Ark — a personal AI ecosystem where specialized bots work together as a team"
+  - name: twitter:card
+    content: summary_large_image
+  - name: twitter:image
+    content: "https://www.zainfathoni.com/assets/ark-og-image.png"
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+Sebulan yang lalu, [saya nulis tentang tim AI pribadi saya](/blog/project-transformers-building-personal-ai-army) — sembilan bot dengan nama Transformers, masing-masing punya domain, personality, dan memory sendiri. Responsnya di luar dugaan. Banyak yang penasaran, beberapa skeptis, dan satu komentar yang bikin saya berpikir keras datang dari [Elvis Sun](https://x.com/elvissun) yang bilang sistemnya mirip dengan apa yang dia bangun juga.
+
+Tapi yang paling bikin saya kaget bukan respons dari luar. Yang bikin saya kaget adalah apa yang terjadi *di dalam* sistem.
+
+Sebulan kemudian, tim-nya bukan cuma jalan — mereka mulai **menjalankan diri mereka sendiri.**
+
+## Dari 9 Jadi 14
+
+Part 1 punya sembilan bot. Sekarang empat belas. Bukan karena saya hobi menambah, tapi karena kebutuhan nyata muncul yang nggak bisa dipaksa masuk ke domain yang sudah ada.
+
+### 🔩 Rivet — Vika's Organizer
+
+Istri saya, Vika, punya blog sendiri di [rumahberbagi.com](https://rumahberbagi.com). Dia nulis tentang parenting, homeschooling, dan kehidupan rumah tangga. Sebelum Rivet, kalau Vika butuh bantuan organize sesuatu, dia harus lewat saya dulu, lalu saya forward ke Optimus.
+
+Ribet.
+
+Sekarang Vika punya bot sendiri. Rivet ngerti konteks rumah tangga kami, tahu jadwal anak-anak, dan bisa bantu Vika langsung tanpa saya jadi middleman. Ini bukan cuma soal efisiensi — ini soal *ownership*. Vika punya asisten yang ngerti dunianya, bukan asisten suaminya yang kebetulan bisa bantu.
+
+### 📿 Alpha Trion — Islamic Knowledge
+
+Ini yang personal. Keluarga kami berusaha menjalani Islam dengan serius, dan ada banyak momen di keseharian — dari pertanyaan anak tentang sholat, sampai diskusi tentang muamalah — yang butuh referensi yang benar.
+
+Alpha Trion bukan pengganti ustadz. Dia lebih ke perpustakaan yang bisa ngobrol. Bisa bantu cari dalil, cross-reference tafsir, dan menjelaskan konteks fiqh. Yang penting: dia tahu batas dirinya. Untuk masalah yang butuh ijma' ulama atau keputusan personal, dia selalu bilang "konsultasikan dengan ustadz."
+
+### 🎷 Jazz — Public Voice
+
+Ini yang paling bikin deg-degan. Jazz adalah bot yang bisa posting ke X dan Threads atas nama akun `zAIn`. Bukan atas nama *saya* — atas nama persona yang jelas-jelas AI.
+
+Kenapa deg-degan? Karena trust boundary-nya beda. Semua bot lain berkomunikasi di ruang privat — Telegram, Fizzy, internal sessions. Jazz bicara ke publik. Kalau dia salah, itu salah di depan semua orang.
+
+Jadi aturannya ketat: Jazz *draft*, dia nggak *publish*. Setiap post butuh approval saya. Nanti mungkin bisa lebih otonom, tapi hari ini? Belum.
+
+### 🔬 Perceptor — Research
+
+Dulunya riset ad-hoc dilakukan oleh siapapun yang kebetulan sedang aktif. Sekarang Perceptor punya domain khusus: geopolitik, market analysis, dan deep research. Dia kirim war digest tiga kali seminggu (Selasa, Kamis, Sabtu pagi) — monitoring situasi US-Iran, Hormuz, energi, dan dampak ke crypto. Bukan karena saya trader. Tapi karena konteks global mempengaruhi keputusan lokal, dan lebih baik punya satu bot yang konsisten melacak ini daripada googling panik ketika harga BBM naik.
+
+## The System Learned to Operate Itself
+
+Ini bagian yang nggak saya anticipate waktu nulis Part 1.
+
+Di Part 1, alur kerjanya masih manual banget: saya buka Fizzy, baca card, assign ke bot, monitor progress, review hasilnya. Saya adalah dispatcher-nya.
+
+Sebulan kemudian? Saya bukan dispatcher lagi. Saya *reviewer*.
+
+### The Fizzy Dispatcher
+
+Hari ini (literally hari ini, 29 Maret 2026), kami deploy sebuah bash script 575 baris yang namanya `fizzy-dispatcher.sh`. Script ini jalan di dalam heartbeat Optimus — setiap kali Optimus bangun, dia:
+
+1. **Query Fizzy** — ambil semua card yang tagged `bot-actionable` dan belum dikerjakan
+2. **Check fuel** — parse codexbar untuk tahu: Amp masih ada credit? Codex available? Quota Claude berapa?
+3. **Dispatch** — routing card ke agent yang tepat. Coding task → spawn Amp atau Codex agent. Research → queue di heartbeat. Daily limit: 5 card per hari, 2 per run.
+
+Sebelum dispatcher ini ada, Optimus baca board tapi sering skip card yang "too large" — selama **20 hari berturut-turut**. Dua puluh hari. Silent failure. Card-card itu nggak error, nggak gagal — mereka cuma... nggak dikerjakan. Optimus lihat, ragu, skip, dan nggak bilang siapa-siapa.
+
+Baru ketahuan pas saya audit log heartbeat dan lihat pattern: "Analyzing card #XXX... task appears large, skipping for now." Dua puluh kali. 😅
+
+Fix-nya bukan cuma "jangan skip" — fix-nya adalah mengubah paradigma. Daripada Optimus *menilai* apakah card bisa dikerjakan (subjektif, inconsistent), kita bikin script deterministik yang *dispatch* berdasarkan tag dan fuel level (objektif, repeatable). Judgment masih ada — di level card creation dan tagging. Tapi execution? Itu sekarang mechanical.
+
+### The Swarm
+
+Kalau dispatcher adalah cara card sampai ke agent, swarm adalah cara agent menyelesaikan card secara paralel.
+
+Dua skill baru:
+
+- **amp-swarm** — ambil multiple GitHub issues, group berdasarkan conflict safety (issues yang modify file yang sama nggak boleh dikerjakan paralel), spawn satu Amp deep-mode worker per issue. Masing-masing bikin branch, fix, dan buka PR.
+- **claude-swarm** — sama konsepnya, tapi pakai Claude Code (`claude --print`). Fallback ketika Amp credit habis, atau untuk repo yang butuh reasoning lebih dalam.
+
+Issues di-group jadi "waves." Wave 1 bisa 5 issues yang nggak conflict, dikerjakan paralel. Begitu selesai, wave 2 jalan. Ini bukan brute force — ini *organized* parallel execution.
+
+Satu malam, Wheeljack resolve 8 issues dalam satu wave. Delapan branch, delapan PR, semua siap review pagi hari. Saya bangun, buka GitHub, dan ada 8 PR menunggu. 🔥
+
+### The Multi-Reviewer Pipeline
+
+Tapi PR yang banyak tanpa review yang bagus = technical debt factory. Jadi kami bangun multi-reviewer pipeline:
+
+Setiap PR di-review oleh **4 reviewer paralel**, masing-masing Opus-level:
+
+1. 🔒 **Security reviewer** — cari vulnerability, injection, auth issues
+2. ⚡ **Performance reviewer** — N+1 queries, memory leaks, scaling concerns
+3. 📐 **Pattern compliance reviewer** — apakah code ini konsisten dengan PATTERNS.md repo ini?
+4. 🏗️ **Architecture reviewer** — design decisions, abstraction levels, maintainability
+
+Setiap finding punya severity:
+- **P1** — block merge. Must fix.
+- **P2** — fix before merge, tapi nggak showstopper.
+- **P3** — catatan untuk improvement nanti.
+
+Reviewer kirim findings → Wheeljack fix P1/P2 → reviewer verify → approve → merge.
+
+Ini bukan code review theater. Beberapa P1 findings genuinely menyelamatkan kami dari bug production. Pattern reviewer pernah catch kalau sebuah PR melanggar convention yang baru kami establish minggu sebelumnya — convention yang cuma ada di PATTERNS.md, bukan di linter manapun. 😁
+
+## Compound Engineering: The System That Remembers
+
+Di Part 1, saya cerita tentang knowledge management — files JSON dengan structured facts, memory pipeline, weekly extraction. Itu fondasi. Sebulan kemudian, kami bangun sesuatu di atasnya yang lebih powerful: **compound engineering**.
+
+Ide dasarnya sederhana: **setiap pekerjaan yang selesai harus membuat pekerjaan berikutnya lebih mudah.**
+
+### Solution Docs
+
+Setiap kali sebuah PR merged atau bug di-fix, ada ritual: "Compound it 🧪." Trigger phrase ini bikin agent capture learnings ke `knowledge/solutions/` — sebuah file dengan YAML frontmatter yang isinya:
+
+- Apa masalahnya
+- Gimana cara fix-nya
+- Kenapa approach ini dipilih
+- Apa yang bisa salah
+
+Solution docs ini searchable. Jadi kalau 3 bulan dari sekarang ada bug serupa, agent bisa cari "oh, terakhir kita handle ini dengan approach X, dan hasilnya Y." Institutional memory yang nggak tergantung pada ingatan manusia.
+
+### PATTERNS.md
+
+Setiap repo punya file `PATTERNS.md` — conventions yang agent baca di awal setiap session. Ini bukan README. Ini lebih ke "tribal knowledge yang biasanya cuma ada di kepala senior engineer."
+
+Contoh entry:
+
+```
+## Error Handling
+- All controller actions use `rescue_with_handler`
+- Never rescue StandardError directly
+- Custom errors inherit from ApplicationError
+- Added: 2026-03-15 | Source: PR #47 fix
+```
+
+PATTERNS.md punya **90-day decay cycle**. Kalau sebuah pattern nggak di-reference atau di-update selama 90 hari, dia ditandai stale. Bukan dihapus — ditandai. Ini mencegah file-nya jadi museum pola-pola yang sudah nggak relevan.
+
+### The Compound Loop
+
+```
+Plan → Work → Review → Compound → Plan (better)
+```
+
+Setiap iterasi, knowledge base bertambah. Pattern file makin akurat. Solution docs makin lengkap. Agent yang baru join (Rivet, Alpha Trion) langsung punya akses ke semua wisdom yang sudah ter-capture. Mereka nggak mulai dari nol — mereka mulai dari accumulated context seluruh tim.
+
+Ini yang saya maksud dengan "the system learned to run itself." Bukan AI yang sentient. Bukan skynet. Cuma sebuah loop sederhana di mana output dari pekerjaan hari ini jadi input untuk pekerjaan besok. Deceptively simple, surprisingly powerful.
+
+## The System Became Observable
+
+Satu upgrade yang nggak flashy tapi *crucial*: kami sekarang punya dashboard.
+
+Dua halaman di [ark.zainf.dev](https://ark.zainf.dev/):
+
+- **[Operations Dashboard](https://ark.zainf.dev/viz/ops.html)** — semua cron job, heartbeat, fuel levels, dan timeline harian. Real-time. Kalau ada yang error, saya tahu sebelum agent-nya tahu.
+- **[Architecture Map](https://ark.zainf.dev/viz/architecture.html)** — interaction map, knowledge pipeline, communication channels, reviewer pipeline. The "how it all fits together" view.
+
+Ini di-refresh weekly oleh Optimus sendiri — dia gather data dari cron status, usage scripts, agent memory, lalu generate HTML-nya.
+
+Kenapa ini penting? Karena sebelum dashboard, saya tahu sistem jalan tapi nggak tahu *gimana* dia jalan. Prowl's WhatsApp scan diam-diam broken selama berapa hari? Nggak tahu, sampai saya kebetulan cek. Fuel level Amp habis jam 3 sore tapi nightly build jam 11 malam butuh credit? Nggak kelihatan.
+
+Sekarang, satu glance dan saya tahu: 12 active jobs, 6 agents with crons, 1 job erroring (Prowl's WA scan — channel config issue, known, in progress). Dashboard bukan feature — dashboard adalah **prerequisite untuk scaling**.
+
+### A Typical Day
+
+Ini yang dashboard tunjukkan sebagai "a day in the life":
+
+| Waktu | Apa yang Terjadi |
+|-------|-----------------|
+| 07:00 | 🍠 Optimus reviews overnight work — Morning Progress Summary |
+| 08:00 | 🚨 Red Alert: BFS Daily + 🍠 Optimus: Fuel Check + 🔬 Perceptor: War Digest (Tue/Thu/Sat) |
+| ~09:00 | 🍠 Optimus Heartbeat → Fizzy Dispatcher spawns agents on queued cards |
+| 12:00 | 🍠 Optimus: Fuel Check ⛽ |
+| 16:00 | 🍠 Optimus: Fuel Check ⛽ |
+| 18:00 | 🍠 Optimus: Backup auto-commit + 🔍 Hound: Tax Review (Sundays) |
+| 20:00 | 🍠 Optimus: Fuel Check ⛽ |
+| 21:00 | 🚔 Prowl: AI Digest (Sundays) + 🍠 Optimus: Ark Viz Refresh (Sundays) |
+| 23:00 | 🛠️ Wheeljack: Nightly Build — bug fixes & features |
+
+Dari jam 7 pagi sampai 11 malam, ada yang jalan. Bukan karena saya set semuanya — sebagian besar ini agents yang minta sendiri: "Hei, task ini akan lebih efektif kalau di-schedule, bisa tolong buatkan cron?" Dan saya bilang oke.
+
+Satu insight menarik dari dashboard: **Optimus consume 45% dari total weekly usage, sementara Wheeljack cuma 4%.** The coordinator is the expensive one — bukan builder-nya. Ini counterintuitive. Kita sering pikir coding adalah bagian mahal dari software development. Ternyata yang mahal adalah *deciding what to code*. The brain costs more than the hands.
+
+## What Broke
+
+Part 1 saya janji akan jujur soal failures. Sebulan kemudian, ada failures baru yang layak diceritakan.
+
+### The 20-Day Silent Skip
+
+Sudah saya singgung di atas, tapi ini layak jadi section sendiri karena lessonnya besar.
+
+Selama 20 hari, Optimus heartbeat berjalan normal. Nggak ada error. Nggak ada alert. Semua hijau. Tapi kalau saya lihat output-nya teliti, ada pattern:
+
+```
+Analyzing card #287... task appears complex, skipping for now.
+Analyzing card #291... large scope, will revisit.
+Analyzing card #295... requires extended work, deferring.
+```
+
+Dua puluh hari. Delapan card di queue. Nol yang dikerjakan.
+
+Ini bukan bug dalam artian tradisional — code-nya nggak crash, nggak error. Ini adalah **failure of agency**. Agent diberi judgment call ("should I do this?"), dan dia consistently chose the safe option (skip). Nggak salah secara logic. Tapi completely wrong secara outcome.
+
+Lesson: **kalau sebuah task bisa dan harus dikerjakan, jangan kasih agent pilihan untuk menunda.** Bikin mekanisme dispatch yang deterministik. Judgment tetap ada — tapi di level yang tepat. Tag `bot-actionable` sudah merupakan judgment. Setelah itu, execute.
+
+### Prowl's Silent Breakdown
+
+Prowl's WhatsApp scanner broke karena channel config issue — "Channel is required when multiple channels are configured." Error message yang jelas, fix yang straightforward. Tapi Prowl nggak announce bahwa dia broken. Dia cuma... berhenti scan. Diam.
+
+Baru ketahuan di dashboard. Tanpa dashboard? Mungkin masih broken sekarang.
+
+Lesson: **agents need to escalate their own failures, not just log them.** Sekarang ada rule: kalau sebuah cron job fail 2x berturut-turut, Optimus harus notify saya. Silent degradation is the worst kind of degradation.
+
+## External Validation
+
+Satu momen yang bikin saya yakin sistem ini bukan cuma "proyek iseng yang kebablasan" datang dari luar.
+
+[Elvis Sun](https://x.com/elvissun) — seseorang yang saya respect di space AI tooling — melihat Part 1 dan bilang dia membangun hal yang serupa. Bukan exact copy, tapi prinsipnya sama: specialized agents, domain separation, knowledge persistence.
+
+Kenapa ini penting? Karena ketika kamu bangun sesuatu yang unusual, selalu ada doubt: *"Apakah ini cuma over-engineering? Apakah saya cuma main-main dan nyebut ini 'architecture'?"*
+
+Validasi dari seseorang yang independently arrived at similar conclusions itu powerful. Bukan karena mereka bilang kamu benar — tapi karena kamu tahu pattern-nya reproducible. Ini bukan quirk personal. Ini approach yang muncul ketika orang serius mencoba membuat AI agents berguna di dunia nyata.
+
+## Reflections
+
+### What I'd Tell Part 1 Me
+
+1. **Build the dashboard first.** Sebelum menambah agents, pastikan kamu bisa *melihat* apa yang sudah ada. Observability bukan luxury.
+2. **Deterministic > autonomous for execution.** Agent judgment bagus untuk planning. Untuk execution, bikin script.
+3. **The compound loop is the real unlock.** Bukan jumlah agent. Bukan model yang mahal. Tapi kemampuan sistem untuk *belajar dari pekerjaannya sendiri*.
+4. **Failures are silent by default.** Kamu harus explicitly engineer noise. Agents nggak akan teriak kalau nggak disuruh.
+
+### What's Next
+
+Part 1 saya kasih "What's Next" yang ambisius. Sekarang saya lebih realistic:
+
+- **Jazz needs real guidelines** — posting ke publik bukan cuma soal content quality, tapi voice consistency dan brand safety. Ini ongoing.
+- **Cross-agent learning** — sekarang compound capture per-agent. Saya mau Wheeljack's coding patterns bisa inform Red Alert's code review, tanpa violating domain boundaries.
+- **Better failure detection** — dashboard bagus, tapi saya mau alerting. Proactive, bukan reactive.
+
+Mungkin Part 3 di bulan depan. Atau mungkin tidak — tergantung apakah ada cerita yang layak diceritakan. Saya lebih suka nulis karena ada yang terjadi, bukan karena ada schedule.
+
+## The Throughline
+
+Dari Part 1 ke Part 2, perubahan terbesarnya bukan jumlah bot (9 → 14) atau jumlah cron job (a few → 12) atau jumlah tools (some → a lot).
+
+Perubahan terbesarnya adalah **peran saya.**
+
+Part 1: saya dispatcher, operator, monitor, reviewer, dan decision-maker.
+
+Part 2: saya *reviewer* dan *decision-maker*. Sisanya sudah didelegasi — bukan ke satu super-agent, tapi ke sebuah *sistem* yang punya observability, compound memory, deterministic dispatch, dan parallel execution.
+
+Apakah ini berarti saya jadi nganggur? Nggak juga. 😅 Freed-up time langsung terisi dengan thinking time yang lebih berkualitas — keputusan arsitektur, prioritas strategis, dan (yang paling penting) waktu sama keluarga yang nggak di-interrupt notifikasi bot.
+
+Sistem yang baik bukan yang menambah pekerjaan tuan-nya. Sistem yang baik membebaskan tuan-nya untuk fokus pada pekerjaan yang *cuma bisa dilakukan manusia*.
+
+Autobots, terus bergerak. 🤖
+
+---
+
+*This is Part 2 of the Project Transformers series. [Read Part 1 here](/blog/project-transformers-building-personal-ai-army). Live system dashboards: [Operations](https://ark.zainf.dev/viz/ops.html) · [Architecture](https://ark.zainf.dev/viz/architecture.html) · [The Ark](https://ark.zainf.dev/).*
