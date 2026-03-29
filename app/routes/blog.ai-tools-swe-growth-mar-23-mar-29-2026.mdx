@@ -1,0 +1,216 @@
+---
+meta:
+  - title: "Bocor, Bangkrut, atau Beradaptasi — AI Tools Digest #9"
+  - name: description
+    content: "Opus bocor token, Windsurf naik harga, Qwen Code gratis tanpa limit — dan kenapa less typing bukan berarti less work. Rangkuman dari grup AI Tools SWE GROWTH, 23-29 Maret 2026."
+  - author: Zain Fathoni
+  - date: "2026-03-29"
+  - property: og:title
+    content: "Bocor, Bangkrut, atau Beradaptasi — AI Tools Digest #9"
+  - property: og:description
+    content: "Opus bocor token, Windsurf naik harga, Qwen Code gratis tanpa limit — dan kenapa less typing bukan berarti less work. Rangkuman dari grup AI Tools SWE GROWTH, 23-29 Maret 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-mar-23-mar-29-2026"
+  - property: og:image
+    content: "/assets/blog-og-ai-tools-digest-9.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Bocor, Bangkrut, atau Beradaptasi — AI Tools Digest #9"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Bocor, Bangkrut, atau Beradaptasi — AI Tools Digest #9
+
+Minggu ini bisa dirangkum dalam satu kalimat: **semuanya makin mahal, tapi alternatifnya makin banyak.**
+
+Claude bocor token, Windsurf naik harga, dan sementara itu Qwen Code diam-diam ngasih free tier yang bikin Mas Riza Fahmi bisa bikin aplikasi dari nol sampai jadi tanpa kena rate limit. Dunia AI coding memang penuh kontradiksi.
+
+---
+
+## 🔥 Opus 1M: Bocor Alus, Panik Massal
+
+Cerita dimulai hari Senin, ketika Mas Agung kaget setengah mati: *"weh gils... 1x prompt 5% bjir"* — padahal biasanya satu prompt di Max 20x itu cuma 1-2%. Ternyata bukan cuma dia. Beberapa user Max lain juga kena, termasuk Mas Zahid: *"2 kali langsung ilang quota opus."*
+
+Yang bikin makin bingung, Mas Agung menemukan anomali lain: *"eh limit sonet kok masuk ke opus? 🤨🤨🤨🤨🤨🤨🤨🤨"* — pemakaian Sonnet ternyata ikut mengurangi kuota Opus. Bug? Fitur? Entahlah.
+
+Setelah beberapa jam panik kolektif, Mas Agung menemukan solusinya: *"oh sepertinya issuenya di opus 1M... tak coba ke opus standar tokennya tidak bocor lagi."* Fix-nya: update Claude Code ke v2.1.84 dan switch ke model `claude-opus-4-6` (bukan 1M). Seperti yang Mas Zahid bilang, *"harga token AI kayak daun hijau lama lama"* — nilainya terus turun, dan sekarang bahkan bocor.
+
+Mas Michael punya teori konspirasi yang ternyata masuk akal: *"mereka lagi mau rilis fitur CLI baru... tiap mau rilis usage tokennya tidak masuk akal."* Pola ini sudah berulang — setiap menjelang rilis besar, token consumption naik misterius. Coincidence? Mungkin. Tapi grup ini sudah terlalu sering kena untuk percaya itu kebetulan.
+
+Bahkan Mas Aidityas yang pakai plan $100 bilang aman-aman saja, sementara semua user $200 Max kena. *"Anehnya yg $100 ama $20 aman2 aja,"* katanya. Kalau model termahal yang paling bocor, pertanyaannya: **kita bayar lebih untuk apa?**
+
+---
+
+## 💸 Windsurf Naik, Semua Kabur
+
+Di tengah drama Opus, Mas Fajri drop bom lain: *"Barusan check ternyata udah $20 saja nih yang PRO, bukannya kemaren masih $15 ya?"* — Windsurf diam-diam menaikkan harga. Dan bukan cuma itu — schema billing juga berubah, bikin tanggal reset plan ikut bergeser.
+
+Reaksi grup? Predictable. Mas Michael langsung tegas: *"sdh naik seperti gini bakal balik ke zed dan terminal wae... duitnya ke ampcode sama openrouter aja, wkwkwkwk."* Trae.ai masih di $10, tapi seperti kata Mas Michael: *"tinggal tunggu waktu bakal naik juga ini 🙈😂."*
+
+Yang menarik, Mas Oshi — yang selama ini nggak banyak komentar — tiba-tiba muncul membela GitHub Copilot: *"GH Copilot emang underrated.. perlu lebih banyak influencer 😂."* Dan memang, Mas Michael dan Mas Agung mulai melirik Copilot setelah anomali token Anthropic. Mas Michael bahkan sudah unsub Windsurf dan pindah ke Copilot. Dengan harga $40 yang sudah include berbagai model, value proposition-nya memang makin kuat.
+
+Pertanyaannya bukan lagi "IDE mana yang terbaik" tapi **"kombinasi tools mana yang paling hemat untuk output yang sama."**
+
+---
+
+## 🆓 Qwen Code: The Dark Horse
+
+Di tengah keluhan soal harga, Mas Riza Fahmi datang dengan testimoni yang bikin iri: *"Mau testimoni boleh ya. Semingguan ini menjajal qwen code. Ternyata hasilnya diluar ekspektasi bagus dan lancar jaya. Dengan free tier yang sangat murah hati, bisa bikin aplikasi ini dari awal sampai selesai tanpa kena rate limit dan gratis 😬."*
+
+Qwen Code ternyata fork dari Gemini CLI, bisa BYOK (Bring Your Own Key), dan — yang paling penting — free tier-nya generous banget. Seperti yang Mas Riza Fahmi jelaskan: *"Install aja langsung, mirip CC... sayangnya ga ada informasi transparan mengenai berapa banyak kuota gratisnya, kurang transparan."*
+
+Mas Ibrahim langsung bereaksi: *"Wahahaha lagi2 gebrakan phoenix"* — mengacu pada track record Riza Fahmi yang selalu eksplor tools baru dengan stack yang nggak biasa. Mas Fajar langsung tanya: *"baru check qwen coding plan gak ada yg Murmer. strat from 50 USD per lomth."* Sayangnya, plan $10/bulan yang dulu ada sudah discontinued.
+
+Artinya apa? **Gratisan AI coding tools ada, tapi window-nya sempit.** Yang duluan masuk, duluan untung.
+
+---
+
+## 🏠 Work From HP: ADB over Tailscale
+
+Momen paling mind-blown minggu ini datang dari Mas Zahid yang casually drop: *"Kalo saya wfh sekarang work from HP. Wkwkwkwk."*
+
+Ternyata dia develop mobile apps dari handphone lewat ADB over Tailscale — tanpa kabel, tanpa emulator, langsung run ke device yang sedang digenggam. Mas Iqbal sampai speechless: *"masha allah wkwkwkwkw... ga kepikiran haha."*
+
+Mas Riga menambahkan perspektif yang bikin ngakak sekaligus ngeri: *"tinggal bikin content ini mas... definisi kerja dimana aja, kapan aja. Tapi modalnya $300 per bulan. wk3."*
+
+Dan ketika Mas Michael bilang *"WFC mubazir mah WFH (Work From Hutan) 🔥🤣"*, Mas Zahid merespons: *"Kalo saya wfh sekarang work from HP."* Definisi WFH-nya baru ganti tadi siang.
+
+Untuk yang penasaran soal Starlink (yang juga dibahas karena Mas Agung tertarik beli): alat sekitar 5 jutaan + subscription 750rb/bulan. Sudah bisa coding dari hutan. Literally.
+
+---
+
+## ⚠️ Claude Lifetime: Too Good to Be True?
+
+Diskusi paling panas minggu ini: Mas Riza Rohman share link [Onenesia Claude Lifetime](https://launch.onenesia.com/claude-ai-lifetime) dan nawarin patungan. 50 juta untuk 20 orang, unlimited Claude selamanya. Kedengarannya bagus? Terlalu bagus.
+
+Mas Michael langsung skeptis: *"tapi kalau aku ngeliat terlalu too good to be true ini 🙈😂."* Dan Mas El Muhammad — yang kerja sebagai frontier engineer di perusahaan US — memberikan warning yang paling telak:
+
+Kata Mas El Muhammad: *"Hosting ini pricenya Stable, cocok untuk layanan lifetime, beda sama AI yg fluktuatif. Dan juga hosting sangat2 gampang nego2an jalur dalam dengan provider nya... Itu semua ga berlaku buat anthropic. As a frontier engineer di perusahaan US yg ngurusin per-AI-an, aku sangat ga merekomendasikan ambil lifetime ini. Just too good to be true."*
+
+Bahkan soal enterprise account yang katanya aman dari ban, Mas Zahid punya pengalaman langsung: *"Jangan salah kantor saya kena ban."* — Dan itu perusahaan, bukan individu.
+
+Mas Tunggul menambahkan dimensi teknis: *"bisa kena security measurement and detection dari system nya anthropic"* — terutama karena Anthropic sudah berhasil mendeteksi ribuan akun kompetitor yang menyalahgunakan enterprise account.
+
+Mas H merangkum sentimen grup dengan sempurna: *"takut kalau model lifetime2 begini sama kek netflix lifetime di shopee yang 2 hari di ganti password wkwk."*
+
+Lesson learned: **kalau harganya terlalu murah untuk AI, kemungkinan besar ada yang salah.** Seperti kata Mas Agung: *"saran ku setidaknya pakai yang resmi kayak openrouter + opencode. untuk mendukung mereka… inget kasus indonesia di banned akun student nya kan?"*
+
+---
+
+## 🧠 Compound Engineering: Less Typing, More Thinking
+
+Mas Aidityas share artikel [Compound Engineering](https://every.to/guides/compound-engineering) yang langsung resonansi dengan grup. Quote yang paling bikin mikir:
+
+> *"Less typing feels like less work. It isn't. Directing an agent requires more thinking than implementation because you are spending less time on keystrokes and more time thinking about important decisions."*
+
+Kata Mas Aidityas: *"Banyak keresahan terjawab di artikel itu haha."* Dan bagian tentang extracting taste into the system sangat relevan: *"Bener bgt lgi, di kantor skrng codebasenya bener2 tastenya senior."*
+
+Menariknya, di kantor Mas Aidityas senior-nya masih anti vibe coding: *"Senior ditempat ku msih anti vibe coding mas 🙃."* Tapi bukan karena boomer — *"but literal 10x engineer, he loves tab completion or chat AI more. Mirip theprimeagen."* Dan ketika ada AI slop, kena review langsung — *"which actually good feedback."*
+
+Mas Tio L dari kantor lain merasakan hal serupa: *"ditempatku juga sama mas kecuali untuk bikin unit test."*
+
+Mas Zahid malah sudah sampai di level *"bjir udah berapa lama gk liat vscode 😭"* — definisi workflow sudah bergeser sepenuhnya ke terminal.
+
+Artinya apa? **Compound engineering bukan tentang tool, tapi tentang mindset.** Yang penting bukan ngetik atau nggak ngetik — tapi apakah kamu paham apa yang sedang dibangun.
+
+---
+
+## 🤖 Mocin Rising: Chinese Models Makin Dominan
+
+Tren yang makin jelas minggu ini: Chinese models bukan lagi alternatif murahan — mereka jadi pilihan serius.
+
+Mas Zahid bahkan mengaku: *"Wkwkwkw omo saya sudah 80% mocin 🤣 🤣 🤣."* Dan dia bukan satu-satunya. Ketika ada meme tentang AI caste system (Opus for thinking, Haiku for execution), Mas Zahid bertanya: *"Kalo Mocin for execution itu kasta apa bang?"* Jawaban Mas Michael: *"China peasant 🙈😂."*
+
+Tapi "peasant" ini makin powerful. Mas Agung share bahwa Cosmos Reasoning2 — model 8B parameter — ngalahin model 300B di benchmark tertentu. Gratis, tapi harus deploy sendiri. Dan perlu TensorRT.
+
+Kimi K2 juga makin populer di OpenRouter. Mas Agung recommend: *"Kimi K2 dari openrouter murah banget bisa dicoba mas."* Sementara GLM juga dapat kabar baik dengan dukungan yang makin luas.
+
+**Pertanyaannya bukan lagi apakah mocin layak pakai — tapi kombinasi mocin mana yang paling optimal untuk workflow masing-masing.**
+
+---
+
+## 👻 Di-Ghosting Anthropic
+
+Momen yang bikin tertawa tapi juga nyesek: Mas Ivan tanya apakah sudah ada yang dapat kabar soal Claude Community Organizer role. Ternyata semua yang apply — termasuk saya, Mas Michael, dan Mas Ivan sendiri — belum dapat balasan sama sekali.
+
+*"Anda tidak sendirian Mas, saya juga masih di-ghosting 😅,"* kata saya. Mas Michael menambahkan bumbu: *"sekelas speaker yg sering ngisi aja di ghosting penasaran siapakah org yg beruntung itu? Apakah pria Solo? 🤣🤣🤣."*
+
+Jawaban terbaik datang dari Mas Zahid: *"Solo leveling dari class carpenter ke dark monarch."* 😂
+
+---
+
+## ⚡ Quick Hits
+
+- **Droid** — Mas Desilino pengen coba, tapi Mas Zahid review: *"Agak kurang... dia modelnya 1 shot planning."* OMO masih lebih powerful.
+- **T3 Codes** — Theo's new tool, BYOK, mulai $8. Tapi jangan expect heavy model usage di tier itu.
+- **Claude Certified Architect** — Mas Mamed tanya soal benefit ke karir. Mas Faris bilang cocok buat solution architect.
+- **Promo Claude 50% off** — Mbak Eka share link `claude.ai/acquired`, tapi promo sudah expired. Mas Faris: *"Aku sering cek bansos di Reddit soalnya."*
+- **Kilatkoding** — Mas Galih launch boilerplate/starter kit di [kilatkoding.com](https://www.kilatkoding.com/). Include payment gateway, blog, AI integration.
+- **Supply Chain Attacks** — Setelah Next.js, giliran Python. Mas Aidityas: *"Setelah next js supply chain attack, timbullah python supply chain attack."*
+- **Cursor Community Tangerang** — Mas Tegar ikut event offline, dapet Cursor + Katalon free.
+
+---
+
+## 📰 Artikel & Link Penting
+
+- [Compound Engineering Guide](https://every.to/guides/compound-engineering) — Paradigma baru AI-assisted development
+- [50 Claude Code Best Practices](https://x.com/i/status/2034683638382506063) — Tips harian CC
+- [Claude Code Tips by ykdojo](https://github.com/ykdojo/claude-code-tips) — Mantan karyawan Sourcegraph, di-share Mas Michael
+- [TurboQuant by Google](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) — Extreme model compression
+- [Agentic Coding by Riza Fahmi](https://rizafahmi.com/catatan/agentic-coding/) — Catatan personal tentang agentic coding
+- [ypi - YAML Pipeline Interface](https://github.com/rawwerks/ypi) — Di-share Mas Zahid
+- [Basecamp becomes agent-accessible](https://world.hey.com/dhh/basecamp-becomes-agent-accessible-3ae6b949) — CLI & skills support
+
+---
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — Kurator link tak kenal lelah, analisis pricing tools, migrasi ke Copilot
+- **Mas Agung** — Penemu bug Opus 1M, pioneer Codex Mini usage, sharing solusi CC
+- **Mas Zahid** — Review OMO/OMP, ADB over Tailscale, 80% mocin warrior
+- **Mas Riza Rohman** — Spark diskusi Claude Lifetime, sharing pengalaman patungan
+- **Mas Riza Fahmi** — Testimoni Qwen Code, Cursor community, agentic coding
+- **Mas Aidityas** — Compound engineering evangelist, supply chain attack alerts
+- **Mas El Muhammad** — Warning kritis soal lifetime subs dari perspektif industry insider
+- **Mas Tunggul** — Analisis security Anthropic, 50 CC best practices
+- **Mas Iqbal** — ADB over Tailscale mind-blown, daily effort tips
+- **Mas Desilino** — Eksplorasi Droid, local model harness via LMStudio
+- **Mas Fajri** — Deteksi kenaikan harga Windsurf, T3 Codes discovery
+- **Mas Riga** — "Work dari HP $300/bulan", Claude status monitoring
+- **Mas Faris** — Bansos hunter Reddit, Claude Certified Architect insight
+- **Mas Kevin** — Energy cost perspective on quota squeeze
+- **Mas Oshi** — Copilot defender: "underrated"
+- **Mas H** — Netflix lifetime Shopee analogy 😂
+- **Mbak Eka** — Promo Claude 50% off share
+- **Mas Ibrahim** — "Wahahaha lagi2 gebrakan phoenix"
+- **Mas Tegar** — Report Cursor Tangerang meetup
+- **Mas Nanda** — Due diligence on Onenesia seller
+- **Mas Ivan** — Community organizer survey
+- **Mas Galih** — Launch Kilatkoding starter kit
+- **Mas Mamed** — Claude Certified Architect inquiry
+
+---
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **Update Claude Code ke v2.1.84** — Fix token leak. Jalankan `claude update` sekarang. [Docs](https://docs.anthropic.com/en/docs/claude-code)
+2. **Coba Qwen Code** — Free tier generous, fork Gemini CLI. [GitHub](https://github.com/QwenLM/qwen-code)
+3. **Baca Compound Engineering** — Mindset shift yang essential. [Artikel](https://every.to/guides/compound-engineering)
+4. **GPT-5.4 di Amp Deep Mode** — Alternatif murah untuk review + coding. [Info](https://ampcode.com/news/gpt-5.4)
+5. **Setup multi-provider strategy** — Jangan taruh semua telur di satu basket. OpenRouter + model spesifik per task.
+
+---
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 29 Maret 2026*
