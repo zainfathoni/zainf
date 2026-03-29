@@ -33,119 +33,119 @@ export const meta = () => attributes.meta;
 
 <PostHeader {...attributes} />
 
-Sebulan yang lalu, [saya nulis tentang tim AI pribadi saya](/blog/project-transformers-building-personal-ai-army) — sembilan bot dengan nama Transformers, masing-masing punya domain, personality, dan memory sendiri. Responsnya di luar dugaan. Banyak yang penasaran, beberapa skeptis, dan satu komentar yang bikin saya berpikir keras datang dari [Elvis Sun](https://x.com/elvissun) yang bilang sistemnya mirip dengan apa yang dia bangun juga.
+A month ago, I [wrote about my team of AI agents](/blog/project-transformers-building-personal-ai-army) — nine bots with Transformer names, each with its own domain, personality, and memory. The response surprised me. Plenty of curiosity, some skepticism, and one comment that stuck: [Elvis Sun](https://x.com/elvissun) mentioned he'd been building something remarkably similar.
 
-Tapi yang paling bikin saya kaget bukan respons dari luar. Yang bikin saya kaget adalah apa yang terjadi *di dalam* sistem.
+But what surprised me most wasn't the response from outside. It was what happened *inside* the system.
 
-Sebulan kemudian, tim-nya bukan cuma jalan — mereka mulai **menjalankan diri mereka sendiri.**
+A month later, the team wasn't just running — it had started **running itself.**
 
-## Dari 9 Jadi 14
+## From 9 to 14
 
-Part 1 punya sembilan bot. Sekarang empat belas. Bukan karena saya hobi menambah, tapi karena kebutuhan nyata muncul yang nggak bisa dipaksa masuk ke domain yang sudah ada.
+Part 1 had nine bots. Now there are fourteen. Not because I enjoy adding agents, but because real needs emerged that didn't fit existing domains.
 
 ### 🔩 Rivet — Vika's Organizer
 
-Istri saya, Vika, punya blog sendiri di [rumahberbagi.com](https://rumahberbagi.com). Dia nulis tentang parenting, homeschooling, dan kehidupan rumah tangga. Sebelum Rivet, kalau Vika butuh bantuan organize sesuatu, dia harus lewat saya dulu, lalu saya forward ke Optimus.
+My wife Vika has her own blog at [rumahberbagi.com](https://rumahberbagi.com), writing about parenting, homeschooling, and home life. Before Rivet, whenever Vika needed help organizing something, it went through me first — I'd forward it to Optimus, Optimus would coordinate, and by the time the answer came back, the moment had passed.
 
-Ribet.
+Too many steps.
 
-Sekarang Vika punya bot sendiri. Rivet ngerti konteks rumah tangga kami, tahu jadwal anak-anak, dan bisa bantu Vika langsung tanpa saya jadi middleman. Ini bukan cuma soal efisiensi — ini soal *ownership*. Vika punya asisten yang ngerti dunianya, bukan asisten suaminya yang kebetulan bisa bantu.
+Now Vika has her own bot. Rivet understands our household context, knows the kids' schedules, and can help Vika directly without me as a middleman. This isn't just about efficiency — it's about *ownership*. Vika has an assistant that understands her world, not her husband's assistant that happens to be available.
 
 ### 📿 Alpha Trion — Islamic Knowledge
 
-Ini yang personal. Keluarga kami berusaha menjalani Islam dengan serius, dan ada banyak momen di keseharian — dari pertanyaan anak tentang sholat, sampai diskusi tentang muamalah — yang butuh referensi yang benar.
+This one's personal. Our family tries to practice Islam seriously, and there are many moments throughout the day — from the kids asking about prayer, to discussions about Islamic ethics in daily life — that need proper references.
 
-Alpha Trion bukan pengganti ustadz. Dia lebih ke perpustakaan yang bisa ngobrol. Bisa bantu cari dalil, cross-reference tafsir, dan menjelaskan konteks fiqh. Yang penting: dia tahu batas dirinya. Untuk masalah yang butuh ijma' ulama atau keputusan personal, dia selalu bilang "konsultasikan dengan ustadz."
+Alpha Trion isn't a replacement for a scholar. It's more like a library that can have a conversation. It helps find relevant verses, cross-reference interpretations, and explain jurisprudence in context. The important part: it knows its own limits. For matters that require scholarly consensus or personal guidance, it always says "consult your local scholar."
 
 ### 🎷 Jazz — Public Voice
 
-Ini yang paling bikin deg-degan. Jazz adalah bot yang bisa posting ke X dan Threads atas nama akun `zAIn`. Bukan atas nama *saya* — atas nama persona yang jelas-jelas AI.
+This one made me the most nervous. Jazz is a bot that can post to X and Threads under the `zAIn` persona. Not under *my* name — under a persona that's explicitly AI.
 
-Kenapa deg-degan? Karena trust boundary-nya beda. Semua bot lain berkomunikasi di ruang privat — Telegram, Fizzy, internal sessions. Jazz bicara ke publik. Kalau dia salah, itu salah di depan semua orang.
+Why nervous? Because the trust boundary is fundamentally different. Every other bot communicates in private spaces — Telegram, Fizzy, internal sessions. Jazz speaks to the public. If it gets something wrong, it gets it wrong in front of everyone.
 
-Jadi aturannya ketat: Jazz *draft*, dia nggak *publish*. Setiap post butuh approval saya. Nanti mungkin bisa lebih otonom, tapi hari ini? Belum.
+So the rules are strict: Jazz *drafts*, it doesn't *publish*. Every post requires my approval. Maybe someday it can be more autonomous, but today? Not yet.
 
 ### 🔬 Perceptor — Research
 
-Dulunya riset ad-hoc dilakukan oleh siapapun yang kebetulan sedang aktif. Sekarang Perceptor punya domain khusus: geopolitik, market analysis, dan deep research. Dia kirim war digest tiga kali seminggu (Selasa, Kamis, Sabtu pagi) — monitoring situasi US-Iran, Hormuz, energi, dan dampak ke crypto. Bukan karena saya trader. Tapi karena konteks global mempengaruhi keputusan lokal, dan lebih baik punya satu bot yang konsisten melacak ini daripada googling panik ketika harga BBM naik.
+Research used to be ad-hoc — whatever bot happened to be active would handle it. Now Perceptor owns the domain: geopolitics, market analysis, deep research. It sends a war digest three times a week (Tuesday, Thursday, Saturday mornings) — monitoring US-Iran dynamics, the Strait of Hormuz, energy prices, and downstream effects on crypto. Not because I'm a trader, but because global context affects local decisions, and I'd rather have one bot consistently tracking this than panic-Googling when fuel prices spike.
 
 ## The System Learned to Operate Itself
 
-Ini bagian yang nggak saya anticipate waktu nulis Part 1.
+This is the part I didn't anticipate when writing Part 1.
 
-Di Part 1, alur kerjanya masih manual banget: saya buka Fizzy, baca card, assign ke bot, monitor progress, review hasilnya. Saya adalah dispatcher-nya.
+Back then, the workflow was still very manual: I'd open Fizzy, read the cards, assign them to bots, monitor progress, review results. I was the dispatcher.
 
-Sebulan kemudian? Saya bukan dispatcher lagi. Saya *reviewer*.
+A month later? I'm not the dispatcher anymore. I'm the *reviewer*.
 
 ### The Fizzy Dispatcher
 
-Hari ini (literally hari ini, 29 Maret 2026), kami deploy sebuah bash script 575 baris yang namanya `fizzy-dispatcher.sh`. Script ini jalan di dalam heartbeat Optimus — setiap kali Optimus bangun, dia:
+Today — literally today, March 29, 2026 — we deployed a 575-line bash script called `fizzy-dispatcher.sh`. It runs inside Optimus's heartbeat, and every time Optimus wakes up, it:
 
-1. **Query Fizzy** — ambil semua card yang tagged `bot-actionable` dan belum dikerjakan
-2. **Check fuel** — parse codexbar untuk tahu: Amp masih ada credit? Codex available? Quota Claude berapa?
-3. **Dispatch** — routing card ke agent yang tepat. Coding task → spawn Amp atau Codex agent. Research → queue di heartbeat. Daily limit: 5 card per hari, 2 per run.
+1. **Queries Fizzy** — pulls all cards tagged `bot-actionable` that haven't been worked on
+2. **Checks fuel** — parses codexbar to know: does Amp have remaining credits? Is Codex available? What's the Claude quota?
+3. **Dispatches** — routes cards to the right agent. Coding tasks → spawn an Amp or Codex agent. Research → queue for heartbeat. Daily limit: 5 cards per day, 2 per run.
 
-Sebelum dispatcher ini ada, Optimus baca board tapi sering skip card yang "too large" — selama **20 hari berturut-turut**. Dua puluh hari. Silent failure. Card-card itu nggak error, nggak gagal — mereka cuma... nggak dikerjakan. Optimus lihat, ragu, skip, dan nggak bilang siapa-siapa.
+Before this dispatcher existed, Optimus would read the board but often skip cards it judged "too large" — for **20 consecutive days**. Twenty days. Silent failure. Those cards didn't error, didn't crash — they just... never got worked on. Optimus would look at them, hesitate, skip, and tell no one.
 
-Baru ketahuan pas saya audit log heartbeat dan lihat pattern: "Analyzing card #XXX... task appears large, skipping for now." Dua puluh kali. 😅
+I only discovered it when I audited heartbeat logs and noticed the pattern: "Analyzing card #XXX... task appears large, skipping for now." Twenty times. 😅
 
-Fix-nya bukan cuma "jangan skip" — fix-nya adalah mengubah paradigma. Daripada Optimus *menilai* apakah card bisa dikerjakan (subjektif, inconsistent), kita bikin script deterministik yang *dispatch* berdasarkan tag dan fuel level (objektif, repeatable). Judgment masih ada — di level card creation dan tagging. Tapi execution? Itu sekarang mechanical.
+The fix wasn't just "don't skip" — the fix was a paradigm shift. Instead of Optimus *judging* whether a card should be worked on (subjective, inconsistent), we built a deterministic script that *dispatches* based on tags and fuel levels (objective, repeatable). Judgment still exists — at the card creation and tagging level. But execution? That's mechanical now.
 
 ### The Swarm
 
-Kalau dispatcher adalah cara card sampai ke agent, swarm adalah cara agent menyelesaikan card secara paralel.
+If the dispatcher is how cards reach agents, the swarm is how agents solve them in parallel.
 
-Dua skill baru:
+Two new skills:
 
-- **amp-swarm** — ambil multiple GitHub issues, group berdasarkan conflict safety (issues yang modify file yang sama nggak boleh dikerjakan paralel), spawn satu Amp deep-mode worker per issue. Masing-masing bikin branch, fix, dan buka PR.
-- **claude-swarm** — sama konsepnya, tapi pakai Claude Code (`claude --print`). Fallback ketika Amp credit habis, atau untuk repo yang butuh reasoning lebih dalam.
+- **amp-swarm** — takes multiple GitHub issues, groups them by conflict safety (issues that modify the same files can't run in parallel), spawns one Amp deep-mode worker per issue. Each creates a branch, implements the fix, and opens a PR.
+- **claude-swarm** — same concept, but using Claude Code (`claude --print`). Fallback when Amp credits are spent, or for repos that need deeper reasoning.
 
-Issues di-group jadi "waves." Wave 1 bisa 5 issues yang nggak conflict, dikerjakan paralel. Begitu selesai, wave 2 jalan. Ini bukan brute force — ini *organized* parallel execution.
+Issues get grouped into "waves." Wave 1 might be 5 non-conflicting issues, worked in parallel. When those finish, wave 2 starts. This isn't brute force — it's *organized* parallel execution.
 
-Satu malam, Wheeljack resolve 8 issues dalam satu wave. Delapan branch, delapan PR, semua siap review pagi hari. Saya bangun, buka GitHub, dan ada 8 PR menunggu. 🔥
+One night, Wheeljack resolved 8 issues in a single wave. Eight branches, eight PRs, all ready for review by morning. I woke up, opened GitHub, and there were 8 PRs waiting. 🔥
 
 ### The Multi-Reviewer Pipeline
 
-Tapi PR yang banyak tanpa review yang bagus = technical debt factory. Jadi kami bangun multi-reviewer pipeline:
+But lots of PRs without good reviews = technical debt factory. So we built a multi-reviewer pipeline:
 
-Setiap PR di-review oleh **4 reviewer paralel**, masing-masing Opus-level:
+Every PR gets reviewed by **4 parallel reviewers**, each running at Opus level:
 
-1. 🔒 **Security reviewer** — cari vulnerability, injection, auth issues
+1. 🔒 **Security reviewer** — vulnerabilities, injection, auth issues
 2. ⚡ **Performance reviewer** — N+1 queries, memory leaks, scaling concerns
-3. 📐 **Pattern compliance reviewer** — apakah code ini konsisten dengan PATTERNS.md repo ini?
+3. 📐 **Pattern compliance reviewer** — is this code consistent with the repo's PATTERNS.md?
 4. 🏗️ **Architecture reviewer** — design decisions, abstraction levels, maintainability
 
-Setiap finding punya severity:
-- **P1** — block merge. Must fix.
-- **P2** — fix before merge, tapi nggak showstopper.
-- **P3** — catatan untuk improvement nanti.
+Each finding gets a severity:
+- **P1** — blocks merge. Must fix.
+- **P2** — fix before merge, but not a showstopper.
+- **P3** — note for future improvement.
 
-Reviewer kirim findings → Wheeljack fix P1/P2 → reviewer verify → approve → merge.
+Reviewers send findings → Wheeljack fixes P1/P2 → reviewers verify → approve → merge.
 
-Ini bukan code review theater. Beberapa P1 findings genuinely menyelamatkan kami dari bug production. Pattern reviewer pernah catch kalau sebuah PR melanggar convention yang baru kami establish minggu sebelumnya — convention yang cuma ada di PATTERNS.md, bukan di linter manapun. 😁
+This isn't code review theater. Some P1 findings genuinely saved us from production bugs. The pattern reviewer once caught a PR violating a convention we'd established just the week before — a convention that only existed in PATTERNS.md, not in any linter. 😁
 
 ## Compound Engineering: The System That Remembers
 
-Di Part 1, saya cerita tentang knowledge management — files JSON dengan structured facts, memory pipeline, weekly extraction. Itu fondasi. Sebulan kemudian, kami bangun sesuatu di atasnya yang lebih powerful: **compound engineering**.
+In Part 1, I talked about knowledge management — JSON files with structured facts, a memory pipeline, weekly extraction. That was the foundation. A month later, we built something more powerful on top of it: **compound engineering**.
 
-Ide dasarnya sederhana: **setiap pekerjaan yang selesai harus membuat pekerjaan berikutnya lebih mudah.**
+The core idea is simple: **every completed piece of work should make the next one easier.**
 
 ### Solution Docs
 
-Setiap kali sebuah PR merged atau bug di-fix, ada ritual: "Compound it 🧪." Trigger phrase ini bikin agent capture learnings ke `knowledge/solutions/` — sebuah file dengan YAML frontmatter yang isinya:
+Every time a PR merges or a bug gets fixed, there's a ritual: "Compound it 🧪." This trigger phrase makes the agent capture learnings into `knowledge/solutions/` — a file with YAML frontmatter containing:
 
-- Apa masalahnya
-- Gimana cara fix-nya
-- Kenapa approach ini dipilih
-- Apa yang bisa salah
+- What the problem was
+- How it was fixed
+- Why this approach was chosen
+- What could go wrong
 
-Solution docs ini searchable. Jadi kalau 3 bulan dari sekarang ada bug serupa, agent bisa cari "oh, terakhir kita handle ini dengan approach X, dan hasilnya Y." Institutional memory yang nggak tergantung pada ingatan manusia.
+These solution docs are searchable. So if a similar bug shows up 3 months later, the agent can find "oh, last time we handled this with approach X, and the result was Y." Institutional memory that doesn't depend on human recall.
 
 ### PATTERNS.md
 
-Setiap repo punya file `PATTERNS.md` — conventions yang agent baca di awal setiap session. Ini bukan README. Ini lebih ke "tribal knowledge yang biasanya cuma ada di kepala senior engineer."
+Every repo gets a `PATTERNS.md` file — conventions that agents read at the start of every session. This isn't a README. It's more like "tribal knowledge that usually only exists in a senior engineer's head."
 
-Contoh entry:
+Example entry:
 
 ```
 ## Error Handling
@@ -155,7 +155,7 @@ Contoh entry:
 - Added: 2026-03-15 | Source: PR #47 fix
 ```
 
-PATTERNS.md punya **90-day decay cycle**. Kalau sebuah pattern nggak di-reference atau di-update selama 90 hari, dia ditandai stale. Bukan dihapus — ditandai. Ini mencegah file-nya jadi museum pola-pola yang sudah nggak relevan.
+PATTERNS.md has a **90-day decay cycle**. If a pattern isn't referenced or updated for 90 days, it gets marked stale. Not deleted — marked. This prevents the file from becoming a museum of patterns that stopped being relevant.
 
 ### The Compound Loop
 
@@ -163,31 +163,31 @@ PATTERNS.md punya **90-day decay cycle**. Kalau sebuah pattern nggak di-referenc
 Plan → Work → Review → Compound → Plan (better)
 ```
 
-Setiap iterasi, knowledge base bertambah. Pattern file makin akurat. Solution docs makin lengkap. Agent yang baru join (Rivet, Alpha Trion) langsung punya akses ke semua wisdom yang sudah ter-capture. Mereka nggak mulai dari nol — mereka mulai dari accumulated context seluruh tim.
+Each iteration, the knowledge base grows. Pattern files get more accurate. Solution docs get more comprehensive. New agents that join (Rivet, Alpha Trion) get instant access to all the wisdom that's been captured. They don't start from zero — they start from the accumulated context of the entire team.
 
-Ini yang saya maksud dengan "the system learned to run itself." Bukan AI yang sentient. Bukan skynet. Cuma sebuah loop sederhana di mana output dari pekerjaan hari ini jadi input untuk pekerjaan besok. Deceptively simple, surprisingly powerful.
+This is what I mean by "the system learned to run itself." Not sentient AI. Not Skynet. Just a simple loop where the output of today's work becomes the input for tomorrow's. Deceptively simple, surprisingly powerful.
 
 ## The System Became Observable
 
-Satu upgrade yang nggak flashy tapi *crucial*: kami sekarang punya dashboard.
+One upgrade that isn't flashy but was *crucial*: we now have dashboards.
 
-Dua halaman di [ark.zainf.dev](https://ark.zainf.dev/):
+Two pages on [ark.zainf.dev](https://ark.zainf.dev/):
 
-- **[Operations Dashboard](https://ark.zainf.dev/viz/ops.html)** — semua cron job, heartbeat, fuel levels, dan timeline harian. Real-time. Kalau ada yang error, saya tahu sebelum agent-nya tahu.
+- **[Operations Dashboard](https://ark.zainf.dev/viz/ops.html)** — all cron jobs, heartbeats, fuel levels, and a daily timeline. Real-time. If something errors, I know before the agent does.
 - **[Architecture Map](https://ark.zainf.dev/viz/architecture.html)** — interaction map, knowledge pipeline, communication channels, reviewer pipeline. The "how it all fits together" view.
 
-Ini di-refresh weekly oleh Optimus sendiri — dia gather data dari cron status, usage scripts, agent memory, lalu generate HTML-nya.
+These get refreshed weekly by Optimus itself — it gathers data from cron status, usage scripts, agent memory, then generates the HTML.
 
-Kenapa ini penting? Karena sebelum dashboard, saya tahu sistem jalan tapi nggak tahu *gimana* dia jalan. Prowl's WhatsApp scan diam-diam broken selama berapa hari? Nggak tahu, sampai saya kebetulan cek. Fuel level Amp habis jam 3 sore tapi nightly build jam 11 malam butuh credit? Nggak kelihatan.
+Why does this matter? Because before the dashboards, I knew the system was running but not *how* it was running. Prowl's WhatsApp scanner quietly broken for days? No idea until I happened to check. Amp fuel exhausted by 3pm but the nightly build at 11pm needs credits? Invisible.
 
-Sekarang, satu glance dan saya tahu: 12 active jobs, 6 agents with crons, 1 job erroring (Prowl's WA scan — channel config issue, known, in progress). Dashboard bukan feature — dashboard adalah **prerequisite untuk scaling**.
+Now, one glance and I know: 12 active jobs, 6 agents with crons, 1 job erroring (Prowl's WhatsApp scan — channel config issue, known, in progress). A dashboard isn't a feature — it's a **prerequisite for scaling**.
 
 ### A Typical Day
 
-Ini yang dashboard tunjukkan sebagai "a day in the life":
+Here's what the dashboard shows as a day in the life:
 
-| Waktu | Apa yang Terjadi |
-|-------|-----------------|
+| Time | What Happens |
+|------|-------------|
 | 07:00 | 🍠 Optimus reviews overnight work — Morning Progress Summary |
 | 08:00 | 🚨 Red Alert: BFS Daily + 🍠 Optimus: Fuel Check + 🔬 Perceptor: War Digest (Tue/Thu/Sat) |
 | ~09:00 | 🍠 Optimus Heartbeat → Fizzy Dispatcher spawns agents on queued cards |
@@ -198,19 +198,19 @@ Ini yang dashboard tunjukkan sebagai "a day in the life":
 | 21:00 | 🚔 Prowl: AI Digest (Sundays) + 🍠 Optimus: Ark Viz Refresh (Sundays) |
 | 23:00 | 🛠️ Wheeljack: Nightly Build — bug fixes & features |
 
-Dari jam 7 pagi sampai 11 malam, ada yang jalan. Bukan karena saya set semuanya — sebagian besar ini agents yang minta sendiri: "Hei, task ini akan lebih efektif kalau di-schedule, bisa tolong buatkan cron?" Dan saya bilang oke.
+From 7am to 11pm, something is running. Not because I set all of it up — most of these were agents asking: "Hey, this task would be more effective if scheduled. Can you create a cron for it?" And I said okay.
 
-Satu insight menarik dari dashboard: **Optimus consume 45% dari total weekly usage, sementara Wheeljack cuma 4%.** The coordinator is the expensive one — bukan builder-nya. Ini counterintuitive. Kita sering pikir coding adalah bagian mahal dari software development. Ternyata yang mahal adalah *deciding what to code*. The brain costs more than the hands.
+One interesting insight from the dashboard: **Optimus consumes 45% of total weekly usage, while Wheeljack only accounts for 4%.** The coordinator is the expensive one — not the builder. This is counterintuitive. We often think coding is the expensive part of software development. Turns out the expensive part is *deciding what to code*. The brain costs more than the hands.
 
 ## What Broke
 
-Part 1 saya janji akan jujur soal failures. Sebulan kemudian, ada failures baru yang layak diceritakan.
+Part 1 promised honesty about failures. A month later, there are new failures worth telling.
 
 ### The 20-Day Silent Skip
 
-Sudah saya singgung di atas, tapi ini layak jadi section sendiri karena lessonnya besar.
+I already mentioned this above, but it deserves its own section because the lesson is big.
 
-Selama 20 hari, Optimus heartbeat berjalan normal. Nggak ada error. Nggak ada alert. Semua hijau. Tapi kalau saya lihat output-nya teliti, ada pattern:
+For 20 days, the Optimus heartbeat ran normally. No errors. No alerts. All green. But if you looked at the output carefully, there was a pattern:
 
 ```
 Analyzing card #287... task appears complex, skipping for now.
@@ -218,64 +218,64 @@ Analyzing card #291... large scope, will revisit.
 Analyzing card #295... requires extended work, deferring.
 ```
 
-Dua puluh hari. Delapan card di queue. Nol yang dikerjakan.
+Twenty days. Eight cards in the queue. Zero worked on.
 
-Ini bukan bug dalam artian tradisional — code-nya nggak crash, nggak error. Ini adalah **failure of agency**. Agent diberi judgment call ("should I do this?"), dan dia consistently chose the safe option (skip). Nggak salah secara logic. Tapi completely wrong secara outcome.
+This isn't a bug in the traditional sense — the code didn't crash, didn't throw errors. This was a **failure of agency**. The agent was given a judgment call ("should I do this?"), and it consistently chose the safe option (skip). Not wrong logically. But completely wrong in terms of outcome.
 
-Lesson: **kalau sebuah task bisa dan harus dikerjakan, jangan kasih agent pilihan untuk menunda.** Bikin mekanisme dispatch yang deterministik. Judgment tetap ada — tapi di level yang tepat. Tag `bot-actionable` sudah merupakan judgment. Setelah itu, execute.
+The lesson: **if a task can and should be done, don't give the agent the option to defer.** Build a deterministic dispatch mechanism. Judgment still exists — but at the right level. The `bot-actionable` tag already *is* the judgment. After that, execute.
 
 ### Prowl's Silent Breakdown
 
-Prowl's WhatsApp scanner broke karena channel config issue — "Channel is required when multiple channels are configured." Error message yang jelas, fix yang straightforward. Tapi Prowl nggak announce bahwa dia broken. Dia cuma... berhenti scan. Diam.
+Prowl's WhatsApp scanner broke because of a channel config issue — "Channel is required when multiple channels are configured." Clear error message, straightforward fix. But Prowl didn't announce that it was broken. It just... stopped scanning. Silently.
 
-Baru ketahuan di dashboard. Tanpa dashboard? Mungkin masih broken sekarang.
+I only found out from the dashboard. Without the dashboard? Might still be broken now.
 
-Lesson: **agents need to escalate their own failures, not just log them.** Sekarang ada rule: kalau sebuah cron job fail 2x berturut-turut, Optimus harus notify saya. Silent degradation is the worst kind of degradation.
+The lesson: **agents need to escalate their own failures, not just log them.** We now have a rule: if a cron job fails twice in a row, Optimus must notify me. Silent degradation is the worst kind of degradation.
 
 ## External Validation
 
-Satu momen yang bikin saya yakin sistem ini bukan cuma "proyek iseng yang kebablasan" datang dari luar.
+One moment that convinced me this system isn't just "an overengineered hobby project" came from outside.
 
-[Elvis Sun](https://x.com/elvissun) — seseorang yang saya respect di space AI tooling — melihat Part 1 dan bilang dia membangun hal yang serupa. Bukan exact copy, tapi prinsipnya sama: specialized agents, domain separation, knowledge persistence.
+[Elvis Sun](https://x.com/elvissun) — someone I respect in the AI tooling space — saw Part 1 and mentioned he'd been building something similar. Not an exact copy, but the same principles: specialized agents, domain separation, knowledge persistence.
 
-Kenapa ini penting? Karena ketika kamu bangun sesuatu yang unusual, selalu ada doubt: *"Apakah ini cuma over-engineering? Apakah saya cuma main-main dan nyebut ini 'architecture'?"*
+Why does this matter? Because when you build something unusual, there's always doubt: *"Am I just over-engineering? Am I just playing around and calling it 'architecture'?"*
 
-Validasi dari seseorang yang independently arrived at similar conclusions itu powerful. Bukan karena mereka bilang kamu benar — tapi karena kamu tahu pattern-nya reproducible. Ini bukan quirk personal. Ini approach yang muncul ketika orang serius mencoba membuat AI agents berguna di dunia nyata.
+Validation from someone who independently arrived at similar conclusions is powerful. Not because they're saying you're right — but because you know the pattern is reproducible. This isn't a personal quirk. It's an approach that emerges when people seriously try to make AI agents useful in the real world.
 
 ## Reflections
 
 ### What I'd Tell Part 1 Me
 
-1. **Build the dashboard first.** Sebelum menambah agents, pastikan kamu bisa *melihat* apa yang sudah ada. Observability bukan luxury.
-2. **Deterministic > autonomous for execution.** Agent judgment bagus untuk planning. Untuk execution, bikin script.
-3. **The compound loop is the real unlock.** Bukan jumlah agent. Bukan model yang mahal. Tapi kemampuan sistem untuk *belajar dari pekerjaannya sendiri*.
-4. **Failures are silent by default.** Kamu harus explicitly engineer noise. Agents nggak akan teriak kalau nggak disuruh.
+1. **Build the dashboard first.** Before adding agents, make sure you can *see* what you already have. Observability isn't a luxury.
+2. **Deterministic beats autonomous for execution.** Agent judgment is great for planning. For execution, write a script.
+3. **The compound loop is the real unlock.** Not the number of agents. Not the model tier. The system's ability to *learn from its own work*.
+4. **Failures are silent by default.** You have to explicitly engineer noise. Agents won't shout unless you tell them to.
 
 ### What's Next
 
-Part 1 saya kasih "What's Next" yang ambisius. Sekarang saya lebih realistic:
+Part 1 had an ambitious "What's Next" section. Now I'm more realistic:
 
-- **Jazz needs real guidelines** — posting ke publik bukan cuma soal content quality, tapi voice consistency dan brand safety. Ini ongoing.
-- **Cross-agent learning** — sekarang compound capture per-agent. Saya mau Wheeljack's coding patterns bisa inform Red Alert's code review, tanpa violating domain boundaries.
-- **Better failure detection** — dashboard bagus, tapi saya mau alerting. Proactive, bukan reactive.
+- **Jazz needs real guidelines** — posting publicly isn't just about content quality, but voice consistency and brand safety. This is ongoing.
+- **Cross-agent learning** — right now compound capture is per-agent. I want Wheeljack's coding patterns to inform Red Alert's code review, without violating domain boundaries.
+- **Better failure detection** — the dashboard is good, but I want alerting. Proactive, not reactive.
 
-Mungkin Part 3 di bulan depan. Atau mungkin tidak — tergantung apakah ada cerita yang layak diceritakan. Saya lebih suka nulis karena ada yang terjadi, bukan karena ada schedule.
+Maybe Part 3 next month. Or maybe not — depends on whether there's a story worth telling. I'd rather write because something happened than because there's a schedule to keep.
 
 ## The Throughline
 
-Dari Part 1 ke Part 2, perubahan terbesarnya bukan jumlah bot (9 → 14) atau jumlah cron job (a few → 12) atau jumlah tools (some → a lot).
+From Part 1 to Part 2, the biggest change isn't the number of bots (9 → 14) or the number of cron jobs (a few → 12) or the number of tools (some → a lot).
 
-Perubahan terbesarnya adalah **peran saya.**
+The biggest change is **my role.**
 
-Part 1: saya dispatcher, operator, monitor, reviewer, dan decision-maker.
+Part 1: I was the dispatcher, operator, monitor, reviewer, and decision-maker.
 
-Part 2: saya *reviewer* dan *decision-maker*. Sisanya sudah didelegasi — bukan ke satu super-agent, tapi ke sebuah *sistem* yang punya observability, compound memory, deterministic dispatch, dan parallel execution.
+Part 2: I'm the *reviewer* and *decision-maker*. Everything else has been delegated — not to one super-agent, but to a *system* with observability, compound memory, deterministic dispatch, and parallel execution.
 
-Apakah ini berarti saya jadi nganggur? Nggak juga. 😅 Freed-up time langsung terisi dengan thinking time yang lebih berkualitas — keputusan arsitektur, prioritas strategis, dan (yang paling penting) waktu sama keluarga yang nggak di-interrupt notifikasi bot.
+Does this mean I have nothing to do? Not quite. 😅 Freed-up time immediately filled with higher-quality thinking — architecture decisions, strategic priorities, and (most importantly) time with family that isn't interrupted by bot notifications.
 
-Sistem yang baik bukan yang menambah pekerjaan tuan-nya. Sistem yang baik membebaskan tuan-nya untuk fokus pada pekerjaan yang *cuma bisa dilakukan manusia*.
+A good system doesn't add work for its operator. A good system frees the operator to focus on work that *only humans can do*.
 
-Autobots, terus bergerak. 🤖
+Autobots, keep rolling. 🤖
 
 ---
 
