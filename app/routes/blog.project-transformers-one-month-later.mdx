@@ -108,7 +108,7 @@ One night, Wheeljack resolved 8 issues in a single wave. Eight branches, eight P
 
 ### The Multi-Reviewer Pipeline
 
-But lots of PRs without good reviews = technical debt factory. So we built a multi-reviewer pipeline:
+But lots of PRs without good reviews = technical debt factory. So we built a multi-reviewer pipeline — inspired by Elvis's triple AI review setup (Codex + Gemini + Claude) from [his article](https://x.com/elvissun/status/2025920521871716562), and the verification gates pattern from [Ryan Carson's Antfarm](https://x.com/ryancarson/status/2020931274219594107) where agents systematically check each other's work:
 
 Every PR gets reviewed by **4 parallel reviewers**, each running at Opus level:
 
