@@ -226,6 +226,8 @@ This isn't a bug in the traditional sense — the code didn't crash, didn't thro
 
 The lesson: **if a task can and should be done, don't give the agent the option to defer.** Build a deterministic dispatch mechanism. Judgment still exists — but at the right level. The `bot-actionable` tag already *is* the judgment. After that, execute.
 
+This instinct — fix the process, not the person — comes from [my time as a manager](https://zainf.dev/karir-it). I've managed teams twice: once leading ~70 people at a Singapore-based company, and later a team of 20+ handling the largest project in the company. The blameless culture I experienced there rewired how I think about failure. When Optimus skipped cards for 20 days, my reaction wasn't "this bot is dumb." It was "the system made it too easy to skip." The fix wasn't scolding the agent — it was building a deterministic dispatcher that removed the option to defer. That's a manager's reflex: when something goes wrong, you don't blame the individual — you fix the process that allowed it to happen.
+
 ### Prowl's Silent Breakdown
 
 Prowl's WhatsApp scanner broke because of a channel config issue — "Channel is required when multiple channels are configured." Clear error message, straightforward fix. But Prowl didn't announce that it was broken. It just... stopped scanning. Silently.
