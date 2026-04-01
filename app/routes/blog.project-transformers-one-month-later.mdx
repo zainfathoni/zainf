@@ -1,0 +1,290 @@
+---
+meta:
+  - title: "Project Transformers Part 2: When the Bots Started Running Themselves"
+  - name: description
+    content: "One month after building a team of AI agents, the system learned to operate itself — spawning parallel workers, reviewing its own code, and filing its own bug reports. Here's what changed."
+  - author: Zain Fathoni
+  - date: "2026-03-29"
+  - name: keywords
+    content: "AI agents, OpenClaw, multi-agent systems, compound engineering, autonomous AI, personal automation"
+  - property: og:title
+    content: "Project Transformers Part 2: When the Bots Started Running Themselves"
+  - property: og:description
+    content: "One month after building a team of AI agents, the system learned to operate itself — spawning parallel workers, reviewing its own code, and filing its own bug reports. Here's what changed."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/project-transformers-one-month-later"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-project-transformers-part-2.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Project Transformers Part 2 — One Month Later: When the bots started running themselves"
+  - name: twitter:card
+    content: summary_large_image
+  - name: twitter:image
+    content: "https://www.zainfathoni.com/assets/blog-og-project-transformers-part-2.png"
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+A month ago, I [wrote about my team of AI agents](/blog/project-transformers-building-personal-ai-army) — nine bots with Transformer names, each with its own domain, personality, and memory. The response surprised me. Plenty of curiosity, some skepticism, and one comment that stuck: [Elvis Sun](https://x.com/elvissun) shared [his own agent swarm setup](https://x.com/elvissun/status/2025920521871716562) — an article that got 5 million views — and the architecture was remarkably similar to mine.
+
+But what surprised me most wasn't the response from outside. It was what happened *inside* the system.
+
+A month later, the team wasn't just running — it had started **running itself.**
+
+## From 9 to 14
+
+Part 1 had nine bots. Now there are fourteen. Not because I enjoy adding agents, but because real needs emerged that didn't fit existing domains.
+
+### 🔩 Rivet — Vika's Organizer
+
+My wife Vika has her own blog at [rumahberbagi.com](https://rumahberbagi.com), writing about parenting, homeschooling, and home life. Before Rivet, whenever Vika needed help organizing something, it went through me first — I'd forward it to Optimus, Optimus would coordinate, and by the time the answer came back, the moment had passed.
+
+Too many steps.
+
+Now Vika has her own bot. Rivet understands our household context, knows the kids' schedules, and can help Vika directly without me as a middleman. This isn't just about efficiency — it's about *ownership*. Vika has an assistant that understands her world, not her husband's assistant that happens to be available.
+
+### 📿 Alpha Trion — Islamic Knowledge
+
+This one's personal. Our family tries to practice Islam seriously, and there are many moments throughout the day — from the kids asking about prayer, to discussions about Islamic ethics in daily life — that need proper references.
+
+Alpha Trion isn't a replacement for a scholar. It's more like a library that can have a conversation. It helps find relevant verses, cross-reference interpretations, and explain jurisprudence in context. The important part: it knows its own limits. For matters that require scholarly consensus or personal guidance, it always says "consult your local scholar."
+
+### 🎷 Jazz — Public Voice
+
+This one made me the most nervous. Jazz is a bot that can post to X and Threads under the `zAIn` persona. Not under *my* name — under a persona that's explicitly AI.
+
+Why nervous? Because the trust boundary is fundamentally different. Every other bot communicates in private spaces — Telegram, Fizzy, internal sessions. Jazz speaks to the public. If it gets something wrong, it gets it wrong in front of everyone.
+
+So the rules are strict: Jazz *drafts*, it doesn't *publish*. Every post requires my approval. Maybe someday it can be more autonomous, but today? Not yet.
+
+### 🔬 Perceptor — Research
+
+Research used to be ad-hoc — whatever bot happened to be active would handle it. Now Perceptor owns the domain: geopolitics, market analysis, deep research. It sends a war digest three times a week (Tuesday, Thursday, Saturday mornings) — monitoring US-Iran dynamics, the Strait of Hormuz, energy prices, and downstream effects on crypto. Not because I'm a trader, but because global context affects local decisions, and I'd rather have one bot consistently tracking this than panic-Googling when fuel prices spike.
+
+## The System Learned to Operate Itself
+
+This is the part I didn't anticipate when writing Part 1.
+
+Back then, the workflow was still very manual: I'd open Fizzy, read the cards, assign them to bots, monitor progress, review results. I was the dispatcher.
+
+A month later? I'm not the dispatcher anymore. I'm the *reviewer*.
+
+### The Fizzy Dispatcher
+
+The idea for deterministic dispatch came from studying how others were solving this. OpenAI's [Symphony](https://github.com/openai/symphony) framework, [Paperclip](https://paperclip.ing), and especially Elvis's proactive task sourcing pattern — where his orchestrator "Zoe" scans Sentry errors and meeting notes to [autonomously spawn agents](https://x.com/elvissun/status/2028671336219107687) — all pointed in the same direction: **spend tokens on judgment, spend code on mechanics.**
+
+Today — literally today, March 29, 2026 — we deployed a 575-line bash script called `fizzy-dispatcher.sh`. It runs inside Optimus's heartbeat, and every time Optimus wakes up, it:
+
+1. **Queries [Fizzy](https://fizzy.do)** — pulls all cards tagged `bot-actionable` that haven't been worked on
+2. **Checks fuel** — parses codexbar to know: does Amp have remaining credits? Is Codex available? What's the Claude quota?
+3. **Dispatches** — routes cards to the right agent. Coding tasks → spawn an Amp or Codex agent. Research → queue for heartbeat. Daily limit: 5 cards per day, 2 per run.
+
+Before this dispatcher existed, Optimus would read the board but often skip cards it judged "too large" — for **20 consecutive days**. Twenty days. Silent failure. Those cards didn't error, didn't crash — they just... never got worked on. Optimus would look at them, hesitate, skip, and tell no one.
+
+I only discovered it when I audited heartbeat logs and noticed the pattern: "Analyzing card #XXX... task appears large, skipping for now." Twenty times. 😅
+
+The fix wasn't just "don't skip" — the fix was a paradigm shift. Instead of Optimus *judging* whether a card should be worked on (subjective, inconsistent), we built a deterministic script that *dispatches* based on tags and fuel levels (objective, repeatable). Judgment still exists — at the card creation and tagging level. But execution? That's mechanical now.
+
+### The Swarm
+
+If the dispatcher is how cards reach agents, the swarm is how agents solve them in parallel.
+
+Two new skills:
+
+- **amp-swarm** — takes multiple GitHub issues, groups them by conflict safety (issues that modify the same files can't run in parallel), spawns one [Amp](https://ampcode.com) deep-mode worker per issue. Each creates a branch, implements the fix, and opens a PR.
+- **claude-swarm** — same concept, but using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (`claude --print`). Fallback when Amp credits are spent, or for repos that need deeper reasoning.
+
+Issues get grouped into "waves." Wave 1 might be 5 non-conflicting issues, worked in parallel. When those finish, wave 2 starts. This isn't brute force — it's *organized* parallel execution.
+
+One night, Wheeljack resolved 8 issues in a single wave. Eight branches, eight PRs, all ready for review by morning. I woke up, opened GitHub, and there were 8 PRs waiting. 🔥
+
+### The Multi-Reviewer Pipeline
+
+But lots of PRs without good reviews = technical debt factory. So we built a multi-reviewer pipeline — inspired by Elvis's triple AI review setup (Codex + Gemini + Claude) from [his article](https://x.com/elvissun/status/2025920521871716562), and the verification gates pattern from [Ryan Carson's Antfarm](https://x.com/ryancarson/status/2020931274219594107) where agents systematically check each other's work:
+
+Every PR gets reviewed by **4 parallel reviewers**, each running at Opus level:
+
+1. 🔒 **Security reviewer** — vulnerabilities, injection, auth issues
+2. ⚡ **Performance reviewer** — N+1 queries, memory leaks, scaling concerns
+3. 📐 **Pattern compliance reviewer** — is this code consistent with the repo's PATTERNS.md?
+4. 🏗️ **Architecture reviewer** — design decisions, abstraction levels, maintainability
+
+Each finding gets a severity:
+- **P1** — blocks merge. Must fix.
+- **P2** — fix before merge, but not a showstopper.
+- **P3** — note for future improvement.
+
+Reviewers send findings → Wheeljack fixes P1/P2 → reviewers verify → approve → merge.
+
+This isn't code review theater. Some P1 findings genuinely saved us from production bugs. The pattern reviewer once caught a PR violating a convention we'd established just the week before — a convention that only existed in PATTERNS.md, not in any linter. 😁
+
+## Compound Engineering: The System That Remembers
+
+In Part 1, I talked about knowledge management — JSON files with structured facts, a memory pipeline, weekly extraction. That was the foundation. A month later, we built something more powerful on top of it: **compound engineering** — a concept borrowed from [Every.to's guide on the topic](https://every.to/guides/compound-engineering).
+
+The core idea is simple: **every completed piece of work should make the next one easier.**
+
+### Solution Docs
+
+Every time a PR merges or a bug gets fixed, there's a ritual: "Compound it 🧪." This trigger phrase makes the agent capture learnings into `knowledge/solutions/` — a file with YAML frontmatter containing:
+
+- What the problem was
+- How it was fixed
+- Why this approach was chosen
+- What could go wrong
+
+These solution docs are searchable. So if a similar bug shows up 3 months later, the agent can find "oh, last time we handled this with approach X, and the result was Y." Institutional memory that doesn't depend on human recall.
+
+### PATTERNS.md
+
+Every repo gets a `PATTERNS.md` file — conventions that agents read at the start of every session. This isn't a README. It's more like "tribal knowledge that usually only exists in a senior engineer's head."
+
+Example entry:
+
+```
+## Error Handling
+- All controller actions use `rescue_with_handler`
+- Never rescue StandardError directly
+- Custom errors inherit from ApplicationError
+- Added: 2026-03-15 | Source: PR #47 fix
+```
+
+PATTERNS.md has a **90-day decay cycle**. If a pattern isn't referenced or updated for 90 days, it gets marked stale. Not deleted — marked. This prevents the file from becoming a museum of patterns that stopped being relevant.
+
+### The Compound Loop
+
+```
+Plan → Work → Review → Compound → Plan (better)
+```
+
+Each iteration, the knowledge base grows. Pattern files get more accurate. Solution docs get more comprehensive. New agents that join (Rivet, Alpha Trion) get instant access to all the wisdom that's been captured. They don't start from zero — they start from the accumulated context of the entire team.
+
+This is what I mean by "the system learned to run itself." Not sentient AI. Not Skynet. Just a simple loop where the output of today's work becomes the input for tomorrow's. Deceptively simple, surprisingly powerful.
+
+## The System Became Observable
+
+One upgrade that isn't flashy but was *crucial*: we now have dashboards. [Ryan Carson's suggestion](https://x.com/ryancarson/status/2033913074772586888) to spend a full day optimizing your agentic setup hit home — and observability was the first thing we built.
+
+Two pages on [ark.zainf.dev](https://ark.zainf.dev/):
+
+- **[Operations Dashboard](https://ark.zainf.dev/viz/ops.html)** — all cron jobs, heartbeats, fuel levels, and a daily timeline. Real-time. If something errors, I know before the agent does.
+- **[Architecture Map](https://ark.zainf.dev/viz/architecture.html)** — interaction map, knowledge pipeline, communication channels, reviewer pipeline. The "how it all fits together" view.
+
+These get refreshed weekly by Optimus itself — it gathers data from cron status, usage scripts, agent memory, then generates the HTML.
+
+Why does this matter? Because before the dashboards, I knew the system was running but not *how* it was running. Prowl's WhatsApp scanner quietly broken for days? No idea until I happened to check. Amp fuel exhausted by 3pm but the nightly build at 11pm needs credits? Invisible.
+
+Now, one glance and I know: 12 active jobs, 6 agents with crons, 1 job erroring (Prowl's WhatsApp scan — channel config issue, known, in progress). A dashboard isn't a feature — it's a **prerequisite for scaling**.
+
+### A Typical Day
+
+Here's what the dashboard shows as a day in the life:
+
+| Time | What Happens |
+|------|-------------|
+| 07:00 | 🍠 Optimus reviews overnight work — Morning Progress Summary |
+| 08:00 | 🚨 Red Alert: BFS Daily + 🍠 Optimus: Fuel Check + 🔬 Perceptor: War Digest (Tue/Thu/Sat) |
+| ~09:00 | 🍠 Optimus Heartbeat → Fizzy Dispatcher spawns agents on queued cards |
+| 12:00 | 🍠 Optimus: Fuel Check ⛽ |
+| 16:00 | 🍠 Optimus: Fuel Check ⛽ |
+| 18:00 | 🍠 Optimus: Backup auto-commit + 🔍 Hound: Tax Review (Sundays) |
+| 20:00 | 🍠 Optimus: Fuel Check ⛽ |
+| 21:00 | 🚔 Prowl: AI Digest (Sundays) + 🍠 Optimus: Ark Viz Refresh (Sundays) |
+| 23:00 | 🛠️ Wheeljack: Nightly Build — bug fixes & features |
+
+From 7am to 11pm, something is running. Most of these crons I set up myself — I'd notice a pattern ("I keep asking for this manually every morning"), tell the bot to create a scheduled job, and move on. The system didn't schedule itself. I just got better at recognizing what deserved to be automated.
+
+One interesting insight from the dashboard: **Optimus consumes 45% of total weekly usage, while Wheeljack only accounts for 4%.** The coordinator is the expensive one — not the builder. This is counterintuitive. We often think coding is the expensive part of software development. Turns out the expensive part is *deciding what to code*. The brain costs more than the hands.
+
+## What Broke
+
+Part 1 promised honesty about failures. A month later, there are new failures worth telling.
+
+### The 20-Day Silent Skip
+
+I already mentioned this above, but it deserves its own section because the lesson is big.
+
+For 20 days, the Optimus heartbeat ran normally. No errors. No alerts. All green. But if you looked at the output carefully, there was a pattern:
+
+```
+Analyzing card #287... task appears complex, skipping for now.
+Analyzing card #291... large scope, will revisit.
+Analyzing card #295... requires extended work, deferring.
+```
+
+Twenty days. Eight cards in the queue. Zero worked on.
+
+This isn't a bug in the traditional sense — the code didn't crash, didn't throw errors. This was a **failure of agency**. The agent was given a judgment call ("should I do this?"), and it consistently chose the safe option (skip). Not wrong logically. But completely wrong in terms of outcome.
+
+The lesson: **if a task can and should be done, don't give the agent the option to defer.** Build a deterministic dispatch mechanism. Judgment still exists — but at the right level. The `bot-actionable` tag already *is* the judgment. After that, execute.
+
+There's a reason my instinct was "fix the process" rather than "fix the bot." I've [been a manager twice](https://zainf.dev/karir-it) — once leading around 70 people at a Singapore-based company, and later a team of 20+ on the largest project at the company. Both roles taught me the same lesson: when something goes wrong repeatedly, the individual isn't the problem. The process is.
+
+Blameless culture sounds like a buzzword until you actually practice it. Then it becomes a reflex. When Optimus skipped those cards for 20 days, I didn't think "this bot is broken." I thought "I gave it a judgment call it shouldn't have had." The dispatcher wasn't built to make Optimus smarter — it was built to make the decision mechanical, so there was nothing left to hesitate about.
+
+Turns out, managing AI agents isn't that different from managing people. You set clear expectations, remove ambiguity from execution, and save judgment for where it actually matters.
+
+### Prowl's Silent Breakdown
+
+Prowl's WhatsApp scanner broke because of a channel config issue — "Channel is required when multiple channels are configured." Clear error message, straightforward fix. But Prowl didn't announce that it was broken. It just... stopped scanning. Silently.
+
+I only found out from the dashboard. Without the dashboard? Might still be broken now.
+
+The lesson: **agents need to escalate their own failures, not just log them.** We now have a rule: if a cron job fails twice in a row, Optimus must notify me. Silent degradation is the worst kind of degradation.
+
+## External Validation
+
+One moment that convinced me this system isn't just "an overengineered hobby project" came from outside.
+
+[Elvis Sun](https://x.com/elvissun) — someone I respect in the AI tooling space — had [published his own setup](https://x.com/elvissun/status/2025920521871716562) around the same time. His orchestrator "Zoe" spawns Codex and Claude Code agents in tmux worktrees, monitors them via cron, and runs triple AI code review. Not an exact copy of our system, but the same principles: specialized agents, domain separation, knowledge persistence. He later shared a [follow-up on token optimization](https://x.com/elvissun/status/2028671336219107687) that directly influenced our dispatcher design.
+
+Why does this matter? Because when you build something unusual, there's always doubt: *"Am I just over-engineering? Am I just playing around and calling it 'architecture'?"*
+
+Validation from someone who independently arrived at similar conclusions is powerful. Not because they're saying you're right — but because you know the pattern is reproducible. This isn't a personal quirk. It's an approach that emerges when people seriously try to make AI agents useful in the real world.
+
+## Reflections
+
+### What I'd Tell Part 1 Me
+
+1. **Build the dashboard first.** Before adding agents, make sure you can *see* what you already have. Observability isn't a luxury.
+2. **Deterministic beats autonomous for execution.** Agent judgment is great for planning. For execution, write a script.
+3. **The compound loop is the real unlock.** Not the number of agents. Not the model tier. The system's ability to *learn from its own work*.
+4. **Failures are silent by default.** You have to explicitly engineer noise. Agents won't shout unless you tell them to.
+
+### What's Next
+
+Part 1 had an ambitious "What's Next" section. Now I'm more realistic:
+
+- **Jazz needs real guidelines** — posting publicly isn't just about content quality, but voice consistency and brand safety. This is ongoing.
+- **Cross-agent learning** — right now compound capture is per-agent. I want Wheeljack's coding patterns to inform Red Alert's code review, without violating domain boundaries.
+- **Better failure detection** — the dashboard is good, but I want alerting. Proactive, not reactive.
+
+Maybe Part 3 next month. Or maybe not — depends on whether there's a story worth telling. I'd rather write because something happened than because there's a schedule to keep.
+
+## The Throughline
+
+From Part 1 to Part 2, the biggest change isn't the number of bots (9 → 14) or the number of cron jobs (a few → 12) or the number of tools (some → a lot).
+
+The biggest change is **my role.**
+
+Part 1: I was the dispatcher, operator, monitor, reviewer, and decision-maker.
+
+Part 2: I'm the *reviewer* and *decision-maker*. Everything else has been delegated — not to one super-agent, but to a *system* with observability, compound memory, deterministic dispatch, and parallel execution.
+
+Does this mean I have nothing to do? Not quite. 😅 Freed-up time immediately filled with higher-quality thinking — architecture decisions, strategic priorities, and (most importantly) time with family that isn't interrupted by bot notifications.
+
+A good system doesn't add work for its operator. A good system frees the operator to focus on work that *only humans can do*.
+
+Autobots, keep rolling. 🤖
+
+---
+
+*This is Part 2 of the Project Transformers series. [Read Part 1 here](/blog/project-transformers-building-personal-ai-army). Live system dashboards: [Operations](https://ark.zainf.dev/viz/ops.html) · [Architecture](https://ark.zainf.dev/viz/architecture.html) · [The Ark](https://ark.zainf.dev/).*
