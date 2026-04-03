@@ -1,0 +1,135 @@
+---
+meta:
+  - title: "Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding"
+  - name: description
+    content: "Dari kebut-kebutan PR per minggu, gerobak sapi vs truk kargo, sampai beli gaming console demi survive burnout — cerita nyata tentang bagaimana AI mengubah dunia software engineering."
+  - author: Zain Fathoni
+  - date: "2026-04-03"
+  - property: og:title
+    content: "Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding"
+  - property: og:description
+    content: "Dari kebut-kebutan PR per minggu, gerobak sapi vs truk kargo, sampai beli gaming console demi survive burnout — cerita nyata tentang bagaimana AI mengubah dunia software engineering."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-arms-race-defensive-programming-2026-04-03"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+Kemarin di grup WhatsApp **AI Tools SWE GROWTH**, obrolan kita tiba-tiba jadi _deep_ banget. Mulai dari Mas Agung yang excited nyoba _dangerous mode_ buat QA web sambil nulis report di Google Docs, sampai pertanyaan mendasar: _"Apakah rapid development seperti ini akan menjadi new normal di tech?"_
+
+Jawabannya? Kayaknya udah. 😅
+
+## Kebut-Kebutan PR: The New Normal
+
+Saya di kantor udah mulai berasa _arms race_. Kebut-kebutan banyak-banyakan PR per pekan sama temen setim. 🤣
+
+Salah satu alasan saya subscribe Claude Max ya itu. Temen setim udah pakai Claude Max — subscribe sendiri juga — kalau saya nggak pakai, bakalan ketinggalan jauh. Ini aja saya masih berasa ketinggalan jumlah PR per pekan. 😅
+
+Bentuk baru dari _defensive programming_. Bukan lagi soal error handling dan null checks — tapi ngebut programming demi mempertahankan pekerjaan di kantor.
+
+Mas Mamed langsung relate: _"Saya juga lagi di kondisi yang sama. Alhamdulillahnya di-provide kantor. Dan berasa banget emang product delivery jauh lebih cepet sekarang."_ Bahkan Mas Iqbal sampai nanya, _"Mas, serious ini nggak exhausted kah?"_ 
+
+Ya pasti _exhausted_ sih. Makanya bulan lalu buru-buru beli _gaming console_ sebelum harganya naik. 🤣 Butuh cara baru buat _wind down_ untuk menetralisir potensi _burnout_. 🔥
+
+Steve Yegge baru aja nulis soal ["Vibe Maintainer"](https://steve-yegge.medium.com/vibe-maintainer-a2273a841040) — intinya, semua orang yang kerja di _successful OSS_ bakal harus deal dengan _PR storms_. Baik open source maupun proprietary projects, expect kecepatan meningkat. Dan kayaknya itu bukan cuma soal open source — ini juga realita di kantor-kantor kita.
+
+## Terus, Skill Ngoding Kita Gimana?
+
+Ini pertanyaan yang ditanyain Mas Mamed, dan menurut saya penting banget:
+
+> _"Karena full Claude Code, skill ngoding kita sebagai software engineer gimana yak? Belum lagi kalau misalnya apply tempat lain yang mungkin masih ada coding test, DSA, dsb. Udah berasa banget soalnya, hampir semua kerjaan manual dikerjain Claude Code... tapi makin kenceng mecut, makin skill pada ilang nih lama-lama."_ 😅
+
+Tuntutan skillnya jadi bergeser.
+
+Coba kita kilas balik ke zaman peralihan dari pemrograman assembly ke high-level programming. Waktu itu para assembly programmer banyak yang khawatir _"bagaimana dengan potensi memory leak kalau kita nggak kelola sendiri memory & registry-nya?"_
+
+Solusinya macem-macem. Mulai dari _memory allocation_ kayak di C, _garbage collector_ kayak di Java dan Go, _memory ownership_ kayak di Rust.
+
+Hasil akhirnya? Sekarang programmer tidak perlu lagi mengelola registry secara manual. Skill pengelolaan registry jadi tidak relevan lagi di banyak industri — tentu masih relevan di industri tertentu yang butuh _high-performance computing_.
+
+Nah, dari sini, silakan coba diinterpolasi ke situasi saat ini dengan adanya AI. 😁
+
+Mas Mamed merespons: _"Bener juga sih ya. Alhamdulillah awal mulai karir ngoding belum pernah dapet test coding assembly."_ 
+
+Dan mungkin interview juga bergeser — dari yang tadinya soal-soal _real-world case_ itu dibuat _take home test_ buat dikerjain seminggu, sekarang cuman dikasih waktu 1-2 jam sambil ditemani AI. 🤷‍♂️
+
+Kayak yang Mas Agung bilang, _"Learning platform bakal lebih ke arah arsitektural nanti arahnya."_ Lebih banyak _system design_, kurang _leetcode_.
+
+## Gerobak Sapi → Truk Kargo
+
+Buat yang butuh analogi lebih konkret, coba bayangkan begini:
+
+Ada sebuah perusahaan logistik baru yang pengiriman barangnya masih pakai gerobak sapi. Kalau Anda beli barang sekarang dari Jakarta, sampai Surabaya nanti baru waktu Idul Adha.
+
+Kira-kira bakalan ada yang pakai jasa pengirimannya nggak?
+
+Pakai alasan "go green" pun nggak masuk akal. Emangnya ngasih makan sapi buat jalan Jakarta-Surabaya gitu nggak habis banyak rumput? Kayaknya lebih "green" bayar BBM buat truk kargo deh. 😅 Bahkan Mas Agung ngitung: metana per km-nya gerobak sapi lebih banyak daripada CO₂ per km-nya truk. 🗿
+
+Bayangkan juga pergeseran skill-nya — dari ngasih makan, mandiin, dan mengendalikan sapi 🐄 ke ganti oli, ban, dan nyetir truk.
+
+Tentu banyak penggembala sapi yang berduka atas pergeseran ini. Tapi di sisi lain juga banyak calon pengemudi truk yang bersorak-sorai atasnya.
+
+Mas Desilino menambahkan: _"Sisi positifnya, sekarang belum banyak yang bisa nyetir truk. Yang tau truk itu bisa apa aja juga nggak banyak."_ Dan di situlah peluangnya.
+
+Kayak yang disinggung Mas Mamed, soal obrolan Mas Gogo sebelumnya: orang yang mau belajar nyetir truk bakal ngalahin orang-orang yang maunya tetep pakai gerobak doang.
+
+## AI dan Kesenjangan
+
+Ini bagian yang bikin obrolan makin berat.
+
+Mas Mamed bilang blak-blakan: _"Sad truth but it's the reality. Capitalism still wins now. Orang yang paling kuat, yang punya strong resources, yang udah kerja di perusahaan bonafid yang ngasih resource yang baik — akan selamanya gain more dibanding yang gitu-gitu aja."_
+
+Sebenarnya ini memang sudah jadi kenyataan hidup di berbagai aspek kehidupan sih. Cuman dengan AI ini memang dampak kesenjangannya jadi terakselerasi. ⚡️
+
+Tapi bukan berarti tidak ada jalan bagi orang-orang yang _underprivileged_. Roda kehidupan terus berputar, pasti akan selalu ada orang yang naik dan turun dari setiap krisis atau pergeseran ekonomi.
+
+Mas Iqbal sampai bilang: _"Deeeep banget dan nancep."_ 🤔
+
+Dan di antara semua kekhawatiran itu, ada juga sinyal-sinyal harapan. Mas Aidityas share artikel ["Compound Engineering"](https://every.to/guides/compound-engineering) dari every.to — terutama bagian _"Beliefs to let go"_. Intinya, beberapa asumsi lama tentang cara kerja engineer perlu ditinjau ulang di era AI. Saya setuju 100% dengan ini.
+
+## Token Wars dan Solusi Kaum Kere Hore
+
+Di tengah obrolan soal filosofi, kenyataan praktis juga mencuat: weekly limit Claude Max itu... cepet banget habisnya. 😭
+
+Mas El Muhammad sampai ngeluh: _"Sumpah, weekly limit kepakai dengan sangat cepat. Padahal baru mulai kerja hari Selasa."_ Mas Agung menghibur: _"Tenang, 13 jam lagi reset."_ Tapi Mas Agung sendiri baru sadar weekly limit-nya kemakan 75% — padahal dulu nggak pernah sampai 45%.
+
+Mas Mamed juga punya _pain point_ lain: _"Device wajib upgrade juga deh, minimal ROM-nya. Mau makin banyak delivery product = makin banyak git worktree = makin banyak space usage. Di sini baru berasa downside-nya pakai monorepo — 1 git worktree bisa 5-10GB."_ 😭
+
+Mas Michael curiga: _"Provider-provider besar ini lagi set up untuk pricing baru. Apalagi 2 raksasa itu infonya pertengahan tahun bakal keluarin model baru."_ Dan solusi buat kaum kere hore? Ya _mocin_ — model Cina. 😂
+
+Sementara itu, Mas Desilino dan Mas Agung ngobrolin soal local AI. Ada proyek [Taalas](https://taalas.com/) yang form factor-nya segede Raspberry Pi. Mas Desilino bilang: _"Local AI is the future."_ Tapi Mas Agung realistis: _"100 juta."_ 🗿 Akhirnya Mas Agung cuma bisa berharap: _"Please Nvidia bikin dong."_ Dan Mas Michael mengingatkan: _"Om Jensen sepertinya fokus di hardware dulu, cuannya gede, demand-nya masih full."_ 😂
+
+## Senjata-Senjata Baru
+
+Di antara curhatan dan filosofi, ada juga sharing tools yang menarik:
+
+Mas Mamed share [everything-claude-code](https://github.com/affaan-m/everything-claude-code) — winner hackathon Anthropic. Yang paling menarik menurut dia itu poin ke-4: _instinct system_ — bisa nge-save learning dari suatu session dan otomatis ke-load di session lain lewat hooks.
+
+Mbak Eka kasih tips soal [OpenCode](https://opencode.ai/) — bisa pakai model bansos lewat command `/model`, dan bisa load agent skills dari claude dir jadi _plug and play_.
+
+Mas Agung excited soal Qwen VL 24B: _"Reasoning-nya GG WP"_ — tapi buat ngobrol, bukan coding. 😅
+
+Dan saya sendiri ngingetin soal keamanan: [hati-hati install Chrome Extensions](https://x.com/levelsio/status/2039368480164618635). Kalau cuman buat fitur sederhana, mending _vibe coding_ sendiri aja.
+
+## Jadi, Gimana?
+
+Kalau grup kita bisa jadi barometer, ini yang sedang terjadi di industri software engineering Indonesia sekarang:
+
+1. **AI bukan lagi opsional** — ini sudah jadi _arms race_ di banyak perusahaan
+2. **Skill bergeser**, bukan hilang — dari assembly ke high-level, dari gerobak ke truk
+3. **Kesenjangan terakselerasi** — tapi pintu peluang tetap terbuka bagi yang mau belajar
+4. **Burnout jadi ancaman nyata** — dan kita perlu strategi _wind down_ yang serius
+5. **Token economics masih berantakan** — weekly limits, pricing yang nggak stabil, device yang harus di-upgrade
+6. **Local AI mulai dilirik** — tapi masih mahal dan butuh waktu
+
+Yang jelas, kita semua sedang dalam perjalanan yang sama. Dan untungnya, kita punya grup buat saling berbagi — baik kekhawatirannya maupun solusinya.
+
+Ngebut bareng, tapi nggak sendirian. 🚀
+
