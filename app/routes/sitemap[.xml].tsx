@@ -36,6 +36,9 @@ function createSitemapXml(entries: SitemapEntry[]) {
 export function loader() {
   const staticEntries: SitemapEntry[] = [
     { loc: `${SITE_URL}/`, changefreq: "weekly" },
+    { loc: `${SITE_URL}/blog`, changefreq: "monthly" },
+    { loc: `${SITE_URL}/blog/en`, changefreq: "monthly" },
+    { loc: `${SITE_URL}/blog/id`, changefreq: "monthly" },
     { loc: `${SITE_URL}/talks`, changefreq: "monthly" },
     { loc: `${SITE_URL}/projects`, changefreq: "monthly" },
     { loc: `${SITE_URL}/uses`, changefreq: "monthly" },

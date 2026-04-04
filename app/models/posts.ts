@@ -10,26 +10,81 @@ import * as postAiToolsSweGrowthMar2Mar82026 from "../routes/blog.ai-tools-swe-g
 import * as postAiToolsSweGrowthMar9Mar162026 from "../routes/blog.ai-tools-swe-growth-mar-9-mar-16-2026.mdx";
 import * as postAiToolsSweGrowthMar23Mar292026 from "../routes/blog.ai-tools-swe-growth-mar-23-mar-29-2026.mdx";
 import * as postAiToolsSweGrowthMar16Mar222026 from "../routes/blog.ai-tools-swe-growth-mar-16-mar-22-2026.mdx";
-export type MdxAttributes = { meta: Array<Record<string, any>> };
+
+type MdxMetaEntry = Record<string, unknown>;
+
+export type MdxAttributes = { meta: MdxMetaEntry[] };
 
 export type MdxModule = {
   filename?: string;
   attributes: MdxAttributes;
 };
 
+export type PostLanguage = "en" | "id";
+
 export type Post = {
   slug: string;
   title: string;
   description: string;
   date: string;
+  lang: PostLanguage;
 };
 
-export function extractPostAttributes(attributes: MdxAttributes) {
+type ExtractedPostAttributes = Omit<Post, "slug">;
+
+function getMetaValue(
+  attributes: MdxAttributes,
+  predicate: (entry: MdxMetaEntry) => boolean,
+  key: string,
+) {
+  return attributes.meta.find(predicate)?.[key];
+}
+
+function parseRequiredMetaString(value: unknown, name: string) {
+  if (typeof value === "string" && value.trim() !== "") {
+    return value;
+  }
+
+  if (value instanceof Date && !Number.isNaN(value.valueOf())) {
+    return value.toISOString().slice(0, 10);
+  }
+
+  throw new Error(`Missing or invalid blog post ${name} metadata`);
+}
+
+function parsePostLanguage(value: unknown): PostLanguage {
+  if (value === "en" || value === "id") {
+    return value;
+  }
+
+  throw new Error(
+    'Missing or invalid blog post lang metadata. Expected a meta entry like `{ lang: "en" }` or `{ lang: "id" }`.',
+  );
+}
+
+export function extractPostAttributes(
+  attributes: MdxAttributes,
+): ExtractedPostAttributes {
   return {
-    title: attributes.meta.find((m) => m.title)?.title,
-    description: attributes.meta.find((m) => m.name === "description")?.content,
-    date: attributes.meta.find((m) => m.date)?.date,
-    ...attributes.meta,
+    title: parseRequiredMetaString(
+      getMetaValue(attributes, (entry) => typeof entry.title !== "undefined", "title"),
+      "title",
+    ),
+    description: parseRequiredMetaString(
+      getMetaValue(
+        attributes,
+        (entry) => entry.name === "description",
+        "content",
+      ),
+      "description",
+    ),
+    date: parseRequiredMetaString(
+      getMetaValue(attributes, (entry) => typeof entry.date !== "undefined", "date"),
+      "date",
+    ),
+    lang: parsePostLanguage(
+      getMetaValue(attributes, (entry) => typeof entry.lang !== "undefined", "lang"),
+    ),
   };
 }
 
@@ -47,8 +102,11 @@ function getSlugFromFilename(filename?: string) {
 }
 
 function getSlugFromMetadata(attributes: MdxAttributes) {
-  const canonicalUrl = attributes.meta.find((m) => m.property === "og:url")
-    ?.content;
+  const canonicalUrl = getMetaValue(
+    attributes,
+    (entry) => entry.property === "og:url",
+    "content",
+  );
 
   if (typeof canonicalUrl !== "string") {
     return;
@@ -96,3 +154,7 @@ export const getAllPosts = (limit?: number) => {
   ];
   return limit ? allPosts.slice(0, limit) : allPosts;
 };
+
+export function getPostsByLanguage(lang: PostLanguage) {
+  return getAllPosts().filter((post) => post.lang === lang);
+}
