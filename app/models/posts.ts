@@ -1,3 +1,4 @@
+import * as postAiToolsSweGrowthMar30Apr52026 from "../routes/blog.ai-tools-swe-growth-mar-30-apr-5-2026.mdx";
 import * as post20260215AiToolsDigestWeek2 from "../routes/blog.2026-02-15.ai-tools-digest-week-2.mdx";
 import * as aiToolsSwegrowthSummaryFeb4 from "../routes/blog.ai-tools-swe-growth-feb-4-feb-11-2026.mdx";
 import * as aiToolsSwegrowthSummary from "../routes/blog.ai-tools-swe-growth-summary-jan-25-feb-11-2026.mdx";
@@ -82,6 +83,7 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(postAiToolsSweGrowthMar30Apr52026),
     getPostFromMdxModule(postAiToolsSweGrowthMar23Mar292026),
     getPostFromMdxModule(postAiToolsSweGrowthMar16Mar222026),
     getPostFromMdxModule(postAiToolsSweGrowthMar9Mar162026),
