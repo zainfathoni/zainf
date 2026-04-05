@@ -1,14 +1,14 @@
 ---
 meta:
-  - title: "Bocor, Gacha, dan Takut Kena Takeout — AI Tools Digest #10"
+  - title: "Bocor, Gacha, dan Diputus Anthropic — AI Tools Digest #10"
   - name: description
-    content: "Claude Code bocor, /buddy gacha pet launching, Amp Code free tier anxiety, dan memory leak 14GB. Rangkuman dari grup AI Tools SWE GROWTH, 30 Mar–5 Apr 2026."
+    content: "Claude Code bocor, /buddy gacha pet launching, Anthropic putus subscription untuk third-party harness, dan memory leak 14GB. Rangkuman dari grup AI Tools SWE GROWTH, 30 Mar–5 Apr 2026."
   - author: Zain Fathoni
   - date: "2026-04-05"
   - property: og:title
-    content: "Bocor, Gacha, dan Takut Kena Takeout — AI Tools Digest #10"
+    content: "Bocor, Gacha, dan Diputus Anthropic — AI Tools Digest #10"
   - property: og:description
-    content: "Claude Code bocor, /buddy gacha pet launching, Amp Code free tier anxiety, dan memory leak 14GB. Rangkuman dari grup AI Tools SWE GROWTH, 30 Mar–5 Apr 2026."
+    content: "Claude Code bocor, /buddy gacha pet launching, Anthropic putus subscription untuk third-party harness, dan memory leak 14GB. Rangkuman dari grup AI Tools SWE GROWTH, 30 Mar–5 Apr 2026."
   - property: og:url
     content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-mar-30-apr-5-2026"
   - property: og:image
@@ -18,7 +18,7 @@ meta:
   - property: og:image:height
     content: "630"
   - property: og:image:alt
-    content: "Bocor, Gacha, dan Takut Kena Takeout — AI Tools Digest #10"
+    content: "Bocor, Gacha, dan Diputus Anthropic — AI Tools Digest #10"
   - name: twitter:card
     content: summary_large_image
 
@@ -30,11 +30,11 @@ export const meta = () => attributes.meta;
 
 <PostHeader {...attributes} />
 
-# Bocor, Gacha, dan Takut Kena Takeout — AI Tools Digest #10
+# Bocor, Gacha, dan Diputus Anthropic — AI Tools Digest #10
 
-Minggu ini saya rasa ada tiga momen yang bakal diingat grup AI Tools SWE GROWTH untuk waktu lama.
+Minggu ini saya rasa ada empat momen yang bakal diingat grup AI Tools SWE GROWTH untuk waktu lama.
 
-Pertama, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) bocor source code-nya tepat sehari sebelum April Fools — dan orang-orang masih nanya: "ini April Mop apa beneran?" Kedua, Claude Code justru ngeluarin fitur /buddy yang bikin grup ramai flexing virtual pet. Ketiga, [Amp Code](https://ampcode.com) mengingatkan kita semua bahwa free tier itu bisa dicabut sewaktu-waktu.
+Pertama, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) bocor source code-nya tepat sehari sebelum April Fools — dan orang-orang masih nanya: "ini April Mop apa beneran?" Kedua, Claude Code justru ngeluarin fitur /buddy yang bikin grup ramai flexing virtual pet. Ketiga, Anthropic resmi memutus Claude subscription untuk third-party harness termasuk [OpenClaw](https://openclaw.ai) — bikin satu grup galau massal. Keempat, [Amp Code](https://ampcode.com) mengingatkan kita semua bahwa free tier itu bisa dicabut sewaktu-waktu.
 
 Total 688 pesan dalam sepekan. Kita mulai dari yang paling seru.
 
@@ -122,6 +122,26 @@ Artinya: kalau kamu merasa hasil Claude Code lewat satu platform lebih baik dari
 
 ---
 
+## 🔌 Diputus Anthropic — Claude Subscription Ditarik dari Third-Party Harness
+
+Ini momen yang paling berdampak minggu ini. Mulai **4 April 2026**, Anthropic resmi mengumumkan: *"You'll no longer be able to use your Claude subscription limits for third-party harnesses including OpenClaw."*
+
+Kabar ini pertama ramai di grup satelit, tapi efeknya langsung terasa di AI Tools SWE GROWTH.
+
+Sebenarnya, tanda-tandanya sudah muncul sejak 31 Maret. Ada yang bertanya di grup: *"sofar aman mas claude nya dipake openclaw? ini bukannya ngelanggar TOS ya?"* Zain waktu itu menjawab lugas: *"Sejauh ini masih aman. Kalau diblokir ya udah, tinggal geser ke OpenAI subs aja. Saya masih ada $200/bulan buat dibakar. 🔥 It's their loss. 🤷‍♂️"*
+
+Dan ketika resmi diumumkan tanggal 4 April, Zain langsung menindaklanjuti: *"Seperti yang saya bilang Selasa lalu. It's their (Anthropic's) loss. 🤷‍♂️"* Lalu langsung pivot: *"Dari kemarin pengen cobain Codex & GPT-5.4 ini (baik buat OpenClaw maupun buat coding sehari-hari), tapi masih belum ada budgetnya soalnya habis buat Claude Max. Sekarang jadi ada budgetnya lagi deh. 😆"*
+
+Mas Desilino punya take yang relatable: *"Pelan2 dibiasakan mas, nanti juga terbiasa. Walaupun pasti ada moment kangen2nya sama Opus, tapi diinget2 aja perasaan kemaren udah disakitin sama Anthropic segitunya. 🙈"* Mas Zahid langsung nimpali: *"Wkwkwkw coba curhat gini ke gpt/sonnet/mocin. 🤣🤣🙈"*
+
+Mas Iqbal: *"Panutan ambasador cc sudah bertuah codex saatnya pindah haluan juga wkwk."* Dan Zain menutup dengan filosofi: *"Saatnya melepaskan diri dari jeratan merk. 😆 Apapun tools-nya, selama bisa ngelakuin Agentic Engineering, insya Allah masih akan relevan di dunia software development. 🧑🏻‍💻"* Mas Luthfi setuju: *"yoi kata2 hari ini."*
+
+Sementara itu, Mas El Muhammad — yang sudah bikin [cc-provider-switch](https://github.com/eltrovert/cc-provider-switch) untuk switching provider per project — langsung bikin tool baru: [claw-cli-proxy](https://github.com/eltrovert/claw-cli-proxy). Tagline-nya: *"A proxy built for tugs. You paid for the subscription. You want to use it your way. 🤘🏻"*
+
+Implikasi besarnya: user yang selama ini mengandalkan Claude subscription untuk agent frameworks (OpenClaw, dan sejenisnya) sekarang harus memilih antara pay-as-you-go API atau pindah ke provider lain. Diskusi soal alternatif (Codex, GLM, Kimi, OpenCode Go) langsung ramai — dan ini mungkin jadi momen di mana "brand loyalty" ke Anthropic mulai retak.
+
+---
+
 ## 💸 Pricing Panic: Mythos Edition
 
 Satu topik yang terus bergulir minggu ini: spekulasi harga Claude Mythos. Mas Michael share prediksi: model baru ini akan berada di atas Opus — dan harganya kemungkinan besar jauh lebih mahal.
@@ -173,7 +193,7 @@ Pertanyaannya bukan lagi "berapa budget AI saya?" tapi "budget saya cukup untuk 
 - **Mas Garseta** — "udah di hantam" quote of the week, Claude Code source take
 - **Mas Iqbal** — AGI quote, Amp Code anxiety
 - **Mas Mamed** — /buddy full chaos confession yang paling relatable
-- **Mas El** — "jual akun reroll claude" energy dan /buddy RARE
+- **Mas El Muhammad** — "jual akun reroll claude" energy, /buddy RARE, cc-provider-switch, dan claw-cli-proxy — the rebellion tools
 - **Mas Finn** — Pertanyaan fundamental soal harnessing vs model
 - **Mas Noviadi** — Legal & safe approach ke leaked source code
 - **Mas Desilino** — process.env.USER_TYPE === 'ant' 🙈
