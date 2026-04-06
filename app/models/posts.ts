@@ -11,6 +11,7 @@ import * as postAiToolsSweGrowthMar2Mar82026 from "../routes/blog.ai-tools-swe-g
 import * as postAiToolsSweGrowthMar9Mar162026 from "../routes/blog.ai-tools-swe-growth-mar-9-mar-16-2026.mdx";
 import * as postAiToolsSweGrowthMar23Mar292026 from "../routes/blog.ai-tools-swe-growth-mar-23-mar-29-2026.mdx";
 import * as postAiToolsSweGrowthMar16Mar222026 from "../routes/blog.ai-tools-swe-growth-mar-16-mar-22-2026.mdx";
+import * as postAiArmsRaceDefensiveProgramming20260403 from "../routes/blog.ai-arms-race-defensive-programming-2026-04-03.mdx";
 
 type MdxMetaEntry = Record<string, unknown>;
 
@@ -141,6 +142,7 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(postAiArmsRaceDefensiveProgramming20260403),
     getPostFromMdxModule(postAiToolsSweGrowthMar30Apr52026),
     getPostFromMdxModule(postAiToolsSweGrowthMar23Mar292026),
     getPostFromMdxModule(postAiToolsSweGrowthMar16Mar222026),

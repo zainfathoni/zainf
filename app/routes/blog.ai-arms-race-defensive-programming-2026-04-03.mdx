@@ -1,0 +1,112 @@
+---
+meta:
+  - title: "Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding"
+  - name: description
+    content: "Dari kebut-kebutan PR per minggu, gerobak sapi vs truk kargo, sampai beli gaming console demi survive burnout — refleksi tentang bagaimana AI mengubah dunia software engineering."
+  - author: Zain Fathoni
+  - date: "2026-04-03"
+  - property: og:title
+    content: "Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding"
+  - property: og:description
+    content: "Dari kebut-kebutan PR per minggu, gerobak sapi vs truk kargo, sampai beli gaming console demi survive burnout — refleksi tentang bagaimana AI mengubah dunia software engineering."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-arms-race-defensive-programming-2026-04-03"
+  - property: og:image
+    content: "/assets/blog-og-ai-arms-race-2026-04-03.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+Belakangan ini saya banyak mikir soal satu hal: _rapid development_ yang didorong AI — apakah ini sudah jadi _new normal_ di industri tech?
+
+Kayaknya udah. 😅
+
+## Kebut-Kebutan PR: The New Normal
+
+Saya di kantor udah mulai berasa _arms race_. Kebut-kebutan banyak-banyakan PR per pekan sama temen setim. 🤣
+
+Salah satu alasan saya subscribe Claude Max ya itu. Temen setim udah pakai Claude Max — subscribe sendiri juga — kalau saya nggak pakai, bakalan ketinggalan jauh. Ini aja saya masih berasa ketinggalan jumlah PR per pekan. 😅
+
+Ini bentuk baru dari _defensive programming_. Bukan lagi soal error handling dan null checks — tapi ngebut programming demi mempertahankan pekerjaan di kantor.
+
+Dan saya rasa ini bukan cuma pengalaman saya. Banyak developer yang saya ajak ngobrol mengalami hal yang sama — _product delivery_ jauh lebih cepet sekarang, tapi harga yang dibayar itu bukan cuma uang. Ada _exhaustion_ yang nyata.
+
+Makanya bulan lalu saya buru-buru beli _gaming console_ sebelum harganya naik. 🤣 Butuh cara baru buat _wind down_ untuk menetralisir potensi _burnout_. 🔥
+
+Steve Yegge baru aja nulis soal ["Vibe Maintainer"](https://steve-yegge.medium.com/vibe-maintainer-a2273a841040) — intinya, semua orang yang kerja di _successful OSS_ bakal harus deal dengan _PR storms_. Baik open source maupun proprietary projects, expect kecepatan meningkat. Dan kayaknya itu bukan cuma soal open source — ini juga realita di kantor-kantor kita.
+
+## Terus, Skill Ngoding Kita Gimana?
+
+Ini pertanyaan yang menurut saya penting banget:
+
+Karena makin banyak kerjaan yang dikerjain AI — hampir semua kerjaan manual dikerjain Claude Code — skill ngoding kita sebagai software engineer gimana? Belum lagi kalau misalnya apply tempat lain yang mungkin masih ada coding test, DSA, dsb. Makin kenceng pakai AI, makin berasa skill manual pada mulai tumpul.
+
+Tapi coba kita kilas balik ke zaman peralihan dari pemrograman assembly ke high-level programming. Waktu itu para assembly programmer banyak yang khawatir _"bagaimana dengan potensi memory leak kalau kita nggak kelola sendiri memory & registry-nya?"_
+
+Solusinya macem-macem. Mulai dari _memory allocation_ kayak di C, _garbage collector_ kayak di Java dan Go, _memory ownership_ kayak di Rust.
+
+Hasil akhirnya? Sekarang programmer tidak perlu lagi mengelola registry secara manual. Skill pengelolaan registry jadi tidak relevan lagi di banyak industri — tentu masih relevan di industri tertentu yang butuh _high-performance computing_.
+
+Nah, dari sini, silakan coba diekstrapolasi ke situasi saat ini dengan adanya AI. 😁
+
+Tuntutan skillnya bergeser, bukan hilang. Dan mungkin interview juga bergeser — dari yang tadinya soal-soal _real-world case_ itu dibuat _take home test_ buat dikerjain seminggu, sekarang cuman dikasih waktu 1-2 jam sambil ditemani AI. 🤷‍♂️
+
+Saya rasa ke depannya _learning platform_ bakal lebih ke arah arsitektural. Lebih banyak _system design_, kurang _leetcode_.
+
+## Gerobak Sapi → Truk Kargo
+
+Buat yang butuh analogi lebih konkret, coba bayangkan begini:
+
+Ada sebuah perusahaan logistik baru yang pengiriman barangnya masih pakai gerobak sapi. Kalau Anda beli barang secara online waktu Idul Fitri dari Jakarta, sampai Surabaya nanti baru waktu Idul Adha.
+
+Kira-kira bakalan ada yang pakai jasa pengirimannya nggak?
+
+Pakai alasan "go green" pun nggak masuk akal. Emangnya ngasih makan sapi buat jalan Jakarta-Surabaya gitu nggak habis banyak rumput? Kayaknya lebih "green" bayar BBM buat truk kargo deh. 😅 Kalau dihitung-hitung, metana per km-nya gerobak sapi lebih banyak daripada CO₂ per km-nya truk. 🗿
+
+Bayangkan juga pergeseran skill-nya — dari ngasih makan, mandiin, dan mengendalikan sapi 🐄 ke ganti oli, ban, dan nyetir truk.
+
+Tentu banyak penggembala sapi yang berduka atas pergeseran ini. Tapi di sisi lain juga banyak calon pengemudi truk yang bersorak-sorai atasnya.
+
+Sisi positifnya? Sekarang belum banyak yang bisa nyetir truk. Yang tau truk itu bisa apa aja juga nggak banyak. Dan di situlah peluangnya — orang yang mau belajar nyetir truk bakal ngalahin orang-orang yang maunya tetep pakai gerobak doang.
+
+## AI dan Kesenjangan
+
+Ini bagian yang bikin refleksi makin berat.
+
+_Sad truth but it's the reality._ Orang yang paling kuat, yang punya _strong resources_, yang udah kerja di perusahaan bonafid yang ngasih resource yang baik — akan selamanya _gain more_ dibanding yang gitu-gitu aja. Kapitalisme masih menang.
+
+Sebenarnya ini memang sudah jadi kenyataan hidup di berbagai aspek kehidupan sih. Cuman dengan AI ini memang dampak kesenjangannya jadi terakselerasi. ⚡️
+
+Tapi bukan berarti tidak ada jalan bagi orang-orang yang _underprivileged_. Roda kehidupan terus berputar, pasti akan selalu ada orang yang naik dan turun dari setiap krisis atau pergeseran ekonomi.
+
+Dan di antara semua kekhawatiran itu, ada juga sinyal-sinyal harapan. Artikel ["Compound Engineering"](https://every.to/guides/compound-engineering) dari every.to punya bagian _"Beliefs to let go"_ yang menarik — beberapa asumsi lama tentang cara kerja engineer perlu ditinjau ulang di era AI. Saya setuju 100% dengan ini.
+
+## Satu Hal Lagi: Hati-Hati Chrome Extensions
+
+Di tengah semua hiruk-pikuk AI tools baru yang bermunculan, satu hal yang sering saya ingatkan: [hati-hati install Chrome Extensions](https://x.com/levelsio/status/2039368480164618635). Kalau cuman buat fitur sederhana, mending _vibe coding_ sendiri aja.
+
+## Jadi, Gimana?
+
+Dari semua refleksi ini, ini yang saya lihat sedang terjadi di industri software engineering Indonesia sekarang:
+
+1. **AI bukan lagi opsional** — ini sudah jadi _arms race_ di banyak perusahaan
+2. **Skill bergeser**, bukan hilang — dari assembly ke high-level, dari gerobak ke truk
+3. **Kesenjangan terakselerasi** — tapi pintu peluang tetap terbuka bagi yang mau belajar
+4. **Burnout jadi ancaman nyata** — dan kita perlu strategi _wind down_ yang serius
+
+Yang jelas, kita semua sedang dalam perjalanan yang sama. Dan untungnya, kita punya komunitas buat saling berbagi — baik kekhawatirannya maupun solusinya.
+
+Ngebut bareng, tapi nggak sendirian. 🚀
