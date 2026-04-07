@@ -62,9 +62,13 @@ DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjaka
 :hourglass_flowing_sand: AI bekerja di background selama presentasi...
 
 <!--
+TIMING: 3 menit
+
 SPEAKER NOTES:
 Ini adalah momen kunci. Tunjukkan ke audiens bahwa kamu sedang memulai sebuah AI task secara real-time.
 "Saya akan meminta AI untuk mengerjakan sesuatu. Kita akan lihat hasilnya nanti di akhir. Ini adalah contoh nyata AI-assisted development — kita beri instruksi yang jelas, lalu biarkan AI bekerja."
+
+NOTE: Ya, prompt di slide ini meminta AI untuk membuat slide presentasi — yang persis adalah PR ini. Ini sengaja self-referential dan merupakan demonstrasi meta yang sempurna. The slides are literally dog-fooding the process.
 -->
 
 ---
@@ -84,6 +88,8 @@ Ini adalah momen kunci. Tunjukkan ke audiens bahwa kamu sedang memulai sebuah AI
 | :rocket: **Deploy** | Vercel, CI/CD | Otomasi deployment |
 
 <!--
+TIMING: 5 menit
+
 SPEAKER NOTES:
 Jelaskan bahwa AI bukan hanya tentang menulis kode. AI bisa membantu di setiap fase development.
 Berikan contoh konkret di setiap fase. Misalnya: "Di fase design, v0 bisa generate UI dari deskripsi. Di fase coding, Claude Code bisa menulis implementasi. Di fase testing, Playwright MCP bisa membuat test otomatis."
@@ -130,6 +136,27 @@ Ceritakan contoh nyata kegagalan. Bisa pakai contoh dari slide sebelumnya tentan
 
 ---
 
+## :speaking_head: Cerita Nyata: Pengalaman Pribadi
+
+### Yang Berhasil :white_check_mark:
+
+- Migrasi framework Remix → React Router v7 — AI handle 80% boilerplate, saya fokus di routing logic
+- Refactor styling ke Tailwind — AI konsisten di seluruh 30+ komponen
+
+### Yang Gagal :x:
+
+- AI generate test yang pass tapi **tidak test apa-apa** (assertion kosong)
+- AI "fix" bug di satu tempat, tapi break 3 tempat lain karena tidak paham konteks bisnis
+
+<!--
+TIMING: 3 menit
+
+SPEAKER NOTES:
+"Ini pengalaman nyata saya. AI itu brilliant untuk pekerjaan mekanis — migrasi, refactor pattern yang jelas. Tapi begitu masuk ke business logic dan edge case, developer tetap harus lead."
+-->
+
+---
+
 ## :bulb: Solusi & Strategi
 
 - :shield: **Trust, but Verify** — selalu review output AI
@@ -158,6 +185,8 @@ Seberapa besar kendali developer atas hasilnya
 **Keduanya harus seimbang**
 
 <!--
+TIMING: 5 menit
+
 SPEAKER NOTES:
 "Coverage tinggi tanpa control = chaos. Control tinggi tanpa coverage = lambat. Kunci-nya adalah menemukan keseimbangan yang tepat untuk setiap situasi."
 -->
@@ -229,6 +258,8 @@ SPEAKER NOTES:
 - :arrows_counterclockwise: **Iterasi** — perbaiki prompt berdasarkan hasil
 
 <!--
+TIMING: 5 menit
+
 SPEAKER NOTES:
 "Prompting itu seperti memberi brief ke junior developer. Semakin jelas brief-nya, semakin bagus hasilnya."
 Tunjukkan contoh prompt yang buruk vs bagus:
@@ -336,8 +367,37 @@ Tunjukkan CLAUDE.md dari repo ini sebagai contoh nyata.
 4. :computer: **Implementation** — baru mulai coding
 
 <!--
+TIMING: 5 menit
+
 SPEAKER NOTES:
 "Kesalahan terbesar dalam AI-assisted development adalah langsung minta AI coding tanpa requirement yang jelas. Hasilnya? Kode yang 'works' tapi tidak sesuai kebutuhan."
+-->
+
+---
+
+## :arrows_counterclockwise: Before vs After: Structured Approach
+
+### :x: Tanpa Struktur
+
+```
+"Buatkan fitur authentication untuk app saya"
+→ AI generates random auth flow, may not match your stack
+→ Missing edge cases, no error handling spec
+```
+
+### :white_check_mark: Dengan Struktur
+
+```
+Requirement: User login via email/password + OAuth
+Flow: Login → Validate → Session → Redirect
+Architecture: Server-side session, bcrypt, OAuth2
+Constraints: Rate limiting, CSRF protection
+→ AI delivers spec-compliant implementation
+```
+
+<!--
+SPEAKER NOTES:
+"Lihat perbedaannya. Prompt yang sama — 'buatkan auth' — tapi hasilnya berbeda drastis tergantung apakah kita memberikan struktur atau tidak."
 -->
 
 ---
@@ -371,6 +431,8 @@ SPEAKER NOTES:
 :point_right: AI bekerja lebih baik dengan spec yang terstruktur
 
 <!--
+TIMING: 3 menit
+
 SPEAKER NOTES:
 "Ketika kamu memberikan AI sebuah spec yang terstruktur, hasilnya jauh lebih baik dibanding prompt yang ambiguous. Ini berlaku untuk semua AI tools."
 -->
@@ -391,8 +453,21 @@ SPEAKER NOTES:
 - :busts_in_silhouette: **Peer review** — human eyes tetap penting
 
 <!--
+TIMING: 5 menit
+
 SPEAKER NOTES:
 "AI bisa menulis kode yang 'works', tapi belum tentu kode yang 'good'. Tugas kita sebagai developer adalah memastikan kualitasnya."
+-->
+
+---
+
+> "The 70% problem: AI gets you 70% of the way there remarkably fast, but the
+> remaining 30% — the hard parts — still require real engineering skill."
+> — Addy Osmani
+
+<!--
+SPEAKER NOTES:
+"Ini yang Addy Osmani sebut 'The 70% Problem'. AI sangat cepat menghasilkan 70% pertama. Tapi 30% sisanya — edge cases, performance, security — itu yang membedakan developer yang baik."
 -->
 
 ---
@@ -446,16 +521,25 @@ SPEAKER NOTES:
 
 ---
 
-## :white_check_mark: Practical Do's & Don'ts
+## :white_check_mark: Do's
 
-| :white_check_mark: Do | :x: Don't |
-|---|---|
-| Review setiap output AI | Copy-paste tanpa baca |
-| Berikan konteks yang lengkap | Prompt yang ambiguous |
-| Test otomatis | "Works on my machine" |
-| Iterasi bertahap | Expect sempurna sekali jadi |
-| Pahami kode yang di-generate | Jadi "passenger" |
-| Gunakan CLAUDE.md / rules | Mulai tanpa context |
+- :mag: **Review setiap output AI** — jangan auto-accept
+- :clipboard: **Berikan konteks yang lengkap** — CLAUDE.md, spec, constraint
+- :test_tube: **Test otomatis** — unit, integration, E2E
+- :arrows_counterclockwise: **Iterasi bertahap** — refine prompt & output
+- :brain: **Pahami kode yang di-generate** — bisa jelaskan setiap baris
+- :scroll: **Gunakan CLAUDE.md / rules** — konsistensi project-wide
+
+---
+
+## :x: Don'ts
+
+- :see_no_evil: **Copy-paste tanpa baca** — bug tersembunyi menunggu
+- :question: **Prompt yang ambiguous** — garbage in, garbage out
+- :computer: **"Works on my machine"** — test di CI, bukan di lokal saja
+- :crystal_ball: **Expect sempurna sekali jadi** — AI butuh iterasi
+- :sleeping: **Jadi "passenger"** — kamu harus paham kode sendiri
+- :rocket: **Mulai tanpa context** — setup rules sebelum coding
 
 ---
 
@@ -470,6 +554,8 @@ SPEAKER NOTES:
 :point_right: Mari kita lihat bersama...
 
 <!--
+TIMING: 5 menit
+
 SPEAKER NOTES:
 Buka terminal, cek hasil dari AI task yang dimulai di awal presentasi.
 Tunjukkan:
