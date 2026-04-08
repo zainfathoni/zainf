@@ -7,7 +7,7 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 marp: true
 ---
 
-# AI-Assisted Development
+# Agentic Engineering
 
 Realita, Strategi, dan Praktik\
 untuk Tim Produk & Bisnis Digital
@@ -17,9 +17,10 @@ TIMING: 2 menit
 
 SPEAKER NOTES:
 Sapa audiens. Akui bahwa ruangan ini campuran, bukan hanya developer: mayoritas dari sektor TIK, tapi perannya beragam, dari software/web developer sampai founder, business owner, IT manager, digital marketer, dan mahasiswa. Jelaskan bahwa talk ini bukan tentang hype AI, tapi tentang realita penggunaan AI dalam kerja digital sehari-hari.
+Termasuk memperkenalkan istilah baru: "Agentic Engineering" — bukan sekadar "AI-assisted", tapi membangun dengan coding agents yang bisa menulis DAN menjalankan kode.
 "Di awal talk ini, saya akan melakukan sesuatu yang menarik — saya akan meminta AI untuk mengerjakan sebuah task di repository saya. Kita akan lihat hasilnya di akhir sesi."
 
-DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjakan sesuatu di repo ini (misalnya: menambahkan halaman baru, fix bug, atau improve existing feature). Biarkan berjalan di background selama presentasi.
+DEMO START: Buka Telegram, kirim pesan ke Wheeljack (OpenClaw agent) dengan prompt di bawah. Biarkan berjalan di background selama presentasi. Task-nya nyata: menambahkan filter by category ke halaman /talks di website ini.
 -->
 
 ---
@@ -34,7 +35,7 @@ DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjaka
   :arrow_right: Jogja
 - :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend
   :arrow_right: Fullstack
-- :robot: AI-Assisted Development Practitioner
+- :robot: Agentic Engineering Practitioner
 - :handshake: Talk ini untuk semua: dev, founder, marketer, dan produk
 
 ---
@@ -52,24 +53,24 @@ DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjaka
 
 ## :clapper: Live Demo Setup
 
-### Prompt AI di Awal, Cek Hasil di Akhir
+### Kirim ke Wheeljack via Telegram, lalu lanjut presentasi
 
 ```
-"Buatkan slide presentasi untuk talk saya tentang
- AI-Assisted Development, lihat format slide yang
- sudah ada di repository ini."
+"Tambahkan filter by category (Conferences / Podcasts /
+ Meetups) ke halaman /talks di zainf.dev. Lihat pola
+ filter yang sudah ada di halaman /blog sebagai referensi."
 ```
 
-:hourglass_flowing_sand: AI bekerja di background selama presentasi...
+:hourglass_flowing_sand: OpenClaw agent bekerja di background...
 
 <!--
 TIMING: 3 menit
 
 SPEAKER NOTES:
 Ini adalah momen kunci. Tunjukkan ke audiens bahwa kamu sedang memulai sebuah AI task secara real-time.
-"Saya akan meminta AI untuk mengerjakan sesuatu. Kita akan lihat hasilnya nanti di akhir. Ini adalah contoh nyata AI-assisted development — kita beri instruksi yang jelas, lalu biarkan AI bekerja."
+"Ini bukan demo yang di-scripted. Saya kirim prompt ke agent via Telegram sekarang, lalu kita lanjut presentasi. Di akhir sesi kita cek hasilnya bersama — apakah PR-nya masuk, apakah site-nya terupdate, dan apa yang perlu di-review."
 
-NOTE: Ya, prompt di slide ini meminta AI untuk membuat slide presentasi — yang persis adalah PR ini. Ini sengaja self-referential dan merupakan demonstrasi meta yang sempurna. The slides are literally dog-fooding the process.
+NOTE: Demo ini berjalan via OpenClaw (platform agentic engineering pribadi saya). Agent-nya bernama Wheeljack, bisa diakses via Telegram. Ini contoh nyata Autonomous level — AI end-to-end, manusia verifikasi akhir.
 -->
 
 ---
@@ -78,16 +79,35 @@ NOTE: Ya, prompt di slide ini meminta AI untuk membuat slide presentasi — yang
 
 ---
 
+## :robot: Apa itu Agentic Engineering?
+
+> "Agentic engineering: developing software with the assistance
+> of coding agents that can write **and execute** code."
+> — Simon Willison
+
+- :loop: Agent bekerja dalam loop: tulis kode → jalankan → iterasi
+- :brain: Tugas kita: **specify** masalah, **verify** hasil, **iterate**
+- :x: Bukan "vibe coding" — bukan asal generate dan forget
+- :white_check_mark: Ini yang kita lakukan hari ini dengan demo langsung
+
+<!--
+SPEAKER NOTES:
+Referensikan definisi Simon Willison dari simonwillison.net/guides/agentic-engineering-patterns/
+Tekankan perbedaan: vibe coding = forget the code exists. Agentic engineering = responsible, iterative, verified.
+Contoh nyata: Claude Code, OpenClaw, Codex CLI — semuanya coding agents.
+-->
+
+---
+
 ## :robot: Peran AI di Setiap Fase Kerja Digital
 
 | Fase | Tools AI | Peran |
 |------|---------|-------|
-| :art: **Design** | v0, Figma AI | Prototyping UI dan landing page |
-| :memo: **Content** | ChatGPT, Claude | Draft copy, outline, dokumentasi |
+| :art: **Design** | v0, Figma AI | Prototyping & landing page |
+| :memo: **Content** | ChatGPT, Claude | Copy, outline, dokumentasi |
 | :computer: **Coding** | Claude Code, Copilot | Implementasi |
 | :test_tube: **Testing** | Playwright MCP | Pengujian otomatis |
-| :mag: **Review** | AI Code Review | Deteksi masalah |
-| :rocket: **Deploy** | Vercel, CI/CD | Otomasi deployment |
+| :robot: **Agents** | OpenClaw, Codex CLI | Task end-to-end via chat |
 
 <!--
 TIMING: 5 menit
@@ -95,6 +115,7 @@ TIMING: 5 menit
 SPEAKER NOTES:
 Jelaskan bahwa AI bukan hanya tentang menulis kode. AI bisa membantu di setiap fase kerja digital.
 Karena audiens-nya campuran, beri contoh yang lebih lebar: design untuk marketer/founder, dokumentasi untuk tim produk/operasional, coding untuk developer, testing untuk QA/engineer.
+OpenClaw adalah contoh "Agents" row — platform agentic engineering pribadi yang bisa menerima task via Telegram dan mengerjakan end-to-end di background.
 -->
 
 ---
@@ -159,25 +180,36 @@ Tekankan bahwa developer memang kelompok terbesar, tapi bukan mayoritas absolut 
 
 ---
 
-## :speaking_head: Cerita Nyata: Pengalaman Pribadi
+## :speaking_head: Cerita Nyata: Yang Berhasil
 
-### Yang Berhasil :white_check_mark:
+- Migrasi Remix → React Router v7 — AI handle 80% boilerplate
+- Refactor styling ke Tailwind — konsisten di 30+ komponen
+- Personal AI army (Project Transformers) — 7 specialized agents,
+  masing-masing punya domain sendiri, context tidak bocor antar agent
+- Demo hari ini: OpenClaw agent via Telegram mengerjakan PR nyata
 
-- Migrasi framework Remix → React Router v7 — AI handle 80% boilerplate, saya fokus di routing logic
-- Refactor styling ke Tailwind — AI konsisten di seluruh 30+ komponen
-- Draft copy, struktur presentasi, dan dokumentasi awal — AI bantu mulai lebih cepat
+<!--
+SPEAKER NOTES:
+Referensikan blog post "Building My Personal AI Army: Lessons from Project Transformers" — zainfathoni.com/blog/project-transformers-building-personal-ai-army
+Pesan kuncinya: satu agent untuk semua = context contamination. Spesialisasi = hasil lebih baik.
+-->
 
-### Yang Gagal :x:
+---
+
+## :speaking_head: Cerita Nyata: Yang Gagal
 
 - AI generate test yang pass tapi **tidak test apa-apa** (assertion kosong)
-- AI "fix" bug di satu tempat, tapi break 3 tempat lain karena tidak paham konteks bisnis
-- AI bikin copy yang terdengar meyakinkan, tapi tone dan target audiens-nya meleset
+- AI "fix" bug di satu tempat, tapi **break 3 tempat lain**
+- AI bikin copy meyakinkan, tapi **tone dan audiens-nya meleset**
+- PR storm: arms race di kantor, kecepatan naik tapi **kualitas review turun**
+  jika tidak disiplin
 
 <!--
 TIMING: 3 menit
 
 SPEAKER NOTES:
-"Ini pengalaman nyata saya. AI itu brilliant untuk pekerjaan mekanis — migrasi, refactor pattern yang jelas. Tapi begitu masuk ke business logic dan edge case, developer tetap harus lead."
+"Ini semua pengalaman nyata. Project Transformers adalah setup agentic engineering pribadi saya — 7 agent dengan nama Transformer, masing-masing punya domain khusus. Hasilnya jauh lebih baik dibanding satu agent yang handle segalanya."
+"Sisi gelapnya: PR storm. Kecepatan naik, tapi kalau review-nya tidak ketat, technical debt juga naik. Arms race di kantor — lihat blog post saya bulan ini."
 -->
 
 ---
@@ -197,17 +229,12 @@ SPEAKER NOTES:
 
 ## :bar_chart: Coverage vs Control
 
-![bg right:45%](assets/ai-agency-human-agency.webp)
+| | **Coverage Rendah** | **Coverage Tinggi** |
+|---|---|---|
+| **Control Tinggi** | :turtle: Lambat tapi aman | :rocket: Ideal |
+| **Control Rendah** | :zzz: Tidak efisien | :fire: Chaos |
 
-### Coverage
-
-Seberapa banyak AI dilibatkan dalam proses kerja
-
-### Control
-
-Seberapa besar kendali manusia atas hasilnya
-
-**Keduanya harus seimbang**
+:point_right: **Goal: Coverage Tinggi + Control Tinggi**
 
 <!--
 TIMING: 5 menit
@@ -619,29 +646,29 @@ SPEAKER NOTES:
 
 ## :trophy: Waktunya Cek Hasil!
 
-### Apa yang AI kerjakan selama kita presentasi?
+### Yang kita minta tadi:
 
-:point_right: Mari kita lihat bersama...
+> Filter by category di halaman `/talks` — Conferences, Podcasts, Meetups
+
+:point_right: Buka Telegram → cek status Wheeljack
+:point_right: Buka zainf.dev/talks → lihat hasilnya
+:point_right: Review PR yang masuk di GitHub
 
 <!--
 TIMING: 5 menit
 
 SPEAKER NOTES:
-Buka terminal, cek hasil dari AI task yang dimulai di awal presentasi.
-Tunjukkan:
-1. Apa yang diminta
-2. Apa yang dihasilkan
-3. Apakah hasilnya sesuai expectation
-4. Apa yang perlu di-review/perbaiki
-
-"Ini adalah contoh nyata AI-assisted development. AI mengerjakan task-nya, tapi kita tetap harus review hasilnya. Perhatikan — ada bagian yang bagus, dan mungkin ada bagian yang perlu diperbaiki. Itulah kenapa kita tetap harus jadi pilot."
+Buka Telegram, tunjukkan percakapan dengan Wheeljack.
+Buka GitHub PR yang dihasilkan — tunjukkan diff-nya ke audiens.
+Buka zainf.dev/talks — demo filter yang sudah jalan (atau belum jalan kalau belum selesai — itu pun valuable!).
+Pesan kunci: "AI mengerjakan task-nya secara autonomous selama 30 menit. Tapi saya yang approve PR-nya. Saya tetap pilot-nya."
 -->
 
 ---
 
 ## :bulb: Key Takeaways
 
-1. :robot: **AI = alat, bukan pengganti** — kamu tetap pilot
+1. :robot: **Agentic Engineering** — bukan vibe coding, tapi specify → verify → iterate
 2. :bar_chart: **Coverage & control** harus seimbang
 3. :brain: **Context > prompt** — termasuk audiens dan tujuan
 4. :clipboard: **Struktur dulu** — audience → goal → flow → approach
@@ -670,3 +697,7 @@ Tunjukkan:
 - Lenny's Newsletter, *How to build your PM second brain with ChatGPT*
 - Lenny's Newsletter, *A guide to AI prototyping for product managers*
 - Lenny's Newsletter, *Beyond vibe checks: A PM's complete guide to evals*
+- [What is Agentic Engineering?](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/) — Simon Willison
+- [Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding](https://www.zainfathoni.com/blog/ai-arms-race-defensive-programming-2026-04-03) — Zain Fathoni
+- [Building My Personal AI Army](https://www.zainfathoni.com/blog/project-transformers-building-personal-ai-army) — Zain Fathoni
+- [OpenClaw](https://openclaw.io) — Agentic engineering platform
