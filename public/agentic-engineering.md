@@ -20,7 +20,7 @@ Sapa audiens. Akui bahwa ruangan ini campuran, bukan hanya developer: mayoritas 
 Termasuk memperkenalkan istilah baru: "Agentic Engineering" — bukan sekadar "AI-assisted", tapi membangun dengan coding agents yang bisa menulis DAN menjalankan kode.
 "Di awal talk ini, saya akan melakukan sesuatu yang menarik — saya akan meminta AI untuk mengerjakan sebuah task di repository saya. Kita akan lihat hasilnya di akhir sesi."
 
-DEMO START: Buka Telegram, kirim pesan ke Wheeljack (OpenClaw agent) dengan prompt di bawah. Biarkan berjalan di background selama presentasi. Task-nya nyata: menambahkan filter by category ke halaman /talks di website ini.
+DEMO START: Buka terminal, jalankan Claude Code dengan prompt di bawah. Biarkan berjalan di background selama presentasi. Task-nya nyata: menambahkan filter by category ke halaman /talks di website ini.
 -->
 
 ---
@@ -53,24 +53,24 @@ DEMO START: Buka Telegram, kirim pesan ke Wheeljack (OpenClaw agent) dengan prom
 
 ## :clapper: Live Demo Setup
 
-### Kirim ke Wheeljack via Telegram, lalu lanjut presentasi
+### Jalankan Claude Code di terminal, lalu lanjut presentasi
 
-```
-"Tambahkan filter by category (Conferences / Podcasts /
- Meetups) ke halaman /talks di zainf.dev. Lihat pola
- filter yang sudah ada di halaman /blog sebagai referensi."
+```bash
+claude "Tambahkan filter by category (Conferences /
+ Podcasts / Meetups) ke halaman /talks di zainf.dev.
+ Lihat pola filter di halaman /blog sebagai referensi."
 ```
 
-:hourglass_flowing_sand: OpenClaw agent bekerja di background...
+:hourglass_flowing_sand: Claude Code bekerja di background...
 
 <!--
 TIMING: 3 menit
 
 SPEAKER NOTES:
 Ini adalah momen kunci. Tunjukkan ke audiens bahwa kamu sedang memulai sebuah AI task secara real-time.
-"Ini bukan demo yang di-scripted. Saya kirim prompt ke agent via Telegram sekarang, lalu kita lanjut presentasi. Di akhir sesi kita cek hasilnya bersama — apakah PR-nya masuk, apakah site-nya terupdate, dan apa yang perlu di-review."
+"Ini bukan demo yang di-scripted. Saya jalankan Claude Code sekarang di terminal, lalu kita lanjut presentasi. Di akhir sesi kita cek hasilnya bersama — apakah PR-nya masuk, apakah site-nya terupdate, dan apa yang perlu di-review."
 
-NOTE: Demo ini berjalan via OpenClaw (platform agentic engineering pribadi saya). Agent-nya bernama Wheeljack, bisa diakses via Telegram. Ini contoh nyata Autonomous level — AI end-to-end, manusia verifikasi akhir.
+NOTE: Claude Code adalah CLI tool dari Anthropic yang bisa dipakai siapa saja. Ini contoh nyata Autonomous level — AI end-to-end, manusia verifikasi akhir. Audiens bisa langsung coba sendiri setelah sesi ini.
 -->
 
 ---
@@ -88,7 +88,7 @@ NOTE: Demo ini berjalan via OpenClaw (platform agentic engineering pribadi saya)
 - :loop: Agent bekerja dalam loop: tulis kode → jalankan → iterasi
 - :brain: Tugas kita: **specify** masalah, **verify** hasil, **iterate**
 - :x: Bukan "vibe coding" — bukan asal generate dan forget
-- :white_check_mark: Ini yang kita lakukan hari ini dengan demo langsung
+- :white_check_mark: Ini yang kita lakukan hari ini dengan Claude Code
 
 <!--
 SPEAKER NOTES:
@@ -122,17 +122,12 @@ OpenClaw adalah contoh "Agents" row — platform agentic engineering pribadi yan
 
 ## :sparkles: Hype vs Reality
 
-### Hype:
-
 > "AI will replace developers"
 
-### Realita:
-
-- :white_check_mark: AI **mempercepat** pekerjaan repetitif
-- :white_check_mark: AI **membantu** eksplorasi solusi
+- :white_check_mark: AI **mempercepat** pekerjaan repetitif & eksplorasi solusi
 - :x: AI **belum bisa** menggantikan pemahaman arsitektur
 - :x: AI **sering salah** di edge case dan konteks bisnis
-- :x: AI **butuh arahan** yang jelas dari manusia yang paham konteks
+- :x: AI **butuh arahan** jelas dari manusia yang paham konteks
 
 <!--
 SPEAKER NOTES:
@@ -161,14 +156,12 @@ Ceritakan contoh nyata kegagalan. Bisa pakai contoh dari slide sebelumnya tentan
 
 ### Snapshot Peserta EDC Jogja
 
-- :office: **Mayoritas dari sektor TIK** (25 dari 49 peserta)
-- :round_pushpin: **39 dari 49 berdomisili di DIY**
-- :technologist: Peran terbesar: **Software Developer + Web Developer** (14)
-- :briefcase: Tapi ruangan ini juga berisi **founder, business owner, IT manager,
-  digital marketer, dan mahasiswa**
+- :office: **Mayoritas sektor TIK** (25/49), **39/49 dari DIY**
+- :technologist: Terbesar: **Software & Web Developer** (14)
+- :briefcase: Tapi juga ada **founder, business owner, IT manager, marketer, mahasiswa**
 - :seedling: Usia dominan: **22-35 tahun**
 
-:point_right: **Fokus hari ini: AI untuk kolaborasi lintas fungsi, bukan cuma ngoding cepat**
+:point_right: **Fokus: AI untuk kolaborasi lintas fungsi, bukan cuma ngoding cepat**
 
 <!--
 TIMING: 2 menit
@@ -186,12 +179,13 @@ Tekankan bahwa developer memang kelompok terbesar, tapi bukan mayoritas absolut 
 - Refactor styling ke Tailwind — konsisten di 30+ komponen
 - Personal AI army (Project Transformers) — 7 specialized agents,
   masing-masing punya domain sendiri, context tidak bocor antar agent
-- Demo hari ini: OpenClaw agent via Telegram mengerjakan PR nyata
+- Slide ini: draft pertama via Claude Web + Wheeljack (OpenClaw)
 
 <!--
 SPEAKER NOTES:
+"Slide yang kalian lihat sekarang ini juga dibuatnya pakai AI. Draft pertama saya buat via Claude Web untuk outline, lalu Wheeljack (OpenClaw agent) via Telegram untuk generate Marp slides-nya. Saya review, iterasi, dan polish sendiri."
 Referensikan blog post "Building My Personal AI Army: Lessons from Project Transformers" — zainfathoni.com/blog/project-transformers-building-personal-ai-army
-Pesan kuncinya: satu agent untuk semua = context contamination. Spesialisasi = hasil lebih baik.
+Ini juga sejalan dengan insight Claire Vo di Lenny's Podcast: specialized agents > general agents. Sama seperti Project Transformers.
 -->
 
 ---
@@ -201,8 +195,8 @@ Pesan kuncinya: satu agent untuk semua = context contamination. Spesialisasi = h
 - AI generate test yang pass tapi **tidak test apa-apa** (assertion kosong)
 - AI "fix" bug di satu tempat, tapi **break 3 tempat lain**
 - AI bikin copy meyakinkan, tapi **tone dan audiens-nya meleset**
-- PR storm: arms race di kantor, kecepatan naik tapi **kualitas review turun**
-  jika tidak disiplin
+- Claire Vo (LaunchDarkly): OpenClaw **hapus family calendar** di percobaan pertama
+- PR storm: arms race di kantor, **kualitas review turun** jika tidak disiplin
 
 <!--
 TIMING: 3 menit
@@ -247,17 +241,14 @@ SPEAKER NOTES:
 
 ## :traffic_light: Level Kontrol Penggunaan AI
 
-### 1. :green_circle: Assistive — AI menyarankan, manusia memutuskan
+:green_circle: **Assistive** — AI menyarankan, manusia memutuskan
+*Autocomplete, grammar check, inline suggestions*
 
-*Autocomplete, inline suggestions, grammar check*
+:yellow_circle: **Semi-Autonomous** — AI kerjakan, manusia review
+*Draft copy, generate function, buat proposal*
 
-### 2. :yellow_circle: Semi-Autonomous — AI kerjakan, manusia review
-
-*Draft copy, generate function, buat proposal awal*
-
-### 3. :red_circle: Autonomous — AI end-to-end, manusia verifikasi akhir
-
-*Prototype halaman baru, generate report dari data*
+:red_circle: **Autonomous** — AI end-to-end, manusia verifikasi akhir
+*Prototype halaman, generate report*
 
 <!--
 SPEAKER NOTES:
@@ -272,11 +263,15 @@ Berikan contoh untuk setiap level:
 
 ## :compass: Framework: Kapan & Seberapa Besar
 
+<style scoped>
+table { font-size: 0.75em; }
+</style>
+
 | Situasi | Coverage | Control | Contoh |
 |---------|----------|---------|--------|
 | :art: Prototyping | :arrow_up: Tinggi | :arrow_down: Rendah | Bolt.new, v0 |
-| :loudspeaker: Marketing/content | :arrow_up: Tinggi | :left_right_arrow: Sedang | Outline, copy draft, content plan |
-| :briefcase: Business planning | :left_right_arrow: Sedang | :arrow_up: Tinggi | Riset kompetitor, ringkasan meeting, draft proposal |
+| :loudspeaker: Marketing | :arrow_up: Tinggi | :left_right_arrow: Sedang | Copy draft, content plan |
+| :briefcase: Business | :left_right_arrow: Sedang | :arrow_up: Tinggi | Riset, ringkasan, proposal |
 | :building_construction: Production | :left_right_arrow: Sedang | :arrow_up: Tinggi | Claude Code + Review |
 | :lock: Security-critical | :arrow_down: Rendah | :arrow_up: Sangat Tinggi | Manual + AI assist |
 
@@ -289,12 +284,16 @@ SPEAKER NOTES:
 
 ## :key: Kamu Tetap Pilot-nya
 
-> "AI can accelerate development, but it cannot replace fundamental
-> software engineering principles." — Addy Osmani
-
 - :pilot: AI adalah **co-pilot**, bukan captain
 - :brain: Pahami keputusan pentingnya
 - :white_check_mark: Yang bertanggung jawab tetap **kamu**
+- :warning: Mid-career engineers paling terdampak — bukan junior
+  (Simon Willison, Lenny's Podcast)
+
+<!--
+SPEAKER NOTES:
+Simon Willison di podcast Lenny's bilang: yang paling terdisrupsi bukan junior, tapi mid-career engineer. Karena AI sekarang bisa handle pekerjaan kompleks dan independen yang biasanya jadi domain mereka. Jadi makin penting untuk naik level — dari "yang nulis kode" ke "yang punya judgment."
+-->
 
 ---
 
@@ -325,21 +324,32 @@ Tunjukkan contoh prompt yang buruk vs bagus, termasuk yang non-coding:
 
 ## :brain: Context Engineering > Prompt Engineering
 
-![bg right:45%](assets/prompt-vs-context-engineering.webp)
+![bg right:50%](assets/prompt-vs-context-engineering.webp)
 
-Bukan hanya tentang **cara bertanya**,\
+Bukan hanya **cara bertanya**,
 tapi **informasi apa yang tersedia**
-
-- :keyboard: **User Input** — prompt kamu
-- :books: **Knowledge** — docs, transcript, riset
-- :speech_balloon: **Conversation** — konteks sebelumnya
-- :hammer_and_wrench: **Tool Outputs** — hasil dari tools
-- :open_file_folder: **Project Memory** — keputusan & artefak yang terus hidup
 
 <!--
 SPEAKER NOTES:
 "Context engineering adalah evolusi dari prompt engineering. Kita tidak hanya memikirkan cara bertanya, tapi juga memastikan AI punya semua konteks yang dibutuhkan."
-Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan cara development. AI membaca ini dan langsung paham konteksnya. Ini nyambung dengan insight dari Lenny's Newsletter: context is the real leverage, bukan sekadar prompt yang clever.
+Ini nyambung dengan insight dari Lenny's Newsletter: context is the real leverage, bukan sekadar prompt yang clever.
+-->
+
+---
+
+## :brain: 5 Jenis Context
+
+- :keyboard: **User Input** — prompt kamu
+- :books: **Knowledge** — docs, riset, transcript
+- :speech_balloon: **Conversation** — konteks sebelumnya
+- :hammer_and_wrench: **Tool Outputs** — hasil dari tools
+- :open_file_folder: **Project Memory** — keputusan & artefak yang terus hidup
+
+:point_right: **Semakin lengkap context, semakin baik output AI**
+
+<!--
+SPEAKER NOTES:
+Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan cara development. AI membaca ini dan langsung paham konteksnya. Project Memory = keputusan arsitektur, naming conventions, yang persist across sessions.
 -->
 
 ---
@@ -348,25 +358,32 @@ Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan
 
 ### Gunakan AI Sesuai Perannya
 
-**:building_construction: AI sebagai Architect**
-"Desain arsitektur untuk fitur X dengan constraint Y"
+**:building_construction: Architect** — "Desain arsitektur fitur X dengan constraint Y"
 
-**:computer: AI sebagai Implementer**
-"Implementasikan function X sesuai spec ini"
+**:computer: Implementer** — "Implementasikan function X sesuai spec ini"
 
-**:memo: AI sebagai Writing Partner**
-"Buatkan draft landing page untuk audience UMKM teknologi di Jogja"
-
-**:briefcase: AI sebagai Business Analyst**
-"Ringkas hasil interview customer ini jadi 5 insight dan 3 prioritas aksi"
-
-**:mag: AI sebagai Reviewer**
-"Review kode ini untuk security issues dan performance"
+**:mag: Reviewer** — "Review kode ini untuk security dan performance"
 
 <!--
 SPEAKER NOTES:
 "Pendekatan role-based ini membantu AI fokus. Ketika kamu minta AI jadi architect, dia akan berpikir di level yang berbeda dibanding ketika diminta jadi implementer."
-Demo: tunjukkan bagaimana prompt yang sama bisa menghasilkan output berbeda tergantung role yang diberikan.
+-->
+
+---
+
+## :busts_in_silhouette: Role-Based Interaction (lanjutan)
+
+### Bukan Hanya untuk Developer
+
+**:memo: Writing Partner** — "Draft landing page untuk UMKM teknologi di Jogja"
+
+**:briefcase: Business Analyst** — "Ringkas interview customer jadi 5 insight dan 3 aksi"
+
+:point_right: **Sesuaikan peran AI dengan kebutuhan fungsi kamu**
+
+<!--
+SPEAKER NOTES:
+Tekankan bahwa role-based interaction berlaku untuk semua fungsi, bukan cuma coding. Demo: tunjukkan bagaimana prompt yang sama bisa menghasilkan output berbeda tergantung role yang diberikan.
 -->
 
 ---
@@ -473,26 +490,22 @@ SPEAKER NOTES:
 
 ```
 "Buatkan fitur authentication untuk app saya"
-→ AI generates random auth flow, may not match your stack
-→ Missing edge cases, no error handling spec
+→ Random auth flow, missing edge cases
 ```
 
 ### :white_check_mark: Dengan Struktur
 
 ```
-Requirement: User login via email/password + OAuth
+Requirement: Login via email/password + OAuth
 Flow: Login → Validate → Session → Redirect
-Architecture: Server-side session, bcrypt, OAuth2
 Constraints: Rate limiting, CSRF protection
 → AI delivers spec-compliant implementation
 ```
 
-:bulb: Dari Lenny's Newsletter juga ada pola penting: **jangan langsung lempar masalah besar**.
-Mulai dari versi paling kecil yang functional, lalu tambah kompleksitas sedikit demi sedikit.
-
 <!--
 SPEAKER NOTES:
 "Lihat perbedaannya. Prompt yang sama — 'buatkan auth' — tapi hasilnya berbeda drastis tergantung apakah kita memberikan struktur atau tidak."
+Dari Lenny's Newsletter juga ada pola penting: jangan langsung lempar masalah besar. Mulai dari versi paling kecil yang functional, lalu tambah kompleksitas sedikit demi sedikit.
 -->
 
 ---
@@ -548,29 +561,26 @@ SPEAKER NOTES:
 
 ---
 
-> "The 70% problem: AI gets you 70% of the way there remarkably fast, but the
-> remaining 30% — the hard parts — still require real engineering skill."
-> — Addy Osmani
+## :wrench: 3 Pola Agentic Engineering
+
+### dari Simon Willison (Lenny's Podcast)
+
+<style scoped>
+table { font-size: 0.7em; }
+</style>
+
+| Pola | Cara Kerja | Contoh Nyata |
+|------|-----------|--------------|
+| :red_circle::green_circle: **Red/Green TDD** | Tulis test dulu, AI implementasi | Manusia malas TDD — AI tidak |
+| :open_file_folder: **Templates** | Pola di repo = panduan AI | Existing patterns, CLAUDE.md |
+| :package: **Hoarding** | Kumpulkan contoh → AI kombinasi untuk kasus baru | Makin banyak pola, makin kreatif AI |
 
 <!--
 SPEAKER NOTES:
-"Ini yang Addy Osmani sebut 'The 70% Problem'. AI sangat cepat menghasilkan 70% pertama. Tapi 30% sisanya — edge cases, performance, security — itu yang membedakan developer yang baik."
--->
-
----
-
-## :clipboard: Prompt Saja Tidak Cukup → Butuh Evals
-
-### Insight dari Lenny's Newsletter
-
-- :test_tube: Untuk AI features, butuh **evaluasi terukur**
-- :mag: Cek: **correctness, hallucination, tone, relevance**
-- :repeat: Evals bikin improvement **terukur**, bukan feeling
-- :warning: **Vibe check ≠ quality check**
-
-<!--
-SPEAKER NOTES:
-Ambil dari artikel "Beyond vibe checks". Framing-nya kuat: prompts make headlines, evals decide whether the product thrives or dies. Gunakan ini untuk menghubungkan craftsmanship dengan praktik AI yang lebih matang.
+Dari podcast Simon Willison di Lenny's: "An AI State of the Union".
+Red/Green TDD: "Saya biasa nulis implementasi dulu, baru test. Tapi sekarang saya tulis test-nya dulu — karena manusia memang malas TDD, tapi AI tidak. AI dengan senang hati bikin semua test pass."
+Templates: "Bukan cuma CLAUDE.md. Pola yang sudah ada di codebase — file conventions, naming patterns — AI baca semua itu dan ikuti."
+Hoarding: "Makin banyak contoh kode yang konsisten di repo, makin bagus output AI. Dan bukan cuma copy — AI bisa kombinasikan beberapa pola yang sudah ada untuk menyelesaikan masalah baru. Ini investasi jangka panjang."
 -->
 
 ---
@@ -589,16 +599,31 @@ SPEAKER NOTES:
 
 ---
 
+## :arrows_counterclockwise: Refactoring dengan AI
+
+- :dart: **Tentukan target** — pattern baru, bukan "perbaiki semua"
+- :jigsaw: **Batch by scope** — satu modul / satu pattern per iterasi
+- :test_tube: **Test dulu, refactor kemudian** — pastikan ada safety net
+- :white_check_mark: **Contoh nyata:** Refactor styling ke Tailwind — 30+ komponen, konsisten
+
+<!--
+SPEAKER NOTES:
+"AI sangat kuat untuk refactoring mekanis — rename, migrasi pattern, konversi styling. Tapi kunci-nya: jangan lempar seluruh codebase sekaligus. Batch per modul, pastikan ada test, dan review hasilnya. Saya pakai ini saat migrasi styling ke Tailwind di 30+ komponen — AI handle boilerplate, saya pastikan konsistensinya."
+-->
+
+---
+
 ## :lock: Security: Manusia = Final Gatekeeper
 
 - :shield: Validasi **vulnerability** — injection, insecure API, deps
 - :no_entry: Jangan blindly trust AI untuk security
-- :white_check_mark: **Checklist** sebelum deploy
+- :warning: **Lethal trifecta** — private data + untrusted content + external comms
 - :robot: AI boleh **scan**, tapi manusia yang **approve**
 
 <!--
 SPEAKER NOTES:
-"AI bisa membantu mendeteksi vulnerability, tapi jangan serahkan security sepenuhnya ke AI. Developer tetap harus jadi final gatekeeper."
+Simon Willison di Lenny's Podcast menyebut "lethal trifecta": tiga hal yang jika bertemu jadi sangat berbahaya — private data, untrusted content injection, dan external communication. "Prompt injection is an unsolved security problem."
+Developer tetap harus jadi final gatekeeper. Checklist sebelum deploy tetap wajib.
 -->
 
 ---
@@ -650,18 +675,18 @@ SPEAKER NOTES:
 
 > Filter by category di halaman `/talks` — Conferences, Podcasts, Meetups
 
-:point_right: Buka Telegram → cek status Wheeljack
-:point_right: Buka zainf.dev/talks → lihat hasilnya
+:point_right: Buka terminal → cek status Claude Code
 :point_right: Review PR yang masuk di GitHub
+:point_right: Merge PR → baru zainf.dev/talks terupdate
 
 <!--
 TIMING: 5 menit
 
 SPEAKER NOTES:
-Buka Telegram, tunjukkan percakapan dengan Wheeljack.
+Buka terminal, tunjukkan output Claude Code.
 Buka GitHub PR yang dihasilkan — tunjukkan diff-nya ke audiens.
 Buka zainf.dev/talks — demo filter yang sudah jalan (atau belum jalan kalau belum selesai — itu pun valuable!).
-Pesan kunci: "AI mengerjakan task-nya secara autonomous selama 30 menit. Tapi saya yang approve PR-nya. Saya tetap pilot-nya."
+Pesan kunci: "Claude Code mengerjakan task-nya secara autonomous selama presentasi. Tapi saya yang review dan approve PR-nya. Saya tetap pilot-nya. Dan ini tool yang bisa kalian coba sendiri hari ini."
 -->
 
 ---
@@ -679,7 +704,7 @@ Pesan kunci: "AI mengerjakan task-nya secara autonomous selama 30 menit. Tapi sa
 
 ## :pray: Terima Kasih!
 
-:desktop_computer: <https://zainf.dev/ai-assisted-development>
+:desktop_computer: <https://zainf.dev/agentic-engineering>
 
 :link: <https://github.com/zainfathoni/zainf>
 
@@ -687,17 +712,18 @@ Pesan kunci: "AI mengerjakan task-nya secara autonomous selama 30 menit. Tapi sa
 
 ---
 
+<!-- _class: lead -->
+
 ## Referensi
 
-- [Vibe Coding is Not the Same as AI-Assisted Engineering](https://addyo.substack.com/p/vibe-coding-is-not-the-same-as-ai) — Addy Osmani
-- [The 70% Problem](https://addyo.substack.com/p/the-70-problem-hard-truths-about) — Addy Osmani
+<style scoped>
+li { font-size: 0.55em; line-height: 1.4; }
+</style>
+
 - [Context Engineering](https://addyo.substack.com/p/context-engineering-bringing-engineering) — Addy Osmani
-- [How to Make Your Tech Stack AI-Friendly](https://refactoring.fm/p/how-to-design-your-tech-stack-for) — Refactoring
-- [Kiro Specs](https://kiro.dev/docs/specs/concepts/) — AWS
-- Lenny's Newsletter, *How to build your PM second brain with ChatGPT*
-- Lenny's Newsletter, *A guide to AI prototyping for product managers*
-- Lenny's Newsletter, *Beyond vibe checks: A PM's complete guide to evals*
+- [How to Make Your Tech Stack AI-Friendly](https://refactoring.fm/p/how-to-design-your-tech-stack-for) — Refactoring · [Kiro Specs](https://kiro.dev/docs/specs/concepts/) — AWS
+- Lenny's Podcast — [How OpenClaw Changed My Life](https://www.lennysnewsletter.com/p/how-openclaw-changed-my-life-claire-vo) (Claire Vo) · [An AI State of the Union](https://www.lennysnewsletter.com/p/an-ai-state-of-the-union) (Simon Willison)
+- Lenny's Newsletter — *PM second brain with ChatGPT* · *AI prototyping for PMs*
 - [What is Agentic Engineering?](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/) — Simon Willison
-- [Arms Race di Kantor: Ketika AI Mengubah Cara Kita Ngoding](https://www.zainfathoni.com/blog/ai-arms-race-defensive-programming-2026-04-03) — Zain Fathoni
-- [Building My Personal AI Army](https://www.zainfathoni.com/blog/project-transformers-building-personal-ai-army) — Zain Fathoni
+- [Arms Race di Kantor](https://www.zainfathoni.com/blog/ai-arms-race-defensive-programming-2026-04-03) · [Building My Personal AI Army](https://www.zainfathoni.com/blog/project-transformers-building-personal-ai-army) — Zain Fathoni
 - [OpenClaw](https://openclaw.io) — Agentic engineering platform
