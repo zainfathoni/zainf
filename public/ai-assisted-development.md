@@ -308,14 +308,15 @@ Bukan hanya tentang **cara bertanya**,\
 tapi **informasi apa yang tersedia**
 
 - :keyboard: **User Input** — prompt kamu
-- :books: **Retrieved Knowledge** — docs, CLAUDE.md
+- :books: **Retrieved Knowledge** — docs, CLAUDE.md, transcript, riset
 - :speech_balloon: **Prior Conversation** — konteks sebelumnya
 - :hammer_and_wrench: **Tool Outputs** — hasil dari tools
+- :open_file_folder: **Project Memory** — keputusan, feedback, dan artefak kerja yang terus hidup
 
 <!--
 SPEAKER NOTES:
 "Context engineering adalah evolusi dari prompt engineering. Kita tidak hanya memikirkan cara bertanya, tapi juga memastikan AI punya semua konteks yang dibutuhkan."
-Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan cara development. AI membaca ini dan langsung paham konteksnya.
+Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan cara development. AI membaca ini dan langsung paham konteksnya. Ini nyambung dengan insight dari Lenny's Newsletter: context is the real leverage, bukan sekadar prompt yang clever.
 -->
 
 ---
@@ -347,6 +348,23 @@ Demo: tunjukkan bagaimana prompt yang sama bisa menghasilkan output berbeda terg
 
 ---
 
+## :open_file_folder: Context as a Second Brain
+
+### Insight dari Lenny's Newsletter
+
+- :brain: **Context is the new interface**
+- :books: Bukan cuma prompt, tapi kumpulan docs, riset, feedback, transcript, dan keputusan
+- :mag: Saat context tersimpan rapi di AI, kita bukan cuma **ingat lebih banyak**
+  tapi juga **reasoning lebih baik**
+- :busts_in_silhouette: Ini berguna untuk PM, founder, marketer, dan developer
+
+<!--
+SPEAKER NOTES:
+Ambil ide dari artikel Lenny tentang "PM second brain". Pesan utamanya: AI paling berguna saat jadi memory + synthesis layer, bukan sekadar generator jawaban.
+-->
+
+---
+
 ## :arrows_counterclockwise: Iterative Prompting
 
 ### Tingkatkan Kualitas Output Secara Bertahap
@@ -361,6 +379,24 @@ Demo: tunjukkan bagaimana prompt yang sama bisa menghasilkan output berbeda terg
 <!--
 SPEAKER NOTES:
 "Jangan expect hasil sempurna di prompt pertama. AI-assisted development itu iteratif, seperti development biasa."
+-->
+
+---
+
+## :zap: AI Prototyping untuk Validasi Cepat
+
+### Insight dari Lenny's Newsletter
+
+- :rocket: Prototype interaktif sekarang bisa dibuat dalam **hitungan menit**, bukan minggu
+- :speech_balloon: Gunakan untuk **menguji ide sebelum commit build penuh**
+- :art: Cocok untuk founder, PM, marketer, dan dev saat mau menyamakan persepsi
+- :warning: Tapi mulai dari scope kecil, lalu iterasi bertahap
+
+:point_right: **Prototype bukan produk akhir, tapi alat belajar tercepat**
+
+<!--
+SPEAKER NOTES:
+Ambil dari artikel AI prototyping for PMs. Tekankan bahwa manfaat utamanya bukan sekadar "lebih cepat bikin UI", tapi mempercepat discovery dan alignment lintas fungsi.
 -->
 
 ---
@@ -431,6 +467,9 @@ Architecture: Server-side session, bcrypt, OAuth2
 Constraints: Rate limiting, CSRF protection
 → AI delivers spec-compliant implementation
 ```
+
+:bulb: Dari Lenny's Newsletter juga ada pola penting: **jangan langsung lempar masalah besar**.
+Mulai dari versi paling kecil yang functional, lalu tambah kompleksitas sedikit demi sedikit.
 
 <!--
 SPEAKER NOTES:
@@ -509,6 +548,22 @@ SPEAKER NOTES:
 
 ---
 
+## :clipboard: Dari Prompt ke Evals
+
+### Insight dari Lenny's Newsletter
+
+- :warning: Prompting penting, tapi **prompt saja tidak cukup**
+- :test_tube: Untuk AI features/agents, kita butuh **evals**, bukan cuma "kelihatannya bagus"
+- :mag: Yang dicek bisa berupa **correctness, hallucination, tone, retrieval relevance**
+- :repeat: Evals membuat improvement jadi **terukur**, bukan sekadar feeling
+
+<!--
+SPEAKER NOTES:
+Ambil dari artikel "Beyond vibe checks". Framing-nya kuat: prompts make headlines, evals decide whether the product thrives or dies. Gunakan ini untuk menghubungkan craftsmanship dengan praktik AI yang lebih matang.
+-->
+
+---
+
 ## :mag: AI-Assisted Code Review
 
 ### Deteksi Masalah dengan AI
@@ -562,7 +617,7 @@ SPEAKER NOTES:
 
 - :mag: **Review setiap output AI** — jangan auto-accept
 - :clipboard: **Berikan konteks yang lengkap** — CLAUDE.md, spec, constraint
-- :test_tube: **Test otomatis** — unit, integration, E2E
+- :test_tube: **Test otomatis** — unit, integration, E2E, atau evals untuk AI features
 - :arrows_counterclockwise: **Iterasi bertahap** — refine prompt & output
 - :brain: **Pahami kode yang di-generate** — bisa jelaskan setiap baris
 - :scroll: **Gunakan CLAUDE.md / rules** — konsistensi project-wide
@@ -573,6 +628,7 @@ SPEAKER NOTES:
 
 - :see_no_evil: **Copy-paste tanpa baca** — bug tersembunyi menunggu
 - :question: **Prompt yang ambiguous** — garbage in, garbage out
+- :eyes: **Vibe check doang** — tanpa evaluasi, kamu tidak tahu kualitas sebenarnya
 - :computer: **"Works on my machine"** — test di CI, bukan di lokal saja
 - :crystal_ball: **Expect sempurna sekali jadi** — AI butuh iterasi
 - :sleeping: **Jadi "passenger"** — kamu harus paham kode sendiri
@@ -634,3 +690,6 @@ Tunjukkan:
 - [Context Engineering](https://addyo.substack.com/p/context-engineering-bringing-engineering) — Addy Osmani
 - [How to Make Your Tech Stack AI-Friendly](https://refactoring.fm/p/how-to-design-your-tech-stack-for) — Refactoring
 - [Kiro Specs](https://kiro.dev/docs/specs/concepts/) — AWS
+- Lenny's Newsletter, *How to build your PM second brain with ChatGPT*
+- Lenny's Newsletter, *A guide to AI prototyping for product managers*
+- Lenny's Newsletter, *Beyond vibe checks: A PM's complete guide to evals*
