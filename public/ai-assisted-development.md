@@ -10,13 +10,13 @@ marp: true
 # AI-Assisted Development
 
 Realita, Strategi, dan Praktik\
-untuk Website Development yang Lebih Baik
+untuk Tim Produk, Software, dan Bisnis Digital
 
 <!--
 TIMING: 2 menit
 
 SPEAKER NOTES:
-Sapa audiens. Jelaskan bahwa talk ini bukan tentang hype AI, tapi tentang realita penggunaan AI dalam website development sehari-hari.
+Sapa audiens. Akui bahwa ruangan ini campuran, bukan hanya developer: mayoritas dari sektor TIK, tapi perannya beragam, dari software/web developer sampai founder, business owner, IT manager, digital marketer, dan mahasiswa. Jelaskan bahwa talk ini bukan tentang hype AI, tapi tentang realita penggunaan AI dalam kerja digital sehari-hari.
 "Di awal talk ini, saya akan melakukan sesuatu yang menarik — saya akan meminta AI untuk mengerjakan sebuah task di repository saya. Kita akan lihat hasilnya di akhir sesi."
 
 DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjakan sesuatu di repo ini (misalnya: menambahkan halaman baru, fix bug, atau improve existing feature). Biarkan berjalan di background selama presentasi.
@@ -35,6 +35,8 @@ DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjaka
 - :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend
   :arrow_right: Fullstack
 - :robot: AI-Assisted Development Practitioner
+- :handshake: Hari ini kita bicara untuk ruangan yang campur: software, web,
+  bisnis, dan produk digital
 
 ---
 
@@ -77,11 +79,12 @@ NOTE: Ya, prompt di slide ini meminta AI untuk membuat slide presentasi — yang
 
 ---
 
-## :robot: Peran AI di Setiap Fase Website Development
+## :robot: Peran AI di Setiap Fase Kerja Digital
 
 | Fase | Tools AI | Peran |
 |------|---------|-------|
-| :art: **Design** | v0, Figma AI | Prototyping UI |
+| :art: **Design** | v0, Figma AI | Prototyping UI dan landing page |
+| :memo: **Content** | ChatGPT, Claude | Draft copy, outline, dokumentasi |
 | :computer: **Coding** | Claude Code, Copilot | Implementasi |
 | :test_tube: **Testing** | Playwright MCP | Pengujian otomatis |
 | :mag: **Review** | AI Code Review | Deteksi masalah |
@@ -91,8 +94,8 @@ NOTE: Ya, prompt di slide ini meminta AI untuk membuat slide presentasi — yang
 TIMING: 5 menit
 
 SPEAKER NOTES:
-Jelaskan bahwa AI bukan hanya tentang menulis kode. AI bisa membantu di setiap fase development.
-Berikan contoh konkret di setiap fase. Misalnya: "Di fase design, v0 bisa generate UI dari deskripsi. Di fase coding, Claude Code bisa menulis implementasi. Di fase testing, Playwright MCP bisa membuat test otomatis."
+Jelaskan bahwa AI bukan hanya tentang menulis kode. AI bisa membantu di setiap fase kerja digital.
+Karena audiens-nya campuran, beri contoh yang lebih lebar: design untuk marketer/founder, dokumentasi untuk tim produk/operasional, coding untuk developer, testing untuk QA/engineer.
 -->
 
 ---
@@ -136,17 +139,43 @@ Ceritakan contoh nyata kegagalan. Bisa pakai contoh dari slide sebelumnya tentan
 
 ---
 
+## :busts_in_silhouette: Siapa yang Ada di Ruangan Ini?
+
+### Snapshot Peserta EDC Jogja
+
+- :office: **Mayoritas dari sektor TIK** (25 dari 49 peserta)
+- :round_pushpin: **39 dari 49 berdomisili di DIY**
+- :technologist: Peran terbesar: **Software Developer + Web Developer** (14)
+- :briefcase: Tapi ruangan ini juga berisi **founder, business owner, IT manager,
+  digital marketer, dan mahasiswa**
+- :seedling: Usia dominan: **22-35 tahun**
+
+:point_right: Jadi fokus kita hari ini: **bagaimana AI membantu kolaborasi lintas fungsi,
+ bukan cuma ngoding lebih cepat**
+
+<!--
+TIMING: 2 menit
+
+SPEAKER NOTES:
+Gunakan slide ini untuk menyesuaikan framing dengan audiens nyata. "Jadi saya tidak akan bicara seolah-olah semua orang di sini full-time programmer. Karena datanya menunjukkan ruangan ini campur."
+Tekankan bahwa developer memang kelompok terbesar, tapi bukan mayoritas absolut jika digabung dengan semua peran non-developer.
+-->
+
+---
+
 ## :speaking_head: Cerita Nyata: Pengalaman Pribadi
 
 ### Yang Berhasil :white_check_mark:
 
 - Migrasi framework Remix → React Router v7 — AI handle 80% boilerplate, saya fokus di routing logic
 - Refactor styling ke Tailwind — AI konsisten di seluruh 30+ komponen
+- Draft copy, struktur presentasi, dan dokumentasi awal — AI bantu mulai lebih cepat
 
 ### Yang Gagal :x:
 
 - AI generate test yang pass tapi **tidak test apa-apa** (assertion kosong)
 - AI "fix" bug di satu tempat, tapi break 3 tempat lain karena tidak paham konteks bisnis
+- AI bikin copy yang terdengar meyakinkan, tapi tone dan target audiens-nya meleset
 
 <!--
 TIMING: 3 menit
@@ -197,15 +226,15 @@ SPEAKER NOTES:
 
 ### 1. :green_circle: Assistive (Copilot)
 
-AI menyarankan, developer memutuskan
+AI menyarankan, manusia memutuskan
 
 ### 2. :yellow_circle: Semi-Autonomous
 
-AI mengerjakan task, developer me-review
+AI mengerjakan task, manusia me-review
 
 ### 3. :red_circle: Autonomous
 
-AI mengerjakan end-to-end, developer hanya verifikasi akhir
+AI mengerjakan end-to-end, manusia hanya verifikasi akhir
 
 <!--
 SPEAKER NOTES:
@@ -223,6 +252,7 @@ Berikan contoh untuk setiap level:
 | Situasi | Coverage | Control | Contoh |
 |---------|----------|---------|--------|
 | :art: Prototyping | :arrow_up: Tinggi | :arrow_down: Rendah | Bolt.new, v0 |
+| :loudspeaker: Marketing/content | :arrow_up: Tinggi | :left_right_arrow: Sedang | Outline, copy draft, content plan |
 | :building_construction: Production | :left_right_arrow: Sedang | :arrow_up: Tinggi | Claude Code + Review |
 | :lock: Security-critical | :arrow_down: Rendah | :arrow_up: Sangat Tinggi | Manual + AI assist |
 
@@ -261,10 +291,10 @@ SPEAKER NOTES:
 TIMING: 5 menit
 
 SPEAKER NOTES:
-"Prompting itu seperti memberi brief ke junior developer. Semakin jelas brief-nya, semakin bagus hasilnya."
-Tunjukkan contoh prompt yang buruk vs bagus:
-- Buruk: "Buatkan login page"
-- Bagus: "Buatkan login page dengan React, menggunakan form validation, support dark mode, dan integrasi dengan API endpoint POST /auth/login"
+"Prompting itu seperti memberi brief ke teammate. Semakin jelas brief-nya, semakin bagus hasilnya."
+Tunjukkan contoh prompt yang buruk vs bagus, termasuk yang non-coding:
+- Buruk: "Buatkan landing page"
+- Bagus: "Buatkan landing page untuk workshop AI di Jogja, target audiens-nya founder, developer, dan business owner, tone-nya praktis, dan CTA-nya daftar via WhatsApp"
 -->
 
 ---
@@ -298,6 +328,9 @@ Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan
 
 **:computer: AI sebagai Implementer**
 "Implementasikan function X sesuai spec ini"
+
+**:memo: AI sebagai Writing Partner**
+"Buatkan draft landing page untuk audience UMKM teknologi di Jogja"
 
 **:mag: AI sebagai Reviewer**
 "Review kode ini untuk security issues dan performance"
@@ -361,7 +394,7 @@ Tunjukkan CLAUDE.md dari repo ini sebagai contoh nyata.
 
 ### Bukan langsung coding!
 
-1. :clipboard: **Requirement** — apa yang mau dibangun?
+1. :clipboard: **Audience & requirement** — untuk siapa, dan apa yang dibutuhkan?
 2. :arrows_counterclockwise: **Flow** — bagaimana user menggunakannya?
 3. :building_construction: **Architecture** — bagaimana strukturnya?
 4. :computer: **Implementation** — baru mulai coding
@@ -370,7 +403,7 @@ Tunjukkan CLAUDE.md dari repo ini sebagai contoh nyata.
 TIMING: 5 menit
 
 SPEAKER NOTES:
-"Kesalahan terbesar dalam AI-assisted development adalah langsung minta AI coding tanpa requirement yang jelas. Hasilnya? Kode yang 'works' tapi tidak sesuai kebutuhan."
+"Kesalahan terbesar dalam AI-assisted development adalah langsung minta AI membuat sesuatu tanpa target audiens dan requirement yang jelas. Hasilnya? Output yang kelihatan rapi, tapi tidak nyambung dengan kebutuhan."
 -->
 
 ---
@@ -571,12 +604,12 @@ Tunjukkan:
 
 ## :bulb: Key Takeaways
 
-1. :robot: **AI adalah alat, bukan pengganti** — developer tetap pilot
+1. :robot: **AI adalah alat, bukan pengganti** — manusia tetap pilot
 2. :bar_chart: **Seimbangkan coverage & control** — sesuaikan dengan stakes
-3. :brain: **Context engineering > prompt engineering** — berikan konteks lengkap
-4. :clipboard: **Struktur sebelum coding** — requirement → flow → architecture
+3. :brain: **Context engineering > prompt engineering** — termasuk konteks audiens
+4. :clipboard: **Struktur sebelum eksekusi** — audience → requirement → flow → architecture
 5. :gem: **Craftsmanship tetap penting** — review, test, dan verify
-6. :gear: **System thinking** — jaga konsistensi di seluruh codebase
+6. :gear: **System thinking** — jaga konsistensi di seluruh produk dan tim
 
 ---
 
