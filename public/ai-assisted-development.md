@@ -112,7 +112,7 @@ Karena audiens-nya campuran, beri contoh yang lebih lebar: design untuk marketer
 - :white_check_mark: AI **membantu** eksplorasi solusi
 - :x: AI **belum bisa** menggantikan pemahaman arsitektur
 - :x: AI **sering salah** di edge case dan konteks bisnis
-- :x: AI **butuh arahan** yang jelas dari developer
+- :x: AI **butuh arahan** yang jelas dari manusia yang paham konteks
 
 <!--
 SPEAKER NOTES:
@@ -189,9 +189,9 @@ SPEAKER NOTES:
 ## :bulb: Solusi & Strategi
 
 - :shield: **Trust, but Verify** — selalu review output AI
-- :test_tube: **Automated Testing** — biarkan mesin yang verifikasi
-- :clipboard: **Spec-Driven Development** — mulai dari requirement yang jelas
-- :brain: **Pahami kodenya** — jangan jadi "passenger" di kode sendiri
+- :test_tube: **Automated Testing / checking** — biarkan mesin bantu verifikasi
+- :clipboard: **Spec-Driven Work** — mulai dari tujuan dan requirement yang jelas
+- :brain: **Pahami output-nya** — jangan jadi "passenger" di kerja sendiri
 
 ---
 
@@ -205,11 +205,11 @@ SPEAKER NOTES:
 
 ### Coverage
 
-Seberapa banyak AI digunakan dalam proses development
+Seberapa banyak AI dilibatkan dalam proses kerja
 
 ### Control
 
-Seberapa besar kendali developer atas hasilnya
+Seberapa besar kendali manusia atas hasilnya
 
 **Keduanya harus seimbang**
 
@@ -253,23 +253,24 @@ Berikan contoh untuk setiap level:
 |---------|----------|---------|--------|
 | :art: Prototyping | :arrow_up: Tinggi | :arrow_down: Rendah | Bolt.new, v0 |
 | :loudspeaker: Marketing/content | :arrow_up: Tinggi | :left_right_arrow: Sedang | Outline, copy draft, content plan |
+| :briefcase: Business planning | :left_right_arrow: Sedang | :arrow_up: Tinggi | Riset kompetitor, ringkasan meeting, draft proposal |
 | :building_construction: Production | :left_right_arrow: Sedang | :arrow_up: Tinggi | Claude Code + Review |
 | :lock: Security-critical | :arrow_down: Rendah | :arrow_up: Sangat Tinggi | Manual + AI assist |
 
 <!--
 SPEAKER NOTES:
-"Framework ini membantu kita menentukan kapan boleh 'vibe coding' dan kapan harus disiplin. Prototyping? Silakan biarkan AI berkreasi. Production code? Review setiap baris."
+"Framework ini membantu kita menentukan kapan AI boleh banyak ambil peran, dan kapan manusia harus pegang kontrol penuh. Prototyping? Silakan biarkan AI berkreasi. Keputusan penting atau production code? Review dengan disiplin."
 -->
 
 ---
 
-## :key: Ownership tetap di Developer
+## :key: Ownership tetap di Manusia
 
 > "AI can accelerate development, but it cannot replace fundamental software
 > engineering principles." — Addy Osmani
 
 - :pilot: **Kamu tetap pilot-nya** — AI adalah co-pilot
-- :brain: **Pahami arsitekturnya** — jangan serahkan sepenuhnya
+- :brain: **Pahami keputusan pentingnya** — jangan serahkan sepenuhnya
 - :white_check_mark: **Kamu yang bertanggung jawab** — bukan AI
 
 ---
@@ -331,6 +332,9 @@ Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan
 
 **:memo: AI sebagai Writing Partner**
 "Buatkan draft landing page untuk audience UMKM teknologi di Jogja"
+
+**:briefcase: AI sebagai Business Analyst**
+"Ringkas hasil interview customer ini jadi 5 insight dan 3 prioritas aksi"
 
 **:mag: AI sebagai Reviewer**
 "Review kode ini untuk security issues dan performance"
@@ -394,10 +398,10 @@ Tunjukkan CLAUDE.md dari repo ini sebagai contoh nyata.
 
 ### Bukan langsung coding!
 
-1. :clipboard: **Audience & requirement** — untuk siapa, dan apa yang dibutuhkan?
-2. :arrows_counterclockwise: **Flow** — bagaimana user menggunakannya?
-3. :building_construction: **Architecture** — bagaimana strukturnya?
-4. :computer: **Implementation** — baru mulai coding
+1. :clipboard: **Audience & goal** — untuk siapa, dan apa hasil yang dibutuhkan?
+2. :arrows_counterclockwise: **Flow** — bagaimana user atau tim akan memakainya?
+3. :building_construction: **Approach** — bagaimana cara terbaik mengerjakannya?
+4. :computer: **Implementation** — baru mulai eksekusi
 
 <!--
 TIMING: 5 menit
@@ -453,15 +457,15 @@ SPEAKER NOTES:
 
 ## :memo: Define with Structure
 
-### Requirement → Flow → Architecture → Implementation
+### Audience → Goal → Flow → Approach → Implementation
 
 **Contoh dengan Kiro Specs:**
 
-- :memo: **requirements.md** — EARS notation, testable requirements
-- :art: **design.md** — Arsitektur teknis, data flow
-- :clipboard: **tasks.md** — Rencana implementasi yang trackable
+- :memo: **requirements.md** — kebutuhan yang jelas dan bisa dicek
+- :art: **design.md** — pendekatan, struktur, dan alur kerja
+- :clipboard: **tasks.md** — rencana implementasi yang trackable
 
-:point_right: AI bekerja lebih baik dengan spec yang terstruktur
+:point_right: AI bekerja lebih baik dengan brief yang terstruktur
 
 <!--
 TIMING: 3 menit
@@ -476,20 +480,20 @@ SPEAKER NOTES:
 
 ---
 
-## :gem: Menjaga Kualitas dalam AI-Assisted Coding
+## :gem: Menjaga Kualitas dalam AI-Assisted Work
 
 ### Strategi Praktis
 
 - :mag: **Review setiap output** — jangan auto-accept
 - :test_tube: **Automated testing** — unit, integration, E2E
-- :clipboard: **Code standards** — linting, formatting, type checking
+- :clipboard: **Standar kualitas** — checklist, style guide, acceptance criteria
 - :busts_in_silhouette: **Peer review** — human eyes tetap penting
 
 <!--
 TIMING: 5 menit
 
 SPEAKER NOTES:
-"AI bisa menulis kode yang 'works', tapi belum tentu kode yang 'good'. Tugas kita sebagai developer adalah memastikan kualitasnya."
+"AI bisa menghasilkan output yang 'jadi', tapi belum tentu output yang 'tepat'. Tugas kita adalah memastikan kualitasnya."
 -->
 
 ---
@@ -606,9 +610,9 @@ Tunjukkan:
 
 1. :robot: **AI adalah alat, bukan pengganti** — manusia tetap pilot
 2. :bar_chart: **Seimbangkan coverage & control** — sesuaikan dengan stakes
-3. :brain: **Context engineering > prompt engineering** — termasuk konteks audiens
-4. :clipboard: **Struktur sebelum eksekusi** — audience → requirement → flow → architecture
-5. :gem: **Craftsmanship tetap penting** — review, test, dan verify
+3. :brain: **Context engineering > prompt engineering** — termasuk konteks audiens dan tujuan
+4. :clipboard: **Struktur sebelum eksekusi** — audience → goal → flow → approach
+5. :gem: **Kualitas tetap penting** — review, test, dan verify
 6. :gear: **System thinking** — jaga konsistensi di seluruh produk dan tim
 
 ---
