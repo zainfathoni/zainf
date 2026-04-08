@@ -10,7 +10,7 @@ marp: true
 # AI-Assisted Development
 
 Realita, Strategi, dan Praktik\
-untuk Tim Produk, Software, dan Bisnis Digital
+untuk Tim Produk & Bisnis Digital
 
 <!--
 TIMING: 2 menit
@@ -35,8 +35,7 @@ DEMO START: Buka terminal, jalankan Claude Code, berikan prompt untuk mengerjaka
 - :hammer_and_wrench: Backend :arrow_right: Manager :arrow_right: Frontend
   :arrow_right: Fullstack
 - :robot: AI-Assisted Development Practitioner
-- :handshake: Hari ini kita bicara untuk ruangan yang campur: software, web,
-  bisnis, dan produk digital
+- :handshake: Talk ini untuk semua: dev, founder, marketer, dan produk
 
 ---
 
@@ -102,11 +101,11 @@ Karena audiens-nya campuran, beri contoh yang lebih lebar: design untuk marketer
 
 ## :sparkles: Hype vs Reality
 
-### Yang dijanjikan:
+### Hype:
 
 > "AI will replace developers"
 
-### Kenyataannya:
+### Realita:
 
 - :white_check_mark: AI **mempercepat** pekerjaan repetitif
 - :white_check_mark: AI **membantu** eksplorasi solusi
@@ -122,13 +121,11 @@ Berikan contoh nyata: "Saya pernah minta AI bikin fitur, hasilnya 80% benar. Tap
 
 ---
 
-## :warning: Common Pitfalls
-
-### Terlalu Bergantung pada AI-Generated Code
+## :warning: Jebakan Umum
 
 - :see_no_evil: **Copy-paste tanpa review** → bug tersembunyi
-- :spaghetti: **Tidak ada arsitektur** → kode sulit di-maintain
-- :lock: **Security blind spots** → vulnerability tidak terdeteksi
+- :spaghetti: **Tanpa arsitektur** → sulit di-maintain
+- :lock: **Security blind spots** → vulnerability lolos
 - :bomb: **Over-confidence** → "AI yang bikin, pasti benar"
 
 <!--
@@ -150,8 +147,7 @@ Ceritakan contoh nyata kegagalan. Bisa pakai contoh dari slide sebelumnya tentan
   digital marketer, dan mahasiswa**
 - :seedling: Usia dominan: **22-35 tahun**
 
-:point_right: Jadi fokus kita hari ini: **bagaimana AI membantu kolaborasi lintas fungsi,
- bukan cuma ngoding lebih cepat**
+:point_right: **Fokus hari ini: AI untuk kolaborasi lintas fungsi, bukan cuma ngoding cepat**
 
 <!--
 TIMING: 2 menit
@@ -186,12 +182,12 @@ SPEAKER NOTES:
 
 ---
 
-## :bulb: Solusi & Strategi
+## :bulb: Jadi Gimana?
 
-- :shield: **Trust, but Verify** — selalu review output AI
-- :test_tube: **Automated Testing / checking** — biarkan mesin bantu verifikasi
-- :clipboard: **Spec-Driven Work** — mulai dari tujuan dan requirement yang jelas
-- :brain: **Pahami output-nya** — jangan jadi "passenger" di kerja sendiri
+- :shield: **Trust, but Verify** — selalu review
+- :test_tube: **Automate checks** — biarkan mesin bantu verifikasi
+- :clipboard: **Mulai dari spec** — tujuan dulu, baru eksekusi
+- :brain: **Pahami output-nya** — jangan jadi passenger
 
 ---
 
@@ -217,24 +213,24 @@ Seberapa besar kendali manusia atas hasilnya
 TIMING: 5 menit
 
 SPEAKER NOTES:
-"Coverage tinggi tanpa control = chaos. Control tinggi tanpa coverage = lambat. Kunci-nya adalah menemukan keseimbangan yang tepat untuk setiap situasi."
+"Coverage tinggi tanpa control = chaos. Control tinggi tanpa coverage = lambat. Cari keseimbangannya."
 -->
 
 ---
 
 ## :traffic_light: Level Kontrol Penggunaan AI
 
-### 1. :green_circle: Assistive (Copilot)
+### 1. :green_circle: Assistive — AI menyarankan, manusia memutuskan
 
-AI menyarankan, manusia memutuskan
+*Autocomplete, inline suggestions, grammar check*
 
-### 2. :yellow_circle: Semi-Autonomous
+### 2. :yellow_circle: Semi-Autonomous — AI kerjakan, manusia review
 
-AI mengerjakan task, manusia me-review
+*Draft copy, generate function, buat proposal awal*
 
-### 3. :red_circle: Autonomous
+### 3. :red_circle: Autonomous — AI end-to-end, manusia verifikasi akhir
 
-AI mengerjakan end-to-end, manusia hanya verifikasi akhir
+*Prototype halaman baru, generate report dari data*
 
 <!--
 SPEAKER NOTES:
@@ -264,14 +260,14 @@ SPEAKER NOTES:
 
 ---
 
-## :key: Ownership tetap di Manusia
+## :key: Kamu Tetap Pilot-nya
 
-> "AI can accelerate development, but it cannot replace fundamental software
-> engineering principles." — Addy Osmani
+> "AI can accelerate development, but it cannot replace fundamental
+> software engineering principles." — Addy Osmani
 
-- :pilot: **Kamu tetap pilot-nya** — AI adalah co-pilot
-- :brain: **Pahami keputusan pentingnya** — jangan serahkan sepenuhnya
-- :white_check_mark: **Kamu yang bertanggung jawab** — bukan AI
+- :pilot: AI adalah **co-pilot**, bukan captain
+- :brain: Pahami keputusan pentingnya
+- :white_check_mark: Yang bertanggung jawab tetap **kamu**
 
 ---
 
@@ -279,14 +275,14 @@ SPEAKER NOTES:
 
 ---
 
-## :keyboard: Prinsip Dasar Prompting
+## :keyboard: Prompting 101
 
 ### Prompt yang Baik = Hasil yang Baik
 
-- :dart: **Spesifik** — jelaskan apa yang dimau dengan detail
-- :clipboard: **Berikan konteks** — file, framework, constraint
-- :framed_picture: **Berikan contoh** — tunjukkan format output yang diharapkan
-- :arrows_counterclockwise: **Iterasi** — perbaiki prompt berdasarkan hasil
+- :dart: **Spesifik** — detail, bukan "buatkan sesuatu"
+- :clipboard: **Kasih konteks** — file, constraint, target audiens
+- :framed_picture: **Kasih contoh** — tunjukkan format yang dimau
+- :arrows_counterclockwise: **Iterasi** — perbaiki berdasarkan hasil
 
 <!--
 TIMING: 5 menit
@@ -308,10 +304,10 @@ Bukan hanya tentang **cara bertanya**,\
 tapi **informasi apa yang tersedia**
 
 - :keyboard: **User Input** — prompt kamu
-- :books: **Retrieved Knowledge** — docs, CLAUDE.md, transcript, riset
-- :speech_balloon: **Prior Conversation** — konteks sebelumnya
+- :books: **Knowledge** — docs, transcript, riset
+- :speech_balloon: **Conversation** — konteks sebelumnya
 - :hammer_and_wrench: **Tool Outputs** — hasil dari tools
-- :open_file_folder: **Project Memory** — keputusan, feedback, dan artefak kerja yang terus hidup
+- :open_file_folder: **Project Memory** — keputusan & artefak yang terus hidup
 
 <!--
 SPEAKER NOTES:
@@ -348,15 +344,15 @@ Demo: tunjukkan bagaimana prompt yang sama bisa menghasilkan output berbeda terg
 
 ---
 
-## :open_file_folder: Context as a Second Brain
+## :open_file_folder: AI sebagai Second Brain
 
 ### Insight dari Lenny's Newsletter
 
 - :brain: **Context is the new interface**
-- :books: Bukan cuma prompt, tapi kumpulan docs, riset, feedback, transcript, dan keputusan
-- :mag: Saat context tersimpan rapi di AI, kita bukan cuma **ingat lebih banyak**
-  tapi juga **reasoning lebih baik**
-- :busts_in_silhouette: Ini berguna untuk PM, founder, marketer, dan developer
+- :books: Bukan cuma prompt — docs, riset, feedback, keputusan
+- :mag: Context tersimpan rapi → bukan cuma ingat lebih banyak,
+  tapi **berpikir lebih jernih**
+- :busts_in_silhouette: Berlaku untuk semua fungsi, bukan cuma developer
 
 <!--
 SPEAKER NOTES:
@@ -365,13 +361,11 @@ Ambil ide dari artikel Lenny tentang "PM second brain". Pesan utamanya: AI palin
 
 ---
 
-## :arrows_counterclockwise: Iterative Prompting
+## :arrows_counterclockwise: Iterasi, Bukan Sekali Jadi
 
-### Tingkatkan Kualitas Output Secara Bertahap
-
-1. :one: **Prompt awal** — dapatkan draft pertama
-2. :two: **Review & feedback** — identifikasi kekurangan
-3. :three: **Refine prompt** — tambahkan constraint/context
+1. :one: **Prompt awal** → draft pertama
+2. :two: **Review** → identifikasi kekurangan
+3. :three: **Refine** → tambah constraint/context
 4. :four: **Ulangi** sampai kualitas sesuai
 
 :bulb: **Tips:** Gunakan `plan mode` untuk hemat token
@@ -383,16 +377,16 @@ SPEAKER NOTES:
 
 ---
 
-## :zap: AI Prototyping untuk Validasi Cepat
+## :zap: Prototype dalam Menit, Bukan Minggu
 
 ### Insight dari Lenny's Newsletter
 
-- :rocket: Prototype interaktif sekarang bisa dibuat dalam **hitungan menit**, bukan minggu
-- :speech_balloon: Gunakan untuk **menguji ide sebelum commit build penuh**
-- :art: Cocok untuk founder, PM, marketer, dan dev saat mau menyamakan persepsi
-- :warning: Tapi mulai dari scope kecil, lalu iterasi bertahap
+- :rocket: Prototype interaktif bisa jadi dalam **hitungan menit**
+- :speech_balloon: Uji ide **sebelum commit build penuh**
+- :art: Untuk **semua fungsi** — samakan persepsi sebelum eksekusi
+- :warning: Mulai kecil, iterasi bertahap
 
-:point_right: **Prototype bukan produk akhir, tapi alat belajar tercepat**
+:point_right: **Prototype = alat belajar tercepat**
 
 <!--
 SPEAKER NOTES:
@@ -401,9 +395,9 @@ Ambil dari artikel AI prototyping for PMs. Tekankan bahwa manfaat utamanya bukan
 
 ---
 
-## :scroll: Custom Rules & Instructions
+## :scroll: CLAUDE.md = Autopilot Rules
 
-### Jaga Konsistensi Output dengan CLAUDE.md
+### Konsistensi Output Otomatis
 
 ```markdown
 # CLAUDE.md
@@ -430,9 +424,7 @@ Tunjukkan CLAUDE.md dari repo ini sebagai contoh nyata.
 
 ---
 
-## :ladder: Tahapan AI-Assisted Development
-
-### Bukan langsung coding!
+## :ladder: Jangan Langsung Coding!
 
 1. :clipboard: **Audience & goal** — untuk siapa, dan apa hasil yang dibutuhkan?
 2. :arrows_counterclockwise: **Flow** — bagaimana user atau tim akan memakainya?
@@ -448,7 +440,7 @@ SPEAKER NOTES:
 
 ---
 
-## :arrows_counterclockwise: Before vs After: Structured Approach
+## :arrows_counterclockwise: Tanpa vs Dengan Struktur
 
 ### :x: Tanpa Struktur
 
@@ -478,33 +470,27 @@ SPEAKER NOTES:
 
 ---
 
-## :brain: The Fundamentals
+## :brain: Prinsip Dasar
 
-### Why It Matters
+- :zap: **Cepat tanpa struktur** = technical debt
+- :shield: **Output tanpa review** = liability
+- :chart_with_upwards_trend: **Struktur + AI** = sustainable velocity
 
-- :zap: **Speed tanpa struktur = technical debt**
-- :shield: **AI output tanpa review = liability**
-- :chart_with_upwards_trend: **Structured approach = sustainable velocity**
+### Mantra:
 
-### Core Principles
-
-- :dart: Define before you build
-- :test_tube: Test before you ship
-- :eyes: Review before you merge
+:dart: Define → :test_tube: Test → :eyes: Review
 
 ---
 
-## :memo: Define with Structure
+## :memo: Brief yang Terstruktur
 
-### Audience → Goal → Flow → Approach → Implementation
+### Audience → Goal → Flow → Approach → Eksekusi
 
-**Contoh dengan Kiro Specs:**
+- :memo: **requirements** — kebutuhan yang bisa dicek
+- :art: **design** — pendekatan dan alur kerja
+- :clipboard: **tasks** — rencana yang trackable
 
-- :memo: **requirements.md** — kebutuhan yang jelas dan bisa dicek
-- :art: **design.md** — pendekatan, struktur, dan alur kerja
-- :clipboard: **tasks.md** — rencana implementasi yang trackable
-
-:point_right: AI bekerja lebih baik dengan brief yang terstruktur
+:point_right: **AI bekerja lebih baik kalau brief-nya jelas**
 
 <!--
 TIMING: 3 menit
@@ -519,14 +505,12 @@ SPEAKER NOTES:
 
 ---
 
-## :gem: Menjaga Kualitas dalam AI-Assisted Work
-
-### Strategi Praktis
+## :gem: Kualitas Tetap Nomor Satu
 
 - :mag: **Review setiap output** — jangan auto-accept
-- :test_tube: **Automated testing** — unit, integration, E2E
-- :clipboard: **Standar kualitas** — checklist, style guide, acceptance criteria
-- :busts_in_silhouette: **Peer review** — human eyes tetap penting
+- :test_tube: **Automate** — unit test, integration, E2E
+- :clipboard: **Standar jelas** — checklist, style guide, acceptance criteria
+- :busts_in_silhouette: **Peer review** — mata manusia tetap penting
 
 <!--
 TIMING: 5 menit
@@ -548,14 +532,14 @@ SPEAKER NOTES:
 
 ---
 
-## :clipboard: Dari Prompt ke Evals
+## :clipboard: Prompt Saja Tidak Cukup → Butuh Evals
 
 ### Insight dari Lenny's Newsletter
 
-- :warning: Prompting penting, tapi **prompt saja tidak cukup**
-- :test_tube: Untuk AI features/agents, kita butuh **evals**, bukan cuma "kelihatannya bagus"
-- :mag: Yang dicek bisa berupa **correctness, hallucination, tone, retrieval relevance**
-- :repeat: Evals membuat improvement jadi **terukur**, bukan sekadar feeling
+- :test_tube: Untuk AI features, butuh **evaluasi terukur**
+- :mag: Cek: **correctness, hallucination, tone, relevance**
+- :repeat: Evals bikin improvement **terukur**, bukan feeling
+- :warning: **Vibe check ≠ quality check**
 
 <!--
 SPEAKER NOTES:
@@ -564,14 +548,12 @@ Ambil dari artikel "Beyond vibe checks". Framing-nya kuat: prompts make headline
 
 ---
 
-## :mag: AI-Assisted Code Review
-
-### Deteksi Masalah dengan AI
+## :mag: AI untuk Review
 
 - :nose: **Code smell** — duplicated logic, god functions
-- :warning: **Anti-pattern** — circular dependencies, tight coupling
+- :warning: **Anti-pattern** — circular deps, tight coupling
 - :snail: **Inefficiency** — N+1 queries, unnecessary re-renders
-- :lock: **Security issues** — injection, XSS, exposed secrets
+- :lock: **Security** — injection, XSS, exposed secrets
 
 <!--
 SPEAKER NOTES:
@@ -580,15 +562,12 @@ SPEAKER NOTES:
 
 ---
 
-## :lock: Security Awareness
+## :lock: Security: Manusia = Final Gatekeeper
 
-### Developer sebagai Final Gatekeeper
-
-- :shield: Validasi terhadap **vulnerability**
-  - Injection, insecure API, dependency risk
+- :shield: Validasi **vulnerability** — injection, insecure API, deps
 - :no_entry: Jangan blindly trust AI untuk security
-- :white_check_mark: **Checklist security** sebelum deploy
-- :robot: Gunakan AI untuk **scan**, tapi verifikasi manual
+- :white_check_mark: **Checklist** sebelum deploy
+- :robot: AI boleh **scan**, tapi manusia yang **approve**
 
 <!--
 SPEAKER NOTES:
@@ -599,12 +578,10 @@ SPEAKER NOTES:
 
 ## :gear: System Thinking
 
-### Menjaga Konsistensi Antar Modul
-
-- :jigsaw: **Konsistensi** — patterns yang sama di seluruh codebase
-- :no_entry: **Hindari "microservices effect"** — over-fragmentation
-- :link: **Dependency awareness** — pahami impact perubahan
-- :books: **Documentation** — AI bisa bantu generate, tapi review
+- :jigsaw: **Konsistensi** — satu pattern, seluruh produk
+- :no_entry: Hindari **over-fragmentation**
+- :link: **Pahami impact** setiap perubahan
+- :books: **Docs** — AI bantu generate, manusia review
 
 <!--
 SPEAKER NOTES:
@@ -615,24 +592,24 @@ SPEAKER NOTES:
 
 ## :white_check_mark: Do's
 
-- :mag: **Review setiap output AI** — jangan auto-accept
-- :clipboard: **Berikan konteks yang lengkap** — CLAUDE.md, spec, constraint
-- :test_tube: **Test otomatis** — unit, integration, E2E, atau evals untuk AI features
-- :arrows_counterclockwise: **Iterasi bertahap** — refine prompt & output
-- :brain: **Pahami kode yang di-generate** — bisa jelaskan setiap baris
-- :scroll: **Gunakan CLAUDE.md / rules** — konsistensi project-wide
+- :mag: **Review** setiap output
+- :clipboard: **Konteks lengkap** — CLAUDE.md, spec, constraint
+- :test_tube: **Test + evals** otomatis
+- :arrows_counterclockwise: **Iterasi** bertahap
+- :brain: **Pahami** apa yang di-generate
+- :scroll: **Rules file** untuk konsistensi
 
 ---
 
 ## :x: Don'ts
 
-- :see_no_evil: **Copy-paste tanpa baca** — bug tersembunyi menunggu
-- :question: **Prompt yang ambiguous** — garbage in, garbage out
-- :eyes: **Vibe check doang** — tanpa evaluasi, kamu tidak tahu kualitas sebenarnya
-- :computer: **"Works on my machine"** — test di CI, bukan di lokal saja
-- :crystal_ball: **Expect sempurna sekali jadi** — AI butuh iterasi
-- :sleeping: **Jadi "passenger"** — kamu harus paham kode sendiri
-- :rocket: **Mulai tanpa context** — setup rules sebelum coding
+- :see_no_evil: **Copy-paste tanpa baca**
+- :question: **Prompt ambiguous** — garbage in, garbage out
+- :eyes: **Vibe check doang** — bukan evaluasi
+- :computer: **"Works on my machine"** — test di CI
+- :crystal_ball: **Expect sempurna sekali jadi**
+- :sleeping: **Jadi passenger** di output sendiri
+- :rocket: **Mulai tanpa context**
 
 ---
 
@@ -640,9 +617,9 @@ SPEAKER NOTES:
 
 ---
 
-## :trophy: Cek Hasil AI
+## :trophy: Waktunya Cek Hasil!
 
-### Apa yang terjadi selama kita presentasi?
+### Apa yang AI kerjakan selama kita presentasi?
 
 :point_right: Mari kita lihat bersama...
 
@@ -664,22 +641,22 @@ Tunjukkan:
 
 ## :bulb: Key Takeaways
 
-1. :robot: **AI adalah alat, bukan pengganti** — manusia tetap pilot
-2. :bar_chart: **Seimbangkan coverage & control** — sesuaikan dengan stakes
-3. :brain: **Context engineering > prompt engineering** — termasuk konteks audiens dan tujuan
-4. :clipboard: **Struktur sebelum eksekusi** — audience → goal → flow → approach
-5. :gem: **Kualitas tetap penting** — review, test, dan verify
-6. :gear: **System thinking** — jaga konsistensi di seluruh produk dan tim
+1. :robot: **AI = alat, bukan pengganti** — kamu tetap pilot
+2. :bar_chart: **Coverage & control** harus seimbang
+3. :brain: **Context > prompt** — termasuk audiens dan tujuan
+4. :clipboard: **Struktur dulu** — audience → goal → flow → approach
+5. :gem: **Kualitas tetap nomor satu** — review, test, verify
+6. :gear: **System thinking** — konsistensi di seluruh produk
 
 ---
 
-## :pray: Terima Kasih
+## :pray: Terima Kasih!
 
 :desktop_computer: <https://zainf.dev/ai-assisted-development>
 
 :link: <https://github.com/zainfathoni/zainf>
 
-### Pertanyaan?
+### Ada pertanyaan? :raised_hand:
 
 ---
 
