@@ -29,7 +29,7 @@ DEMO START: Buka terminal, jalankan Claude Code dengan prompt di bawah. Biarkan 
 
 ![bg left:33%](assets/zain-1280.jpeg)
 
-<https://www.zainfathoni.com/about>
+:mag: **Google aja nama saya** — Zain Fathoni
 
 - :round_pushpin: Jember :arrow_right: Bandung :arrow_right: :singapore: SG
   :arrow_right: Jogja
@@ -56,9 +56,9 @@ DEMO START: Buka terminal, jalankan Claude Code dengan prompt di bawah. Biarkan 
 ### Jalankan Claude Code di terminal, lalu lanjut presentasi
 
 ```bash
-claude "Tambahkan filter by category (Conferences /
- Podcasts / Meetups) ke halaman /talks di zainf.dev.
- Lihat pola filter di halaman /blog sebagai referensi."
+claude "Add filter by category (Conferences /
+ Podcasts / Meetups) to the /talks page.
+ Reference: filter pattern in /blog. Create a PR."
 ```
 
 :hourglass_flowing_sand: Claude Code bekerja di background...
@@ -67,7 +67,7 @@ claude "Tambahkan filter by category (Conferences /
 TIMING: 3 menit
 
 SPEAKER NOTES:
-Ini adalah momen kunci. Tunjukkan ke audiens bahwa kamu sedang memulai sebuah AI task secara real-time.
+Ini adalah momen kunci. Tunjukkan ke audiens bahwa Anda sedang memulai sebuah AI task secara real-time.
 "Ini bukan demo yang di-scripted. Saya jalankan Claude Code sekarang di terminal, lalu kita lanjut presentasi. Di akhir sesi kita cek hasilnya bersama — apakah PR-nya masuk, apakah site-nya terupdate, dan apa yang perlu di-review."
 
 NOTE: Claude Code adalah CLI tool dari Anthropic yang bisa dipakai siapa saja. Ini contoh nyata Autonomous level — AI end-to-end, manusia verifikasi akhir. Audiens bisa langsung coba sendiri setelah sesi ini.
@@ -86,8 +86,8 @@ NOTE: Claude Code adalah CLI tool dari Anthropic yang bisa dipakai siapa saja. I
 > — Simon Willison
 
 - :loop: Agent bekerja dalam loop: tulis kode → jalankan → iterasi
-- :brain: Tugas kita: **specify** masalah, **verify** hasil, **iterate**
-- :x: Bukan "vibe coding" — bukan asal generate dan forget
+- :brain: Tugas kita: **tentukan** masalah, **verifikasi** hasil, **iterasi**
+- :x: Bukan "vibe coding" — bukan asal generate dan lupakan
 - :white_check_mark: Ini yang kita lakukan hari ini dengan Claude Code
 
 <!--
@@ -104,7 +104,7 @@ Contoh nyata: Claude Code, OpenClaw, Codex CLI — semuanya coding agents.
 | Fase | Tools AI | Peran |
 |------|---------|-------|
 | :art: **Design** | v0, Figma AI | Prototyping & landing page |
-| :memo: **Content** | ChatGPT, Claude | Copy, outline, dokumentasi |
+| :memo: **Content** | ChatGPT, Claude | Naskah, kerangka, dokumentasi |
 | :computer: **Coding** | Claude Code, Copilot | Implementasi |
 | :test_tube: **Testing** | Playwright MCP | Pengujian otomatis |
 | :robot: **Agents** | OpenClaw, Codex CLI | Task end-to-end via chat |
@@ -131,7 +131,7 @@ OpenClaw adalah contoh "Agents" row — platform agentic engineering pribadi yan
 
 <!--
 SPEAKER NOTES:
-Ini penting untuk set expectations. "AI bukan magic. AI adalah alat yang sangat powerful, tapi tetap butuh operator yang kompeten."
+Ini penting untuk mengatur ekspektasi. "AI bukan magic. AI adalah alat yang sangat powerful, tapi tetap butuh operator yang kompeten."
 Berikan contoh nyata: "Saya pernah minta AI bikin fitur, hasilnya 80% benar. Tapi 20% sisanya — yang melibatkan edge case dan business logic — tetap harus saya review dan perbaiki."
 -->
 
@@ -141,7 +141,7 @@ Berikan contoh nyata: "Saya pernah minta AI bikin fitur, hasilnya 80% benar. Tap
 
 - :see_no_evil: **Copy-paste tanpa review** → bug tersembunyi
 - :spaghetti: **Tanpa arsitektur** → sulit di-maintain
-- :lock: **Security blind spots** → vulnerability lolos
+- :lock: **Titik buta keamanan** → vulnerability lolos
 - :bomb: **Over-confidence** → "AI yang bikin, pasti benar"
 
 <!--
@@ -156,9 +156,9 @@ Ceritakan contoh nyata kegagalan. Bisa pakai contoh dari slide sebelumnya tentan
 
 ### Snapshot Peserta EDC Jogja
 
-- :office: **Mayoritas sektor TIK** (25/49), **39/49 dari DIY**
-- :technologist: Terbesar: **Software & Web Developer** (14)
-- :briefcase: Tapi juga ada **founder, business owner, IT manager, marketer, mahasiswa**
+- :office: **Mayoritas sektor TIK**, mayoritas dari DIY
+- :technologist: Terbesar: **Software & Web Developer**
+- :briefcase: Juga ada **founder, business owner, marketer, mahasiswa**
 - :seedling: Usia dominan: **22-35 tahun**
 
 :point_right: **Fokus: AI untuk kolaborasi lintas fungsi, bukan cuma ngoding cepat**
@@ -175,26 +175,37 @@ Tekankan bahwa developer memang kelompok terbesar, tapi bukan mayoritas absolut 
 
 ## :speaking_head: Cerita Nyata: Yang Berhasil
 
-- Migrasi Remix → React Router v7 — AI handle 80% boilerplate
+- Migrasi Remix → React Router v7 — AI tangani 80% boilerplate
 - Refactor styling ke Tailwind — konsisten di 30+ komponen
-- Personal AI army (Project Transformers) — 7 specialized agents,
-  masing-masing punya domain sendiri, context tidak bocor antar agent
+- [Personal AI army (Project Transformers)](https://ark.zainf.dev) — 15 agen khusus,
+  masing-masing punya domain sendiri, context tidak bocor antar agen
 - Slide ini: draft pertama via Claude Web + Wheeljack (OpenClaw)
 
 <!--
 SPEAKER NOTES:
 "Slide yang kalian lihat sekarang ini juga dibuatnya pakai AI. Draft pertama saya buat via Claude Web untuk outline, lalu Wheeljack (OpenClaw agent) via Telegram untuk generate Marp slides-nya. Saya review, iterasi, dan polish sendiri."
 Referensikan blog post "Building My Personal AI Army: Lessons from Project Transformers" — zainfathoni.com/blog/project-transformers-building-personal-ai-army
-Ini juga sejalan dengan insight Claire Vo di Lenny's Podcast: specialized agents > general agents. Sama seperti Project Transformers.
+Ini juga sejalan dengan insight Claire Vo di Lenny's Podcast: agen khusus > agen umum. Sama seperti Project Transformers.
+-->
+
+---
+
+##
+
+![bg contain](assets/drafting-slides-with-ai.png)
+
+<!--
+SPEAKER NOTES:
+"Ini screenshot proses pembuatan slide ini. Di kiri, Claude Code Desktop membuat draft slide Marp. Di kanan, Wheeljack — salah satu agen OpenClaw saya — menerima instruksi via Telegram dan langsung mengerjakan: commit, push, dan buat PR. Dua AI, dua platform, satu hasil."
 -->
 
 ---
 
 ## :speaking_head: Cerita Nyata: Yang Gagal
 
-- AI generate test yang pass tapi **tidak test apa-apa** (assertion kosong)
+- AI generate test yang lolos tapi **tidak test apa-apa** (assertion kosong)
 - AI "fix" bug di satu tempat, tapi **break 3 tempat lain**
-- AI bikin copy meyakinkan, tapi **tone dan audiens-nya meleset**
+- AI bikin copy meyakinkan, tapi **nada dan audiens-nya meleset**
 - Claire Vo (LaunchDarkly): OpenClaw **hapus family calendar** di percobaan pertama
 - PR storm: arms race di kantor, **kualitas review turun** jika tidak disiplin
 
@@ -202,7 +213,7 @@ Ini juga sejalan dengan insight Claire Vo di Lenny's Podcast: specialized agents
 TIMING: 3 menit
 
 SPEAKER NOTES:
-"Ini semua pengalaman nyata. Project Transformers adalah setup agentic engineering pribadi saya — 7 agent dengan nama Transformer, masing-masing punya domain khusus. Hasilnya jauh lebih baik dibanding satu agent yang handle segalanya."
+"Ini semua pengalaman nyata. Project Transformers adalah setup agentic engineering pribadi saya — 15 agen dengan nama Transformer, masing-masing punya domain khusus. Hasilnya jauh lebih baik dibanding satu agen yang tangani segalanya."
 "Sisi gelapnya: PR storm. Kecepatan naik, tapi kalau review-nya tidak ketat, technical debt juga naik. Arms race di kantor — lihat blog post saya bulan ini."
 -->
 
@@ -213,7 +224,7 @@ SPEAKER NOTES:
 - :shield: **Trust, but Verify** — selalu review
 - :test_tube: **Automate checks** — biarkan mesin bantu verifikasi
 - :clipboard: **Mulai dari spec** — tujuan dulu, baru eksekusi
-- :brain: **Pahami output-nya** — jangan jadi passenger
+- :brain: **Pahami output-nya** — jangan jadi penumpang
 
 ---
 
@@ -228,7 +239,7 @@ SPEAKER NOTES:
 | **Control Tinggi** | :turtle: Lambat tapi aman | :rocket: Ideal |
 | **Control Rendah** | :zzz: Tidak efisien | :fire: Chaos |
 
-:point_right: **Goal: Coverage Tinggi + Control Tinggi**
+:point_right: **Tujuan: Coverage Tinggi + Control Tinggi**
 
 <!--
 TIMING: 5 menit
@@ -245,14 +256,14 @@ SPEAKER NOTES:
 *Autocomplete, grammar check, inline suggestions*
 
 :yellow_circle: **Semi-Autonomous** — AI kerjakan, manusia review
-*Draft copy, generate function, buat proposal*
+*Draf naskah, generate function, buat proposal*
 
 :red_circle: **Autonomous** — AI end-to-end, manusia verifikasi akhir
 *Prototype halaman, generate report*
 
 <!--
 SPEAKER NOTES:
-"Kebanyakan dari kita berada di level 1-2. Level 3 hanya cocok untuk task yang sangat well-defined dan low-risk."
+"Kebanyakan dari kita berada di level 1-2. Level 3 hanya cocok untuk task yang sangat terdefinisi jelas dan berisiko rendah."
 Berikan contoh untuk setiap level:
 - Assistive: autocomplete, inline suggestions
 - Semi-autonomous: "buatkan function X dengan spec Y", review hasilnya
@@ -270,7 +281,7 @@ table { font-size: 0.75em; }
 | Situasi | Coverage | Control | Contoh |
 |---------|----------|---------|--------|
 | :art: Prototyping | :arrow_up: Tinggi | :arrow_down: Rendah | Bolt.new, v0 |
-| :loudspeaker: Marketing | :arrow_up: Tinggi | :left_right_arrow: Sedang | Copy draft, content plan |
+| :loudspeaker: Marketing | :arrow_up: Tinggi | :left_right_arrow: Sedang | Draf naskah, rencana konten |
 | :briefcase: Business | :left_right_arrow: Sedang | :arrow_up: Tinggi | Riset, ringkasan, proposal |
 | :building_construction: Production | :left_right_arrow: Sedang | :arrow_up: Tinggi | Claude Code + Review |
 | :lock: Security-critical | :arrow_down: Rendah | :arrow_up: Sangat Tinggi | Manual + AI assist |
@@ -282,11 +293,11 @@ SPEAKER NOTES:
 
 ---
 
-## :key: Kamu Tetap Pilot-nya
+## :key: Anda Tetap Pilot-nya
 
-- :pilot: AI adalah **co-pilot**, bukan captain
+- :pilot: AI adalah **co-pilot**, bukan kapten
 - :brain: Pahami keputusan pentingnya
-- :white_check_mark: Yang bertanggung jawab tetap **kamu**
+- :white_check_mark: Yang bertanggung jawab tetap **Anda**
 - :warning: Mid-career engineers paling terdampak — bukan junior
   (Simon Willison, Lenny's Podcast)
 
@@ -332,14 +343,14 @@ tapi **informasi apa yang tersedia**
 <!--
 SPEAKER NOTES:
 "Context engineering adalah evolusi dari prompt engineering. Kita tidak hanya memikirkan cara bertanya, tapi juga memastikan AI punya semua konteks yang dibutuhkan."
-Ini nyambung dengan insight dari Lenny's Newsletter: context is the real leverage, bukan sekadar prompt yang clever.
+Ini nyambung dengan insight dari Lenny's Newsletter: context adalah daya ungkit sebenarnya, bukan sekadar prompt yang cerdas.
 -->
 
 ---
 
 ## :brain: 5 Jenis Context
 
-- :keyboard: **User Input** — prompt kamu
+- :keyboard: **User Input** — prompt Anda
 - :books: **Knowledge** — docs, riset, transcript
 - :speech_balloon: **Conversation** — konteks sebelumnya
 - :hammer_and_wrench: **Tool Outputs** — hasil dari tools
@@ -349,7 +360,7 @@ Ini nyambung dengan insight dari Lenny's Newsletter: context is the real leverag
 
 <!--
 SPEAKER NOTES:
-Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan cara development. AI membaca ini dan langsung paham konteksnya. Project Memory = keputusan arsitektur, naming conventions, yang persist across sessions.
+Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan cara development. AI membaca ini dan langsung paham konteksnya. Project Memory = keputusan arsitektur, naming conventions, yang bertahan antar sesi.
 -->
 
 ---
@@ -366,7 +377,7 @@ Contoh: CLAUDE.md di repo ini berisi instruksi tentang tech stack, konvensi, dan
 
 <!--
 SPEAKER NOTES:
-"Pendekatan role-based ini membantu AI fokus. Ketika kamu minta AI jadi architect, dia akan berpikir di level yang berbeda dibanding ketika diminta jadi implementer."
+"Pendekatan role-based ini membantu AI fokus. Ketika Anda minta AI jadi architect, dia akan berpikir di level yang berbeda dibanding ketika diminta jadi implementer."
 -->
 
 ---
@@ -379,7 +390,7 @@ SPEAKER NOTES:
 
 **:briefcase: Business Analyst** — "Ringkas interview customer jadi 5 insight dan 3 aksi"
 
-:point_right: **Sesuaikan peran AI dengan kebutuhan fungsi kamu**
+:point_right: **Sesuaikan peran AI dengan kebutuhan fungsi Anda**
 
 <!--
 SPEAKER NOTES:
@@ -409,14 +420,14 @@ Ambil ide dari artikel Lenny tentang "PM second brain". Pesan utamanya: AI palin
 
 1. :one: **Prompt awal** → draft pertama
 2. :two: **Review** → identifikasi kekurangan
-3. :three: **Refine** → tambah constraint/context
+3. :three: **Perbaiki** → tambah constraint/context
 4. :four: **Ulangi** sampai kualitas sesuai
 
 :bulb: **Tips:** Gunakan `plan mode` untuk hemat token
 
 <!--
 SPEAKER NOTES:
-"Jangan expect hasil sempurna di prompt pertama. AI-assisted development itu iteratif, seperti development biasa."
+"Jangan harapkan hasil sempurna di prompt pertama. AI-assisted development itu iteratif, seperti development biasa."
 -->
 
 ---
@@ -434,7 +445,7 @@ SPEAKER NOTES:
 
 <!--
 SPEAKER NOTES:
-Ambil dari artikel AI prototyping for PMs. Tekankan bahwa manfaat utamanya bukan sekadar "lebih cepat bikin UI", tapi mempercepat discovery dan alignment lintas fungsi.
+Ambil dari artikel AI prototyping for PMs. Tekankan bahwa manfaat utamanya bukan sekadar "lebih cepat bikin UI", tapi mempercepat penemuan dan keselarasan lintas fungsi.
 -->
 
 ---
@@ -470,10 +481,10 @@ Tunjukkan CLAUDE.md dari repo ini sebagai contoh nyata.
 
 ## :ladder: Jangan Langsung Coding!
 
-1. :clipboard: **Audience & goal** — untuk siapa, dan apa hasil yang dibutuhkan?
-2. :arrows_counterclockwise: **Flow** — bagaimana user atau tim akan memakainya?
-3. :building_construction: **Approach** — bagaimana cara terbaik mengerjakannya?
-4. :computer: **Implementation** — baru mulai eksekusi
+1. :clipboard: **Audiens & tujuan** — untuk siapa, dan apa hasil yang dibutuhkan?
+2. :arrows_counterclockwise: **Alur** — bagaimana user atau tim akan memakainya?
+3. :building_construction: **Pendekatan** — bagaimana cara terbaik mengerjakannya?
+4. :computer: **Implementasi** — baru mulai eksekusi
 
 <!--
 TIMING: 5 menit
@@ -505,30 +516,30 @@ Constraints: Rate limiting, CSRF protection
 <!--
 SPEAKER NOTES:
 "Lihat perbedaannya. Prompt yang sama — 'buatkan auth' — tapi hasilnya berbeda drastis tergantung apakah kita memberikan struktur atau tidak."
-Dari Lenny's Newsletter juga ada pola penting: jangan langsung lempar masalah besar. Mulai dari versi paling kecil yang functional, lalu tambah kompleksitas sedikit demi sedikit.
+Dari Lenny's Newsletter juga ada pola penting: jangan langsung lempar masalah besar. Mulai dari versi paling kecil yang fungsional, lalu tambah kompleksitas sedikit demi sedikit.
 -->
 
 ---
 
 ## :brain: Prinsip Dasar
 
-- :zap: **Cepat tanpa struktur** = technical debt
-- :shield: **Output tanpa review** = liability
-- :chart_with_upwards_trend: **Struktur + AI** = sustainable velocity
+- :zap: **Cepat tanpa struktur** = utang teknis
+- :shield: **Output tanpa tinjauan** = risiko
+- :chart_with_upwards_trend: **Struktur + AI** = kecepatan berkelanjutan
 
 ### Mantra:
 
-:dart: Define → :test_tube: Test → :eyes: Review
+:dart: Tentukan → :test_tube: Uji → :eyes: Tinjau
 
 ---
 
 ## :memo: Brief yang Terstruktur
 
-### Audience → Goal → Flow → Approach → Eksekusi
+### Audiens → Tujuan → Alur → Pendekatan → Eksekusi
 
-- :memo: **requirements** — kebutuhan yang bisa dicek
-- :art: **design** — pendekatan dan alur kerja
-- :clipboard: **tasks** — rencana yang trackable
+- :memo: **kebutuhan** — yang bisa dicek
+- :art: **desain** — pendekatan dan alur kerja
+- :clipboard: **tugas** — rencana yang bisa dilacak
 
 :point_right: **AI bekerja lebih baik kalau brief-nya jelas**
 
@@ -536,7 +547,7 @@ Dari Lenny's Newsletter juga ada pola penting: jangan langsung lempar masalah be
 TIMING: 3 menit
 
 SPEAKER NOTES:
-"Ketika kamu memberikan AI sebuah spec yang terstruktur, hasilnya jauh lebih baik dibanding prompt yang ambiguous. Ini berlaku untuk semua AI tools."
+"Ketika Anda memberikan AI sebuah spec yang terstruktur, hasilnya jauh lebih baik dibanding prompt yang ambiguous. Ini berlaku untuk semua AI tools."
 -->
 
 ---
@@ -547,10 +558,10 @@ SPEAKER NOTES:
 
 ## :gem: Kualitas Tetap Nomor Satu
 
-- :mag: **Review setiap output** — jangan auto-accept
-- :test_tube: **Automate** — unit test, integration, E2E
+- :mag: **Tinjau setiap output** — jangan terima otomatis
+- :test_tube: **Otomasi** — unit test, integration, E2E
 - :clipboard: **Standar jelas** — checklist, style guide, acceptance criteria
-- :busts_in_silhouette: **Peer review** — mata manusia tetap penting
+- :busts_in_silhouette: **Tinjauan sejawat** — mata manusia tetap penting
 
 <!--
 TIMING: 5 menit
@@ -572,7 +583,7 @@ table { font-size: 0.7em; }
 | Pola | Cara Kerja | Contoh Nyata |
 |------|-----------|--------------|
 | :red_circle::green_circle: **Red/Green TDD** | Tulis test dulu, AI implementasi | Manusia malas TDD — AI tidak |
-| :open_file_folder: **Templates** | Pola di repo = panduan AI | Existing patterns, CLAUDE.md |
+| :open_file_folder: **Templates** | Pola di repo = panduan AI | Pola yang ada, CLAUDE.md |
 | :package: **Hoarding** | Kumpulkan contoh → AI kombinasi untuk kasus baru | Makin banyak pola, makin kreatif AI |
 
 <!--
@@ -603,27 +614,31 @@ SPEAKER NOTES:
 
 - :dart: **Tentukan target** — pattern baru, bukan "perbaiki semua"
 - :jigsaw: **Batch by scope** — satu modul / satu pattern per iterasi
-- :test_tube: **Test dulu, refactor kemudian** — pastikan ada safety net
+- :test_tube: **Test dulu, refactor kemudian** — pastikan ada jaring pengaman
 - :white_check_mark: **Contoh nyata:** Refactor styling ke Tailwind — 30+ komponen, konsisten
 
 <!--
 SPEAKER NOTES:
-"AI sangat kuat untuk refactoring mekanis — rename, migrasi pattern, konversi styling. Tapi kunci-nya: jangan lempar seluruh codebase sekaligus. Batch per modul, pastikan ada test, dan review hasilnya. Saya pakai ini saat migrasi styling ke Tailwind di 30+ komponen — AI handle boilerplate, saya pastikan konsistensinya."
+"AI sangat kuat untuk refactoring mekanis — rename, migrasi pattern, konversi styling. Tapi kunci-nya: jangan lempar seluruh codebase sekaligus. Batch per modul, pastikan ada test, dan review hasilnya. Saya pakai ini saat migrasi styling ke Tailwind di 30+ komponen — AI tangani boilerplate, saya pastikan konsistensinya."
 -->
 
 ---
 
 ## :lock: Security: Manusia = Final Gatekeeper
 
-- :shield: Validasi **vulnerability** — injection, insecure API, deps
-- :no_entry: Jangan blindly trust AI untuk security
+- :shield: Validasi **vulnerability** — injection, insecure API, supply chain
+- :no_entry: Jangan percaya begitu saja terhadap AI untuk security
 - :warning: **Lethal trifecta** — private data + untrusted content + external comms
+- :package: **[Supply chain attack](https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package)** — axios npm dikompromikan Korea Utara
 - :robot: AI boleh **scan**, tapi manusia yang **approve**
+- :crystal_ball: [Glasswing](https://www.anthropic.com/glasswing) — Mythos bisa dipakai penyerang & pembela, bersiaplah
 
 <!--
 SPEAKER NOTES:
 Simon Willison di Lenny's Podcast menyebut "lethal trifecta": tiga hal yang jika bertemu jadi sangat berbahaya — private data, untrusted content injection, dan external communication. "Prompt injection is an unsolved security problem."
-Developer tetap harus jadi final gatekeeper. Checklist sebelum deploy tetap wajib.
+Contoh nyata supply chain attack: 31 Maret 2026, aktor Korea Utara (UNC1069) mengkompromikan akun maintainer axios — library npm dengan 100 juta+ download per minggu. Dependency jahat 'plain-crypto-js' otomatis tereksekusi saat install. AI agent yang menjalankan `npm install` tidak akan menyadarinya.
+Soal Glasswing: ini project terbaru dari Anthropic bersama AWS, Apple, Google, Microsoft. Mereka pakai Claude Mythos Preview — model yang belum tersedia untuk publik — dan sudah menemukan ribuan zero-day vulnerability di setiap OS dan browser utama. Kita belum bisa pakai Mythos sekarang, tapi intinya: model frontier seperti ini bisa digunakan oleh penyerang maupun pembela. Siapa yang duluan memanfaatkannya, dia yang menang. Jadi kita harus siap.
+Developer tetap harus jadi penjaga terakhir. Checklist sebelum deploy tetap wajib.
 -->
 
 ---
@@ -631,8 +646,8 @@ Developer tetap harus jadi final gatekeeper. Checklist sebelum deploy tetap waji
 ## :gear: System Thinking
 
 - :jigsaw: **Konsistensi** — satu pattern, seluruh produk
-- :no_entry: Hindari **over-fragmentation**
-- :link: **Pahami impact** setiap perubahan
+- :no_entry: Hindari **fragmentasi berlebihan**
+- :link: **Pahami dampak** setiap perubahan
 - :books: **Docs** — AI bantu generate, manusia review
 
 <!--
@@ -659,8 +674,8 @@ SPEAKER NOTES:
 - :question: **Prompt ambiguous** — garbage in, garbage out
 - :eyes: **Vibe check doang** — bukan evaluasi
 - :computer: **"Works on my machine"** — test di CI
-- :crystal_ball: **Expect sempurna sekali jadi**
-- :sleeping: **Jadi passenger** di output sendiri
+- :crystal_ball: **Berharap sempurna sekali jadi**
+- :sleeping: **Jadi penumpang** di output sendiri
 - :rocket: **Mulai tanpa context**
 
 ---
@@ -676,7 +691,7 @@ SPEAKER NOTES:
 > Filter by category di halaman `/talks` — Conferences, Podcasts, Meetups
 
 :point_right: Buka terminal → cek status Claude Code
-:point_right: Review PR yang masuk di GitHub
+:point_right: Review PR pakai **GPT-5.4 via Amp Code**
 :point_right: Merge PR → baru zainf.dev/talks terupdate
 
 <!--
@@ -685,8 +700,9 @@ TIMING: 5 menit
 SPEAKER NOTES:
 Buka terminal, tunjukkan output Claude Code.
 Buka GitHub PR yang dihasilkan — tunjukkan diff-nya ke audiens.
+Lalu tunjukkan review PR menggunakan Amp Code dengan GPT-5.4 — ini contoh nyata multi-model workflow: Claude Code untuk implementasi, GPT-5.4 untuk review. Dua AI saling mengecek pekerjaan satu sama lain.
 Buka zainf.dev/talks — demo filter yang sudah jalan (atau belum jalan kalau belum selesai — itu pun valuable!).
-Pesan kunci: "Claude Code mengerjakan task-nya secara autonomous selama presentasi. Tapi saya yang review dan approve PR-nya. Saya tetap pilot-nya. Dan ini tool yang bisa kalian coba sendiri hari ini."
+Pesan kunci: "Claude Code mengerjakan tugasnya secara otonom selama presentasi. Lalu saya minta AI yang berbeda — GPT-5.4 lewat Amp Code — untuk review hasilnya. Ini praktik yang bagus: jangan review pakai AI yang sama. Tapi tetap, saya yang approve dan merge. Saya tetap pilot-nya."
 -->
 
 ---
@@ -708,6 +724,8 @@ Pesan kunci: "Claude Code mengerjakan task-nya secara autonomous selama presenta
 
 :link: <https://github.com/zainfathoni/zainf>
 
+![w:200](assets/agentic-engineering-qr.png)
+
 ### Ada pertanyaan? :raised_hand:
 
 ---
@@ -727,3 +745,4 @@ li { font-size: 0.55em; line-height: 1.4; }
 - [What is Agentic Engineering?](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/) — Simon Willison
 - [Arms Race di Kantor](https://www.zainfathoni.com/blog/ai-arms-race-defensive-programming-2026-04-03) · [Building My Personal AI Army](https://www.zainfathoni.com/blog/project-transformers-building-personal-ai-army) — Zain Fathoni
 - [OpenClaw](https://openclaw.io) — Agentic engineering platform
+- [Axios NPM Supply Chain Attack](https://cloud.google.com/blog/topics/threat-intelligence/north-korea-threat-actor-targets-axios-npm-package) — Google Threat Intelligence · [Project Glasswing](https://www.anthropic.com/glasswing) — Anthropic
