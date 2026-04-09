@@ -1,20 +1,21 @@
-import type { MetaFunction } from "react-router";
-import { Card } from "~/components/Card";
+import clsx from "clsx";
+import { Link } from "react-router";
 import type { SectionProps } from "~/components/Section";
 import { Section } from "~/components/Section";
-import { SimpleLayout } from "~/components/SimpleLayout";
 import type { Talk } from "~/models/talks";
-import { conferences, meetups, podcasts } from "~/models/talks";
+import { Card } from "./Card";
 
-export const meta: MetaFunction = () => [
-  {
-    title: "Talks - Zain Fathoni",
-  },
-  {
-    name: "description",
-    content:
-      "I’ve spoken at local and international events and been interviewed for a handful of podcasts.",
-  },
+export type TalkCategory = "all" | "conferences" | "podcasts" | "meetups";
+
+const categoryFilters: Array<{
+  key: TalkCategory;
+  label: string;
+  to: string;
+}> = [
+  { key: "all", label: "All talks", to: "/talks" },
+  { key: "conferences", label: "Conferences", to: "/talks/conferences" },
+  { key: "podcasts", label: "Podcasts", to: "/talks/podcasts" },
+  { key: "meetups", label: "Meetups", to: "/talks/meetups" },
 ];
 
 function TalksSection({ children, ...props }: SectionProps) {
@@ -70,7 +71,6 @@ function Appearance({
 }
 
 function prioritizeResources(resources: Talk["resources"]) {
-  // Priority order: video > slides > repository > other
   const priority = {
     video: 0,
     slides: 1,
@@ -122,23 +122,46 @@ function mapTalkToAppearance(talk: Talk) {
   );
 }
 
-export default function Talks() {
+export function TalksList({
+  sections,
+  currentFilter,
+}: {
+  sections: Array<{ title: string; talks: Talk[] }>;
+  currentFilter: TalkCategory;
+}) {
   return (
-    <SimpleLayout
-      title="I’ve spoken at local and international events and been interviewed in a few podcasts."
-      intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
-    >
+    <>
+      <nav
+        aria-label="Filter talks by category"
+        className="mb-12 flex flex-wrap gap-3"
+      >
+        {categoryFilters.map((filter) => {
+          const isActive = filter.key === currentFilter;
+
+          return (
+            <Link
+              key={filter.key}
+              to={filter.to}
+              aria-current={isActive ? "page" : undefined}
+              className={clsx(
+                "rounded-full px-3 py-1.5 text-sm font-medium transition",
+                isActive
+                  ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
+                  : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
+              )}
+            >
+              {filter.label}
+            </Link>
+          );
+        })}
+      </nav>
       <div className="space-y-20">
-        <TalksSection title={`${conferences.length} Conferences`}>
-          {conferences.map(mapTalkToAppearance)}
-        </TalksSection>
-        <TalksSection title={`${podcasts.length} Podcasts`}>
-          {podcasts.map(mapTalkToAppearance)}
-        </TalksSection>
-        <TalksSection title={`${meetups.length} Meetups`}>
-          {meetups.map(mapTalkToAppearance)}
-        </TalksSection>
+        {sections.map((section) => (
+          <TalksSection key={section.title} title={section.title}>
+            {section.talks.map(mapTalkToAppearance)}
+          </TalksSection>
+        ))}
       </div>
-    </SimpleLayout>
+    </>
   );
 }
