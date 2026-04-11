@@ -16,12 +16,11 @@ pakai **OpenClaw** :robot:
 
 ## :arrow_forward: Buka Bab 9 Sambil Nyimak
 
-![bg right:40%](assets/daily-wins-qr.png)
+![w:220](assets/daily-wins-qr.png)
 
 **Bab 9: Proaktif — Bot yang Nge-ping Anda Duluan**
 
-- :iphone: Scan QR-nya sekarang
-- :brain: Biar pas saya cerita, peta-nya udah di tangan Anda
+:iphone: Scan sekarang — biar peta Bab 9 udah di tangan Anda pas saya cerita
 
 ---
 
@@ -205,12 +204,8 @@ Cron yang ditulis dan dibaca bot:
 
 ## :arrow_forward: Lanjut ke Bab 9
 
-![bg right:40%](assets/daily-wins-qr.png)
+![w:220](assets/daily-wins-qr.png)
 
-**Proaktif: Bot yang Nge-ping Anda Duluan**
-
-- :robot: Cron & heartbeat patterns
-- :sunrise: Quiet hours & routing
-- :bar_chart: Weekly synthesis
+**Bab 9: Proaktif — Bot yang Nge-ping Anda Duluan**
 
 *Terima kasih!* :pray:
