@@ -1,0 +1,93 @@
+---
+meta:
+  - title: "Budget Lama Sudah Habis, Glue Layer Makin Penting — AI Tools Digest #11"
+  - name: description
+    content: "Budget AI coding makin sempit, token thrift mulai jadi kategori sendiri, dan workaround MCP terasa lebih penting dari official support. Rangkuman dari grup AI Tools SWE GROWTH, 05-12 Apr 2026."
+  - author: Zain Fathoni
+  - date: "2026-04-12"
+  - lang: id
+  - property: og:title
+    content: "Budget Lama Sudah Habis, Glue Layer Makin Penting — AI Tools Digest #11"
+  - property: og:description
+    content: "Budget AI coding makin sempit, token thrift mulai jadi kategori sendiri, dan workaround MCP terasa lebih penting dari official support. Rangkuman dari grup AI Tools SWE GROWTH, 05-12 Apr 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-apr-5-apr-12-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-11.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Budget Lama Sudah Habis, Glue Layer Makin Penting — AI Tools Digest #11"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Budget Lama Sudah Habis, Glue Layer Makin Penting — AI Tools Digest #11
+
+Minggu ini obrolan di grup terasa beda. Bukan lagi soal model mana paling pintar, tapi soal siapa yang masih bisa bikin workflow AI-nya masuk akal secara biaya. Ada screenshot kompensasi yang bikin melongo, ada bonus kredit yang tinggal hitungan hari, dan ada kesimpulan yang makin susah dihindari: budget lama sudah habis.
+
+Yang menarik, respons grup bukan panik total. Justru mulai kelihatan pola baru. Ketika subscription makin terasa sempit, orang-orang nggak langsung menyerah. Mereka cari routing yang lebih hemat, wrapper yang lebih kasar tapi murah, dan jalur integrasi yang nggak harus nunggu vendor bilang "supported". Menurut saya ini tanda penting, 2026 makin terasa seperti tahun *AI cost engineering*, bukan cuma tahun model benchmarking.
+
+## $20 sekarang terasa seperti sudut sempit
+
+Ada satu tema yang muncul terus minggu ini: tier murah makin susah dipertahankan sebagai default. Setelah bahas bonus usage dan limit, Mas Joko bilang, *"$20 ga cukup samsekw wkk"* dan jujur itu merangkum suasana dengan cukup telak. Waktu saya share kalau [`/ultraplan`](https://code.claude.com/docs/en/ultraplan) di [Claude Code](https://docs.anthropic.com/en/docs/claude-code) ternyata lumayan oke, Mas Michael langsung nyeletuk, *"$20 dipojokan tahan2 😂"*.
+
+Tapi obrolannya tidak sepenuhnya pesimistis. Mas Ivan justru kasih counterweight yang berguna: kalau workflow-nya disiplin, model dirouting sesuai level tugas, dan frontier model nggak dipakai untuk semua hal, paket sederhana masih bisa cukup untuk kerja kantor. Jadi masalahnya bukan semata harga, tapi mismatch antara ekspektasi lama dan pola pakai baru.
+
+Nah, di sinilah masalahnya. Kalau dulu subscription flat terasa seperti jalan aman, sekarang dia makin terasa seperti batas bawah yang gampang kepentok. Pertanyaannya bukan lagi "pakai tool apa" tapi "tugas apa pantas dibayar dengan model yang mana".
+
+## Token thrift mulai jadi produk sendiri
+
+Salah satu momen paling menarik datang waktu Mas Desilino share [Caveman](https://github.com/JuliusBrussee/caveman), repo yang dia sebut *"repo kocak buat hemat token cc"*. Grup langsung nangkep poinnya. Ini bukan tool yang dijual sebagai sesuatu yang mewah, tapi sebagai cara bertahan. Mas Luthfi langsung nanya soal kualitas hasilnya, dan Mas Zahid menggarisbawahi kekhawatiran yang paling masuk akal: *"secara dia ngerubah thinking flow nya"*.
+
+Saya suka tensi di sini. Semua orang paham hemat token itu penting, tapi nggak ada yang mau pura-pura bahwa penghematan itu gratis. Bahkan Mas Desilino yang terdengar paling pragmatis tetap mengingatkan tradeoff-nya waktu bilang, *"Gw udah full pake kilo, $20 bisa cukup sebulan. Syarat nya jgn pake model frontier ato yg keluaran Anthropic 😅"*. Artinya jelas, kalau mau murah, ada kenyamanan dan kadang kualitas yang ikut dipotong.
+
+Menurut saya ini sinyal besar. Tooling buat "berpikir lebih murah" mulai punya tempat sendiri. Dan kalau tren ini lanjut, kita mungkin akan lihat makin banyak wrapper, shim, atau opinionated workflow yang tugas utamanya bukan menambah capability, tapi memangkas burn rate.
+
+## Official support list makin kalah sama glue layer
+
+Diskusi lain yang lebih kecil tapi penting datang dari pertanyaan Mas Sem: apakah [OpenCode](https://opencode.ai) bisa connect ke Figma MCP, padahal di guide resmi [Figma MCP](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server) namanya nggak muncul. Ini pertanyaan yang dulu mungkin berhenti di situ, "oh belum support". Tapi minggu ini refleks grup sudah beda.
+
+Saya jawab, *"Kalau Figma punya MCP, [OpenClaw](https://openclaw.ai) bisa connect via mcporter."* Buat saya ini bukan sekadar jawaban teknis. Ini cara berpikir yang makin sering muncul: native support itu bagus, tapi bukan satu-satunya jalan. Kalau ada protokolnya, sering kali yang dibutuhkan cuma jembatan yang tepat.
+
+Ternyata itu juga yang bikin obrolan AI sekarang makin seru. Dulu kita sibuk nanya model mana paling kuat. Sekarang kita makin sering nanya: apa yang bisa dirangkai, apa yang bisa dijembatani, dan apa yang bisa dipaksa kerja walau vendor belum siap. 2026 bukan cuma tahun tools, ini tahun glue.
+
+## ⚡ Quick Hits
+
+- Screenshot kompensasi AI yang dishare Mas Michael bikin Mas Tunggul cuma bisa komen "per day ... 🧐", lalu Mas Desilino menimpali, *"Kapan pecah nya ini bubble 😅"*. Concern-nya bukan iri, tapi sustainability.
+- Waktu muncul error 529 overloaded, Mas Aidityas langsung bilang, *"Mulai guys penyakitnya"*. Jadi bahkan di tengah pricing pressure, reliability masih tetap jadi beban mental.
+- Bonus [`Amp Code`](https://ampcode.com) tinggal sebentar lagi. Mas Dedy P mengingatkan, *"bsk terakhir bonus $20/hari Amp 😭"*. Gratisan selalu terasa paling jelas justru saat mau hilang.
+- Ada juga side thread soal tool migration setelah artikel Steve Yegge, [Gas Town from clown show to v1.0](https://steve-yegge.medium.com/gas-town-from-clown-show-to-v1-0-c239d9a407ec), memicu rasa penasaran apakah tool lama layak dilirik lagi.
+
+Semua quick hit ini ngarah ke kesimpulan yang sama. Bukan berarti hype sudah selesai, tapi biaya, reliability, dan interoperability sekarang berdiri sejajar dengan "kepintaran model" itu sendiri.
+
+## 🧪 Yang Perlu Dicoba Minggu Ini
+
+1. Coba [`/ultraplan`](https://code.claude.com/docs/en/ultraplan) di [Claude Code](https://docs.anthropic.com/en/docs/claude-code) untuk task yang butuh breakdown dulu sebelum eksekusi.
+2. Uji [Caveman](https://github.com/JuliusBrussee/caveman) atau wrapper hemat token lain, tapi bandingkan kualitas output sebelum dipakai rutin.
+3. Kalau kamu bergantung pada MCP, baca guide [Figma MCP](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server) lalu eksplor jalur bridge seperti visi [OpenClaw](https://github.com/openclaw/openclaw/blob/main/VISION).
+4. Cek lagi asumsi budget tooling timmu. Diskusi [Hacker News soal pricing Codex](https://news.ycombinator.com/item?id=47650726) cukup jadi pengingat bahwa model subscription murah belum tentu stabil selamanya.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — pemantik obrolan soal pricing pressure dan screenshot kompensasi yang bikin grup refleks mikir bubble.
+- **Mas Joko** — merangkum rasa sesak tier murah dengan kalimat paling jujur minggu ini.
+- **Mas Ivan** — kasih perspektif operasional bahwa budget kecil masih mungkin, asal routing model-nya disiplin.
+- **Mas Desilino** — bawa angle paling praktis soal token thrift dan tradeoff kualitas.
+- **Mas Luthfi** — ngedorong pertanyaan penting soal kualitas output dari tool hemat token.
+- **Mas Zahid** — menajamkan concern bahwa flow hemat biaya bisa mengubah cara agent berpikir.
+- **Mas Sem** — membuka diskusi interop OpenCode dan Figma MCP.
+- **Mas Aidityas** — ngasih reality check soal overload dan reliability.
+- **Mas Dedy P** — ngingetin bahwa bonus Amp bukan sesuatu yang bisa diandalkan lama.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 12 April 2026*
