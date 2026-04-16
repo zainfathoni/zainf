@@ -104,23 +104,72 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              Hello! I am Zain. I used to live in Singapore{" "}
+              Hello! I&apos;m Zain Fathoni, a software engineer, community
+              builder, and writer based in Yogyakarta, Indonesia{" "}
+              <span role="img" aria-label="Indonesian Flag">
+                🇮🇩
+              </span>
+              .
+            </p>
+            <p>
+              I spent 6 years in Singapore{" "}
               <span role="img" aria-label="Singaporean Flag">
                 🇸🇬
               </span>{" "}
-              for 6 years during my tenure in{" "}
+              during my time at{" "}
               <ExternalLink href="https://www.ninjavan.co/en-sg/">
                 Ninja Van
               </ExternalLink>
-              . You might know me from{" "}
+              , and over the years I&apos;ve also worked at{" "}
+              <ExternalLink href="https://www.bukalapak.com/">
+                Bukalapak
+              </ExternalLink>
+              ,{" "}
+              <ExternalLink href="https://www.xtremax.com/">
+                Xtremax
+              </ExternalLink>
+              ,{" "}
+              <ExternalLink href="https://www.relaycommerce.io/">
+                Relay Commerce
+              </ExternalLink>
+              , and now{" "}
+              <ExternalLink href="https://www.bookthatapp.com/">
+                BookThatApp
+              </ExternalLink>
+              , where I work remotely as a{" "}
+              <ExternalLink href="https://www.linkedin.com/in/zainfathoni/">
+                Senior Software Engineer
+              </ExternalLink>
+              .
+            </p>
+            <p>
+              Beyond work, I build communities and experiments around
+              technology. I&apos;m behind{" "}
+              <ExternalLink href="https://vibefromcafe.id/">
+                Vibe From Cafe
+              </ExternalLink>
+              , a community initiative helping tech workers navigate the AI
+              shift together, and{" "}
+              <ExternalLink href="https://ark.zainf.dev/">
+                The Ark
+              </ExternalLink>
+              , my personal AI crew and experimentation space for agentic
+              workflows and human-AI collaboration.
+            </p>
+            <p>
+              Some people may know me from{" "}
               <Link
                 to="/talks"
                 aria-label="My JSConf Asia 2019 talk"
                 className={linkClassName}
               >
                 my talks
-              </Link>{" "}
-              at conferences or my contributions at{" "}
+              </Link>
+              , my writing at{" "}
+              <ExternalLink href="https://www.pejuangkode.com">
+                Pejuang Kode
+              </ExternalLink>
+              , or my contributions to initiatives like{" "}
               <ExternalLink href="https://wargabantuwarga.id/">
                 WargaBantuWarga
               </ExternalLink>{" "}
@@ -130,70 +179,24 @@ export default function About() {
                 className={linkClassName}
               >
                 KawalCOVID19
+              </ExternalLink>
+              . I also co-organize{" "}
+              <ExternalLink href="https://reactjs.id">
+                ReactJS Indonesia
               </ExternalLink>{" "}
-              .
-            </p>
-            <p>
-              I currently work remotely as a{" "}
-              <ExternalLink href="https://www.linkedin.com/in/zainfathoni/">
-                Senior Software Engineer
-              </ExternalLink>{" "}
-              at{" "}
-              <ExternalLink href="https://www.bookthatapp.com/">
-                BookThatApp
-              </ExternalLink>
-              , previously venturing at{" "}
-              <ExternalLink href="https://www.xtremax.com/">
-                Xtremax
-              </ExternalLink>
-              ,{" "}
-              <ExternalLink href="https://www.bukalapak.com/">
-                Bukalapak
-              </ExternalLink>
-              ,{" "}
-              <ExternalLink href="https://www.ninjavan.co/en-sg/">
-                Ninja Van
-              </ExternalLink>
-              , and{" "}
-              <ExternalLink href="https://www.relaycommerce.io/">
-                Relay Commerce
-              </ExternalLink>
-              . I live in Yogyakarta, Indonesia{" "}
-              <span role="img" aria-label="Indonesian Flag">
-                🇮🇩
-              </span>{" "}
-              with my wife 👰🏻 and three kids 👧🏻👦🏻👶🏻.
-            </p>
-            <p>
-              To channel my enthusiasm for React, JavaScript, & frontend
-              development in general, I co-organize a{" "}
-              <ExternalLink href="https://reactjs.id">ReactJS </ExternalLink>{" "}
-              and a{" "}
+              and the{" "}
               <ExternalLink href="https://feid.dev">
                 Frontend Developer community in Indonesia
               </ExternalLink>
-              . I love sharing my learning journey to the community by giving{" "}
-              <Link to="/talks" className={linkClassName}>
-                a few talks
-              </Link>{" "}
-              and writing some articles in Bahasa Indonesia at{" "}
-              <ExternalLink href="https://www.pejuangkode.com">
-                Pejuang Kode
-              </ExternalLink>{" "}
-              Medium publication to help my fellow Indonesian developers learn.
+              .
             </p>
             <p>
-              Other than that, I also gathered a community of Indonesian
-              learners around me in a{" "}
+              I live in Yogyakarta with my wife 👰🏻 and three kids 👧🏻👦🏻👶🏻.
+              If you&apos;d like to connect, feel free to join the{" "}
               <ExternalLink href="https://zainf.dev/discord">
-                Discord Server
+                Pejuang Kode Discord Server
               </ExternalLink>
-              . If you have any question for me, join us at my{" "}
-              <ExternalLink href="https://zainf.dev/discord">
-                <strong>Pejuang Kode</strong> Discord Server
-              </ExternalLink>{" "}
-              and raise your questions over there! We would love to keep in
-              touch with you. 😉
+              . 😉
             </p>
           </div>
         </div>
