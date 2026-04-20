@@ -1,0 +1,144 @@
+---
+meta:
+  - title: "Yang Bikin Boncos Bukan Lagi Modelnya, Tapi Sistemnya — AI Tools Digest #12"
+  - name: description
+    content: "Yang bikin boncos minggu ini bukan lagi cuma modelnya, tapi seluruh sistem di sekitarnya. Rangkuman dari grup AI Tools SWE GROWTH, 12-20 Apr 2026."
+  - author: Zain Fathoni
+  - date: "2026-04-20"
+  - lang: id
+  - property: og:title
+    content: "Yang Bikin Boncos Bukan Lagi Modelnya, Tapi Sistemnya — AI Tools Digest #12"
+  - property: og:description
+    content: "Yang bikin boncos minggu ini bukan lagi cuma modelnya, tapi seluruh sistem di sekitarnya. Rangkuman dari grup AI Tools SWE GROWTH, 12-20 Apr 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-apr-12-apr-20-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-12.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Yang Bikin Boncos Bukan Lagi Modelnya, Tapi Sistemnya — AI Tools Digest #12"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Yang Bikin Boncos Bukan Lagi Modelnya, Tapi Sistemnya — AI Tools Digest #12
+
+Minggu ini obrolan di grup AI Tools SWE GROWTH rasanya geser lagi. Bukan berarti model sudah tidak penting, tapi yang bikin orang capek sekarang justru lapisan di sekitarnya: kuota cepat habis, RAM jebol, workflow ribet, worktree beranak, secret management belum beres, lalu tiba-tiba kita sadar bahwa yang mahal bukan satu model, tapi seluruh sistem yang kita bangun di atasnya.
+
+Ada ledakan kecil waktu [Claude Code](https://docs.anthropic.com/en/docs/claude-code) dan Opus 4.7 muncul di timeline grup. Ada juga momen seru ketika [OpenCode](https://opencode.ai) makin kelihatan seperti daily driver yang sungguhan, bukan sekadar alternatif cadangan. Tapi justru yang paling menarik buat saya minggu ini adalah bagaimana obrolannya makin dewasa: orang-orang tidak cuma tanya “bagus nggak?”, tapi “kalau dipakai tiap hari, masih masuk akal nggak?”
+
+## [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Codex](https://openai.com/codex/), dan realita budget bulanan
+
+Semua dimulai dari pertanyaan yang sangat relatable: kalau budget AI cuma sekitar $20 per bulan, enaknya beli apa buat ngoding frontend, Flutter, React, dan kerja harian ringan?
+
+Mas Ari langsung meng-grounding diskusinya. Katanya, *“Sekarang lagi makai antigravity, tapi cepet banget abis kuota nya, sama makan RAM nya gede banget. Kemaren waktu di cek masa makan ram hampir 20GB padahal jalanin 2 task doang.”* Itu kalimat yang langsung menggeser diskusi dari “fiturnya apa” ke “biaya operasionalnya sanggup nggak”.
+
+Mas Luthfi A lalu kasih jawaban yang cukup mewakili mood grup minggu ini: *“kayaknya claude code cukup, tp klo sering kena limit, chatgpt codex bagus juga”*. Bukan jawaban fanboy, bukan juga benchmark theater. Lebih ke strategi bertahan hidup.
+
+Yang menarik, Mas Zahid juga ngasih caveat yang sangat spesifik: Flutter itu tetap susah, dan sejauh pengalaman beliau, yang paling bagus ya masih punya Anthropic. Jadi bahkan ketika diskusinya soal hemat, kualitas domain-specific masih belum bisa diabaikan. Hemat boleh, tapi kalau hasilnya bikin ngulang dua kali, boncos juga ujungnya.
+
+Artinya apa? Kita tidak lagi memilih model seperti memilih kamera terbaik. Kita memilih stack seperti memilih kendaraan harian: kuat nggak dipakai muter terus, boros nggak, rewel nggak, dan kalau dipaksa ngebut semalaman apakah masih tahan.
+
+## [OpenCode](https://opencode.ai) makin terasa seperti alat kerja, bukan eksperimen
+
+Kalau minggu-minggu lalu [OpenCode](https://opencode.ai) masih sering muncul sebagai nama yang “menarik untuk dicoba”, minggu ini nadanya mulai berubah. Sudah ada aroma daily-driver.
+
+Mas Tegar bilang, *“Pake web mode nya, ini enak banget.”* Lalu beliau tambahkan sesuatu yang justru penting: komentar per file bisa langsung di-attach ke prompt. Jadi konteks kerja terasa lebih natural, tidak perlu mention sana sini. Ini bukan jenis pujian yang keluar dari orang yang sedang kagum demo. Ini pujian dari orang yang lagi benar-benar kerja.
+
+Mas Zahid, seperti biasa, langsung menambahkan remnya. Kata beliau, *“hahaha tiati mas opencode web dia agak leak kalo udah running beberapa sesi lama”*, dan kalau terminalnya kebuka, CPU juga bisa jadi parah. Jadi ini bukan cerita “alat sempurna”. Ini cerita alat yang enak dipakai, tapi tetap perlu tahu sisi rewel-nya.
+
+Di tengah itu, saya juga ikut nyeletuk dari pengalaman sendiri: *“Saya cobain ketiganya, murni `codex` kurang mantap, minim fitur. Akhirnya sekarang switching antara `omp` & `opencode`, masing-masing punya kelebihannya sendiri.”* Buat saya ini cukup merangkum arah obrolan minggu ini. Orang makin jarang mengevaluasi model secara telanjang. Yang dibandingkan justru lapisan workflow di atasnya.
+
+Pertanyaannya jadi bukan lagi “model mana paling pintar?”, tapi “wrapper mana yang bikin model itu terasa layak dipakai tiap hari?”
+
+## Opus 4.7 datang, grup langsung senang, lalu curiga
+
+Tidak sah minggu AI tools tanpa fase ini: model baru muncul, semua orang heboh, lalu 20 menit kemudian mulai tanya, “oke, tapi ini beneran bagus atau cuma keliatan bagus?”
+
+Mas Oshi membuka babak antusiasmenya dengan kalimat yang lumayan bikin penasaran: *“Kesan pertama Opus 4.7 cukup memuaskan… aku suruh review design doc yg dibikin sama Opus 4.6 dan sudah direview sama GPT 5.4, dia bisa nemu 19 findings baru 😅”* Itu impresi yang jelas kuat. Sulit untuk tidak ikut kepancing.
+
+Tapi Mas Tegar langsung nanya hal yang paling penting: valid semua atau halu? Dan ternyata jawabannya belum beres juga. Mas Oshi bilang beliau baru baca sekilas dan hasilnya *masuk akal sih*, tapi belum dicek detail. Di sinilah grup kita sering jadi sehat. Antusias, iya. Tapi tidak lama-lama membiarkan hype berdiri sendiri.
+
+Lalu datang palu godam dari sisi lain. Mas Agung bilang, *“aigoo baru ngetes 4.7 buat nulis auto report halunya bukan maen 😭😭😭”*. Satu kalimat, satu realita. Belum lagi ada error 529 overload, dan beberapa orang bingung kenapa Opus 4.7 muncul di desktop app tapi belum nongol di CLI. Jadi rilis barunya memang bikin penasaran, tapi belum bisa dibilang mulus.
+
+Buat saya ini menarik. Model release sekarang tidak pernah hidup sendirian. Ia langsung diadili oleh API stability, CLI parity, workflow fit, dan kualitas output di tugas nyata. Kalau dulu launching model cukup ditentukan oleh benchmark, sekarang dia harus lolos sidang operasional juga.
+
+## [Vercel Workflow](https://vercel.com/blog/a-new-programming-model-for-durable-execution) dan kenapa durable execution terasa makin relevan
+
+Salah satu thread yang menurut saya paling “diam-diam penting” minggu ini datang dari Mas Tunggul yang share [Vercel Workflow](https://vercel.com/blog/a-new-programming-model-for-durable-execution). Beliau bilang ini menarik buat agents, backend, pipeline ETL, sampai payment. Bukan framing yang sempit. Langsung lebar.
+
+Mas Zahid lalu menguatkan dengan observasi yang saya suka: durable workflow sekarang cukup populer, dan kasusnya bahkan tidak harus AI. Di mobile pun kepakai karena durable-nya bisa auto retry dan recover process. Nah, di sinilah obrolannya naik kelas. Kita tidak lagi bicara agent sebagai mainan demo. Kita mulai bicara reliability pattern.
+
+Tapi grup juga tidak bodoh. Mas Tunggul sendiri yang paling cepat mengingatkan bahwa compatibility dan dependencies di luar teknologi [Vercel](https://vercel.com) harus dicek ulang, karena takut ada hidden cost. Itu penting. Soalnya durable execution memang terdengar elegan sekali sampai kita sadar bahwa elegansi kadang datang bersama tagihan dan lock-in.
+
+Artinya 2026 mungkin bukan cuma tahun agent. Bisa jadi ini tahun ketika orang mulai sadar bahwa yang menentukan agent bertahan bukan prompt-nya, tapi fondasi workflow di bawahnya.
+
+## [Worktrunk](https://github.com/max-sixty/worktrunk), `.env`, dan kapan hack kecil berubah jadi masalah sistem
+
+Saya suka thread seperti ini, karena kelihatannya kecil, tapi sebenarnya membocorkan tingkat kedewasaan stack kita.
+
+Mas Andre Pratama bilang [Worktrunk](https://github.com/max-sixty/worktrunk) itu worth it parah karena mengurangi action-action yang tidak perlu seperti delete worktree dan delete branch. Itu pujian yang sangat developer-coded. Bukan flashy, tapi kerasa.
+
+Lalu masalah klasik datang: bagaimana caranya supaya ketika bikin worktree baru, file `.env` ikut dengan benar?
+
+Mas Shofy jawab dengan pendekatan yang sangat masuk akal untuk fase awal: bikin script bash, lalu sekalian softlink `.env` dan `node_modules` dari folder utama. Sat set, selesai.
+
+Tapi Mas Zahid langsung menggeser lensanya. Menurut beliau, ini sebenarnya masalah env management. Bahkan beliau sambil ketawa bilang, *“Kalo udah pakek secret management enak banget. 🤣 🤣 🤣 Saya sekarang pakek ini terus”*, lalu nunjuk ke [Infisical](https://infisical.com/).
+
+Saya suka momen ini karena ia menunjukkan pergeseran pola pikir. Dari “gimana copy file yang benar” ke “kenapa kita masih copy file?”. Kalau worktree dan sandbox makin banyak, pertanyaannya memang harus naik level. Hack kecil yang aman untuk dua branch bisa jadi bencana kecil ketika branch-nya dua puluh.
+
+## [Paperclip](https://paperclip.xyz), budget simulasi, dan kapan agent company terasa terlalu mahal untuk dibayangkan
+
+Thread [Paperclip](https://paperclip.xyz) juga seru. Mas Faris bilang tool ini terasa seperti game simulasi bikin bisnis, bahkan membantu kebayang kebutuhan seorang solopreneur. Saya paham daya tariknya. Banyak tool agent sekarang menjual bukan cuma automasi, tapi fantasi struktur kerja.
+
+Tapi kemudian Mas Desilino masuk dan membawa gravitasi ke bumi: menurut kesimpulan sementaranya, tool seperti ini tidak efektif kalau budget bulanan dibatasi di bawah $50. Lalu obrolan makin detail, karena setiap agent punya budget sendiri, dan begitu kita mulai membagi CEO, engineer, marketing, kita langsung sadar bahwa fantasy org chart ternyata punya price tag.
+
+Bagian favorit saya justru ketika Mas Desilino bilang, *“Kalo dijalanin alon2 ya mending pake openclaw biasa aja gak sih?”* Itu kalimat yang sederhana, tapi tajam. Karena ia membongkar ilusi yang sering muncul di ruang AI tools: semakin kompleks belum tentu semakin berguna. Kadang yang dibutuhkan bukan perusahaan virtual, tapi satu sistem yang cukup stabil dan cukup murah untuk benar-benar jalan.
+
+Jadi pertanyaannya bukan “bisakah kita bikin company of agents?”, tapi “perlu nggak, dan sanggup nggak bayar ongkos koordinasinya?”
+
+## ⚡ Quick Hits
+
+- Mas Tegar tanya soal akses app dari luar, dan Mas Zahid lebih prefer [Tailscale](https://tailscale.com) daripada [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/) untuk akses privat. Nada pesannya jelas: bisa dibuka ke internet, tapi belum tentu bijak.
+- Ada yang tanya [OpenClaw](https://openclaw.ai) di Raspberry Pi 5 dengan RAM 8GB. Belum jadi thread panjang, tapi cukup menunjukkan self-hosting tetap ada di radar.
+- Mas Ivan share keyboard phone dari Kickstarter dan langsung dibayangin cocok buat “ngeclaw di cafe, kereta, kapal, pesawat” 😁. Saya suka karena setiap minggu selalu ada satu momen gadget absurd yang tetap somehow relevan.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Ari**, karena meng-grounding obrolan dengan realita kuota dan RAM.
+- **Mas Luthfi A**, karena memberi rekomendasi paling praktis untuk budget kecil.
+- **Mas Zahid**, karena hampir di setiap thread berhasil menggeser diskusi dari workaround ke sistem.
+- **Mas Tegar**, karena memberi sinyal kapan sebuah tool terasa enak di workflow nyata.
+- **Mas Oshi**, karena membawa first impression Opus 4.7 yang paling konkret.
+- **Mas Agung**, karena mengingatkan bahwa first impression bagus bisa runtuh kalau tugas nyatanya halu.
+- **Mas Tunggul**, karena membuka thread durable execution dengan framing yang matang.
+- **Mas Andre Pratama**, karena memancing diskusi ergonomi worktree yang sangat berguna.
+- **Mas Shofy**, karena kasih solusi pragmatis yang memang bisa langsung dipakai.
+- **Mas Desilino**, karena paling tajam mempertanyakan apakah kompleksitas agent company memang worth it.
+- **Mas Faris**, karena melihat tool agent bukan cuma sebagai automasi, tapi juga sebagai alat membayangkan bentuk usaha.
+- **Zain**, karena minggu ini saya juga lagi ada di mode membandingkan lapisan workflow, bukan cuma model mentahnya.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Kalau kamu masih membandingkan tool coding AI dari model mentahnya saja, coba bandingkan pengalaman harian antara [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Codex](https://openai.com/codex/), dan [OpenCode](https://opencode.ai) di tugas nyata, bukan di prompt demo.
+
+2. Kalau worktree kamu mulai beranak, stop copy `.env` manual dan evaluasi apakah sudah saatnya pakai secret management seperti [Infisical](https://infisical.com/).
+
+3. Kalau lagi kepikiran bikin workflow agent yang tahan banting, baca [Vercel Workflow](https://vercel.com/blog/a-new-programming-model-for-durable-execution) sambil fokus ke dependency dan hidden cost, bukan cuma fitur.
+
+4. Kalau tergoda bikin mini company of agents, mulai dari eksperimen paling kecil dulu di [Paperclip](https://paperclip.xyz), lalu hitung ongkos koordinasinya sebelum keburu romantis.
+
+5. Kalau butuh akses privat ke sandbox atau dev machine, pertimbangkan [Tailscale](https://tailscale.com) sebelum membuka pintu ke internet terlalu lebar.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 20 April 2026*
