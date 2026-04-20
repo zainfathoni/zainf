@@ -1,0 +1,101 @@
+---
+meta:
+  - title: "Bukan Lagi Pilih Model, Tapi Pilih Stack Kerja — AI Tools Digest #12"
+  - name: description
+    content: "Bukan lagi soal model paling pintar, tapi stack kerja paling masuk akal. Rangkuman dari grup AI Tools SWE GROWTH, 12-19 Apr 2026."
+  - author: Zain Fathoni
+  - date: "2026-04-20"
+  - property: og:title
+    content: "Bukan Lagi Pilih Model, Tapi Pilih Stack Kerja — AI Tools Digest #12"
+  - property: og:description
+    content: "Bukan lagi soal model paling pintar, tapi stack kerja paling masuk akal. Rangkuman dari grup AI Tools SWE GROWTH, 12-19 Apr 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-apr-12-apr-19-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-12.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Bukan Lagi Pilih Model, Tapi Pilih Stack Kerja — AI Tools Digest #12"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Bukan Lagi Pilih Model, Tapi Pilih Stack Kerja — AI Tools Digest #12
+
+Minggu ini obrolan di grup AI Tools SWE GROWTH terasa makin dewasa, dan jujur agak capek juga 😅 Bukan karena tool-nya kurang menarik, tapi karena pertanyaan utamanya sudah geser. Bukan lagi, “model mana yang paling jago?” Sekarang pertanyaannya lebih mirip, “stack kerja mana yang masih masuk akal dipakai tiap hari tanpa bikin limit jebol, token boncos, dan workflow berantakan?”
+
+Trigger-nya datang cepat. [Claude Code](https://docs.anthropic.com/en/docs/claude-code) lagi-lagi kena sorot soal limit. Mas Adnan langsung buka minggu ini dengan pertanyaan yang sangat relatable: “Ada yg pengguna setia Claude Code (pro plan wkwk) sekarang cancel subs karena sering banget kena limit?” Tidak lama kemudian dia tambahin juga, “Extra usage gratis 50 + 20 USD habis semua 😭”. Nah, dari situ obrolannya melebar ke mana-mana, tapi benang merahnya satu: kita semua lagi merancang ulang cara kerja, bukan cuma ganti model.
+
+## Budget bukan lagi soal murah, tapi soal arsitektur kerja
+
+Yang menarik, respons grup bukan sekadar mengeluh. Banyak yang langsung cerita bagaimana mereka mulai memecah workflow. Ada yang tetap planning pakai model mahal, lalu eksekusi di model yang lebih longgar. Ada yang pindah sementara. Ada yang mulai nyari cara menghemat token secara sistematis.
+
+[Opencode](https://github.com/sst/opencode) muncul beberapa kali sebagai jalur kabur yang cukup praktis. Mas Adnan bilang dia “puas banget sama opencode.ai/go + opencode cli. Pakai Minimax M2.” Sementara Mas Tunggul share artikel [How to stop hitting Claude usage limits](https://ruben.substack.com/p/how-to-stop-hitting-claude-usage) karena topik hemat token memang sudah bukan topik pinggiran lagi, tapi kebutuhan harian.
+
+Yang paling saya suka justru ketika diskusinya turun ke level workflow, bukan slogan. Mas Budi cerita soal [Caveman](https://github.com/JuliusBrussee/caveman/tree/main), lalu bilang, “caveman udah nyoba itu problemnya karena semua outputnya mas jadi di perpendek”. Itu kalimat pendek, tapi jujur banget. Semua orang suka ide hemat token, sampai ternyata output-nya jadi terlalu hemat juga. Artinya apa? 2026 makin terasa seperti tahun optimasi AI workflow, bukan tahun cari model sakti.
+
+## Ganti model ternyata lebih gampang daripada ganti harness
+
+Bagian ini yang paling nyantol buat saya minggu ini. Saya sempat share thread dari alphabatcher, lalu nulis, “Mulai terasa dampaknya semenjak pindah dari Claude Code ke [Codex](https://openai.com/codex/) kemarin. Langsung berasa pincang kehilangan plugins & skills yg biasanya dipakai.” Dan ternyata ini resonan.
+
+Buat saya, ini insight besar. Kita sering ngebandingin Opus vs GPT-5.4 vs Sonnet seolah semuanya tinggal tukar mesin. Padahal dalam praktiknya, yang bikin enak itu bukan cuma model. Ada harness, ada plugin, ada skill system, ada permission flow, ada memory, ada cara agent dibungkus. Ketika saya bilang di [OpenClaw](https://openclaw.ai) perlu penyesuaian saat pindah dari Opus 4.6 ke GPT-5.4, itu bukan drama model. Itu realita kalau perilaku agent juga ikut berubah ketika mesin di bawahnya diganti.
+
+Mas Michael juga membawa diskusi ini ke arah yang lebih teknis waktu bahas Serena dan RTK. Menurut Mas Michael, Serena “lebih fokus ke lsp coding gak terlalu bantu hematin”, tapi kalau digabung dengan RTK hasilnya bisa tetap berguna. Saya juga lihat pola yang sama di obrolan lain minggu ini, termasuk waktu Mas Budi share [Matt Pocock Skills](https://github.com/mattpocock/skills). Yang sedang naik nilainya sekarang bukan cuma raw intelligence, tapi lapisan pembungkus di sekelilingnya. Kalau model makin mirip, maka ergonomics menang.
+
+Pertanyaannya bukan lagi “Claude atau GPT?” tapi “wrapper mana yang paling cocok buat cara mikir dan cara kerja kita?”
+
+## Remote control mulai naik kelas dari bonus jadi kebutuhan
+
+Tema lain yang diam-diam makin besar adalah remote workflow. Awalnya obrolan terlihat receh, sekadar bahas [Warp](https://www.warp.dev/oz) karena vertical tabs dan agent notifications. Saya sendiri sempat bilang, “Makin keren aja nih Warp, ada Vertical Tabs.” Tapi ternyata yang lebih penting justru fitur remote control-nya.
+
+Mas Zahid langsung nyambung, “barusan nemu di Warp ternyata ada Remote control juga”, lalu diskusinya pindah ke akses mesin dari HP, dev machine yang nyala terus, dan gimana caranya workflow tetap jalan walau laptop utama tidak ada di depan mata. Di titik ini [Tailscale](https://tailscale.com) muncul sebagai jawaban yang paling waras. Mas Zahid bilang simpel saja, “kan hp bisa konek via tailscale”, lalu kemudian makin eksplisit: “jadinya aku prefere yg model pakek tailscale”.
+
+Saya juga ikut nyambung di area ini waktu cerita kalau saya pakai `opencode web` buat ngintip progress loop agent. Ditambah [Worktrunk](https://github.com/max-sixty/worktrunk) yang dibawa Mas Andre Pratama untuk ngurus worktree dan branch housekeeping, saya merasa ini sudah bukan lagi sekadar “ngoprek remote machine”. Ini sedang jadi bentuk workflow baru. Agent jalan di tempat yang stabil, kita mengawasi dari mana saja, dan laptop pribadi pelan-pelan turun pangkat dari pusat kerja menjadi terminal kontrol. Kalau grup kita bisa jadi barometer, model kerja ini bakal makin mainstream.
+
+## Gratisan makin tipis, dan itu terasa personal
+
+Ada satu nada sedih yang berulang minggu ini. Bukan sedih dramatis, tapi sedih yang realistis. Waktu kabar soal [Qwen Code](https://github.com/QwenLM/qwen-code) free tier makin memburuk muncul, Mas Fajar nulis, “gaes. btw qwen code free tier kan udah g ada 😢”. Lalu dia sambung dengan konteks yang bikin obrolan ini terasa lebih berat: lagi open to work, butuh AI buat bantu bangun portofolio, dan akses murah makin susah.
+
+Mas Nanda juga mewakili tekanan dari sisi lain ketika bilang, “confirmed ternyata $100 ngga cukup”. Itu penting. Selama ini banyak dari kita masih berasumsi kalau masalahnya selesai kalau budget dinaikkan sedikit. Ternyata tidak sesederhana itu. Untuk codebase yang makin besar, konteks yang makin panjang, dan workflow yang makin agentic, limit mahal pun bisa tetap terasa kecil.
+
+Mas Wibowo merangkum mood ini dengan cukup dingin, “ai sedang menuju harga seharusnya”. Mungkin iya. Tapi tetap saja, buat orang yang lagi belajar, lagi pindah stack, atau lagi open to work, kalimat itu tidak terasa netral. Artinya akses bereksperimen juga ikut menyempit.
+
+## ⚡ Quick Hits
+
+- [Claude Design](https://x.com/claudeai/status/2045156267690213649?s=46) langsung bikin grup penasaran. Mas Audi bilang, “Menarik, nanti bikin prompt pakai sonnet terus coba cemplungin deh wkwk.” Design generation makin terasa dekat ke workflow sehari-hari, bukan cuma demo.
+- Diskusi [Gemini](https://gemini.google.com) dan Stitch juga menarik. Mbak Eka bilang default Gemini Flash terasa “bapuk”, tapi kalau diganti Pro hasilnya jauh lebih bagus. Lagi-lagi, bukan satu tool sakti, tapi kombinasi dan setting yang pas.
+- [Windsurf](https://codeium.com/windsurf) 2.0 lewat di grup dan langsung dibandingkan dari sudut agent support, bukan sekadar editor wars. Ini konsisten dengan pola besar minggu ini.
+- [OpenUsage](https://www.openusage.ai/) muncul sebagai alat yang makin relevan ketika pertanyaan utama bukan “tool apa yang keren?” tapi “uang dan token saya sebenarnya habis di mana?”
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Kalau kamu masih bertanya “tool terbaik apa?”, ubah framing-nya jadi kombinasi planning model + execution model + harness. Saya rasa itu pertanyaan yang lebih jujur sekarang.
+2. Kalau limit [Claude Code](https://docs.anthropic.com/en/docs/claude-code) mulai bikin capek, coba siapkan backup flow dengan [Opencode](https://github.com/sst/opencode) atau [Codex](https://openai.com/codex/) sebelum renewal berikutnya.
+3. Kalau mulai sering remote dari HP atau device kedua, rapikan dulu aksesnya dengan [Tailscale](https://tailscale.com). Jangan langsung buka port ke internet hanya karena mau cepat.
+4. Kalau token burn mulai susah dipantau, coba [OpenUsage](https://www.openusage.ai/). Biar debat soal boros atau tidak punya angka, bukan cuma perasaan.
+5. Kalau kamu hidup di banyak branch dan worktree, lihat [Worktrunk](https://github.com/max-sixty/worktrunk). Belum tentu cocok, tapi jelas menarik.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Adnan** , pemantik diskusi limit dan alternatif setelah Claude Code mulai terasa sempit.
+- **Mas Budi** , membawa contoh workflow Caveman yang jujur, lengkap dengan tradeoff-nya.
+- **Mas Michael** , membantu menajamkan pembicaraan soal Serena, RTK, dan wrapper tooling.
+- **Mas Tunggul** , share artikel hemat token yang pas banget dengan mood minggu ini.
+- **Mas Zahid** , menggeser obrolan terminal jadi obrolan remote-control workflow yang lebih serius.
+- **Mas Andre Pratama** , membawa Worktrunk ke radar grup sebagai tool kerja yang praktis.
+- **Mas Fajar** , mengingatkan bahwa hilangnya free tier punya dampak nyata buat yang lagi butuh leverage.
+- **Mas Nanda** , mewakili rasa pahit ketika bahkan budget besar pun ternyata belum cukup.
+- **Mas Audi** , membawa rasa ingin tahu yang sehat di area design workflow dan tooling baru.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 20 April 2026*
