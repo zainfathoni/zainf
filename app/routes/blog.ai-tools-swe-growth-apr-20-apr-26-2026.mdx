@@ -1,0 +1,121 @@
+---
+meta:
+  - title: "Claude Masih Menang, Tapi Kita Mulai Siapkan Sekoci — AI Tools Digest #13"
+  - name: description
+    content: "Claude tetap jadi benchmark, tapi minggu ini grup mulai serius menyiapkan lifeboat: opencode Go, GLM, Kimi, Copilot, dan disiplin codebase AI-friendly. Rangkuman dari grup AI Tools SWE GROWTH, 20-26 Apr 2026."
+  - author: Zain Fathoni
+  - date: "2026-04-26"
+  - lang: id
+  - property: og:title
+    content: "Claude Masih Menang, Tapi Kita Mulai Siapkan Sekoci — AI Tools Digest #13"
+  - property: og:description
+    content: "Claude tetap jadi benchmark, tapi minggu ini grup mulai serius menyiapkan lifeboat: opencode Go, GLM, Kimi, Copilot, dan disiplin codebase AI-friendly. Rangkuman dari grup AI Tools SWE GROWTH, 20-26 Apr 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-apr-20-apr-26-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-13.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Claude Masih Menang, Tapi Kita Mulai Siapkan Sekoci — AI Tools Digest #13"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Claude Masih Menang, Tapi Kita Mulai Siapkan Sekoci — AI Tools Digest #13
+
+Minggu ini rasanya seperti nonton hubungan toksik versi developer: kita masih sayang [Claude Code](https://docs.anthropic.com/en/docs/claude-code), tapi makin sadar kalau terlalu bergantung ke [Anthropic](https://anthropic.com) itu bikin deg-degan. Dari 898 pesan di grup, pola yang paling kuat bukan mencari tool baru paling hype, tapi menentukan rute kabur kalau Claude tiba-tiba berubah aturan lagi.
+
+## Claude Tetap Enak, Anthropic Tetap Bikin Ruwet
+
+[Opus 4.7](https://ampcode.com/news/opus-4.7) jadi bahan obrolan paling panas. Mas Agung ngerasain bedanya langsung: *“opus 4.7 cara ngobrolnya beda eh, dia lebih jago kalo dibebasin 😭\nkalo di guard kayak ogah ogahan ngodink anzay”*. Ini menarik karena banyak dari kita makin sadar: model bagus itu bukan cuma soal benchmark, tapi soal cara dia diajak kerja.
+
+Tapi tentu saja, tidak ada honeymoon yang mulus. Mas Riza Rohman mengingatkan, *“di X masih banyak yg sambat, salah tp pede abis”*. Dan saya (Zain) sendiri merasa ini sudah masuk fase lock-in yang agak absurd: *“Bener-bener _vendor lock-in_ ya. Anthropic berhasil membuat pelanggannya gandrung dan susah pindah ke provider.”*
+
+Masalahnya bukan cuma kualitas jawaban. Minggu ini kita juga lihat kebingungan plan, limit, reset, [postmortem](https://www.anthropic.com/engineering/april-23-postmortem), sampai isu akses [Claude Mythos](https://www.theguardian.com/technology/2026/apr/22/anthropic-investigates-report-of-rogue-access-to-hack-enabling-mythos-ai). Zain-mode saya langsung keluar waktu bilang: *“Saran saya sih, buat yg terlalu bergantung pada Opus, siapkan kapal sekoci. Cobain model-model lainnya yg lebih ramah pengguna.\n\nTabiatnya Anthropic kucing-kucingan terus sama penggunanya.”* Mas Tunggul juga menangkap sisi seriusnya ketika membahas laporan Guardian itu: *“Innalilahi ...\n\nAccess ke Claude Mythos pun bisa jatuh ke tangan orang yang tidak seharusnya”*.
+
+Jadi posisi Claude minggu ini paradoks banget: masih benchmark untuk taste, planning, dan kualitas akhir; tapi makin sulit dijadikan satu-satunya fondasi workflow. Implikasinya jelas: kalau tool terbaik juga paling bikin cemas, strategy-nya bukan pindah total — strategy-nya punya sekoci yang benar-benar pernah dicoba.
+
+## Sekoci Budget Mulai Terlihat Nyata
+
+Sekoci paling konkret minggu ini adalah [opencode Go](https://opencode.ai/go). Mbak Eka bilang, *“Belum, paling besok2 coba Opencode subscription yg udah include Kimi, Minimax, GLM”*. Kombinasi [Kimi](https://kimi.moonshot.cn), [Minimax](https://www.minimax.io/), dan [GLM 5.1](https://chatglm.cn) di satu paket murah membuat banyak orang mulai melihatnya sebagai fallback yang masuk akal.
+
+Tapi grup kita jarang berhenti di murah nih. Mas Zahid langsung memberi reality check: *“opencode go ku kurang kalo cuman 10usd, wkwkw”*. Mas Luthfi A membawa contoh workflow yang lebih menarik: *“udah aku coba plan opus max, trus yg execute si glm51, bagus banget”*. Ini mulai mengarah ke pola baru: model mahal untuk mikir, model lebih murah untuk eksekusi.
+
+[GitHub Copilot](https://github.com/features/copilot) juga mendapat pembelaan yang cukup mengejutkan. Mas Oshi bilang, *“Copilot CLI sebenernya bagus… bisa dibilang hampir mirip dgn CC.. tapi Copilot masih kurang influencer… 😂”*. Saya suka quote ini karena merangkum masalah reputasi Copilot: mungkin bukan selalu kalah teknis, tapi kalah narasi.
+
+Di sisi lain, [Kimi K2.6](https://kimi.moonshot.cn) tetap disukai sebagai alternatif saat Claude ngaco. Mas Luthfi A melaporkan, *“udah ku tes sih tp pake kimi-for-coding , masih ngasih compile error tp udah mulai berkurang tadinya ada 10 skrg jd cmn ada 1-2 aja”*. Ada progress, tapi belum bebas gesekan.
+
+Yang perlu dicatat: diskusi promo, free tier, dan akses murah minggu ini saya baca sebagai sinyal risiko, bukan rekomendasi. Mbak Eka sempat cerita, *“Bikin akun kloningan Kimi baru, ternyata promo usd 0.99 udah gak ada :(”*. Buat artikel publik, takeaway-nya bukan cari celah lain, tapi jangan bangun workflow serius di atas promo yang bisa hilang besok.
+
+Sekoci lain juga muncul: [Kilo Gateway](https://kilo.ai/docs/customize/agents-md#what-is-agents.md) dipuji Mas Desilino karena fleksibel dan cepat update model, [Xiaomi Mimo](https://platform.xiaomimimo.com/token-plan) disebut Mas Aria dengan sederhana: *“Mimo cakep”*, [Nahcrof AI](https://ai.nahcrof.com/home) menarik karena murah tapi pricing-nya masih perlu dibaca hati-hati, dan [Codex](https://openai.com/codex/) tetap jadi fallback yang tidak bisa diabaikan. Implikasinya: 2026 bukan era satu subscription sakti, tapi era portofolio tool yang harus diukur pakai cost, quality, dan failure mode.
+
+## Codebase AI-Friendly Mulai Jadi Disiplin Serius
+
+Bagian favorit saya minggu ini bukan tool baru, tapi obrolan tentang bagaimana membuat codebase lebih enak dibaca agent. Kita membahas [ADRs](https://github.blog/engineering/architecture-optimization/why-write-adrs/), [AGENTS.md](https://kilo.ai/docs/customize/agents-md#what-is-agents.md), CLAUDE.md, skills, spec, pattern docs, dan state yang portable.
+
+Ini bukan dokumentasi demi dokumentasi. Kalau agent setiap kali harus membaca ulang struktur repo, history keputusan, naming convention, dan cara release dari nol, token burn-nya jadi biaya tersembunyi. [Agentic SDLC Handbook tentang prose specification](https://danielmeppiel.github.io/agentic-sdlc-handbook/handbook/ch10-the-prose-specification.html) yang dibawa Mas John nyambung banget di sini: spec yang bagus bukan cuma untuk manusia, tapi juga untuk agent yang perlu memahami konteks tanpa halu.
+
+Saya juga melihat koneksi kuat ke [OpenClaw](https://openclaw.ai), [MemPalace](https://github.com/MemPalace/mempalace), dan [tk/ticket](https://github.com/wedow/ticket). Saat saya (Zain) bilang *“Karena gampang ditransfer antar-agent, bahkan ke OpenClaw pun gampang.”*, maksudnya sederhana: jangan taruh seluruh memori kerja di chat history satu vendor. Mas Aidityas menangkap sinyal adopsinya juga: *“Bisa jadi sign of adaptasi openclaw semakin tinggi”*.
+
+Implikasinya lumayan besar: codebase yang bagus untuk AI bukan codebase yang paling banyak prompt-nya, tapi yang paling sedikit butuh penjelasan ulang.
+
+## ⚡ Quick Hits
+
+- [Roo Code](https://roocode.com/blog/sunsetting-roo-code-extension-cloud-and-router) cloud/router sunset jadi pengingat pahit. Mas Michael merangkumnya pendek: *“roo code tumbang 🥲”*. Kalau state dan workflow kamu terkunci di satu layanan, sunset kecil bisa terasa seperti migrasi besar.
+
+- [Qwen + Ollama local coding](https://www.kdnuggets.com/seeing-whats-possible-with-opencode-ollama-qwen3-coder) masih menarik, tapi belum santai. Mas Nulad bilang, *“Saya pake qwen3.6:35b-a3b-q4_K_M sama gemma4:26b via ollama kok bapuk ya.”* Mas Wibowo memberi arah teknis: *“defaultnya ollama itu context windowsnya 4096, set lebih besar dan perlu di atur di opencode, tools true”*. Local agent itu mungkin, tapi bukan plug-and-play.
+
+- [Koma Run](https://github.com/aula-id/koma-run) bikin grup berubah jadi product council dadakan. Mas Agung tidak cuma tease project, tapi langsung mengarahkan request ke issue: *“nah monggo fitur yang dimau, langsung di issue nya aja wkwkwkw”*. Ini energy yang saya suka: bukan cuma hype “karya anak bangsa”, tapi langsung diuji dengan feature request.
+
+- [Gas City](https://steve-yegge.medium.com/welcome-to-gas-city-57f564bb3607) membuat ekosistem agentic open-source terasa makin cepat. Saya (Zain) share dengan catatan, *“Gas City sudah diluncurkan. Nampaknya menarik, tapi perlu siapin strategi dompet & token dulu. 😅”* Mas Tunggul tentu saja membuatnya musikal: *“🎵 Take me down to the Gas City, where the grass is green and the agentic is pretty 🎶 😁”*.
+
+- [Vercel Workflows](https://vercel.com/blog/a-new-programming-model-for-durable-execution) menarik karena durable execution makin relevan untuk agent, backend, ETL, dan payment. Mas Riga bilang, *“Menarik tool vercel workflow ini bisa untuk agents, backend dan pipeline etl, payment ...”*. Lalu [v0 Chess Match](https://v0-chess-match.vercel.app/) jadi selingan lucu; Mas Abraham tetap realistis: *“llm vs stockfish keknya masih menang stockfish 😅”*.
+
+Takeaway Quick Hits minggu ini: agentic tooling sudah melebar dari coding assistant mana yang paling pintar menjadi ekosistem mana yang paling tahan lama, hemat, dan bisa dipindah.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Siapkan lifeboat non-Anthropic: coba [opencode Go](https://opencode.ai/go), [Codex](https://openai.com/codex/), atau [GitHub Copilot CLI](https://github.com/features/copilot) di task kecil yang nyata, bukan sekadar hello world.
+
+2. Kalau pakai model murah seperti [GLM](https://chatglm.cn) atau [Kimi](https://kimi.moonshot.cn), uji dengan pola split: model mahal untuk planning, model murah untuk execution. Catat bug, retry, dan total biaya.
+
+3. Tambahkan ADR, AGENTS.md/CLAUDE.md, dan spec ringkas di repo aktif. Mulai dari satu file yang menjelaskan arsitektur, cara test, dan aturan coding yang sering kamu ulang ke agent.
+
+4. Kalau penasaran local coding agent, baca ulang artikel [opencode + Ollama + Qwen3 Coder](https://www.kdnuggets.com/seeing-whats-possible-with-opencode-ollama-qwen3-coder), lalu cek context window, tool calling, VRAM, dan offloading sebelum menyalahkan modelnya.
+
+5. Pantau [Koma Run](https://github.com/aula-id/koma-run) dan [Gas City](https://steve-yegge.medium.com/welcome-to-gas-city-57f564bb3607) sebagai sinyal arah ekosistem, bukan sekadar project baru.
+
+Implikasinya praktis: jangan tunggu provider mengubah aturan dulu baru panik; minggu ini waktu yang bagus untuk membangun fallback kecil yang sudah pernah kamu pakai beneran.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Agung — memberi impresi Opus 4.7 dan mendorong Koma Run dari obrolan menjadi issue nyata.
+- Mas Riza Rohman — mengingatkan sisi salah tp pede dari Opus baru.
+- Zain — menyorot vendor lock-in, lifeboat Anthropic, OpenClaw portability, dan Gas City cost reality.
+- Mas Tunggul — membawa concern Claude Mythos, local model realism, dan tentu saja lagu Gas City.
+- Mbak Eka — membuat diskusi promo Kimi menjadi cautionary tale, bukan strategi.
+- Mas Zahid — memberi reality check opencode Go dan banyak konteks operator lapangan.
+- Mas Luthfi A — membawa test Kimi-for-coding dan workflow Opus planning + GLM execution.
+- Mas Oshi — membela Copilot CLI dengan jujur sekaligus lucu.
+- Mas Aria — memberi sinyal awal soal Xiaomi Mimo.
+- Mas Michael — membawa kabar Roo Code dan banyak link ekosistem.
+- Mas Nulad — menunjukkan friction local Qwen/Gemma via Ollama.
+- Mas Wibowo — memberi diagnosis context window dan tool-calling untuk setup local.
+- Mas Riga — membawa Vercel Workflows dan konteks durable execution.
+- Mas Abraham — menjaga demo LLM-vs-chess tetap membumi.
+- Mas Aidityas — menangkap sinyal adaptasi OpenClaw.
+
+Daftar ini penting karena digest ini bukan ringkasan dari luar grup; ini peta kecil dari orang-orang yang sedang mencoba, gagal, ngakak, dan tetap merakit workflow yang lebih tahan banting.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 26 April 2026*
