@@ -18,6 +18,7 @@ type MdxMetaEntry = Record<string, unknown>;
 
 import * as postAiToolsSweGrowthApr12Apr202026 from "../routes/blog.ai-tools-swe-growth-apr-12-apr-20-2026.mdx";
 import * as postAiToolsSweGrowthApr20Apr262026 from "../routes/blog.ai-tools-swe-growth-apr-20-apr-26-2026.mdx";
+import * as postAiToolsSweGrowthApr26May32026 from "../routes/blog.ai-tools-swe-growth-apr-26-may-3-2026.mdx";
 export type MdxAttributes = { meta: MdxMetaEntry[] };
 
 export type MdxModule = {
@@ -145,6 +146,7 @@ export function getPostFromMdxModule(mod: MdxModule): Post {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(postAiToolsSweGrowthApr26May32026),
     getPostFromMdxModule(postAiToolsSweGrowthApr20Apr262026),
     getPostFromMdxModule(postAiToolsSweGrowthApr12Apr202026),
     getPostFromMdxModule(postAiToolsSweGrowthApr5Apr122026),
