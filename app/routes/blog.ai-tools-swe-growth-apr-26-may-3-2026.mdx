@@ -69,7 +69,7 @@ Lalu, tentu saja, grup tidak mungkin membahas mocin tanpa humor. Setelah Mas Ded
 
 GLM juga tetap kuat. Mas Faris membandingkan sisi support subscription: *“Pakai GLM easy banget pas unsub. Gak pakai banyak nanya langsung refund.”* Mas Desilino bahkan menyebut [GLM 5.1](https://chatglm.cn) sebagai daily driver dan DeepSeek V4 buat architect, lalu menutup dengan seruan yang sudah jadi mood grup: *“HIDUP MOCIN!!!”*
 
-Takeaway-nya: Claude/[Opus](https://docs.anthropic.com/en/docs/about-claude/models/overview) masih jadi standar rasa untuk banyak orang. DeepSeek, GLM, Kimi, dan teman-temannya makin sering masuk percakapan sebagai komponen workflow yang bisa diberi peran spesifik, bukan sekadar mainan murah.
+Takeaway-nya: Claude/[Opus](https://docs.anthropic.com/en/docs/about-claude/models/overview) masih jadi standar rasa untuk banyak orang. DeepSeek, GLM, Kimi, dan teman-temannya makin sering masuk percakapan sebagai komponen workflow yang bisa diberi peran spesifik.
 
 ## MCP vs CLI: Kadang yang Sederhana Menang
 
@@ -85,7 +85,7 @@ Implikasinya: jangan default ke MCP cuma karena namanya sedang hype. Kalau agent
 
 ## ⚡ Quick Hits
 
-- [Zed parallel agents](https://zed.dev/blog/parallel-agents) muncul lewat Mas Riga. Dia langsung bertanya apakah rasanya seperti Conductor. Mas Zahid menyorot worktree management dan fakta Zed berbasis Rust. Ini menarik karena parallel agent mulai jadi pola UI, bukan cuma eksperimen terminal.
+- [Zed parallel agents](https://zed.dev/blog/parallel-agents) muncul lewat Mas Riga. Dia langsung bertanya apakah rasanya seperti Conductor. Mas Zahid menyorot worktree management dan fakta Zed berbasis Rust. Ini menarik karena parallel agent mulai bergerak dari eksperimen terminal menjadi pola UI.
 
 - [Warp sekarang open source](https://www.warp.dev/blog/warp-is-now-open-source). Saya share link itu, Mas Tegar menangkap sponsornya [OpenAI](https://openai.com), dan Mas Agung mengaku pernah candu dengan agent Warp sebelum balik ke terminal “sejuta umat”. Terminal sekarang ikut menjadi arena agent UX.
 
@@ -97,11 +97,11 @@ Implikasinya: jangan default ke MCP cuma karena namanya sedang hype. Kalau agent
 
 - [Claude Code course](https://claude.com/resources/courses) dan referral/passes ikut muncul. Mas Agung D mencari course untuk pindah dari Cursor/Trae, sementara diskusi referral mengingatkan lagi bahwa akses premium sering punya aturan kecil yang tidak kelihatan dari luar.
 
-Quick Hits minggu ini memberi sinyal yang sama: tooling bergerak cepat, tapi yang menang bukan selalu yang paling wah. Yang menang adalah yang bisa masuk ke workflow nyata tanpa membuat dompet, latency, atau safety kita meledak.
+Quick Hits minggu ini memberi sinyal yang sama: tooling bergerak cepat, dan yang paling berguna biasanya yang bisa masuk ke workflow nyata tanpa membuat dompet, latency, atau safety kita meledak.
 
 ## ✅ Yang Perlu Dicoba Minggu Ini
 
-1. Uji [pi.dev](https://pi.dev) atau [Oh My Pi](https://github.com/can1357/oh-my-pi) di satu task kecil yang nyata. Catat total cost dan friction setup, bukan cuma harga model.
+1. Uji [pi.dev](https://pi.dev) atau [Oh My Pi](https://github.com/can1357/oh-my-pi) di satu task kecil yang nyata. Catat total cost dan friction setup bersama harga modelnya.
 
 2. Kalau pakai agent untuk infra, batasi akses dulu: read-only profile, sandbox, `trash` alih-alih `rm -rf`, atau guard seperti [destructive_command_guard](https://github.com/Dicklesworthstone/destructive_command_guard).
 
