@@ -1,0 +1,143 @@
+---
+meta:
+  - title: "Jangan Kasih Agent Tombol Merah — AI Tools Digest #14"
+  - name: description
+    content: "Minggu ini grup membahas safety guardrails, pi.dev dan OMP buat hemat token, DeepSeek V4, MCP vs CLI, sampai local Gemma. Rangkuman dari grup AI Tools SWE GROWTH, 26 Apr-3 Mei 2026."
+  - author: Zain Fathoni
+  - date: "2026-05-03"
+  - lang: id
+  - property: og:title
+    content: "Jangan Kasih Agent Tombol Merah — AI Tools Digest #14"
+  - property: og:description
+    content: "Minggu ini grup membahas safety guardrails, pi.dev dan OMP buat hemat token, DeepSeek V4, MCP vs CLI, sampai local Gemma. Rangkuman dari grup AI Tools SWE GROWTH, 26 Apr-3 Mei 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-apr-26-may-3-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-14.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Jangan Kasih Agent Tombol Merah — AI Tools Digest #14"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Jangan Kasih Agent Tombol Merah — AI Tools Digest #14
+
+Minggu ini obrolan grup rasanya pindah dari “tool mana yang paling pintar?” ke “tool mana yang boleh pegang akses apa?”. Dari 358 pesan, benang merahnya cukup jelas: kita makin nyaman pakai agent untuk kerja serius, tapi makin sadar juga bahwa agent yang terlalu bebas itu bukan co-worker — itu intern super cepat yang bisa menekan tombol merah sebelum sempat kita tanya, “yakin?” 😅
+
+## Agent Safety Bukan Lagi Topik Sampingan
+
+Pemantiknya masih cerita horor production deletion yang sempat saya share: [thread insiden Railway](https://x.com/lifeof_jer/status/2048103471019434248?s=46), lalu muncul juga versi berita “AI agent deletes database” dari [Moneycontrol](https://www.moneycontrol.com/artificial-intelligence/gone-in-9-seconds-claude-powered-ai-agent-deletes-startup-s-entire-database-article-13902019.html). Detail yang bikin Mbak Eka bereaksi bukan cuma agent-nya, tapi backup-nya: *“Because Railway stores volume-level backups in the same volume ... wiping a volume deletes all backups”*, kata Mbak Eka, lalu menutupnya dengan *“apa2an dah 💀”*.
+
+Mas Riga menangkap pola pikir agent-nya dengan cukup ngeri: *“I guessed instead of verifying I ran a destructive action without being asked I didn't understand what I was doing before doing it.”* Ini bukan sekadar AI went rogue. Ini sistem yang memberi ruang terlalu luas ke aktor yang belum cukup paham failure mode.
+
+Saya sendiri jadi cerita praktik yang saya pakai di [OpenClaw](https://openclaw.ai): *“OpenClaw cuman bisa read-only.”* Untuk kerja kantor, saya nyaman agent membaca dan mengusulkan, tapi write access saya batasi ke tempat yang punya recovery path jelas seperti GitHub. Mas Zahid juga setuju dengan pola itu: *“Akses api key ke ai juga read only.”* Mas Ardit bahkan masih menahan diri: *“masih belum berani klo OpenClaw buat ke kantor.. Github PAT nya yang dikasih cuma buat personal repo aja.”*
+
+Obrolannya kemudian turun ke mitigasi yang lebih membumi. Mas Salma bertanya apakah `rm` bisa dibuat konfirmasi dulu via email sebelum jalan. Mas Galih punya kebiasaan sederhana tapi bagus: *“Aku selalu suruh untuk gantiin rm rf pake command “trash”. Jd nanti masuknya ke recycle bin / trash.”* Saya lalu share [destructive_command_guard](https://github.com/Dicklesworthstone/destructive_command_guard), karena ternyata ada juga orang yang sudah bikin guard untuk perintah destruktif.
+
+Implikasinya buat saya: agent safety bukan fitur tambahan setelah agent-nya pintar. Safety adalah arsitektur dasar. Kalau manusia junior saja tidak kita beri akses production penuh, kenapa agent yang bisa mengetik 20x lebih cepat malah kita beri kunci semua pintu?
+
+## Hemat Token Sekarang Sudah Jadi Arsitektur Workflow
+
+Thread paling praktis minggu ini dimulai dari pertanyaan Mas Aziz Iqbal: rekomendasi subscription AI bulanan, karena [Cursor](https://cursor.sh) terasa *“boros banget”*. Dari situ obrolannya melebar ke [opencode Go](https://opencode.ai/go), Alibaba Cloud, Sumopod, BytePlus, [DeepSeek](https://deepseek.com), [GLM](https://chatglm.cn), [Kimi](https://kimi.moonshot.cn), sampai [pi.dev](https://pi.dev).
+
+Yang paling bikin orang nengok adalah pi.dev. Mas Azam baru coba dan langsung bilang, *“baru nyoba pi.dev ternyata jadi hemat bgt ya token usagenya, nyesel baru pake 😭.”* Dia membandingkan prompt sederhana `say hello for testing`: opencode Sonnet sekitar $0.09, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Sonnet sekitar $0.03, pi.dev [Opus](https://docs.anthropic.com/en/docs/about-claude/models/overview) sekitar $0.016, dan pi.dev Sonnet sekitar $0.006. Ini bukan benchmark ilmiah, tapi cukup untuk membuat satu grup mendadak fokus.
+
+Mas Michael, seperti biasa, langsung mode “ini kan sudah saya bilang”: *“sudah 2-3 bulan lalu tak ramaikan pi.dev ini 😂.”* Dan memang lucunya begitu: tool yang minggu ini terasa baru buat sebagian orang ternyata sudah lama jadi bahan promosi di grup. Mas Azam sendiri mengaku, *“jarang nyimak nih grup wkwkwkw.”* Ini mungkin alasan digest mingguan masih berguna: grupnya terlalu deras untuk diikuti real-time.
+
+Tapi obrolan hemat token cepat berubah jadi obrolan plumbing. [Oh My Pi](https://github.com/can1357/oh-my-pi) masuk karena bisa menjembatani provider, tapi setup-nya tidak selalu mulus. Mas Desilino cerita, *“Pake omp + qwen3.6 plus, reasoning nya gak kelar2 🤣 Outputnya bagus sih, tapi lama bener.”* Mas Azam juga sempat bingung soal API key [Anthropic](https://anthropic.com) vs provider lain, sampai akhirnya masalahnya bukan cuma “mana murah”, tapi “mana bisa dipasang ke workflow yang kita pakai”.
+
+Ini pola yang makin jelas sejak beberapa minggu terakhir: harga model itu cuma satu variabel. Provider speed, compatibility, retry behavior, model list, dan cara agent melakukan orchestration bisa mengubah total biaya yang sebenarnya. Pertanyaannya bukan lagi “subscription apa yang paling murah?”, tapi “kombinasi provider + tool + task split mana yang paling bisa dipercaya?”
+
+## DeepSeek V4 dan Mocin Makin Naik Kelas
+
+Kalau minggu lalu Claude masih jadi benchmark rasa, minggu ini [DeepSeek V4](https://deepseek.com) mulai dapat posisi yang lebih serius. Mas Zahid membuka dengan kalimat sederhana: *“btw deep seek ini bagus bange, wwkwk.”* Kadang sinyal grup memang sesederhana itu: kalau orang yang biasanya banyak ngulik tiba-tiba menulis “bagus bange”, berarti layak dicatat.
+
+Mas Salma sempat membandingkan Pro dan Flash via opencode. Mas Zahid lebih condong ke Pro, sementara Mas Desilino memberi nuance: Flash juga enak, walau reasoning-nya tidak sedalam Pro. Quote yang paling saya suka datang dari Mas Desilino: *“Kalo kata mas Zain Opus itu kyk Senior Engineer. Nah Deepseek V4 ini mirip2 rasa nya. Gak se “berpengalaman” Opus, tapi rasanya mirip #asik.”*
+
+Lalu, tentu saja, grup tidak mungkin membahas mocin tanpa humor. Setelah Mas Dedy P bilang DeepSeek V4 masih punya imposter syndrome dan tidak sepede Opus, Mas Michael menyambar: *“soalnya dia tipikal org Asia(kan dari China) 😂🙈”*, lalu menambahkan, *“coba pake bahasa Mandarin ntar gak impostor syndrome 😂😂😂.”* Ini sangat grup kita: benchmark, provider economics, dan stereotip bercanda bercampur dalam 60 detik.
+
+GLM juga tetap kuat. Mas Faris membandingkan sisi support subscription: *“Pakai GLM easy banget pas unsub. Gak pakai banyak nanya langsung refund.”* Mas Desilino bahkan menyebut [GLM 5.1](https://chatglm.cn) sebagai daily driver dan DeepSeek V4 buat architect, lalu menutup dengan seruan yang sudah jadi mood grup: *“HIDUP MOCIN!!!”*
+
+Takeaway-nya bukan “tinggalkan Claude”. Claude/[Opus](https://docs.anthropic.com/en/docs/about-claude/models/overview) masih jadi standar rasa untuk banyak orang. Tapi DeepSeek, GLM, Kimi, dan teman-temannya makin sering masuk percakapan bukan sebagai mainan murah, melainkan sebagai komponen workflow yang bisa diberi peran spesifik.
+
+## MCP vs CLI: Kadang yang Sederhana Menang
+
+Mas Azam melempar pertanyaan bagus: untuk task seperti update Jira, posting Slack bot, Git PR, review, reply, lebih baik direct API atau pakai [MCP](https://modelcontextprotocol.io)? Ini jenis pertanyaan yang kelihatannya teknis, tapi sebenarnya menyentuh filosofi agent tooling.
+
+Saya jawab dari sudut praktik: banyak tugas cukup diselesaikan dengan CLI, yang pada akhirnya bisa memanggil API juga via cURL. Saya juga share diskusi soal [Chrome DevTools MCP yang mulai bergerak ke CLI](https://x.com/karlhorky/status/2043664527141552602?s=46), plus video yang membahas [kenapa CLI bisa lebih superior daripada MCP](https://youtu.be/AEmHcFH1UgQ?t=2241&si=wXlKI0hQiQj34rdm). Mas Ahsan merangkum pengalaman lapangan dengan tajam: *“MCP lebih tak bisa di kontrol alias terserah MCPnya.”*
+
+Mas Dani membawa artikel lama Mario Zechner, [What if you don't need MCP?](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/), lalu menyambungkannya ke penggunaan skill. Mbak Eka memberi kalimat yang menurut saya paling padat: *“Cukup bikin skill + CLI, agen bisa jalan sendiri dgn perintah natural language.”* Ini bukan anti-MCP. Ini anti-overengineering.
+
+Mas Ibrahim memberi framing yang menarik: *“Mcp = Sass / Skill + script = app sekali beli.”* Saya tidak tahu apakah analoginya akan tahan di semua konteks, tapi cukup membantu: MCP cocok kalau kita butuh service capability yang reusable dan hidup terus; skill + script cocok kalau task-nya jelas, terkontrol, dan bisa diselesaikan sekali jalan.
+
+Implikasinya: jangan default ke MCP cuma karena namanya sedang hype. Kalau agent bisa menjalankan CLI yang kecil, eksplisit, dan mudah diaudit, sering kali itu lebih murah secara token, lebih gampang di-debug, dan lebih aman.
+
+## ⚡ Quick Hits
+
+- [Zed parallel agents](https://zed.dev/blog/parallel-agents) muncul lewat Mas Riga. Dia langsung bertanya apakah rasanya seperti Conductor. Mas Zahid menyorot worktree management dan fakta Zed berbasis Rust. Ini menarik karena parallel agent mulai jadi pola UI, bukan cuma eksperimen terminal.
+
+- [Warp sekarang open source](https://www.warp.dev/blog/warp-is-now-open-source). Saya share link itu, Mas Tegar menangkap sponsornya [OpenAI](https://openai.com), dan Mas Agung mengaku pernah candu dengan agent Warp sebelum balik ke terminal “sejuta umat”. Terminal sekarang bukan cuma terminal; dia jadi arena agent UX.
+
+- [Amp Code](https://ampcode.com) free quota makin terasa rapuh. Mas Ang bilang, *“Semenjak restart free token nya per jam 0.4 $ jd aga mager -_-.”* Mas Michael curiga kuota gratis bisa dicabut kalau jarang dipakai/top up, lalu bilang, *“sering dipake hitungan 3 minggu gak dipake bakal dicabut gratisannya 😂.”* Gratisan itu berkah, bukan fondasi arsitektur.
+
+- [Gemma](https://ai.google.dev/gemma) dan local model kembali dibahas. Mas Agung menilai *“imo bagus ya, yang Gemma 27B MoE”*, bahkan menyebut kelasnya bisa mendekati mocin tengah/Sonnet untuk beberapa kasus, walau *“kalau dibanding Opus jauh bgt.”* Mas Wibowo tetap realistis: *“local llm masih nunggu sampai cukup mapan 😅.”*
+
+- [Jetson](https://developer.nvidia.com/embedded/jetson) jadi backup hardware sungguhan di tangan Mas Agung. Concurrency turun dari 10-12 ke 3, tapi tetap “ketolong”. Ini contoh bagus bahwa local AI bukan cuma soal benchmark model; hardware constraint-nya ikut menentukan desain sistem.
+
+- [Claude Code course](https://claude.com/resources/courses) dan referral/passes ikut muncul. Mas Agung D mencari course untuk pindah dari Cursor/Trae, sementara diskusi referral mengingatkan lagi bahwa akses premium sering punya aturan kecil yang tidak kelihatan dari luar.
+
+Quick Hits minggu ini memberi sinyal yang sama: tooling bergerak cepat, tapi yang menang bukan selalu yang paling wah. Yang menang adalah yang bisa masuk ke workflow nyata tanpa membuat dompet, latency, atau safety kita meledak.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Uji [pi.dev](https://pi.dev) atau [Oh My Pi](https://github.com/can1357/oh-my-pi) di satu task kecil yang nyata. Catat total cost dan friction setup, bukan cuma harga model.
+
+2. Kalau pakai agent untuk infra, batasi akses dulu: read-only profile, sandbox, `trash` alih-alih `rm -rf`, atau guard seperti [destructive_command_guard](https://github.com/Dicklesworthstone/destructive_command_guard).
+
+3. Untuk integrasi sederhana seperti Jira, Slack, GitHub, atau review PR, coba dulu pola CLI/script/skill sebelum membangun MCP server. Mulai dari [skills](https://aihero.dev/skills) yang eksplisit dan mudah diaudit.
+
+4. Benchmark [DeepSeek V4](https://deepseek.com) Pro/Flash lewat provider yang akan kamu pakai beneran. Model bagus bisa terasa jelek kalau provider-nya lambat.
+
+5. Kalau penasaran local coding, coba [Gemma](https://ai.google.dev/gemma) atau Qwen dengan konteks realistis, bukan prompt demo. Perhatikan RAM, quantization, tool calling, dan latency.
+
+Implikasinya praktis: minggu ini bukan waktunya menambah subscription random. Minggu ini waktunya memperjelas peta akses, biaya, dan fallback.
+
+## 👥 Kontributor Minggu Ini
+
+- Mbak Eka — mengangkat detail backup Railway dan merumuskan posisi skill + CLI dengan sangat padat.
+- Mas Riga — membawa Zed parallel agents dan menangkap pola panik dalam postmortem agent deletion.
+- Zain — membagikan praktik read-only OpenClaw, destructive command guard, dan sudut pandang CLI vs MCP.
+- Mas Zahid — memberi sinyal kuat soal DeepSeek V4, provider quality, dan konfigurasi custom provider.
+- Mas Ardit — memberi perspektif hati-hati soal agent untuk repo kantor.
+- Mas Salma — memantik mitigasi `rm` dan pertanyaan soal delegasi model/opencode/pi.
+- Mas Galih — membawa kebiasaan praktis mengganti `rm -rf` dengan `trash`.
+- Mas Aziz Iqbal — memulai thread subscription bulanan dan budget workflow.
+- Mas Azam — membawa komparasi pi.dev, OMP setup, dan pertanyaan API vs MCP.
+- Mas Michael — memberi konteks panjang soal pi.dev dan Amp free quota.
+- Mas Ang — membawa keluhan konkret soal Amp free token yang makin kecil.
+- Mas Desilino — memberi testimoni OMP, DeepSeek V4, GLM, dan pain Kimi subscription.
+- Mas Faris — menambahkan pengalaman GLM unsubscribe/refund.
+- Mas Dedy P — memberi framing lucu soal DeepSeek imposter syndrome.
+- Mas Ibrahim — memberi analogi MCP vs skill/script.
+- Mas Dani — membawa artikel “What if you don't need MCP?”.
+- Mas Ahsan — menegaskan kontrol sebagai alasan memilih direct/tools bawaan untuk task simpel.
+- Mas Tegar — menangkap konteks Warp open source.
+- Mas Agung — memberi impresi Gemma, Jetson backup, dan pengalaman Warp.
+- Mas Wibowo — menjaga diskusi local model tetap realistis.
+- Mas Agung D — memantik kebutuhan belajar Claude Code dari pengguna Cursor/Trae.
+
+Daftar ini penting karena digest ini bukan ringkasan dari luar grup; ini catatan dari orang-orang yang benar-benar sedang mencoba, menghemat, membatasi akses, dan kadang tetap ngakak saat semuanya belum rapi.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 3 Mei 2026*
