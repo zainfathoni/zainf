@@ -33,183 +33,160 @@ export const meta = () => attributes.meta;
 
 # Bocor, Gacha, dan Diputus Anthropic — AI Tools Digest #10
 
-Minggu ini saya rasa ada empat momen yang bakal diingat grup AI Tools SWE GROWTH untuk waktu lama.
+Minggu ini grup AI Tools SWE GROWTH dapat paket lengkap. Source code [Claude Code](https://docs.anthropic.com/en/docs/claude-code) bocor tepat menjelang April Fools, `/buddy` bikin semua orang sibuk pamer rarity virtual pet, Anthropic resmi memutus Claude subscription untuk third-party harness, dan [Amp Code](https://ampcode.com) mengingatkan lagi bahwa free tier bisa hilang kalau terlalu lama didiamkan.
 
-Pertama, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) bocor source code-nya tepat sehari sebelum April Fools — dan orang-orang masih nanya: "ini April Mop apa beneran?" Kedua, Claude Code justru ngeluarin fitur /buddy yang bikin grup ramai flexing virtual pet. Ketiga, Anthropic resmi memutus Claude subscription untuk third-party harness termasuk [OpenClaw](https://openclaw.ai) — bikin satu grup galau massal. Keempat, [Amp Code](https://ampcode.com) mengingatkan kita semua bahwa free tier itu bisa dicabut sewaktu-waktu.
-
-Total 688 pesan dalam sepekan. Kita mulai dari yang paling seru.
+Dalam seminggu ada 688 pesan. Empat topik itu yang paling menguasai obrolan.
 
 ---
 
-## 🔓 Claude Code Bocor — dan Boris Langsung Jawab
+## Claude Code Bocor, Boris Langsung Muncul
 
-Tanggal 31 Maret, source code [Claude Code](https://docs.anthropic.com/en/docs/claude-code) v2 bocor ke publik. Kata Mas Garseta: "kemarin source code claude bocor wkwkwk." Mas Zahid langsung merespons: "Sek sek ini kok code leak nya pas tgl 1 april ya. 🙈🙈"
+Tanggal 31 Maret, source code Claude Code v2 bocor ke publik. Mas Garseta yang pertama memantik obrolan: *"kemarin source code claude bocor wkwkwk."* Mas Zahid langsung curiga karena timing-nya terlalu lucu: *"Sek sek ini kok code leak nya pas tgl 1 april ya. 🙈🙈"*
 
-Ternyata bukan — leak-nya sehari sebelum April Fools. Saya mengkonfirmasi: "Bukan, masih tanggal 31 maret kemarin."
+Ternyata memang bukan prank. Leak-nya terjadi sehari sebelum April Fools. Saya sempat mengonfirmasi di grup: *"Bukan, masih tanggal 31 maret kemarin."*
 
-Yang menarik adalah respons Boris Cherny, lead engineer Claude Code. Mas Michael yang pertama share link-nya: "om Boris jawab kenapa bisa code leak respect 👍." Saya baca dan langsung punya kesimpulan: *"Rupanya bukan salah AI gaes. Solusinya, ganti proses manual dengan AI. AI lebih reliable daripada kita untuk urusan proses yg berulang kayak gini."*
+Yang menarik justru respons dari Boris Cherny, lead engineer Claude Code. Mas Michael cepat membagikan jawabannya: *"om Boris jawab kenapa bisa code leak respect 👍."* Dari situ saya menyimpulkan dengan agak sinis, *"Rupanya bukan salah AI gaes. Solusinya, ganti proses manual dengan AI. AI lebih reliable daripada kita untuk urusan proses yg berulang kayak gini."*
 
-Grup pun ramai. Mas Iqbal punya take paling filosofis: *"AGI ini mas, claude merasa dirinya perlu open agar bermanfaat kepada semua orang wkwkwkwk."* Mas Michael langsung nyambung: "padahal belum lama direcall2 sama openAI soal opensource eh anthropic open source sendiri 😂😂😂."
+Mas Iqbal lalu membawa obrolan ke level filsafat grup: *"AGI ini mas, claude merasa dirinya perlu open agar bermanfaat kepada semua orang wkwkwkwk."* Mas Michael menimpali bahwa belum lama sebelumnya Anthropic dan OpenAI ribut soal open source, eh sekarang justru source mereka sendiri yang kebuka.
 
-Mas Desilino punya ide kreatif — mungkin bisa inject `process.env.USER_TYPE === 'ant'` biar dapat perlakuan seperti karyawan Anthropic 🙈. Sementara Mas El yang lebih pragmatis: "abis ini ada yang jual akun reroll claude ga yah."
+Mas Desilino memberi ide jahil: mungkin tinggal inject `process.env.USER_TYPE === 'ant'` supaya dapat perlakuan internal karyawan Anthropic. Mas El memilih jalur ekonomi kreatif: *"abis ini ada yang jual akun reroll claude ga yah."*
 
-Mas Noviadi mengingatkan bahwa ada cara aman untuk belajar dari leak ini: "Kalau mau dipelajari pakai re write an aja biar aman. Harness behaviornya masih sama. Sudah banyak yg bikin."
-
-Ternyata ada analisis cukup lengkap soal [arsitektur harnessing Claude Code](https://bits-bytes-nn.github.io/insights/agentic-ai/2026/03/31/claude-code-architecture-analysis.html) yang saya share sebelumnya. Harnessing — bukan model-nya — adalah kunci mengapa hasil Claude Code dari berbagai platform bisa sangat berbeda. Artinya apa? Bocornya source code justru jadi materi belajar gratis.
+Mas Noviadi mengingatkan ada cara belajar yang lebih aman dari insiden ini: *"Kalau mau dipelajari pakai re write an aja biar aman. Harness behaviornya masih sama. Sudah banyak yg bikin."* Saya juga membagikan [analisis arsitektur harness Claude Code](https://bits-bytes-nn.github.io/insights/agentic-ai/2026/03/31/claude-code-architecture-analysis.html), karena pelajaran besarnya justru ada di situ. Bukan modelnya yang paling menarik, tapi bagaimana model itu dikekang dan diarahkan.
 
 ---
 
-## 🎮 /buddy — Gacha Era di Claude Code
+## `/buddy` Mengubah Grup Jadi Arena Gacha
 
-Sementara leak masih ramai dibahas, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) justru ngeluarin fitur yang bikin grup *distracted* dengan cara yang menyenangkan: `/buddy`.
+Saat obrolan leak masih panas, Claude Code malah merilis fitur yang jauh lebih memecah konsentrasi: `/buddy`.
 
-Sistemnya persis Pokemon. Kamu hatch virtual pet dengan rarity tier: **COMMON → UNCOMMON → RARE → LEGENDARY**. Dan ternyata stat pet-mu dipengaruhi behavior coding session kamu.
+Sistemnya sederhana dan efektif. Kamu hatch virtual pet dengan rarity **COMMON**, **UNCOMMON**, **RARE**, sampai **LEGENDARY**, lalu semua orang membandingkan hasilnya seperti sedang buka booster pack.
 
-Mas Mamed yang pertama ramai-ramai: "makin lucu nih claude code. dapet /buddy apa ges?" Dan stat-nya? *"session terakhir lagi desperate debugging expo app ga berhasil2, stat nya full chaos no patience 🤣."* Sebuah confession yang sangat jujur.
+Mas Mamed membuka babak ini dengan pengakuan yang sangat jujur: *"makin lucu nih claude code. dapet /buddy apa ges?"* Lalu dia cerita session terakhirnya penuh desperate debugging Expo app dan hasil stat-nya *"full chaos no patience 🤣."*
 
-Lalu Mas Luthfi berhasil dapat **UNCOMMON**, Mas El dapat **RARE**, dan Mas Aidityas langsung flexing **LEGENDARY**. Mas Luthfi A awalnya bingung: "wkwkw apa tu mksd nya uncommon" — dan saya menjelaskan: *"Hewan yg tidak biasa. Nanti paling ada yg dapet RARE, atau LEGENDARY. Yg biasa main Pokemon tahu nih pasti. 🤣"*
+Mas Luthfi dapat **UNCOMMON**, Mas El dapat **RARE**, dan Mas Aidityas langsung flexing **LEGENDARY**. Mas Luthfi A awalnya bingung arti rarity itu, lalu saya menjelaskan dengan bahasa yang lebih mudah dicerna gamer Pokemon.
 
-Yang paling ironis? *"Saya udah bayar Max $200 masih juga dapet COMMON. Kayaknya gacha deh. 🤣"* — Zain, dengan ekspresi yang bisa kita bayangkan sendiri.
+Bagian paling ironis tentu datang dari pengalaman pribadi saya sendiri: *"Saya udah bayar Max $200 masih juga dapet COMMON. Kayaknya gacha deh. 🤣"*
 
-Mas Michael menambahkan konspirator theory: *"sepertinya itu yg dikasih senang yg $20-$100 aja 😂 yg $200 itu tandanya disuruh pecutin lagi AI nya."* Dan Mas Syamil nyambung: *"😂😂 iyasi rugi yg udah langganan max $200 hasilnya gacha."*
+Mas Michael langsung menyusun teori liar bahwa yang dikasih senang justru pengguna paket $20 sampai $100, sedangkan user $200 disuruh kerja lebih keras. Mas Syamil setuju. Mas Luthfi A juga protes karena dia merasa sudah cukup galak ke AI, tapi tetap dianggap sabar.
 
-Mas Luthfi A sempat protes juga: *"padahal saya udah marah2in dan pake tanda seru ke itu AI, masih dianggep sabar hahaha."* 
-
-Diskusi satu hal penting pun muncul: apakah pet bisa di-rehatch? Mas Mamed menemukan jawabannya: *"wkwkwk iya seru, sayang nya ga bisa di re-hatch. udah permanen per account ID. kalo mau hatch baru mesti ganti account deh wkwkk."* Jadi jaga baik-baik behavior coding session kamu.
+Pertanyaan penting akhirnya muncul: bisa tidak pet ini di-rehatch? Mas Mamed menemukan jawabannya. Ternyata tidak bisa. Pet itu permanen per account, jadi kalau ingin gacha lagi ya harus ganti akun.
 
 ---
 
-## 📉 Amp Code Free Tier Anxiety
+## Amp Code Bikin Orang Sadar Free Tier Itu Sewa, Bukan Hak Milik
 
-Libur Lebaran baru selesai, dan banyak yang kaget membaca tweet CEO [Amp Code](https://ampcode.com): inactive users mungkin kehilangan jatah free tier.
+Setelah libur Lebaran, orang-orang kembali dan mendapati tweet dari CEO [Amp Code](https://ampcode.com) yang bikin deg-degan: inactive users bisa kehilangan free tier.
 
-Mas Michael langsung share: *"semoga jatah free gak ditakeout 🥲 Yg gak pake ampcode free selama beberapa waktu yg free nya bakal ditakeout 😂."*
+Mas Michael langsung share dengan nada cemas: *"semoga jatah free gak ditakeout 🥲 Yg gak pake ampcode free selama beberapa waktu yg free nya bakal ditakeout 😂."* Mas Iqbal menanggapi dengan jujur, *"Iya euy aku byk bolongnya jg wkwk."* Dan ketakutan itu tidak imajiner. Mas Budi K langsung mengonfirmasi: *"saya sudah kena takeout :((."*
 
-Mas Iqbal langsung khawatir: *"Iya euy aku byk bolongnya jg wkwk."* Dan benar saja — Mas Budi K mengkonfirmasi: *"saya sudah kena takeout :((."*
+Saya sendiri selamat, walau nyaris. Menjelang mudik dan selama libur saya juga tidak terlalu aktif. Ternyata penggunaan yang masih sesekali itu cukup untuk tetap dianggap hidup.
 
-Saya sendiri bernasib lebih baik: *"Saya juga sempat off selama menjelang mudik & selama libur lebaran. Semoga penggunaan segini masih tergolong aktif. 🙏🏼"* Dan ternyata memang masih aman: *"Baru setup, tapi belum sempat dipakai. Karena credits Amp-nya masih nyisa banyak terus. 😅"*
-
-Takeaway-nya sederhana tapi penting: free tier bukan hak, itu privilege. Kalau mau tetap gratis, harus tetap aktif.
+Kesimpulannya sederhana. Free tier itu privilege yang harus terus dipakai. Kalau terlalu lama dibiarkan, provider juga punya insentif buat mengambilnya kembali.
 
 ---
 
-## 🐏 Memory Leak Claude Code — 14GB untuk... Ngedumel di Grup
+## Memory Leak Claude Code: 14GB Hanya untuk Ngedumel
 
-Mas Aidityas punya cerita yang menjadi benang merah diskusi teknis minggu ini. Setup-nya bukan sembarangan: Linux dengan 32GB RAM DDR5, terminal-only + Neovim. Tapi tiba-tiba RAM penuh — dan [Claude Code](https://docs.anthropic.com/en/docs/claude-code) menjadi tersangka utama: *"Pdhal ram udh 32gb on linux, terminal use only + neovim, tdi nyoba running server next js, kok ram full, eh ngecek usage, si cc ngambil 14GB sendiri."*
+Mas Aidityas punya cerita yang langsung jadi benang merah diskusi teknis minggu ini. Setup-nya sebenarnya mantap: Linux, RAM 32GB DDR5, terminal-only, Neovim. Lalu mendadak semuanya penuh dan ternyata tersangka utamanya adalah Claude Code: *"Pdhal ram udh 32gb on linux, terminal use only + neovim, tdi nyoba running server next js, kok ram full, eh ngecek usage, si cc ngambil 14GB sendiri."*
 
-Mas Agung langsung heran: "kok gede gede kalian? gw pake CC tapi memory 20mb?" Ternyata kuncinya: Mas Agung sudah pakai **native TUI installer** — hanya 161MB. Mas Aidityas ternyata belum pindah.
+Mas Agung langsung heran karena di tempatnya Claude Code cuma makan sekitar 20MB. Kuncinya ternyata sederhana: dia sudah pakai native TUI installer. Mas Aidityas belum.
 
-Mas Michael menjelaskan root cause: *"cc kan sessionnya masih berupa file, jadi load langsung ke memory. gk makek db."* Plus, MCP lokal memperburuk keadaan: setiap spawn CC, dia spawn another MCP process.
+Mas Michael menjelaskan sumber masalah yang dia lihat: session Claude Code masih berbasis file dan banyak dimuat langsung ke memory, bukan lewat database. Kalau ditambah MCP lokal, setiap spawn Claude Code bisa menumbuhkan proses tambahan lagi.
 
-Mas Garseta punya summary yang paling tepat: *"udah di hantam token usage, di hantam ram usage, besok di hantam pricing naik."*
+Mas Garseta merangkum nasib pengguna dengan sempurna: *"udah di hantam token usage, di hantam ram usage, besok di hantam pricing naik."*
 
-Solusinya:
-1. **Pakai native TUI installer** — bukan JS-based wrapper
-2. **Gunakan remote MCP** bukan local MCP
-3. **Tool calling mode "as needed"** — jangan load semua tools sekaligus
-4. **Restart sesi** kalau memory sudah tinggi — jangan lanjut dari sesi panjang
+Dari diskusi ini, solusi praktis yang muncul ada empat:
 
----
-
-## 🔑 Harnessing > Model Quality
-
-Mas Finn membawa pertanyaan mendasar: *"bukannya sebenernya yg berharga itu si model nya ya?"*
-
-Saya menjawab dengan analogi yang langsung kena: *"Tidak seberharga itu Mas. Harnessing juga penting. Ibarat Opus itu kuda, beda 'tali kekang', beda juga cara mengendalikannya. Hasilnya pun bisa berbeda juga secara signifikan, walaupun sama-sama pakai kuda Opus."*
-
-Ini bukan pertama kali dibahas di grup — [digest #7](https://www.zainfathoni.com/blog/ai-tools-swe-growth-mar-9-mar-16-2026) pun membahas ini secara khusus. Tapi minggu ini jadi lebih relevan karena source code leak memperlihatkan persis bagaimana Claude Code *harness* model-nya.
-
-Artinya: kalau kamu merasa hasil Claude Code lewat satu platform lebih baik dari platform lain, itu bukan ilusi. Itu perbedaan harnessing.
+1. Pakai native TUI installer, bukan wrapper berbasis JS.
+2. Gunakan remote MCP kalau bisa, jangan semua dijalankan lokal.
+3. Set tool calling ke mode "as needed", jangan load semua tool sekaligus.
+4. Restart sesi kalau memory sudah mulai tinggi.
 
 ---
 
-## 🔌 Diputus Anthropic — Claude Subscription Ditarik dari Third-Party Harness
+## Harnessing Memang Lebih Menentukan daripada Modelnya Saja
 
-Ini momen yang paling berdampak minggu ini. Mulai **4 April 2026**, Anthropic resmi mengumumkan: *"You'll no longer be able to use your Claude subscription limits for third-party harnesses including OpenClaw."*
+Mas Finn melempar pertanyaan yang sering muncul di luar grup: *"bukannya sebenernya yg berharga itu si model nya ya?"*
 
-Kabar ini pertama ramai di grup satelit, tapi efeknya langsung terasa di AI Tools SWE GROWTH.
+Saya menjawab dengan analogi yang menurut saya paling mudah: *"Tidak seberharga itu Mas. Harnessing juga penting. Ibarat Opus itu kuda, beda 'tali kekang', beda juga cara mengendalikannya. Hasilnya pun bisa berbeda juga secara signifikan, walaupun sama-sama pakai kuda Opus."*
 
-Sebenarnya, tanda-tandanya sudah muncul sejak 31 Maret. Ada yang bertanya di grup: *"sofar aman mas claude nya dipake openclaw? ini bukannya ngelanggar TOS ya?"* Waktu itu saya menjawab lugas: *"Sejauh ini masih aman. Kalau diblokir ya udah, tinggal geser ke OpenAI subs aja. Saya masih ada $200/bulan buat dibakar. 🔥 It's their loss. 🤷‍♂️"*
-
-Dan ketika resmi diumumkan tanggal 4 April, Saya langsung menindaklanjuti: *"Seperti yang saya bilang Selasa lalu. It's their (Anthropic's) loss. 🤷‍♂️"* Lalu langsung pivot: *"Dari kemarin pengen cobain Codex & GPT-5.4 ini (baik buat OpenClaw maupun buat coding sehari-hari), tapi masih belum ada budgetnya soalnya habis buat Claude Max. Sekarang jadi ada budgetnya lagi deh. 😆"*
-
-Mas Desilino punya take yang relatable: *"Pelan2 dibiasakan mas, nanti juga terbiasa. Walaupun pasti ada moment kangen2nya sama Opus, tapi diinget2 aja perasaan kemaren udah disakitin sama Anthropic segitunya. 🙈"* Mas Zahid langsung nimpali: *"Wkwkwkw coba curhat gini ke gpt/sonnet/mocin. 🤣🤣🙈"*
-
-Mas Iqbal: *"Panutan ambasador cc sudah bertuah codex saatnya pindah haluan juga wkwk."* Dan saya menutup dengan filosofi: *"Saatnya melepaskan diri dari jeratan merk. 😆 Apapun tools-nya, selama bisa ngelakuin Agentic Engineering, insya Allah masih akan relevan di dunia software development. 🧑🏻‍💻"* Mas Luthfi setuju: *"yoi kata2 hari ini."*
-
-Sementara itu, Mas El Muhammad — yang sudah bikin [cc-provider-switch](https://github.com/eltrovert/cc-provider-switch) untuk switching provider per project — langsung bikin tool baru: [claw-cli-proxy](https://github.com/eltrovert/claw-cli-proxy). Tagline-nya: *"A proxy built for tugs. You paid for the subscription. You want to use it your way. 🤘🏻"*
-
-Implikasi besarnya: user yang selama ini mengandalkan Claude subscription untuk agent frameworks (OpenClaw, dan sejenisnya) sekarang harus memilih antara pay-as-you-go API atau pindah ke provider lain. Diskusi soal alternatif (Codex, GLM, Kimi, OpenCode Go) langsung ramai — dan ini mungkin jadi momen di mana "brand loyalty" ke Anthropic mulai retak.
+Poin ini terasa lebih jelas minggu ini karena source code leak membuat kita bisa melihat lebih dekat bagaimana harness Claude Code bekerja. Jadi kalau hasil satu tool terasa jauh lebih bagus daripada tool lain padahal modelnya sama, itu bukan sugesti. Cara membungkus dan mengarahkan model memang membuat perbedaan nyata.
 
 ---
 
-## 💸 Pricing Panic: Mythos Edition
+## Anthropic Resmi Menutup Jalur Claude Subscription untuk Third-Party Harness
 
-Satu topik yang terus bergulir minggu ini: spekulasi harga Claude Mythos. Mas Michael share prediksi: model baru ini akan berada di atas Opus — dan harganya kemungkinan besar jauh lebih mahal.
+Buat banyak orang, inilah kabar yang paling berdampak. Mulai **4 April 2026**, Anthropic mengumumkan: *"You'll no longer be able to use your Claude subscription limits for third-party harnesses including OpenClaw."*
 
-Diskusi pricing pun terbuka. Mas Zahid: *"btw ini antrhopic parah banget ya plan 20 usd nya. 🤣 iseng coba subs langsung kenceng habisnya."* Mas Agung lebih gamblang: "max 20 aja bleeding bang... apalagi yang pro." Mas Michael menyimpulkan: "$20 udah gak bakalan jadi price paling bawah."
+Sebenarnya gejalanya sudah terasa sejak 31 Maret. Ada yang bertanya di grup apakah Claude lewat OpenClaw masih aman atau justru melanggar TOS. Waktu itu saya menjawab, *"Sejauh ini masih aman. Kalau diblokir ya udah, tinggal geser ke OpenAI subs aja. Saya masih ada $200/bulan buat dibakar. 🔥 It's their loss. 🤷‍♂️"*
 
-Pertanyaannya bukan lagi "berapa budget AI saya?" tapi "budget saya cukup untuk tier yang sesuai kebutuhan saya tidak?"
+Ketika pengumuman resmi keluar tanggal 4 April, saya cuma menindaklanjuti logika yang sama. Budget yang tadinya habis buat Claude Max sekarang justru terbuka untuk mencoba Codex dan GPT-5.4.
 
----
+Mas Desilino punya take yang sangat relatable: *"Pelan2 dibiasakan mas, nanti juga terbiasa. Walaupun pasti ada moment kangen2nya sama Opus, tapi diinget2 aja perasaan kemaren udah disakitin sama Anthropic segitunya. 🙈"* Mas Zahid langsung menyuruh curhat begitu ke GPT, Sonnet, atau mocin saja.
 
-## ⚡ Quick Hits
+Mas Iqbal ikut menyimpulkan bahwa panutan ambassador Claude Code pun sekarang sudah mulai melirik Codex. Saya sendiri cuma bilang ini saatnya melepaskan diri dari jeratan merek. Selama tool-nya masih bisa dipakai buat agentic engineering, kita masih punya jalan.
 
-- **[oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim)** — versi hemat token dari oh-my-opencode, di-share Mas Zahid. "versi hemat token omo" kata Mas Zahid. Mas Agung langsung nanya bedanya, Mas Zahid: "wkwkkw belum coba 😂"
+Di sisi lain, Mas El Muhammad langsung bergerak. Setelah sebelumnya membuat [cc-provider-switch](https://github.com/eltrovert/cc-provider-switch), dia merilis [claw-cli-proxy](https://github.com/eltrovert/claw-cli-proxy) dengan tagline: *"A proxy built for tugs. You paid for the subscription. You want to use it your way. 🤘🏻"*
 
-- **agent-hive** — project multi-agent orchestration baru di GitHub ([github.com/tctinh/agent-hive](https://github.com/tctinh/agent-hive)). Mas Zahid: "tapi ini menarik."
-
-- **[OpenCode Go](https://opencode.ai/go)** — tier $5/bulan dengan akses Kimi 2.5, dibahas sebagai alternatif bagi yang subs Kimi Code-nya habis. Mas Ivan sedang menimbang-nimbang.
-
-- **[Trae.ai](https://trae.ai)** — "Si Pria Solo itu lagi" kata Mas Faris, disambut 😱 dari Mbak Eka. Mas Michael rutin share update terbaru Trae.ai setiap ada announcement baru.
-
-- **[t3.codes](https://t3.codes/)** — BYOK (Bring Your Own Key) coding tool, di-share Mas Fajri. Mas Michael konfirmasi: bisa pakai API key dari provider yang sudah di-subs.
-
-- **[OpenClaw](https://openclaw.ai) + Claude** — Saya ditanya soal apakah aman pakai Claude via OpenClaw. Jawabannya lugas: *"Sejauh ini masih aman. Kalau diblokir ya udah, tinggal geser ke OpenAI subs aja. Saya masih ada anggaran $200/bulan buat dibakar. 🔥 It's their loss. 🤷♂️"*
-
-- **Financial freedom bukan berarti berhenti** — Mas Zahid: *"pensiun dini itu adalah mitos, org yg kaya yg duitnya akeh tetap gawe kalau gak gawe nanti sakit atau stres."* Mas Aidityas menambahkan: founder Minecraft pun depresi setelah financial freedom, dan sekarang ngoding lagi karena fun.
+Implikasinya jelas. Pengguna yang tadinya sangat bergantung pada Claude subscription untuk framework agent kini harus memilih: pindah ke API pay-as-you-go, atau pindah provider sekalian.
 
 ---
 
-## ✅ Yang Perlu Dicoba Minggu Ini
+## Mythos Belum Rilis, Orang-Orang Sudah Pusing Harga
 
-1. **Coba `/buddy`** di Claude Code — lihat rarity pet kamu dan bandingkan dengan teman. ([Claude Code](https://docs.anthropic.com/en/docs/claude-code))
+Satu topik yang terus bergulir di sela semua itu adalah spekulasi harga Claude Mythos. Mas Michael memprediksi model baru ini akan berada di atas Opus dan tentu saja lebih mahal.
 
-2. **Switch ke native TUI installer** kalau Claude Code kamu masih pakai versi JS — bisa kurangi memory dari 8GB+ ke ~161MB. ([panduan instalasi](https://docs.anthropic.com/en/docs/claude-code))
+Mas Zahid langsung mengeluh plan $20 Anthropic yang terasa cepat sekali habis. Mas Agung malah lebih gamblang: *"max 20 aja bleeding bang... apalagi yang pro."* Mas Michael menyimpulkan bahwa $20 tidak akan lagi menjadi lantai harga untuk pengalaman yang benar-benar nyaman.
 
-3. **Coba oh-my-opencode-slim** kalau pakai OpenCode dan token terasa boros. ([github.com/alvinunreal/oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim))
-
-4. **Baca analisis arsitektur Claude Code** dari komunitas untuk paham lebih dalam soal harnessing. ([baca di sini](https://bits-bytes-nn.github.io/insights/agentic-ai/2026/03/31/claude-code-architecture-analysis.html))
-
-5. **Aktif di Amp Code** — kalau sudah lama tidak pakai, jangan sampai free tier kena takeout. ([Amp Code](https://ampcode.com))
+Obrolan pricing jadi lebih realistis minggu ini. Orang-orang tidak lagi bertanya, "berapa budget AI ideal?" Mereka bertanya, "budget saya cukup untuk workflow yang saya butuhkan atau tidak?"
 
 ---
 
-## 👥 Kontributor Minggu Ini
+## Quick Hits
 
-- **Mas Michael** — Most active contributor; source code leak context, Trae.ai updates, Mythos pricing analysis, financial freedom discourse
-- **Mas Zahid** — oh-my-opencode-slim share, agent-hive discovery, Linux distro discussion, budgeting breakdown
-- **Mas Agung** — Memory usage comparison, native TUI insight
-- **Mas Aidityas** — Memory leak report yang jadi diskusi panjang, /buddy LEGENDARY flex
-- **Mas Garseta** — "udah di hantam" quote of the week, Claude Code source take
-- **Mas Iqbal** — AGI quote, Amp Code anxiety
-- **Mas Mamed** — /buddy full chaos confession yang paling relatable
-- **Mas El Muhammad** — "jual akun reroll claude" energy, /buddy RARE, cc-provider-switch, dan claw-cli-proxy — the rebellion tools
-- **Mas Finn** — Pertanyaan fundamental soal harnessing vs model
-- **Mas Noviadi** — Legal & safe approach ke leaked source code
-- **Mas Desilino** — process.env.USER_TYPE === 'ant' 🙈
-- **Mas Luthfi A** — Minecraft founder story, /buddy UNCOMMON
-- **Mas Faris** — Trae.ai "Si Pria Solo" branding
-- **Mbak Eka** — 😱 reaction ke Trae.ai update
-- **Mas Budi K** — Amp Code takeout confirmation
-- **Mas Ivan** — OpenCode Go evaluation
-- **Mas Fajri** — t3.codes share
-- **Mas Riza Fahmi** — Artikel agentic coding
-- **Mas Nur Kholis** — Reaksi ke artikel Mas Riza Fahmi
-- **Mas Luthfi** — /buddy UNCOMMON flex awal
+- [oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) dibagikan Mas Zahid sebagai versi hemat token dari oh-my-opencode. Saat ditanya bedanya, jawabannya jujur sekali: belum sempat dicoba juga.
+- `agent-hive` dari GitHub ([github.com/tctinh/agent-hive](https://github.com/tctinh/agent-hive)) menarik perhatian Mas Zahid sebagai proyek multi-agent orchestration yang layak diikuti.
+- [OpenCode Go](https://opencode.ai/go) muncul sebagai opsi murah, $5 per bulan dengan akses Kimi 2.5.
+- [Trae.ai](https://trae.ai) tetap rutin dibawa ke grup oleh Mas Michael setiap ada update baru.
+- [t3.codes](https://t3.codes/) dibagikan Mas Fajri sebagai tool BYOK yang bisa memanfaatkan API key provider yang sudah dimiliki.
+- Soal [OpenClaw](https://openclaw.ai) plus Claude, saya sempat menjawab bahwa kalau diblokir ya tinggal geser ke OpenAI subscription. Ternyata seminggu kemudian kalimat itu benar-benar diuji.
+- Obrolan soal financial freedom juga sempat menyelinap. Mas Zahid berpendapat pensiun dini itu mitos karena orang yang kaya pun tetap butuh kerja supaya tidak stres.
+
+---
+
+## Yang Perlu Dicoba Minggu Ini
+
+1. Jalankan `/buddy` di Claude Code lalu lihat pet apa yang kamu dapat.
+2. Kalau masih pakai Claude Code versi JS wrapper, pindah ke native TUI installer.
+3. Coba [oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) kalau OpenCode mulai terasa boros.
+4. Baca [analisis arsitektur Claude Code](https://bits-bytes-nn.github.io/insights/agentic-ai/2026/03/31/claude-code-architecture-analysis.html) untuk memahami sisi harnessing-nya.
+5. Kalau masih berharap aman dari takeout, aktif lagi di [Amp Code](https://ampcode.com) sebelum free tier keburu dicabut.
+
+## Yang Menghidupkan Obrolan Minggu Ini
+
+- Mas Michael: paling aktif mengangkat konteks leak, update Trae.ai, dan analisis harga Mythos.
+- Mas Zahid: membagikan oh-my-opencode-slim, agent-hive, dan obrolan Linux yang selalu seru.
+- Mas Agung: menjadi pembanding penting untuk isu memory karena setup native TUI-nya jauh lebih ringan.
+- Mas Aidityas: cerita memory leak 14GB yang membuat diskusi teknis minggu ini punya pusat gravitasi jelas.
+- Mas Garseta: pemilik kalimat "udah di hantam" yang merangkum nasib pengguna minggu ini.
+- Mas Iqbal: memberi warna dari AGI joke sampai kecemasan soal Amp.
+- Mas Mamed: membuka arc `/buddy` dengan pengakuan full chaos yang sangat relatable.
+- Mas El Muhammad: energi rebellion tools-nya terasa lewat cc-provider-switch dan claw-cli-proxy.
+- Mas Finn: memancing diskusi penting soal model versus harness.
+- Mas Noviadi: mengingatkan pendekatan legal dan aman untuk belajar dari leaked source.
+- Mas Desilino: menyumbang ide jahil `process.env.USER_TYPE === 'ant'` dan nasihat move on dari Anthropic.
+- Mas Luthfi A: menyambung obrolan `/buddy` dan cerita founder Minecraft.
+- Mas Faris: menjaga branding Trae.ai "Si Pria Solo" tetap hidup.
+- Mbak Eka: mewakili reaksi kaget tiap kali ada update Trae.ai.
+- Mas Budi K: bukti nyata bahwa Amp takeout itu bukan ancaman kosong.
+- Mas Ivan: mengangkat evaluasi OpenCode Go.
+- Mas Fajri: membawa t3.codes ke obrolan.
+- Mas Riza Fahmi: artikel agentic coding-nya ikut dibahas.
+- Mas Nur Kholis: ikut menghidupkan diskusi seputar artikel itu.
+- Mas Luthfi: salah satu pionir flex `/buddy` minggu ini.
 
 ---
 
 *Ditulis dari dalam grup, bukan dari luar.*
 
-*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 5 April 2026*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack), 5 April 2026*
