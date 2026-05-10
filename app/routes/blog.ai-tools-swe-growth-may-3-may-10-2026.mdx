@@ -1,0 +1,163 @@
+---
+meta:
+  - title: "Tali Kekang Agent Lebih Mahal dari Kudanya — AI Tools Digest #15"
+  - name: description
+    content: "Minggu ini kita membahas Amp Neo, biaya harness, OpenCode Go dan Swarm, CONTEXT.md, CommandCode, sampai local Gemma/Qwen. Rangkuman dari grup AI Tools SWE GROWTH, 3-10 Mei 2026."
+  - author: Zain Fathoni
+  - date: "2026-05-10"
+  - property: og:title
+    content: "Tali Kekang Agent Lebih Mahal dari Kudanya — AI Tools Digest #15"
+  - property: og:description
+    content: "Minggu ini kita membahas Amp Neo, biaya harness, OpenCode Go dan Swarm, CONTEXT.md, CommandCode, sampai local Gemma/Qwen. Rangkuman dari grup AI Tools SWE GROWTH, 3-10 Mei 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-may-3-may-10-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-15.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Tali Kekang Agent Lebih Mahal dari Kudanya — AI Tools Digest #15"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Tali Kekang Agent Lebih Mahal dari Kudanya — AI Tools Digest #15
+
+Minggu ini kita bukan cuma membandingkan model. Kita mulai membedah siapa yang sebenarnya kita bayar: modelnya, harness-nya, routing-nya, atau semua lapisan kecil yang membuat agent terasa “pintar”. Dari 624 pesan, benang merahnya cukup jelas: AI coding makin mirip sistem transportasi. Model itu kudanya. Tool seperti [Amp Code](https://ampcode.com), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenCode](https://opencode.ai), dan [Codex](https://openai.com/codex/) itu tali kekang, dokar, kusir, dan kadang juga tukang parkirnya. 😅
+
+## Model Murah Tidak Otomatis Workflow Murah
+
+Pemantiknya datang ketika [Amp Neo](https://ampcode.com/news/neo) muncul. Saya share linknya karena Amp sekarang makin eksplisit bergerak ke arah remote-control agent. Mas Sem langsung menangkap: *“bisa remote control sekarang,” kata Mas Sem.* Menarik, tapi yang lebih ramai justru efek sampingnya: kalau kita connect provider lain, biaya model bisa turun, tapi biaya harness tetap ada.
+
+Saya coba jelaskan dengan analogi yang ternyata paling gampang nempel: *“Kuda = Model; Tali kekang & dokar = Amp/Claude Code,” kata saya (Zain).* Connect ke [ChatGPT](https://chatgpt.com) atau provider lain itu seperti ganti kuda. Dokarnya masih Amp. Kalau dokarnya tetap narik biaya sewa, jangan kaget kalau tagihan tidak turun sedrastis yang kita bayangkan.
+
+Mas Dedy P merangkum lapisan itu dengan lebih tajam: *“$0.3/1M token. Bayar jasa tool,” kata Mas Dedy P.* Mas Nanda tetap merasakan manfaatnya: *“$10 gw terasa kyk $100 opus,” kata Mas Nanda.* Jadi ini bukan cerita “Amp mahal” atau “Amp murah”. Ini cerita bahwa kita perlu memisahkan biaya model dari biaya orchestration.
+
+Mas Riza Fahmi juga curiga ada kaitannya dengan produk baru: *“Mungkin masih nge bug. Apa jangan-jangan settingan ini disiapkan untuk neo, agen barunya 🤔,” kata Mas Riza Fahmi.* Dan menurut saya ini sinyal penting: masa depan AI coding bukan hanya perang model, tapi perang harness. Yang menang mungkin bukan model paling pintar, tapi sistem yang paling enak mengikat model, context, tool, dan workflow.
+
+Implikasinya: mulai sekarang, kalau bilang “ini murah”, pertanyaan lanjutannya harus jelas — murah modelnya, murah harness-nya, atau murah total workflow-nya?
+
+## OpenCode Go: Hemat, Tapi Tidak Boleh Dibiarkan Liar
+
+Thread biaya paling membumi datang dari Mas Ainun: *“better continue subscribe claude code atau ganti opencode go ya kalau buat mahasiswa? keperluannya mungkin untuk belajar2 sama ngerjain skripsi aja si,” tanya Mas Ainun.* Ini pertanyaan yang sangat nyata. Dollar naik, subscription numpuk, dan mahasiswa tidak butuh semua fitur enterprise buat belajar agentic coding.
+
+Mas Novel memberi konteks yang agak pahit: *“kalau dulu saranin pake qwen code sekarang udah enggak ada free tier :(,” kata Mas Novel.* Mas Wibowo lalu menawarkan jalur lain: *“opencode ada yg gratis kok, minimax free sama big pickle kalau gak salah,” kata Mas Wibowo.* Mas Luthfi A bahkan cukup puas: *“aku pake opencode go worth it banget so far, masih 5$, next month 10$,” kata Mas Luthfi A.*
+
+Tapi tentu saja ada caveat. Saat Mas Iqbal bertanya apakah [OpenCode Go](https://opencode.ai/go) boros, Mas Desilino jawab pendek: *“Boros 😅,” kata Mas Desilino.* Dia lalu menjelaskan strateginya: model per agent disebar supaya limit tidak cepat habis. Mas Garseta punya versi yang lebih ekstrem: *“semua di setup ke kimi 2.6,” kata Mas Garseta,* karena saat itu ada info limit 3x untuk [Kimi](https://kimi.moonshot.cn) 2.6.
+
+Di sinilah OpenCode mulai menarik. Mas Desilino pakai credit $10 di OpenCode Zen, lalu model-model free dipakai untuk agent pendukung seperti coder dan tester. Mas Zahid juga cerita dia bikin plugin buat rotate key dan menghemat request [GitHub Copilot](https://github.com/features/copilot). Jadi penghematan bukan cuma cari provider murah; penghematan adalah routing: model mana untuk planning, model mana untuk edit ringan, model mana untuk tester.
+
+Kalau minggu lalu kita masih bertanya “pakai tool apa?”, minggu ini jawabannya makin terdengar seperti “pakai kombinasi apa, dengan batas apa, untuk task apa?”
+
+## Swarm dan Architect Workflow: Agent Mulai Punya Organisasi Sendiri
+
+[OpenCode Swarm](https://github.com/zaxbysauce/opencode-swarm) masuk seperti biasa: awalnya satu link, lalu langsung jadi racun baru. Mas Desilino share bahwa dia sedang pakai OpenCode Swarm. Mas Tegar spontan bereaksi: *“apa lagi ini 😂,” kata Mas Tegar.* Mas Salma langsung menanyakan hal yang paling penting: apakah semua agent tetap jalan untuk refactor kecil, dan apakah ini lebih boros token?
+
+Jawaban Mas Desilino cukup membantu: untuk workflow besar, architect jadi entry point yang memilah apakah perlu plan proper atau simple edit. Pada review lanjutan, dia bilang: *“Bagian intent clarification nya bagus IMHO, jarang banget keluar context,” kata Mas Desilino.* Enaknya: customizable, architect mode bagus, model medium pun masih cukup pintar, dan tool call tidak “blo'on”.
+
+Tapi tidak semuanya mulus. Mas Desilino juga mengeluh gates default-nya bisa terasa mengganggu karena kadang mengulang task yang sudah dikerjakan di awal. Itu berarti token terbuang bukan karena model bodoh, tapi karena workflow terlalu cerewet. Menurut dia, gates masih bisa diatur: apa yang aktif, temperatur berapa, dan model apa yang dipakai.
+
+Di akhir minggu, Mas Zahid menanyakan review planning OpenCode Swarm karena dia selama ini menggabungkan OmO dengan skill dari Matt Pocock. Mas Desilino menjawab setup mainstream-nya: architect pakai [DeepSeek](https://deepseek.com) V4 Flash, SME dan critics pakai [GLM](https://chatglm.cn) 5.1, sisanya [Qwen](https://github.com/QwenLM/qwen-code), Kimi, atau free models.
+
+Ini menarik karena “agent” mulai terasa seperti organisasi kecil: ada architect, coder, tester, critic, dan SME. Masalahnya bukan lagi sekadar prompt, tapi struktur tim. Kalau struktur timnya salah, token habis untuk meeting yang tidak perlu. Familiar banget, kan? 😅
+
+## CONTEXT.md, Grill, dan Mazhab Dokumentasi Agent
+
+Bagian yang paling “ini kerjaan software beneran” minggu ini adalah obrolan soal `/grill-me`, `/grill-with-docs`, dan [`CONTEXT.md`](https://github.com/mattpocock/sandcastle/blob/main/CONTEXT.md). Mas Putu bertanya kapan harus pakai `/grill-me` dan kapan harus `/grill-with-docs`. Saya jawab: `/grill-me` cocok untuk diskusi, debugging, atau mikirin fitur. `/grill-with-docs` dipakai kalau butuh serius sampai jadi issue, karena perlu menyamakan bahasa lewat CONTEXT.md.
+
+Contoh paling receh tapi menyakitkan: saya pernah minta bot bikin GitHub issue dari laporan bug istri. Issue dibuat, PR naik, merged — tapi masalahnya tetap ada karena agent mengerjakan halaman lain. Mbak Eka merangkum tragedinya dengan sempurna: *“Ini kayak anak magang beneran, tapi yg rada o'on,” kata Mbak Eka.*
+
+Mas Riza Fahmi lalu bertanya apakah `CONTEXT.md` ini beda dengan `AGENTS.md`. Mas Desilino membacanya sebagai context request per session, sementara saya jelaskan bahwa versi Matt Pocock lebih mirip ubiquitous language untuk domain-driven development. Beda konvensi, beda mazhab.
+
+Lalu Mas Riza Fahmi membawa mazhab lain: [Addy Osmani agent-skills](https://github.com/addyosmani/agent-skills). Dia bilang sempat coba compound-engineering, tapi tidak kuat dengan token yang sangat boros. Saya setuju dengan risikonya: kalau terlalu banyak mazhab dicampur, manusia bingung, AI-nya juga ikut bingung.
+
+Takeaway saya: dokumentasi untuk agent bukan lagi nice-to-have. `CONTEXT.md`, skills, glossary domain, dan issue template adalah cara kita membuat agent tidak mengerjakan halaman yang salah dengan penuh percaya diri.
+
+## Mocin, Provider Murah, dan Local Model Masih Jadi Laboratorium
+
+Tentu minggu ini tetap ada perburuan murah. [CommandCode](https://commandcode.ai) muncul lewat Mas Azam: *“lagi promo nih 1$ deepsek v4 pro,” kata Mas Azam.* Mas Tunggul langsung jadi rem tangan: *“hati hati ada tulisan kecil : + processing fee,” kata Mas Tunggul.* Mas Ardit justru tertarik karena pricing buat tim tidak per-seat, tapi satu bucket bersama: perlu dicoba.
+
+[Sumopod](https://sumopod.com) juga beberapa kali muncul. Mas Tunggul share halaman model dan tutorialnya. Mas Wibowo menjelaskan bahwa secara prinsip bisa dipakai tool apa saja karena endpoint-nya kompatibel dengan [OpenAI](https://openai.com) dan [Anthropic](https://anthropic.com). Mas Riza Fahmi menyebut hasil [Qwen 3.6](https://github.com/QwenLM/qwen-code)-nya bisa dilihat dari sesi livestream sebelumnya.
+
+Di sisi local, Mas Aria Bima bertanya soal [Ollama](https://ollama.com) + [Gemma](https://ai.google.dev/gemma) 4 untuk local coding agent. Mas Nulad cukup jujur: Gemma 4 di setup dia “bapuk” untuk tool calling, mungkin salah config atau terlalu lemot, dan Qwen 3.6 terasa lebih bagus. Saat ditanya detailnya, dia menjelaskan pakai `Qwen3.6-35B-A3B-GGUF:UD-Q5_K_S` versi Unsloth: *“Jalan sih tool callingnya, cuma ya itu lambat banget wkwkwk,” kata Mas Nulad.*
+
+Ini bagian yang sering hilang dari benchmark: local model bukan cuma soal “bisa jalan”. Mas Nulad pakai RAM 64GB dan RTX 4060 8GB, tapi context window dan latency tetap jadi batas nyata. Mas Wibowo juga cerita Qwen 3.6 27B di LM Studio hanya dapat sekitar 20-an TPS dan context max 100k.
+
+Kesimpulannya tidak berubah: mocin dan local model makin layak masuk workflow, tapi jangan bawa ekspektasi cloud-model ke laptop tanpa menghitung RAM, quantization, tool calling, dan kesabaran.
+
+## ⚡ Quick Hits
+
+- [Simon Willison menulis soal vibe coding dan agentic engineering](https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/). Saya share bagian bahwa AI tools adalah amplifier of existing experience. Mas Hasrul merangkum sisi gelapnya: *“intinya AI cuma ngasilin sampah kalau tanpa alignment yg baik,” kata Mas Hasrul.*
+
+- [Tobi Lütke share tentang Shopify River](https://x.com/tobi/status/2053121182044451016?s=46): merge rate naik dari 36% ke 77% bukan karena ganti model, tapi karena tim menulis apa yang agent seharusnya tahu. Ini nyambung banget dengan CONTEXT.md: taste tim bisa menjadi memori agent.
+
+- [Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview) sempat dibahas lewat Mas Ikhsan dan Mas Aidityas. Belum jadi thread panjang, tapi menarik karena design docs mulai diperlakukan seperti input agent, bukan hanya output design.
+
+- Mas Joko membawa rumor CVE high di [Gemini CLI](https://github.com/google-gemini/gemini-cli) dan [Cursor](https://cursor.sh), lalu share [CVE-2026-26268](https://nvd.nist.gov/vuln/detail/CVE-2026-26268). Ini belum jadi analisis mendalam, tapi cukup untuk mengingatkan: coding agent juga software supply chain.
+
+- Mas Andre Pratama share [Kiro ambassador program](https://www.linkedin.com/posts/kirodotdev_introducing-kiro-ambassadors-a-program-activity-7458271778226909184-_Gpr). Tidak semua racun minggu ini berupa tool; kadang berupa program komunitas.
+
+- [pi.dev](https://pi.dev) tetap muncul sebagai ekosistem kecil yang menarik. Mas Riza Fahmi menunjuk package [pi-rtk-optimizer](https://pi.dev/packages/pi-rtk-optimizer?name=rtk), sementara Mas Salma mencoba bikin [pi-prayer-times](https://pi.dev/packages/pi-prayer-times) dan merasa prosesnya mudah karena guide-nya sudah cukup enak diikuti.
+
+- Prompt injection juga mampir lewat contoh chatbot customer service. Mas Andre Pratama cerita chatbot McDonald Malaysia bisa diajak tanya coding, lalu obrolannya bergerak ke guardrail praktis: Mas Budi menyebut regex pre-validation sebelum menyentuh token, dan Mas Zahid mengusulkan intent classifier untuk membatasi agent ke daftar intent yang memang boleh dijalankan.
+
+Quick hits minggu ini punya pola yang sama: value agent makin sering datang dari konteks di sekitarnya — docs, team taste, security posture, dan cara kita mengikat model ke workflow.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Coba [OpenCode agents/persona](https://opencode.ai/docs/agents/#markdown) untuk satu workflow kecil. Jangan langsung rewrite seluruh setup.
+
+2. Kalau mau test [OpenCode Swarm](https://github.com/zaxbysauce/opencode-swarm), mulai dari task yang cukup besar untuk butuh architect, lalu matikan gates yang boros.
+
+3. Audit biaya harness vs biaya model di [Amp Neo](https://ampcode.com/news/neo) atau provider-connected workflow lain. Jangan cuma lihat harga token.
+
+4. Tulis satu [`CONTEXT.md`](https://github.com/mattpocock/sandcastle/blob/main/CONTEXT.md) kecil sebelum menyuruh agent membuat issue. Ukur apakah salah halaman/salah domain berkurang.
+
+5. Untuk local coding, bandingkan [Gemma](https://ai.google.dev/gemma) dan [Qwen](https://github.com/QwenLM/qwen-code) dengan task tool-calling nyata. Prompt demo tidak cukup.
+
+Prinsip minggu ini sederhana: jangan cuma cari kuda tercepat. Pastikan tali kekang, dokar, rute, dan kusirnya juga masuk akal.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — membawa analogi kuda/dokar, Amp Neo, CONTEXT.md, Simon Willison, dan Shopify River.
+- Mas Sem — menangkap perubahan Amp Neo ke remote control.
+- Mas Dedy P — merangkum biaya harness sebagai “bayar jasa tool”.
+- Mas Nanda — memberi testimoni credit yang terasa jauh lebih awet.
+- Mas Riza Fahmi — menghubungkan provider setting Amp dengan Neo dan membawa mazhab Addy Osmani.
+- Mas Ainun — memantik pertanyaan realistis soal Claude Code vs OpenCode Go untuk mahasiswa.
+- Mas Novel — mengingatkan free tier Qwen Code sudah tidak seperti dulu.
+- Mas Wibowo — memberi jalur alternatif gratis dan konteks Sumopod/Qwen lokal.
+- Mas Luthfi A — memberi testimoni OpenCode Go yang masih worth it.
+- Mas Iqbal — memantik pertanyaan biaya OpenCode Go.
+- Mas Desilino — memberi review paling kaya soal OpenCode Go, OpenCode Swarm, dan routing model.
+- Mas Garseta — membawa strategi Kimi 2.6 untuk menghemat limit.
+- Mas Zahid — mengaitkan Swarm, OmO, DeepSeek V4 Flash, dan plugin penghemat request.
+- Mas Tegar — mewakili reaksi natural grup saat racun baru muncul: “apa lagi ini 😂”.
+- Mas Salma — menanyakan use case Swarm dan potensi boros token.
+- Mbak Eka — memberi punchline paling pas tentang agent seperti anak magang.
+- Mas Putu — memantik penjelasan `/grill-me` vs `/grill-with-docs`.
+- Mas Azam — membawa CommandCode $1 DeepSeek V4 Pro.
+- Mas Tunggul — mengingatkan fine print processing fee dan share jalur Sumopod.
+- Mas Ardit — melihat potensi pricing bucket untuk tim.
+- Mas Aria Bima — memulai thread local Ollama + Gemma.
+- Mas Nulad — memberi detail pengalaman Gemma/Qwen local tool calling.
+- Mas Hasrul — merangkum sisi alignment dari diskusi AI dan layoff.
+- Mas Ikhsan — membawa Google Stitch ke percakapan.
+- Mas Aidityas — menambahkan konteks Google Stitch dan berita Anthropic.
+- Mas Joko — mengangkat rumor CVE Gemini CLI/Cursor.
+- Mas Andre Pratama — share Kiro ambassador program dan contoh chatbot yang belum tahan prompt injection.
+- Mas Budi — membawa ide regex pre-validation untuk prompt-injection defense.
+
+Daftar ini penting karena digest ini bukan ringkasan dari luar. Ini catatan dari orang-orang yang sedang mengulik langsung: kadang hemat, kadang boros, kadang salah halaman, tapi pelan-pelan makin paham di mana agent seharusnya diberi tali kekang.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 10 Mei 2026*
