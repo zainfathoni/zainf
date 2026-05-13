@@ -6,7 +6,9 @@
       "mcp__playwright__browser_click",
       "mcp__ide__getDiagnostics",
       "Bash(pnpm install:*)",
-      "Bash(pnpm run:*)"
+      "Bash(pnpm run:*)",
+      "Bash(fizzy card:*)",
+      "Bash(npx:*)"
     ],
     "deny": []
   }
