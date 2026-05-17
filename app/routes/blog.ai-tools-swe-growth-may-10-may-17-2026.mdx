@@ -1,0 +1,179 @@
+---
+meta:
+  - title: "Token Murah, Workflow Mahal — AI Tools Digest #16"
+  - name: description
+    content: "Minggu ini kita membahas OpenCode Go, Copilot usage-based billing, Gemma lokal, Claude Code referral, OpenClaw self-hosting, dan jebakan token murah. Rangkuman dari grup AI Tools SWE GROWTH, 10-17 Mei 2026."
+  - author: Zain Fathoni
+  - date: "2026-05-17"
+  - lang: id
+  - property: og:title
+    content: "Token Murah, Workflow Mahal — AI Tools Digest #16"
+  - property: og:description
+    content: "Minggu ini kita membahas OpenCode Go, Copilot usage-based billing, Gemma lokal, Claude Code referral, OpenClaw self-hosting, dan jebakan token murah. Rangkuman dari grup AI Tools SWE GROWTH, 10-17 Mei 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-may-10-may-17-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-16.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Token Murah, Workflow Mahal — AI Tools Digest #16"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Token Murah, Workflow Mahal — AI Tools Digest #16
+
+Minggu ini kita belajar satu hal yang agak pahit: AI coding makin murah di beberapa tempat, tapi makin mahal di tempat lain. Dari 258 pesan, benang merahnya bukan “tool mana paling pintar”, tapi “tagihan mana yang masih masuk akal setelah dipakai beneran”. [OpenCode Go](https://opencode.ai) terasa worth it, [GitHub Copilot](https://github.com/features/copilot) mulai bikin tim menghitung ulang, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) punya referral pass yang cepat habis, dan jalur token murah yang terlalu indah untuk dipercaya ternyata memang perlu dicurigai. 😅
+
+## OpenCode Go Mulai Jadi Patokan “Worth It”
+
+Thread paling praktis minggu ini datang dari pertanyaan sederhana: kalau mau coding agent yang murah, sekarang pilih apa? Mas Zahid jawab tanpa banyak basa-basi: *“subs ter worth sekarang opencode go,” kata Mas Zahid.* Lalu ketika dibandingkan dengan BytePlus, jawabannya makin eksplisit: *“paling worth opencode go\nterus glm\nkalo sabar sama speed nya,” kata Mas Zahid.*
+
+Tapi seperti biasa, murah bukan berarti tanpa trade-off. Mas Iqbal sempat mencoba OpenCode Go lewat [pi.dev](https://pi.dev) / OhMyPi dan akhirnya uninstall karena tool calling belum nyaman: *“Udh coba pake opencode go di ohmypi cuman qadarullah agak sering error krn tool callingnya blm optimized,” kata Mas Iqbal.* Di lanjutannya dia lebih tajam: *“opencode go ini sebenernya optimize ketika make si opencode-nya sendiri sih, cuman lemooooot hahaha,” kata Mas Iqbal.*
+
+Mas Salma memberi counter-example yang lebih tenang: OpenCode disambung ke pi lancar untuk [DeepSeek](https://deepseek.com) dan [Kimi](https://kimi.moonshot.cn). Mas Zahid juga membawa opsi [Crof AI](https://crof.ai) sebagai provider untuk subagent, sambil bercanda bahwa mereka sedang fine-tune Kimi 2.6 dengan nama Greg. *“Sama dia lagi fine tune kimi 2.6 juga, nama model nya Greg. 🤣 🤣 🤣 🙈 🙈,” kata Mas Zahid.*
+
+Jadi kesimpulannya bukan “OpenCode Go selalu bagus” atau “pi.dev selalu bermasalah”. Lebih tepat: jangan menilai subscription dari pricing page saja. Coba jalur real workflow-nya: direct OpenCode, pi.dev, provider tambahan, model routing, dan speed. Pertanyaannya bukan lagi “murah nggak?”, tapi “murahnya masih stabil ketika dipakai kerja?”
+
+## Copilot Mulai Masuk Spreadsheet Keuangan Tim
+
+Kalau OpenCode Go jadi contoh hemat, [GitHub Copilot usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) jadi contoh sebaliknya. Mas Yusuf share link dengan pembuka singkat: *“1 juni berubah lagi gais github copilot,” kata Mas Yusuf.* Tidak lama kemudian Mas Garseta memberi konteks nyata dari tempat kerjanya: *“dan sama company udah di suruh move dari copilot, udah di apply ke team,” kata Mas Garseta.*
+
+Angkanya yang bikin grup langsung berhitung: *“3 orang baru 40% usage udah 170+ dolar\ngila,” kata Mas Garseta.* Di Indonesia, angka seperti itu cepat sekali berubah dari “subscription productivity” menjadi “ini sudah mendekati biaya manusia”. Mas Audi menangkap absurditasnya dengan pas: *“Dikit lagi sudah hampir setara gaji UMR nih wkwk,” kata Mas Audi.*
+
+Lalu muncul punchline yang terlalu Indonesia untuk tidak dicatat: *“Memang teknologi AI (Anak Intern) , khususnya di indonesia emang sudah solusi paling canggih kedepannya😂,” kata Mas Audi.* Lucu, tapi juga mengganggu. Karena kalau AI tool usage makin mahal, perusahaan akan mulai membandingkan bukan hanya model A vs model B, tapi AI subscription vs hiring threshold.
+
+Mas Wibowo mengingatkan konteks globalnya: di negara dengan gaji jauh lebih tinggi, AI tetap bisa terlihat murah. Tapi di Indonesia, unit economics-nya beda. Implikasinya jelas: engineering manager sekarang perlu bisa membaca billing dashboard sebaik membaca sprint board. Kalau tidak, “AI menggantikan engineer” bisa berubah jadi “AI menggantikan budget engineering”.
+
+## Local Agent: Gemma Tidak Bapuk, Resepnya yang Belum Ketemu
+
+Bagian paling melegakan minggu ini datang dari Mas Nulad. Sebelumnya dia pernah bilang [Gemma](https://ai.google.dev/gemma) untuk local AI agent itu kurang bagus. Minggu ini dia revisi sendiri: *“Waktu itu kan saya pernah share kalau Gemma 4 buat local AI Agent itu bapuk. Ternyata saya yang salah :D,” kata Mas Nulad.*
+
+Resepnya cukup spesifik: *“Sekarang udah ketemu resepnya:\n- Gemma 4 E4B\n- llama.cpp recompiled dengan flag CUDA (-DGGML_CUDA=ON)\n- pi untuk agentic harness nya,” kata Mas Nulad.* Ini menarik karena masalahnya bukan sekadar “model lokal kalah dari cloud”. Kadang modelnya cukup, tapi harness, compile flag, quantization, dan GPU path-nya belum pas.
+
+Mas Wibowo menambahkan catatan yang realistis: tiap GPU punya setting berbeda, jadi harus riset sendiri. Ini sisi local LLM yang jarang terlihat di demo: local agent bukan paket instan. Ia lebih mirip rakit PC plus tuning mobil. Bisa kencang, bisa hemat, tapi harus tahu baut mana yang dikencangkan.
+
+Buat saya, ini kabar baik sekaligus peringatan. Local agent makin mungkin dipakai, tapi jangan jual mimpi “tinggal install lalu agentic coding lancar”. Untuk workflow serius, resep yang bisa direproduksi lebih berharga daripada screenshot benchmark.
+
+## Claude Code Referral: Gratis Seminggu, Habis Sekali Session
+
+[Claude Code referral](https://claude.ai/referral/qozMIdIC3Q) juga jadi obrolan praktis minggu ini. Mas Aidityas share free pass satu minggu, lalu menjelaskan mekanismenya: *“Max 3 org per bulan, kalau mreka subscribe claude, kita dapat extra usage $10, mereka dapat 1 minggu claude code,” kata Mas Aidityas.*
+
+Saya sendiri sempat dapat benefitnya: *“Saya udah dapat $30 sejauh ini. Berarti sempat ada 3 orang yg subscribe dari pass saya. 😁,” kata saya (Zain).* Tapi Mas Aidityas langsung menarik kita balik ke bumi: *“Saya referral pure buat bagi2 1 minggunya aja, dpt extra usage, tpi sekali session habis 🤣,” kata Mas Aidityas.*
+
+Ini menggambarkan kondisi subscription AI sekarang: trial dan referral itu berguna untuk eksplorasi, tapi bukan strategi biaya jangka panjang. Kalau satu session bisa menghabiskan extra usage, maka “gratis” di sini lebih mirip voucher bensin untuk test drive, bukan subsidi perjalanan mudik.
+
+Takeaway-nya: pakai referral untuk mencoba workflow, bukan untuk membangun dependensi produksi. Kalau workflow terasa wajib setelah seminggu, berarti yang perlu dihitung adalah biaya bulanannya, bukan rasa senang waktu dapat pass.
+
+## OpenClaw, Mac mini, dan Pertanyaan “Worth It” yang Sebenarnya
+
+Ada juga thread tentang [OpenClaw](https://openclaw.ai) dan personal agent self-hosting. Mas Dwi Randy bertanya langsung: *“Temen2 yang pake openclaw atau sejenis nya mau tanya rekomendasi model nya apa ya? Dan mau tanya juga sih use case nya apa saja dan apakah worth it dengan cost yg di keluarin?” kata Mas Dwi Randy.*
+
+Saya jawab GPT-5.5 untuk setup saya, lalu mengarahkan ke catatan OpenClaw pemula. Tapi bagian paling penting bukan modelnya. Bagian paling penting adalah definisi worth it: *“Worth atau nggaknya tergantung nilai use case yg digantikan sih,” kata saya (Zain).* Kalau agent menggantikan les matematika privat anak, misalnya, biaya yang “masuk akal” bukan lagi sekadar harga token — tapi dibandingkan dengan nilai les itu sendiri.
+
+Mas Shamir lalu bertanya soal deployment: Docker atau Mac. Jawaban saya: Mac mini. Dari situ obrolannya melebar ke dual ISP, [Starlink](https://www.starlink.com), dan [UPS](https://ark.zainf.dev/viz/ups-recommendation.html). Mas Shamir merangkum bottleneck yang sangat nyata: *“Dual isp ngeri juga ya. Paling peer itu listrik,” kata Mas Shamir.*
+
+Ini pelajaran self-hosting yang sering kelewat: personal agent bukan cuma LLM + tools. Ia butuh listrik, koneksi, backup, recovery, dan ekspektasi SLA. Kalau mau punya assistant yang benar-benar hidup di rumah, invoice token cuma salah satu baris biaya. Infrastruktur kecil di pojok ruangan juga ikut bicara.
+
+## “Web Dua Minggu Jadi” Sekarang Terlihat Lambat
+
+Thread paling lucu minggu ini datang dari proyek sistem sekolah Mas Agung. Dia mencoba Claude Design untuk low-fi + color palette dan langsung puas: *“baru coba claude design, kalau kita ngasih color palet , low-fi\nanjir jadinya keren bgt,” kata Mas Agung.* Lalu dia cerita ada proyek pembaruan sistem sekolah dengan timeline setahun.
+
+Saya nyeletuk: *“Setahun longgar sih, di zaman aplikasi dua minggu jadi kayak sekarang. 😆,” kata saya (Zain).* Mas Oshi langsung menutup loop sejarah software house Indonesia: *“Dulu ‘dua minggu jadi’ dijadikan becandaan… ternyata skrg jadi new normal… memang visioner sekali Beliau 🙏🏻,” kata Mas Oshi.*
+
+Mas alfanzain lalu menaikkan taruhannya: *“Atau apakah sekarang mereka minta 2 jam jadi?” kata Mas alfanzain.* Dan Mas Zahid memberi versi agency pitch-nya: *“2 jam preview mockup. 🤣 🤣 🤣,” kata Mas Zahid.*
+
+Lucunya kena karena ada benarnya. AI tidak otomatis membuat sistem matang lebih cepat, tapi ia membuat preview, mockup, prototype, dan “kelihatan jadi” jauh lebih cepat. Risiko barunya: ekspektasi stakeholder ikut naik. Kalau dulu “dua minggu jadi” terdengar ngawur, sekarang yang ngawur bisa bergeser menjadi “dua jam preview”.
+
+## Scrum, Standup, dan Tim yang Belum Punya Bentuk Baru
+
+Mas Luthfi A share video tentang workflow dan bertanya: *“tp kira2 pada masih daily standups dan pake scrum kah?” kata Mas Luthfi A.* Dari situ obrolan langsung masuk ke area yang menurut saya akan makin penting: bukan tool-nya, tapi bentuk kerja tim setelah tool-nya berubah.
+
+Mas Alip cerita tempatnya mulai eksperimen tidak pakai Scrum, tapi daily standup masih jalan. Mas Oshi juga mirip: *“^ sama, masih daily standup tapi gak scrum.. kebanyakan ceremonies 😂,” kata Mas Oshi.* Mas Ario menambahkan observasi kecil yang lucu: *“ada yang daily standup & literally berdiri,” kata Mas Ario.*
+
+Mas Shamir memberi versi seriusnya: *“Scrum jadi gak relevan sig,” kata Mas Shamir.* Lalu dia menambahkan kalimat yang menurut saya inti diskusi ini: *“Yg menjadi issue sekarang workflow and people role and managment berubah total,” kata Mas Shamir.*
+
+Ini bukan berarti semua tim harus membuang Scrum besok pagi. Tapi jelas, kalau coding speed, review loop, dan prototyping berubah drastis, ceremony lama perlu ditanya ulang. Jangan-jangan bottleneck kita bukan di model, tapi di ritual kerja yang belum update.
+
+## Jangan Beli Token Murah yang Tidak Bisa Dijelaskan
+
+Bagian terakhir ini sengaja saya taruh sebagai caution, bukan rekomendasi. Mas Riza Fahmi share bacaan Reddit tentang vibe coding dengan GPT-5.4 $1/day, lalu diskusi bergeser ke layanan token murah yang tidak jelas jalurnya. Mas Iqbal langsung menanyakan hal yang benar: *“Masss ini beneran Halal? Maksudnya legal kahhhh,” kata Mas Iqbal.*
+
+Mas Valentino menjawab hati-hati tapi jelas: *“Kalau masalah legal, sepertinya tidak. Karena ini kemungkinan besar menyalahi Terms of Service dari OpenAI itu sendiri,” kata Mas Valentino.* Mas Riza Fahmi lalu membawa artikel [ChinaTalk tentang cheap Claude tokens](https://www.chinatalk.media/p/how-to-buy-cheap-claude-tokens-in) dan menyimpulkan: *“Kalau mengikuti regulasi yang berlaku, servis seperti ini ilegal ya 😬,” kata Mas Riza Fahmi.*
+
+Yang paling penting justru bukan cuma legalitas. Mas Riza Fahmi menutup dengan risiko yang sering kita lupakan: *“Dan yang tak kalah penting, data kita dipakai entah buat apa 😅,” kata Mas Riza Fahmi.*
+
+Menurut saya ini batas yang sehat: boleh hemat, boleh cari mocin, boleh routing model. Tapi kalau jalurnya tidak bisa dijelaskan, tidak jelas ToS-nya, dan data kita lewat entah ke mana, itu bukan optimisasi biaya. Itu mindahin risiko ke tempat yang tidak kelihatan.
+
+## ⚡ Quick Hits
+
+- [Kilo Code](https://kilocode.ai) muncul ketika Mas Shamir bertanya soal [Grok](https://x.ai) untuk coding. Mas Noviadi menjelaskan Grok ada di Kilo Code, dan Kilo kini berbasis OpenCode setelah sebelumnya fork dari Roo.
+
+- Untuk crowd detection, Mas Pieter bertanya soal menghitung kepadatan area. Mas Shamir menyarankan [`face_recognition`](https://github.com/ageitgey/face_recognition), Mas Desilino menyebut YOLO11, dan Mas Ziad memberi opsi [`insightface`](https://github.com/deepinsight/insightface). Ini bukan thread AI coding, tapi praktis banget.
+
+- Mas Agung mencari model API murah untuk summary pendek selain [Gemini](https://gemini.google.com). Mas Andre Pratama menyarankan small language model + [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) karena teksnya tidak panjang.
+
+- [VS Code](https://code.visualstudio.com) “comeback?” muncul lewat link Mas Tegar, lalu Mas Oshi share pengumuman GitHub yang bikin Mas Shamir bertanya: *“Menarik. Apakah kita balik ?” kata Mas Shamir.* IDE wars ternyata belum selesai.
+
+- Mas Bismillah share beberapa personal-agent runtime seperti ZeroClaw, Moltis, PicoClaw, NanoClaw, QwenPaw, dan IronClaw. Saya tidak bahas panjang karena beberapa perlu verifikasi lebih lanjut, tapi polanya jelas: market personal agent mulai ramai meniru bahasa “own your assistant”.
+
+Quick hits minggu ini menunjukkan pola yang sama: AI tools makin banyak, tapi yang paling berharga bukan daftar link. Yang paling berharga adalah kemampuan memilah mana yang layak dicoba, mana yang perlu ditunggu, dan mana yang sebaiknya tidak disentuh dengan data kerja.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Benchmark [OpenCode Go](https://opencode.ai) direct vs pi.dev/OhMyPi dengan task yang sama. Ukur tool calling, speed, dan error rate — bukan cuma harga.
+
+2. Review [GitHub Copilot usage-based billing](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/) sebelum 1 Juni, terutama kalau dipakai tim.
+
+3. Kalau mau local agent, mulai dari resep [Gemma](https://ai.google.dev/gemma) + [`llama.cpp`](https://github.com/ggml-org/llama.cpp) CUDA + pi, lalu catat konfigurasi supaya bisa direproduksi.
+
+4. Pakai referral [Claude Code](https://docs.anthropic.com/en/docs/claude-code) untuk evaluasi, bukan untuk asumsi biaya jangka panjang.
+
+5. Hindari jalur token murah yang tidak jelas legalitas dan alur datanya. Hemat token tidak sepadan kalau data kerja jadi taruhannya.
+
+Minggu ini rasanya seperti transisi dari “AI tools as toys” ke “AI tools as cost centers”. Kita masih bisa excited, tapi sekarang excitement itu perlu ditemani spreadsheet, threat model, dan sedikit skeptisisme sehat.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Zahid — memberi patokan OpenCode Go sebagai subscription paling worth, membahas GLM, Crof AI, dan punchline Kimi “Greg”.
+- Mas Iqbal — membagikan pengalaman OpenCode Go via OhMyPi/pi.dev dan menanyakan legalitas token murah.
+- Mas Salma — memberi counter-example OpenCode + pi yang lancar untuk DeepSeek dan Kimi.
+- Mas Yusuf — membawa kabar Copilot usage-based billing.
+- Mas Garseta — memberi angka nyata biaya Copilot di tim.
+- Mas Audi — menghubungkan biaya AI dengan UMR dan “AI (Anak Intern)”.
+- Mas Wibowo — menambahkan konteks global soal biaya dan catatan tuning GPU.
+- Mas Nulad — membagikan resep Gemma lokal yang akhirnya berhasil.
+- Mas Aidityas — membagikan Claude Code referral pass dan realita extra usage.
+- Zain — memberi konteks referral, OpenClaw, worth-it calculation, dan ekspektasi “dua minggu jadi”.
+- Mas Dwi Randy — memantik thread OpenClaw use case dan rekomendasi model.
+- Mas Shamir — menanyakan deployment OpenClaw dan mengangkat perubahan workflow/management.
+- Mas Agung — membagikan pengalaman Claude Design untuk prototype sistem sekolah.
+- Mas Oshi — menangkap perubahan “dua minggu jadi” dari becandaan menjadi new normal.
+- Mas alfanzain — menaikkan joke dari “dua minggu jadi” menjadi “dua jam jadi”.
+- Mas Luthfi A — memantik diskusi daily standup dan Scrum.
+- Mas Alip — memberi contoh tim yang mulai eksperimen tanpa Scrum.
+- Mas Ario — menambahkan observasi daily standup yang literal.
+- Mas Riza Fahmi — membawa bacaan Reddit dan ChinaTalk soal token murah.
+- Mas Valentino — memberi penilaian ToS/legalitas token murah.
+- Mas Noviadi — menjelaskan posisi Grok di Kilo Code dan perubahan basis Kilo.
+- Mas Pieter — memantik diskusi crowd detection.
+- Mas Desilino — menyarankan YOLO11 untuk crowd detection.
+- Mas Ziad — memberi opsi insightface.
+- Mas Andre Pratama — menyarankan small LM + Transformers untuk summary pendek.
+- Mas Tegar — membawa sinyal VS Code comeback.
+- Mas Bismillah — membawa rangkaian personal-agent runtime untuk dipantau.
+
+Daftar ini penting karena digest ini bukan catatan dari luar grup. Ini catatan dari orang-orang yang sedang menghitung ulang: mana yang murah, mana yang mahal, mana yang cuma kelihatan murah karena risikonya belum muncul di invoice.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 17 Mei 2026*
