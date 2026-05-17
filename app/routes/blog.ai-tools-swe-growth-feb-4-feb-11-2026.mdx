@@ -33,148 +33,95 @@ export const meta = () => attributes.meta;
 
 # AI Tools SWE Growth Summary
 
-**Date Range:** February 4-11, 2026
-**Source:** WhatsApp Group "AI Tools SWE GROWTH"
-**Messages Analyzed:** 198
+Date range: February 4-11, 2026  
+Source: WhatsApp Group "AI Tools SWE GROWTH"  
+Messages analyzed: 198
 
 ---
 
-## 🛠️ Tools Deep Dive
+The chat this week felt like one long recalibration. Amp Code's free tier filled up, Augment joined the no-IDE crowd, Warp pushed further into agent orchestration, and people kept swapping notes on which tools were actually worth the token burn.
 
-### [Amp Code](https://ampcode.com)
+## What Kept Coming Up
 
-**Sentiment:** 🔥 Positive | **Mentions:** 15+
+### Amp Code: still loved, harder to get into
 
-- Free tier is currently **FULL** — waitlist active
-- `deep` mode praised for cost efficiency: "under $1 per feature vs $1.5+ for smart mode"
-- Next version highly anticipated: "sdh tdk sabar menunggu next version amp seperti apa 💪🏽🔥"
-- [Shared thread example](https://ampcode.com/threads/T-019c4acc-7e97-7109-b1fa-737740e332ce)
+Amp stayed near the center of the conversation even with the free tier marked full. People were still talking about `deep` mode as the better-value option, especially for small feature work, and there was obvious curiosity about the next release.
 
-**Key Quote:**
+The feeling was half gratitude, half dependency. As long as the free path exists, people want to keep using it.
+
 > "Selama masih bisa dapet jalur gratisan dari Amp Code, saya akan tetap setia mempromosikan. 😁"
 
----
+If you want a concrete example of the interest level, this [shared Amp thread](https://ampcode.com/threads/T-019c4acc-7e97-7109-b1fa-737740e332ce) got passed around as a reference point.
 
-### [Augment Code](https://augmentcode.com)
+### No-IDE tools keep gaining ground
 
-**Sentiment:** 🔥 Exciting
+[Augment Code](https://augmentcode.com) released Intent and instantly got grouped with the terminal-first tools. That mattered because the chat was already circling around a bigger theme: more people are comfortable leaving the IDE for certain kinds of work.
 
-- Released **"Intent"** — joining the no-IDE club
-- [Launch tweet](https://x.com/augmentcode/status/2021270140525085053)
-- Big announcement teased: "Augmentcode mau ngasih gebrakan 🤔"
+At the same time, [Warp Oz](https://www.warp.dev/oz) landed with agent orchestration support. That pushed the discussion beyond prompt engineering into coordination, delegation, and whether people were about to be left behind if they only learned the older workflows.
 
-**Key Quote:**
 > "augment sdh rilis namanya intent, sesuai yg mas blg no IDE club, wkwkwkwk"
 
----
+> "warp ngeluarin fitur ini barusan update"
 
-### [Kimi 2.5](https://kimi.moonshot.cn)
+### Kimi kept showing up as the practical choice
 
-**Sentiment:** 👍 Positive | **Mentions:** 10
+[Kimi 2.5](https://kimi.moonshot.cn) kept getting mentioned as the model people could actually live with day to day. One user ran it for a week in OpenClaw with three agents working in the same group and came away satisfied. That kind of field report carries more weight than a benchmark screenshot.
 
-- Popular single-model choice for OpenClaw
-- [Console available](https://www.kimi.com/code/console)
-- Week-long test: "3 agent gebuk2an di group ngelarin beberapa fitur. So far puas sih."
-- Considering Allegretto upgrade
+The appeal was simple: good enough quality, familiar workflow, and less pricing drama than the premium Western stack.
 
-**Key Quote:**
 > "Ternyata bukan perasaan gw doang, banyak juga yg pake single model Kimi 2.5 di Openclaw 😆"
 
----
+### Claude Code had the usual performance baggage
 
-### [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) was still in the mix, but the tone was more weary than excited. The main complaint was RAM usage. People reported sessions swelling into the 60-90GB range, with daily restarts becoming a habit rather than an exception.
 
-**Sentiment:** 😟 Mixed | **Mentions:** 12
+Auto-compaction came up, multiple CLI sessions made it worse, and the practical workaround was not glamorous: restart hard and keep moving.
 
-- Memory leak issues reported: **60-90GB RAM** usage
-- "Mungkin ada memory leak Mas. Kalau aku memang udah kebiasaan hard restart hampir tiap hari"
-- Auto-compaction feature discussed
+> "Mungkin ada memory leak Mas. Kalau aku memang udah kebiasaan hard restart hampir tiap hari"
 
----
+### OpenClaw stayed useful and expensive
 
-### [Warp Oz](https://www.warp.dev/oz)
+[OpenClaw](https://openclaw.ai) got plenty of attention because it supports a lot of providers and makes multi-agent setups approachable. It also kept getting called expensive. The complaint was not really about one model. It was about context bloat: `MEMORY.md`, `SOUL.md`, and project files all riding along in each request.
 
-**Sentiment:** 🔥 New & Exciting
+That led to a familiar conclusion. If you want the convenience of a rich agent setup, you have to respect the cost of carrying all that context. Several people were already thinking in orchestrator patterns to keep the heavy context where it belongs and route smaller tasks elsewhere.
 
-- Just released agent orchestration feature
-- "warp ngeluarin fitur ini barusan update"
-- Sparking "agent orchestration hype" discussion
+> "Openclaw boros bgt asli"
 
----
+### Excalidraw and Trae were side notes, not the main event
 
-### [OpenClaw](https://openclaw.ai)
+[Excalidraw](https://excalidraw.com) got a quick nod for its improving AI features. [Trae.ai](https://trae.ai) came up mostly as a Cursor alternative, with the usual caveat that losing Claude support is a real trade-off for some people.
 
-**Sentiment:** 😅 Mixed | **Mentions:** 20
+## The Bigger Themes
 
-- Multi-provider support praised: "Openclaw udh support kabeh wkwk"
-- Cost concerns: "Openclaw boros bgt asli"
-- [Beelink mini PCs](https://www.bee-link.com) mentioned for self-hosting
-- Ban risk discussed for unofficial OAuth usage
+### 1. No-IDE club is no longer niche
 
----
+Augment Intent joined Claude Code and Amp in making terminal-first work feel normal. The interesting part is not any single release. It is the direction of travel.
 
-### [Excalidraw](https://excalidraw.com)
+### 2. Agent orchestration is becoming the next pressure point
 
-**Sentiment:** 🔥 Positive
+Warp Oz helped push that discussion, but the anxiety was broader than one product. People could feel the stack moving from single prompts to systems of prompts.
 
-- AI features improving: "makin seru pakai excalidraw"
-- [Feature updates](https://x.com/excalidraw/status/2021284377506742331)
+### 3. Cost discipline keeps shaping tool choices
 
----
+Amp deep mode, OpenClaw context costs, and the scramble for free tiers all pointed to the same reality: pricing now shapes architecture. People are not just asking what works best. They are asking what still works when repeated every day.
 
-### [Trae.ai](https://trae.ai)
+## Mood Check
 
-**Sentiment:** 🤔 Discussed
+What got people excited:
 
-- Asked as Cursor alternative
-- Limitation: no Claude support
-- "kalau mau ngorbanin gak ada Claude bisa jadi"
+- Augment Intent joining the no-IDE movement
+- Warp Oz shipping orchestration
+- Amp's next version getting closer
+- Raspberry Pi showing up as an AI box worth watching: "pi ini semakin dilirik makin menarik 🤣"
 
----
+What made people uneasy:
 
-## 🎯 Key Discussions
+- Job anxiety in the middle of all this change
+- Claude Code eating absurd amounts of memory
+- OpenClaw cost creep
+- Ban risk around unofficial OAuth setups
 
-### 1. No-IDE Club Rising
-Terminal-based coding gaining traction. Augment released "Intent", joining Claude Code and Amp in the no-IDE space.
-- Augment Code released Intent feature
-- Claude Code and Amp already popular for terminal workflows
-- Some still prefer Cursor/Windsurf for IDE features
-
-### 2. Agent Orchestration Hype
-Is this the next big thing after prompt engineering? Fear of being left behind.
-- Warp Oz released agent orchestration
-- Rapid pace causing anxiety
-- Question: "Yg masih belajar prompt engineering bakal ketinggalan kereta?"
-
-### 3. Claude Code Memory Issues
-Users reporting excessive RAM consumption (60-90GB), potential memory leaks.
-- Multiple CLI sessions compound the issue
-- Auto-compaction may contribute
-- Daily restart recommended as workaround
-
-### 4. Cost vs Value Trade-offs
-Balancing AI tool costs with productivity gains. Free tiers getting scarce.
-- Amp deep mode praised for cost efficiency
-- OpenClaw costs add up quickly
-- Free tier strategies discussed
-
----
-
-## 📊 Sentiment Snapshot
-
-### 🔥 Excitement
-- **Augment Intent release** — no-IDE movement growing
-- **Warp Oz** agent orchestration
-- **Amp Code** next version anticipation
-- Raspberry Pi for AI getting attention: "pi ini semakin dilirik makin menarik 🤣"
-
-### 😟 Concerns
-- **Job fears:** "Fix bakal kena layoff ini kyknya 😅" (on rapid AI pace)
-- **Claude Code RAM:** 60-90GB memory leaks
-- **OpenClaw costs:** "boros bgt asli"
-- **Ban risks:** OAuth usage concerns
-
-### 😂 Humor of the Week
+And the best jokes still came from the token economy:
 
 > "flexingnya skrg: lambo lu warna apa bos? ❌ token Opus lu unlimited gak bos? ✅"
 
@@ -182,33 +129,17 @@ Balancing AI tool costs with productivity gains. Free tiers getting scarce.
 
 > "kalau pakai bot beneran tdk bisa dibayangkan chaos grup ini 🤣"
 
-> "hbs ini pada bikin claw sendiri 😅"
+## One Link That Landed Hard
 
-### 🤔 Open Questions
-- "agent swarm nya sendiri sering kepakai gak?"
-- "worth gak sih ngorbanin [Claude] ini?" (re: Trae.ai)
+[Nolan Lawson's "We Mourn Our Craft"](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/) got shared as a morning reflection. That one hit a nerve. There were several sad reactions because it named the thing many developers are feeling right now: excitement, grief, curiosity, and exhaustion all mixed together.
 
----
+## What I'd Keep an Eye On
 
-## 📰 Articles Worth Reading
-
-### [We Mourn Our Craft](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/) by Nolan Lawson
-
-Shared as "Renungan pagi ini" — a reflection on AI's impact on software craftsmanship. Multiple 😢 reactions from the group.
-
----
-
-## ✅ Action Items / Recommendations
-
-1. **[Try Warp Oz](https://www.warp.dev/oz)** for agent orchestration
-
-2. **[Watch Augment Intent](https://augmentcode.com)** — no-IDE trend growing
-
-3. **[Monitor Amp Code waitlist](https://ampcode.com/news/amp-free-is-full-for-now)** — free tier currently full
-
-4. **[Consider Kimi 2.5](https://kimi.moonshot.cn)** as budget-friendly option for OpenClaw
-
-5. **[Read "We Mourn Our Craft"](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/)** — thoughtful reflection on AI era
+1. Try [Warp Oz](https://www.warp.dev/oz) if you want to see where agent orchestration inside the terminal is heading.
+2. Watch [Augment Intent](https://augmentcode.com) because the no-IDE category is moving fast.
+3. Keep an eye on the [Amp Code waitlist](https://ampcode.com/news/amp-free-is-full-for-now) if you were relying on the free path.
+4. Consider [Kimi 2.5](https://kimi.moonshot.cn) if you want something cheaper for OpenClaw experiments.
+5. Read ["We Mourn Our Craft"](https://nolanlawson.com/2026/02/07/we-mourn-our-craft/) if you want the emotional side of this moment put into words.
 
 ---
 
