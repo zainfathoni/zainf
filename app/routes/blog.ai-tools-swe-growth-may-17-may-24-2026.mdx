@@ -1,0 +1,133 @@
+---
+meta:
+  - title: "Learning Mode, Agent Manager, dan Orkestrasi Murah — AI Tools Digest #17"
+  - name: description
+    content: "Rangkuman AI Tools SWE GROWTH 17-24 Mei 2026: Claude Code Learning mode, Antigravity v2, Gemini 3.5 Flash, Ollama cloud, DeepSeek, GLM, Kimi, OpenCode Go, dan workflow multi-model."
+  - author: Zain Fathoni
+  - date: "2026-05-24"
+  - lang: id
+
+  - property: og:title
+    content: "Learning Mode, Agent Manager, dan Orkestrasi Murah — AI Tools Digest #17"
+  - property: og:description
+    content: "Rangkuman AI Tools SWE GROWTH 17-24 Mei 2026: Claude Code Learning mode, Antigravity v2, Gemini 3.5 Flash, Ollama cloud, DeepSeek, GLM, Kimi, OpenCode Go, dan workflow multi-model."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-may-17-may-24-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-17.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Learning Mode, Agent Manager, dan Orkestrasi Murah — AI Tools Digest #17"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Learning Mode, Agent Manager, dan Orkestrasi Murah — AI Tools Digest #17
+
+Digest minggu ini telat terbit karena cron-nya sempat gagal di layer sinkronisasi WhatsApp. Setelah dibackfill, sumbernya ternyata tidak kosong: ada 344 pesan dari 17 Mei 21:00 WIB sampai 24 Mei 21:00 WIB. Benang merahnya cukup jelas: grup sedang bergeser dari “tool apa yang paling pintar?” ke “workflow apa yang bikin kita tetap belajar, tetap hemat, dan tetap bisa dipercaya?”
+
+Minggu ini obrolannya berputar di [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Learning mode, [Antigravity](https://antigravity.google) v2 yang memisahkan IDE dan agent manager, [Gemini](https://gemini.google.com) 3.5 Flash yang cepat tapi terasa boros, serta pola orkestrasi model murah memakai [DeepSeek](https://deepseek.com), [GLM](https://chatglm.cn), [Kimi](https://kimi.moonshot.cn), [Ollama](https://ollama.com), dan [OpenCode](https://opencode.ai).
+
+## Learning Mode: Bukan Cuma Closing Issue
+
+Thread pembuka minggu ini datang dari share Mas Riza Fahmi soal cognitive debt: apakah kita benar-benar belajar, atau hanya menutup issue. Itu nyambung dengan eksperimen saya memakai Claude Code Learning output style. Saya sempat jawab singkat: *“Ini pakai Claude Code dengan `Learning` output style.”*
+
+Yang menarik bukan fiturnya saja, tapi cara memakainya. Saya mencoba prompt yang memaksa agent menjelaskan trade-off dan menguji pemahaman: *“Explain how this works, what the alternatives are, and what the tradeoffs are. Explain with references to the code, then quiz me...”* Di konteks kerja AI coding, ini penting karena agent bisa menutup pekerjaan sambil meninggalkan manusia di belakang.
+
+Mas Arif menangkap trade-off tokennya: mode Learning atau Explanatory mirip personality tambahan, dan kemungkinan memakai token lebih banyak. Jawaban saya waktu itu: *“Kalau untuk urusan `Learning`, Sonnet udah sangat cukup sih.”* Jadi learning mode tidak harus selalu berarti pakai model paling mahal. Untuk sesi memahami PR, Sonnet sudah cukup sebagai “tutor”, sementara model lain bisa tetap dipakai untuk implementasi.
+
+Takeaway-nya sederhana: jangan jadikan AI cuma mesin penutup tiket. Sesekali jadikan dia reviewer yang memaksa kita menjelaskan ulang keputusan teknis. Kalau tidak, issue selesai tapi utang pemahaman diam-diam menumpuk.
+
+## Antigravity v2 dan Era IDE-Agent yang Makin Terpisah
+
+Obrolan paling ramai datang dari update Antigravity. Mas Luthfi A bertanya: *“btw ada yg udah update ke antigravity v2.0? jd gabisa ngedit manual kayak IDE VSCode gitu ya? jd full agentic mode kayak codex desktop app?”* Mas Fahim menjawab bahwa branding-nya terpisah: kalau mau IDE, pakai agy-ide / Antigravity IDE.
+
+Mas Tegar merangkum kebingungannya dengan kalimat pendek: *“Iya nih, jadi 2 app terpisah.”* Buat beberapa orang ini terasa seperti [Codex](https://openai.com/codex/) app: agent manager berdiri sendiri, IDE terpisah, dan tombol pindah mode tidak selalu jelas. Mas Dany bahkan bilang dia kaget karena tampilannya “totally different”.
+
+Di sisi lain, Gemini 3.5 Flash di balik pengalaman itu dipuji cepat. Mas Tegar bilang responsnya cepat dan masalah “langsung ngerjain sebelum bikin plan” sudah diperbaiki. Tapi ada catatan biaya: beberapa anggota merasa usage-nya lebih boros dibanding Gemini 3 Flash.
+
+Pola besarnya: tool coding sedang bergerak dari “extension di editor” menjadi “control room agent”. Itu bisa powerful, tapi juga bikin workflow terasa pecah kalau kita masih butuh editor manual yang familiar.
+
+## Multi-Model Orchestration: Planning, Approval, Execution
+
+Diskusi paling praktis datang dari Mas Kasjful. Dia cerita konfigurasi lintas model: dokumentasi dengan DeepSeek, slicing dengan Kimi, lalu coding dengan GLM 5.1. Dia juga menyebut ini bisa dipakai sebagai orchestration.
+
+Kalimat yang paling layak dicatat: *“Planning pakai deepseek, approval pakai glm, execution pakai qwen,” kata Mas Kasjful.* Ini bukan sekadar gonta-ganti model karena bosan. Ini cara memecah workflow berdasarkan harga, kemampuan, dan risiko.
+
+Mas Alvin sempat bertanya apakah planning sebaiknya memakai model sebagus mungkin. Mas Kasjful menjawab bahwa untuk planning, GLM atau Kimi kadang terlalu overkill. DeepSeek Flash cukup untuk dokumentasi dan reasoning awal, sementara model lain bisa dipakai saat butuh verifikasi atau eksekusi.
+
+Ini arah yang menurut saya akan makin umum: bukan satu model terbaik untuk semua pekerjaan, tapi routing berdasarkan tahap kerja. Kalau sudah ada `Planning > Approval > Execution`, pertanyaannya menjadi: model mana paling cost-effective di tiap tahap?
+
+## Ollama Cloud, GLM, Kimi, dan Trade-Off Vision
+
+Ollama juga muncul sebagai jalur menarik. Mas Kasjful bilang dia semenjak pakai subscription Ollama jarang memakai tool lain, karena bisa launch Claude, OpenCode, Codex, Kilo, sampai Trae dari satu tempat. Model yang dia pakai: GLM 5.1.
+
+Dia menilai GLM 5.1 sudah “11/12 kayak Claude Sonnet”, dengan kelebihan token yang lebih longgar dan pemakaian yang lebih irit. Tapi bukan berarti tanpa batas. Untuk UI, GLM disebut bagus, tetapi ada kendala vision: *“GLM bagus buat UI, cuman sekarang model GLM sama ollama lagi direstrict buat upload gambar.. hahaha.”* Karena itu, Kimi masih dipakai untuk kebutuhan visual, walaupun dianggap boros untuk eksekusi.
+
+Di sini terlihat trade-off yang lebih matang: GLM untuk execution, Kimi untuk visual/slicing, DeepSeek untuk planning/dokumentasi. Yang dicari bukan “model juara”, tapi kombinasi yang tidak bikin dompet dan workflow jebol.
+
+## DeepSeek: Harga Diskon Jadi Normal, Tapi Coding Plan Tetap Dicari
+
+Pada 23 Mei, Mas Riza Fahmi share kabar DeepSeek: harga diskon yang sebelumnya temporary sekarang menjadi harga normal. Mas Iqbal langsung bertanya apakah ada coding plan. Jawaban Mas Riza: sepengetahuannya belum ada, dan kalau mau coding plan dengan DeepSeek bisa cek opsi seperti OpenCode Go atau BytePlus.
+
+Mas Zahid memberi verdict yang cukup tegas: *“Opencode go paling pas untuk deepseek.”* Dia juga share bahwa Composer bisa dipakai di OpenCode. Jadi DeepSeek makin menarik dari sisi harga, tapi pengguna coding agent tetap membutuhkan packaging yang nyaman: plan, harness, tool calling, dan stabilitas.
+
+Ini mengulang pelajaran minggu-minggu sebelumnya: model murah saja belum cukup. Harus ada jalur kerja yang enak dipakai.
+
+## Claude untuk Non-Coding dan Karpathy ke Anthropic
+
+Selain coding, ada obrolan tentang kenapa Claude dipilih untuk training non-coding. Mas Galih cerita permintaan datang dari client. Mas Ardanu mempertanyakan, karena ChatGPT dan Gemini lebih mudah diakses untuk non-coding. Mas Aidityas memberi alasan yang menarik: Claude responsnya lebih enak untuk non-teknikal, cepat blend in dengan taste user, dan default-nya lebih casual.
+
+Di minggu yang sama, Mas Aidityas juga share kabar Andrej Karpathy join Anthropic. Reaksi grup tentu bercanda: “bapak vibe code dunia join anthropic.” Tapi di bawah bercandanya ada sinyal: Anthropic makin kuat di persepsi “AI untuk kerja serius”, bukan cuma coding.
+
+## Event, Resource, dan Link yang Layak Disimpan
+
+Ada beberapa resource yang muncul dan layak dicatat:
+
+- [AWS AI Academy 2026](https://s.id/awsdicoding2026), dibagikan Mas faqihyugos: program gratis untuk WNI, Python, ML, Deep Learning, GenAI, sertifikat AWS x Dicoding.
+- [Designing Complex UIs with AI Without Making It Worse](https://maven.com/p/5f34e8/designing-complex-u-is-with-ai-without-making-it-worse), dibagikan Mbak Eka.
+- [`codex-openimage`](https://github.com/ritarodev10/codex-openimage), dibagikan Mas Riza Rohman untuk pengguna Codex yang juga memakai agent lain.
+- Video eksperimen Gemini 3.5 membuat OS dari nol, dibagikan Mas Luthfi A.
+- Thread [OpenCode + Grok / OMO](https://x.com/opencode/status/2057524659176808540), dibagikan Mas Michael.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Coba [Claude Code Learning output style](https://code.claude.com/docs/en/output-styles#built-in-output-styles) untuk review PR yang sudah dibuat agent. Minta dia menjelaskan trade-off dan menguji pemahaman, bukan sekadar lanjut coding.
+2. Jika memakai Antigravity v2, pastikan apakah workflow-mu butuh agent manager, IDE, atau keduanya. Jangan upgrade tanpa tahu konsekuensi split app-nya.
+3. Eksperimen routing sederhana: planning dengan [DeepSeek](https://deepseek.com), approval dengan [GLM](https://chatglm.cn), execution dengan [OpenCode](https://opencode.ai) atau model yang paling stabil di harness-mu.
+4. Simpan daftar resource minggu ini: AWS AI Academy, Maven complex UI event, dan `codex-openimage`.
+5. Jangan hanya mengejar token murah. Pastikan jalurnya legal, datanya aman, dan provider-nya jelas.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Riza Fahmi — memantik diskusi cognitive debt, share kabar harga DeepSeek, dan membawa `codex-openimage`.
+- Zain — mencoba Claude Code Learning output style dan menarik benang merah soal belajar, bukan cuma menutup issue.
+- Mas Arif — menangkap trade-off token dari mode Learning/Explanatory.
+- Mas Luthfi A — memulai thread Antigravity v2 dan membawa video Gemini 3.5 membuat OS dari nol.
+- Mas Fahim — menjelaskan pemisahan Antigravity IDE dan agent manager.
+- Mas Tegar — merangkum kebingungan split app Antigravity dan membawa konteks pengalaman Gemini 3.5 Flash.
+- Mas Dany — memberi reaksi awal atas tampilan Antigravity yang berubah drastis.
+- Mas Kasjful — memberi contoh paling konkret soal routing multi-model: dokumentasi, slicing, planning, approval, dan execution.
+- Mas Alvin — memantik pertanyaan apakah planning perlu memakai model terbaik.
+- Mas Zahid — memberi verdict OpenCode Go sebagai jalur paling pas untuk DeepSeek.
+- Mas Galih — membawa konteks pemakaian Claude untuk training non-coding dari sisi client.
+- Mas Ardanu — mempertanyakan kenapa Claude dipilih untuk use case non-coding ketika ChatGPT dan Gemini lebih mudah diakses.
+- Mas Aidityas — menjelaskan taste Claude untuk user non-teknikal dan membawa kabar Andrej Karpathy ke Anthropic.
+- Mas faqihyugos — membagikan AWS AI Academy 2026.
+- Mbak Eka — membagikan resource Maven tentang designing complex UIs with AI.
+- Mas Michael — membawa thread OpenCode + Grok / OMO.
+
+Daftar ini penting karena digest ini bukan ringkasan dari luar grup. Ini catatan dari orang-orang yang sedang membentuk ulang workflow-nya sendiri: kapan harus belajar, kapan harus menghemat, kapan harus memisahkan agent dari IDE, dan kapan harus berhenti mengejar token murah.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 24 Mei 2026*
