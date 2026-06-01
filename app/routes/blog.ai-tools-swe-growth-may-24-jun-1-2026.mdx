@@ -1,0 +1,145 @@
+---
+meta:
+  - title: "AI Fatigue, Dynamic Workflow, dan Batas yang Tetap Ada — AI Tools Digest #18"
+  - name: description
+    content: "Rangkuman AI Tools SWE GROWTH 24 Mei-1 Juni 2026: cognitive surrender, Amp Code Neo, Understand Anything, MiMo, OpenCode, Hermes, Claude Code dynamic workflow, dan AI fatigue."
+  - author: Zain Fathoni
+  - date: "2026-06-01"
+  - lang: id
+  - property: og:title
+    content: "AI Fatigue, Dynamic Workflow, dan Batas yang Tetap Ada — AI Tools Digest #18"
+  - property: og:description
+    content: "Rangkuman AI Tools SWE GROWTH 24 Mei-1 Juni 2026: cognitive surrender, Amp Code Neo, Understand Anything, MiMo, OpenCode, Hermes, Claude Code dynamic workflow, dan AI fatigue."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-may-24-jun-1-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-18.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "AI Fatigue, Dynamic Workflow, dan Batas yang Tetap Ada — AI Tools Digest #18"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# AI Fatigue, Dynamic Workflow, dan Batas yang Tetap Ada — AI Tools Digest #18
+
+Minggu ini grup AI Tools SWE GROWTH memproses 194 pesan dari 24 Mei 21:00 WIB sampai 1 Juni pagi. Tidak seramai minggu lalu, tapi justru lebih jernih: kita mulai capek mengejar setiap rilis, setiap limit window, setiap model baru yang katanya lebih murah.
+
+Benang merahnya bukan "tool apa yang menang?", melainkan: bagaimana caranya memakai AI tanpa kehilangan ownership, tanpa jam tidur dikendalikan quota, dan tanpa berpura-pura workflow itu dynamic kalau akhirnya tetap mentok limit.
+
+## Cognitive Surrender: Jangan Offload Thinking
+
+Thread pembuka datang dari diskusi kerja dan interview. Mas Adnan cerita bahwa satu hal yang bikin dia sreg dengan company barunya adalah sikap mereka terhadap AI: *"kita gk offload thinking sama docs check ke ai," kata Mas Adnan.* Ini bukan anti-AI. Ini justru tanda tim yang paham bedanya augmentasi dan abdikasi.
+
+Mas Adnan juga menghubungkan itu dengan rasa takut kehilangan code ownership. Link [Cognitive Surrender](https://addyosmani.com/blog/cognitive-surrender/) dari Addy Osmani ikut muncul, lalu Mas Ardit memberi reaksi: menarik. Lucunya, Addy selama ini termasuk suara yang mendorong agentic coding, jadi ketika dia ikut mengerem, sinyalnya terasa lebih kuat.
+
+Resource lain seperti [Zero to Claude](https://zero2claude.dev/) juga muncul di thread yang sama. Tapi pelajaran utamanya bukan "belajar Claude", melainkan "tetap tahu apa yang kita setujui". Kalau AI menulis kode dan kita hanya menekan accept, yang pindah bukan cuma kerjaan. Yang pindah adalah tanggung jawab berpikir.
+
+## Codebase Map: Keren di Demo, Berat di Monorepo
+
+Mas Michael membawa [Understand Anything](https://understand-anything.com/) dan bertanya apakah sudah ada yang mencoba. Mas Abraham bilang video YouTube-nya keren, tapi Mas Iqbal memberi review yang lebih berguna: *"Beraaaaaad mas wkwkw," kata Mas Iqbal.* Catatan tambahannya: mungkin karena dia mencoba di monorepo.
+
+Mas Iqbal lalu menjelaskan use case-nya: tool seperti ini mengindeks codebase dan membuat dashboard untuk dibaca, cocok untuk onboarding. Dia juga menyebut GitNexus sebagai pengganti Graphify dan Serena di workflow-nya. Mas Michael akhirnya bilang setelah baca lebih dalam, dia tidak jadi install.
+
+Ini kategori tool yang menarik: bukan coding assistant, tapi map reader. Untuk tim besar, onboarding codebase bisa jadi bottleneck yang lebih mahal daripada autocomplete. Tapi kalau indexer-nya berat, workflow-nya pindah dari "dibantu" ke "nunggu lagi".
+
+## Amp Neo, OpenCode, dan Hermes: Glue Layer Makin Penting
+
+Mas Michael juga share [Amp Code Neo](https://ampcode.com/news/neo): *"wah barusan update ampcode dapat versi cli baru nya neo," kata Mas Michael.* Mas Fajar menimpali, "meleng dikit sudah ada yang update ya." Itu cukup merangkum ritme minggu ini: update datang lebih cepat daripada waktu kita untuk mencoba semuanya.
+
+Di sisi lain, [OpenCode](https://opencode.ai) kembali muncul ketika Mas Michael share kabar kreditnya cair lagi. Mas Dedy P langsung menangkap sinyalnya: *"Wah waktunya nyoba haha," kata Mas Dedy P.* Untuk yang main agent lokal atau semi-lokal, ini bukan cuma soal model gratis. Ini soal provider yang bisa ditempel ke tool lain.
+
+Thread [Hermes](https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/autonomous-ai-agents/autonomous-ai-agents-opencode) memperjelas arah itu. Mas Arf bertanya soal VPS untuk main Hermes, Mbak Eka merekomendasikan Sumopod, lalu Mas Ivan menunjukkan bahwa Hermes sudah punya skill OpenCode. Mas Iqbal menambahkan bahwa secara konsep OpenCode API key bisa ditempel ke OpenClaw, meskipun dia belum mencoba Hermes langsung.
+
+Kesimpulannya: tool coding makin sering bukan berdiri sendiri, tapi menjadi layer di atas provider lain. Yang menang bukan selalu model paling pintar, melainkan kombinasi model, quota, API, dan harness yang paling gampang dirangkai.
+
+## MiMo dan Perang Model yang Masuk Kantong
+
+Thread paling lucu sekaligus serius datang dari MiMo. Mas Zahid share kabar pricing yang bikin reaksi *"semakin 🤯"*, lalu Mas Iqbal bertanya apakah MiMo lebih oke daripada DeepSeek. Jawaban Mas Zahid cukup spesifik: untuk UI-related work, iya; DeepSeek menurut dia masih kurang kalau manipulasi HTML atau JSX.
+
+Mas Michael lalu merangkum packaging-nya dengan celetukan: *"promosinya sama kek jual hp," kata Mas Michael.* Dari sana thread bergeser ke Xiaomi. Mas Zahid bercanda, *"Semoga gk ada model hyperos."* Mas Michael melihat kemungkinan yang lebih besar: *"brand hp pertama yang punya model AI," kata Mas Michael,* lalu menambahkan bahwa kalau MiMo matang dan terintegrasi ke HP Xiaomi, itu bisa jadi tamparan untuk Apple dari sisi inovasi.
+
+Ini menarik karena AI model mulai masuk logika distribusi hardware. Kalau model bisa hadir langsung di ekosistem HP mid-low yang luas, pertanyaannya bukan lagi siapa benchmark tertinggi, tapi siapa yang bisa sampai ke pengguna paling banyak.
+
+## AI Fatigue: Dulu JS Fatigue, Sekarang Limit Window
+
+Mas Yusuf sempat bilang grup ini tidak pernah tidur. Mas Wibowo membandingkannya dengan era JS: dulu update framework, sekarang update model dan tool AI. Saya jawab spontan: *"Sudah bukan zamannya lagi JS fatigue. Sekarang zamannya AI fatigue."*
+
+Lalu Mas Ivan memberi versi yang lebih personal: *"Sebelumnya selalu usahain maksimalkan 5-hour limit. Sampai rela2 bangun tengah malam. Sekarang, bodo amat, mending tidur," kata Mas Ivan.* Mas Michael menyambung dengan kalimat yang harusnya ditempel di semua dashboard usage: *"masa kita ikutin jam kerja AI mas? mestinya AI yang sesuain jam kerja kita," kata Mas Michael.*
+
+Mas Agung malah membawa versi agentic yang lebih santai: *"saya turu mereka kerja," kata Mas Agung.* Di sinilah paradoksnya. Kita ingin agent bekerja ketika kita tidur, tapi provider limit sering membuat kita justru bangun untuk mengejar window. Kalau hidup mulai diatur cooldown, mungkin bukan workflow yang perlu dioptimasi, tapi hubungan kita dengan quota.
+
+## Dynamic Workflow, Tapi Tetap Ada Ekonomi Inferensi
+
+Menjelang akhir minggu, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) dynamic workflow dan [Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8) memantik diskusi baru. Saya share thread Claude Code workflow dan komentar bahwa mungkin ini yang membuat Bun santai rewrite dari Zig ke Rust. Mas Arif langsung bertanya hal yang lebih praktis: kalau workflow sedang jalan lalu kena limit 5-hour atau weekly, apa yang terjadi?
+
+Mas Zahid menjawab bahwa beberapa coding agent sudah bisa mendeteksi limit dan retry beberapa jam kemudian. Saya sendiri melihat sisi ekonominya: kalau tidak berhenti di limit, provider akan boncos biaya inferensi. Lalu saya menambahkan: *"Dan jadi ga dynamic dong workflow-nya. Padahal judul fiturnya dynamic workflow," kata saya.*
+
+Mas Michael kemudian share bahwa Pi juga bergerak cepat mengikuti Claude dynamic workflow. Mas Salma bertanya bedanya dengan pi-subagents, dan Mas Michael menjelaskan bahwa ini dibuat mengikuti dynamic workflow Claude, versi open source-ish. Artinya fitur yang baru diumumkan bisa langsung menjadi pola yang ditiru oleh ekosistem lain.
+
+Pertanyaan besarnya tetap sama: dynamic workflow itu harus bisa survive interruption, tapi interruption justru bagian alami dari limit, quota, dan biaya. Jadi masa depan agentic coding bukan cuma planning lebih pintar. Ia butuh resume, checkpoint, dan budgeting yang tidak bikin manusia menunggu layar.
+
+## Artikel Minggu Ini: Agent Guide dari Dalam Praktik
+
+Mas Ivan share artikel publiknya, [How to code with AI agents](https://humanmade.com/engineering/how-to-code-with-ai-agents/), yang awalnya ditulis sebagai guide internal perusahaan. Reaksinya ramai: Mas Michael, Mas Riza Fahmi, Mas Ahsan, Mas Luthfi, Mas Oshi, Mas Tunggul, Mas Albert, Mas Alip, Mas Dedy P, dan lainnya memberi reaksi positif.
+
+Saya sempat bilang artikel itu cocok untuk bacaan long weekend. Alasannya sederhana: ketika timeline penuh rilis model, tulisan yang menjelaskan cara bekerja dengan agent dari pengalaman nyata terasa lebih berguna daripada satu lagi benchmark.
+
+Minggu ini bukan kekurangan tool. Kita kekurangan cara kerja yang bisa dipercaya.
+
+## ⚡ Quick Hits
+
+- Mas Zahid mencoba [Grok](https://grok.com) di deep agent dan merasa cukup bagus, belum hit limit. Mas Iqbal bertanya apakah itu karena promo atau masih subsidi.
+- Mas Zahid share `pi-commandcode-provider` untuk memakai Command Code di Pi, lalu Mas Iqbal menjelaskan aksesnya untuk user pro $15.
+- Mas Arf bertanya soal VPS murah untuk Hermes, dan thread itu berubah menjadi pembahasan provider, RAM, dan koneksi OpenCode.
+- Mas Aidityas mencatat kurs Stripe sudah 18.500, pengingat bahwa subscription AI juga ikut kena realita FX.
+- Mas Agung bilang Claude Code plus Chrome enak untuk QA web; Mas Luthfi A dan Mas Albert lalu saling cek versi sampai fitur itu muncul.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Baca [Cognitive Surrender](https://addyosmani.com/blog/cognitive-surrender/) dan cek ulang proses review AI di timmu: bagian mana yang benar-benar diverifikasi manusia?
+2. Kalau sudah pakai Amp, coba [Amp Code Neo](https://ampcode.com/news/neo) di satu task kecil sebelum memindahkan workflow utama.
+3. Uji tool codebase map seperti [Understand Anything](https://understand-anything.com/) di repo nyata, terutama kalau repo-mu monorepo.
+4. Coba satu eksperimen [Claude Code](https://docs.anthropic.com/en/docs/claude-code) dynamic workflow dengan task yang bounded, lalu catat apa yang terjadi saat context, time, atau quota habis.
+5. Simpan artikel Mas Ivan tentang [coding with AI agents](https://humanmade.com/engineering/how-to-code-with-ai-agents/) sebagai referensi onboarding internal.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Adnan — membawa konteks paling penting soal code ownership dan tidak offload thinking ke AI.
+- Mas Ardit — mengangkat resource cognitive surrender dan Claude learning.
+- Mas Michael — share Understand Anything, Amp Neo, OpenCode, MiMo angle, dan komentar tajam soal jam kerja AI.
+- Mas Abraham — memberi impresi awal Understand Anything dari materi videonya.
+- Mas Iqbal — memberi review monorepo, GitNexus, OpenCode/API, dan pertanyaan soal MiMo serta limit provider.
+- Mas Fajar — menangkap ritme update tool yang terlalu cepat.
+- Mas Dedy P — memberi sinyal praktis untuk mencoba OpenCode saat kredit kembali tersedia.
+- Mas Arf — memulai thread Hermes/VPS/OpenCode.
+- Mbak Eka — memberi rekomendasi VPS untuk eksperimen Hermes.
+- Mas Ivan — share artikel praktis tentang coding dengan AI agents.
+- Mas Zahid — membawa Grok, MiMo, pi-commandcode-provider, dan sudut pandang soal retry limit.
+- Mas Salma — bertanya soal pricing Command Code dan perbedaan workflow Pi.
+- Mas Wibowo — membandingkan hype AI dengan era JS framework.
+- Mas Yusuf — memantik refleksi bahwa grup ini nyaris tidak pernah tidur.
+- Mas Agung — memberi versi paling ringkas dari mimpi agentic: manusia tidur, agent bekerja.
+- Mas Arif — menanyakan batas paling penting dari dynamic workflow: apa yang terjadi ketika limit habis.
+- Mas Luthfi A — menguji detail Claude Code plus Chrome di lapangan.
+- Mas Albert — membantu cek versi dan kemunculan fitur Claude.
+- Zain — menarik benang merah AI fatigue, provider economics, dan batas dynamic workflow.
+
+## Penutup
+
+Minggu ini mengingatkan saya bahwa AI tools bukan cuma soal rilis. Ia juga soal ritme hidup, struktur tim, dan biaya yang harus dibayar entah oleh provider, perusahaan, atau jam tidur kita sendiri.
+
+Kalau dulu kita bertanya "model mana yang paling pintar?", sekarang pertanyaannya berubah: "workflow mana yang tetap membuat kita berpikir, tetap hemat, dan tetap manusiawi?"
+
+*Ditulis dari dalam grup, bukan dari luar.*  
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 1 Juni 2026*
