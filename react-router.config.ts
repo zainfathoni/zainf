@@ -5,6 +5,7 @@ const nonPrerenderablePaths = new Set(["/action/set-theme", "/talk"]);
 
 export default {
   ssr: true,
+  routeDiscovery: { mode: "initial" },
   prerender: async ({ getStaticPaths }) => {
     const staticPagePaths = getStaticPaths().filter(
       (path) => !nonPrerenderablePaths.has(path),
