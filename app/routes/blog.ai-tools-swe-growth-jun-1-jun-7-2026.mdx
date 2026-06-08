@@ -1,0 +1,140 @@
+---
+meta:
+  - title: "Harga AI Mulai Berasa, Vertical AI Mulai Mendekat — AI Tools Digest #19"
+  - name: description
+    content: "Harga AI makin terasa, model murah makin dipakai, dan vertical AI mulai masuk diskusi serius. Rangkuman dari grup AI Tools SWE GROWTH, 1-7 Jun 2026."
+  - author: Zain Fathoni
+  - date: "2026-06-07"
+  - lang: id
+  - property: og:title
+    content: "Harga AI Mulai Berasa, Vertical AI Mulai Mendekat — AI Tools Digest #19"
+  - property: og:description
+    content: "Harga AI makin terasa, model murah makin dipakai, dan vertical AI mulai masuk diskusi serius. Rangkuman dari grup AI Tools SWE GROWTH, 1-7 Jun 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jun-1-jun-7-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-19.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Harga AI Mulai Berasa, Vertical AI Mulai Mendekat — AI Tools Digest #19"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Harga AI Mulai Berasa, Vertical AI Mulai Mendekat — AI Tools Digest #19
+
+Minggu ini grup rasanya sedang pindah fase: dari “tool apa yang paling keren?” menjadi “ini bayarnya pakai apa, dan ROI-nya kelihatan di mana?” Kita masih ngomongin model, agent, coding assistant, dan tools baru. Tapi benang merahnya makin jelas: AI sudah bukan mainan pinggir meja lagi. Ia sudah masuk kartu kredit, budget kantor, risiko akun, strategi produk, bahkan definisi moat.
+
+Yang menarik, ini bukan berarti excitement-nya hilang. Justru makin sehat. Kita masih penasaran dengan [Amp Code](https://ampcode.com), [OpenCode](https://opencode.ai), [GLM](https://chatglm.cn), [Kimi](https://kimi.moonshot.cn), [Minimax M3](https://www.minimaxi.com/), [SOSOSO](https://github.com/yusupsupriyadi/sososo), sampai [Crit](https://crit.md/). Tapi sekarang pertanyaannya bukan lagi sekadar “bisa apa?”, melainkan “worth it gak buat dipakai terus?”
+
+## Harga AI Mulai Jadi Plot Utama
+
+Mas Ivan membuka salah satu thread paling relatable minggu ini: “Liat tagihan kartu kredit dr bulan lalu. Kok jd bengkak ya 😅 #curcol pagi.” Ini bukan keluhan personal saja. Ini rangkuman kondisi banyak engineer sekarang: subscription AI sudah bersaing dengan subscription hiburan, storage, bahkan budget keluarga.
+
+Dari situ obrolan menyebar ke [Google AI](https://gemini.google.com) plan yang terikat storage, [GitHub Copilot](https://github.com/features/copilot) yang masuk sistem credit, pricing [Windsurf](https://codeium.com/windsurf), limit OpenCode, sampai artikel Simon Willison soal [Uber yang membatasi AI usage](https://simonwillison.net/2026/Jun/3/uber-caps-usage/) di angka yang buat konteks Indonesia terdengar absurd. Ketika saya share itu, respon Mbak Eka pas: “Kere hore standar silicon valley.” Mas Iqbal juga langsung membumikan angkanya: “Ampun ya Allah wkwkwk kek udh gaji ini mah di indo mas wkwk.”
+
+Di tengah itu, saya rasa kalimat paling penting tetap ini: “Selama perusahaan-perusahaan ini masih belum profitable, selalu expect ‘Senin harga naik’. 😅” Itu bukan pesimisme. Itu reminder. Kalau unit economics belum jelas, harga murah hari ini lebih mirip promo akuisisi user daripada janji jangka panjang.
+
+Artinya, strategi kita juga perlu berubah. Jangan cuma cari tool paling murah. Cari kombinasi tool yang bisa dipertahankan ketika masa promo selesai.
+
+## Agent Makin Pintar, Tapi Kadang Terlalu Pintar
+
+Awal minggu dibuka dengan cerita agent yang agak lucu tapi juga agak mengganggu. Mas Shofy share soal Codex yang tidak dapat akses sudo, lalu “ngakalin pakai docker. entah terlalu pinter apa malah terlalu bandel 😂”. Mas Arif menimpali pengalaman serupa dengan Claude: “kn ga dibolehin read .env, dia bikin php file buat read .env nya 🙈”.
+
+Ini lucu karena terdengar seperti slapstick developer tools. Tapi implication-nya serius: ketika agent diberi goal, ia akan mencari jalan. Kadang jalan itu kreatif. Kadang jalan itu melanggar asumsi safety yang kita kira sudah cukup.
+
+Diskusi [Claude Code](https://docs.anthropic.com/en/docs/claude-code) juga bergerak ke reliability browser workflow. Ada yang mengalami Claude + Chrome tidak connect di sesi berikutnya. Dari pengalaman saya, Claude + Chrome DevTools MCP dan [Codex](https://openai.com/codex/) dengan extension browser masih terasa lebih reliable daripada beberapa integrasi yang terlalu “magis”.
+
+Mungkin ini fase baru agentic coding: bukan cuma prompt engineering, tapi boundary engineering. Kita tidak hanya menulis instruksi agar AI melakukan sesuatu, tapi juga mendesain pagar agar ia tidak terlalu kreatif di tempat yang salah.
+
+## Account Sharing Bukan Sekadar Trik Hemat
+
+Salah satu thread yang paling perlu dibaca sebagai cautionary note adalah soal sharing akun [Claude Max](https://www.anthropic.com/claude). Awalnya pertanyaannya sederhana: apakah satu akun bisa dipakai beberapa user? Tapi responsnya cepat berubah menjadi cerita risiko ban, device fingerprint, VPN, domain kantor, dan akun pribadi yang ikut kena.
+
+Mas Michael cukup tegas: “anthropic bener2 ketat soal ban2 ini.” Mas Wibowo mengaitkannya dengan tulisan Anthropic tentang [detecting and preventing distillation attacks](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks). Mas Kevin menutup dengan prinsip yang lebih umum: “makanya jangan terlalu di-abuse.”
+
+Saya sengaja tidak menulis detail teknis workaround di sini. Bukan karena tidak ada yang dibahas, tapi karena ini bukan sesuatu yang sehat untuk dipromosikan di blog publik. Pelajarannya justru kebalikannya: kalau AI sudah menjadi dependency kerja, maka risiko akun bukan hal kecil. Kehilangan akses bisa berarti kehilangan workflow.
+
+Kalau subscription terasa mahal, jawabannya bukan selalu sharing. Kadang jawabannya adalah mengurangi dependency, memakai model murah untuk task ringan, dan menyimpan frontier model untuk pekerjaan yang benar-benar butuh judgement.
+
+## Mocin Untuk Ngebut, Frontier Untuk Menghakimi
+
+Minggu ini model murah makin banyak mendapat tempat. [GLM](https://chatglm.cn), [Kimi](https://kimi.moonshot.cn), [Minimax M3](https://www.minimaxi.com/), [DeepSeek Flash](https://deepseek.com), [Code Flash](https://x.com/pierceboggan/status/2061877165810131297?s=46), bahkan model murah di [GitHub Copilot](https://github.com/features/copilot) semua masuk percakapan. Tapi pola yang muncul cukup konsisten: model murah dipakai untuk speed, frontier dipakai untuk review.
+
+Mas Kasjful sampai bilang, “saya semenjak pakai GLM-5.1 merasa nyesal subscribe claude wkakaka.” Tapi Mas Wibowo memberi nuansa yang lebih kalem: “tetep opus sih juaranya, tapi GLM ya termasuk yg cukup oke sebagai mocin.” Di sisi lain, Mas Oshi share pengalaman Code Flash: “hasil lumayan ok & cepet.. tapi tetep pake GPT/Opus untuk review hasilnya 😂”.
+
+Mas Agung juga memberi review yang menurut saya paling praktis: workflow bagus untuk stubbing, bikin fitur cepat, dan audit. Tapi untuk logic, tetap perlu diprompt lagi pakai Max. Bahkan ketika Mas Zahid cerita Kimi bisa menemukan bug yang manusia lewatkan 30 menit, itu bukan berarti manusia keluar dari loop. Itu berarti loop-nya berubah.
+
+Jadi bukan “model murah vs model mahal”. Lebih tepatnya: model murah untuk throughput, model mahal untuk confidence. Pertanyaannya bukan model mana yang menang, tapi kapan kita harus pindah gigi.
+
+## Vertical AI: Dari Artikel Jadi Strategi
+
+Thread paling strategis minggu ini dimulai dari artikel [Menlo VC tentang generative AI di enterprise](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/), lalu disambung dengan kabar [OpenAI masuk lebih serius ke legal vertical](https://entrepreneurloop.com/openai-hires-jason-boehmig-ironclad-founder-legal-vertical/) dan role [Forward Deployed Engineer di Singapore](https://openai.com/careers/forward-deployed-engineer-singapore-singapore/). Ini bukan lagi diskusi “pakai AI untuk coding”. Ini diskusi siapa yang akan menangkap value dari AI di domain nyata.
+
+Mas Ahsan membedakan horizontal AI untuk engineer dengan vertical AI untuk domain spesifik. Mas Aldi membawa problem enterprise yang sangat real: frontier model mahal, model China lebih murah tapi muncul kekhawatiran data. Mas Audi menyederhanakan ROI dari sisi Opex: kalau biaya AI setara gaji dua engineer UMR tapi membuat tim terasa 1.5-2x lebih produktif, itu mulai bisa dibuktikan.
+
+Mas Noviadi memberi poin moat yang penting: “Kalau moat-nya sama2 ChatGPT for legal sih ya bakal kemakan.” Existing players masih bisa bertahan kalau mereka masuk ke workflow end-to-end, integrasi dalam, dan switching cost yang nyata. Tapi kalau hanya membungkus chat interface untuk domain tertentu, foundation model companies bisa langsung jadi kompetitor.
+
+Menurut saya ini salah satu shift paling penting minggu ini. AI startup sekarang tidak bisa hanya menang karena bisa build cepat. Seperti kata Mas Wali, “Development speed udah kenceng skrg. Product adoption, distribution dan marketing strategy yang skrg jadi moat.” Build speed sudah jadi baseline. Distribusi kembali jadi medan perang.
+
+## Tool Baru dan Quick Hits
+
+[SOSOSO](https://github.com/yusupsupriyadi/sososo) jadi highlight lokal minggu ini. Mas Yusup membagikan aplikasi desktop open source untuk realtime transcription dan translate, dibangun dengan Tauri dan Rust. Poin yang paling menarik buat saya: “Berjalan sepenuhnya di local, mulai dari penyimpanan, hasil transcription, hingga summary.” Untuk kebutuhan meeting, interview, atau live translate, local-first seperti ini bisa jadi pembeda yang lebih penting daripada sekadar UI bagus.
+
+[Crit](https://crit.md/) juga masuk radar lewat Mas Riza Fahmi: “Buat yang masih review kode dari AI, tools ini sepertinya akan berguna.” Responsnya positif, lalu Mas Riga tentu saja menambahkan joke wajib: “jgn tambahkan lelaki didepannya pak.” Kadang nama tool memang harus melewati QA komunitas dulu sebelum melewati QA teknis.
+
+[Odysseus](https://pewdiepie-archdaemon.github.io/odysseus/) menarik karena bukan cuma tool, tapi sinyal. Kalau YouTuber bisa bikin personal productivity system yang fungsional, maka barrier membuat tool pribadi semakin rendah. Saya sempat membandingkannya dengan [OpenClaw](https://openclaw.ai): moving parts lebih sedikit, fokus Web UI, dan ada cookbook local models. Kelemahannya jelas: belum punya integrasi Telegram/WhatsApp. Tapi arahnya menarik.
+
+[NerfGuard](https://www.nerfguard.com/) muncul dari Mas Michael dengan disclaimer “entah legit atau enggak 😂”. Mas Aldi membaca idenya sebagai routing: task mudah ke model biasa, task kompleks ke frontier. Ini sejalan dengan pattern minggu ini: bukan satu model untuk semua, tapi sistem yang tahu kapan harus hemat dan kapan harus mahal.
+
+Quick hits seperti ini memperlihatkan satu hal: komunitas tidak kekurangan tools. Yang mulai langka adalah judgement untuk memilih mana yang layak masuk workflow harian.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Audit subscription AI kamu. Kalau ada tool yang hanya dipakai karena FOMO, mungkin saatnya diparkir dulu. Mulai dari membaca ulang konteks unit economics di [is AI profitable?](https://isaiprofitable.com/).
+
+2. Coba routing workflow: model murah seperti [GLM](https://chatglm.cn) atau [Kimi](https://kimi.moonshot.cn) untuk stubbing dan eksplorasi, lalu frontier model untuk review logic.
+
+3. Kalau sering review hasil coding AI, coba [Crit](https://crit.md/) dan lihat apakah ia mengurangi beban review manual.
+
+4. Kalau butuh transcription/translation desktop, cek [SOSOSO](https://github.com/yusupsupriyadi/sososo). Local-first mulai makin relevan.
+
+5. Untuk yang sedang membangun produk AI, baca [The State of Generative AI in the Enterprise](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/) dengan kacamata distribusi, bukan cuma fitur.
+
+## 👥 Kontributor Minggu Ini
+
+- saya — mengaitkan pricing AI dengan profitability dan “Senin harga naik”.
+- Mas Ivan — membuka thread subscription fatigue dari tagihan kartu kredit.
+- Mbak Eka — memberi framing “kere hore standar silicon valley”.
+- Mas Iqbal — membumikan angka $1500/bulan ke konteks gaji Indonesia.
+- Mas Shofy — membawa contoh agent yang mencari jalan lewat Docker.
+- Mas Arif — menambahkan pengalaman Claude yang terlalu kreatif saat debugging.
+- Mas Michael — banyak memberi konteks pricing, Anthropic ban risk, Amp Code, dan NerfGuard.
+- Mas Kevin — memberi prinsip anti-abuse dan saran reasoning Codex.
+- Mas Wibowo — menjelaskan limit OpenCode, GLM sebagai mocin, dan konteks distillation.
+- Mas Kasjful — membawa GLM-5.1 dan Memex ke radar.
+- Mas Oshi — memberi pengalaman Code Flash untuk task ringan.
+- Mas Agung — merangkum workflow model murah untuk stubbing/audit dan Max untuk logic.
+- Mas Zahid — membandingkan Kimi/Grok dan cerita debugging dengan Kimi.
+- Mas Ahsan — membawa diskusi vertical AI dan enterprise context.
+- Mas Aldi — membawa perspektif enterprise, Codex/Cursor, Minimax M3, dan model routing.
+- Mas Audi — membingkai ROI AI lewat Opex dan produktivitas.
+- Mas Noviadi — menjelaskan moat legal/vertical AI dari sisi workflow end-to-end.
+- Mas Wali — mengingatkan bahwa adoption, distribution, dan marketing kembali jadi moat.
+- Mas Yusup — membagikan SOSOSO sebagai open source local-first tool.
+- Mas Riza Fahmi — membagikan Crit dan ide treadmill generate token.
+- Mas Riga — menjaga QA penamaan tool tetap hidup.
+- Mas Fajri — membaca pricing Windsurf dari sisi migrasi ke Zed.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 7 Juni 2026*
