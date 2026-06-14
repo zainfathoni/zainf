@@ -1,0 +1,142 @@
+---
+meta:
+  - title: "Browser Agent Butuh Pagar, Fable Butuh Dompet — AI Tools Digest #20"
+  - name: description
+    content: "Browser agent, Fable, Kimi, local LLM, dan utang pemahaman. Rangkuman dari grup AI Tools SWE GROWTH, 7-14 Jun 2026."
+  - author: Zain Fathoni
+  - date: "2026-06-14"
+  - lang: id
+  - property: og:title
+    content: "Browser Agent Butuh Pagar, Fable Butuh Dompet — AI Tools Digest #20"
+  - property: og:description
+    content: "Browser agent, Fable, Kimi, local LLM, dan utang pemahaman. Rangkuman dari grup AI Tools SWE GROWTH, 7-14 Jun 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jun-7-jun-14-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-20.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Browser Agent Butuh Pagar, Fable Butuh Dompet — AI Tools Digest #20"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Browser Agent Butuh Pagar, Fable Butuh Dompet — AI Tools Digest #20
+
+Minggu ini kita seperti dapat dua reminder yang saling tarik-menarik. Di satu sisi, browser agent makin enak dipakai: [Codex](https://openai.com/codex/) punya browser tooling, [Cursor](https://cursor.sh) punya built-in browser, dan [Agent Browser CLI](https://github.com/vercel-labs/agent-browser) mulai jadi referensi untuk workflow headless. Di sisi lain, begitu agent bisa klik-klik UI, pertanyaannya langsung berubah dari “bisa gak?” menjadi “kalau dia salah klik production gimana?”
+
+Lalu di tengah itu, [Claude Fable](https://www.anthropic.com/news/claude-fable-5-mythos-5) masuk lagi sebagai model yang bikin orang excited sekaligus menghitung dompet. Kualitas naik, limit terasa, dan joke “dev kere hore vs dev tajir” tiba-tiba jadi terlalu dekat dengan kenyataan. Kalau grup ini bisa jadi barometer, minggu ini bukan soal tools mana yang paling hype. Ini soal pagar, budget, dan apakah kita masih paham apa yang AI kerjakan.
+
+## Browser Agent Sudah Berguna, Tapi Harus Dipagari
+
+Thread paling praktis minggu ini dimulai dari pertanyaan Mas Shofy soal testing fullstack di era agentic AI. Apakah tetap unit dan integration test? Apakah E2E pakai browser? Apakah AI bisa mengecek screenshot sendiri? Ini bukan pertanyaan akademis. Ini pertanyaan orang yang sudah mulai membiarkan agent menyentuh UI beneran.
+
+Zain menjawab dari pengalaman: unit dan integration test tetap ada, jalan di CI, lalu E2E kadang pakai browser automation seperti Chrome DevTools MCP, extension Claude-in-Chrome, extension Codex, atau [Playwright](https://playwright.dev). Artinya, agent browser bukan pengganti test suite. Ia lebih dekat ke manual QA yang bisa membaca requirement, menjalankan aplikasi, lalu mencari gap antara niat dan hasil.
+
+Mas Aldi membawa daftar opsi yang lebih operasional: browser-use di Codex, built-in browser di Cursor, dan Agent Browser CLI untuk workflow CLI. Tapi Mas Shofy juga langsung membawa concern yang menurut saya paling sehat: kalau agent salah konteks dan membuka production, apa yang terjadi? Zain bercanda setengah serius, *“Pake frontier model (GPT-5.5 & Opus 4.8) insya Allah aman. Tapi boncos. 💸”* Mas Aldi menimpali dari sisi pragmatis: *“mau murah pkek Composer 2.5 di Cursor sih. 20$ dan built in browser.”*
+
+Nah, di sinilah pagar menjadi feature, bukan tambahan. Built-in browser yang isolated, domain whitelist, dan blocking domain bukan lagi detail kecil. Kalau agent diberi akses browser, kita sedang memberi ia tangan. Pertanyaannya bukan cuma seberapa pintar otaknya, tapi seberapa jelas area bermainnya.
+
+## Token Ekonomi Sudah Jadi Bagian Dari Arsitektur
+
+Obrolan budget minggu ini dimulai ringan: [Copilot](https://github.com/features/copilot) token-based dibilang “kikir”, ada joke “free token cafe”, lalu cepat menyebar ke [Kimi](https://kimi.moonshot.cn), Codex, Fable, [OpenCode](https://opencode.ai), [DeepSeek](https://deepseek.com), dan model-model murah lain. Mas Michael membingkai tren kafe token dengan lucu, pasar techbro mungkin bisa ditarik bukan dengan free Wi-Fi, tapi free token. Ini absurd, tapi juga terasa masuk akal di 2026.
+
+Fable jadi pusat gravitasi thread mahal. Mas Michael bilang, *“fable menguras dompet siap2 harga baru keluar 😂”* lalu menambahkan kalimat yang mungkin jadi headline sosial minggu ini: *“jurang antara dev kere hore dan dev tajir akan terlihat di fable ini 😂”* Mas Agung bahkan merangkum persepsinya dengan brutal: *“Fable = Opus 4.6 yang gak di Nerf WKWKWK.”*
+
+Yang menarik, jawaban komunitas bukan sekadar mengeluh. Polanya makin matang: model mahal untuk planning, review, security, dan problem discovery; model murah untuk stubbing, dokumentasi, eksekusi task ringan, atau volume. Mas Fajar sempat menyadari GPT-5.5 medium reasoning terasa boros, lalu Mas Zahid memberi pattern: mini untuk iterasi plan pertama, 5.5 untuk iterasi plan kedua.
+
+Ini berarti token economics sudah masuk arsitektur kerja. Dulu kita memilih stack berdasarkan latency, DX, dan maintainability. Sekarang kita juga memilih model berdasarkan burn rate. Pertanyaannya bukan “model mana yang terbaik?”, tapi “bagian pekerjaan mana yang layak dibayar mahal?”
+
+## Local LLM: Semakin Menarik, Belum Otomatis Worth
+
+Thread local LLM minggu ini cukup panjang dan lebih membumi daripada sekadar “beli GPU lalu bebas subscription”. Mas Agung, Mas Wibowo, Mas Zahid, dan Mas Azam membahas [Qwen](https://chat.qwen.ai), [Gemma](https://ai.google.dev/gemma), DeepSeek, VRAM 16GB vs 24GB, RTX 3090/4090/5090, sampai pertanyaan apakah 40 juta rupiah untuk hardware masuk akal dibanding bayar subscription.
+
+Mas Wibowo membagikan [fitllm](https://fitllm.run/) untuk simulasi sebelum beli hardware: *“tinggal masukin hugging face model id nya, jadi bisa riset dulu sebelum beli.”* Ia juga menyebut [club-3090](https://github.com/noonghunna/club-3090) dan channel YouTube yang sering membahas kondisi real LLM lokal. Ini bagian yang saya suka: diskusinya bukan fanboy hardware, tapi due diligence.
+
+Kesimpulan Mas Wibowo cukup jujur: di rumah ia punya 3090, tapi belum dipakai sebagai daily driver coding. *“di rumah pake 3090, tapi gak di pake buat daily driver coding, sebatas test2 model aja,”* katanya. Ia percaya local model akan makin worth, terutama karena Qwen dan Gemma bergerak cepat, tapi ekspektasi terhadap coding model masih tinggi.
+
+Mas Azam menangkap implikasinya dengan baik: kalau modalnya besar dan ROI belum jelas, subscription model yang makin murah mungkin masih lebih masuk akal. Jadi local LLM bukan jawaban universal. Ia adalah strategi untuk workload tertentu, privasi tertentu, dan orang yang memang siap mengurus mesin. Untuk yang lain, mungkin lebih sehat menyusun routing model daripada membeli server kecil di rumah.
+
+## Tools Kecil Yang Menyelesaikan Masalah Nyata
+
+Di luar drama model, minggu ini ada beberapa tool kecil yang justru terasa sangat praktis. Mas Agung membagikan [Scrapion](https://github.com/aula-id/scrapion), tool web-search/scraping yang “sudah AI friendly” untuk orang yang mau bikin MCP atau agent sendiri dan butuh melewati halaman yang tidak ramah bot. Mas El Muhammad menanggapi, *“monthly download 100an wkwk.. Menarik.”* Mas Shofy langsung membawa konteks lokal: kalau backend-nya pakai [DuckDuckGo](https://duckduckgo.com), apakah perlu VPN atau DNS karena DuckDuckGo masih diblokir Komdigi?
+
+Mas Agung menjawab santai bahwa ia akan menambah [Bing](https://www.bing.com) HTML sebagai opsi kedua. Ini kecil, tapi penting. Banyak tool AI global lupa bahwa internet tidak sama di setiap negara. Kadang masalah agent bukan prompt, tapi resolver DNS dan akses regional.
+
+Mas Wibowo juga membagikan [go-camoufox](https://github.com/brainplusplus/go-camoufox), port dari Camoufox Python ke Go dengan tambahan native WebDriver BiDi server. Katanya, tool ini anti-bypass Cloudflare juga dan bisa dipakai lintas bahasa, “cuma belum ada starnya wkwkwk 🤣”. Di akhir minggu, [Ponytail](https://github.com/DietrichGebert/ponytail) muncul sebagai alternatif yang diklaim lebih irit dari caveman, lalu Mas Farhan bertanya apakah caveman daily use membuat respons terlalu ringkas sampai sulit dipahami.
+
+Quick hits seperti ini mengingatkan saya bahwa innovation tidak selalu berbentuk model baru. Kadang yang paling berguna adalah adapter kecil yang membuat agent bisa melihat web, membuka browser, atau meringkas konteks tanpa merusak pemahaman.
+
+## Kimi, GLM, Dan Model China Makin Jadi Opsi Harian
+
+[Kimi](https://kimi.moonshot.cn) muncul berkali-kali minggu ini: update Kimi Code, Kimi Desktop, swarm, integrasi dengan OpenCode Go, sampai limit yang akhirnya tetap kena juga. Mas Michael beberapa kali melempar update, termasuk “ada yg udah coba desktop kimi sepertinya menarik 🤔”. Mas Ardanu menimpali bahwa Kimi sudah ada di Go, sementara Mas Riza Rohman bertanya apakah lewat OpenCode Go kena nerf.
+
+[GLM](https://chatglm.cn) juga masuk sebagai rumor dan update. Mas Dedy P menanggapi GLM-5.2 dengan *“Let's go mocinnnn”*, sementara Mas Azam memperhatikan pola nama model yang makin terasa seperti dunia fantasy: mythos, fable, rumor. Di sisi lain, Mas Zahid memberi framing yang lebih teknis: model China seperti GLM, Kimi, dan DeepSeek terasa setara model US versi mini dengan thinking tinggi.
+
+Yang saya lihat dari pola ini: model China bukan lagi sekadar backup ketika limit habis. Ia mulai masuk strategi utama untuk volume. Tapi tetap ada trade-off: tool calling, consistency, nerf lewat gateway, dan kualitas judgement belum selalu setara frontier. Jadi lagi-lagi bukan soal pindah kubu. Ini soal portofolio model.
+
+Kalau minggu lalu pertanyaannya “model murah ini cukup gak?”, minggu ini pertanyaannya naik kelas: “bagian mana dari workflow saya yang bisa ditanggung model murah tanpa menurunkan confidence?” Itu pertanyaan yang jauh lebih produktif.
+
+## Comprehension Debt Lebih Mahal Dari Token
+
+Bagian yang paling personal minggu ini buat saya adalah thread [Teach skill](https://www.aihero.dev/learn-anything-with-my-teach-skill). Zain mencoba skill `/teach` yang dibagikan sebelumnya dan merasa lebih enak untuk belajar daripada skill [explain-and-quiz](https://github.com/zainfathoni/agent-workflows/tree/main/skills/explain-and-quiz) buatannya sendiri. Dari situ muncul pertanyaan: skill ini hanya untuk [Claude Code](https://docs.anthropic.com/en/docs/claude-code)? Bisa dipakai di chat-based AI? Bisa dipakai buat onboarding codebase?
+
+Thread itu nyambung ke artikel Simon Willison soal [Cognitive Debt](https://simonwillison.net/2026/Feb/15/cognitive-debt/) dan Addy Osmani soal [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/). Zain merangkumnya dengan kalimat yang menurut saya perlu ditempel di monitor: *“Saya mendingan konsumsi 20% token lebih banyak tapi beneran ngerti konsepnya, daripada menghemat token tapi harus nambah utang _Cognitive Debt_.”*
+
+Ini juga nyambung ke obrolan Mas Iqbal soal [Zig](https://ziglang.org) pindah dari GitHub ke [Codeberg](https://codeberg.org). Awalnya sempat dibaca sebagai anti-AI indexing, lalu Zain meluruskan bahwa problemnya lebih ke reliability CI dan kontribusi AI slop: orang yang pakai AI untuk buka PR sering tidak punya effort memahami kode, lalu ketika dikoreksi malah tambah slop.
+
+Buat saya, ini takeaway terbesar minggu ini. AI membuat kita bisa menulis lebih cepat, tapi tidak otomatis membuat kita memahami lebih dalam. Kalau workflow kita hanya menghemat token, menghemat waktu, dan menghemat effort berpikir, utangnya akan muncul di review, maintenance, dan debugging. Pertanyaannya bukan apakah agent bisa menyelesaikan task. Pertanyaannya: setelah task selesai, apakah kita masih bisa menjelaskannya?
+
+## ⚡ Quick Hits
+
+- [Claude for OSS](https://claude.com/contact-sales/claude-for-oss) muncul sebagai opsi enam bulan untuk proyek open source, lalu memancing pertanyaan apakah bisa diperpanjang dan bagaimana membatasi behavior subagent.
+- [Cohere](https://cohere.com/) muncul lewat konteks North Mini dan OpenCode. Mas Shofy membaca “cohere” jadi “kere hore”, lalu Mas Michael menimpali, *“saking mahalnya AI skrg liat kata2 kere hore ketrigger 😂”*
+- [OpenUsage](https://www.openusage.ai/) dan CodexBar disebut untuk membaca konsumsi token lintas tool, supaya pilihan provider tidak berdasarkan perasaan.
+- [MCP Google Search Console](https://github.com/AminForou/mcp-gsc) muncul untuk kebutuhan SEO, dan ternyata use case-nya cukup simple setelah dicoba.
+- [Datadog x AWS Hackathon Jakarta](https://events.datadoghq.com/events/datadog-x-aws-hackathon-jakarta/) dibagikan untuk yang mau membangun observability AI workloads pada 25 Juni 2026.
+- [Crit](https://crit.md/) sempat diangkat sebagai tool untuk review kode dari AI. Ini masih perlu dicoba lebih jauh, tapi arahnya pas dengan kebutuhan minggu ini: bukan cuma generate, tapi verify.
+
+Quick hits minggu ini punya pola yang sama: tooling di sekitar model makin penting. Model besar tetap pusat gravitasi, tapi workflow harian dimenangkan oleh hal-hal kecil yang membuat model bisa dipakai dengan lebih aman, murah, dan paham konteks.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Kalau mulai pakai browser agent, coba [Agent Browser CLI](https://github.com/vercel-labs/agent-browser) atau built-in browser dari Codex/Cursor dengan domain boundary yang eksplisit.
+
+2. Sebelum membeli GPU untuk local LLM, cek kebutuhan model di [fitllm](https://fitllm.run/) dan baca pola setup di [club-3090](https://github.com/noonghunna/club-3090).
+
+3. Untuk onboarding PR atau codebase hasil kerja AI, coba [Teach skill](https://www.aihero.dev/learn-anything-with-my-teach-skill) lalu bandingkan dengan explain-and-quiz style.
+
+4. Kalau agent butuh web-search/scraping yang lebih tahan halaman sulit, evaluasi [Scrapion](https://github.com/aula-id/scrapion) atau [go-camoufox](https://github.com/brainplusplus/go-camoufox).
+
+5. Audit pemakaian token dengan [OpenUsage](https://www.openusage.ai/) atau CodexBar sebelum memutuskan upgrade plan. Perasaan “boros” lebih mudah ditangani kalau angkanya kelihatan.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — membawa perspektif browser-agent safety, frontier model cost, /teach, cognitive debt, dan AI PR slop.
+- Mas Shofy — membuka thread testing fullstack, concern production safety, DuckDuckGo di Indonesia, dan joke “kere hore”.
+- Mas Aldi — memberi opsi praktis untuk browser agent, built-in browser, Agent Browser CLI, dan workshop Cursor.
+- Mas Michael — rajin membagikan update Kimi/Fable/Cohere dan membingkai sisi humor token economy.
+- Mas Agung — memberi warna pada thread Fable, local LLM, Scrapion, dan persepsi model yang “di-nerf”.
+- Mas Wibowo — membagikan fitllm, club-3090, go-camoufox, dan pengalaman 3090 untuk local LLM.
+- Mas Azam — membumikan ROI hardware lokal dibanding subscription model murah.
+- Mas Zahid — membawa perspektif routing model China, DeepSeek, Kimi, dan Codex daily model.
+- Mas Fajar — mengangkat pertanyaan practical soal GPT-5.5, mini model, dan penggunaan skill untuk coding.
+- Mas Dedy P — memberi reaksi awal terhadap rumor GLM-5.2.
+- Mas Ardanu — memberi update Kimi di OpenCode Go.
+- Mas Riza Rohman — mempertanyakan apakah Kimi lewat OpenCode Go kena nerf.
+- Mas El Muhammad — menanggapi Scrapion dan menyarankan open notebook untuk belajar dengan /teach.
+- Mas Farhan — membuka pertanyaan caveman daily usage dan risiko ringkasan yang terlalu agresif.
+- Mas Iqbal — membawa konteks AI policy, Zig/Codeberg, dan PDF generation via Playwright.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 14 Juni 2026*
