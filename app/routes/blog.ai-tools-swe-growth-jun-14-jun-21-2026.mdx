@@ -1,0 +1,157 @@
+---
+meta:
+  - title: "Token Makin Jadi Arsitektur — AI Tools Digest #21"
+  - name: description
+    content: "Codex, Amp Code, GLM, Copilot Desktop, RAG, dan AI engineering. Rangkuman dari grup AI Tools SWE GROWTH, 14-21 Jun 2026."
+  - author: Zain Fathoni
+  - date: "2026-06-21"
+  - property: og:title
+    content: "Token Makin Jadi Arsitektur — AI Tools Digest #21"
+  - property: og:description
+    content: "Codex, Amp Code, GLM, Copilot Desktop, RAG, dan AI engineering. Rangkuman dari grup AI Tools SWE GROWTH, 14-21 Jun 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jun-14-jun-21-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-21.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Token Makin Jadi Arsitektur — AI Tools Digest #21"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Token Makin Jadi Arsitektur — AI Tools Digest #21
+
+Minggu ini kita ngobrol banyak soal tool, tapi benang merahnya bukan sekadar tool mana yang paling pintar. Yang terasa makin jelas: token sekarang sudah masuk ke desain workflow. [Claude Code](https://docs.anthropic.com/en/docs/claude-code) tetap jadi jawaban refleks kalau ditanya coding assistant yang kuat, [Codex](https://openai.com/codex/) makin sering dibahas sebagai paket value, [Amp Code](https://ampcode.com) jadi tempat eksperimen harian, dan model China seperti [GLM](https://chatglm.cn) atau [DeepSeek](https://deepseek.com) makin sering diposisikan sebagai mesin volume.
+
+Di sisi lain, obrolan mulai bergeser dari “pakai AI apa?” ke “cara kerja kita berubah jadi apa?” Ada thread eval output LLM, RAG 100.000 PDF, [Figma](https://www.figma.com) MCP, [Copilot](https://github.com/features/copilot) Desktop yang belum nurut instruksi proyek, sampai wacana memisahkan AI engineering dari AI tools. Kalau grup ini jadi barometer, minggu ini bukan minggu hype besar. Ini minggu ketika AI tooling terasa makin operasional, makin mahal kalau salah pilih, dan makin butuh disiplin workflow.
+
+## Claude Masih Pintar, Tapi Budget Mulai Mengatur Strategi
+
+Thread rekomendasi subscription minggu ini dimulai sederhana: kalau harus pilih antara [Antigravity](https://antigravity.google) dan Claude Code, apa yang paling worth? Mas Iqbal jawab pendek: Claude untuk pure coding. Mas Michael lebih frontal: *“kalau mau yang pintar sdh pasti claude code 😂”* Lalu Mas Zahid membelokkan kalimat itu jadi joke yang cukup akurat: *“aku bacanya, kalo orang pintar pasti langganan claude code 🤣”*
+
+Tapi jawaban “Claude saja” cepat ketemu tembok budget. Mas Michael menambahkan, kalau budget hanya $20 dan targetnya memecut model besar seperti [OpenAI](https://openai.com) atau Claude, ekspektasinya harus diturunkan. Untuk volume, ia bilang model China yang sekarang lebih masuk akal: GLM, DeepSeek, [Minimax](https://www.minimaxi.com). Mas Toni bahkan ikut vote: *“vote deepsek yang v4 flash atau pro, udah asyik banget.”*
+
+Di akhir minggu, Claude Max malah jadi bahan obrolan karena reset limit. Mas Fatih Dinata mencatat, *“Claude lagi royal, jumat pagi reset, jumat siang reset lagi, sabtu pagi reset lagi.”* Zain menebak itu biasanya kompensasi setelah fix deployment pasca regression. Lucunya, reset ini jadi kabar gembira buat yang sedang memakai penuh, tapi jadi nyesek buat yang sedang cuti atau mati listrik.
+
+Implikasinya sederhana: “pintar” masih penting, tapi bukan satu-satunya variabel. Kalau pekerjaan harian sudah mengalir lewat agent, budget bukan urusan finance di akhir bulan. Budget adalah bagian dari arsitektur kerja.
+
+## Codex, Amp, Dan Seni Memeras Paket Yang Masuk Akal
+
+[CodexBar](https://codexbar.app) muncul lagi karena orang mulai butuh angka, bukan feeling. Zain bilang sulit melacak pemakaian karena tersebar di [OpenClaw](https://openclaw.ai), Amp, dan local usage, tapi dari dua mesin saja konsumsi Codex sudah tembus satu miliar token dalam sebulan terakhir. Mas Agung juga menyebut pemakaiannya sendiri “cuma” 170 juta token sebulan. Di grup ini, kata “cuma” kadang perlu diberi tanda kutip besar.
+
+Untuk Codex, value-nya muncul dari cara memanfaatkan limit. Mas Wibowo memberi take yang jelas: *“codex, kalau ngerti manfaatinnya berasa punya $100++.”* Ia juga membagikan trik ketika kuota hampir habis: *“aku kalau lagi pake codex, sisa 5% biasanya tak gituin wkwkwk,”* merujuk ke one-last-prompt-shot agar task diselesaikan sampai agent merasa selesai. Mas Luthfi A menutup dengan kalimat yang terdengar seperti testimoni customer support: *“alhamdulillah baik sekali codex haha.”*
+
+Amp juga makin terasa jadi tool harian. Zain bilang, *“Oke banget, saya hampir selalu pakai Amp sekarang,”* walau sempat terganggu karena commit message otomatis menambahkan co-authorship dan thread ID. Mas Zahid langsung menunjuk setting [amp.git.commit.coauthor.enabled](https://ampcode.com/manual). Mas Michael masih rajin top-up di Amp dan bilang, *“masih pecut amp buat side project mode deep masih jadi andalan udah jarang pake smartnya 😂.”* Mas Iqbal cukup menjawab, *“Idem mas.”*
+
+Lalu [A faster Librarian](https://ampcode.com/news/a-faster-librarian) muncul. Mas Dedy P membagikan linknya, Mas Zahid bereaksi “Wow”, dan Mas Michael langsung coba: *“mantap ini lagi coba the librarian amp kok cpt 🔥.”* Ketika Mas Riza Fahmi membagikan info GLM bisa dicoba di Amp, Mas Michael menimpali, *“wah akhirnya ampcode 🔥.”* Jadi pattern-nya jelas: Codex untuk paket besar, Amp untuk eksperimen fleksibel, dan dua-duanya butuh tracking supaya rasa “worth it” tidak cuma berdasarkan euforia.
+
+Pertanyaannya bukan lagi “pakai Codex atau Amp?” Pertanyaannya: workload mana yang lebih cocok masuk subscription besar, dan workload mana yang cukup dibayar seperti pulsa?
+
+## GLM, Zcode, Dan Model China Makin Serius Tapi Belum Gratis Dari Trade-off
+
+Awal minggu, Mas Michael membagikan [Zcode](https://x.com/zcode_ai/status/2066236605917188228) dan bertanya apakah sudah ada yang mencoba. Mas Iqbal langsung mengonfirmasi, “ini zcode, official dari z.ai mas?” Mas Michael menjawab bahwa ini dari official Z.ai sambil menunggu review. Tidak lama kemudian, review [Zcode-3.0](https://x.com/ivanfioravanti/status/2066272681406980208) muncul, dan Mas Michael bilang, *“wah review Zcode-3.0 nya z.ai menjanjikan nih 🔥.”*
+
+GLM-5.2 lalu jadi salah satu pusat diskusi. Mas Michael melempar benchmark [LMArena](https://x.com/arena/status/2066957802741043641), Mas Abraham skeptis karena bias, dan Mas Noviadi memberi catatan penting: *“Lihat2 benchmark penting banget memperhatikan thingking level, karena yg kita pakai mungkin jarang sampai rata kanan.”* Ia menambahkan kalimat yang menurut saya paling berguna untuk semua benchmark model reasoning: *“Thinking off/low hasilnya halu.”*
+
+Sentimennya tidak seragam. Mas El Muhammad bilang, *“Real glm-5.2 membara.”* Mas Wibowo memberi caveat, “asalkan GLM 5.2 FP16.” Mas Zahid lebih hati-hati: *“hmm aku kok ngerasa glm kureng ya tapi 😢,”* lalu di thread lain bilang, *“Glm 5.2 bagus tapi need time to run. 🤣 🤣 🤣 🙈 🙈.”* Mas Michael menjawab bahwa ia juga sedang memakai dan kalau banyak pekerjaan, mending lempar ke Amp Code.
+
+Ini perkembangan yang sehat. Model China tidak lagi dibahas sebagai “alternatif murah kalau kepepet”, tapi juga tidak diperlakukan sebagai peluru perak. Ia masuk portofolio: bagus untuk volume, layak dicoba untuk coding tertentu, tapi tetap perlu evaluasi berdasarkan thinking level, gateway, latency, dan jenis task. Murah bukan berarti bebas cost; kadang cost-nya pindah ke waktu tunggu dan quality assurance.
+
+## Copilot Desktop Kena Roast Karena Workflow Hygiene
+
+[GitHub Copilot](https://github.com/features/copilot) punya minggu yang menarik di grup. Ada humor soal logo, nostalgia rilis pertama tahun 2021 lewat link [GitHub Blog](https://github.blog/news-insights/product-news/introducing-github-copilot-ai-pair-programmer/), dan Mas Michael bercanda siap jadi buzzer: *“hidup copilot 🔥 #invoicesubscribecopilotditunggu 😂.”* Tapi thread yang paling terasa justru datang dari pengalaman pahit Mas Azam dengan Copilot Desktop.
+
+Mas Azam menulis panjang, tapi intinya jelas: *“Tolong, ngaco banget ini Copilot Desktop, bikin naming branch sendiri, bikin directory sendiri, bikin workflow sendirei...”* Ia merasa convention proyek sudah ada, instruksi sudah ada, tapi agent tetap membuat cara sendiri. Mas Michael merangkum emosinya dengan tepat: Copilot Desktop terasa seperti anak rebel yang sotoy. Mas Azam akhirnya menutup, *“oleh karena itu saya menyerah dan tinggalkan github copilot desktop untuk saat ini, sekian terimagaji🙏.”*
+
+Yang menarik, Mas Oshi kemudian menjelaskan kemungkinan akar masalahnya: sebelum session agent mulai, ada setting worktree storage location dan default branch prefix yang membuat branch/worktree dibuat lebih dulu, sebelum instruksi proyek terbaca. Ia menambahkan, *“sudah saya laporkan, emang menyebalkan dan ada bbrp yg mengeluhkan hal yg sama 😬.”* Mas Ahsan memuji cara menanggapi feedback itu, tentu dengan sedikit tusukan: semoga dalam hati tidak sambil bilang “skill issue”.
+
+Ini bukan sekadar drama satu tool. Ini pelajaran workflow hygiene. Untuk agent coding, membaca instruksi proyek terlambat beberapa detik bisa berarti branch salah, directory salah, dan convention salah. Di era agent, UX bukan hanya tombol dan panel. UX adalah kapan agent membaca aturan main.
+
+## AI Engineering Mulai Minta Ruang Sendiri
+
+Di tengah obrolan tools, ada dua thread yang terasa beda: eval output LLM dan RAG 100.000 PDF. Mas Dwiky bertanya soal cara mengevaluasi output LLM integrated product. Harapannya bukan lagi “kelihatannya oke”, tapi bisa tahu ketika eksperimen system prompt dan model benar-benar membuat output membaik. Mas Agung menjawab dari use case yang eksak: mode JSON untuk konversi gambar menu ke daftar menu. Mas Husni Rizal menyarankan [Braintrust](https://www.braintrust.dev) atau [Laminar](https://www.lmnr.ai), tapi menekankan bagian paling sulit: menentukan scorers seperti structure, completeness, factuality, tone, dan style.
+
+Lalu Mas Farhan Aziz mengangkat skenario yang lebih berat: *“jika kalian di kasih job men-RAG-kan 100.000 pdf tools apa yang bakalan dipake dengan specs server 16GB DDR3 4 Core Cpu's.”* Mas Azis langsung menyarankan vector DB di luar server. Mas Agung membagi dua strategi: mudah di awal tapi susah inference, atau susah di awal tapi mudah inference. Untuk cara kedua, ia menyarankan mendestruktur PDF menjadi data constructor, menyimpan image sebagai reference+semantic, dan menaruh gambar di object storage. Lalu muncul kalimat favorit minggu ini dari Mas Agung: *“basically pdf itu XML pake steroid 😂.”*
+
+Mas Ahsan membawa konteks Indonesia yang sangat nyata: dokumen hukum punya lampiran yang ajaib, dari teks, tabel, scan, sampai grafik. Setelah itu ia bilang, *“ane buatin diskusi khusus AI engineering deh yok, mau?”* Ketika Mas Mei Rizal bertanya bedanya dengan grup ini apa, Mas Ahsan menjelaskan bahwa grup ini kebanyakan AI tools, sedangkan AI engineering adalah mengutak-atik AI untuk produk.
+
+Menurut saya ini sinyal penting. AI tools adalah pertanyaan “pakai apa?” AI engineering adalah pertanyaan “bagaimana sistem ini dievaluasi, dioperasikan, dan dipertanggungjawabkan?” Dua-duanya dekat, tapi tidak selalu cocok tinggal di thread yang sama.
+
+## Figma MCP, Design Token, Dan Target 90% Yang Masih Harus Diawasi
+
+Mas Andre Pratama membuka thread Figma MCP dengan pertanyaan yang pasti banyak dialami tim frontend: apakah slicing dari design bisa akurat 90%? Apakah [DESIGN.md](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot) membantu? Workflow apa yang bisa dipelajari?
+
+Mas Azam menjawab dari praktik yang lebih sederhana: ia tidak memakai MCP, cukup attach screenshot, asalkan atomic design, spacing, dan global token sudah jelas. Mas Farhan Aziz merekomendasikan figma-mcp-go karena tidak butuh API token, lalu Mas faqihyugos membagikan repo [figma-mcp-go](https://github.com/vkhanhqui/figma-mcp-go). Ketika ditanya soal akurasi design token, Mas Farhan Aziz menjawab bahwa tool itu membaca langsung design token di Figma dan membandingkannya dengan kode, tapi tetap perlu dicek lagi: *“so far itu yang paling akurat sih walau pastinya ga 100%.”*
+
+Mas Alvin memberi tips yang juga praktis: download Figma desktop, login, lalu enable connect MCP. Dari situ kita bisa lihat bahwa masalah Figma-to-code bukan cuma “modelnya kurang pintar”. Ada autentikasi desktop, token, design-system discipline, dan proses review. Tool membantu membaca struktur, tapi sistem desain tetap harus rapi.
+
+Takeaway-nya: target 90% mungkin bisa didekati, tapi bukan karena satu MCP ajaib. Ia butuh design token yang konsisten, screenshot/reference visual, dan manusia yang masih mau membandingkan hasil dengan intent desain.
+
+## ⚡ Quick Hits
+
+- [Mercury](https://www.inceptionlabs.ai/blog/introducing-mercury) dicoba Mas Michael di Zed autocomplete. Katanya, *“kenceng parah ini opsi kalau mau ngetik ngebut bayar nya pay per use 🔥.”* Cocok untuk completion cepat, bukan necessarily reasoning berat.
+
+- [OpenRouter Fusion](https://openrouter.ai/blog/announcements/fusion-beats-frontier/) dibagikan Mas Novel. Ini masih perlu dicoba lebih jauh, tapi arahnya konsisten dengan tema minggu ini: bukan satu model terbaik, melainkan routing/ensemble yang pas.
+
+- [Builderbot](https://block.xyz/inside/block-rolls-out-builderbot-a-new-suite-of-ai-native-tools-that-changes-the-way-we-ship) dari Block dibagikan Mas Michael. Internal AI-native tooling makin sering muncul sebagai sinyal bahwa perusahaan mulai membangun toolchain sendiri, bukan hanya subscribe SaaS.
+
+- [Cursor](https://cursor.sh) ikut masuk rumor dan spekulasi. Mas Michael bercanda soal Elon, X AI, dan composer; Mas Agung membayangkan knowledge agentic Cursor dipadukan dengan speed Zed. Treat as rumor until verified, tapi menarik sebagai cermin bahwa coding tool sekarang dibaca seperti pasar infra strategis.
+
+- [Basecamp Shape Up](https://basecamp.com/shapeup), [Getting Real](https://basecamp.com/gettingreal), dan buku Shape Up dibagikan Zain. Di tengah AI tooling, proses product shaping tetap relevan karena agent cepat tanpa bentuk kerja yang jelas hanya mempercepat kebingungan.
+
+Quick hits minggu ini punya arah yang sama: tools makin banyak, tapi value-nya muncul kalau kita tahu bagian workflow mana yang sedang diselesaikan. Kalau tidak, semua terlihat menarik dan semuanya terasa wajib dicoba.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Coba [Amp Librarian](https://ampcode.com/news/a-faster-librarian) untuk pekerjaan repo yang butuh konteks cepat, lalu bandingkan dengan mode deep yang biasa dipakai.
+
+2. Track pemakaian lokal dengan [CodexBar](https://codexbar.app) sebelum upgrade plan. Kalau token sudah jadi arsitektur, observability-nya jangan pakai perasaan.
+
+3. Untuk produk LLM, tulis scorers evaluasi dulu sebelum memilih tool seperti Braintrust atau Laminar. Tool eval tanpa definisi kualitas cuma memindahkan feeling ke dashboard.
+
+4. Kalau sedang mengejar Figma-to-code, test [figma-mcp-go](https://github.com/vkhanhqui/figma-mcp-go) bersama design token dan screenshot reference. Jangan berharap 100% otomatis tanpa review.
+
+5. Audit setting worktree/default branch di [Copilot](https://github.com/features/copilot) Desktop sebelum menyimpulkan instruksi proyek diabaikan. Bisa jadi instruksi memang dibaca terlambat.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — membawa perspektif pemakaian Amp, tracking token lintas tool, dan kompensasi reset limit.
+- Mas Michael — memberi banyak update soal Claude Code, Amp, Zcode, GLM, Mercury, Cursor, dan Copilot.
+- Mas Zahid — memberi framing GLM, Amp config, joke Claude Code, dan caveat model China.
+- Mas Iqbal — membuka rekomendasi Claude untuk pure coding dan ikut menanggapi thread Amp/Codex.
+- Mas Agung — menyumbang insight token, RAG strategy, PDF sebagai “XML pake steroid”, dan spekulasi tool coding.
+- Mas Wibowo — memberi take soal Codex value dan trik one-last-prompt-shot.
+- Mas Luthfi A — menanggapi trik Codex dan membawa konteks dynamic workflow.
+- Mas Toni — memberi vote untuk DeepSeek v4 flash/pro sebagai opsi murah yang enak.
+- Mas Fatih Dinata — memunculkan thread reset Claude Max dan perbandingan limit ChatGPT.
+- Mas Azam — memberi testimoni tajam soal Copilot Desktop dan diskusi harga software setelah AI.
+- Mas Oshi — menjelaskan kemungkinan akar masalah Copilot Desktop dan feedback loop ke GitHub.
+- Mas Ahsan — membawa konteks dokumen hukum Indonesia dan mengusulkan ruang AI engineering terpisah.
+- Mas Mei Rizal — menanyakan batas antara AI tools dan AI engineering.
+- Mas Dwiky — membuka pertanyaan eval output LLM untuk produk nyata.
+- Mas Husni Rizal — menyarankan Braintrust/Laminar dan menekankan pentingnya scorer.
+- Mas Farhan Aziz — membuka skenario RAG 100.000 PDF dan membagikan pengalaman Figma MCP.
+- Mas Azis — menyarankan vector DB di luar server untuk skenario RAG besar.
+- Mas Andre Pratama — membuka pertanyaan Figma MCP dan akurasi slicing.
+- Mas faqihyugos — membagikan repo figma-mcp-go.
+- Mas Alvin — memberi tips koneksi Figma desktop untuk MCP.
+- Mas Dedy P — membagikan Amp Librarian dan menanggapi GLM di Amp.
+- Mas Riza Fahmi — membagikan info GLM bisa dicoba di Amp.
+- Mas Novel — membagikan OpenRouter Fusion dan menjawab pertanyaan pembayaran Claude.
+- Mas El Muhammad — menandai GLM-5.2 sebagai “membara”.
+- Mas Abraham — memberi caveat bias benchmark GLM.
+- Mas Noviadi — memberi catatan teknis soal thinking level GLM.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 21 Juni 2026*
