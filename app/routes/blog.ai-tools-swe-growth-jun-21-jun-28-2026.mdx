@@ -1,0 +1,149 @@
+---
+meta:
+  - title: "Pay-As-You-Go Mulai Menang — AI Tools Digest #22"
+  - name: description
+    content: "Amp Code, CommandCode, Mimo, GLM, Koma, n8n, dan WAHA. Rangkuman dari grup AI Tools SWE GROWTH, 21-28 Jun 2026."
+  - author: Zain Fathoni
+  - date: "2026-06-28"
+  - lang: id
+  - property: og:title
+    content: "Pay-As-You-Go Mulai Menang — AI Tools Digest #22"
+  - property: og:description
+    content: "Amp Code, CommandCode, Mimo, GLM, Koma, n8n, dan WAHA. Rangkuman dari grup AI Tools SWE GROWTH, 21-28 Jun 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jun-21-jun-28-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-22.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Pay-As-You-Go Mulai Menang — AI Tools Digest #22"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Pay-As-You-Go Mulai Menang — AI Tools Digest #22
+
+Minggu ini rasanya grup kita tidak sedang mencari “model paling pintar”. Kita sedang mencari rute paling masuk akal. [Amp Code](https://ampcode.com) masih jadi harness favorit, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) masih jadi benchmark rasa aman, tapi percakapan paling hidup justru muncul ketika orang mulai menaruh [Mimo](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps), [GLM](https://chatglm.cn), [CommandCode](https://commandcode.ai/docs/taste), dan agent buatan sendiri ke dalam satu spreadsheet mental: task ini masuk mana, biaya berapa, risiko apa?
+
+Yang menarik, obrolannya makin praktis. Bukan cuma “wah model China makin kencang”, tapi “kalau dipakai untuk shipping fitur, berapa dolar habisnya?” Bukan cuma “Claude mahal”, tapi “workflow Claude Code bisa dipertahankan sambil ganti provider gak?” Kalau minggu lalu token sudah terasa seperti arsitektur, minggu ini routing biaya mulai terasa seperti skill engineering sendiri.
+
+## Amp Masih Jadi Patokan, Tapi CommandCode Mulai Masuk List
+
+Thread paling berguna minggu ini dimulai dari pertanyaan ranking harnessing di rentang biaya 5-20 USD. Saya jawab dengan bias yang cukup jelas: *menurut Zain, “Amp: `deep` mode paling oke sejauh ini, baik untuk implementasi maupun untuk code review.”* `rush` juga masih terasa ringan, dan kalau bisa ditempel ke subscription OpenAI, biaya harnessing-nya bisa jauh lebih santai.
+
+Mas Michael langsung mengafirmasi dengan kalimat pendek yang cukup mewakili sentimen grup: *kata Mas Michael, “amp memang masih top markotop.”* Tapi ia juga menambahkan kandidat baru: *Mas Michael bilang, “tambahan 1 lagi yang underrated ada commandcode ini sih feeling bakalan bagus juga kedepan 🔥.”* Yang ia sorot bukan sekadar CLI-nya, melainkan Taste mode. Setelah saya buka link docs-nya, Mas Michael mengunci poinnya: *kata Mas Michael, “ini nilai ++ yang dipunya commandcode si Taste ini.”*
+
+Mas Tunggul lalu bertanya hal yang benar: pricing-nya bagaimana? Jawaban Mas Michael membuat CommandCode terasa seperti sepupu Amp: ada subscription, ada top-up, ada credit model tertentu, dan CEO yang aktif di publik. Mas Tunggul merangkum dengan pas: *kata Mas Tunggul, “noted mas, ini commandcode macam kembar sama ampcode ya di sisi pricing ..”*
+
+Implikasinya: Amp belum tergeser, tapi kategori “harness berbayar yang worth it” mulai ramai. Kalau tool seperti CommandCode bisa memberi taste/style layer yang berguna, persaingannya bukan cuma model mana yang dipakai, tapi siapa yang paling membantu kita mengarahkan model itu.
+
+## Claude Code Tetap Dicintai, Tapi Mulai Dicicil Lewat Provider Lain
+
+Claude Code minggu ini bukan hilang pamor. Justru tetap jadi standar. Di ranking yang sama, *menurut Zain, “Claude Code: Masih tetap unggul, terutama kalau buat mode belajar.”* Learning mode plus skill seperti `/teach` masih susah ditandingi kalau tujuan kita bukan hanya selesai, tapi juga naik level.
+
+Masalahnya: cinta tidak selalu cukup untuk membayar subscription. Thread [Headroom](https://github.com/chopratejas/headroom) dan RTK menunjukkan orang mulai mengatur cara Claude Code menghabiskan context. Mas El Muhammad punya pengalaman yang hati-hati: *kata Mas El Muhammad, “Iyah aku akhirnya deactive karena ga enak aja pas debug ke cluster kube atau yg check log heavy.”* Artinya, context optimizer bisa membantu loop tertentu, tapi untuk debugging berat log, efek sampingnya nyata.
+
+Lalu masuk [cc-provider-switch](https://github.com/eltrovert/cc-provider-switch). Saya share ini ke Mas Mii yang bertanya cara pakai GLM di Claude Code via terminal. Framing-nya sederhana: cocok buat pengepul token yang masih terlalu cinta sama Claude Code. Mas Mii langsung menangkap rasanya: *kata Mas Mii, “masih cinta claude code tapi tidak untuk subs price nya wkwkw.”*
+
+Di sisi lain, grup juga sempat membahas grey-market API/shared-account Claude dan provider lain. Saya sengaja tidak jadikan itu rekomendasi. Mas Michael sudah memberi warning yang cukup: *kata Mas Michael, “yg share gini sangat rawan apalagi claude mending jangan coba2 😂.”* Kalau sebuah route murah mengandalkan pelanggaran ToS atau credential tidak jelas, itu bukan optimasi. Itu bom waktu.
+
+Takeaway-nya: Claude Code masih dicintai, tapi workflow-nya mulai dipreteli jadi bagian-bagian. Kita mau kualitas interaksi Claude Code, tapi ingin bebas memilih kuda di belakangnya. Ini bukan sekadar hemat; ini tanda bahwa harness dan model makin menjadi dua layer yang berbeda.
+
+## Mimo Tiba-Tiba Jadi Kandidat Serius
+
+Mimo adalah kejutan paling menyenangkan minggu ini. Awalnya muncul di sela-sela perbandingan model murah, lalu Mas Agung mulai pakai di agent buatannya. Setelah mencoba beberapa model, ia menulis kalimat yang cukup besar konteksnya: *kata Mas Agung, “saya kaget mimo paling mendekati level opus di agntic saia.”* Untuk orang yang sering memuji Claude, itu bukan pujian kecil.
+
+Mas Michael juga melihat pola yang sama untuk task ringan: *kata Mas Michael, “mimo memang underrated aku pake buat kebutuhan ringan2 di pi sat set dan sesuai yang dikerjakan.”* Mas Dedy P langsung bilang perlu coba, dan Mas Michael menyarankan Mimo v2.5 Pro. Mas Agung menambahkan bahwa versi standard pun cukup untuk task basic-medium. Ini bukan benchmark akademik, tapi field report yang lebih dekat ke kebutuhan harian: apakah tool call tepat, apakah agent jalan, apakah biaya terasa masuk akal.
+
+Yang bikin thread ini makin konkret adalah biaya. Setelah memakai Koma/simple-coders dengan Mimo, *Mas Agung bilang, “hari ini sama kemarin habis $1.1 shipping 6 production feature pakai koma.”* Mas Zahid bereaksi kaget, dan kemudian membandingkan thinking speed Mimo dengan GLM. Dari sini terlihat shift yang penting: kita tidak lagi bertanya “Mimo lebih pintar dari Opus gak?” Pertanyaannya menjadi “untuk task tertentu, apakah Mimo cukup pintar sehingga Opus tidak perlu turun tangan?”
+
+Lalu link ultra-speed Mimo dibagikan Mas Zahid, dan Mas Agung langsung merespons “WOH”. Mimo belum otomatis jadi jawaban semua task, tapi minggu ini ia naik kelas dari “alternatif murah” menjadi “model yang perlu masuk routing table”. Pertanyaannya bukan apakah Mimo terbaik. Pertanyaannya: berapa banyak pekerjaan yang selama ini kita kasih ke model mahal, padahal Mimo sudah cukup?
+
+## GLM Menguat, Tapi Thinking Level Adalah Biaya Tersembunyi
+
+GLM masih ramai, bahkan lebih ramai dari minggu lalu. Ada thread [Cline](https://github.com/cline/cline) yang membandingkan GLM dan Opus, ada pembahasan GLM di Cursor, ada plugin untuk Amp, dan ada diskusi provider switching. Tapi yang paling berguna justru caveat teknisnya.
+
+Mas Zahid menjelaskan kenapa GLM bisa terasa lebih bagus daripada GPT di beberapa eksperimen: *kata Mas Zahid, “aku glm selalu mx, dan gpt biasanya di medium high tokennya gk kuat.”* Jadi ini bukan sekadar “GLM lebih pintar”. Ini “GLM dengan thinking level tertentu dibanding GPT dengan batas biaya tertentu”. Benchmark yang tidak menyebut thinking level bisa menipu.
+
+Di thread Koma, Mas Zahid juga memberi observasi yang menurut saya penting: *kata Mas Zahid, “nah iya si glm ini dia ovt di awal pas habis kita prompt, tapi kalo udah jelas semua thinkingnya lebih pendek.”* Ia lalu menyambung bahwa ini cocok dengan context pruning dan compaction. Dengan kata lain, GLM mungkin mahal di awal karena perlu memahami ruang masalah, tapi bisa lebih hemat ketika konteks sudah dirapikan.
+
+Mas Agung tetap membawa rem biaya: *kata Mas Agung, “tapi saya sayang duit mas, 0.1 pake mimo atau deepseek udah banyak ngoding :u.”* Nah, ini inti minggu ini. GLM bagus, tapi kalau task-nya tidak membutuhkan thinking besar, mungkin ia overkill. Kalau task-nya kabur, thinking besar bisa menyelamatkan. Kalau task-nya sudah kecil dan jelas, model murah bisa menang.
+
+Jadi GLM bukan “jawaban murah”. GLM adalah opsi reasoning yang perlu dipakai dengan sadar. Kalau tidak, kita hanya memindahkan pemborosan dari subscription Claude ke pay-as-you-go model lain.
+
+## Koma Dan Agent Lokal: Ketika Harness Jadi Milik Sendiri
+
+Di tengah semua perbandingan tool, Mas Agung melempar sesuatu yang lebih personal: [simple-coders](https://github.com/aula-id/simple-coders), yang kemudian ia sebut akan di-rename jadi Koma. Pembukaannya percaya diri: *kata Mas Agung, “its here guys the most efficient coding agent!”* Beberapa hari kemudian, ia menjelaskan arahnya: *kata Mas Agung, “masih early development, tapi targetnya token optimisation yang gila.”*
+
+Yang menarik bukan cuma repo-nya. Yang menarik adalah respons grup. Mas Agung D bertanya apakah ini buatan sendiri. Mas Iqbal langsung bertanya apakah nanti bisa tempel Codex OAuth. Mas Oshi membandingkan ide security scanner dengan GitHub Copilot CLI: *kata Mas Oshi, “GitHub Copilot CLI: /security-review.”* Mas Agung menjawab bahwa targetnya lebih dari itu.
+
+Lalu thread melebar ke Hermes-style gateway: Telegram/WA sebagai pintu prompt agar coding bisa “sambil rebahan”. Ini sejalan dengan obrolan [n8n](https://n8n.io) dan [WAHA](https://waha.devlike.pro) di akhir minggu. Mas alfanzain bertanya, *kata Mas alfanzain, “Kalau mau ambil chat WA ke n8n, tetep pake GoWA dll kah? Atau n8n sediakan hal itu?”* Mas Azam menjawab praktis: *kata Mas Azam, “yg gampang integrasinya pake waha karena udah ada nodenya di n8n.”* Mas Agung menambahkan kabar yang cukup menggoda: *kata Mas Agung, “Plus, WAHA udah gratis sekarang.”*
+
+Ini mungkin arah paling menarik: developer mulai membangun agent stack sendiri. Bukan karena semua orang harus bikin Claude Code versi lokal, tapi karena kebutuhan tiap orang makin spesifik: token optimization, gateway WhatsApp, OAuth tertentu, security scanner tertentu, model routing tertentu. 2026 bukan cuma tahun AI agents. Ini mulai jadi tahun AI harness pribadi.
+
+## Meta, Token KPI, Dan Ketakutan Yang Lebih Organisasional
+
+Mas Riza Fahmi membagikan artikel [The Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering) soal adopsi AI di Meta, lalu membuka dengan nada tajam: *kata Mas Riza Fahmi, “Extreme juga ya adopsi AI di Meta 🤡.”* Poin yang memantik diskusi: tracking keyboard/mouse untuk training data, engineer diarahkan ke pelabelan data, dan token usage sebagai ukuran kinerja.
+
+Mas Tunggul menangkap bagian paling absurd: *kata Mas Tunggul, “gokil ini kpi nya berdasarkan penggunaan token.”* Mas Agung memberi koreksi supaya tidak melebar: ini konteksnya divisi data, bukan seluruh Meta. Tapi kalimat lanjutannya tetap menarik: alih-alih hanya distill dari GPT/Claude, mereka “mecut engineer beneran”.
+
+Ini bukan thread tool, tapi penting untuk digest ini. Karena kalau token usage jadi KPI, incentive-nya bisa bengkok. Orang bisa terlihat “AI-native” karena banyak membakar token, bukan karena output-nya lebih baik. Di level individu, kita sedang belajar menghemat token. Di level organisasi, beberapa tempat mungkin justru sedang belajar mengukur token sebagai tanda adopsi.
+
+Pertanyaannya: apakah kita ingin AI adoption diukur dari hasil kerja, atau dari seberapa sering kita menyalakan meteran?
+
+## ⚡ Quick Hits
+
+- [Freebuff](https://freebuff.com/web/?ref=ref-665af499-5784-4297-a73c-b9fafd0b8a3e) masuk daftar alternatif budget dari Mas Iqbal. *Kata Mas Iqbal, “kalo ada VPS yang daerah SG atau US, pake aja dpt minimax m3 lumayan wuss2 dan pinter.”* Catatannya: belum ada API key, jadi lebih mirip dipakai langsung di VPS/remote explorer, bukan ditempel ke semua harness.
+
+- [Goose](https://block.github.io/goose/) sempat ditanya Mas Mei Rizal karena terasa boros token. Ini belum jadi thread besar, tapi cocok masuk daftar watch kalau kamu sedang membandingkan agent open source.
+
+- [Cerebras](https://www.cerebras.ai/ambassadors) membuka ambassador program dan langsung menarik perhatian Mas Michael dan Mas Agung. Bukan core coding workflow, tapi menarik untuk yang sedang mengejar inference cepat.
+
+- [awesome-free-models](https://github.com/12britz/awesome-free-models#-free-api-providers) dibagikan Mas Agung D saat perburuan provider murah. Berguna sebagai katalog, tapi tetap perlu dicek legalitas, limit, dan kualitas setiap provider.
+
+- [Headroom](https://github.com/chopratejas/headroom) muncul sebagai alternatif/kompetitor RTK untuk Claude Code. Belum ada konsensus, tapi jelas orang mulai menganggap context management sebagai bagian dari stack, bukan fitur sampingan.
+
+Quick hits minggu ini punya benang merah yang sama: semua orang sedang mencari tuas. Ada tuas biaya, tuas context, tuas gateway, tuas provider, dan tuas model. Tool terbaik adalah tool yang tahu tuas mana yang sedang kita butuhkan.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Coba [CommandCode Taste](https://commandcode.ai/docs/taste) di satu repo kecil, lalu bandingkan dengan Amp deep/rush untuk task yang sama.
+
+2. Benchmark [Mimo](https://mimo.xiaomi.com/blog/mimo-tilert-1000tps) untuk task ringan-menengah sebelum otomatis memakai model mahal.
+
+3. Kalau masih cinta Claude Code tapi mulai sensitif biaya, lihat [cc-provider-switch](https://github.com/eltrovert/cc-provider-switch) dan uji di workflow non-kritis dulu.
+
+4. Untuk WhatsApp-to-agent workflow, coba [n8n](https://n8n.io) plus [WAHA](https://waha.devlike.pro) sebelum bikin bridge dari nol.
+
+5. Pantau [simple-coders/Koma](https://github.com/aula-id/simple-coders) kalau token optimization sudah jadi bottleneck utama di coding agent kamu.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — membawa ranking harnessing, Amp deep/rush, Claude Code untuk belajar, dan framing biaya subscription OpenAI.
+- Mas Michael — mengangkat CommandCode Taste, Mimo untuk task ringan, warning grey-market Claude, dan banyak sinyal model baru.
+- Mas Tunggul — menajamkan pertanyaan pricing CommandCode dan menangkap absurditas token-based KPI.
+- Mas El Muhammad — memberi pengalaman RTK yang kurang cocok untuk debugging log-heavy.
+- Mas Mii — mewakili dilema “masih cinta Claude Code” tapi tidak dengan harga subscription-nya.
+- Mas Zahid — memberi caveat GLM berdasarkan thinking level, membandingkan Mimo/GLM, dan membagikan ultra-speed Mimo.
+- Mas Agung — membagikan simple-coders/Koma, eksperimen Mimo, biaya $1.1 untuk 6 fitur, dan arah token optimization.
+- Mas Dedy P — ikut menandai Mimo sebagai model yang perlu dicoba.
+- Mas Iqbal — menambahkan Freebuff ke daftar alternatif budget dan bertanya soal Codex OAuth untuk Koma.
+- Mas Oshi — memberi pembanding security review dari GitHub Copilot CLI.
+- Mas Agung D — mendorong ide gateway Telegram/WA untuk agent coding dan membagikan katalog provider gratis.
+- Mas alfanzain — membuka pertanyaan praktis WhatsApp intake ke n8n.
+- Mas Azam — memberi jawaban praktis n8n + WAHA.
+- Mas Riza Fahmi — membagikan thread Meta dan memantik diskusi soal token KPI.
+- Mas Mei Rizal — memunculkan pertanyaan soal Goose dan token boros.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 28 Juni 2026*
