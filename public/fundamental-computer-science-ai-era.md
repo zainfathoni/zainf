@@ -3,6 +3,10 @@ marp: true
 paginate: true
 theme: default
 backgroundColor: #ffffff
+title: Fundamental CS for AI Era
+description: Building human-centered digital products in the AI era — BUILD Camp Mentor Spotlight, 4 July 2026
+url: https://www.zainfathoni.com/fundamental-computer-science-ai-era.html
+image: https://www.zainfathoni.com/assets/fundamental-computer-science-ai-era.png
 footer: "4 July 2026 | Fundamental CS for AI Era"
 style: |
   @font-face {
