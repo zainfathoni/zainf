@@ -732,7 +732,6 @@ speed regulators, micro-worlds. The demo IS the argument of the talk.
 - Gergely Orosz — [knowing what good code looks like](https://x.com/GergelyOrosz/status/2072831495463428580)
 - Zain Fathoni — [A to Z #3: my personal experience](https://zainf.dev/a-z-3)
 - The `/teach` skill — [github.com/zainfathoni/agent-workflows](https://github.com/zainfathoni/agent-workflows)
-- Dan Roam — [The Pop-up Pitch](https://www.danroam.com/)
 
 </div>
 <div class="visual">
@@ -760,9 +759,9 @@ Reference slide. Keep citations visible without turning the talk into a literatu
 
 <div class="links">
 
-<p><https://zainf.dev/fundamental-computer-science-ai-era></p>
-<p><https://github.com/zainfathoni/agent-workflows></p>
-<p><https://zainf.dev/a-z-3></p>
+<p><a href="https://zainf.dev/fundamental-cs-ai">zainf.dev/fundamental-cs-ai</a></p>
+<p><a href="https://github.com/zainfathoni/agent-workflows">github.com/zainfathoni/agent-workflows</a></p>
+<p><a href="https://zainf.dev/a-z-3">zainf.dev/a-z-3</a></p>
 
 </div>
 </div>

@@ -214,7 +214,7 @@ export const meetups: Talk[] = [
     event: "BUILD Camp Mentor Spotlight: Road to BUILDFest",
     resources: [
       {
-        href: "https://zainf.dev/fundamental-computer-science-ai-era",
+        href: "/fundamental-computer-science-ai-era.html",
         label: "Open slides",
       },
     ],
