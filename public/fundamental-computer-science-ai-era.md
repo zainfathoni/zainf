@@ -328,7 +328,7 @@ style: |
 
 Front-end developer based in Yogyakarta, Indonesia. Previously backend, manager, frontend, now fullstack.
 
-Community builder · AI-assisted engineering practitioner · Mentor Spotlight at BUILD Camp.
+Community builder (Ketua VibeFromCafe.id) · Senior Software Engineer · Agentic Engineering Practitioner.
 
 <https://zainf.dev>
 
