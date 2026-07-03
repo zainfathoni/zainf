@@ -5,6 +5,13 @@ theme: default
 backgroundColor: #ffffff
 footer: "4 July 2026 | Fundamental CS for AI Era"
 style: |
+  @font-face {
+    font-family: "Space Grotesk";
+    font-style: normal;
+    font-weight: 300 700;
+    src: url("assets/fonts/SpaceGrotesk-variable.woff2") format("woff2-variations");
+  }
+
   :root {
     --text: #111827;
     --muted: #6b7280;
@@ -42,10 +49,11 @@ style: |
 
   h1, h2 {
     color: var(--text);
-    font-weight: 800;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
     line-height: 0.98;
     margin: 0;
-    letter-spacing: -0.055em;
+    letter-spacing: -0.04em;
   }
 
   h1 { font-size: 74px; }
@@ -84,9 +92,11 @@ style: |
   }
 
   blockquote p {
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
     font-size: 34px;
     line-height: 1.25;
-    font-weight: 650;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .slide {
@@ -172,10 +182,11 @@ style: |
   }
 
   .big-number {
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
     font-size: 112px;
     line-height: 0.95;
-    font-weight: 850;
-    letter-spacing: -0.08em;
+    font-weight: 700;
+    letter-spacing: -0.06em;
   }
 
   .caption {
