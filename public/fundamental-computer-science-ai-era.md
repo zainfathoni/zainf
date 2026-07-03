@@ -546,7 +546,7 @@ An open-source Claude Code skill that turns that loop into a **persistent learni
 <li>Copy <code>skills/teach</code> from <strong>github.com/zainfathoni/agent-workflows</strong> into <code>~/.claude/skills</code></li>
 <li>Run <code>/teach</code> with any topic you want to learn</li>
 <li>Answer the mission interview, take one lesson and its quiz</li>
-<li>Come back tomorrow — it remembers where you left off</li>
+<li>Return anytime — it remembers where you left off</li>
 </ol>
 
 </div>
