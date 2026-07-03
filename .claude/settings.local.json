@@ -11,5 +11,9 @@
       "Bash(npx:*)"
     ],
     "deny": []
-  }
+  },
+  "enabledMcpjsonServers": [
+    "chrome-devtools"
+  ],
+  "enableAllProjectMcpServers": true
 }
