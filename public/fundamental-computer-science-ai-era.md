@@ -16,6 +16,13 @@ style: |
     src: url("assets/fonts/SpaceGrotesk-variable.woff2") format("woff2-variations");
   }
 
+  @font-face {
+    font-family: "Amsterdam Four";
+    font-style: normal;
+    font-weight: 400;
+    src: url("assets/fonts/AmsterdamFour.ttf") format("truetype");
+  }
+
   :root {
     --text: #111827;
     --muted: #6b7280;
@@ -312,6 +319,38 @@ style: |
     display: block;
   }
 
+  .signature {
+    font-family: "Amsterdam Four", cursive;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .bio-card {
+    align-items: center;
+  }
+
+  .bio-card h3.signature {
+    font-size: 46px;
+    line-height: 1;
+    padding: 30px 0 0 12px;
+    margin: 0 0 28px;
+  }
+
+  .refs li {
+    font-size: 24px;
+  }
+
+  .refs li + li {
+    margin-top: 9px;
+  }
+
+  .qa p.signature {
+    font-size: 60px;
+    color: var(--text);
+    margin: 28px 0 0;
+    line-height: 1.1;
+  }
+
   .agenda {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -340,7 +379,7 @@ style: |
 
 <div>
 
-### I'm Zain Fathoni
+<h3 class="signature">Zain Fathoni</h3>
 
 Senior Software Engineer based in Yogyakarta, Indonesia. Previously backend, manager, frontend, now fullstack.
 
@@ -407,7 +446,7 @@ Hot take: I think it's still important to understand the code that our agents wr
 
 </blockquote>
 
-<p class="quote-source">Understanding matters not just to verify, but to participate. — “Understanding is the new bottleneck”</p>
+<p class="quote-source">Understanding matters not just to verify, but to participate. — “Understanding is the new bottleneck”<br/><a href="https://x.com/geoffreylitt/status/2072522251300409556">x.com/geoffreylitt/status/2072522251300409556</a></p>
 
 </div>
 </div>
@@ -469,7 +508,7 @@ If people are tokenmaxxing bugs into production with kLOC PRs that they didn't r
 
 </blockquote>
 
-<p class="quote-source">“Coaching juniors on SWE fundamentals is hard work and it takes time.”</p>
+<p class="quote-source">“Coaching juniors on SWE fundamentals is hard work and it takes time.”<br/><a href="https://x.com/dexhorthy/status/2068433796182270203">x.com/dexhorthy/status/2068433796182270203</a></p>
 
 </div>
 </div>
@@ -503,7 +542,7 @@ If you don't know what good code looks like, you will have no idea if what the m
 
 </blockquote>
 
-<p class="quote-source">“This is exactly why experienced software engineers are valuable and will be valuable.” (via @mitchellh)</p>
+<p class="quote-source">“This is exactly why experienced software engineers are valuable and will be valuable.” (via @mitchellh)<br/><a href="https://x.com/GergelyOrosz/status/2072831495463428580">x.com/GergelyOrosz/status/2072831495463428580</a></p>
 
 </div>
 </div>
@@ -520,31 +559,38 @@ Gergely (via Mitchell Hashimoto): knowing what good looks like is the judging sk
 
 <span class="eyebrow">P7 · We Can Do This</span>
 
-## A loop anyone can run
+## Guard AI's work at three time horizons
 
-Not a talent. A habit — five moves, repeated on every change:
+Each guard is an open-source skill you can install today.
+
+The first two guard the **code**. The third guards **you**.
 
 </div>
 <div class="visual">
 
-<div class="flow compact">
-<div>📖 Read — pick what's worth reading</div>
-<div class="arrow">↓</div>
-<div>🧠 Model — form a theory of it</div>
-<div class="arrow">↓</div>
-<div>❓ Ask — probe the theory with AI</div>
-<div class="arrow">↓</div>
-<div>✅ Verify — tests, types, experiments</div>
-<div class="arrow">↓</div>
-<div>🗣️ Explain — in your own words</div>
+<div class="card">
+<strong>⏱️ Now — E2E evidence</strong>
+<p><code>/pr-e2e-evidence</code> — prove the change works today, in a real browser, before it ships.</p>
+</div>
+
+<div class="card">
+<strong>📆 Near future — unit tests</strong>
+<p><code>/tdd</code> — lock the behavior in so it can't quietly regress. (Matt Pocock, aihero.dev/skills)</p>
+</div>
+
+<div class="card">
+<strong>🧠 Always — understanding</strong>
+<p><code>/teach</code> — keep yourself able to chime in whenever future issues or plans arise.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-P7 — We Can Do This: Read → Model → Ask → Verify → Explain.
-The learning loop from the spine. Emphasize: AI helps at EVERY step, especially Ask and Verify.
+P7 — We Can Do This: three guards, three time horizons.
+E2E = works NOW. TDD = won't regress NEAR. Understanding = you can ALWAYS participate.
+/pr-e2e-evidence and /teach: github.com/zainfathoni/agent-workflows. /tdd: Matt Pocock's aihero.dev/skills
+(/teach also started as Matt's — credit him out loud).
 -->
 
 ---
@@ -554,9 +600,9 @@ The learning loop from the spine. Emphasize: AI helps at EVERY step, especially 
 
 <span class="eyebrow">P8 · Call To Action</span>
 
-## Your first doable step: `/teach`
+## Start with the long-term guard: `/teach`
 
-An open-source skill that turns that loop into a **persistent learning workspace**.
+An open-source skill that turns understanding into a **persistent learning workspace**.
 
 <ol class="small-list">
 <li>Grab it: <strong>github.com/zainfathoni/agent-workflows</strong></li>
@@ -636,15 +682,24 @@ In the AI era, human-centered builders are not the people who type the most code
 They are the people who can **frame problems clearly enough for humans and machines to solve together.**
 
 </div>
-<div class="visual flush">
+<div class="visual">
 
-![AI agency human agency](assets/ai-agency-human-agency.webp)
+<span class="pill">Gogo (@lwastuargo) · 1 July 2026</span>
+
+<blockquote>
+
+It's actually a huge relief that the future of software engineering… is still software engineering.
+
+</blockquote>
+
+<p class="quote-source">“Even expensive loop engineering with a state-of-the-art model can't out-engineer bad system design.”<br/><a href="https://x.com/lwastuargo/status/2072256396633260350">x.com/lwastuargo/status/2072256396633260350</a></p>
 
 </div>
 </div>
 
 <!--
 P10 — Long Win: engineers become better problem framers.
+Gogo's lessons from building Anna: the highest-leverage work is the right system design.
 Litt: "The point was always to augment, not just automate." Tie back to human-centered digital products.
 -->
 
@@ -691,15 +746,17 @@ Energy shift: close the laptop lid metaphorically, open the terminal.
 </div>
 
 <div class="card">
-<strong>Fallback topic:</strong>
-<p>“How does the code AI just wrote for me actually work?” — the theme of this talk.</p>
+<strong>Case study, if the room is shy:</strong>
+<p>Big-O notation — with my earlier slides at <a href="https://zainf.dev/big-o">zainf.dev/big-o</a> as the source material.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-Demo agenda. Timebox each round out loud. If the room is quiet, use the fallback topic.
+Demo agenda. Timebox each round out loud. If the room is quiet, use the Big-O case study:
+feed /teach the PDF export of the Big-O slides (local copy: ~/Downloads/big-o.pdf) as a
+source-derived workspace, and let it teach the room from my own past material.
 Round 2 (Mission) is where audience participation locks in — their answers shape MISSION.md live.
 -->
 
@@ -743,11 +800,17 @@ speed regulators, micro-worlds. The demo IS the argument of the talk.
 
 ## References
 
+<div class="refs">
+
 - Geoffrey Litt — [Understanding is the new bottleneck](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html)
 - Dex Horthy — [against lazy engineering](https://x.com/dexhorthy/status/2068433796182270203)
 - Gergely Orosz — [knowing what good code looks like](https://x.com/GergelyOrosz/status/2072831495463428580)
-- Zain Fathoni — [A to Z #3: my personal experience](https://zainf.dev/a-z-3)
-- The `/teach` skill — [github.com/zainfathoni/agent-workflows](https://github.com/zainfathoni/agent-workflows)
+- Gogo — [the future of software engineering… is still software engineering](https://x.com/lwastuargo/status/2072256396633260350)
+- Matt Pocock — [aihero.dev/skills](https://www.aihero.dev/skills): the `/tdd` skill and the original `/teach`
+- `/teach` and `/pr-e2e-evidence` — [github.com/zainfathoni/agent-workflows](https://github.com/zainfathoni/agent-workflows)
+- Zain Fathoni — [A to Z #3](https://zainf.dev/a-z-3) · [Big-O slides](https://zainf.dev/big-o)
+
+</div>
 
 </div>
 <div class="visual">
@@ -781,6 +844,9 @@ Reference slide. Keep citations visible without turning the talk into a literatu
 <p><a href="https://zainf.dev/a-z-3">zainf.dev/a-z-3</a></p>
 
 </div>
+
+<p class="signature">Zain Fathoni</p>
+
 </div>
 
 ![QR code for zainf.dev/fundamental-cs-ai](assets/qr-fundamental-cs-ai.png)
