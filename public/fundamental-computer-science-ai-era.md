@@ -247,12 +247,12 @@ style: |
   }
 
   .flow.compact {
-    gap: 6px;
-    font-size: 23px;
+    gap: 9px;
+    font-size: 24px;
   }
 
   .flow.compact div {
-    padding: 9px 16px;
+    padding: 12px 18px;
   }
 
   .arrow {
@@ -263,7 +263,7 @@ style: |
   }
 
   .flow.compact .arrow {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
     padding: 0;
     border: none;
@@ -512,9 +512,9 @@ Not a talent. A habit — five moves, repeated on every change:
 <div class="visual">
 
 <div class="flow compact">
-<div>📖 Read — pick which code is worth reading</div>
+<div>📖 Read — pick what's worth reading</div>
 <div class="arrow">↓</div>
-<div>🧠 Model — form a theory of how it works</div>
+<div>🧠 Model — form a theory of it</div>
 <div class="arrow">↓</div>
 <div>❓ Ask — probe the theory with AI</div>
 <div class="arrow">↓</div>
@@ -540,12 +540,12 @@ The learning loop from the spine. Emphasize: AI helps at EVERY step, especially 
 
 ## Your first doable step: `/teach`
 
-An open-source Claude Code skill that turns that loop into a **persistent learning workspace**.
+An open-source skill that turns that loop into a **persistent learning workspace**.
 
 <ol class="small-list">
-<li>Copy <code>skills/teach</code> from <strong>github.com/zainfathoni/agent-workflows</strong> into <code>~/.claude/skills</code></li>
+<li>Grab it: <strong>github.com/zainfathoni/agent-workflows</strong></li>
 <li>Run <code>/teach</code> with any topic you want to learn</li>
-<li>Answer the mission interview, take one lesson and its quiz</li>
+<li>Answer the interview, take one lesson and its quiz</li>
 <li>Return anytime — it remembers where you left off</li>
 </ol>
 
