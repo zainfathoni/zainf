@@ -338,11 +338,11 @@ style: |
 
 ### I'm Zain Fathoni
 
-Front-end developer based in Yogyakarta, Indonesia. Previously backend, manager, frontend, now fullstack.
+Senior Software Engineer based in Yogyakarta, Indonesia. Previously backend, manager, frontend, now fullstack.
 
-Community builder (Ketua VibeFromCafe.id) · Senior Software Engineer · Agentic Engineering Practitioner.
+Community builder (Ketua [VibeFromCafe.id](https://vibefromcafe.id)) · Agentic Engineering Practitioner.
 
-<https://zainf.dev>
+<https://zainfathoni.com>
 
 </div>
 </div>
