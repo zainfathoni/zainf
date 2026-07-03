@@ -296,6 +296,18 @@ style: |
     margin: 8px 0;
   }
 
+  .qa.qa-split {
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: center;
+    place-content: center;
+  }
+
+  .qa.qa-split img {
+    width: 430px;
+    display: block;
+  }
+
   .agenda {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -753,7 +765,8 @@ Reference slide. Keep citations visible without turning the talk into a literatu
 
 ---
 
-<div class="qa">
+<div class="qa qa-split">
+<div>
 
 # Q & A
 
@@ -764,4 +777,8 @@ Reference slide. Keep citations visible without turning the talk into a literatu
 <p><a href="https://zainf.dev/a-z-3">zainf.dev/a-z-3</a></p>
 
 </div>
+</div>
+
+![QR code for zainf.dev/fundamental-cs-ai](assets/qr-fundamental-cs-ai.png)
+
 </div>
