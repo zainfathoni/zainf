@@ -219,6 +219,8 @@ style: |
     color: #374151;
   }
 
+  .card + .card { margin-top: 18px; }
+
   .flow {
     display: grid;
     gap: 12px;
@@ -233,11 +235,28 @@ style: |
     border: 1px solid var(--line);
   }
 
+  .flow.compact {
+    gap: 6px;
+    font-size: 23px;
+  }
+
+  .flow.compact div {
+    padding: 9px 16px;
+  }
+
   .arrow {
     color: var(--accent);
     text-align: center;
     font-size: 36px;
     font-weight: 900;
+  }
+
+  .flow.compact .arrow {
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+    border: none;
+    background: transparent;
   }
 
   .quote-source {
@@ -264,6 +283,19 @@ style: |
   .links p {
     font-size: 30px;
     margin: 8px 0;
+  }
+
+  .agenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  code {
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 2px 10px;
+    font-size: 0.92em;
   }
 ---
 
@@ -295,7 +327,7 @@ Community builder · AI-assisted engineering practitioner · Mentor Spotlight at
 
 <!--
 P1 — Who & What / Clarity.
-Use the poster title, but frame it with the product-building tagline from the announcement.
+Fundamental Computer Science for AI Era. Frame with the product-building tagline.
 -->
 
 ---
@@ -305,11 +337,11 @@ Use the poster title, but frame it with the product-building tagline from the an
 
 <span class="eyebrow">P2 · Common Ground</span>
 
-## Our work now demands AI fluency
+## AI makes code generation fast and accessible
 
-Developers, designers, and product builders are all being asked to move faster.
+Anyone in this room can ship working code today — developer or not.
 
-Not someday. **This sprint.**
+Generating code is no longer the hard part. **We all agree on that.**
 
 </div>
 <div class="visual flush">
@@ -320,8 +352,8 @@ Not someday. **This sprint.**
 </div>
 
 <!--
-Writing for Public equivalent: “Our lines of work demands writing.”
-Here: product work now demands AI fluency, whether you like it or not.
+P2 — Common Ground: AI makes code generation fast and accessible.
+Everyone here has felt this. Establish agreement before introducing tension.
 -->
 
 ---
@@ -331,30 +363,31 @@ Here: product work now demands AI fluency, whether you like it or not.
 
 <span class="eyebrow">P3 · Coming Problem</span>
 
-## Understanding is more important than ever
+## Understanding becomes the bottleneck
 
-AI can generate code faster than we can review it.
+AI generates code faster than we can understand it.
 
-The bottleneck moves from **typing** to **understanding what changed, why it works, and what it might break.**
+The constraint moves from **writing** code to **understanding what changed, why it works, and what it might break.**
 
 </div>
 <div class="visual">
 
-<span class="pill">Geoffrey Litt</span>
+<span class="pill">Geoffrey Litt · 2 July 2026</span>
 
 <blockquote>
 
-Understanding matters not just to verify, but **to participate**.
+Hot take: I think it's still important to understand the code that our agents write!
 
 </blockquote>
 
-<p class="quote-source">From “Understanding is the new bottleneck”</p>
+<p class="quote-source">Understanding matters not just to verify, but to participate. — “Understanding is the new bottleneck”</p>
 
 </div>
 </div>
 
 <!--
-Use Geoffrey Litt's longer article, not just the tweet. Key idea: understand to participate, not merely to verify.
+P3 — Coming Problem: understanding becomes the bottleneck.
+Litt's tweet (333.8K views) + his article. Key idea: understand to participate, not merely verify.
 -->
 
 ---
@@ -364,11 +397,13 @@ Use Geoffrey Litt's longer article, not just the tweet. Key idea: understand to 
 
 <span class="eyebrow">P4 · Emotional Win</span>
 
-## But learning has never been easier
+## Imagine calm confidence in any codebase
 
-AI can explain code, generate examples, create quizzes, and build tiny tools to help us understand.
+Opening an unfamiliar repository without dread.
 
-The opportunity: use AI as a **learning amplifier**, not just a code printer.
+Reviewing an AI-generated PR and **knowing** what to look at first.
+
+That feeling is trainable — and AI itself can train it.
 
 </div>
 <div class="visual">
@@ -381,8 +416,8 @@ The opportunity: use AI as a **learning amplifier**, not just a code printer.
 </div>
 
 <!--
-Writing for Public equivalent: “But writing has never been easier than ever!”
-Here: learning and understanding are easier if we use AI correctly.
+P4 — Emotional Win: calm confidence in any codebase.
+Paint the feeling before the argument. This is what fundamentals buy you emotionally.
 -->
 
 ---
@@ -392,122 +427,63 @@ Here: learning and understanding are easier if we use AI correctly.
 
 <span class="eyebrow">P5 · False Hope</span>
 
-## Does vibe coding even work, though?
+## “AI means I can skip fundamentals”
 
-It works until you hit the part where the codebase has history, constraints, edge cases, and users.
-
-That is where lazy delegation becomes expensive.
+Tempting — but this is what it looks like from the receiving end:
 
 </div>
 <div class="visual">
 
-<div class="flow">
-<div>Prompt harder</div>
-<div class="arrow">↓</div>
-<div>Get more code</div>
-<div class="arrow">↓</div>
-<div>Understand less</div>
-<div class="arrow">↓</div>
-<div>Debug longer</div>
-</div>
+<span class="pill">Dex Horthy · 20 June 2026</span>
+
+<blockquote>
+
+If people are tokenmaxxing bugs into production with kLOC PRs that they didn't read themselves, those people shouldn't have jobs.
+
+</blockquote>
+
+<p class="quote-source">“Coaching juniors on SWE fundamentals is hard work and it takes time.”</p>
 
 </div>
 </div>
 
 <!--
-Use Dex Horthy / “against lazy engineers” as the spine: research, plan, implement; don't just argue with the model or let it wander.
+P5 — False Hope: "AI means I can skip fundamentals."
+Dex's rant against lazy engineers. Skipping fundamentals taxes your seniors and your future self.
 -->
 
 ---
 
-<div class="slide wide-left">
+<div class="slide">
 <div>
 
 <span class="eyebrow">P6 · Audacious Reality</span>
 
-## What if fundamentals are the AI multiplier?
+## Fundamentals are the AI multiplier
 
-Fundamentals give you the words, mental models, and constraints to steer AI:
+Data structures, algorithms, systems thinking, debugging, trade-offs.
 
-- data structures
-- algorithms
-- systems thinking
-- debugging
-- trade-offs
-
-</div>
-<div class="visual flush">
-
-![AI can amplify expertise](assets/ai-amplify-expertise.jpeg)
-
-</div>
-</div>
-
-<!--
-Core thesis. AI doesn't erase fundamentals; it rewards people who can express fundamentals as constraints.
--->
-
----
-
-<div class="slide">
-<div>
-
-<span class="eyebrow">P7 · We Can Do This</span>
-
-## Read the code, but not all of it
-
-The skill is not reading every line.
-
-The skill is knowing **which code is worth reading** before you ask AI to change it.
+They give you the **taste** to judge AI output and the **words** to steer it.
 
 </div>
 <div class="visual">
 
-<span class="pill">Gergely Orosz</span>
+<span class="pill">Gergely Orosz · 2 July 2026</span>
 
 <blockquote>
 
-We read existing code much more often than we write new code.
+If you don't know what good code looks like, you will have no idea if what the models generate are any good.
 
 </blockquote>
 
-<p class="quote-source">Related post on AI-assisted coding and reading code</p>
+<p class="quote-source">“This is exactly why experienced software engineers are valuable and will be valuable.” (via @mitchellh)</p>
 
 </div>
 </div>
 
 <!--
-Use Gergely's accessible LinkedIn snippet. This slide turns “read the code” into a practical skill: target selection.
--->
-
----
-
-<div class="slide">
-<div>
-
-<span class="eyebrow">P8 · Call To Action</span>
-
-## Here are the first things to do to get started…
-
-<ol class="small-list">
-<li><strong>Research</strong> the code before prompting.</li>
-<li><strong>Plan</strong> the exact behavior change.</li>
-<li><strong>Implement</strong> with AI in small loops.</li>
-<li><strong>Verify</strong> with tests, types, or screenshots.</li>
-<li><strong>Explain</strong> what changed in your own words.</li>
-</ol>
-
-</div>
-<div class="visual flush">
-
-![Development loop without AI](assets/development-loop-without-ai.png)
-
-</div>
-</div>
-
-<!--
-Writing for Public equivalent: Capture, Align, Reformat, Publish, Repeat.
-Here: Research, Plan, Implement, Verify, Explain. Dex's “research, plan, implement” plus Geoffrey's speed-regulator idea.
+P6 — Audacious Reality: fundamentals are the AI multiplier.
+Gergely (via Mitchell Hashimoto): knowing what good looks like is the judging skill AI can't replace.
 -->
 
 ---
@@ -515,37 +491,108 @@ Here: Research, Plan, Implement, Verify, Explain. Dex's “research, plan, imple
 <div class="slide wide-left">
 <div>
 
+<span class="eyebrow">P7 · We Can Do This</span>
+
+## A loop anyone can run
+
+Not a talent. A habit — five moves, repeated on every change:
+
+</div>
+<div class="visual">
+
+<div class="flow compact">
+<div>📖 Read — pick which code is worth reading</div>
+<div class="arrow">↓</div>
+<div>🧠 Model — form a theory of how it works</div>
+<div class="arrow">↓</div>
+<div>❓ Ask — probe the theory with AI</div>
+<div class="arrow">↓</div>
+<div>✅ Verify — tests, types, experiments</div>
+<div class="arrow">↓</div>
+<div>🗣️ Explain — in your own words</div>
+</div>
+
+</div>
+</div>
+
+<!--
+P7 — We Can Do This: Read → Model → Ask → Verify → Explain.
+The learning loop from the spine. Emphasize: AI helps at EVERY step, especially Ask and Verify.
+-->
+
+---
+
+<div class="slide wide-left">
+<div>
+
+<span class="eyebrow">P8 · Call To Action</span>
+
+## Your first doable step: `/teach`
+
+An open-source Claude Code skill that turns that loop into a **persistent learning workspace**.
+
+<ol class="small-list">
+<li>Copy <code>skills/teach</code> from <strong>github.com/zainfathoni/agent-workflows</strong> into <code>~/.claude/skills</code></li>
+<li>Run <code>/teach</code> with any topic you want to learn</li>
+<li>Answer the mission interview, take one lesson and its quiz</li>
+<li>Come back tomorrow — it remembers where you left off</li>
+</ol>
+
+</div>
+<div class="visual">
+
+<div class="flow compact">
+<div>🎯 MISSION.md — why you're learning</div>
+<div>📚 lessons/ — short, single-win lessons</div>
+<div>📝 quizzes — speed regulators for real understanding</div>
+<div>🗂️ learning-records/ — evidenced progress</div>
+</div>
+
+<p class="caption">Quizzes as speed regulators — the same technique Geoffrey Litt proposes for understanding AI code.</p>
+
+</div>
+</div>
+
+<!--
+P8 — Call To Action: the first doable step is using the /teach skill.
+Open-sourced at github.com/zainfathoni/agent-workflows. Concrete, tonight-sized steps.
+-->
+
+---
+
+<div class="slide">
+<div>
+
 <span class="eyebrow">P9 · Early Benefits</span>
 
-## Reaping early benefits
+## You can learn anything you want
 
-When you practice fundamentals with AI, you get compounding returns quickly:
+Not just CS fundamentals. The same workspace teaches you:
 
-- better prompts
-- faster reviews
-- fewer hallucinated fixes
-- calmer debugging
-- clearer product decisions
+- a new framework or language
+- an unfamiliar codebase, one PR at a time
+- algorithms and system design
+- even non-code topics
 
 </div>
 <div class="visual">
 
 <div class="card">
 <strong>Instead of:</strong>
-<p>“AI wrote this; I hope it works.”</p>
+<p>passive tutorials you abandon by chapter three.</p>
 </div>
 
 <div class="card">
-<strong>You can say:</strong>
-<p>“Here is the invariant, here is the trade-off, here is how we verified it.”</p>
+<strong>You get:</strong>
+<p>a personal curriculum with lessons, quizzes, and memory — paced by what you actually retain.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-Writing for Public equivalent: “Ripping/Reaping early benefits.”
-Near-term reward: confidence and review quality.
+P9 — Early Benefits: the audience can learn anything they want.
+The immediate reward of the CTA: a tutor that adapts and remembers, for any topic.
 -->
 
 ---
@@ -555,11 +602,11 @@ Near-term reward: confidence and review quality.
 
 <span class="eyebrow">P10 · Long Win</span>
 
-## Increasing the surface of agency
+## Engineers become better problem framers
 
 In the AI era, human-centered builders are not the people who type the most code.
 
-They are the people who can frame problems clearly enough for humans and machines to solve together.
+They are the people who can **frame problems clearly enough for humans and machines to solve together.**
 
 </div>
 <div class="visual flush">
@@ -570,8 +617,96 @@ They are the people who can frame problems clearly enough for humans and machine
 </div>
 
 <!--
-Writing for Public equivalent: “Increasing the surface of luck.”
-Here: agency. Tie back to BUILD Camp tagline: human-centered digital products.
+P10 — Long Win: engineers become better problem framers.
+Litt: "The point was always to augment, not just automate." Tie back to human-centered digital products.
+-->
+
+---
+
+<div class="qa">
+
+# Live Demo
+
+<p class="subtitle">Let's learn something together — for real, for the next hour.</p>
+
+<div class="links">
+
+<p>🙋 You pick the topic. You answer the quizzes.</p>
+
+</div>
+</div>
+
+<!--
+Section break. ~15 minutes of slides done; now ~60 minutes of hands-on demo with audience participation.
+Energy shift: close the laptop lid metaphorically, open the terminal.
+-->
+
+---
+
+<div class="slide wide-left">
+<div>
+
+## How the next hour works
+
+<ol class="small-list">
+<li><strong>Pick</strong> (10 min) — you shout topics, we vote on one</li>
+<li><strong>Mission</strong> (15 min) — <code>/teach</code> interviews us; you answer, I type</li>
+<li><strong>Learn</strong> (20 min) — we take the first generated lesson together</li>
+<li><strong>Quiz</strong> (15 min) — you answer; wrong answers steer the next lesson</li>
+</ol>
+
+</div>
+<div class="visual">
+
+<div class="card">
+<strong>Ground rule:</strong>
+<p>I will not edit the AI's questions or lessons. What you see is what the skill does.</p>
+</div>
+
+<div class="card">
+<strong>Fallback topic:</strong>
+<p>“How does the code AI just wrote for me actually work?” — the theme of this talk.</p>
+</div>
+
+</div>
+</div>
+
+<!--
+Demo agenda. Timebox each round out loud. If the room is quiet, use the fallback topic.
+Round 2 (Mission) is where audience participation locks in — their answers shape MISSION.md live.
+-->
+
+---
+
+<div class="slide">
+<div>
+
+## What we'll watch it build
+
+A learning workspace, growing live on screen:
+
+- `MISSION.md` — the room's shared goal
+- `RESOURCES.md` — sources we trust
+- `lessons/*.html` — one win per lesson
+- `learning-records/*.md` — proof of what we learned
+
+</div>
+<div class="visual">
+
+<blockquote>
+
+Understanding matters not just to verify, but to participate.
+
+</blockquote>
+
+<p class="quote-source">Geoffrey Litt — this hour is that idea, practiced.</p>
+
+</div>
+</div>
+
+<!--
+Anatomy slide — narrate the file tree as it grows. Connect back to Litt: explainer docs, quizzes as
+speed regulators, micro-worlds. The demo IS the argument of the talk.
 -->
 
 ---
@@ -581,11 +716,12 @@ Here: agency. Tie back to BUILD Camp tagline: human-centered digital products.
 
 ## References
 
-- Dan Roam — [The Pop-up Pitch](https://www.danroam.com/)
 - Geoffrey Litt — [Understanding is the new bottleneck](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html)
-- Gergely Orosz — reading code in the AI era
-- Dex Horthy — research, plan, implement; avoid lazy AI loops
-- Zain Fathoni — [A to Z #3](https://zainf.dev/a-z-3)
+- Dex Horthy — [against lazy engineering](https://x.com/dexhorthy/status/2068433796182270203)
+- Gergely Orosz — [knowing what good code looks like](https://x.com/GergelyOrosz/status/2072831495463428580)
+- Zain Fathoni — [A to Z #3: my personal experience](https://zainf.dev/a-z-3)
+- The `/teach` skill — [github.com/zainfathoni/agent-workflows](https://github.com/zainfathoni/agent-workflows)
+- Dan Roam — [The Pop-up Pitch](https://www.danroam.com/)
 
 </div>
 <div class="visual">
@@ -602,7 +738,7 @@ They are how we steer the future.
 </div>
 
 <!--
-Reference slide. Keep the citations visible without turning the talk into a literature review.
+Reference slide. Keep citations visible without turning the talk into a literature review.
 -->
 
 ---
@@ -614,6 +750,7 @@ Reference slide. Keep the citations visible without turning the talk into a lite
 <div class="links">
 
 <p><https://zainf.dev/fundamental-computer-science-ai-era></p>
+<p><https://github.com/zainfathoni/agent-workflows></p>
 <p><https://zainf.dev/a-z-3></p>
 
 </div>
