@@ -206,6 +206,20 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "fundamental-computer-science-ai-era-2026",
+    date: "2026-07-04",
+    title: "Fundamental CS for AI Era",
+    description:
+      "Building human-centered digital products in the AI era.",
+    event: "BUILD Camp Mentor Spotlight: Road to BUILDFest",
+    resources: [
+      {
+        href: "https://zainf.dev/fundamental-computer-science-ai-era",
+        label: "Open slides",
+      },
+    ],
+  },
+  {
     slug: "techrawih-reactid-2026",
     date: "2026-03-07",
     title: "Build a React App in 20 Minutes with AI Assistance",
