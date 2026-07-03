@@ -19,7 +19,7 @@ style: |
     width: 1280px;
     height: 720px;
     padding: 52px 64px 58px;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: ".SF NS", "PolySans Var", PolySansVariable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: var(--text);
     background: #fff;
     letter-spacing: -0.02em;
