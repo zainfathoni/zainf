@@ -762,7 +762,7 @@ Energy shift: close the laptop lid metaphorically, open the terminal.
 
 <div class="card">
 <strong>Case study, if the room is shy:</strong>
-<p>Big-O notation — with my earlier slides at <a href="https://zainf.dev/big-o">zainf.dev/big-o</a> as the source material.</p>
+<p>Big-O notation — from my earlier slides at <a href="https://zainf.dev/big-o">zainf.dev/big-o</a>, with the workspace already live at <a href="https://big-o.zainf.dev">big-o.zainf.dev</a>.</p>
 </div>
 
 </div>
@@ -770,8 +770,10 @@ Energy shift: close the laptop lid metaphorically, open the terminal.
 
 <!--
 Demo agenda. Timebox each round out loud. If the room is quiet, use the Big-O case study:
-feed /teach the PDF export of the Big-O slides (local copy: ~/Downloads/big-o.pdf) as a
-source-derived workspace, and let it teach the room from my own past material.
+the workspace is pre-seeded at ~/Code/GitHub/zainfathoni/big-o (live at big-o.zainf.dev) —
+MISSION.md, RESOURCES.md, and lesson 1 with its quiz are ready; run the quiz, then build
+lesson 2 live from the wrong answers (best/worst/average case, then Θ vs O vs Ω).
+Bonus live moment: RESOURCES.md records an erratum in my own 2020 deck (slide 34, Big-Ω).
 Round 2 (Mission) is where audience participation locks in — their answers shape MISSION.md live.
 -->
 
