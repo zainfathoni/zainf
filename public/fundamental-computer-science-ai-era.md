@@ -802,6 +802,8 @@ Understanding matters not just to verify, but to participate.
 
 <p class="quote-source">Geoffrey Litt — this hour is that idea, practiced.</p>
 
+<p class="caption">Latest demo lessons: <a href="https://zainfathoni.github.io/seo/">SEO</a> · <a href="https://zainfathoni.github.io/utune-ai-lessons/">UTUNE AI Lessons</a></p>
+
 </div>
 </div>
 
