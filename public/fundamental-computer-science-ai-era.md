@@ -435,6 +435,8 @@ AI generates code faster than we can understand it.
 
 The constraint moves from **writing** code to **understanding what changed, why it works, and what it might break.**
 
+<p class="caption">Thariq, on Fable 5: work quality is now “bottlenecked by my ability to clarify my unknowns.” — <a href="https://x.com/trq212/status/2073100352921215386">Finding Your Unknowns</a></p>
+
 </div>
 <div class="visual">
 
@@ -454,6 +456,9 @@ Hot take: I think it's still important to understand the code that our agents wr
 <!--
 P3 — Coming Problem: understanding becomes the bottleneck.
 Litt's tweet (333.8K views) + his article. Key idea: understand to participate, not merely verify.
+Second voice: Thariq's "A Field Guide to Fable: Finding Your Unknowns" (651K views) — the map
+(prompts, skills, context) is not the territory (codebase, real constraints); quality is bottlenecked
+by your ability to clarify your unknowns. x.com/trq212/status/2073100352921215386
 -->
 
 ---
@@ -484,6 +489,8 @@ That feeling is trainable — and AI itself can train it.
 <!--
 P4 — Emotional Win: calm confidence in any codebase.
 Paint the feeling before the argument. This is what fundamentals buy you emotionally.
+"Trainable" is Thariq's exact conclusion: "reducing your unknowns is the skill of agentic coding —
+a skill you can improve at, by working with Claude." Confidence = few unknowns, and unknowns shrink with practice.
 -->
 
 ---
@@ -550,6 +557,9 @@ If you don't know what good code looks like, you will have no idea if what the m
 <!--
 P6 — Audacious Reality: fundamentals are the AI multiplier.
 Gergely (via Mitchell Hashimoto): knowing what good looks like is the judging skill AI can't replace.
+Same argument from Thariq: "the best agentic coders are good but have relatively few unknowns" —
+they know what they want in detail, deeply in-sync with both the codebase and the model's behaviors.
+Fundamentals are what convert unknown unknowns into known knowns.
 -->
 
 ---
@@ -657,8 +667,10 @@ Not just CS fundamentals. The same workspace teaches you:
 
 <div class="card">
 <strong>You get:</strong>
-<p>a personal curriculum with lessons, quizzes, and memory — paced by what you actually retain.</p>
+<p>a personal curriculum with lessons, quizzes, and memory — your own <a href="https://brilliant.org">Brilliant</a>, crafted from Papert-style micro-worlds.</p>
 </div>
+
+<p class="caption">Live proof: <a href="https://ai.zainf.dev">ai.zainf.dev</a> — my own AI-inference learning lab. That journey just started, in public.</p>
 
 </div>
 </div>
@@ -666,6 +678,9 @@ Not just CS fundamentals. The same workspace teaches you:
 <!--
 P9 — Early Benefits: the audience can learn anything they want.
 The immediate reward of the CTA: a tutor that adapts and remembers, for any topic.
+"Your own Brilliant" via micro-worlds — Litt's technique (inspired by Seymour Papert):
+x.com/geoffreylitt/status/2072522314240127393. Show ai.zainf.dev briefly if time allows:
+lessons, learning records, experiments — the /teach workspace shape, applied to AI inference.
 -->
 
 ---
@@ -790,7 +805,9 @@ Understanding matters not just to verify, but to participate.
 
 <!--
 Anatomy slide — narrate the file tree as it grows. Connect back to Litt: explainer docs, quizzes as
-speed regulators, micro-worlds. The demo IS the argument of the talk.
+speed regulators, micro-worlds ("inspired by the visionary educator Seymour Papert" —
+x.com/geoffreylitt/status/2072522314240127393). The demo IS the argument of the talk.
+This hour is also Thariq's playbook practiced: interviews and quizzes to surface unknown unknowns.
 -->
 
 ---
@@ -802,13 +819,14 @@ speed regulators, micro-worlds. The demo IS the argument of the talk.
 
 <div class="refs">
 
-- Geoffrey Litt — [Understanding is the new bottleneck](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html)
+- Geoffrey Litt — [Understanding is the new bottleneck](https://www.geoffreylitt.com/2026/07/02/understanding-is-the-new-bottleneck.html) · [micro-worlds](https://x.com/geoffreylitt/status/2072522314240127393)
+- Thariq — [Finding Your Unknowns](https://x.com/trq212/status/2073100352921215386)
 - Dex Horthy — [against lazy engineering](https://x.com/dexhorthy/status/2068433796182270203)
 - Gergely Orosz — [knowing what good code looks like](https://x.com/GergelyOrosz/status/2072831495463428580)
 - Gogo — [the future of software engineering… is still software engineering](https://x.com/lwastuargo/status/2072256396633260350)
 - Matt Pocock — [aihero.dev/skills](https://www.aihero.dev/skills): the `/tdd` skill and the original `/teach`
 - `/teach` and `/pr-e2e-evidence` — [github.com/zainfathoni/agent-workflows](https://github.com/zainfathoni/agent-workflows)
-- Zain Fathoni — [A to Z #3](https://zainf.dev/a-z-3) · [Big-O slides](https://zainf.dev/big-o)
+- Zain Fathoni — [A to Z #3](https://zainf.dev/a-z-3) · [Big-O](https://zainf.dev/big-o) · [ai.zainf.dev](https://ai.zainf.dev)
 
 </div>
 
