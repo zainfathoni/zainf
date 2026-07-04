@@ -729,6 +729,7 @@ Litt: "The point was always to augment, not just automate." Tie back to human-ce
 <div class="links">
 
 <p>🙋 You pick the topic. You answer the quizzes.</p>
+<p>Generated lessons: <a href="https://zainfathoni.github.io/seo/">SEO</a> · <a href="https://zainfathoni.github.io/utune-ai-lessons/">UTUNE AI Lessons</a></p>
 
 </div>
 </div>
