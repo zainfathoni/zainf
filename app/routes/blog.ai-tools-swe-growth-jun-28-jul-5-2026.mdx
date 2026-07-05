@@ -1,0 +1,129 @@
+---
+meta:
+  - title: "Koma Naik Panggung, Token Tetap Jadi Bos — AI Tools Digest #23"
+  - name: description
+    content: "Koma, Amp Orb, MiMo, Fable 5, CommandCode, dan ADE tools. Rangkuman dari grup AI Tools SWE GROWTH, 28 Jun-5 Jul 2026."
+  - author: Zain Fathoni
+  - date: "2026-07-05"
+  - property: og:title
+    content: "Koma Naik Panggung, Token Tetap Jadi Bos — AI Tools Digest #23"
+  - property: og:description
+    content: "Koma, Amp Orb, MiMo, Fable 5, CommandCode, dan ADE tools. Rangkuman dari grup AI Tools SWE GROWTH, 28 Jun-5 Jul 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jun-28-jul-5-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-23.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Koma Naik Panggung, Token Tetap Jadi Bos — AI Tools Digest #23"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Koma Naik Panggung, Token Tetap Jadi Bos — AI Tools Digest #23
+
+Minggu ini rasanya seperti nonton satu produk agent lahir, belajar jalan, jatuh sedikit, lalu langsung minta tambah kaki. [Koma](https://koma.run) diumumkan di grup, update-nya susul-menyusul, dan obrolannya langsung menyebar ke [MiMo](https://mimo.xiaomi.com/), [Codex](https://openai.com/codex/), [Kilo](https://kilo.ai/), OAuth, plan mode, sampai built-in internet access.
+
+Tapi di bawah semua hype itu, pertanyaannya masih sama: siapa yang bayar tokennya?
+
+## Koma Jadi Lab Publik
+
+Mas Agung membuka minggu dengan kalimat yang sederhana tapi efeknya panjang: *"halo ges udah up di https://koma.run ya... sementara ini support linux 64bit M series Darwin Intel."* Dari situ, grup langsung jadi ruang uji publik.
+
+Ada reaksi, ada bug report, ada request fitur, ada candaan landing page. Mas Agung sendiri ngakak: *"maafkan landin page buruk ini, ini kerjaanya mimo wkwk."* Ini bukan launch yang steril. Ini launch yang hidup.
+
+Yang menarik, update-nya cepat banget. Dalam beberapa hari muncul YOLO mode, daemon fix, 9router + Codex, lalu OAuth, [Kilo Code](https://kilo.ai/), plan mode, dan rencana [opencode](https://opencode.ai/). Mas Agung sempat merangkum update 0.2.18 sebagai *"oauth + kilo code + codex plan mode."* Setelah itu? Mas Agung juga jujur: *"jir plan mode ngebug wkwk 🤣."*
+
+Saya suka bagian ini karena realita agent tooling memang begitu. Fitur yang terdengar besar di changelog bisa jadi masih perlu satu-dua malam lagi untuk jadi workflow harian. Koma minggu ini belum terlihat sebagai produk final. Justru itu menarik: kita bisa lihat arah ekosistemnya terbentuk di depan mata.
+
+Implikasinya jelas: local agent harness mulai terasa seperti kategori produk sendiri, bukan sekadar wrapper model.
+
+## Amp Membawa Context ke Harness
+
+Kalau Koma jadi cerita komunitas, [Amp Code](https://ampcode.com) jadi cerita arsitektur. Dua link Amp muncul minggu ini: [Agents in Orbs](https://ampcode.com/news/agents-in-orbs) dan [Read Bigger Threads](https://ampcode.com/news/read-bigger-threads).
+
+Waktu saya share bigger threads, refleks pertama saya: *"Kalau context engineering udah ditangani sama harness-nya, kita tinggal prampt-prompt aja. 😆"* Mas Iqbal langsung menangkap angka besarnya: *"21mio token, dan usecase kaya mas zain atau mas agung bs lebih ga sih wkwk."*
+
+Orb juga menarik karena ia menjawab rasa malas yang sangat nyata: tidak perlu lagi menjaga home server, Mac mini, atau MacBook Pro tetap menyala hanya supaya agent bisa kerja remote. Saya bilang waktu itu, *"Apalagi kalau udah pakai Orb, ga perlu lagi nyalain home server, Mac mini, atau MacBook Pro di rumah. 😎"*
+
+Di sisi lain, Mas Michael mencoba [GLM](https://www.bigmodel.cn/) di Amp dan kesannya sederhana: *"ini lagi coba GLM di amp murahnya kebangetan 😂."* Jadi Amp minggu ini bukan cuma soal fitur besar. Ia juga masuk ke pola yang sama dengan Koma: harness makin penting karena model makin bisa ditukar-tukar.
+
+Kalau dulu kita bertanya model mana yang paling pintar, sekarang pertanyaannya bergeser: harness mana yang paling pintar mengelola konteks, biaya, dan tempat eksekusi?
+
+## Mocin Jadi Mesin Eksekusi
+
+MiMo jadi kata yang terus muncul. Bukan karena semua orang sepakat MiMo paling pintar, tapi karena murahnya mengubah perilaku.
+
+Mas Zahid memberi catatan yang cukup seimbang: *"mimo masih kurang buat saya wkwkwk tapi kalo buat ui works lebih bagus daripada glm cuman kalo udah data transformation dan debugging masih kurang."* Lalu ketika MiMo ultra-speed dibahas, Mas Zahid menambahkan: *"btw ultraspeed nya mimo ngeri, wkwkw dapet 300tps aku."*
+
+Mas Agung juga tidak menutup sisi lucunya. Ketika MiMo bingung, katanya bisa *"20 menit ga berhenti mikir jir."* Mas Zahid menyebutnya *"real komaT kamit."* Tapi di sisi harga, susah untuk tidak tergoda. Mas Agung sampai bilang, *"deepseek berasa mahal abis pake mimo bjir."*
+
+Yang muncul dari percakapan ini bukan "MiMo mengalahkan Claude". Lebih tepatnya: MiMo cukup murah untuk membuat kita mau membaca kode lagi, mengawasi output, dan menyusun workflow hybrid. Mas Michael merangkum posisinya dengan enak: *"kaki saya sekarang ada 2 kantor pake claude rata kanan kalau diluar itu mocin is the way 💯🔥."*
+
+Ini bukan revolusi model. Ini revolusi kebiasaan pakai model.
+
+## Fable Datang, Limit Ikut Datang
+
+[Claude Fable 5](https://www.anthropic.com/news/redeploying-fable-5) balik lagi, dan tentu saja grup langsung panas. Saya sendiri ikut bakar-bakar token dengan harapan dan kekhawatiran yang sama. Setelah Mas Agung bilang Opus 4.8 saja sudah bakar token seperti Fable, saya cuma bisa jawab: *"Pakai Fable, sekali prompt bisa langsung kena limit. 🤣"*
+
+Mas Fatih Dinata punya reaksi yang lebih tajam: *"ah ga seru gada reset nih."* Mas Husni Rizal beberapa hari kemudian juga tanya, *"ada yang pake fable akhir2 ini? cepet banget abis ya kuotanya 😅."*
+
+Dari sana, obrolan pindah ke strategi hemat di [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Mas Agung D share stack yang cukup menggambarkan arah baru: *"Claude Code + Sonnet 5 + Effort Low + Superpowers + RTK + Caveman = Hemat hasilnya pun lumayan akurat 😀."* Ia lalu membandingkan mode high tanpa RTK/Caveman yang bisa lompat dari 5% ke 13%, sementara setup low effort terasa lebih pelan kena limitnya.
+
+Mas Fatih Dinata juga membawa angle model-splitting untuk frontend: *"Semakin pake Claude & GPT. buat FE gabisa pilih salah satu. UI GPT bagus banget, clean. UX Claude bagus banget, UX GPT sucks."* Ini menarik karena bukan lagi debat fanboy. Ini sudah seperti routing table: GPT untuk visual polish, Claude untuk UX reasoning, Opus/Fable untuk planning berat, MiMo/GLM untuk eksekusi murah.
+
+Artinya, "pakai model terbaik" makin jarang jadi jawaban. Yang menang adalah orang yang tahu kapan harus membayar mahal.
+
+## ADE Mulai Terasa Perlu
+
+Satu benang kecil yang menurut saya penting: ADE atau agent development environment. Mas Michael share [Ghostex](https://ghostex.dev/) dengan catatan, *"nemu ADE bagus dan lagi coba ringan dibanding orca atau cmux recommend 😀."* Ia juga menambahkan bahwa Ghostex bisa connect ke IDE yang ter-install di laptop.
+
+Mas Zahid lebih suka [Herdr](https://herdr.dev/): *"saya lebih prefer ini :v https://herdr.dev/ karena cocok buat remote dev server."* Tapi Mas Michael punya caveat: *"udah pakw herdr tapi suprising berat juga 😂."* Mas Riza Rohman merasakan siklus tool baru yang makin cepat: *"baru pake orca belum seminggu dah ada yg menarik lagi aja."*
+
+Saya baca thread ini sebagai tanda bahwa CLI agent sudah cukup kuat, tapi workflow-nya mulai butuh permukaan baru. Kalau agent bisa punya session panjang, remote runtime, banyak model, dan banyak tool, kita butuh cara melihat, mengatur, dan memindahkan kerjaannya tanpa semuanya terasa seperti terminal spaghetti.
+
+Mungkin ADE bukan pengganti IDE. Mungkin ADE adalah dashboard operasional untuk agent-agent yang kita pekerjakan.
+
+## CommandCode, Kilo, dan Search
+
+Di quick hits minggu ini, [CommandCode](https://commandcode.ai/) lumayan naik. Mas Michael share update [CommandCode /goal](https://commandcode.ai/docs/slash-commands/goal): *"yg pakai commandcode update terbaru ada pakai /goal."* Beberapa hari kemudian, setelah kurang sreg dengan opencode Go subscription, Mas Michael bilang ia *"fix unsub dan pindah ke commandcode yang $15."* Ia juga menyebut /design mode untuk frontend terasa menarik.
+
+[Kilo Pass](https://kilo.ai/pricing/kilo-pass) juga masuk radar. Mas Ari bertanya apakah Kilocode berarti pakai Kilo Pass, lalu Mas Michael menjelaskan bahwa bisa top up atau tempel API key ke coding agent yang cocok. Kalimat paling praktisnya: *"subs kilopass terus sambungin ke koma.run kombinasi yang mantap 😂."*
+
+Search juga jadi topik kecil tapi berguna. Mas Zahid bertanya mending [Exa](https://exa.ai) atau [Perplexity](https://www.perplexity.ai/) untuk research pattern/code dan paper. Mas Michael menyarankan [Tavily](https://www.tavily.com/) untuk search biasa, sambil bilang Exa oke untuk rekomendasi dokumentasi. Mas Agung membawa jawabannya balik ke Koma: internet access built-in untuk semua model, atau bahkan search engine yang bisa dijadikan MCP.
+
+Benang merahnya sama: tool terbaik bukan satu app. Tool terbaik adalah kombinasi yang bisa dirouting sesuai kerjaan.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+- Coba [Koma](https://koma.run) 0.2.x kalau ingin eksperimen Codex/OAuth/Kilo/plan mode, tapi siapkan ekspektasi bahwa ini masih bergerak cepat.
+- Baca [Amp Read Bigger Threads](https://ampcode.com/news/read-bigger-threads) dan pikirkan ulang bagian context engineering mana yang sebaiknya dipindah ke harness.
+- Bandingkan [Ghostex](https://ghostex.dev/), [Herdr](https://herdr.dev/), dan [Orca](https://www.onorca.dev/) kalau workflow agent kamu mulai butuh permukaan selain terminal.
+- Eksperimen stack planning mahal + eksekusi murah: Claude Code/GPT untuk plan/review, MiMo/GLM/[DeepSeek](https://deepseek.com) untuk implementasi yang bisa diawasi.
+- Untuk search agent, coba bedakan peran [Exa](https://exa.ai), [Tavily](https://www.tavily.com/), [Perplexity](https://www.perplexity.ai/), dan built-in internet access dari harness seperti Koma.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — membawa thread Amp, Orb, dan Fable ke konteks workflow pribadi.
+- Mas Agung — membuka Koma, membagikan update cepatnya, dan jujur soal bug/token optimization.
+- Mas Michael — banyak membawa link tool baru: Ghostex, CommandCode, Kilo routing, dan perspektif mocin-vs-Claude.
+- Mas Zahid — memberi catatan tajam soal MiMo, Herdr, Exa, dan batas deep debugging.
+- Mas Iqbal — menangkap implikasi context window Amp dan workflow planning/commenting.
+- Mas Fatih Dinata — membedah split GPT/Claude untuk frontend dan strategi planning.
+- Mas Agung D — membagikan stack hemat Claude Code + Sonnet + RTK + Caveman.
+- Mas Husni Rizal — membawa realita Fable quota burn dari pemakaian langsung.
+- Mas Ari — memicu klarifikasi Kilo Pass sebagai opsi routing.
+- Mas Riza Rohman — mengingatkan bahwa siklus ADE baru makin cepat.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 5 Juli 2026*
