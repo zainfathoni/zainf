@@ -1,0 +1,119 @@
+---
+meta:
+  - title: "Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24"
+  - name: description
+    content: "Grok 4.5, Cursor, Codex Sol/Terra/Luna, Koma, Amp, opencode, dan Firecrawl. Rangkuman dari grup AI Tools SWE GROWTH, 5-12 Jul 2026."
+  - author: Zain Fathoni
+  - date: "2026-07-12"
+  - property: og:title
+    content: "Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24"
+  - property: og:description
+    content: "Grok 4.5, Cursor, Codex Sol/Terra/Luna, Koma, Amp, opencode, dan Firecrawl. Rangkuman dari grup AI Tools SWE GROWTH, 5-12 Jul 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jul-5-jul-12-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-24.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24
+
+Minggu ini rasanya seperti semua orang di grup sedang memegang kalkulator. [Grok 4.5](https://x.ai/news/grok-4-5) rilis, [Cursor](https://cursor.sh) mulai ramai dicoba bareng Grok, [Codex](https://openai.com/codex/) punya drama Sol/Terra/Luna, [Koma](https://koma.run) lanjut bereksperimen, dan [Amp Code](https://ampcode.com) bergerak ke arah agents anywhere.
+
+Tapi setiap kali kualitas model naik, pertanyaan yang muncul tetap sama: ini bisa dipakai kerja harian tanpa bikin dompet panik?
+
+## Grok 4.5 Bikin Cursor Ramai Lagi
+
+Cerita terbesar minggu ini jelas Grok. Mas Michael jadi semacam CNO grup sendiri, sat-set share link rilis, testimoni, dan cara pakainya. Kalimat Mas Michael yang paling mewakili hype minggu ini: *"saya bantu buzzerin Cursor, mantap guys coba kombinasi composer sama grok 4.5 😂"*.
+
+Yang menarik, Grok tidak dibahas sebagai chatbot. Grok langsung masuk ke workflow: [Cursor Composer](https://cursor.sh), OMP advisor, dan pairing dengan model lain untuk eksekusi. Mas Aldi juga mengingatkan sisi aksesnya: *"Grok 4.5 gratis di grok build fyi"* ketika obrolan Cursor + Grok mulai naik.
+
+Lalu tentu saja, begitu tool terasa bagus, grup langsung berubah jadi tim finance. Mas Agung mencatat satu prompt bisa habis sekitar 0.02, sementara Mas Zahid setelah mencoba kombinasi advisor bilang, *"tapi mayan boros juga, wkwk."* Ini pola yang makin jelas: model baru tidak cukup dinilai dari pintar atau tidak. Ia harus masuk akal sebagai bagian dari routing budget.
+
+Implikasinya: Grok 4.5 bukan cuma model baru. Ia memaksa kita memikirkan ulang posisi "advisor mahal" dalam agent workflow.
+
+## Sol Bagus, Tapi Angkanya Ikut Bicara
+
+Di sisi [Codex](https://openai.com/codex/), obrolannya lebih terasa seperti laporan lapangan. Sol dipuji, tapi biayanya tetap ikut bicara. Mas Zahid merangkum dengan sangat jujur: *"gpt sol bagus T_T tapi mahal. wkwk"* lalu menambahkan bahwa satu kali plan bisa menghabiskan 7 ribu.
+
+Mas Mei Rizal juga sempat menemukan perilaku limit yang membingungkan: *"Iya lg run sol. Ada yg aneh tapi, ini saya kek ada 2 limit 🤣."* Beberapa jam kemudian grup membahas reset limit yang sempat terasa seperti bansos, lalu ternyata lebih mirip bug. Senang sebentar, lalu balik lagi menghitung.
+
+Yang membuat minggu ini menarik adalah munculnya pembandingan Sol, Terra, dan Luna. Mas Zahid bilang, *"terra 1 kali planning habis 10% tapi enak cepet karena di high thinking nya"* sementara Luna terlihat lebih hemat walau xhigh bisa lama. Mas Agung bahkan menyederhanakan opsi dengan kalimat pendek: *"luna cukup bang."*
+
+Menurut saya ini bagian paling praktis dari minggu ini. Kita tidak lagi bertanya "model mana paling kuat?" saja. Pertanyaannya bergeser ke "model mana yang cukup kuat untuk tahap workflow ini?"
+
+## Harness Makin Jadi Produk Utama
+
+Kalau minggu lalu [Koma](https://koma.run) naik panggung, minggu ini Koma mulai terasa sebagai lab workflow. Mas Agung share arah fitur seperti desktop, WQA, dan routing model. Kalimat *"koma desktop + ada fitur WQA untuk model yang bisa kirim gambar"* dari Mas Agung cukup menggambarkan arah itu: agent tidak berhenti di generate code, tapi mulai masuk ke build + QA.
+
+Koma juga terus dilempar ke obrolan pricing dan packaging. Bahkan plan "jus buah" sempat muncul: apple free, peach, ultra. Bercanda, tapi bukan sekadar bercanda. Di pasar agent tooling sekarang, packaging adalah fitur. Kalau model bisa diganti-ganti, pengalaman membungkus model itu jadi nilai utama.
+
+Mas Luthfi A membawa kebutuhan yang sangat nyata: *"aku pengennya codex cli atau opencode cli dll itu bisa di kendalikan dari hp."* Dari sini obrolan melebar ke tmux, cmux, remote control, long-running sessions, dan cara membuat agent tetap bekerja tanpa kita duduk di depan laptop.
+
+Nah, di sinilah [Amp Agents Anywhere](https://ampcode.com/news/agents-anywhere), [opencode](https://opencode.ai), OMP, dan Koma mulai kelihatan sebagai kategori yang sama: bukan sekadar coding assistant, tapi harness. Tool yang menang mungkin bukan yang punya model terbaik, tapi yang paling enak mengatur model terbaik, model murah, context, dan sesi kerja panjang.
+
+## Model Murah Jadi Strategi, Bukan Kompromi
+
+Obrolan budget minggu ini tidak cuma soal takut mahal. Ada strategi yang mulai matang. [GLM](https://chatglm.cn), [MiMo](https://mimo.xiaomi.com/), [Kimi](https://kimi.moonshot.cn), [Laguna M.1](https://huggingface.co/poolside/Laguna-M.1), Terra, dan Luna dibahas sebagai komponen routing.
+
+Mas Zahid sempat menjelaskan pola yang masuk akal: GLM untuk main work, Grok sebagai advisor. Mas Agung menyebut paket arsenal: GPT planning, MiMo executing, bahkan Laguna M1 untuk opsi free execute. Ini bukan downgrade. Ini cost engineering.
+
+Mas Riza Fahmi juga memberi warna berbeda lewat [Anvia](https://anvia.dev/): *"Anvia keren ih. Bikin agent berasa gampang, natural. DX nya mantul."* Saya suka quote ini karena mengingatkan bahwa murah saja tidak cukup. Kalau DX-nya membuat agent terasa natural, kita akan lebih sering memakainya, dan dari situ budget baru benar-benar terasa.
+
+Artinya apa? Agent workflow 2026 makin mirip infra: ada premium tier, fallback, cache, routing, dan observability. Bedanya, sekarang yang kita route adalah kecerdasan.
+
+## ⚡ Quick Hits
+
+- [Firecrawl](https://www.firecrawl.dev/) sempat jadi bahan "bansos" credits. Mas Michael share linknya, lalu Mbak Eka menemukan detail praktis: *"Fun fact gak dicek follow beneran atau nggak. Asal klik semua aja, credits nambah."* Pakai buat eksperimen, tapi jangan jadikan asumsi produksi.
+
+- [Empryo](https://empryo.com/) muncul sebagai coding agent baru. Reaksi Mas Dedy P cukup mewakili fatigue minggu ini: *"Ya ampun banyak banget wkkwk."* Mas Zahid langsung menutup dengan punchline: *"wkwkw habis ini muncul oh my empriyo."*
+
+- [Droid](https://www.factory.ai/) dari Factory tetap dipantau. Mas Michael melihat opsi $100 untuk model top-tier sebagai sesuatu yang bisa masuk pertimbangan, dengan catatan paling penting: *"#yangadaduitnya"*.
+
+- [AI Engineering from Scratch](https://aiengineeringfromscratch.com/index.html) di-share Mas Husni Rizal untuk yang ingin ngulik bagian dalam. Ini jenis link yang patut disimpan, terutama kalau kita mulai merasa terlalu bergantung pada wrapper.
+
+Quick hits minggu ini punya satu benang merah: discovery makin cepat, tapi waktu evaluasi kita tidak ikut bertambah.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Coba [Grok 4.5](https://x.ai/news/grok-4-5) sebagai advisor, bukan langsung sebagai executor utama. Bandingkan hasilnya dengan model eksekusi yang lebih murah.
+
+2. Jalankan task planning yang sama di [Codex](https://openai.com/codex/) Sol, Terra, dan Luna. Catat kualitas, waktu, dan burn rate sebelum memilih default.
+
+3. Pantau [Koma](https://koma.run) kalau kamu tertarik dengan local harness, self-QA, dan workflow agent yang bisa dirakit sesuai budget.
+
+4. Simpan [AI Engineering from Scratch](https://aiengineeringfromscratch.com/index.html) untuk bacaan weekend. Kalau wrapper makin banyak, memahami lapisan bawahnya justru makin bernilai.
+
+5. Pakai credits [Firecrawl](https://www.firecrawl.dev/) untuk proof-of-concept crawler atau data enrichment kecil, lalu tetap hitung harga normalnya.
+
+Minggu ini kesimpulannya sederhana: model terbaik makin banyak, tapi workflow terbaik masih harus kita rakit sendiri.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Michael: CNO minggu ini untuk Grok, Cursor, Droid, Firecrawl, dan Empryo.
+- Mas Zahid: paling banyak membawa realita budget dari Grok, Sol, Terra, Luna, GLM, dan OMP.
+- Mas Agung: membawa Koma, WQA, Luna, MiMo, Laguna, dan cara berpikir workflow lokal.
+- Mas Aldi: menambahkan konteks akses Grok dan kebiasaan workflow Cursor.
+- Mas Riza Fahmi: memberi perspektif DX lewat Anvia dan ikut meramaikan Cursor + Grok.
+- Mas Luthfi A: mengangkat kebutuhan remote coding dari HP untuk CLI agents.
+- Mas Mei Rizal: memberi laporan lapangan soal Sol dan perilaku limit.
+- Mbak Eka: menangkap detail praktis dari Firecrawl credits.
+- Mas Dedy P: merangkum rasa capek menghadapi coding agent baru yang muncul terus.
+- Zain: membawa konteks Amp/Amux dan ikut melihat arah agents anywhere.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 12 Juli 2026*
