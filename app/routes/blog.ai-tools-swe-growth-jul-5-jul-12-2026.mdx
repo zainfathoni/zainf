@@ -33,7 +33,7 @@ export const meta = () => attributes.meta;
 
 # Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24
 
-Minggu ini rasanya seperti semua orang di grup sedang memegang kalkulator. [Grok 4.5](https://x.ai/news/grok-4-5) rilis, [Cursor](https://cursor.sh) mulai ramai dicoba bareng Grok, [Codex](https://openai.com/codex/) punya drama Sol/Terra/Luna, [Koma](https://koma.run) lanjut bereksperimen, dan [Amp Code](https://ampcode.com) bergerak ke arah agents anywhere. Di tengah itu, [amux](https://amux.zainf.dev) jadi jembatan yang menarik: tooling khusus untuk kerja dengan Amp, terutama ketika satu sesi agent sudah mulai berkembang jadi banyak terminal, worker, dan workspace yang harus tetap rapi.
+Minggu ini rasanya seperti semua orang di grup sedang memegang kalkulator. [Grok 4.5](https://x.ai/news/grok-4-5) rilis, [Cursor](https://cursor.sh) mulai ramai dicoba bareng Grok, [Codex](https://openai.com/codex/) punya drama Sol/Terra/Luna, [Koma](https://koma.run) lanjut bereksperimen, dan [Amp Code](https://ampcode.com) bergerak ke arah agents anywhere. Di tengah itu, [amux](https://amux.zainf.dev) jadi jembatan yang menarik: local tmux workspace + lifecycle layer untuk Amp, terutama ketika satu sesi agent sudah mulai berkembang jadi banyak terminal, runner, worker, dan workspace yang harus tetap rapi.
 
 Tapi setiap kali kualitas model naik, pertanyaan yang muncul tetap sama: ini bisa dipakai kerja harian tanpa bikin dompet panik?
 
@@ -65,11 +65,11 @@ Koma juga terus dilempar ke obrolan pricing dan packaging. Bahkan plan "jus buah
 
 Mas Luthfi A membawa kebutuhan yang sangat nyata: *"aku pengennya codex cli atau opencode cli dll itu bisa di kendalikan dari hp."* Dari sini obrolan melebar ke tmux, cmux, remote control, long-running sessions, dan cara membuat agent tetap bekerja tanpa kita duduk di depan laptop.
 
-Nah, di sinilah [Amp Agents Anywhere](https://ampcode.com/news/agents-anywhere), [opencode](https://opencode.ai), OMP, Koma, dan [amux](https://amux.zainf.dev) mulai kelihatan sebagai kategori yang sama: bukan sekadar coding assistant, tapi harness. Tool yang menang mungkin bukan yang punya model terbaik, tapi yang paling enak mengatur model terbaik, model murah, context, dan sesi kerja panjang.
+Nah, di sinilah [Amp Agents Anywhere](https://ampcode.com/news/agents-anywhere), [opencode](https://opencode.ai), OMP, Koma, dan [amux](https://amux.zainf.dev) mulai kelihatan sebagai kategori yang sama: bukan sekadar coding assistant, tapi harness. Tool yang menang mungkin bukan yang punya model terbaik, tapi yang paling enak mengatur model terbaik, model murah, context, sesi kerja panjang, dan state lokal yang tidak boleh hilang begitu terminal ditutup.
 
-Saya pribadi makin melihat [amux](https://amux.zainf.dev) sebagai lapisan kecil yang penting di atas tmux untuk pengguna Amp: tempat kita restore workspace, parkir sesi, spawn worker, dan menjaga agentic coding tetap bisa dilanjutkan tanpa ritual manual yang bikin malas. Ini bukan pengganti Amp. Justru ia menarik karena posisinya lebih membumi: ketika Amp bergerak ke "agents anywhere", kita tetap butuh meja kerja yang ingat agent mana sedang mengerjakan apa.
+Saya pribadi makin melihat [amux](https://amux.zainf.dev) sebagai pasangan lokal yang pas untuk arah [Amp Agents Anywhere](https://ampcode.com/news/agents-anywhere). Amp bikin thread dan runner makin fleksibel; amux mengurus meja kerjanya: tmux workspace, restore config, runner intent, park/shelve, spawn worker, sampai verified teardown. Ini bukan pengganti Amp. Justru ia menarik karena posisinya lebih membumi: ketika Amp bergerak ke "agents anywhere", kita tetap butuh local workbench yang ingat agent mana sedang mengerjakan apa.
 
-Soft pitch-nya sederhana: kalau kamu pakai Amp dan workflow kamu sudah mulai penuh dengan beberapa agent sekaligus, coba buka [amux.zainf.dev](https://amux.zainf.dev). Bukan karena semua orang harus pakai workflow saya, tapi karena Amp yang kuat tetap perlu memory kerja, lifecycle, dan tempat pulang.
+Soft pitch-nya sederhana: kalau kamu pakai Amp dan workflow kamu sudah mulai penuh dengan beberapa agent sekaligus, coba buka [amux.zainf.dev](https://amux.zainf.dev). Nilainya bukan sekadar "bisa buka tmux lagi", tapi punya vocabulary yang aman untuk agent: pin saat ingin di-restore, park saat hanya mau stop lokal, shelve saat mau defer thread, teardown saat memang mau bersih-bersih penuh.
 
 ## Model Murah Jadi Strategi, Bukan Kompromi
 
@@ -99,7 +99,7 @@ Quick hits minggu ini punya satu benang merah: discovery makin cepat, tapi waktu
 
 2. Jalankan task planning yang sama di [Codex](https://openai.com/codex/) Sol, Terra, dan Luna. Catat kualitas, waktu, dan burn rate sebelum memilih default.
 
-3. Coba [amux](https://amux.zainf.dev) kalau kamu pakai Amp dan workflow-nya sudah mulai penuh dengan beberapa agent, tmux session, worktree, dan konteks yang harus diingat besok pagi.
+3. Coba [amux](https://amux.zainf.dev) kalau kamu pakai Amp dan workflow-nya sudah mulai penuh dengan tmux session, runner, spawned worker, parked/shelved thread, dan konteks yang harus diingat besok pagi.
 
 4. Pantau [Koma](https://koma.run) kalau kamu tertarik dengan local harness, self-QA, dan workflow agent yang bisa dirakit sesuai budget.
 
@@ -120,7 +120,7 @@ Minggu ini kesimpulannya sederhana: model terbaik makin banyak, tapi workflow te
 - Mas Mei Rizal: memberi laporan lapangan soal Sol dan perilaku limit.
 - Mbak Eka: menangkap detail praktis dari Firecrawl credits.
 - Mas Dedy P: merangkum rasa capek menghadapi coding agent baru yang muncul terus.
-- Zain: membawa konteks Amp Agents Anywhere dan [amux](https://amux.zainf.dev) sebagai workflow layer khusus untuk kerja multi-agent dengan Amp.
+- Zain: membawa konteks Amp Agents Anywhere dan [amux](https://amux.zainf.dev) sebagai local tmux workspace + lifecycle layer untuk Amp.
 
 *Ditulis dari dalam grup, bukan dari luar.*
 *Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 12 Juli 2026*
