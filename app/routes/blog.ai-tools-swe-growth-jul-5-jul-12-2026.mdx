@@ -2,14 +2,14 @@
 meta:
   - title: "Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24"
   - name: description
-    content: "Grok 4.5, Cursor, Codex Sol/Terra/Luna, Koma, Amp, opencode, dan Firecrawl. Rangkuman dari grup AI Tools SWE GROWTH, 5-12 Jul 2026."
+    content: "Grok 4.5, Cursor, Codex Sol/Terra/Luna, Koma, Amp Agents Anywhere, amux, opencode, dan Firecrawl. Rangkuman dari grup AI Tools SWE GROWTH, 5-12 Jul 2026."
   - author: Zain Fathoni
   - date: "2026-07-12"
   - lang: id
   - property: og:title
     content: "Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24"
   - property: og:description
-    content: "Grok 4.5, Cursor, Codex Sol/Terra/Luna, Koma, Amp, opencode, dan Firecrawl. Rangkuman dari grup AI Tools SWE GROWTH, 5-12 Jul 2026."
+    content: "Grok 4.5, Cursor, Codex Sol/Terra/Luna, Koma, Amp Agents Anywhere, amux, opencode, dan Firecrawl. Rangkuman dari grup AI Tools SWE GROWTH, 5-12 Jul 2026."
   - property: og:url
     content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jul-5-jul-12-2026"
   - property: og:image
@@ -33,7 +33,7 @@ export const meta = () => attributes.meta;
 
 # Grok Masuk Arena, Budget Tetap Jadi Drama — AI Tools Digest #24
 
-Minggu ini rasanya seperti semua orang di grup sedang memegang kalkulator. [Grok 4.5](https://x.ai/news/grok-4-5) rilis, [Cursor](https://cursor.sh) mulai ramai dicoba bareng Grok, [Codex](https://openai.com/codex/) punya drama Sol/Terra/Luna, [Koma](https://koma.run) lanjut bereksperimen, dan [Amp Code](https://ampcode.com) bergerak ke arah agents anywhere.
+Minggu ini rasanya seperti semua orang di grup sedang memegang kalkulator. [Grok 4.5](https://x.ai/news/grok-4-5) rilis, [Cursor](https://cursor.sh) mulai ramai dicoba bareng Grok, [Codex](https://openai.com/codex/) punya drama Sol/Terra/Luna, [Koma](https://koma.run) lanjut bereksperimen, dan [Amp Code](https://ampcode.com) bergerak ke arah agents anywhere. Di tengah itu, [amux](https://amux.zainf.dev) jadi jembatan yang menarik: bukan model baru, tapi cara menjaga banyak agent tetap rapi ketika kerja sudah mulai pindah dari satu terminal ke banyak sesi.
 
 Tapi setiap kali kualitas model naik, pertanyaan yang muncul tetap sama: ini bisa dipakai kerja harian tanpa bikin dompet panik?
 
@@ -65,7 +65,11 @@ Koma juga terus dilempar ke obrolan pricing dan packaging. Bahkan plan "jus buah
 
 Mas Luthfi A membawa kebutuhan yang sangat nyata: *"aku pengennya codex cli atau opencode cli dll itu bisa di kendalikan dari hp."* Dari sini obrolan melebar ke tmux, cmux, remote control, long-running sessions, dan cara membuat agent tetap bekerja tanpa kita duduk di depan laptop.
 
-Nah, di sinilah [Amp Agents Anywhere](https://ampcode.com/news/agents-anywhere), [opencode](https://opencode.ai), OMP, dan Koma mulai kelihatan sebagai kategori yang sama: bukan sekadar coding assistant, tapi harness. Tool yang menang mungkin bukan yang punya model terbaik, tapi yang paling enak mengatur model terbaik, model murah, context, dan sesi kerja panjang.
+Nah, di sinilah [Amp Agents Anywhere](https://ampcode.com/news/agents-anywhere), [opencode](https://opencode.ai), OMP, Koma, dan [amux](https://amux.zainf.dev) mulai kelihatan sebagai kategori yang sama: bukan sekadar coding assistant, tapi harness. Tool yang menang mungkin bukan yang punya model terbaik, tapi yang paling enak mengatur model terbaik, model murah, context, dan sesi kerja panjang.
+
+Saya pribadi makin melihat [amux](https://amux.zainf.dev) sebagai lapisan kecil yang penting di atas tmux: tempat kita restore workspace, parkir sesi, spawn worker, dan menjaga agentic coding tetap bisa dilanjutkan tanpa ritual manual yang bikin malas. Ini bukan pengganti Amp, Codex, atau opencode. Justru ia menarik karena posisinya lebih membumi: ketika semua tool berlomba jadi "agent anywhere", kita tetap butuh meja kerja yang ingat agent mana sedang mengerjakan apa.
+
+Soft pitch-nya sederhana: kalau kamu sudah mulai kerja dengan beberapa agent sekaligus, coba buka [amux.zainf.dev](https://amux.zainf.dev). Bukan karena semua orang harus pakai workflow saya, tapi karena kategori ini akan makin penting: agent yang kuat perlu memory kerja, lifecycle, dan tempat pulang.
 
 ## Model Murah Jadi Strategi, Bukan Kompromi
 
@@ -95,11 +99,13 @@ Quick hits minggu ini punya satu benang merah: discovery makin cepat, tapi waktu
 
 2. Jalankan task planning yang sama di [Codex](https://openai.com/codex/) Sol, Terra, dan Luna. Catat kualitas, waktu, dan burn rate sebelum memilih default.
 
-3. Pantau [Koma](https://koma.run) kalau kamu tertarik dengan local harness, self-QA, dan workflow agent yang bisa dirakit sesuai budget.
+3. Coba [amux](https://amux.zainf.dev) kalau workflow kamu sudah mulai penuh dengan beberapa agent, tmux session, worktree, dan konteks yang harus diingat besok pagi.
 
-4. Simpan [AI Engineering from Scratch](https://aiengineeringfromscratch.com/index.html) untuk bacaan weekend. Kalau wrapper makin banyak, memahami lapisan bawahnya justru makin bernilai.
+4. Pantau [Koma](https://koma.run) kalau kamu tertarik dengan local harness, self-QA, dan workflow agent yang bisa dirakit sesuai budget.
 
-5. Pakai credits [Firecrawl](https://www.firecrawl.dev/) untuk proof-of-concept crawler atau data enrichment kecil, lalu tetap hitung harga normalnya.
+5. Simpan [AI Engineering from Scratch](https://aiengineeringfromscratch.com/index.html) untuk bacaan weekend. Kalau wrapper makin banyak, memahami lapisan bawahnya justru makin bernilai.
+
+6. Pakai credits [Firecrawl](https://www.firecrawl.dev/) untuk proof-of-concept crawler atau data enrichment kecil, lalu tetap hitung harga normalnya.
 
 Minggu ini kesimpulannya sederhana: model terbaik makin banyak, tapi workflow terbaik masih harus kita rakit sendiri.
 
@@ -114,7 +120,7 @@ Minggu ini kesimpulannya sederhana: model terbaik makin banyak, tapi workflow te
 - Mas Mei Rizal: memberi laporan lapangan soal Sol dan perilaku limit.
 - Mbak Eka: menangkap detail praktis dari Firecrawl credits.
 - Mas Dedy P: merangkum rasa capek menghadapi coding agent baru yang muncul terus.
-- Zain: membawa konteks Amp/Amux dan ikut melihat arah agents anywhere.
+- Zain: membawa konteks Amp Agents Anywhere dan [amux](https://amux.zainf.dev) sebagai workflow layer untuk multi-agent coding.
 
 *Ditulis dari dalam grup, bukan dari luar.*
 *Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 12 Juli 2026*
