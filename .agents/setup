@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+NODE_VERSION="20.19.0"
+PNPM_VERSION="9.15.9"
+NODE_INSTALL_DIR="${HOME}/.local/share/node-v${NODE_VERSION}"
+LOCAL_BIN="${HOME}/.local/bin"
+
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+cd "$repo_root"
+
+case "$(uname -m)" in
+  x86_64) node_arch="x64" ;;
+  aarch64 | arm64) node_arch="arm64" ;;
+  *)
+    echo "Unsupported architecture: $(uname -m)" >&2
+    exit 1
+    ;;
+esac
+
+if [[ ! -x "${NODE_INSTALL_DIR}/bin/node" ]] || \
+  [[ "$("${NODE_INSTALL_DIR}/bin/node" --version)" != "v${NODE_VERSION}" ]]; then
+  echo "Installing Node.js ${NODE_VERSION}..."
+  archive="node-v${NODE_VERSION}-linux-${node_arch}.tar.xz"
+  node_url="https://nodejs.org/dist/v${NODE_VERSION}"
+  tmp_dir=$(mktemp -d)
+  trap 'rm -rf "$tmp_dir"' EXIT
+
+  curl --fail --silent --show-error --location \
+    "${node_url}/${archive}" -o "${tmp_dir}/${archive}"
+  curl --fail --silent --show-error --location \
+    "${node_url}/SHASUMS256.txt" -o "${tmp_dir}/SHASUMS256.txt"
+  (
+    cd "$tmp_dir"
+    grep "  ${archive}$" SHASUMS256.txt | sha256sum --check --strict
+  )
+
+  rm -rf "$NODE_INSTALL_DIR"
+  mkdir -p "$NODE_INSTALL_DIR"
+  tar -xJf "${tmp_dir}/${archive}" \
+    --strip-components=1 --directory "$NODE_INSTALL_DIR"
+fi
+
+echo "Activating Node.js ${NODE_VERSION} and pnpm ${PNPM_VERSION}..."
+mkdir -p "$LOCAL_BIN"
+for command in node npm npx corepack; do
+  ln -sfn "${NODE_INSTALL_DIR}/bin/${command}" "${LOCAL_BIN}/${command}"
+done
+export PATH="${LOCAL_BIN}:${PATH}"
+hash -r
+
+corepack enable --install-directory "$LOCAL_BIN"
+corepack prepare "pnpm@${PNPM_VERSION}" --activate
+
+echo "Installing project dependencies..."
+CI=1 pnpm install --frozen-lockfile
+
+echo "Orb setup complete."

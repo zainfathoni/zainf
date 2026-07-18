@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project has no local backing services to reconnect after an orb wakes.
+echo "No services need to be resumed."
