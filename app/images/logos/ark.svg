@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <rect width="100" height="100" rx="18" fill="#0b0b0f"/>
+  <!-- Radial glow -->
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+    <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="100" height="100" rx="18" fill="url(#glow)"/>
+  <!-- Starship icon centered, scaled to fit 100x100 box -->
+  <!-- FA starship viewBox is 640x512, we center+scale into ~80x64 centered at 50,50 -->
+  <g transform="translate(10, 18) scale(0.125)">
+    <!-- Secondary layer (accent) -->
+    <path opacity="1" fill="#f59e0b"
+      d="M55 128l74.9 0 67.3 75.8 70.5-14.1c-7.6 20.7-11.8 43-11.8 66.4s4.2 45.7 11.8 66.4l-70.5-14.1-67.3 75.8-74.9 0 78.6-88.5-6.2-1.3C109.1 290.6 96 274.6 96 256s13.1-34.6 31.4-38.3l6.2-1.2-78.6-88.5zM528 256a80 80 0 1 1 -160 0 80 80 0 1 1 160 0zm-112 0a32 32 0 1 0 64 0 32 32 0 1 0 -64 0z"/>
+    <!-- Primary layer (white) -->
+    <path fill="white"
+      d="M0 96c0 17.7 14.3 32 32 32l160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 64C14.3 64 0 78.3 0 96zm448 80a80 80 0 1 1 0 160 80 80 0 1 1 0-160zm0 272a192 192 0 1 0 0-384 192 192 0 1 0 0 384zM32 384c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 384z"/>
+  </g>
+</svg>

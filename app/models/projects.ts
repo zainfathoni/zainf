@@ -1,28 +1,29 @@
-import homeschoolingLogo from "app/images/logos/homeschooling.svg";
+import amuxLogo from "app/images/logos/amux.svg";
+import arkLogo from "app/images/logos/ark.svg";
 import kawalcovid19Logo from "app/images/logos/kawalcovid19.webp";
 import pejuangKodeLogo from "app/images/logos/pejuang-kode.svg";
-import projectTransformersLogo from "app/images/logos/project-transformers.svg";
 import rumahBerbagiLogo from "app/images/logos/rumah-berbagi.svg";
 import wbwLogo from "app/images/logos/wbw.svg";
 
 export const projects = [
   {
-    name: "Project Transformers",
-    description: "A personal AI agent fleet for managing code, finances, family logistics, and career.",
+    name: "The Ark",
+    description:
+      "A personal AI ecosystem where specialized bots work together as a team.",
     link: {
-      href: "/blog/project-transformers-building-personal-ai-army",
-      label: "Blog post",
+      href: "https://ark.zainf.dev",
+      label: "ark.zainf.dev",
     },
-    logo: projectTransformersLogo,
+    logo: arkLogo,
   },
   {
-    name: "Homeschooling App",
-    description: "A Rails 8.1 app for weekly homeschool planning.",
+    name: "amux",
+    description: "Agent-safe local lifecycle for Amp workers, runners, and tmux workspaces.",
     link: {
-      href: "https://github.com/zainfathoni/homeschooling",
-      label: "github.com/zainfathoni/homeschooling",
+      href: "https://amux.zainf.dev",
+      label: "amux.zainf.dev",
     },
-    logo: homeschoolingLogo,
+    logo: amuxLogo,
   },
   {
     name: "Senar.ai",
