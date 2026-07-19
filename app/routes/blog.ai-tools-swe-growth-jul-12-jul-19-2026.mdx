@@ -1,0 +1,124 @@
+---
+meta:
+  - title: "Harness Jadi Produk Utama — AI Tools Digest #25"
+  - name: description
+    content: "Amp subscriptions, Koma, Kimi K3, Qwen 3.8, CommandCode, OMP, Pi, Cursor, dan budget routing. Rangkuman dari grup AI Tools SWE GROWTH, 12-19 Jul 2026."
+  - author: Zain Fathoni
+  - date: "2026-07-19"
+  - property: og:title
+    content: "Harness Jadi Produk Utama — AI Tools Digest #25"
+  - property: og:description
+    content: "Amp subscriptions, Koma, Kimi K3, Qwen 3.8, CommandCode, OMP, Pi, Cursor, dan budget routing. Rangkuman dari grup AI Tools SWE GROWTH, 12-19 Jul 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jul-12-jul-19-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-25.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Harness Jadi Produk Utama — AI Tools Digest #25"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Harness Jadi Produk Utama — AI Tools Digest #25
+
+Minggu ini kita seperti pindah dari obrolan "model mana paling pintar?" ke "model ini enaknya dimasukin ke harness apa, bayarnya gimana, dan kalau limit habis backup-nya apa?" [Amp Code](https://ampcode.com) akhirnya punya subscriptions, [Koma](https://koma.run) makin sering muncul sebagai budget harness, [Kimi K3](https://kimi.moonshot.cn) jadi bahan tontonan frontend/3D, [Qwen Code](https://github.com/QwenLM/qwen-code) ikut masuk radar lewat Qwen 3.8, dan [CommandCode](https://pi.dev/packages/pi-commandcode-provider) tiba-tiba jadi bagian dari setup kere-hore yang cukup serius.
+
+Kalau grup ini jadi barometer kecil, 2026 bukan cuma tahun model baru. Ini tahun ketika harness, routing, dan biaya mulai jadi produk utama.
+
+## Amp Subscription, Akhirnya
+
+Berita paling konkret minggu ini: [Amp subscriptions](https://ampcode.com/news/subscriptions) rilis. Ini bukan sekadar pricing page baru. Buat yang sudah pakai ChatGPT atau Grok subscription sebagai sumber model, perubahan paling terasa adalah hilangnya biaya harness tambahan per token.
+
+Pas link itu muncul, saya (Zain) sendiri langsung lega: *"Akhirnya, ada subscriptions di Amp. Dan ga ada lagi biaya harness $0.02 per 1M token kalau nyolokin ke ChatGPT/Grok subs."* Karena sebelumnya ketika Amp dipakai kencang, credits-nya tetap ikut kepakai. Dalam sehari testing keras saja bisa habis sekitar $20+ free credits. Jadi hilangnya biaya harness itu bukan angka kecil buat workflow harian.
+
+Mas Michael juga beberapa kali menekankan kenapa Amp terasa beda: *"oracle sama librarian fitur favoritku di amp belum ada yang bisa samain ini walaupun ada opensource di pi masih kalah jauh sama punya amp ini."* Buat saya ini penting. Amp bukan menang karena "modelnya paling wah", tapi karena context capture dan cara dia mengatur kerja agent terasa matang.
+
+Makanya ketika Mas Riza Fahmi membawa cerita bahwa harness terbaik masih Amp dan Factory Droid, bahasanya langsung berubah jadi otomotif. Mas Andre Pratama merangkum vibe-nya dengan pas: *"Agree mas, “Porsche” itu pas banget dilekatkan ke Amp. Mahal, ekslusif, mantep gitu feelnya wkwkw."*
+
+Artinya apa? Amp sedang bergerak dari "coding agent yang bagus" menjadi "workbench premium" untuk orang yang sudah mulai serius mengatur banyak model dan banyak sesi kerja.
+
+## Koma dan Budget Harness
+
+Di sisi lain, [Koma](https://koma.run) jadi bintang karena alasan yang hampir berlawanan: fleksibel, lokal-komunitas, dan dekat dengan realita budget. Mas Gus Ega bilang dia sudah banyak coding agent, lalu posisinya sekarang: *"sekarang udh gas ke claude dulu, tapi mostly on koma.run + openrouter + ollama local."*
+
+Obrolannya bukan "Koma membunuh Claude Code". Mas Michael justru meluruskan dengan sederhana: Koma itu seperti tubuh coding agent, sementara otaknya bisa dari model mana saja. Mas Ahsan menambahkan angle yang menurut saya paling realistis: *"alternatif2 yang lain biasanya buat jadi tambahan untuk use case tertentu atau jadi tambal kalo udah mentok kuota claudenya."*
+
+Nah, ini yang menarik. [Claude Code](https://docs.anthropic.com/en/docs/claude-code) masih jadi baseline yang kuat. Tapi begitu quota, vendor lock-in, atau kebutuhan model lain muncul, orang mulai butuh harness yang bisa menampung [OpenRouter](https://openrouter.ai), Ollama local, GPT, Kimi, [GLM](https://chatglm.cn), dan model lain tanpa ganti cara kerja setiap kali.
+
+Mas Agung kemudian memberi definisi paling singkat untuk Koma: *"jawabannya adalah harness super mantab untuk model model murah."* Kalimat ini bercanda, tapi sebenarnya presisi. Yang dicari bukan cuma murah. Yang dicari adalah murah yang tetap bisa dipakai kerja.
+
+Implikasinya: tool lokal seperti Koma bisa menang bukan karena mengalahkan frontier model, tapi karena membantu kita memakai model yang cukup bagus di tempat yang tepat.
+
+## Kimi K3, Qwen, dan Frontend Race
+
+Kalau soal model, [Kimi K3](https://openrouter.ai/moonshotai/kimi-k3) yang paling sering muncul minggu ini. Mas Michael share beberapa demo, leaderboard, game, dan frontend test. Salah satu klaim yang paling langsung: *"kimi k3 sementara unggul untuk frontend."*
+
+Mas Faris tetap menjaga rem tangan: *"memang mahal kimi k3 biarpun didiskon harganya input outputnya nggak boong."* Ini pola yang familiar. Model China makin kuat, demo makin menggoda, tapi begitu dipakai agentic coding yang panjang, token cost tetap bisa menggigit.
+
+Yang bikin seru, Kimi K3 tidak muncul sendirian. Ia dibahas lewat [opencode](https://opencode.ai) Go, [Cline](https://github.com/cline/cline) Pass, Sumopod, [OpenRouter](https://openrouter.ai), sampai leaderboard [webdev arena](https://arena.ai/leaderboard/code/webdev). Dengan kata lain, model sekarang hidup lewat distribusi. Satu model bisa jadi pengalaman yang beda tergantung harness dan provider-nya.
+
+Menjelang akhir minggu, [Qwen 3.8](https://x.com/Alibaba_Qwen/status/2078759124914098291) juga muncul. Mas Michael share singkat: *"wah qwen 3.8 rilis juga 🔥"* lalu disusul review awal yang menyebut subscription $25. Qwen juga masuk ke obrolan privacy-sensitive: Mas Riza Fahmi mengingat cerita meetup bahwa untuk core business, ada tim yang host Qwen sendiri, bukan lewat API publik.
+
+Pertanyaannya bergeser: bukan "Kimi atau Qwen lebih pintar?" tapi "mana yang cocok untuk frontend, mana yang cocok untuk lokal, dan mana yang masih masuk budget kalau dijadikan agent?"
+
+## CommandCode Masuk Setup Kere-Hore
+
+Bagian paling membumi minggu ini datang dari [CommandCode](https://pi.dev/packages/pi-commandcode-provider), [Pi](https://pi.dev), dan [OMP](https://omp.sh). Mas Michael share provider package untuk CommandCode, lalu menjelaskan: *"aku pake commandcode sambungin ke pi atau omp."*
+
+Mas Azam sempat mencoba dan akhirnya condong ke OMP: *"oowh omp ajalah"* sambil menilai Pi masih "raw banget". Yang menarik bukan cuma pilihan tool-nya, tapi setup akhirnya: laptop 10 tahun, LAN, baterai laptop, UPS mini, CommandCode $1/month, OMP, dan remote access 9remote.
+
+Saya sengaja tidak menjadikan ini tutorial untuk mengakali paket atau account. Tapi sebagai sinyal, ini penting: sebagian orang tidak mengejar setup paling mewah. Mereka mengejar setup yang tahan mati listrik, bisa diakses dari HP, dan cukup murah untuk server pribadi 24 jam.
+
+Mas Azam merangkum setup itu dengan kalimat yang sangat grup: *"Commandcode 1$/month Connect ke OMP Connect ke 9remote."* Mas Michael kemudian menutupnya dengan nada bangga-komunitas, menyebut ini penerapan "kere hore" yang berhasil.
+
+Implikasinya sederhana: agent workflow yang benar-benar dipakai orang sering lahir bukan dari laptop paling baru, tapi dari kombinasi murah yang cukup stabil untuk hidup sehari-hari.
+
+## Quick Hits
+
+- [Cursor](https://cursor.sh) tetap kuat sebagai pilihan pragmatis. Mas Aldi bilang, *"20$ setara 100$ worth API composer 2.5 dan grok"* ketika membahas value Composer dan Grok.
+- [Claude Design](https://claude.ai) dibandingkan dengan GPT untuk prototype design. Mas Fatih Dinata merasa Claude Design unggul di design system, tapi belum tentu menang di hasil visual akhir.
+- [OpenAI Co-Lab Work Louder](https://openai.com/supply/co-lab/work-louder/) sempat dibahas sebagai hardware yang menarik tapi mahal. Mas Fatih Dinata nyeletuk bahwa orang yang pakai Codex biasanya bisa setup teknis sendiri.
+- [Capy](https://capy.ai/), [Runta](https://runta.com/), dan [PierCode](https://www.piercode.com/) muncul sebagai bukti feed X sekarang hampir tiap hari mengeluarkan coding agent baru.
+- Sharing workflow AI Agent dijadwalkan untuk Rabu minggu ini. Mas Ahsan mengusulkan sesi 30-45 menit plus Q&A, dan Mas Faris mengajak, *"yuk rabu yang bisa join gasken 🤭"*
+
+Quick hits ini terlihat acak, tapi benangnya sama: semakin banyak agent bermunculan, semakin penting punya prinsip memilih, bukan sekadar ikut tool terbaru.
+
+## Yang Perlu Dicoba Minggu Ini
+
+1. Coba baca detail [Amp subscriptions](https://ampcode.com/news/subscriptions) kalau kamu sudah punya ChatGPT/Grok subscription dan ingin Amp tanpa biaya harness lama.
+2. Test [Koma](https://koma.run) sebagai harness cadangan dengan OpenRouter atau model lokal sebelum memutuskan cancel subscription utama.
+3. Benchmark [Kimi K3](https://openrouter.ai/moonshotai/kimi-k3) untuk frontend/3D, tapi catat token cost dari awal.
+4. Kalau penasaran CommandCode di harness lain, mulai dari [Pi CommandCode provider](https://pi.dev/packages/pi-commandcode-provider) dan cek batasan plan-nya.
+5. Untuk team kecil, pertimbangkan [OpenRouter](https://openrouter.ai) dengan API key per orang daripada share satu akun dan mencampur history kerja.
+
+Rekomendasi minggu ini bukan "pindah ke X". Lebih tepatnya: desain routing dulu, baru pilih tool.
+
+## Kontributor Minggu Ini
+
+- Zain — membawa konteks Amp subscriptions dari pengalaman pakai credits langsung.
+- Mas Michael — paling rajin menghubungkan Amp, Kimi, CommandCode, Pi, OMP, dan tool-agent baru.
+- Mas Riza Fahmi — memberi konteks harness premium dan penggunaan Qwen untuk area sensitif.
+- Mas Andre Pratama — merangkum positioning Amp sebagai "Porsche" coding agent.
+- Mas Gus Ega — memberi testimoni Koma sebagai pilihan budget harian.
+- Mas Ahsan — memberi framing paling realistis soal alternatif sebagai quota backup dan workflow fit.
+- Mas Agung — menjelaskan Koma sebagai harness untuk model murah.
+- Mas Faris — mengingatkan bahwa Kimi K3 tetap perlu dihitung biaya input/output-nya.
+- Mas Azam — membawa contoh setup CommandCode + OMP + remote access yang sangat praktis.
+- Mas Aldi — memberi angka value Cursor yang mudah dipahami.
+- Mas Fatih Dinata — memberi catatan praktis soal Claude Design dan perbandingan prototype design.
+
+Kalau minggu lalu rasanya model race yang paling ramai, minggu ini lebih terasa seperti workflow race. Model makin cepat saling salip, tapi yang menentukan nyaman tidaknya tetap harness, budget, dan cara kita mengatur kerja panjang.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 19 Juli 2026*
