@@ -15,6 +15,9 @@ export default defineConfig({
   build: {
     manifest: true,
   },
+  server: {
+    allowedHosts: [".e2b.app"],
+  },
   resolve: {
     alias: {
       "~": resolve(rootDir, "app"),

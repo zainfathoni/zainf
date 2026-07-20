@@ -60,6 +60,23 @@ export const developmentTools: Tool[] = [
   },
 ];
 
+export const aiSubscriptions: Tool[] = [
+  {
+    slug: "chatgpt-pro",
+    title: "ChatGPT Pro (5x) — $100/month",
+    href: "https://chatgpt.com/pricing/",
+    description:
+      "I switched to ChatGPT Pro after using Claude Max from January through March 2026, when Anthropic stopped allowing Claude subscription usage in third-party harnesses such as OpenClaw. The 5x plan gives me the model usage I need for my AI workflows.",
+  },
+  {
+    slug: "amp-megawatt",
+    title: "Amp Megawatt — $20/month",
+    href: "https://ampcode.com/pricing",
+    description:
+      "I pair Amp Megawatt with ChatGPT Pro, for a total of $120/month. With the subscription, GPT-5.6 Sol calls cost $0 in Amp instead of consuming my credits, so I can make full use of my ChatGPT allocation through the best agent harness I have found.",
+  },
+];
+
 export const productivity: Tool[] = [
   {
     slug: "obsidian",

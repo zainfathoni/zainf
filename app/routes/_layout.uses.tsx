@@ -5,6 +5,7 @@ import { Section } from "~/components/Section";
 import { SimpleLayout } from "~/components/SimpleLayout";
 import type { Tool } from "~/models/tools";
 import {
+  aiSubscriptions,
   developmentTools,
   finance,
   productivity,
@@ -64,6 +65,9 @@ export default function Uses() {
         </ToolsSection>
         <ToolsSection title="Development tools">
           {developmentTools.map(mapToolToCard)}
+        </ToolsSection>
+        <ToolsSection title="AI subscriptions">
+          {aiSubscriptions.map(mapToolToCard)}
         </ToolsSection>
         <ToolsSection title="Productivity">
           {productivity.map(mapToolToCard)}

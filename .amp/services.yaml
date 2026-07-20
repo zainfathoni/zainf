@@ -1,0 +1,9 @@
+services:
+  portfolio:
+    command: >-
+      __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS="$(node -e 'process.stdout.write(new URL(process.env.PUBLIC_URL).hostname)')"
+      pnpm exec react-router dev --host 0.0.0.0 --port "$PORT"
+    access: same-as-thread
+    portal:
+      title: Portfolio
+      description: Preview the portfolio development server.
