@@ -60,19 +60,19 @@ export default function Uses() {
       intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
     >
       <div className="space-y-20">
-        <ToolsSection title="Workstation">
+        <ToolsSection id="workstation" title="Workstation">
           {workstation.map(mapToolToCard)}
         </ToolsSection>
-        <ToolsSection title="Development tools">
+        <ToolsSection id="development-tools" title="Development tools">
           {developmentTools.map(mapToolToCard)}
         </ToolsSection>
-        <ToolsSection title="AI subscriptions">
+        <ToolsSection id="ai-subscriptions" title="AI subscriptions">
           {aiSubscriptions.map(mapToolToCard)}
         </ToolsSection>
-        <ToolsSection title="Productivity">
+        <ToolsSection id="productivity" title="Productivity">
           {productivity.map(mapToolToCard)}
         </ToolsSection>
-        <ToolsSection title="Finance">
+        <ToolsSection id="finance" title="Finance">
           {finance.map(mapToolToCard)}
         </ToolsSection>
       </div>
