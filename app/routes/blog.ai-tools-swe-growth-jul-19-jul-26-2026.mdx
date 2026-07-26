@@ -1,0 +1,118 @@
+---
+meta:
+  - title: "Coding dari HP, Review Pakai Proses — AI Tools Digest #26"
+  - name: description
+    content: "Amp Multiplayer, event-driven orbs, mobile coding, proxy review, Codex resets, dan token economics. Rangkuman dari grup AI Tools SWE GROWTH, 19-26 Jul 2026."
+  - author: Zain Fathoni
+  - date: "2026-07-26"
+  - lang: id
+  - property: og:title
+    content: "Coding dari HP, Review Pakai Proses — AI Tools Digest #26"
+  - property: og:description
+    content: "Amp Multiplayer, event-driven orbs, mobile coding, proxy review, Codex resets, dan token economics. Rangkuman dari grup AI Tools SWE GROWTH, 19-26 Jul 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jul-19-jul-26-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-26.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Coding dari HP, Review Pakai Proses — AI Tools Digest #26"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Coding dari HP, Review Pakai Proses — AI Tools Digest #26
+
+Minggu ini saya bilang [Amp](https://ampcode.com) sudah menggantikan sekitar 80% use case OpenClaw saya. Lalu Mas Nulad mengajukan pertanyaan yang jauh lebih penting daripada daftar fitur: kalau coding agent dijalankan dari HP, *"Gimana biar bisa percaya sama hasil AI agentnya, gitu sih kira2?"*
+
+Pertanyaan itu nyambung ke hampir semua obrolan besar minggu ini. Amp merilis [Multiplayer](https://ampcode.com/news/multiplayer) dan [event-driven orbs](https://ampcode.com/news/event-driven-orbs). [Claude Code](https://docs.anthropic.com/en/docs/claude-code) punya Remote Control. [Codex](https://openai.com/codex/) dan agent lain makin sanggup jalan lama tanpa ditunggu. Kita perlu cara memberi konteks, memeriksa hasil, dan menghentikan agent sebelum tokennya habis.
+
+## Amp Mengejar Semua Use Case
+
+Pas saya share Amp Multiplayer, reaksi Mas Agung langsung pas: *"cepet bgt bjir berkembangnya wkwk."* Mas Michael cukup menjawab, *"let's go 🔥"*. Beberapa hari kemudian event-driven orbs rilis, jadi thread Amp bisa dipicu event atau jadwal dan tidak harus selalu dimulai dari prompt manual.
+
+Kecepatan itu terasa personal buat saya. Dari daftar use case OpenClaw, yang belum terganti tinggal coding dari HP, percakapan antar-agent, deployment preview, scheduling, dan masuk lewat grup Telegram atau WhatsApp. Multiplayer dan event-driven orbs langsung mencoret beberapa item sekaligus.
+
+Di setup saya, [amux](https://amux.zainf.dev) mengatur 20+ thread di tiga mesin, mencari sprawl, dan menaikkan beberapa thread menjadi coordinator. Amp menyediakan tempat kerja yang makin lengkap; amux menangani puyengnya koordinasi ketika jumlah thread sudah kelewatan.
+
+Rilis minggu ini membuat batas antara coding agent dan personal agent makin tipis. Yang tersisa adalah integrasi ke tempat kita benar-benar hidup dan bekerja.
+
+## Coding dari HP Itu Soal Kepercayaan
+
+Mas Tonidy menyebut Remote Control sebagai cara paling enak saat ini: *"sejauh ini paling enak pake claude code tinggal jalanin `/remote-control`, dari hp bisa langsung chat."* [Bast](https://bast.sh/) dan [Tycho](https://zainf.dev/vfc-1) juga muncul sebagai pilihan remote. Mas Salma bahkan meminta daftar tool yang bisa dipakai ngoding dari mana saja.
+
+Mas Nulad memperjelas bahwa problemnya bukan akses terminal. Di laptop kita bisa melihat perubahan sambil jalan; di HP lebih sulit memastikan hasilnya tidak slop atau melenceng dari ekspektasi user. Mas Riza Fahmi menjawab singkat, *"Yg review ai juga 😏"*.
+
+Jawaban saya adalah proxy review lewat [`/teach`](https://github.com/mattpocock/skills): minta agent menjelaskan perubahan, keputusan, dan bukti verifikasinya. Kalau perlu membaca file tertentu, GitHub app masih cukup. Manager dengan banyak direct report tidak membaca 100% setiap baris PR, tapi tetap bisa yakin karena ada spec, test, CI, review, dan pertanyaan yang tepat. Seperti yang saya tulis di grup: *"Sekarang beralih jadi manajer yg mengelola AI pembuat PR. Kuncinya ada di proses."*
+
+HP memperjelas kelemahan workflow yang sebelumnya tertutup oleh layar besar. Kalau rasa percaya bergantung pada melihat agent mengetik, proses review kita belum siap untuk kerja async.
+
+## Nama Metodenya Ganti Terus
+
+Dalam satu rangkaian obrolan muncul loop engineering, graph engineering, fleet engineering, dan [compound engineering](https://github.com/everyinc/compound-engineering-plugin). Mas Riza Fahmi baru saja belajar satu istilah ketika yang berikutnya datang: *"Baru Senin kemarin livestreaming belajar loop engineering, udah ada yg baru lagi 🙃."*
+
+Mas Michael membalas, *"emang kenceng parah ini AI di X ngalah2in hype js framework 😂."* Mas Riza Fahmi punya penjelasan yang lebih tajam: hype framework JavaScript kebanyakan menjual software gratis, sementara di AI ada kepentingan menjual token. Wajar kalau marketing-nya lebih ugal-ugalan.
+
+Di balik label yang berganti, praktiknya cukup membumi: mulai dari step yang paling mengganggu, pasang satu perbaikan, lalu lihat bottleneck berikutnya. Workflow saya sendiri pernah bergerak dari Copilot untuk commit message, Claude Code untuk implementasi dan spec, Beads, Fizzy, Tycho, Amp, lalu amux. Tiap perpindahan lahir karena problem yang benar-benar terasa, bukan karena istilah baru lewat di timeline.
+
+Nama metode membantu kita mencari dan berbagi. Kalau satu istilah belum sempat dicoba sebelum penggantinya viral, backlog eksperimen lebih berguna daripada kamus buzzword.
+
+## Token Jadi Batas Nyata
+
+Agent makin mudah dilepas jalan panjang, dan tagihannya ikut lari. Mas Noviadi cerita satu PR drifting karena gap di spec, masuk loop review-fix, lalu memakan 55% weekly limit dalam sehari. Saya mengalami versi yang lebih ekstrem: satu thread mengelola beberapa thread lewat amux selama tujuh jam, menghabiskan ratusan juta token dan sekitar separuh weekly limit.
+
+Mas Iqbal juga mencatat, *"limit weekly udah sisa 15% baru 3 hari xD kepake buat planning."* Di [Cursor](https://cursor.sh), Mas Zahid melihat limit paket bulanannya terkuras cepat, walau Grok di dalam Cursor dinilai lebih pintar dan lebih awet dibanding SuperGrok.
+
+Pilihan subscription akhirnya tetap campuran. Mas Fatih Dinata menilai [Claude](https://claude.ai) lebih detail untuk planning, sementara Codex lebih lega pada harga yang sama dan lebih strategis untuk eksekusi tertentu. Keduanya bagus, pengalaman orang bisa berbeda, dan kombinasi keduanya sering lebih masuk akal.
+
+Lalu terjadilah ritual komunitas. Ada [CodexBar](https://codexbar.app) untuk memantau usage, [codex-resets.com](https://codex-resets.com/) untuk mengikuti pola reset, dan doa bersama setiap kali status bermasalah. Ketika reset akhirnya datang, saya menulis, *"Alhamdulillaah.. Reset yang dinanti-nanti pun tiba. 😇"*
+
+Tool orchestration yang bagus membuat agent makin mudah dipakai. Konsekuensinya, pengelolaan budget perlu masuk ke workflow, setara pentingnya dengan test dan review.
+
+## ⚡ Quick Hits
+
+- [CommandCode v1](https://commandcode.ai/docs/whats-new) rilis dan tetap ramai dipasang lewat [Pi provider](https://pi.dev/packages/pi-commandcode-provider), OMP, atau OpenCode. Grup juga memberi peringatan tegas: reverse engineering akses provider bisa melanggar ketentuan dan berisiko banned.
+- [Kimi K3](https://kimi.moonshot.cn) menahan subscription sambil menambah kapasitas; akses API pihak ketiga tetap ada, tetapi hitungan biayanya berbeda. Mas Fatih Dinata langsung menangkap trade-off itu: *"kalo API based sama subs mahalan API kan ya? pantes sih."*
+- [Cursor](https://x.com/cursor_ai/status/2079993729532989500) memperlihatkan routing model otomatis yang dibandingkan dengan 9router dan Kilo Code.
+- [CodingTool](https://codingtool.dev/ai-prompt-privacy-checker) di-share sebagai utility untuk meredaksi PII dan secret sebelum prompt dikirim ke tool AI.
+- [llmtrim](https://github.com/fkiene/llmtrim/tree/main), [Kero](https://kero.sh/), [KeelCode](https://keelcode.ai/), dan [Agensis](https://agensis.io/) ikut menambah antrean tool untuk dicoba.
+
+Quick hits makin penuh setiap minggu. Tombol uninstall, menurut Mas Michael, tetap menjadi fitur evaluasi tool yang paling jujur.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Buka satu thread [Amp Multiplayer](https://ampcode.com/news/multiplayer) bersama rekan kerja dan uji pembagian konteksnya.
+2. Pasang satu workflow kecil di [event-driven orbs](https://ampcode.com/news/event-driven-orbs), misalnya tugas terjadwal yang mudah diverifikasi.
+3. Coba pola [`/teach`](https://github.com/mattpocock/skills) untuk meminta penjelasan sebelum approve hasil agent dari HP.
+4. Pantau konsumsi sesi paralel dengan [CodexBar](https://codexbar.app) sebelum menambah jumlah agent.
+5. Kalau butuh remote sederhana, bandingkan [Bast](https://bast.sh/) dan [Tycho](https://zainf.dev/vfc-1) pada workflow nyata.
+
+Ambil satu bottleneck yang sedang terasa. Eksperimen kecil lebih mudah dinilai daripada migrasi total karena sedang ramai di timeline.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — membagikan pengalaman Amp, mobile review, evolusi workflow, amux, dan konsumsi token dari banyak thread.
+- Mas Agung — menangkap kecepatan rilis Amp dengan komentar paling jujur minggu ini.
+- Mas Michael — membawa banyak rilis baru, event-driven orbs, compound engineering, provider, dan catatan evaluasi tool.
+- Mas Nulad — mengangkat pertanyaan inti tentang kepercayaan dan review saat bekerja dari HP.
+- Mas Tonidy — membagikan pengalaman Claude Code Remote Control.
+- Mas Riza Fahmi — menghubungkan mobile review dengan AI dan mengkritik treadmill istilah baru.
+- Mas Noviadi — memberi contoh konkret agent drifting dan weekly limit yang cepat habis.
+- Mas Iqbal — membawa angka penggunaan subscription dari workflow planning.
+- Mas Zahid — membagikan pengalaman Cursor dan Grok.
+- Mas Fatih Dinata — membandingkan Codex, Claude, dan biaya akses Kimi.
+
+Saya masih suka layar besar. Minggu ini makin jelas bahwa spec, proses, bukti, dan kontrol budget-lah yang membuat agent bisa dipercaya ketika kita sedang jauh dari meja.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 26 Juli 2026*
