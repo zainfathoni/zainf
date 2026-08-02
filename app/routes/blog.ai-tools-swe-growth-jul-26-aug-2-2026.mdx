@@ -1,0 +1,115 @@
+---
+meta:
+  - title: "Motor Matic, Hilal Reset, dan Agent yang Makin Ramai — AI Tools Digest #27"
+  - name: description
+    content: "Amp sebagai pengalaman, reset Codex sebagai ritual, DeepSeek V4 Flash, Atrium, dan skill lintas harness. Rangkuman dari grup AI Tools SWE GROWTH, 26 Jul-2 Agu 2026."
+  - author: Zain Fathoni
+  - date: "2026-08-02"
+  - lang: id
+  - property: og:title
+    content: "Motor Matic, Hilal Reset, dan Agent yang Makin Ramai — AI Tools Digest #27"
+  - property: og:description
+    content: "Amp sebagai pengalaman, reset Codex sebagai ritual, DeepSeek V4 Flash, Atrium, dan skill lintas harness. Rangkuman dari grup AI Tools SWE GROWTH, 26 Jul-2 Agu 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-jul-26-aug-2-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-27.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Motor Matic, Hilal Reset, dan Agent yang Makin Ramai — AI Tools Digest #27"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Motor Matic, Hilal Reset, dan Agent yang Makin Ramai — AI Tools Digest #27
+
+Minggu ini [Amp](https://ampcode.com) mendapat pengguna baru, [Codex](https://openai.com/codex/) mendapat reset lagi, dan [DeepSeek V4 Flash](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) datang membawa janji model murah. Benang merahnya: kita tidak lagi memilih AI coding tool hanya dari nama model. Feel, limit, dan kemudahan membawa workflow sekarang sama pentingnya.
+
+## Amp Bukan Sekadar Model Wrapper
+
+Mas Aidityas mencoba membawa kebiasaan dari harness lain ke Amp: skill ingin dipanggil eksplisit, model ingin dipilih sendiri, dan workflow pribadi ingin ditaati persis. Semuanya jalan mulus, tetapi kendalinya terasa berbeda.
+
+Saya membandingkannya dengan orang yang terbiasa motor kopling lalu menyalahkan motor matic. Mas Aidityas memperbaiki analoginya: lebih mirip disetirin Tesla yang memilih jalannya sendiri—dan harganya tetap *"cukup mengiris dompet,"* kata Mas Aidityas.
+
+Beberapa hari kemudian kesimpulannya berubah menjadi *"Sepertinya I’m sold to amp."* Bukan karena hasil kode selalu lebih bagus. Mas Aidityas bilang hasil Amp, Codex, Claude Code, dan OpenCode kurang lebih sama; pembeda utamanya adalah apa yang ditampilkan. *"Amp lebih ke user experience yg lebih nyaman aja sih menurut saya pribadi,"* katanya.
+
+[Agent Skills di Amp](https://ampcode.com/news/agent-skills) bisa dipasang sebagai project atau global skill. Tapi tool opinionated perlu dicoba dengan workflow bawaannya sebelum kita menyimpulkan ada fitur yang hilang.
+
+## Free Tier, FOMO, dan Harga Kenyamanan
+
+Amp gift code yang dibagikan habis nyaris seketika. Mas Aidityas cuma sempat menulis, *"sold out cpet bgt ya."* Tool terasa makin menarik ketika disubsidi, lalu FOMO muncul saat subsidi hilang.
+
+Mbak Eka merangkumnya dengan jujur: *"Sering panik FOMO 'developer lain pada ngapain, semua tren kudu dikejar'."* Ketika akhirnya memutuskan santai, Amp Free keburu ditutup. Mas Michael yang masih punya akun lama pun mengingatkan bahwa gratis bukan berarti tanpa top-up.
+
+Grup membedah ChatGPT inference di Amp, biaya kecil per token, dan kapan Megawatt masuk akal. Free tier boleh jadi pintu masuk, tetapi tidak layak menjadi fondasi workflow.
+
+## Hilal Reset Sudah Jadi Kalender Kerja
+
+Ada dua situs untuk satu kegelisahan: [codex-resets.com](https://codex-resets.com/) dan [willcodexquotareset.com](https://www.willcodexquotareset.com/). Mas Noviadi menunggu sambil menulis, *"Gak ada hilal ya? Udah 89% nih. Wiken bengong. 😀"* Saya menjawab, *"Hilal sudah nampak, tinggal menunggu eksekusinya."*
+
+Mas Luthfi A melihat sisa 30% kembali menjadi 100%. Mas Zahid mengabarkan reset lain dengan *"eh codex habis reset, wkwkw."* Amp ikut reset, tetapi beberapa orang baru memakai 3–4% Orb usage.
+
+Kuota yang habis bukan otomatis bukti tool terbaik, tetapi menunjukkan tempat agent benar-benar bekerja. Kalender reset kini ikut menentukan apakah akhir pekan dipakai nonton atau membakar token.
+
+## DeepSeek Membawa Tekanan Harga
+
+DeepSeek V4 Flash muncul di OpenRouter lalu menyebar ke provider lain. Grup mengumpulkan benchmark dan testimoni. Mas Michael membawa pengalaman maintainer Node.js; Mas Dedy P menyambutnya dengan, *"Nice, disrupting US model yok biar jd lbh murah haha."*
+
+Model open-weight yang cepat dan murah memberi tekanan nyata ke provider AS. Tapi klaim berubah dalam hitungan jam—tanggal rilis bergeser, varian tercampur, dan benchmark datang sebelum pengalaman cukup panjang.
+
+Saya ingin model murah itu menang. Justru karena itu, tes pada task sendiri lebih penting daripada ikut menggoreng screenshot benchmark.
+
+## Di Atas Agent, Ada Agent Manager Lagi
+
+Mas Michael mencoba [Atrium](https://getatrium.dev/) sebagai agent development environment ringan. Setelah seminggu, ia pindah dari Orca ke Atrium dan tetap memakai [Herdr](https://x.com/herdrdev/status/2081790556804411782) untuk eksplorasi. Alasannya konkret: *"ini dibangun based rust jadi ringan memory."*
+
+Pengalaman dengan Herdr memberi batas nyata: banyak agent yang tidak tertutup bisa membuat CPU spike. Superlogical ikut ditunggu sebagai pesaing berikutnya.
+
+Lapisan orchestration sekarang punya kompetisi sendiri. Pemenangnya mungkin bukan yang demonya paling ramai, tetapi yang tetap waras setelah sepuluh worker hidup bersamaan.
+
+## ⚡ Quick Hits
+
+- Untuk membawa skill antara Amp, Codex, Claude Code, Pi, dan OpenCode, Mas Michael membagikan [LazySkills](https://lazyskills.sh/) serta pola `AGENTS.md` universal.
+- [Wrongstack](https://wrongstack.com/) dan [Elph](https://github.com/riipandi/elph) ikut masuk antrean coding agent baru.
+- [Cursor](https://cursor.sh) kembali ramai. Mas Aldi memilih Cursor dan Codex app karena desktop app terasa lebih powerful untuk kerja harian.
+- Mas Ahsan menyebut Claude Code sebagai Avanza/Xenia karena sejuta umat. Mas Oshi menutup debat Porsche versus Ferrari: *"Ini analogi yg kurang merakyat.. belum pernah nyetir dua mobil itu 😂."*
+
+Daftar ini adalah sinyal bahwa biaya pindah antar-tool perlu ditekan. Tool baru akan tetap datang lebih cepat daripada waktu luang kita.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Pakai [Amp Manual](https://ampcode.com/manual) untuk satu task sebelum memindahkan seluruh workflow pribadi.
+2. Taruh satu skill reusable di [LazySkills](https://lazyskills.sh/) agar pindah harness tidak dimulai dari nol.
+3. Jalankan task lama pada [DeepSeek V4 Flash](https://openrouter.ai/deepseek/deepseek-v4-flash-0731), lalu bandingkan hasil dan biaya.
+4. Uji [Atrium](https://getatrium.dev/) dengan beberapa worker sambil mencatat CPU dan memory.
+
+Pilih satu eksperimen yang menjawab bottleneck nyata. Catatan hasil jauh lebih berguna daripada daftar bookmark.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Aidityas — pengalaman adaptasi ke Amp sampai akhirnya sold.
+- Zain — analogi workflow, biaya Amp, dan hilal reset.
+- Mbak Eka — refleksi tentang FOMO dan Amp Free.
+- Mas Michael — Atrium, Herdr, portable skills, dan DeepSeek.
+- Mas Noviadi — reset yang memengaruhi rencana akhir pekan.
+- Mas Zahid — kabar reset Codex.
+- Mas Luthfi A — angka perubahan kuota.
+- Mas Dedy P — harapan DeepSeek menekan harga.
+- Mas Aldi — pilihan desktop app.
+- Mas Ahsan — analogi kendaraan sejuta umat.
+- Mas Oshi — analogi kendaraan yang lebih merakyat.
+
+Saya masih suka punya kontrol. Tapi kontrol tidak berarti semua knob harus terlihat—kadang kontrol terbaik adalah workflow jelas, budget terbaca, dan kemampuan pindah saat tool berhenti cocok.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 2 Agustus 2026*
