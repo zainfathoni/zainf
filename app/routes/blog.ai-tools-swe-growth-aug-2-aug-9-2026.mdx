@@ -1,0 +1,129 @@
+---
+meta:
+  - title: "AI Coding Itu Pay-to-Win, Tapi Kita Masih Bisa Menang — AI Tools Digest #28"
+  - name: description
+    content: "Dari perang subscription sampai ledakan agent berbasis Pi. Rangkuman dari grup AI Tools SWE GROWTH, 02-09 Agu 2026."
+  - author: Zain Fathoni
+  - date: "2026-08-09"
+  - lang: id
+  - property: og:title
+    content: "AI Coding Itu Pay-to-Win, Tapi Kita Masih Bisa Menang — AI Tools Digest #28"
+  - property: og:description
+    content: "Dari perang subscription sampai ledakan agent berbasis Pi. Rangkuman dari grup AI Tools SWE GROWTH, 02-09 Agu 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-aug-2-aug-9-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-aug-2-aug-9-2026.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "AI Coding Itu Pay-to-Win, Tapi Kita Masih Bisa Menang — AI Tools Digest #28"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# AI Coding Itu Pay-to-Win, Tapi Kita Masih Bisa Menang — AI Tools Digest #28
+
+Minggu ini kita akhirnya mengucapkan sesuatu yang selama ini cuma terasa di tagihan: AI coding sudah jadi pay-to-win. Model baru datang, quota habis, subscription bertambah, lalu coding agent baru muncul sebelum kita selesai membaca dokumentasi agent kemarin.
+
+Dari 955 pesan, strateginya sangat Indonesia: pilih liga yang masuk akal, kuatkan skill SWE, cari jalur hemat yang legal, dan jangan terlalu setia pada satu harness. Mas Aidityas merangkumnya: *“Kita mainnya menang di pinter2an cari bansos dan lompat2 harness.”*
+
+## 💸 Pay-to-Win dan Memilih Liga
+
+Saya membandingkannya dengan MMORPG—ada whale, low spender, dan kaum kere hore. Sistemnya hidup dari pelanggan enterprise dengan kantong jauh lebih tebal daripada kita. Mas Michael mengingatkan, *“kere hore tetap bersaing jika skill swe nya kuat.”*
+
+Ketika contoh migrasi dari Claude ke [DeepSeek](https://deepseek.com/) memangkas biaya dari $60.000 menjadi $1.500 per bulan, Mas Michael menaruh angka itu kembali ke bumi: *“$1500 untuk kere hore menangis meronta-ronta per bulan 🥲🤣.”*
+
+Artinya, jangan meniru setup orang yang bermain di kelas biaya berbeda. Optimasi kita bukan memiliki semuanya, tetapi tahu kapan model murah cukup dan kapan reasoning mahal benar-benar membayar dirinya sendiri.
+
+## 🐐 CommandCode dan DeepSeek untuk Kere Hore
+
+[CommandCode](https://commandcode.ai/) merilis paket GOAT $10 dan masuk radar sebagai pesaing OpenCode Go. Workflow CLI-nya bertambah, ada [course resmi](https://commandcode.ai/learn/courses), dan update yang mengurangi kebutuhan membuka browser.
+
+Mas Desilino memberi testimoni konkret: *“Buat saat ini emang commandcode + goat subscription masih best value kere-hore. Deepseek V4 Flash nya gak abis2 🙈.”* Mas Iqbal menyambut update-nya: *“wah, best beud ini wkwkwk beneran jadi ga perlu buka browser lagi.”*
+
+Namun murah tidak berarti tanpa risiko. Kabar harga membuat Mas Michael bertanya apakah *“era deepseek murah akan berakhir?”* Untuk pekerjaan mobile, Mas Salma bilang DeepSeek dan Luna sama-sama zonk, sementara Kimi 2.7 Code lebih dekat ke one-shot.
+
+Paket hemat terbaik bukan pemenang benchmark universal. Ia cuma kombinasi yang cocok dengan pekerjaan kita—dan minggu depan bisa berubah lagi.
+
+## ⚡ Dari Agent Menjadi Ekosistem Pi
+
+Mas Azam punya ringkasan sempurna: *“1 hari 1 coding agent.”* Yang menarik, banyak agent mulai berkumpul di atas fondasi yang sama.
+
+[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent), [MiniMax Code](https://x.com/MiniMaxAgent/status/2085679716976243045), [Todos](https://todos.dev/), dan [pi-bifrost](https://github.com/iamaamir/pi-bifrost) menunjukkan bahwa [Pi](https://pi.dev/) berubah dari tool menjadi ecosystem substrate. Mas Michael menutup tren ini dengan, *“Pi senyum lagi 😁.”*
+
+Workflow `/goal` yang menginterogasi pengguna sebelum bekerja juga menarik. Agent memaksa tujuan diperjelas sebelum berlari—kebalikan sehat dari “pecut dulu, pikir belakangan.”
+
+2026 mungkin bukan sekadar tahun coding agents. Ini tahun ketika fondasi dan protocol di bawah agent mulai lebih penting daripada nama agent di permukaannya.
+
+## 🕹️ ADE sebagai Control Plane
+
+Ketika agent bertambah, kita butuh tempat untuk melihat dan memindahkan pekerjaan mereka. Minggu ini [Atrium](https://getatrium.dev/), [OpenChamber](https://openchamber.dev/), dan [getbb](https://getbb.app/) dibandingkan.
+
+Mas Iqbal menangkap daya tarik Atrium: *“Atrium itu keren bagian yg bsa send message ke beda CLI wkwk.”* Handoff antar-CLI memungkinkan satu agent merencanakan, yang lain mengeksekusi, lalu manusia meninjau diff. Mas Michael menilainya *“opsi ADE skrg dia yang paling reliable dari beberapa ade yang sdh dipake.”*
+
+Kekurangannya nyata: dukungan platform terbatas dan existing Amp session belum selalu terdeteksi. Sebuah [review sepuluh orchestrator](https://thomas-sanlis.com/p/i-tested-10-ai-agent-orchestrators-here-s-my-setup) ikut dibagikan sebagai peta awal.
+
+Pertanyaannya bukan “agent mana paling pintar?”, melainkan “control plane mana yang membuat kumpulan agent tetap bisa dipahami?”
+
+## 🧰 Amp, Codex, dan Skill Portable
+
+[Amp Code](https://ampcode.com/) membuat strategi penghematan saya bulan lalu kedaluwarsa. Subscribers yang menghubungkan ChatGPT subscription kini bisa memakai GPT-5.6 pada [Low, Medium, dan High mode](https://ampcode.com/modes). Mas Aidityas menyambutnya: *“Wahhh niceeee pasti gara2 luna viral kemarin wkwk.”*
+
+Obrolan [Codex](https://openai.com/codex/) berkisar pada quota dan rumor reset berbayar. Solusinya lebih menarik: Mas Husni Rizal memakai `AGENTS.md` agar subagents memilih model murah dan hanya orchestrator memakai Sol. [CodexBar](https://codexbar.app) muncul lagi—Mas Riza Rohman mengakui, *“overload information mas... kalo ga langsung ekse suka ke skip 😂.”*
+
+Pelajarannya: skill dan instruction harus portable. Harness boleh berganti mengikuti harga dan quota, tetapi cara kerja kita jangan ikut hilang setiap pindah terminal.
+
+## 🧠 Cepat Boleh, Paham Tetap Wajib
+
+[The Shape of Things to Come](https://yegge.ai/essays/the-shape-of-things-to-come/) mengusulkan: saat merge queue penuh, dorong semuanya ke main lalu gunakan swarm untuk diagnosis. Provokatif, tetapi logis jika agent lebih cepat memperbaiki red main daripada bisection.
+
+Mas Riza Fahmi membawa rem lewat [Prevent Cognitive Debt](https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/): *“Sebuah tips tambahan untuk menghindari cognitive debt: ketik ulang kode dari ai 😅.”* Mas Michael menyebutnya “mode zen”.
+
+Keduanya tidak harus bertentangan. Agent boleh mendorong throughput, sementara manusia sengaja memperlambat bagian tertentu untuk membangun pemahaman. Kalau kita tidak membaca hasilnya pada pagi hari, siapa sebenarnya yang belajar dari siapa?
+
+## ⚡ Quick Hits
+
+- [OpenHack](https://openhack.com/) muncul sebagai coding agent untuk security.
+- [Cloudflare OS](https://github.com/cloudflare/cloudflare-os) dan [Kitesurf](https://blog.cloudflare.com/kitesurf/) menambah eksperimen agent Cloudflare.
+- [CodeWhale](https://github.com/Hmbown/CodeWhale) ikut masuk daftar coding agent baru.
+- [Lightpanda](https://lightpanda.io/) menarik perhatian sebagai browser untuk automation.
+- Daftar [tools-ai-swe-growth](https://github.com/kyomel/tools-ai-swe-growth) makin berguna untuk mengejar satu agent per hari.
+
+Discovery sekarang bukan masalah menemukan tool, tetapi menyaring mana yang layak mendapat satu jam waktu kita.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Coba [CommandCode GOAT](https://commandcode.ai/docs/plans/pro) pada satu tugas nyata dan catat biaya serta intervensinya.
+2. Atur routing model di `AGENTS.md`: model kuat untuk orchestrator, model hemat untuk subtask rutin.
+3. Evaluasi [Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent) untuk orchestration di ekosistem Pi.
+4. Bandingkan [Atrium](https://getatrium.dev/) berdasarkan handoff, notes, dan review diff.
+5. Ambil satu file buatan agent dan lakukan review manual sebelum merge.
+
+Targetnya bukan menambah lima subscription, tetapi menemukan satu perubahan workflow yang tetap berguna setelah promo dan quota berubah.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Aidityas** — strategi hemat dan perubahan Amp modes.
+- **Mas Michael** — penemuan tool, perspektif biaya, dan pengalaman ADE.
+- **Mas Iqbal** — handoff lintas CLI dan workflow CommandCode.
+- **Mas Desilino** — testimoni GOAT + DeepSeek V4 Flash.
+- **Mas Salma** — perbandingan model pada pekerjaan mobile.
+- **Mas Azam** — diagnosis ledakan agent baru.
+- **Mas Husni Rizal** — routing subagent lewat `AGENTS.md`.
+- **Mas Riza Rohman** — risiko overload informasi.
+- **Mas Riza Fahmi** — cognitive debt dan pemahaman kode.
+
+Komunitas paling berguna bukan yang mencoba semua tool, melainkan yang membagikan apa yang benar-benar terjadi setelah tool dipakai.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 09 Agustus 2026*
