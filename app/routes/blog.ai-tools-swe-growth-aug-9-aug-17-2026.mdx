@@ -1,0 +1,125 @@
+---
+meta:
+  - title: "Model Datang dan Pergi, Harness Mulai Mengambil Alih — AI Tools Digest #29"
+  - name: description
+    content: "DeepSeek Harness, perang stack kere hore, dan context pruning. Rangkuman dari grup AI Tools SWE GROWTH, 09-17 Agu 2026."
+  - author: Zain Fathoni
+  - date: "2026-08-17"
+  - lang: id
+  - property: og:title
+    content: "Model Datang dan Pergi, Harness Mulai Mengambil Alih — AI Tools Digest #29"
+  - property: og:description
+    content: "DeepSeek Harness, perang stack kere hore, dan context pruning. Rangkuman dari grup AI Tools SWE GROWTH, 09-17 Agu 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-aug-9-aug-17-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-aug-9-aug-17-2026.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Model Datang dan Pergi, Harness Mulai Mengambil Alih — AI Tools Digest #29"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Model Datang dan Pergi, Harness Mulai Mengambil Alih — AI Tools Digest #29
+
+Grok 4.6, DeepSeek V4 Pro, dan Qwen 3.8 muncul di hari yang sama. Biasanya itu cukup untuk jadi cerita utama satu minggu. Tapi dari 966 pesan kali ini, model-model baru justru terasa seperti pemain pendukung. Panggung utamanya pindah ke *harness*: siapa yang paling pintar mengelola context, tools, dan model yang terus berganti.
+
+Mas Anshor melihat absurditas jadwal rilisnya: *“Deepseek v4 pro, Grok 4.6, Qwen 3.8 27B rilis di hari yang sama wkwkw.”* Model war belum selesai—kita cuma mulai sadar bahwa model terbaik tanpa workflow yang pas tetap sekadar benchmark mahal.
+
+## 🐳 DeepSeek Tidak Cuma Merilis Model
+
+Kejutan terbesar datang dari [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). Repo resminya muncul, integrasi [OpenRouter](https://openrouter.ai/) ikut terbuka, plugin komunitas mulai tumbuh, dan ada sinyal bahwa harness ini tidak harus terkunci ke model DeepSeek.
+
+Klaim performanya bombastis: lebih unggul dari [Codex](https://openai.com/codex/) dan [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Mas Aldi langsung tertarik migrasi dari [OpenCode](https://opencode.ai/), tetapi pengalaman dengan [Pi](https://pi.dev/) mengingatkannya bahwa kualitas bukan cuma hasil akhir: *“lazy pi. ga cocok sama UI/UX nya.”* Mas Michael memberi rem yang lebih penting: *“benchmark ini kadang menipu juga tidak bisa jadi patokan 😂.”*
+
+Mas Zahid kemudian bertanya, *“Btw udah ada yg coba dsh? Seems look promising, plugin nya juga udah banyak.”* Itu pertanyaan yang tepat. Harness baru tidak perlu menang di chart; ia perlu bertahan saat dipakai delapan jam, context sudah kotor, dan repo tidak kooperatif.
+
+Artinya, benchmark hanya tiket masuk. Reliability, ergonomics, dan jumlah intervensi manusia adalah ujian sebenarnya.
+
+## 💸 Stack Kere Hore Tidak Pernah Selesai Diracik
+
+[CommandCode](https://commandcode.ai/) tetap jadi jawaban paling agresif untuk budget tipis. Mas Michael bilang, *“tapi kalau mau murah sekali ya $1 commandcode sampai skrg belum ada obat dgn catatan pake cli mereka.”* Catatan terakhir itu penting: hematnya bukan sekadar harga model, tetapi optimasi yang hidup di CLI mereka.
+
+Alternatifnya makin ramai. Mas Agung menyebut [Koma](https://koma.run) dan OpenCode sebagai opsi gratis, ditambah [Poolside](https://poolside.ai/) untuk agent unlimited. Tapi angka di pricing page tidak selalu sama dengan pengalaman nyata. Mas Tegar mengaku, *“aku udah unsubscribe oc go. 2 harian dipake serius langsung habis jatah sebulan wkwk.”*
+
+Jadi jangan tanya “mana paling murah?” tanpa membawa contoh pekerjaan. Satu subscription bisa murah untuk CRUD, lalu langsung jebol ketika disuruh menangani monorepo dan test suite yang rewel.
+
+Pertanyaannya bukan lagi harga per bulan, melainkan berapa banyak pekerjaan selesai sebelum quota, patience, atau keduanya habis.
+
+## 🧠 Context Window Besar Bukan Berarti Context Sehat
+
+Di tengah obsesi model baru, [Maka Agent](https://github.com/maka-agent/maka-agent) membawa ide yang lebih tenang. Mas Zahid menangkap bedanya: *“menarik, salah satu agentic yg treat context not as a history tapi nyediain tools buat context pruning.”*
+
+Ini terasa relevan setelah diskusi panjang soal compacting. Mas Aidityas punya batas praktis sendiri: *“Pakai claude juga biasanya aku auto compact di 300k, kalau ke 1M suka ngawur wkwk.”* Context sejuta token terdengar hebat di brosur, tetapi percakapan panjang bisa membawa terlalu banyak sampah, keputusan basi, dan asumsi yang sudah tidak berlaku.
+
+[Pi Harness v2](https://raw.githubusercontent.com/earendil-works/pi/refs/heads/main/packages/agent/docs/harness-v2.md) juga bergerak ke arah execution yang lebih durable. Mas Zahid merangkumnya: *“Semua akan durable pada akhirnya. 🤣 🤣 🙈 🙈 🙈.”*
+
+Context engineering berikutnya mungkin bukan soal memasukkan lebih banyak, tetapi memberi agent alat untuk tahu apa yang harus dibuang.
+
+## 🛣️ Amp dan Perdebatan tentang Cara Membangun
+
+[Amp Code](https://ampcode.com/) kembali ramai bukan karena model eksklusif, melainkan perdebatan terbuka antara ThePrimeagen dan tim Amp. Mas Aidityas bilang, *“Seru ini perdebatan between theprimeagen vs thorsten ball (amp code).”* Mas Michael lalu membagikan tulisan cofounder Amp, [Pave the Road](https://ampcode.com/notes/pave-the-road).
+
+Yang saya suka: kita tidak cuma membandingkan output agent. Kita mulai membedah filosofi produk—berapa banyak jalan yang harus dipaving oleh tool, dan berapa banyak kebebasan yang sebaiknya tetap diberikan ke pengguna.
+
+Ketika Mas Zahid bertanya apakah Mas Michael sudah all-in Amp, jawabannya sederhana: *“enggak masih campur2 so far skrg amp, omp, pi.”*
+
+Tool loyalty makin sulit dipertahankan. Workflow yang portable jauh lebih berharga daripada kesetiaan pada satu logo.
+
+## 🔄 Codex Reset Sudah Jadi Hari Raya Kecil
+
+Codex reset lagi. Mas Fatih Dinata membuka pagi dengan, *“WAH BENER, reset codex guys.”* Mas Agung ikut kaget, lalu saya menggoda: *“Ketahuan nggak mantau [codex-reset.com](https://codex-reset.com) 😏.”*
+
+Lucu, tapi juga menunjukkan perubahan perilaku. Kita sekarang memantau quota seperti memantau kurs atau jadwal kereta. Kapasitas agent sudah menjadi resource operasional, bukan fitur sampingan.
+
+Di sisi lain, Grok 4.6 sempat muncul lalu ditarik, kemudian muncul lagi. Release dan rollback berlangsung cukup cepat sampai timeline terasa seperti changelog real-time.
+
+Kalau reset quota saja sudah punya tracker komunitas, AI coding resmi masuk fase infrastructure: dipakai setiap hari, dirindukan ketika habis, dan baru terasa nilainya saat tidak tersedia.
+
+## ⚡ Quick Hits
+
+- [dots3-note](https://x.com/ChaoQiao42/status/2088669904811741356) muncul di OpenRouter sebagai opsi baru untuk sobat kere hore.
+- [OMP2](https://x.com/julie_bush/status/2088767028018716852) disebut sedang disiapkan dengan Rust, walau detailnya masih tipis.
+- [The Task Isn't the Job](https://sunilpai.dev/posts/the-task-isnt-the-job/) mengingatkan bahwa menyelesaikan task belum tentu berarti menyelesaikan pekerjaan.
+- [Droid Ambassador](https://factory.ai/ambassador) menawarkan jalur komunitas dengan token unlimited.
+- [anti-slop](https://github.com/dmmulroy/anti-slop) masuk radar sebagai bagian dari setup agent yang lebih disiplin.
+
+Satu minggu ini cukup untuk menambah lima eksperimen. Disiplin terpenting justru memilih satu yang benar-benar diuji.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Jalankan [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) pada satu task nyata, lalu catat intervensi dan kegagalannya—bukan cuma hasil benchmark.
+2. Bandingkan CommandCode, Koma, dan Poolside dengan task yang sama serta budget yang dibatasi.
+3. Coba pendekatan context pruning dari Maka Agent pada percakapan yang sudah panjang.
+4. Baca Pave the Road, lalu cek apakah instruction dan skill-mu tetap portable saat harness diganti.
+5. Pantau quota sebagai resource: ukur pekerjaan selesai per reset, bukan sekadar token terpakai.
+
+Tujuannya bukan memenangkan tool collecting. Tujuannya menemukan workflow yang masih bekerja setelah hype minggu ini lewat.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Anshor** — tabrakan tiga rilis model dalam satu hari.
+- **Mas Michael** — DeepSeek Harness, stack hemat, Amp, dan rem terhadap benchmark.
+- **Mas Aldi** — migrasi harness dan pentingnya UX.
+- **Mas Zahid** — context pruning, durability, dan uji nyata DeepSeek Harness.
+- **Mas Agung** — alternatif gratis untuk stack kere hore.
+- **Mas Tegar** — quota OpenCode Go yang habis dalam dua hari.
+- **Mas Aidityas** — batas context praktis dan perdebatan produk Amp.
+- **Mas Fatih Dinata** — alarm reset Codex minggu ini.
+- **Zain** — tracker reset yang mengubah quota monitoring jadi bahan bercanda.
+
+Komunitas paling berguna bukan yang paling cepat membagikan benchmark, tetapi yang berani kembali seminggu kemudian dan bilang apakah tool itu masih dipakai.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 17 Agustus 2026*
