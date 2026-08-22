@@ -40,6 +40,7 @@ import * as postAiToolsSweGrowthJul19Jul262026 from "../routes/blog.ai-tools-swe
 import * as postAiToolsSweGrowthJul26Aug22026 from "../routes/blog.ai-tools-swe-growth-jul-26-aug-2-2026.mdx";
 import * as postAiToolsSweGrowthAug2Aug92026 from "../routes/blog.ai-tools-swe-growth-aug-2-aug-9-2026.mdx";
 import * as postAiToolsSweGrowthAug9Aug172026 from "../routes/blog.ai-tools-swe-growth-aug-9-aug-17-2026.mdx";
+import * as postSeGrowthHidupSehatAug8Aug222026 from "../routes/blog.se-growth-hidup-sehat-aug-8-aug-22-2026.mdx";
 export type MdxAttributes = { meta: MdxMetaEntry[] };
 
 export type MdxModule = {
@@ -174,6 +175,7 @@ function sortPostsByDateDescending(posts: Post[]) {
 
 export const getAllPosts = (limit?: number) => {
   const allPosts = [
+    getPostFromMdxModule(postSeGrowthHidupSehatAug8Aug222026),
     getPostFromMdxModule(postAiToolsSweGrowthAug9Aug172026),
     getPostFromMdxModule(postAiToolsSweGrowthAug2Aug92026),
     getPostFromMdxModule(postAiToolsSweGrowthJul26Aug22026),
