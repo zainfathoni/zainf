@@ -1,0 +1,110 @@
+---
+meta:
+  - title: "AI Makin Mahal, Harness Makin Penting — AI Tools Digest #30"
+  - name: description
+    content: "Dynamic pricing, Amp API keys, agent skills, dan knowledge graph. Rangkuman dari grup AI Tools SWE GROWTH, 17-23 Agu 2026."
+  - author: Zain Fathoni
+  - date: "2026-08-23"
+  - lang: id
+  - property: og:title
+    content: "AI Makin Mahal, Harness Makin Penting — AI Tools Digest #30"
+  - property: og:description
+    content: "Dynamic pricing, Amp API keys, agent skills, dan knowledge graph. Rangkuman dari grup AI Tools SWE GROWTH, 17-23 Agu 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-aug-17-aug-23-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-30.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "AI Makin Mahal, Harness Makin Penting — AI Tools Digest #30"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# AI Makin Mahal, Harness Makin Penting — AI Tools Digest #30
+
+Minggu ini kita tidak lagi sekadar membandingkan model mana yang paling pintar. Dari 935 pesan sejak 17 Agustus, obrolannya bergeser: model yang bagus dipakai lewat apa, dibayar dengan skema apa, dan tetap waras atau tidak ketika jam sibuk. AI makin mahal, sementara harness makin menentukan hasil akhirnya.
+
+## Harga Bukan Lagi Angka Bulanan
+
+[DeepSeek](https://deepseek.com) masih jadi mesin favorit stack *kere hore*, tetapi perubahan harganya merambat ke [OpenCode](https://opencode.ai) Go dan [CommandCode](https://commandcode.ai). Harga bukan cuma angka per token. Ada jam sibuk, kuota, provider, routing, dan kualitas yang ikut berubah.
+
+Mas Michael bilang, *"semakin pintar semakin mahal lebih tepatnya"*. Mas Mei Rizal mengingatkan dimensi yang gampang hilang dari diskusi dolar: *"Buat rakyat biasa seperti saya yg digaji pake rupiah adalah mahal 🥲"*.
+
+Orang-orang mulai memperlakukan biaya sebagai bagian dari arsitektur: model murah untuk light task, model kuat untuk deep task, lalu pindah provider ketika latency turun. [Daftar provider komunitas](https://github.com/kyomel/tools-ai-swe-growth) jadi berguna bukan karena ada satu pemenang, tetapi karena pemenangnya terus berubah.
+
+Ini bukan subscription fatigue biasa. Cost routing sekarang sudah menjadi engineering skill.
+
+## API Key Amp dan Pertanyaan tentang Kualitas
+
+[Amp Code](https://ampcode.com) mulai memberi sinyal dukungan API key. Mas Iqbal langsung bereaksi, *"akhirnyaaaaaaa, tempelin subs commandcode wkwkwkwkwwk"*.
+
+Tapi BYOK tidak otomatis membuat semua model sama bagusnya. Mas Noviadi menangkap pembeda Amp: *"API nya boleh dari mana2 tp modelnya curated."* Harness-nya kuat karena model, tools, dan prompt stack dipilih sebagai satu sistem. Kalau pintunya dibuka terlalu lebar, kualitasnya bisa ikut menjadi tanggung jawab pengguna.
+
+Pola serupa muncul di tempat lain. [dsh-crew](https://github.com/ZSeven-W/dsh-crew) memungkinkan [Claude Code](https://docs.anthropic.com/en/docs/claude-code) atau [Codex](https://openai.com/codex/) mengirim worker ke DeepSeek Harness. [Warp](https://www.warp.dev/) bicara tentang factories. Kabar [Nvidia membangun coding harness](https://x.com/ClementDelangue/status/2091273855415492806) juga beredar.
+
+Model datang dan pergi; layer yang memilih, memberi context, dan memverifikasi model mulai punya daya tahan.
+
+## Dari Prompt ke Skills dan Knowledge Catalog
+
+Mas Aidityas membuka thread tentang knowledge base untuk agent lewat [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md): markdown-first, bukan graph database. Mas Faris menyorot metadata yang perlu ditambah—`usage_count`, `last_modified`, `status`, dan `stale_after`—agar agent lebih mudah menavigasi pengetahuan.
+
+Mas Michael membagikan [dotfiles Dillon Mulroy](https://github.com/dmmulroy/.dotfiles), [gist knowledge graph](https://gist.github.com/r17x/90eb2f7be93932b5693753aedb09c01a), dan [HumanLayer skills](https://github.com/humanlayer/skills). Mas Zahid sudah mencoba pola serupa: *"Show me nya mantap. Lebih enak daripada lavish axi"*.
+
+[Poteto skills](https://github.com/dsebban/skills) membuat idenya lebih konkret. Menurut Mas Zahid, beberapa agent bisa memberi solusi berbeda, lalu *"Orchestrator tinggal combine/pilih per parts"*.
+
+Pertanyaannya bukan harus markdown atau graph. Apakah struktur itu membantu agent menemukan pengetahuan yang tepat, tahu kapan basi, lalu menunjukkan hasilnya untuk diperiksa manusia?
+
+## Kecepatan Naik, Ekspektasi Ikut Rusak
+
+Mas Desilino melihat implikasinya: *"1000 feature request/day. Dulu keliatan mustahil bgt ya 😅"*. Begitu kecepatan terlihat mungkin, stakeholder mulai menganggapnya normal. Produktivitas yang seharusnya memberi ruang bernapas mudah berubah menjadi baseline baru.
+
+Mas Samuel bercanda, *"Makin ke sini, agent kelihatannya makin banyak mikir ya. Mulai2 overthinking kayak manusia kayaknya wkwkwk"*. Saat startup memakai klaim bombastis, Mas Oshi punya filter sehat: *"Entah kenapa kalo ada startup yg bilang ‘we killed …’, aku langsung berhenti baca 😂"*.
+
+Kecepatan dan benchmark mudah dijual. Reliability, reviewability, dan kemampuan berhenti sebelum ngawur jauh lebih susah—padahal itu yang dibutuhkan untuk production.
+
+## ⚡ Quick Hits
+
+- [Cursor](https://cursor.com) dan SuperGrok menaikkan kuota, tetapi paket $20 versus Devin tetap berujung pada latency, limit, dan jenis pekerjaan.
+- [Luvus](https://luvus.dev/) muncul sebagai nama baru dari Bohay untuk eksperimen ADE harian.
+- [Zed Delta](https://x.com/athasdev/status/2089980405499797542) disebut underrated, lalu dibagikan juga [review videonya](https://youtu.be/otIhfQaex80?si=vtXM5GcyUbjK7Lpx).
+- [roadmap.sh](https://roadmap.sh/) direkomendasikan kepada anggota muda: kuatkan coding, logika, dan matematika sebelum mengejar jargon.
+
+Alat bertambah cepat, tetapi fondasi dan judgment tetap tidak bisa di-*download*.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Audit biaya AI sebagai workflow lewat [daftar tools dan provider komunitas](https://github.com/kyomel/tools-ai-swe-growth).
+2. Coba worker murah dengan [dsh-crew](https://github.com/ZSeven-W/dsh-crew), lalu ukur kualitasnya—bukan hanya token cost.
+3. Pilih satu dari [HumanLayer skills](https://github.com/humanlayer/skills) yang benar-benar mengurangi langkah manual.
+4. Bandingkan [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) dengan kebutuhanmu sebelum memasang graph database.
+
+Satu dashboard biaya dan satu skill reusable lebih bernilai daripada mencoba lima model baru tanpa ukuran keberhasilan.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — pricing, routing, harness, dan knowledge tooling.
+- **Mas Mei Rizal** — perspektif biaya bagi pengguna berpenghasilan rupiah.
+- **Mas Iqbal** — reaksi praktis terhadap API-key support Amp.
+- **Mas Noviadi** — curated models dan kualitas harness.
+- **Mas Aidityas** — knowledge base dan graph untuk agent.
+- **Mas Faris** — metadata untuk knowledge index.
+- **Mas Zahid** — skills dan multi-agent orchestration.
+- **Mas Desilino** — ekspektasi stakeholder.
+- **Mas Samuel** — agent yang makin lama berpikir.
+- **Mas Oshi** — skeptisisme terhadap klaim marketing.
+
+Yang terasa minggu ini bukan satu rilis besar, melainkan perubahan cara kita menilai tools: harga, harness, context, dan verifikasi sudah menjadi satu paket. Era memilih satu model lalu setia selamanya sudah selesai.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 23 Agustus 2026*
