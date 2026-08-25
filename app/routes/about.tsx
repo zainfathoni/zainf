@@ -144,12 +144,14 @@ export default function About() {
             </p>
             <p>
               Beyond work, I build communities and experiments around
-              technology. I&apos;m behind{" "}
+              technology. I&apos;m behind
               <ExternalLink href="https://vibefromcafe.id/">
+                {" "}
                 Vibe From Cafe
               </ExternalLink>
-              , a community initiative helping tech workers navigate the AI
-              shift together, and{" "}
+              , a community initiative I co-initiated in Yogyakarta and now active in
+              Jabodetabek, Surabaya-Malang, and Kuala Lumpur, helping tech
+              workers navigate the AI shift together, and{" "}
               <ExternalLink href="https://ark.zainf.dev/">
                 The Ark
               </ExternalLink>
