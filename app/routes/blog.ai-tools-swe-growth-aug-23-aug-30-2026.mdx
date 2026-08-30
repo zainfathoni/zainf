@@ -1,0 +1,108 @@
+---
+meta:
+  - title: "Harness Jadi Produk — AI Tools Digest #31"
+  - name: description
+    content: "Devin, Amp, OMP, model murah, dan agent yang keluar dari editor. Rangkuman dari grup AI Tools SWE GROWTH, 23-30 Agu 2026."
+  - author: Zain Fathoni
+  - date: "2026-08-30"
+  - lang: id
+  - property: og:title
+    content: "Harness Jadi Produk — AI Tools Digest #31"
+  - property: og:description
+    content: "Devin, Amp, OMP, model murah, dan agent yang keluar dari editor. Rangkuman dari grup AI Tools SWE GROWTH, 23-30 Agu 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-aug-23-aug-30-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-31.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Harness Jadi Produk — AI Tools Digest #31"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Harness Jadi Produk — AI Tools Digest #31
+
+Minggu ini kita tidak kekurangan model baru, rumor baru, atau diskon baru. Tapi dari 955 pesan, cerita terbesarnya justru bukan model mana yang paling pintar. Yang menentukan apakah kerjaan terasa lancar sekarang adalah *harness*: bagaimana agent memahami intent, menjaga context, membagi pekerjaan, dan menyelesaikan task tanpa membuat kita jadi operator babysitter.
+
+## Harness-nya yang Bikin Betah
+
+[Devin](https://devin.ai) kembali jadi bahan obrolan setelah beberapa orang mencobanya lagi. Mas Michael, yang balik setelah lama meninggalkannya, bilang, *“harness mereka gg apalagi swe 1.7 yang 1000t/s gak gimmick kenceng beut 🤣”*. Dalam ranking pribadinya, Devin duduk bersama [Amp](https://ampcode.com) dan [OMP](https://omp.sh/) di tier S++.
+
+Ketiganya tidak menang dengan cara yang sama. Devin menjual pengalaman agent yang utuh dan cepat. OMP menang lewat ritme update dan orchestration. Amp semakin terasa seperti lingkungan kerja lintas perangkat. [Tulisan tentang harness](https://scott-fryxell.github.io/blog/the-harness-is-the-thing/) terasa pas: model tetap penting, tetapi scaffolding di sekitarnya makin menentukan hasil.
+
+Saat Amp [memensiunkan TUI sidebar](https://ampcode.com/news/so-long-tui-sidebar), Mas Iqbal merangkum pengalaman multi-agent: *“setelah spawn byk agent malah ngerasa ga butuh monitor, tapi butuhnya kopi biar ga stres wkwkwk.”*
+
+Artinya, fitur terbaik bukan selalu layar monitoring yang lebih ramai. Kadang kita butuh agent yang cukup bisa dipercaya supaya kita berani meninggalkan layar.
+
+## Model Mahal untuk Mikir, Model Murah untuk Lari
+
+Pola paling praktis minggu ini adalah memakai model kuat untuk planning, lalu menyerahkan eksekusi ke model murah. [Prewalk](https://stencil.so/blog/prewalk) memberi nama pada pola itu: intent dibedah, struktur dan todo dibuat jelas, baru worker kecil bekerja. Mas Zahid menyebut cita-citanya: *“Context as an artifact.”*
+
+[GLM 5.3 Flash](https://openrouter.ai/z-ai/glm-5.3-flash) berulang kali direkomendasikan sebagai worker murah. Ada yang menilai hasil UI-nya mendekati model premium, tetapi demand tinggi membuat throughput sempat lambat. Murah di price list belum tentu murah secara waktu.
+
+Rumor [GPT Astra](https://x.com/scaling01/status/2093853723160166764) membuat grup menyiapkan benchmark dan dompet. Spekulasi bahwa model ini tidak akan masuk paket $20 belum terkonfirmasi, jadi saya membacanya sebagai sinyal pasar, bukan fakta harga.
+
+Implikasinya: pertanyaan kita bergeser dari “model terbaik apa?” menjadi “model mana yang layak diberi pekerjaan apa?”
+
+## Agent Mulai Keluar dari Code Editor
+
+[Amp versi desktop dan mobile](https://ampcode.com/app) ternyata sudah saya pakai lebih dari seminggu. Ketika Mas Michael membagikan kabarnya, jawaban saya sederhana: *“Saya udah seminggu lebih pakai ini. 😁”* Versi native terasa lebih ringan dibanding PWA yang membuat perangkat panas dan boros baterai.
+
+Saya pernah meminta agent membersihkan aplikasi macOS yang sulit di-uninstall, lalu memakai LLM untuk memindahkan konfigurasi terminal ke Ghostty. Mas Naufaldi mencoba [WorkBuddy](https://www.workbuddy.ai/) untuk pekerjaan office: *“Bagus asli.”* Ini bukan demo coding lagi—agent mulai menjadi lapisan bantuan umum di komputer.
+
+[Hermes Agent](https://hermes-agent.nousresearch.com/) mengalami fase yang lebih lucu. Mas Oshi mengaku, *“belum ngerasa butuh.. akhirnya mengada-adain use case buat nyoba 😂.”* Tapi kemudian muncul use case konkret: membantu pengembangan aplikasi klinik kesehatan hewan.
+
+Jadi batas produk coding agent makin kabur. Ia bisa menulis kode, merapikan mesin, mengoperasikan aplikasi, atau menjadi interface baru untuk komputer kita.
+
+## Harga, Limit, dan Bahasa Marketing
+
+Provider murah, paket $10, model contributor, dan reset limit dibahas seperti promo marketplace. Humor terbaik muncul ketika reset OpenAI diperlakukan seolah benefit subscription yang seharusnya masuk pricing page.
+
+Perubahan limit Claude memicu kebingungan. Mas Amri bertanya, *“bingung, ‘raising’ tapi kok limitnya malah berkurang. bahasa ‘marketing’ kah ini?”* Wording pengumuman tidak selalu sama dengan pengalaman pemakai.
+
+Jangan menilai value hanya dari dolar per bulan. Hitung juga throughput, context terbuang, waktu menunggu, dan seberapa sering manusia harus turun tangan.
+
+## ⚡ Quick Hits
+
+- Mas Riza Fahmi memakai [Impeccable](https://github.com/pbakaus/impeccable) untuk audit UI dan bilang, *“Hasilnya buat saya sangat memuaskan.”* Contohnya di [rizafahmi.com](https://rizafahmi.com/) dan [ngobrol.in](https://ngobrol.in/).
+- [Director](https://director.sh/) muncul sebagai tool tambahan untuk pengguna Codex.
+- [unlazy](https://github.com/Leonxlnx/unlazy) dibagikan sebagai skill baru.
+- [Nous Portal](https://portal.nousresearch.com/) masuk radar pemburu provider murah.
+
+Ekosistem bergerak lebih cepat daripada daftar langganan kita. Pilih yang menyelesaikan friksi nyata, bukan yang paling sering lewat di timeline.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Bandingkan [Amp native app](https://ampcode.com/app) dengan PWA jika baterai dan suhu mengganggu.
+2. Coba pola [prewalk](https://stencil.so/blog/prewalk): model kuat untuk intent, model murah untuk implementasi.
+3. Uji [GLM 5.3 Flash](https://openrouter.ai/z-ai/glm-5.3-flash) pada satu task UI yang punya acceptance criteria jelas.
+4. Jalankan [Impeccable](https://github.com/pbakaus/impeccable) pada satu halaman, lalu verifikasi sarannya manual.
+
+Satu eksperimen terukur lebih berguna daripada empat subscription baru.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Michael — menguji ulang Devin dan memetakan harness.
+- Mas Iqbal — reality check tentang monitoring multi-agent.
+- Mas Zahid — context sebagai artifact dan prewalk.
+- Mas Oshi — fase “cari use case dulu” untuk Hermes.
+- Mas Naufaldi — WorkBuddy untuk pekerjaan non-coding.
+- Mas Riza Fahmi — audit UI dengan Impeccable.
+- Mas Amri — bahasa marketing perubahan limit.
+- Zain — Amp native app dan agent di luar editor.
+
+Komunitas tidak lagi sekadar membandingkan model. Kita sedang belajar merancang sistem kerja—dan itu lebih bernilai daripada leaderboard mingguan.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 30 Agustus 2026*
