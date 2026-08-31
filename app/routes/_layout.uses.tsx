@@ -53,6 +53,20 @@ function mapToolToCard(tool: Tool) {
   );
 }
 
+function AmpStoryCard() {
+  return (
+    <Card as="li" id="why-i-chose-amp">
+      <Card.Title as="h3" to="https://x.com/zainfathoni/status/2093585556831883689?s=20">
+        Why I chose Amp
+      </Card.Title>
+      <Card.Description>
+        I shared the full reasoning behind making Amp my agent harness.
+      </Card.Description>
+      <Card.Cta>Read the thread</Card.Cta>
+    </Card>
+  );
+}
+
 export default function Uses() {
   return (
     <SimpleLayout
@@ -68,6 +82,7 @@ export default function Uses() {
         </ToolsSection>
         <ToolsSection id="ai-subscriptions" title="AI subscriptions">
           {aiSubscriptions.map(mapToolToCard)}
+          <AmpStoryCard />
         </ToolsSection>
         <ToolsSection id="productivity" title="Productivity">
           {productivity.map(mapToolToCard)}
