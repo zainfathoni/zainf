@@ -1,0 +1,98 @@
+---
+meta:
+  - title: "Agent Sudah Keluar dari Laptop — AI Tools Digest #32"
+  - name: description
+    content: "Remote agent, perang reset token, dan screenshot sebagai evaluator UI. Rangkuman dari grup AI Tools SWE GROWTH, 30 Agu-6 Sep 2026."
+  - author: Zain Fathoni
+  - date: "2026-09-06"
+  - lang: id
+  - property: og:title
+    content: "Agent Sudah Keluar dari Laptop — AI Tools Digest #32"
+  - property: og:description
+    content: "Remote agent, perang reset token, dan screenshot sebagai evaluator UI. Rangkuman dari grup AI Tools SWE GROWTH, 30 Agu-6 Sep 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-aug-30-sep-6-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-32.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Agent Sudah Keluar dari Laptop — AI Tools Digest #32"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Agent Sudah Keluar dari Laptop — AI Tools Digest #32
+
+Minggu ini coding agent benar-benar keluar dari laptop. [Amp Code](https://ampcode.com) bisa “keroyokan” online, [Cursor](https://cursor.com) merilis remote, [OpenCode](https://opencode.ai) memasak versi remote, sementara [Claude Code](https://docs.anthropic.com/en/docs/claude-code) sudah enak dikendalikan dari HP. Dari 609 pesan, kita tetap kembali ke dua pertanyaan: berapa token yang habis, dan apakah hasilnya benar-benar lebih baik?
+
+## Agent Remote Bukan Lagi Bonus
+
+Mas Michael menangkap reaksi kita ketika melihat Amp multiplayer: *“gokil amp bisa keroyokan online 🤣”* Lalu ia membagikan [OpenCode remote beta](https://beta.opencode.ai/), yang sekilas mengikuti pola Orb di Amp. Cursor Remote juga masuk, sementara Mas Tonidy menilai remote control Claude paling matang: *“di claude tinggal /rc udah bisa diremote dari HP.”*
+
+Mas Naufaldi mengingatkan Cursor tetap punya alasan untuk hidup karena model-agnostic dan UI orchestration: *“masih ada alasna knapa orang2 prefer UI / TUI daripada full CLI.”* Medan kompetisinya bergeser dari editor terbaik menjadi control plane terbaik untuk pekerjaan yang terus berjalan saat kita meninggalkan meja.
+
+## Yang Mahal Itu Bukan Model, tapi Loop-nya
+
+[Codex](https://openai.com/codex/) ramai bukan karena benchmark, melainkan reset. Setelah membagikan [codex-resets.com](https://codex-resets.com/), saya menghitung: *“kalau bisa memanfaatkan limit dengan maksimal, Codex Pro 5x bisa berasa 10x, dan Codex Pro 20x bisa berasa 40x. 🤣”* Mas Agung membalas: *“7 hari ngoding mampus.”*
+
+Claude sempat error 522, Claude Max cepat habis bagi beberapa orang, dan eksperimen seperti [Gas City](https://gascity.com) masih mahal untuk kebanyakan kita. Saya sendiri memilih rem: *“Hidup harus seimbang, walaupun ada isu reset Codex besok (WIB), kalau sudah waktunya dicukupkan, ya harus berhenti kerjanya.”*
+
+Subscription murah bisa tetap mahal bila membuat kita mengejar reset, mengulang validasi, dan membakar akhir pekan. Unit ekonomi yang sehat bukan token per rupiah—melainkan hasil berguna per loop.
+
+## UI/UX: Tempat Token Menguap
+
+Mas Fatih sudah punya system design rapi, tetapi *“selalu banyak kebuang token di validasi UX sm UI, ini makan token banyak tapi ga ada hasil signifikan.”* Mas Zahid menawarkan feedback loop: *“aku pengen agent nya bisa narget user feeling per persona, terus on each e2e done it produce screenshot strip.”*
+
+Batasi komponen dengan [design system](https://associate.retas.co.id/design-system), jalankan E2E, hasilkan screenshot strip, lalu berikan bukti visual kepada evaluator. Mas Agung juga menyarankan [Tauri](https://tauri.app) + React ketika aplikasi butuh bridge native.
+
+Kalau agent tidak melihat hasil visual dan tidak tahu persona yang dituju, iterasi UI hanyalah mesin pembakar token. Screenshot bukan dekorasi PR; ia bagian dari spesifikasi.
+
+## GitHub CLI Akhirnya Mengerti Bukti Visual
+
+Mas Shofy membagikan [dukungan upload media di GitHub CLI](https://github.blog/changelog/2026-09-01-github-cli-media-in-issues-pull-requests-and-comments/) dan merangkum dampaknya: *“akhirnya bisa nyuruh agent buat upload attachment tanpa akrobat utak atik browser.”* Agent kini bisa menghasilkan screenshot, menaruhnya pada issue atau PR, lalu meminta manusia menilai bukti yang sama.
+
+Mas Michael juga membagikan [Specification-Driven Development](https://medium.com/@lichenlc/the-practice-of-specification-driven-development-sdd-b394a4c3895b)—*“habis TDD terbitlah SDD.”* Spec yang bisa diverifikasi dan evidence yang bisa dilihat membentuk workflow utuh. Agent yang bagus bukan yang paling banyak menulis kode, tetapi yang paling mudah membuktikan hasilnya benar.
+
+## ⚡ Quick Hits
+
+- [Qwen](https://qwen.ai) 3.8 Max mendapat upgrade, sementara model murah dan stealth terus muncul.
+- [Claude preserved thinking](https://platform.claude.com/docs/en/build-with-claude/preserved-thinking) mempertahankan reasoning lintas tool calls.
+- [Padu](https://github.com/wisnuwiry/padu), ADE buatan Indonesia, muncul sebagai alternatif lokal.
+- Mas Michael melihat “Omen Alpha” dan bilang: *“nama Omen udah berasa kek film horror 😂.”*
+
+Model terus berganti. Yang mulai menetap justru session persisten, orchestration, spec, dan evidence.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Lampirkan screenshot melalui [GitHub CLI](https://cli.github.com) pada issue atau PR.
+2. Uji OpenCode remote beta untuk satu task panjang.
+3. Tambahkan screenshot strip ke satu alur E2E dan nilai berdasarkan persona.
+4. Lihat pola reset sebelum menilai paket dari label multiplier.
+
+Pilih satu saja. Tujuannya bukan menambah tool, tetapi memotong satu loop validasi yang mahal.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Michael** — remote agents, SDD, dan humor Omen.
+- **Mas Tonidy** — remote control Claude.
+- **Mas Naufaldi** — alasan UI/TUI masih relevan.
+- **Mas Agung** — realitas reset dan pilihan stack.
+- **Mas Fatih** — bottleneck validasi UI/UX.
+- **Mas Zahid** — persona dan screenshot strip.
+- **Mas Shofy** — GitHub CLI media upload.
+- **Zain** — value Codex dan batas mengejar reset.
+
+Spektrumnya sehat: dari excitement sampai pertanyaan penting—apakah workflow kita benar-benar menghasilkan kualitas lebih baik?
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 6 September 2026*
