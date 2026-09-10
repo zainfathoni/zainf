@@ -5,6 +5,7 @@ meta:
     content: "One month after building a team of AI agents, the system learned to operate itself — spawning parallel workers, reviewing its own code, and filing its own bug reports. Here's what changed."
   - author: Zain Fathoni
   - date: "2026-03-29"
+  - lang: en
   - name: keywords
     content: "AI agents, OpenClaw, multi-agent systems, compound engineering, autonomous AI, personal automation"
   - property: og:title
@@ -81,7 +82,7 @@ A month later? I'm not the dispatcher anymore. I'm the *reviewer*.
 
 The idea for deterministic dispatch came from studying how others were solving this. OpenAI's [Symphony](https://github.com/openai/symphony) framework, [Paperclip](https://paperclip.ing), and especially Elvis's proactive task sourcing pattern — where his orchestrator "Zoe" scans Sentry errors and meeting notes to [autonomously spawn agents](https://x.com/elvissun/status/2028671336219107687) — all pointed in the same direction: **spend tokens on judgment, spend code on mechanics.**
 
-Today — literally today, March 29, 2026 — we deployed a 575-line bash script called `fizzy-dispatcher.sh`. It runs inside Optimus's heartbeat, and every time Optimus wakes up, it:
+On March 29, 2026, we deployed a 575-line bash script called `fizzy-dispatcher.sh`. It runs inside Optimus's heartbeat, and every time Optimus wakes up, it:
 
 1. **Queries [Fizzy](https://fizzy.do)** — pulls all cards tagged `bot-actionable` that haven't been worked on
 2. **Checks fuel** — parses codexbar to know: does Amp have remaining credits? Is Codex available? What's the Claude quota?
