@@ -1,0 +1,62 @@
+# Scan the repository for destructive commands in executable contexts.
+# Direct binary install is used because the composite action tags tried in
+# #69 (`action@v0`) and #71 (`action@v0.4.5`) failed in this repository's CI.
+# Pin and checksum are required so a swapped GitHub Release cannot run.
+name: Destructive Command Guard
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    name: Scan destructive commands
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Destructive Command Guard
+        shell: bash
+        env:
+          DCG_VERSION: v0.14.3
+          DCG_PLATFORM: x86_64-unknown-linux-musl
+          DCG_SHA256: 63712fd7dc549f608640c41545be3d8686c14e8b989e51194b54a990b4255f69
+        run: |
+          set -euo pipefail
+          install_dir="${RUNNER_TEMP}/dcg"
+          mkdir -p "$install_dir"
+          archive="dcg-${DCG_PLATFORM}.tar.xz"
+          url="https://github.com/Dicklesworthstone/destructive_command_guard/releases/download/${DCG_VERSION}/${archive}"
+
+          curl --fail --location --silent --show-error "$url" --output "${install_dir}/${archive}"
+
+          actual_sha256="$(sha256sum "${install_dir}/${archive}" | awk '{ print $1 }')"
+          if [ "$actual_sha256" != "$DCG_SHA256" ]; then
+            echo "::error::SHA-256 mismatch for ${archive}"
+            echo "expected: ${DCG_SHA256}"
+            echo "actual:   ${actual_sha256}"
+            exit 1
+          fi
+
+          members="$(tar -tJf "${install_dir}/${archive}")"
+          member_type="$(tar -tvJf "${install_dir}/${archive}" | cut -c1)"
+          if [ "$members" != "dcg" ] || [ "$member_type" != "-" ]; then
+            echo "::error::${archive} must contain exactly one root-level regular file named dcg"
+            exit 1
+          fi
+
+          tar -xJf "${install_dir}/${archive}" -C "$install_dir"
+          chmod 0755 "${install_dir}/dcg"
+          echo "$install_dir" >> "$GITHUB_PATH"
+
+      - name: Verify Destructive Command Guard
+        shell: bash
+        run: dcg --version
+
+      - name: Run Destructive Command Guard
+        shell: bash
+        run: dcg scan --paths . --fail-on error --format pretty
