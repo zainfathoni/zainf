@@ -1,0 +1,155 @@
+---
+meta:
+  - title: "Gratisnya Amp, Murahnya DeepSeek, Ribetnya Banyak Agent — AI Tools Digest #33"
+  - name: description
+    content: "Amp membuka runner gratis, DeepSeek V4.1 Flash menggoda sebagai worker murah, dan agent memory jadi masalah baru. Rangkuman dari grup AI Tools SWE GROWTH, 06-13 Sep 2026."
+  - author: Zain Fathoni
+  - date: "2026-09-13"
+  - lang: id
+  - property: og:title
+    content: "Gratisnya Amp, Murahnya DeepSeek, Ribetnya Banyak Agent — AI Tools Digest #33"
+  - property: og:description
+    content: "Amp membuka runner gratis, DeepSeek V4.1 Flash menggoda sebagai worker murah, dan agent memory jadi masalah baru. Rangkuman dari grup AI Tools SWE GROWTH, 06-13 Sep 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-sep-6-sep-13-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-33.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Gratisnya Amp, Murahnya DeepSeek, Ribetnya Banyak Agent — AI Tools Digest #33"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Gratisnya Amp, Murahnya DeepSeek, Ribetnya Banyak Agent — AI Tools Digest #33
+
+Minggu ini kita dapat sesuatu yang kedengarannya terlalu enak: [Amp](https://ampcode.com/news/free-agent) bisa dipakai gratis. Di saat yang sama, [DeepSeek V4.1 Flash](https://x.com/deepseek_ai/status/2097930608790167907) datang membawa harga murah dan kemampuan yang bikin model mahal mulai terasa boros. Harusnya hidup makin sederhana, kan?
+
+Ternyata tidak. Begitu pilihan makin banyak, masalahnya pindah dari “agent mana yang paling pintar?” menjadi “agent mana mengerjakan apa, konteksnya disimpan di mana, dan siapa yang bayar inference-nya?” Dalam 953 pesan sejak digest terakhir, yang paling terasa justru lahirnya *stack* pribadi: planner mahal, worker murah, harness gratis, dan memory yang berusaha menyatukan semuanya.
+
+## Amp Gratis—Tapi “Gratis” yang Mana?
+
+Saat pengumuman Free Agent muncul, saya langsung menulis:
+
+> “Sekarang bisa pakai Amp secara gratis⁩. Jadi kalau ada anggaran buat subscriptions AI pribadi, bisa cukup dipakai buat ChatGPT subscriptions aja, ga perlu nambah Amp. 😁” — Zain
+
+Kalimat itu benar, tapi butuh catatan kaki. Yang gratis adalah menjalankan Amp sebagai runner di laptop sendiri. Kalau pekerjaan pindah ke Orbs, biaya compute tetap pay-per-use. Kalau model datang dari subscription atau API provider lain, biaya inference juga tidak hilang. Setelah top-up minimum turun menjadi $5 pun, “free harness” dan “free model” tetap dua hal berbeda.
+
+Mas Iqbal, yang sudah dua bulan meninggalkan Amp untuk [Devin](https://x.com/cognition/status/2098069235733823965), langsung menangkap daya tariknya:
+
+> “Akhirnya ada alasan balik ke amp lagi hahaa udah 2 bulan lepas amp pake devin cli wkwk” — Mas Iqbal
+
+Kenapa Amp berani membuka runner? Dugaan paling masuk akal adalah subsidi silang: enterprise membayar lebih, sementara Orbs dan pemakaian provider tetap menghasilkan revenue. Modelnya mirip kelas ekonomi dan bisnis di pesawat—produk murah menarik volume, produk mahal menutup ongkosnya.
+
+Custom endpoint yang kompatibel dengan API OpenAI juga membuat Amp bisa ditempelkan ke provider yang sudah kita pakai. [Dokumentasi “Using Amp”](https://ampcode.com/docs/using-amp) memperlihatkan workflow nyata dari para engineer-nya, lengkap dengan variasi cara kerja masing-masing.
+
+Free Agent menghapus biaya harness. Biaya model dan hosted compute tetap harus dihitung sendiri.
+
+## DeepSeek V4.1 Flash: Worker Murah yang Bikin Goyah
+
+Kalau Amp adalah cerita tentang harness, DeepSeek V4.1 Flash adalah cerita tentang mesin di bawahnya. Pengumuman resminya langsung diikuti eksperimen UI, coding, sampai pembuatan video presentasi. Reaksi awal Mas Zahid pendek dan jelas:
+
+> “bagus bet ini” — Mas Zahid
+
+[Perbandingan OpenDesignHQ yang dibagikan di grup](https://x.com/OpenDesignHQ/status/2097620919778955617) menempatkannya dekat dengan [GPT-6 Astra](https://openai.com/codex/) untuk tugas visual tertentu, dengan harga yang diklaim jauh lebih rendah. Di praktik, saran bergeser ke pembagian peran: model kuat untuk planning, Flash untuk eksekusi.
+
+Benchmark hanya pembuka. Setelah dipakai lebih lama, Mas Zahid memberi catatan yang lebih berguna daripada angka arena:
+
+> “Sepertinya infra deepseek agak agak. Flash kemaren dan hari ini beda rasa” — Mas Zahid
+
+Provider load, time-to-first-token, dan perubahan jam peak bisa membuat model yang sama terasa seperti produk berbeda. Kuota besar pun tidak banyak membantu kalau satu task selesai dua kali lebih lambat. Ini menjelaskan kenapa pengalaman melalui [OpenCode](https://opencode.ai), [CommandCode](https://x.com/CommandCodeAI), atau Devin bisa berbeda meski label modelnya sama.
+
+Mas Dedy merangkum tempo perlombaan ini dengan bahasa game:
+
+> “Pelan2 Deepseek. Baru aja Astra release 🤣”
+>
+> “Skill 1, dash dulu. Ini langsung ulti 😩” — Mas Dedy
+
+DeepSeek V4.1 Flash layak dicoba, terutama sebagai worker. Putuskan setelah melihat latency, stabilitas, dan hasilnya di repo kita sendiri.
+
+## DOPA dan Masalah Baru: Siapa Pegang Konteks?
+
+Setelah Amp kembali masuk radar, Mas Michael memberi nama untuk stack terbarunya:
+
+> “dengan ampcode sdh kembali maka stack terbaru coding agent sdh update: DOPA(Devin, Oh-my-pi, Pi, Ampcode) 🔥💯🦾” — Mas Michael
+
+Lucu, tapi akurat. [Oh My Pi](https://github.com/can1357/oh-my-pi), [Pi](https://github.com/badlogic/pi-mono), Devin, dan Amp tidak harus saling menggantikan. Planning bisa dilakukan di satu tempat, implementasi di tempat lain, lalu review kembali ke model dari “pabrik” berbeda. Masalahnya: konteks tidak ikut pindah secara ajaib.
+
+Mas Abdan menanyakan hal yang sebenarnya sedang kita semua cari jawabannya:
+
+> “lalu untuk menyatakan coding agent ini enak atau engga ada parameter yg diukur mas? atau feeling aja?” — Mas Abdan
+
+Percakapan kami tidak menghasilkan scorecard universal. Ukurannya tetap dekat dengan pekerjaan sehari-hari: apakah agent menyelesaikan jenis task kita, seberapa banyak koreksi yang dibutuhkan, berapa lama menunggu, dan berapa biaya akhirnya. Mas Michael menyamakan pilihan agent dengan era perang framework—setiap produk membawa idealismenya sendiri.
+
+Begitu jumlah agent bertambah, memory menjadi infrastruktur. [Engram](https://getengram.app/docs) muncul sebagai opsi ringan; solusi memory yang lebih besar dianggap berlebihan untuk kebutuhan tertentu; [Cognee](https://www.cognee.ai) dicari untuk alur lebih komplet; dan [Obsidian](https://obsidian.md) dipakai sebagai memory netral lintas agent. Handoff-nya harus membawa keputusan arsitektur, progres task, constraint, dan alasan di balik perubahan.
+
+Menambah agent kelima mudah. Yang susah: mencegah agent kedua mengulang kebingungan yang sudah diselesaikan agent pertama.
+
+## Harness, Model, dan Review Tidak Bisa Dipisah
+
+Diskusi tentang skill *grill-me* memperlihatkan jebakan lain: workflow yang terdengar canggih tetap bergantung pada kecerdasan model dan kualitas harness. Mas Noviadi mengingatkan:
+
+> “Klo dilihat grill me ini generic banget, interview relentlessly dimodelkan dengan design tree.” — Mas Noviadi
+
+Kalau instruksinya terbuka, model yang lebih kuat biasanya bertanya lebih tajam. Untuk keputusan penting, saran praktisnya adalah adversarial review di sesi terpisah atau memakai model setara dari provider berbeda. Review kedua dipakai untuk mencari lubang yang tidak terlihat planner pertama.
+
+Hal serupa tampak pada [Herdr](https://herdr.dev/docs/integrations/). Versi vanilla bisa dipakai, tetapi nilainya muncul ketika plugin dan custom integration memberi status seragam untuk agent berbeda: *in progress*, *blocked*, atau *done*. Sebagian orang suka produk dengan default ramah pemula; sebagian lain ingin merakit dashboard sendiri.
+
+Mas Eka melihat biaya tersembunyinya dengan tepat:
+
+> “Ini udah kayak kerja part time nyobain model2 baru satu persatu wkwk” — Mas Eka
+
+Jadi evaluasi agent tidak boleh hanya mengukur output kodenya. Waktu untuk setup, memindahkan memory, mengawasi UI, dan mengejar perubahan pricing juga bagian dari total cost.
+
+## ⚡ Quick Hits
+
+- Harga RAM dan SSD ikut dibahas karena permintaan AI membuat eksperimen local hardware makin mahal. Mas Agung sampai menyimpulkan, “lebih murah liburan ke ropa daripada build 1 pc :)”. [BlankOn Linux](https://blankonlinux.id/en/revival) ikut muncul sebagai cara memanfaatkan perangkat lama untuk workflow terminal.
+
+- [TeamAI CLI](https://github.com/Tencent/teamai-cli) menarik perhatian karena memberi ruang bagi agent untuk bekerja dan commit secara independen. Parallel work bertambah mudah, tetapi koordinasi hasil tetap harus dirancang.
+
+- [The Socrates Agent](https://danielmiessler.com/blog/the-socrates-agent) dibagikan sebagai pola belajar dengan AI. Diskusi grill dan red-team review mengingatkan bahwa bertanya lebih banyak tidak otomatis berarti berpikir lebih baik.
+
+- Tulisan [“How I Manage My Agents”](https://arslan.io/2026/09/11/how-i-manage-my-agents/) memicu catatan penting: koordinasi agent untuk pekerjaan non-UI relatif mudah, sementara frontend dan mobile masih tersendat di evaluasi visual dan rasa estetika.
+
+Benang merahnya jelas: tool makin mudah dirangkai, tetapi judgment—terutama untuk UI, biaya, dan kualitas akhir—belum bisa di-outsource begitu saja.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **Jalankan satu task dengan Free Agent.** Pakai [Amp local runner](https://ampcode.com/news/free-agent), lalu catat terpisah biaya model dan waktu selesai.
+
+2. **Uji planner/worker split.** Beri satu rencana yang sama ke model kuat, lalu eksekusi dengan DeepSeek V4.1 Flash. Bandingkan koreksi, latency, dan total biaya.
+
+3. **Buat dokumen handoff lintas agent.** Simpan objective, constraint, keputusan, progres, dan next step sebelum menambah memory service.
+
+4. **Tambahkan adversarial review untuk keputusan mahal.** Minta model kedua menyerang asumsi dan keputusan, bukan sekadar “review this plan.”
+
+5. **Nilai total cost of workflow.** Masukkan setup, perpindahan konteks, waktu tunggu, dan pengawasan ke dalam hitungan subscription.
+
+Kalau percobaan ini tidak membuat pekerjaan lebih cepat atau lebih mudah dipercaya, mungkin stack yang lebih kecil justru lebih matang.
+
+## 👥 Kontributor Minggu Ini
+
+- **Zain** — membedah batas “gratis” pada Free Agent dan ekonomi di baliknya.
+- **Mas Iqbal** — membawa perspektif pengguna Devin yang tertarik kembali ke Amp.
+- **Mas Michael** — merangkai DOPA dan mendorong eksplorasi cross-agent memory.
+- **Mas Zahid** — menguji DeepSeek V4.1 Flash saat infrastrukturnya berubah rasa.
+- **Mas Dedy** — memberi analogi paling pas untuk tempo perlombaan model.
+- **Mas Abdan** — menanyakan ukuran nyata untuk menilai coding agent.
+- **Mas Noviadi** — mengingatkan perlunya adversarial review.
+- **Mas Eka** — menghitung biaya waktu dari kebiasaan mencoba model baru.
+- **Mas Agung** — menghubungkan demam AI dengan harga hardware.
+
+Mereka mengingatkan saya bahwa digest ini paling berguna ketika tidak berhenti di kabar produk, tetapi menangkap bagaimana produk itu benar-benar dipakai, diragukan, dan ditertawakan.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 13 September 2026*
