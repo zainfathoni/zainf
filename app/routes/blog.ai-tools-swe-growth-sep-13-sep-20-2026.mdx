@@ -1,0 +1,115 @@
+---
+meta:
+  - title: "Jev Datang, Router Memanas, Memory Makin Rumit — AI Tools Digest #34"
+  - name: description
+    content: "Jev, Amp AI Routers, drama CommandCode, dan memory coding agent. Rangkuman dari grup AI Tools SWE GROWTH, 13-20 Sep 2026."
+  - author: Zain Fathoni
+  - date: "2026-09-20"
+  - property: og:title
+    content: "Jev Datang, Router Memanas, Memory Makin Rumit — AI Tools Digest #34"
+  - property: og:description
+    content: "Jev, Amp AI Routers, drama CommandCode, dan memory coding agent. Rangkuman dari grup AI Tools SWE GROWTH, 13-20 Sep 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-sep-13-sep-20-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-34.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Jev Datang, Router Memanas, Memory Makin Rumit — AI Tools Digest #34"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Jev Datang, Router Memanas, Memory Makin Rumit — AI Tools Digest #34
+
+Rabu dini hari, Mas Michael melempar satu link tentang [Jev](https://x.com/CompleteSkeptic/status/2099925682726002904). Beberapa hari kemudian kita sudah punya tulisan penjelas, akses via [OpenRouter](https://openrouter.ai), dan task router buatan Mas Riza Fahmi. Kecepatan siklusnya agak absurd: kenalan, penasaran, daftar waitlist, lalu langsung dicari cara memasangnya ke workflow.
+
+Sementara itu, [Amp](https://ampcode.com/news/one-runner-is-now-enough) membuka lebih banyak jalan untuk membawa server dan model sendiri. [CommandCode](https://x.com/CommandCodeAI/status/2101142735864610942) bergerak ke arah sebaliknya dengan membatasi pemakaian subscription di coding agent lain. Minggu ini model baru memang ramai, tapi urusan router, policy, dan memory justru lebih banyak mengubah kerja sehari-hari.
+
+## Jev baru muncul, integrasinya sudah jadi
+
+Jev menarik karena diposisikan sebagai model spesialis reasoning, bukan model general-purpose untuk semua hal. Klaim harga rendah dan minim halusinasi tentu bikin grup langsung waspada sekaligus penasaran. Mas Iqbal merangkum reaksinya pendek saja: *"Hmm menarik 40x cheaper"*. Angkanya masih klaim awal, jadi saya lebih tertarik melihat bagaimana orang memakainya daripada ikut menyimpulkan terlalu cepat.
+
+Mas Riza Fahmi tidak berhenti di waitlist. Ia membagikan [pi-jev-task-router](https://github.com/rizafahmi/pi-jev-task-router) sambil bilang, *"Yg mau jajal Jev buat pi 😬"*. Mas Dedy baru sempat mencoba ketika alternatif gratis lain muncul dan reaksinya sangat relatable: *"Alamak baru aja hari ini nyoba jev wkwk"*.
+
+Kalau ingin memahami konteksnya dulu, tulisan [Flavio Copes tentang Jev](https://flaviocopes.com/jev/) cukup membantu. Bagi saya, menariknya bukan sekadar model mana yang menang. Kita sudah mulai memperlakukan model reasoning sebagai komponen yang bisa dirutekan ke tugas tertentu, lalu dikembalikan ke agent utama.
+
+## Amp mulai membuka pintu
+
+[Orbs](https://x.com/sqs/status/2100084509530107935) akan bisa berjalan di VPS atau server milik pengguna. Reaksi saya waktu itu: *"Nah, kalau bisa gini enak. Ga perlu akrobat git worktree lagi. 🤣"* Apalagi ada kabar satu runner sekarang cukup untuk menangani beberapa workspace. Buat yang punya Mac mini atau server sendiri, ini jauh lebih dekat ke setup yang masuk akal.
+
+Mbak Eka punya analogi yang lebih bagus untuk perubahan arah Amp: *"Kayak resto elitnya tiba2 bikin \"paket hemat lunch rice bowl + es teh\" 😆. Gpp sih ku senang."* Amp selama ini terasa curated dan mahal. Bring-your-own-server serta BYOK membuatnya lebih fleksibel, walau detail biaya dan aksesnya belum sepenuhnya rata.
+
+Bagian yang sempat membingungkan adalah [AI Routers](https://ampcode.com/settings/experimental-features#ai-routers). Dukungan untuk OpenRouter, Bedrock, Vertex AI, Azure Foundry, dan gateway lain masih experimental serta muncul lebih dulu untuk tier Megawatt dan Gigawatt. Mas Fajri langsung menangkap risiko kecil yang sering terasa besar saat sedang fokus kerja: *"ini susah sih, tiba-tiba not credit enough 😂"*.
+
+Amp sedang menjadi lebih terbuka, tetapi kita tetap perlu membaca batas plan, credit, dan dukungan provider sebelum membangun workflow di atas fitur experimental.
+
+## Router murah dan policy yang bisa berubah
+
+Awal minggu, CommandCode masih ramai karena promo dan model murah. Menjelang Minggu, percakapannya berubah setelah muncul pembatasan koneksi subscription ke agent lain dan debat terbuka di X. Mas Salma kehilangan salah satu jalur yang biasa dipakai: *"Opencode yg free model jg udah ga bsa d pake di Pi. Padahal enak bgt nyepam muse 1.3 wkwk"*.
+
+Pilihan cadangannya banyak: [OpenCode](https://opencode.ai), [9router](https://9router.com/), provider langsung, atau extension buatan sendiri. Mas Michael memilih tetap hati-hati karena setiap router menambah layer yang bisa mengubah compression, prompt, atau konfigurasi model. Mas Zahid malah memilih membuat extension provider sendiri agar kontrolnya tetap dekat.
+
+Lalu drama ikut membesar. Mbak Eka memberi status paling akurat minggu ini: *"😮 `0` days without AI space drama"*. Buat saya, ini pengingat sederhana: harga murah hanya berguna selama akses dan policy-nya cukup stabil untuk pekerjaan kita.
+
+## Memory agent mulai terasa seperti proyek sendiri
+
+Setelah model dan router, lapisan berikutnya adalah memory. [Engram](https://engram.gentlemanprogramming.com/) muncul sebagai opsi ringan untuk menyimpan konteks lintas coding agent. Mas Michael memilih yang cukup untuk kebutuhannya sekarang: *"aku cukup pake engram skrg"*. Setup graph yang lebih lengkap tetap menarik, tetapi integrasi, inject context, dan nudge di awal sesi cepat berubah menjadi proyek tersendiri.
+
+Mas Zahid melihat kebutuhan memory yang bisa mengambil hal-hal penting yang sering terlupa, sementara struktur wajib tetap disimpan lewat skill dan domain model. Perbedaan itu penting. Memory tidak seharusnya menjadi gudang semua percakapan; ia perlu membantu agent mengingat keputusan yang memang berguna pada sesi berikutnya.
+
+Hal serupa terlihat di sisi skill. [Technical-writing skill dari pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/technical-writing) dipakai bersama skill diagram agar dokumentasi lebih enak dibaca. [SkillBay](https://skillbay.sh/) memunculkan ide katalog skill komunitas. Lalu ada [Graft](https://github.com/trailhq/graft), yang dibagikan untuk membentuk workflow agent lewat skill.
+
+Agent yang kuat belum tentu butuh memory paling rumit. Setup yang bagus adalah yang masih bisa kita pahami ketika hasilnya mulai aneh.
+
+## Skala agent naik, review belum ikut mengejar
+
+Ada dua eksperimen besar yang lewat minggu ini: sekitar 800 subagent untuk satu pekerjaan, lalu 1.393 subagent selama 19 jam untuk refactor. Mas Iqbal mengajukan pertanyaan yang jauh lebih penting daripada jumlah agent-nya: *"Ga ngerti ini reviewnya gimana wkwkwk"*.
+
+Kita makin mudah menambah parallelism, tetapi review tetap dilakukan manusia dengan waktu terbatas. Benchmark bisa menunjukkan task selesai, namun belum menjawab apakah perubahan mudah dipahami, dipelihara, dan dipercaya. Sampai alat review mengejar, jumlah agent bukan metrik produktivitas yang berdiri sendiri.
+
+## ⚡ Quick Hits
+
+- [px0](https://px0.ai/) dibagikan sebagai code reader berbasis browser. Saya sendiri sudah jarang mengetik kode di editor dan bilang, *"Dan emang ga pernah buat nulis kode lagi, cuman butuh buat baca aja."* Kalau performanya cukup cepat, produk seperti ini cocok untuk workflow yang sebagian besar berisi review hasil agent.
+- [StepFun](https://x.com/StepFun_ai/status/2101510462685003786) merilis model murah baru. Mas Zahid memberi tolok ukur biaya yang sangat Indonesia: sekarang jatahnya *"bukan jajan kopi lagi"*.
+- [HarnessRouter](https://github.com/HarnessRouter/harnessrouter) muncul sebagai opsi open-source lain untuk merutekan model ke coding harness.
+- [Musebook](https://musebook.io/) memperlihatkan sisi sosial workflow agent, walau grup masih bertanya apakah bentuknya akan seperti media sosial untuk clawbot.
+
+Daftar model dan router akan terus berganti. Minggu ini yang terasa lebih tahan lama justru pertanyaan tentang kontrol: siapa memilih model, siapa menyimpan memory, dan siapa memeriksa hasilnya.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+- Baca [penjelasan Jev](https://flaviocopes.com/jev/) sebelum ikut menyimpulkan dari benchmark dan thread peluncuran.
+- Sudah punya akses Jev? Coba [task router untuk Pi](https://github.com/rizafahmi/pi-jev-task-router) dari Mas Riza Fahmi pada pekerjaan kecil yang hasilnya mudah diverifikasi.
+- Cek [status AI Routers di Amp](https://ampcode.com/settings/experimental-features#ai-routers) dan pastikan tier akunmu memang mendapat akses sebelum menyiapkan provider.
+- Uji [Engram](https://engram.gentlemanprogramming.com/) pada satu repo. Simpan keputusan yang benar-benar perlu dibawa lintas sesi, bukan semua percakapan.
+- Coba [px0](https://px0.ai/) untuk membaca diff atau codebase hasil agent, lalu bandingkan kecepatannya dengan editor yang biasa dipakai.
+
+Pilih satu eksperimen yang paling dekat dengan hambatanmu minggu ini. Menambah lima layer sekaligus hanya membuat kita sulit tahu mana yang benar-benar membantu.
+
+## 👥 Kontributor Minggu Ini
+
+- Zain — mencoba AI Routers dan melihat px0 sebagai code reader.
+- Mas Michael — membawa mayoritas kabar tentang Jev, Amp, router, dan memory agent.
+- Mas Zahid — membagikan workflow skill serta pendekatan extension provider dan memory.
+- Mbak Eka — membingkai perubahan Amp dengan analogi paket lunch dan mencatat drama mingguan.
+- Mas Iqbal — menyoroti harga Jev dan masalah review pada agent swarm.
+- Mas Riza Fahmi — membuat task router Jev untuk Pi.
+- Mas Dedy — mencoba Jev tepat sebelum alternatif baru bermunculan.
+- Mas Fajri — mengingatkan soal plan gate dan credit pada router.
+- Mas Salma — membagikan dampak pembatasan provider pada workflow Pi.
+
+Terima kasih untuk obrolan, link, eksperimen, dan candaan minggu ini.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 20 September 2026*
