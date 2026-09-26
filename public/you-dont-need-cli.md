@@ -4,7 +4,7 @@ paginate: true
 theme: default
 backgroundColor: #ffffff
 title: You don't need CLI
-description: Let models operate the CLI for you, and let Orbs host them — SWE Growth Meetup, 26 September 2026
+description: Let models operate the CLI for you, and let Orbs host them — SWE Growth Kopdar Chapter Jogja, 26 September 2026
 url: https://www.zainfathoni.com/you-dont-need-cli.html
 image: https://www.zainfathoni.com/assets/you-dont-need-cli.png
 footer: "26 September 2026 | You don't need CLI"

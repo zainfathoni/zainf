@@ -211,11 +211,15 @@ export const meetups: Talk[] = [
     title: "You don't need CLI",
     description:
       "Let models operate the CLI for you, and let Amp Orbs host them in the cloud.",
-    event: "SWE Growth Meetup",
+    event: "SWE Growth Kopdar Chapter Jogja",
     resources: [
       {
         href: "/you-dont-need-cli.html",
         label: "Open slides",
+      },
+      {
+        href: "https://luma.com/zrp6kl6x",
+        label: "Event link",
       },
     ],
   },
