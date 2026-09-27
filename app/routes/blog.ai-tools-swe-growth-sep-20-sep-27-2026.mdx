@@ -1,0 +1,93 @@
+---
+meta:
+  - title: "Pintar, Murah, atau Terlihat Kerjanya? — AI Tools Digest #35"
+  - name: description
+    content: "Opus 5.5, Codex, Jev, Amp runner, dan agent yang bisa diawasi. Rangkuman dari grup AI Tools SWE GROWTH, 20–27 Sep 2026."
+  - author: Zain Fathoni
+  - date: "2026-09-27"
+  - property: og:title
+    content: "Pintar, Murah, atau Terlihat Kerjanya? — AI Tools Digest #35"
+  - property: og:description
+    content: "Opus 5.5, Codex, Jev, Amp runner, dan agent yang bisa diawasi. Rangkuman dari grup AI Tools SWE GROWTH, 20–27 Sep 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-sep-20-sep-27-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-35.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Pintar, Murah, atau Terlihat Kerjanya? — AI Tools Digest #35"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Pintar, Murah, atau Terlihat Kerjanya? — AI Tools Digest #35
+
+Minggu ini saya makin susah menjawab pertanyaan “model terbaik apa?” Di grup AI Tools SWE GROWTH, jawabannya berubah tergantung pekerjaan, kuota yang tersisa, dan seberapa mudah kita melihat agent sedang ngapain. Rilis model memang bikin ramai, tapi cerita paling berguna justru datang dari orang yang benar-benar memakainya.
+
+## Opus 5.5 naik, tapi jangan jadikan pengalaman orang lain benchmark kita
+
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code) dengan Opus 5.5 mendapat sambutan hangat. Mas Fatih bilang, “Sayapun juga ngerasa sama mas, Opus 5.5 lebih irit, less halu, dan lebih cepet dibanding Opus 5.” Itu laporan dari workflow beliau, bukan janji untuk semua proyek.
+
+Mas Riza Rohman punya cerita yang lebih tajam: [Codex](https://openai.com/codex/) di workflow-nya selama seminggu “ngedrift kemana2, di babysit pun masih ngedrift...” Begitu tugasnya diambil alih Claude, menurutnya pekerjaan langsung beres. Di sisi lain, Mas Ardanu melihat GPT-6 Sol masih “oke bgt buat planner/auditor,” walau ia juga melaporkan pemakaian kuota Codex lebih cepat dari harapannya. Saya sendiri sempat [membandingkan Rails agent evals](https://x.com/dhh/status/2102724828537204911?s=20): Opus 5.5 lebih murah daripada Astra dalam perbandingan itu, tetapi performa eval-nya tidak otomatis unggul.
+
+Mas Michael merangkum sikap yang terasa paling masuk akal: “mana yg pintar dan murah pindah2”. Bukan fanboy satu model; pilih alat berdasarkan tugas dan catat hasilnya sendiri. Kalau hasil lebih cepat tetapi perlu dua kali review, hematnya masih nyata?
+
+## Jev: hemat token hanya berguna kalau keputusan tetap bagus
+
+[Jev](https://flaviocopes.com/jev/) jadi topik berulang. Mas Riza Fahmi menjelaskannya dengan analogi yang gampang diingat: “Analoginya kalau LLM buat jawab essay, Jev buat jawab pilihan berganda”. Ia memberi contoh klasifikasi seperti memilah email spam; [demo tic-tac-toe](https://jevtactoe.neato.fun/) juga ikut dibagikan. Saya sudah mencoba memasangnya lewat [TypeSafe AI](https://typesafe.ai) skill dan env vars untuk workflow sendiri.
+
+Tapi jangan jadikan “lebih sedikit token” sebagai satu-satunya metrik. Mas Michael mengingatkan, “kalau mau hemat token harus pikirkan juga qualitynya 😂”. Menjelang akhir minggu ia lebih spesifik: memakai Jev untuk langkah grep/search di coding agent bisa tricky jika kita belum paham bagian dalam harness; murah bisa mengorbankan output. Saya akan mulai dari satu keputusan yang bisa diuji—misalnya routing tugas—lalu bandingkan hasilnya, bukan mengganti semua langkah agent sekaligus. Pertanyaannya bukan *berapa token yang terpotong*, tetapi *apakah keputusan kecil itu cukup benar untuk dipercaya*.
+
+## Agent yang terlihat bekerja, kode lama yang tetap harus dipahami
+
+Mas Riza Rohman bercerita tentang [Orca](https://www.onorca.dev/): ia memakai sesi agent yang terlihat, diberi nama, dan bekerja di branch/worktree. Ia bisa memeriksa apakah agent sedang bekerja atau tersangkut, lalu mengambil alih bila perlu. Mas Aksal menanyakan apakah ini cuma untuk Claude; Mas Riza menjelaskan yang ia maksud adalah CLI Orca, bukan fitur satu model. Bagian yang menarik buat saya bukan jumlah agent-nya, melainkan *observability*: kalau koordinasi gagal, kita bisa melihat di mana.
+
+Di thread lain, Mas Abdan bertanya tentang refactor aplikasi kampus lama yang campur beberapa framework dan minim dokumentasi. Mas Zikrul menyarankan memetakan flow bisnis saat ini, membuat “mirror Test” untuk memahami perilaku yang ada, lalu mengerjakan perubahan per fitur. Bahkan bug lama bisa dicatat dulu sebelum diubah. Ini jauh kurang dramatis daripada “suruh AI rewrite semuanya,” tetapi lebih mungkin selamat saat masuk production. Agent boleh banyak; pemahaman tentang sistem tetap tidak bisa didelegasikan begitu saja.
+
+## Amp runner dan pertanyaan tentang siapa yang memegang kendali
+
+Saya membagikan pengumuman [Amp Code: The Mac App Is Your Runner](https://ampcode.com/news/the-mac-app-is-your-runner) dengan reaksi agak berlebihan: “Dengan ini, sepertinya Amux secara resmi sudah bisa dimusnahkan. 🔥” Mas Michael membalas dengan lelucon “It's orbin time”. Itu bukan pengumuman saya akan menghapus Amux besok—lebih tepatnya tanda bahwa runner yang dulu perlu kita rakit sendiri kini mulai masuk ke produk.
+
+Mas Restu juga membagikan [perbandingan Amp dengan OpenHands](https://apps.beringinhub.com/en/share/1725852adca7489395d54a544f2062c4) untuk yang lebih memilih opsi open-source dan self-hosted. Pilihannya bukan sekadar *fitur mana paling panjang*, melainkan di mana pekerjaan berjalan, siapa bisa mengawasinya, dan seberapa mudah kita pindah ketika kebutuhan berubah. Itu pertanyaan yang akan saya bawa saat mencoba runner baru.
+
+## ⚡ Quick Hits
+
+- Mas Fatih mengeluh UI hasil AI terasa “walopun pake GPT udah bagus, tapi tuh rasanya masih AI bangett, terlalu banyak subtitle”. Mas Aksal menyarankan [taste-skill](https://github.com/leonxlnx/taste-skill) plus referensi visual. Mas Luthfi menambahkan bahwa [design.md](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md) paling berguna saat kita benar-benar memilih inspirasi; menumpuk skill saja tetap bisa menghasilkan UI yang sama generiknya. Referensi konkret tampaknya lebih penting daripada mantra prompt.
+- Mas Michael membagikan [artikel pengantar Jev](https://flaviocopes.com/jev/) dan Mas Restu membagikan perbandingan self-hosted di atas. Keduanya lebih berguna sebagai bahan eksperimen daripada vonis final untuk semua orang.
+- Obrolan tentang harga [OpenCode Go](https://opencode.ai/) versus API langsung menunjukkan angka murah tergantung model dan pola penggunaan. Klaim tier baru atau rilis berikutnya tetap saya anggap rumor sampai ada halaman resmi. Hitung biaya dari pekerjaan kita sendiri, bukan dari screenshot orang lain.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Baca [pengumuman Amp runner](https://ampcode.com/news/the-mac-app-is-your-runner) dan bandingkan dengan kebutuhan runner lokalmu: akses, observability, dan kemudahan pindah.
+2. Ambil satu keputusan kecil yang cocok untuk [Jev](https://flaviocopes.com/jev/), ukur akurasi dan waktu yang dihemat, lalu baru pertimbangkan integrasi lebih luas.
+3. Sebelum refactor kode lama, tulis perilaku saat ini dan characterization test. Jadikan perubahan per fitur, seperti saran Mas Zikrul.
+4. Untuk UI, pilih satu referensi visual yang spesifik sebelum meminta agent mengikuti [design.md](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md).
+
+Saya makin yakin: alat terbaik bukan yang paling pintar di thread X hari ini. Alat terbaik adalah yang biayanya kita pahami, hasilnya kita periksa, dan prosesnya masih bisa kita kendalikan.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Fatih — pengalaman Opus 5.5 dan rasa “AI banget” di UI.
+- Mas Riza Rohman — perpindahan workflow dan agent yang terlihat bekerja.
+- Mas Ardanu — GPT-6 Sol sebagai planner/auditor dan catatan kuota.
+- Mas Michael — prinsip kualitas saat menghemat token, plus runner Amp.
+- Mas Riza Fahmi — analogi Jev untuk klasifikasi.
+- Mas Aksal — pertanyaan soal agent dan referensi desain.
+- Mas Abdan — kasus nyata aplikasi legacy tanpa dokumentasi.
+- Mas Zikrul — langkah aman memahami dan mengubah kode lama.
+- Mas Restu — perbandingan Amp dan opsi self-hosted.
+- Mas Luthfi — inspirasi desain yang dipilih dengan sengaja.
+- Zain — eksperimen Jev, evaluasi model, dan runner Amp.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 27 September 2026*
