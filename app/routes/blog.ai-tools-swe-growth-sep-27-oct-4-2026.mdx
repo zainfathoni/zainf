@@ -1,0 +1,92 @@
+---
+meta:
+  - title: "Model Sama, Hasil Beda — AI Tools Digest #36"
+  - name: description
+    content: "Harness, biaya token, dan cara melihat agent bekerja. Rangkuman dari grup AI Tools SWE GROWTH, 27 Sep-4 Okt 2026."
+  - author: Zain Fathoni
+  - date: "2026-10-04"
+  - lang: id
+  - property: og:title
+    content: "Model Sama, Hasil Beda — AI Tools Digest #36"
+  - property: og:description
+    content: "Harness, biaya token, dan cara melihat agent bekerja. Rangkuman dari grup AI Tools SWE GROWTH, 27 Sep-4 Okt 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-sep-27-oct-4-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-36.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Model Sama, Hasil Beda — AI Tools Digest #36"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Model Sama, Hasil Beda — AI Tools Digest #36
+
+Mas Abdan mencoba [DeepSeek](https://deepseek.com) dengan PRD yang sudah ia punya. Modelnya sama, tugasnya sama, tapi setelah setup coding agent-nya berubah, hasilnya justru memuaskan. Pengakuannya sederhana: *"langsung coba, pake deepseek sekali prompt dengan prd yg sudah ada hasilnya memuaskan mas, padahal sebelumnya jelek dengan model yg sama"*, kata Mas Abdan. Saya berhenti sebentar di kalimat itu. Minggu ini banyak model baru lewat di grup, tetapi eksperimen yang paling berguna malah menyuruh kita memeriksa *cara* kita memakai model yang sudah ada.
+
+## Harness bisa mengubah penilaian kita atas model
+
+Di [OMP](https://omp.sh/), Mas Zahid sempat membandingkan hasilnya dengan Droid, lalu sadar ada pengaturan yang belum ia utak-atik. *"ternyata kesalah ku gk nge twerak personality aja hahahh"*, kata Mas Zahid. Di percakapan yang sama, Mas Riza Rohman menyebut spawning dan komunikasi antar-agent *"smooth banget spawning sub agent n komunikasi antar agent"*. Ini bukan klaim bahwa satu harness selalu menang. Yang menarik justru variabel-variabel kecil itu: personality, pembagian tugas, dan bagaimana agent saling mengoper konteks.
+
+Saya bisa saja terlalu cepat menyimpulkan sebuah model jelek setelah satu percobaan. Cerita Mas Abdan mengingatkan bahwa PRD dan model bisa dijaga tetap, lalu harness-nya yang diubah. Kalau hasilnya melonjak, kita tahu di mana harus mengulik berikutnya. Harga model frontier tidak otomatis membeli workflow yang rapi.
+
+## Agent bekerja, tapi kita bisa melihatnya?
+
+Pertanyaan yang berulang minggu ini: kalau beberapa agent jalan sekaligus, kita memantau mereka di mana? Mas Riza Rohman menyarankan [Orca](https://www.onorca.dev/) orchestration CLI untuk mendapat tab sesi yang terlihat. Mas Michael membagikan contoh [pi-herdr-subagents](https://github.com/modem-dev/pi-herdr-subagents) dan daftar plugin [Herdr](https://herdr.dev/plugins/). Mas Azmi juga sedang mencoba [Luvus](https://luvus.dev/) setelah memakai Herdr: *"luvus keren jg yak"*, kata Mas Azmi. Perpindahannya masih penjajakan, bukan vonis akhir.
+
+[Tern](https://stencil.so/tern) membuat topik ini lebih konkret. Mas Michael memakainya bersama OMP untuk mengembangkan dan menguji frontend [situs SWE Growth](https://ai-sweg.my.id/). Ada janji menarik di sana: agent bisa membuka halaman dan mengecek hasilnya, bukan hanya mengaku tesnya selesai. Namun Mas Michael juga bilang manajemen tugas bersamaan masih agak susah. Mas Aksal punya metrik yang sangat manusiawi: *"tern ini gunanya apa ya? pas nyoba buka laptop berasa take off wkwkwk"*, kata Mas Aksal. Tool yang membuat kerja agent tampak jelas tetap harus muat di laptop kita.
+
+[Pi 1.0](https://pi.dev/changelog) muncul di tengah percakapan ini setelah Mas Putu membagikan changelog-nya. Mas Michael lalu mencoba code mode dan merasa responsnya cepat. Buat saya, ini sinyal bahwa pertanyaan memilih coding agent sekarang meluas: bukan cuma kualitas jawaban, melainkan apakah kita bisa mengamati, menguji, dan mengendalikan prosesnya.
+
+## Murah per bulan belum tentu murah dipakai
+
+Mas Ari mengajukan pertanyaan yang sangat masuk akal: tetap di [Claude Code](https://docs.anthropic.com/en/docs/claude-code) seharga $20, atau mencoba [CommandCode](https://commandcode.ai/) yang lebih murah saat proyek sedang sepi? *"Jadi pengen coba alternatif yg lebih murah"*, kata Mas Ari. Mas Michael menyarankan tetap memakai Claude Code kalau sudah terbiasa dan ingin langsung jalan, tetapi menyebut [OpenCode Go](https://opencode.ai/) sebagai opsi bagi yang siap memakai coding agent lain. Harga Go Plus $40 pun ikut dibahas.
+
+Lalu pengalaman aktual mengusik tabel harga itu. Setelah kembali ke Go, Mas Michael bilang, *"btw mau kasih testimoni setelah balik ke opencode go ternyata lebih boros 😢"*. Ia kemudian meluruskan bahwa yang ia bandingkan adalah paket model, bukan OpenCode versus OMP sebagai harness. Perbedaan itu penting; salah membandingkan unit membuat keputusan belanja melenceng.
+
+Mas Oshi mengingatkan, *"Jgn sampe token spent > gaji 😅"*. Mas Agung menyambut dengan *"waduh token spent ku udah 130% gaji :("*. Saya tak akan membaca angka itu sebagai laporan keuangan yang diaudit—ini obrolan grup, lengkap dengan candaannya—tetapi rasa khawatirnya nyata. Saya juga menyorot [penjelasan OpenAI tentang flexible credits](https://help.openai.com/en/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-personal-plans) setelah perubahan kuota langganan dibahas. Bagi saya, pemberitahuan kuota yang jelas lebih membantu daripada janji multiplier yang sulit diterjemahkan menjadi jam kerja. Catat pemakaian tugas sendiri sebelum memutuskan paket yang “paling hemat”.
+
+## ⚡ Quick Hits
+
+- Mas Luthfi A merasa Muse Spark Contributor di OpenCode layak dicoba sebagai model gratis. Itu pengalaman pribadinya; hasil untuk tugas lain bisa berbeda.
+- Mas Michael membagikan [Anti-Slop](https://github.com/dmmulroy/anti-slop) sebagai bahan untuk memperbaiki hasil tulisan atau UI agent.
+- Mas Michael menemukan [Sokudo](https://sokudo.dev/), sementara Mas Agung membandingkannya dengan [Nakama](https://ahmadrosid.github.io/nakama/). Keduanya menarik untuk dilihat sebagai eksperimen lokal, belum ada uji mendalam di percakapan minggu ini.
+- Obrolan soal reseller token juga memunculkan pertanyaan tentang identitas penanggung jawab dan aturan provider. Harga murah perlu dinilai bersama kejelasan asal layanan.
+
+Daftar rilis akan selalu lebih panjang daripada waktu luang kita. Eksperimen kecil yang mengisolasi satu variabel mungkin lebih berharga daripada memasang lima tool baru sekaligus.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Jalankan satu PRD di [OMP](https://omp.sh/) dengan model yang sama, lalu ubah satu pengaturan harness. Bandingkan hasilnya, bukan kesannya saja.
+2. Coba tugas coding kecil dengan [Pi 1.0](https://pi.dev/changelog), termasuk code mode jika relevan dengan workflow Anda.
+3. Jika menguji UI dengan [Tern](https://stencil.so/tern), ukur juga beban laptop dan kemampuan mengelola dua tugas sekaligus.
+4. Tulis biaya dan kuota nyata dari satu minggu kerja sebelum pindah langganan. Bandingkan paket dengan jenis tugas yang benar-benar Anda kerjakan.
+
+Langkah pertama saya minggu depan jelas: sebelum menyalahkan model, saya akan bertanya apa yang sudah saya ubah di sekelilingnya.
+
+## 👥 Kontributor Minggu Ini
+
+- Mas Abdan — eksperimen PRD dan DeepSeek yang mengubah arah obrolan.
+- Mas Zahid — cerita soal personality OMP.
+- Mas Riza Rohman — pengalaman subagent dan saran visibilitas sesi.
+- Mas Azmi — sedang menjajaki Luvus setelah Herdr.
+- Mas Aksal — pengingat bahwa laptop juga punya batas.
+- Mas Ari — pertanyaan yang membumi soal biaya saat proyek sepi.
+- Mas Michael — pengalaman paket Go dan workflow Tern.
+- Mas Oshi dan Mas Agung — humor yang kena tepat di biaya token.
+
+Paling enak membaca kontribusi ini sebagai undangan mencoba sendiri, dengan batas biaya dan perangkat masing-masing.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 4 Oktober 2026*
