@@ -66,7 +66,7 @@ export const aiSubscriptions: Tool[] = [
     title: "ChatGPT Pro (5x) — $100/month",
     href: "https://chatgpt.com/pricing/",
     description:
-      "After using Claude Max from January through March 2026, when Anthropic stopped allowing Claude subscription usage in third-party harnesses such as OpenClaw, I subscribed to ChatGPT Pro at $100/month (5x). In September 2026, I upgraded to the $200/month (20x) plan, then switched back to the $100/month (5x) plan in October.",
+      "After using Claude Max from January through March 2026, when Anthropic stopped allowing Claude subscription usage in third-party harnesses such as OpenClaw, I subscribed to ChatGPT Pro at $100/month (5x). In September 2026, I upgraded to the $200/month (20x) plan. OpenAI then announced that, from October 30, ChatGPT Work and Codex usage on Pro 200 would fall from 20x to 10x the ChatGPT Plus allowance. The GPT-6 Pro limit in Chat would fall from 200 to 100 messages per week, with no price change. I switched back to the $100/month (5x) plan.",
   },
   {
     slug: "amp-megawatt",
