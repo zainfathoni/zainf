@@ -1,0 +1,134 @@
+---
+meta:
+  - title: "Model Lebih Giat, Tagihan Ikut Naik — AI Tools Digest #37"
+  - name: description
+    content: "Pengalaman biaya per task, Command Code vs OpenCode, review dan E2E, serta kebutuhan local LLM. Rangkuman dari grup AI Tools SWE GROWTH, 4-11 Okt 2026."
+  - lang: "id"
+  - author: Zain Fathoni
+  - date: "2026-10-11"
+  - property: og:title
+    content: "Model Lebih Giat, Tagihan Ikut Naik — AI Tools Digest #37"
+  - property: og:description
+    content: "Pengalaman biaya per task, Command Code vs OpenCode, review dan E2E, serta kebutuhan local LLM. Rangkuman dari grup AI Tools SWE GROWTH, 4-11 Okt 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-oct-4-oct-11-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-37.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Model Lebih Giat, Tagihan Ikut Naik — AI Tools Digest #37"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Model Lebih Giat, Tagihan Ikut Naik — AI Tools Digest #37
+
+Model makin rajin ternyata bisa bikin tagihan makin besar. Minggu ini, 4–11 Oktober, Mas John cerita di grup AI Tools SWE GROWTH: setelah dua hari memakai model yang ia sebut Sonnet 5.5 dari [Claude](https://claude.ai), total token yang terpakai justru membengkak. Ia merasa performanya lebih bagus, tetapi agent juga lebih banyak mengambil inisiatif dan mengeksplorasi pekerjaan.
+
+Saya rasa pengalaman ini berguna buat kita yang suka membandingkan harga token sebelum mencoba model. Yang dibayar akhirnya adalah seluruh pekerjaan, termasuk eksplorasi tambahan yang mungkin tidak kita minta.
+
+## Harga token dan biaya menyelesaikan task
+
+Mas John menjelaskan bahwa thinking-nya tetap medium, dengan skills dan plugins yang sama seperti sebelumnya. Jadi menurut pengalamannya, perubahan biaya itu terasa meskipun setup tidak sengaja dibuat lebih agresif.
+
+*"sepertinya ngga salah sih. on paper lebih murah, tapi karena 5.5 lebih "giat", mgkn jatohnya jadi makin mahal"*, kata Mas John.
+
+Mas Michael menyarankan mengatur lagi rules di `AGENTS.md` agar agent tidak terus mengambil inisiatif. Jawaban Mas John bikin saya ketawa: *"iya modelnya mesti dicegah supaya ga terlalu 10x engineer"*.
+
+Ini pengalaman pemakaian, bukan benchmark terkontrol. Kita belum punya angka biaya per task, tingkat keberhasilan, atau perbandingan retry yang cukup untuk menyatakan satu model pasti lebih hemat. Namun ada eksperimen yang masuk akal: jalankan task yang sama, batasi scope-nya, lalu bandingkan biaya sampai hasilnya benar-benar diterima.
+
+Kalau output yang kita butuhkan cuma perbaikan satu bug, eksplorasi panjang ke seluruh repo perlu punya alasan.
+
+## Command Code cepat di siapa?
+
+Mas Agung mencoba model berlabel 4.1 fast di [Command Code](https://commandcode.ai), tetapi hasilnya belum sesuai harapan: *"baru coba pake 4.1 fast nya comandcode, muter muter ga edit edit filenya :U"*.
+
+Mas Michael punya pengalaman berbeda. Ia menilai kuota GOAT lebih banyak dibanding paket Go di [OpenCode](https://opencode.ai), sambil mengingatkan ada trade-off kecepatan. Itu penilaian dari penggunaan sehari-harinya; kita belum menghitung paket-paket tersebut dengan workload yang sama.
+
+Lalu Mas Luthfi A masuk dengan pengalaman memakai ds41fast di OpenCode:
+
+> aku pake model ds41fast di opencode enak banget
+>
+> tp cepet banget abis wkwkkw
+>
+> — Mas Luthfi A
+
+Mas Agung menambahkan bahwa pada implementasi fitur yang sulit, percobaannya menghabiskan sekitar 20 menit untuk planning. Mas Luthfi A kemudian menanyakan agent yang dipakai. Pertanyaan itu penting karena keluhan mereka datang dari setup yang berbeda.
+
+Saya belum bisa menarik pemenang dari obrolan ini. Tapi kalau mau membandingkan, catat nama model, harness, prompt, dan apakah file benar-benar berubah. Label fast saja belum menjawab berapa lama fitur kita selesai.
+
+## Sambungan baru ke Amp, pertanyaan izin tetap ada
+
+Mas Michael membagikan [post tentang koneksi Claude Code ke Amp](https://x.com/sqs/status/2108783608832122910). [Amp Code](https://ampcode.com) kembali menarik perhatian Mas Arif dan Mas Iqbal. Mas Dedy juga melaporkan percobaannya: *"Kmrn nyoba mode opus 5.5 di amp. On point dan lbh cepat dari Astra 🤣"*.
+
+Saya membaca itu sebagai hasil percobaan Mas Dedy, bukan kesimpulan bahwa model tersebut selalu lebih cepat. Task dan konfigurasi lengkapnya tidak dicantumkan.
+
+Mas Abdan lalu menanyakan apakah koneksi ini berarti subscription Claude boleh digunakan di semua harness. Mas Michael justru menduga ada izin khusus. Di akhir minggu, pertanyaan soal subscription versus API muncul lagi.
+
+Jadi jangan memperluas satu pengumuman integrasi menjadi izin untuk semua cara menyambungkan akun. Sebelum memindahkan workflow, baca ketentuan integrasi yang dipakai dan bedakan jalur subscription dengan API berbayar.
+
+## E2E dan reviewer mulai masuk workflow harian
+
+Mas Aksal membagikan [tester-army/e2e](https://github.com/tester-army/e2e), lalu menanyakan pengalaman pemakaiannya. Mas Michael belum menggunakan repo itu karena agent-nya sudah menjalankan E2E lewat workflow sendiri.
+
+Ia menjelaskan pemakaian [Tern](https://x.com/_can1357/status/2108877756356599821) bersama [Oh My Pi (OMP)](https://github.com/can1357/oh-my-pi): aturan E2E diarahkan lewat `AGENTS.md` dan prompt, dengan subagent reviewer/tester sesuai kasus. Saat Mas Aksal bertanya nama setting-nya, Mas Michael menjawab: *"setahuku nggak ada disetting setup di agents.md omp nya mas"*.
+
+Mas Adisurya biasanya menggunakan `/vibe`, sementara Mas Michael memicu workflow secara manual. *"Oh I see, soalnya biasa pake /vibe. Next, boleh dicoba nih manual 😁"*, kata Mas Adisurya.
+
+Buat saya, bagian yang layak ditiru adalah meminta bukti setelah implementasi. Mulai dari satu alur pengguna penting, minta agent menjalankannya, lalu lihat hasil test dan kegagalannya. Kita tetap perlu memeriksa apakah test itu benar-benar menyentuh perilaku yang berubah.
+
+## Local LLM: kebutuhan risetnya apa dulu?
+
+Mas Abdan mencari review [NVIDIA DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) untuk riset kantor dan kemungkinan aplikasi RAG. Mas Agung lebih cocok dengan perangkat [Apple](https://www.apple.com/mac/) untuk kebutuhan local LLM-nya, sambil mengingatkan model harus mendukung [MLX](https://github.com/ml-explore/mlx).
+
+Saya sengaja tidak menjadikan obrolan ini rekomendasi belanja. Kita belum punya pengukuran model, quantization, throughput, atau workload yang sebanding. Bahkan kebutuhan Mas Abdan masih dibahas: RAG materi buku dan chatbot akan menuntut setup seperti apa?
+
+Mas Agung memberi batas yang cukup jelas: *"kalau dibuat production level sama kalo dibuat ngoding kenceng tetep saranku subs aja"*. Ia kemudian menyebut data-governance sebagai alasan yang bisa mengubah pertimbangan.
+
+Sebelum memilih kapasitas RAM, coba satu model pada contoh dokumen dan pertanyaan yang benar-benar akan dipakai. Hasil eksperimen itu lebih berguna untuk menentukan kebutuhan mesin daripada perbandingan kapasitas di brosur.
+
+## ⚡ Quick Hits
+
+- Mas Abdurrahman membagikan [Strands Decider](https://strandsagents.com/blog/introducing-strands-decider/), sambil menyatakan ia belum mencoba. Bacaan ini menarik untuk memahami decision model; belum ada review hands-on dari diskusi tersebut.
+- Mas Michael membagikan [ebook spec-driven AI development dari Manning](https://blog.manning.com/free-ebook-spec-driven-ai-development) dan [Pi School](https://pi-school.ziki.boo/). Keduanya bisa jadi bahan belajar sebelum menambah tool baru ke workflow.
+- Mas Zahid menyampaikan keberatannya terhadap toleransi slop di codebase, meskipun kuota tersedia banyak, dalam [tanggapan yang ia bagikan](https://x.com/poteto/status/2109110547824378140?s=20).
+
+Saya ingin mencoba bahan belajar dan workflow review itu pada repo kecil dulu, supaya eksperimennya mudah diperiksa dan tidak meninggalkan pekerjaan bersih-bersih di proyek utama.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas John:** pengalaman biaya token dan inisiatif agent.
+- **Mas Michael:** perbandingan pemakaian, integrasi, dan workflow E2E.
+- **Mas Agung:** percobaan Command Code dan batas kebutuhan local LLM.
+- **Mas Luthfi A:** pengalaman ds41fast di OpenCode.
+- **Mas Dedy:** percobaan model di Amp.
+- **Mas Arif** dan **Mas Iqbal:** ketertarikan pada integrasi Amp.
+- **Mas Abdan:** pertanyaan izin integrasi dan kebutuhan riset lokal.
+- **Mas Aksal:** pertanyaan framework serta setup E2E.
+- **Mas Adisurya:** perbandingan workflow manual dengan `/vibe`.
+- **Mas Abdurrahman:** bacaan decision model.
+- **Mas Zahid:** perhatian pada kualitas codebase.
+
+Pengalaman mereka memberi beberapa titik awal eksperimen, dengan setup dan kebutuhan yang memang berbeda-beda.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **Ukur biaya per task.** Di [Claude](https://claude.ai), gunakan task dan scope yang sama, lalu catat token, retry, dan hasil yang diterima.
+2. **Bandingkan harness tanpa mengganti semua variabel.** Coba [Command Code](https://commandcode.ai) dan [OpenCode](https://opencode.ai) pada satu perbaikan kecil; catat waktu sampai perubahan file dan test selesai.
+3. **Tambahkan satu pemeriksaan E2E.** Pelajari [tester-army/e2e](https://github.com/tester-army/e2e) atau workflow test yang sudah ada di repo. Pastikan test gagal ketika perilaku yang diuji sengaja dirusak.
+4. **Tulis acceptance criteria sebelum meminta implementasi.** [Bacaan Manning](https://blog.manning.com/free-ebook-spec-driven-ai-development) bisa jadi titik awal untuk memperjelas batas pekerjaan agent.
+
+Saya akan mulai dari scope dan acceptance criteria. Kalau itu sudah jelas, tagihan dan hasil percobaan lebih gampang dibandingkan.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 11 Oktober 2026*
