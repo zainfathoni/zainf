@@ -38,18 +38,11 @@ export const workstation: Tool[] = [
 
 export const developmentTools: Tool[] = [
   {
-    slug: "vs-code",
-    title: "VS Code editor",
-    href: "https://code.visualstudio.com",
+    slug: "ghostty",
+    title: "Ghostty terminal",
+    href: "https://ghostty.org",
     description:
-      "I have been the heavy user of VS Code since it's first release. I configured it with Vim keybindings.",
-  },
-  {
-    slug: "warp",
-    title: "Warp terminal",
-    href: "https://zainf.dev/warp",
-    description:
-      "I have been using Warp since 2022. It replaces iTerm2 that I had been using since I started using Mac",
+      "Ghostty is my terminal of choice because it is lighter and faster. I use a terminal less often now, as I mostly use Amp to interact with AI agents.",
   },
   {
     slug: "gitkraken",
