@@ -62,6 +62,12 @@ export const developmentTools: Tool[] = [
 
 export const aiSubscriptions: Tool[] = [
   {
+    slug: "claude-teams",
+    title: "Claude Teams — company-paid",
+    href: "https://claude.com/pricing",
+    description: "My company provides and pays for this Claude Teams subscription for work.",
+  },
+  {
     slug: "chatgpt-pro",
     title: "ChatGPT Pro (5x) — $100/month",
     href: "https://chatgpt.com/pricing/",
