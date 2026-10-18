@@ -1,0 +1,134 @@
+---
+meta:
+  - title: "Gratisnya Ada Syarat, Hematnya Perlu Strategi — AI Tools Digest #38"
+  - name: description
+    content: "OpenCode v2, pembagian model, gateway fallback, dan desktop runner Amp. Rangkuman dari grup AI Tools SWE GROWTH, 11–18 Oktober 2026."
+  - author: Zain Fathoni
+  - date: "2026-10-18"
+  - property: og:title
+    content: "Gratisnya Ada Syarat, Hematnya Perlu Strategi — AI Tools Digest #38"
+  - property: og:description
+    content: "OpenCode v2, pembagian model, gateway fallback, dan desktop runner Amp. Rangkuman dari grup AI Tools SWE GROWTH, 11–18 Oktober 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-oct-11-oct-18-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-38.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Gratisnya Ada Syarat, Hematnya Perlu Strategi — AI Tools Digest #38"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Gratisnya Ada Syarat, Hematnya Perlu Strategi — AI Tools Digest #38
+
+Mbak Fat’hah sudah melihat pengumuman model gratis di [OpenCode](https://opencode.ai), tapi log pemakaiannya masih menampilkan cost. “tapi cek lognya kok tetap ada costnya ya?” tanyanya. Ternyata, masih ada model yang belum di-enable dan pilihan layanan yang perlu dibedakan. Gratis pun masih perlu baca menu. 😅
+
+Obrolan kita sepanjang 11–18 Oktober banyak berkutat di detail seperti ini. Ada yang mulai nyaman dengan OpenCode v2, ada yang membagi pekerjaan ke model berbeda supaya kuota awet, dan ada yang sampai bikin gateway sendiri. Saya paling tertarik pada koreksi-koreksi kecil di tengah obrolan: informasi awal terdengar menggiurkan, lalu pengalaman orang yang benar-benar mencoba bikin gambarnya lebih jelas.
+
+## OpenCode v2: hasilnya oke, pilihan modelnya jangan keliru
+
+Mas Abdan mencoba [DeepSeek](https://deepseek.com) untuk landing page di OpenCode v2. Penilaiannya cukup spesifik: “tp nyoba diopencode ds4.1 free buat landing page oke juga loh, ga kalah ds di omp desainnya”. Pembanding yang ia maksud adalah [Oh My Pi (OMP)](https://omp.sh/docs). Ini pengalaman satu task, belum cukup untuk menentukan pemenang di semua jenis pekerjaan.
+
+Mas Azmi juga sudah betah: “Aku termasuk yang udah nyaman dengan v2 nya 😅”. Buat saya, kenyamanan harian seperti ini lebih berguna daripada sekadar penasaran pada pengumuman model baru. Kalau setup-nya mudah dipakai lagi besok pagi, baru terasa manfaatnya.
+
+Nah, pertanyaan Mbak Fat’hah tadi mendapat petunjuk dari Mas Joni: “ke section zen biasanya kalau cari yg free kalau section go itu yg berbayar semua”. Setelah mengecek lagi, Mbak Fat’hah mengonfirmasi ada model yang sebelumnya belum di-enable. Petunjuk ini berasal dari tampilan dan penawaran yang mereka lihat minggu ini; jangan dianggap daftar harga permanen.
+
+[Command Code](https://x.com/CommandCodeAI) ikut muncul sebagai pembanding. Mas Iqbal menilai penawarannya menarik setelah Mas Michael membagikan perbandingan harness. Tapi promo dalam satu aplikasi tidak otomatis berlaku ketika model atau aksesnya dipindah ke aplikasi lain. Sebelum membandingkan biaya, pastikan dulu model, jalur akses, dan ketentuan promonya sama.
+
+## Kuota awet karena pekerjaan dibagi
+
+Mas Zahid dan Mas Michael sama-sama memakai keluarga model [Claude](https://www.anthropic.com/claude), tapi pembagian kerjanya berbeda. Mas Zahid banyak menggunakan Opus dengan effort rendah. Ketika Mas Michael menyebut Opus high untuk planning, Mas Zahid mengingatkan: “nah bener tapi gk semua plan perlu opus high”.
+
+Mas Michael menjelaskan workflow di [Claude Code](https://code.claude.com/docs): planning memakai Opus high, eksekusi memakai Sonnet, lalu Haiku dipanggil ketika butuh subtask. Ia merasa pemakaian kuotanya lebih hemat setelah mengubah workflow. Itu testimoni pribadi, bukan hasil pengukuran task identik sebelum dan sesudah.
+
+Mas Zahid juga membedakan pekerjaan biasa dengan UI yang membutuhkan kreativitas. Saya rasa ini detail penting. Model ringan bisa cukup untuk banyak langkah, tetapi belum tentu cocok untuk keputusan visual yang sedang kita kejar.
+
+Di sisi anggaran, Mas Yustar menjelaskan pengalaman DeepSeek-nya: “gak apal. tapi kayaknya top up 10$ tahan sampe 2-3 bulan. tergantung task nya jg sih”. Ia memang memakainya untuk coding, termasuk fitur, debug, dan fixing. Kalimat terakhirnya perlu ikut dibawa setiap kali angka itu dikutip: tergantung task.
+
+Kalau kuota cepat habis, saya akan mencoba memisahkan planning dan eksekusi pada satu pekerjaan kecil dulu, lalu mencatat biaya sampai hasilnya diterima. Menaikkan effort untuk semua langkah belum tentu memberi hasil yang sepadan.
+
+## Gateway sendiri, lalu siapa yang mengurus fallback?
+
+Mas Fajri membagikan [Tera Router](https://github.com/montara-project/tera-router/pkgs/container/tera-router), gateway buatannya, beserta [panduan Docker Compose](https://docs.terarouter.xyz/docs/getting-started/docker-compose). Alasan praktisnya langsung kebayang: “gk repot lagi kalo credit habis auto fallback ke provider lain”.
+
+Mas Zahid mengingatkan bahwa OMP juga punya pengaturan fallback model. Jadi kebutuhan gateway terpisah perlu dilihat dari workflow masing-masing. Kalau hanya perlu mengganti model saat gagal, fitur bawaan mungkin cukup. Kalau ingin menggabungkan beberapa provider di satu endpoint, gateway punya kegunaan lain, sekaligus menambah komponen yang harus dirawat.
+
+Percakapan soal [OpenScale](https://openscale.so/) juga mendapat koreksi. Info awal menyebut bonus lima dolar. Mas Yustar lalu menjelaskan kredit awalnya satu dolar, dan Mas Fajri menegaskan: “Free $1” lalu “harus top up minimal $10 baru dpt $5”. Syarat promosi bisa berubah; angka ini mencatat koreksi di obrolan, bukan janji penawaran saat pembaca mendaftar.
+
+Buat yang ingin mencoba fallback, pakai task kecil dan batas pengeluaran dulu. Perpindahan provider perlu diuji sampai tuntas, termasuk apakah model penggantinya tetap bisa menyelesaikan pekerjaan dengan benar.
+
+## Amp: dari biaya Orbs sampai melihat desktop runner
+
+Informasi akses [Amp](https://ampcode.com) juga sempat perlu dikoreksi. Setelah muncul anggapan bahwa Orbs harus lewat subscription, Mbak Eka menjawab: “Bisa kok, orbs sekarang bisa ketengan (charge durasi penggunaan). Top up minimal 5$ kalo ga salah.” Bagian “kalo ga salah” sengaja saya pertahankan. Untuk mengambil keputusan bayar, tetap cek [pricing resminya](https://ampcode.com/pricing).
+
+Saya juga membagikan [pengumuman desktop runner](https://ampcode.com/news/runner-desktop). Catatan resmi bertanggal 16 Oktober menjelaskan bahwa desktop runner macOS atau Linux sekarang bisa dilihat dan dikendalikan. Buat mencoba aplikasi native yang sedang dibangun agent, ini lebih konkret daripada hanya menerima laporan teks bahwa aplikasinya sudah jalan.
+
+Sementara itu, demo SVG yang dibagikan Mas Michael membuat saya menekankan peran tool calls dan Portal di Orbs. Hasil yang terlihat seperti kemampuan model sering kali juga bergantung pada lingkungan kerja yang disiapkan untuk model itu.
+
+Promosi Amp yang kebablasan tentu kembali jadi bahan candaan. Saya sendiri menulis:
+
+> Datang tak dijemput
+> Pulang tak diantar
+> Ambassador tak dibayar 😆
+>
+> — Zain
+
+Kalau mau mencoba desktop runner, saya akan memilih aplikasi kecil yang hasilnya bisa langsung diperiksa. Ada manfaatnya ketika kita bisa melihat sendiri layar yang sedang dikerjakan agent.
+
+## ⚡ Quick Hits
+
+- **[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent)** direkomendasikan Mas Michael setelah ia mencoba ulang dan merasakan peningkatan performa pasca-rewrite Rust. Belum ada benchmark terkontrol di chat, jadi ini kandidat uji coba, bukan pemenang otomatis.
+- **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** ditanyakan Mas Luthfi A. Mas Michael sudah memakainya dan merasa cukup terbantu untuk kebutuhan awal. Perbandingan harness sebaiknya memakai task serta model yang sama.
+- **Keamanan OpenCode:** Mas Michael membagikan laporan dugaan insiden menjelang akhir pekan. Cakupan dan penyebabnya belum saya verifikasi dari pemberitahuan resmi. Saya tidak menarik kesimpulan bahwa semua CLI aman atau semua provider terdampak; cek kanal resmi sebelum melanjutkan eksperimen yang memakai credential.
+
+Daftar tools untuk dicoba bertambah, tapi saya akan menyelesaikan evaluasi satu workflow dulu sebelum menambah setup lain.
+
+## 📚 Bacaan yang Masih Kepikiran
+
+Mas Arif membagikan [Attack of the Vibe-Coded Photoshop Clones](https://www.shokunin.studio/blog/2026/10/9/attack-of-the-vibe-coded-photoshop-clones), kritik soal biaya membangun ulang aplikasi yang alternatifnya sudah tersedia. Buat saya, ini pertanyaan yang layak dijawab sebelum mulai: kita sedang belajar, mencari fitur yang belum ada, atau hanya ingin membuktikan agent bisa membuatnya?
+
+Mas Zikrul membawa tulisan [Claude Haiku 5.5 vs DeepSeek v4.1 Flash](https://dekontaminasi.substack.com/p/claude-haiku-55-vs-deepseek-v41-flash). Tulisan itu menjadi bahan pembicaraan efisiensi model; hasil pengujiannya tidak direplikasi dalam obrolan kita. Saya juga membagikan [ulang tahun pertama Beads](https://blog.gascity.com/posts/fun-facts-about-beads-on-its-first-birthday/), yang mengingatkan betapa cepatnya setahun eksperimen lewat.
+
+Simpan bacaan pembandingnya, lalu pilih satu klaim yang bisa diuji dengan task sendiri. Hasilnya akan lebih mudah dipakai untuk memutuskan langganan bulan depan.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. **Periksa model aktif di [OpenCode](https://opencode.ai).** Bedakan pilihan Zen dan Go, lalu jalankan satu task kecil sambil membaca log biaya.
+2. **Pisahkan planning dan eksekusi di [Claude Code](https://code.claude.com/docs).** Catat biaya task sampai lolos review, termasuk pengulangan dan perbaikan.
+3. **Uji fallback lewat [panduan Tera Router](https://docs.terarouter.xyz/docs/getting-started/docker-compose).** Pakai kredit terbatas dan periksa hasil model pengganti.
+4. **Coba [desktop runner Amp](https://ampcode.com/news/runner-desktop).** Pilih proyek non-sensitif yang tampilan aplikasinya bisa diperiksa langsung.
+
+Saya akan mulai dari pekerjaan yang memang perlu selesai minggu ini. Kalau percobaan tool-nya malah membuat pekerjaan itu tertunda, berarti perlu diperkecil lagi.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mbak Fat’hah:** mengecek biaya dan model aktif di OpenCode.
+- **Mas Abdan:** mencoba landing page dengan DeepSeek di OpenCode v2.
+- **Mas Azmi:** berbagi kenyamanan memakai v2.
+- **Mas Joni:** memberi petunjuk pilihan Zen dan Go.
+- **Mas Iqbal:** menanggapi penawaran Command Code.
+- **Mas Zahid:** membahas effort model dan fallback bawaan.
+- **Mas Michael:** menguji workflow, membagikan tools, serta membawa peringatan keamanan.
+- **Mas Yustar:** memberi konteks pengeluaran DeepSeek dan mengoreksi kredit promo.
+- **Mas Fajri:** membagikan gateway buatan sendiri dan syarat bonus OpenScale.
+- **Mbak Eka:** mengoreksi informasi akses Orbs.
+- **Mas Luthfi A:** mengangkat pertanyaan tentang DeepSeek Harness.
+- **Mas Arif:** membawa bacaan tentang biaya vibe coding.
+- **Mas Zikrul:** membagikan artikel perbandingan model.
+- **Zain:** membagikan desktop runner, membahas demo SVG, dan tetap ambassador tak dibayar.
+
+Koreksi dari orang yang sudah mencoba membantu saya menahan diri sebelum ikut top up atau ganti langganan. Minggu depan, semoga hasil percobaannya ikut dibawa lagi.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 18 Oktober 2026*
