@@ -38,11 +38,18 @@ export const workstation: Tool[] = [
 
 export const developmentTools: Tool[] = [
   {
+    slug: "zed",
+    title: "Zed editor",
+    href: "https://zed.dev",
+    description:
+      "I haven't used VS Code for at least six months. These days, I use Zed from time to time, mostly to read code.",
+  },
+  {
     slug: "ghostty",
     title: "Ghostty terminal",
     href: "https://ghostty.org",
     description:
-      "Ghostty is my terminal of choice because it is lighter and faster. I use a terminal less often now, as I mostly use Amp to interact with AI agents.",
+      "I switched from Warp to Ghostty, which is lighter and faster. I use a terminal less often now because I mostly use Amp to interact with AI agents.",
   },
   {
     slug: "gitkraken",
