@@ -72,7 +72,14 @@ export const aiSubscriptions: Tool[] = [
     title: "ChatGPT Pro (5x) — $100/month",
     href: "https://chatgpt.com/pricing/",
     description:
-      "After using Claude Max from January through March 2026, when Anthropic stopped allowing Claude subscription usage in third-party harnesses such as OpenClaw, I subscribed to ChatGPT Pro at $100/month (5x). In September 2026, I upgraded to the $200/month (20x) plan. OpenAI then announced that, from October 30, ChatGPT Work and Codex usage on Pro 200 would fall from 20x to 10x the ChatGPT Plus allowance. The GPT-6 Pro limit in Chat would fall from 200 to 100 messages per week, with no price change. I switched back to the $100/month (5x) plan.",
+      "After using Claude Max from January through March 2026, when Anthropic stopped allowing Claude subscription usage in third-party harnesses such as OpenClaw, I subscribed to ChatGPT Pro at $100/month (5x). In September 2026, I upgraded to the $200/month (20x) plan. OpenAI then announced that, from October 30, ChatGPT Work and Codex usage on Pro 200 would fall from 20x to 10x the ChatGPT Plus allowance. The GPT-6 Pro limit in Chat would fall from 200 to 100 messages per week, with no price change. I switched back to the $100/month (5x) plan. I also use this subscription through Amp with the Sign In with ChatGPT method.",
+  },
+  {
+    slug: "x-premium",
+    title: "X Premium — Grok access",
+    href: "https://x.com/premium",
+    description:
+      "I use the Grok access from this subscription through Amp. When I have usage available, I usually use Grok 4.7 in Ultra mode; I currently have no Grok model attached to my Amp modes because I'm running low on usage. I'm considering upgrading to Grok Unify, but haven't made the move yet.",
   },
   {
     slug: "amp-megawatt",
