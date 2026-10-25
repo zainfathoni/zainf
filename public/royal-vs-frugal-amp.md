@@ -424,7 +424,9 @@ style: |
 
 # Royal vs Frugal Amp
 
-<p class="subtitle">Coding Agent Benchmark: a workflow demo with Amp, not a scientific benchmark.</p>
+<p class="subtitle">You do not need my budget to use Amp well.</p>
+
+<p class="caption">Coding Agent Benchmark:<br/>Using Amp with Royal vs Frugal mode</p>
 
 </div>
 <div class="bio-card">
@@ -435,9 +437,9 @@ style: |
 
 <h3 class="signature">Zain Fathoni</h3>
 
-Senior Software Engineer at BookThatApp. Backend, manager, frontend, now fullstack.
+Senior Software Engineer at BookThatApp.
 
-Agentic engineering practitioner · SWE Growth Webinar, 25 October 2026.
+SWE Growth Webinar<br/>25 October 2026<br/>13.00–14.30 WIB
 
 <https://zainfathoni.com>
 
@@ -447,9 +449,9 @@ Agentic engineering practitioner · SWE Growth Webinar, 25 October 2026.
 
 <!--
 P1 — Clarity.
-Judul ini jujur. Ini bukan benchmark ilmiah. Ini demo alur kerja.
-Tidak ada baseline Royal yang bisa dibandingkan, jadi jangan sebut hasil sebagai bukti statistik.
-Sebut dua hal di awal: (1) Royal dan Frugal adalah label alur kerja pribadi saya, bukan mode resmi Amp. (2) Hari ini tidak ada Orb sama sekali.
+Teman-teman mungkin sudah melihat saya memakai Amp di WhatsApp. Setup saya bisa terlihat mahal.
+Pesan saya sederhana: kalian tidak perlu anggaran saya untuk memakai Amp dengan baik.
+Hari ini kita lihat demonstrasi alur kerja: membagi tugas, menghubungkan thread, lalu memeriksa hasil dan biaya.
 TIMING: 1 menit.
 -->
 
@@ -464,21 +466,21 @@ TIMING: 1 menit.
 
 Spending styles, not skill levels:
 
-- **Sultan Token** — spends freely on the best models and hosted compute
-- **Mendang-mending** — balances cost and quality
-- **Kere Hore** — keeps cost low and still wants real results
+- **Sultan Token** — pays for speed and convenience
+- **Mendang-mending** — chooses where to spend. That's me.
+- **Kere Hore** — needs useful work on a small budget. Today is for you.
 
 </div>
 <div class="visual">
 
 <div class="card">
 <strong>Royal</strong>
-<p>My personal label: frontier models plus Amp-hosted Orbs under a Megawatt subscription with Orb quota. Not an official Amp mode.</p>
+<p>Frontier models + Amp-hosted Orbs. My Megawatt plan includes Orb quota.</p>
 </div>
 
 <div class="card">
 <strong>Frugal</strong>
-<p>My personal label for today: cheaper worker models, runner-only, no Orbs.</p>
+<p>Strong planning where it matters. Cheaper workers on runners. No Orbs today.</p>
 </div>
 
 </div>
@@ -486,10 +488,10 @@ Spending styles, not skill levels:
 
 <!--
 P2 — Common Ground.
-Bahasa Indonesia notes:
-Setup saya mungkin Mendang-mending. Tapi hari ini kita cari jalan yang masuk akal buat Kere Hore.
-Sebut label spending ini sebagai gaya belanja, bukan level skill. Jangan menebak siapa yang ada di room ini. Saya hanya menebak, dan saya tidak tahu pasti berapa Sultan Token di grup.
-Jujur soal Royal: itu contoh saya, bukan standar untuk semua orang.
+Sultan Token > Mendang-mending > Kere Hore adalah urutan gaya belanja, bukan kemampuan.
+Saya di Mendang-mending: mau bayar jika nilainya jelas. Di grup kita bisa ada semua gaya belanja ini.
+Royal dan Frugal sama-sama cara memakai kemampuan Amp. Royal yang saya tunjukkan di WhatsApp memakai model frontier dan Orb dari paket Megawatt.
+Hari ini fokus kita Kere Hore: tetap dapat manfaat Amp tanpa meniru semua pengeluaran saya.
 TIMING: 2 menit.
 -->
 
@@ -500,25 +502,25 @@ TIMING: 2 menit.
 
 <span class="eyebrow">P3 · Coming Problem</span>
 
-## Cost has two parts
+## Copy the setup. Inherit the bill.
 
-Model cost: tokens and credits for each model call.
+The expensive part is not just the first answer.
 
-Compute cost: where the agent runs, and the Orb quota it uses.
+Unclear tasks create retries, repair work, and more review.
 
-**Runner-only is not free inference.** Your own machine saves Orb quota. Model calls still cost money.
+**A runner removes Orb usage, not model cost.**
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>🧠 Model cost</strong>
-<p>Planner, workers, reviewers, and rescue calls. Each one has its own usage record.</p>
+<strong>🧠 Models and tools</strong>
+<p>Planning, workers, review, and rescue. Credits, subscriptions, or provider bills.</p>
 </div>
 
 <div class="card">
-<strong>🖥️ Compute cost</strong>
-<p>Amp-hosted Orbs, self-hosted infrastructure, or your own runner.</p>
+<strong>🖥️ Compute and time</strong>
+<p>Hosted compute or your own machine. Plus the time you spend checking and fixing.</p>
 </div>
 
 </div>
@@ -526,10 +528,10 @@ Compute cost: where the agent runs, and the Orb quota it uses.
 
 <!--
 P3 — Coming Problem: akses dan biaya.
-Bahasa Indonesia notes:
-Banyak orang mengira "pakai runner sendiri berarti gratis". Itu tidak benar. Runner sendiri menghemat kuota Orb, tapi panggilan model tetap ada biayanya.
-Pisahkan dua biaya ini sepanjang talk. Jangan gabungkan.
-TIMING: 2 menit.
+Kalau kita hanya meniru setup orang lain, kita juga ikut menanggung tagihannya.
+Yang bikin khawatir bukan satu panggilan mahal saja. Tugas kabur bisa memicu percobaan berulang, lalu kita tetap harus memperbaikinya.
+Runner memakai mesin sendiri. Biaya model dan langganan tetap perlu dihitung.
+TIMING: 1,5 menit.
 -->
 
 ---
@@ -539,23 +541,23 @@ TIMING: 2 menit.
 
 <span class="eyebrow">P4 · Emotional Win</span>
 
-## Useful, verified work within budget
+## Small budget. Real confidence.
 
-Today's goal: finish real tasks with a cheaper worker model.
+Imagine choosing one useful task, setting a budget, and knowing what a good result looks like.
 
-Each task needs **checks** and **evidence**. A claim is not proof.
+You can start without buying my whole setup.
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>✅ A task counts as done when:</strong>
-<p>the combined code passes typecheck and build, the acceptance checks pass, and the usage record is filled in.</p>
+<strong>A task you can explain</strong>
+<p>One visible improvement. Clear limits. A result you can check.</p>
 </div>
 
 <div class="card">
-<strong>⚠️ We do not know the result yet.</strong>
-<p>The demo decides. This slide states the bar, not the outcome.</p>
+<strong>A spend you choose</strong>
+<p>Set a cap before the run. Keep room for review and repair.</p>
 </div>
 
 </div>
@@ -563,9 +565,8 @@ Each task needs **checks** and **evidence**. A claim is not proof.
 
 <!--
 P4 — Emotional Win: harapan yang realistis.
-Bahasa Indonesia notes:
-Tekankan: tujuan hari ini adalah hasil yang bisa diverifikasi dalam anggaran. Belum ada hasil yang diklaim.
-Jangan sebut sukses sebelum check berjalan. Ini aturan talk.
+Bayangkan selesai satu perbaikan kecil yang memang dibutuhkan, tanpa rasa takut tagihan tiba-tiba membesar.
+Kita tahu batas belanja, tahu hasil yang dicari, dan bisa memeriksanya sendiri. Itu rasa percaya diri yang ingin kita bangun.
 TIMING: 1,5 menit.
 -->
 
@@ -576,25 +577,25 @@ TIMING: 1,5 menit.
 
 <span class="eyebrow">P5 · False Hope</span>
 
-## One cheap model is not parallel work
+## Cheap calls can still cost more
 
-A giant prompt does not split the work for you.
+One prompt can delegate work. It does not guarantee clear boundaries.
 
-More worktrees do not add ports, RAM, or browser sessions.
+More workers can mean more retries and more coordination.
 
-Three cheap workers can still hit the **same file, port, or test database.**
+Three worktrees can still share the **same port or test database.**
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>📜 One giant prompt</strong>
-<p>Mixes three tasks. One worker loses track, and nobody owns the result.</p>
+<strong>The tempting shortcut</strong>
+<p>Choose the cheapest model for every decision. Start more agents.</p>
 </div>
 
 <div class="card">
-<strong>🌳 Three worktrees</strong>
-<p>Separate source edits. The same port 3000 for all three.</p>
+<strong>The missing work</strong>
+<p>Someone must define the tasks, resolve dependencies, and check the result.</p>
 </div>
 
 </div>
@@ -602,10 +603,9 @@ Three cheap workers can still hit the **same file, port, or test database.**
 
 <!--
 P5 — False Hope: sobering reality.
-Bahasa Indonesia notes:
-Ini bagian yang sering dilewati. Model murah tetap butuh batas kerja yang jelas.
-Worktree memisahkan file sumber, bukan proses, port, atau database.
-TIMING: 2 menit.
+Godaan pertama: ganti semuanya dengan model murah, lalu tambah jumlah agent. Tapi biaya per panggilan rendah belum tentu biaya hasil akhirnya rendah.
+Satu prompt bisa memulai delegasi. Tetap perlu batas tugas, keputusan, dan pemeriksaan.
+TIMING: 1,5 menit.
 -->
 
 ---
@@ -615,21 +615,21 @@ TIMING: 2 menit.
 
 <span class="eyebrow">P6 · Audacious Reality</span>
 
-## Plan high, run bounded, connect threads
+## Spend on judgment. Connect the workers.
 
-Amp's standout feature: **threads can message each other.** A planner can coordinate cheaper workers on a runner.
+Amp's standout feature: **native thread-to-thread communication.**
 
-**Messages carry context, not code.** Code still flows through branches and checks.
+A stronger planner can guide cheaper workers, answer questions, and coordinate handoffs.
 
 </div>
 <div class="visual">
 
 <div class="flow compact">
-<div>🧭 Planner · GPT-6.1 Sol or Opus 5.5</div>
-<div class="arrow">↓ contract + task cards</div>
-<div>🛠️ Workers · Haiku 5.5 or GPT-6 Luna</div>
-<div class="arrow">↓ DONE / BLOCKED messages</div>
-<div>🔗 Planner integrates and runs checks</div>
+<div>🧭 Planner · scope and decisions</div>
+<div class="arrow">↕ instructions and questions</div>
+<div>🛠️ Workers · separate, bounded tasks</div>
+<div class="arrow">↕ dependencies and results</div>
+<div>🔗 Combined code · review and checks</div>
 </div>
 
 </div>
@@ -637,10 +637,9 @@ Amp's standout feature: **threads can message each other.** A planner can coordi
 
 <!--
 P6 — Audacious Reality.
-Bahasa Indonesia notes:
-Fitur utama Amp di sini adalah komunikasi antar thread. Planner bisa mengatur worker, dan worker bisa minta keputusan.
-Tegaskan: pesan membawa konteks, bukan kode. Kode masuk lewat branch dan check.
-Model planner adalah biaya tambahan. Jangan anggap planner gratis.
+Kita tidak harus memilih antara semua mahal atau semua murah. Kita bisa menempatkan model lebih kuat pada keputusan yang berpengaruh besar.
+Yang menarik dari Amp: thread saling berkomunikasi secara native. Worker bertanya saat ada keputusan baru; planner mengatur dependensi dan menggabungkan hasil.
+Biaya planner dan reviewer tetap masuk hitungan.
 TIMING: 2 menit.
 -->
 
@@ -651,33 +650,28 @@ TIMING: 2 menit.
 
 <span class="eyebrow">P7 · We Can Do This</span>
 
-## Four rules make workers safe
+## You already know the basics
 
-Small scope, fixed contracts, owned resources, and checks written first.
+Small tasks. Clear ownership. Shared contracts. Useful checks.
 
-You already know how to do this. The change is to write it down before the workers start.
+Use the same habits that help people work together.
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>🎯 Scope</strong>
-<p>One task. A short file list.</p>
-</div>
-
-<div class="card">
-<strong>📐 Contracts</strong>
-<p>Fixed names and data shapes.</p>
+<strong>🎯 Scope + contract</strong>
+<p>One useful result. Shared names and data.</p>
 </div>
 
 <div class="card">
 <strong>🔒 Resource ownership</strong>
-<p>Own port, data, browser profile.</p>
+<p>Assign files and runtime resources.</p>
 </div>
 
 <div class="card">
 <strong>🧪 Checks</strong>
-<p>Define acceptance checks first.</p>
+<p>Know how to accept the result.</p>
 </div>
 
 </div>
@@ -685,10 +679,9 @@ You already know how to do this. The change is to write it down before the worke
 
 <!--
 P7 — We Can Do This.
-Bahasa Indonesia notes:
-Empat aturan ini dipakai di seluruh demo. Setiap aturan punya pemilik yang jelas.
-Jika dua worker ingin mengubah nama kategori yang sama, pemilik kontrak yang memutuskan.
-TIMING: 2 menit.
+Ini bukan kemampuan baru yang hanya dimiliki Sultan Token. Kita sudah biasa membagi tugas dan memeriksa hasil kerja rekan.
+Tuliskan kebiasaan itu supaya agent bisa mengikutinya. Mulai dari satu tugas juga cukup.
+TIMING: 1,5 menit.
 -->
 
 ---
@@ -698,14 +691,14 @@ TIMING: 2 menit.
 
 <span class="eyebrow">P8 · Call To Action</span>
 
-## Start a runner-only parallel demo
+## Choose one task. Set one cap.
 
 <ol class="small-list">
-<li>Use one runner. No Orbs.</li>
-<li>Planner writes the contract and three task cards.</li>
-<li>Start three bounded workers, one worktree each.</li>
-<li>Give each worker its own port and test data.</li>
-<li>Wait for messages, then integrate on one branch.</li>
+<li>Pick a small improvement you actually need.</li>
+<li>Choose your spend cap and stop time.</li>
+<li>Write the acceptance check.</li>
+<li>Use a runner and a bounded worker.</li>
+<li>Add parallel work only where tasks can separate.</li>
 </ol>
 
 </div>
@@ -713,20 +706,19 @@ TIMING: 2 menit.
 
 <blockquote>
 
-Parallel work needs owners, not just more agents.
+Try this with your budget, not mine.
 
 </blockquote>
 
-<p class="quote-source">Rule for today's run.</p>
+<p class="quote-source">Our demo will show three tasks and their handoffs.</p>
 
 </div>
 </div>
 
 <!--
 P8 — Call To Action.
-Bahasa Indonesia notes:
-Ini momen untuk mulai demo. Tunjukkan runner zains dan daftar tiga task. Jangan buka Orb.
-Jika peserta bertanya soal Orb, jawab nanti di sesi Q&A.
+Minta peserta memilih satu pekerjaan kecil yang ingin dicoba setelah sesi ini. Tulis batas biaya dan kapan berhenti.
+Belum pindah ke demo. Kita selesaikan dua langkah cerita dulu, lalu buka repo bersama.
 TIMING: 1,5 menit.
 -->
 
@@ -737,24 +729,23 @@ TIMING: 1,5 menit.
 
 <span class="eyebrow">P9 · Early Benefits</span>
 
-## Observe the integrated result
+## Your first win is control
 
-- changed files for each task
-- check results for each task
-- a usage record for each thread
-- a blocked worker shows where the contract was weak
+- know what each worker owns
+- get a question before a wrong assumption grows
+- accept one useful change at a time
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>We will not claim success early.</strong>
-<p>We show the combined result only after the checks run.</p>
+<strong>Less guesswork</strong>
+<p>You can see progress, decisions, and the next check.</p>
 </div>
 
 <div class="card">
-<strong>Failures count too.</strong>
-<p>A blocked worker is useful evidence. It points to a weak contract.</p>
+<strong>A smaller next step</strong>
+<p>If a task stops, you can reduce scope, fix access, or choose help.</p>
 </div>
 
 </div>
@@ -762,9 +753,10 @@ TIMING: 1,5 menit.
 
 <!--
 P9 — Early Benefits.
-Bahasa Indonesia notes:
-Di sini kita baru melihat hasil. Jangan sebut hasil sebelum check selesai. Jika ada yang gagal, tunjukkan dan jelaskan.
-TIMING: 1 menit, lalu lanjut ke demo.
+Manfaat awal yang kita cari adalah kendali: tahu siapa mengerjakan apa dan menerima pertanyaan sebelum salah asumsi menjadi banyak kode.
+Ini masih janji alur kerja yang akan dicoba, bukan laporan hasil demo.
+Worker bisa terhenti karena izin, kredensial, runtime, model, kontrak, atau keputusan baru. Kita cari penyebabnya, bukan langsung menyalahkan model.
+TIMING: 1 menit.
 -->
 
 ---
@@ -774,11 +766,11 @@ TIMING: 1 menit, lalu lanjut ke demo.
 
 <span class="eyebrow">P10 · Long Win</span>
 
-## Choose what is worth paying for
+## Make good work repeatable
 
-> Saving does not mean everything must be cheap. Saving means knowing which parts are worth paying for.
+> You do not need my budget. You need to choose where your budget matters.
 
-Pay for planning, review, and rescue where they matter. Use cheaper workers where the task is bounded.
+Save through deliberate choices, not by making every step cheap.
 
 </div>
 <div class="visual">
@@ -798,9 +790,9 @@ Pay for planning, review, and rescue where they matter. Use cheaper workers wher
 
 <!--
 P10 — Long Win.
-Bahasa Indonesia notes (kalimat penutup):
+Kalau pola ini bisa diulang, kita tidak perlu mengejar setup orang lain setiap kali model baru muncul.
 Hemat bukan berarti semua harus murah. Hemat berarti tahu bagian mana yang layak dibayar.
-Tutup dengan kalimat ini, lalu minta semua orang melihat tabel biaya di slide berikutnya.
+Sekarang kita bawa gagasan ini ke repo nyata. Lihat jadwal, tetapkan batas, lalu jalankan demo.
 TIMING: 1 menit.
 -->
 
@@ -816,9 +808,9 @@ TIMING: 1 menit.
 | Time (WIB) | Block | Output |
 | ---------- | ----- | ------ |
 | 13.00–13.15 | Story, P1–P10 | Shared frame |
-| 13.15–13.25 | Contract and task cards | Contract v1 |
-| 13.25–14.10 | Workers run, planner answers messages | Branches and messages |
-| 14.10–14.15 | Integration and checks | Combined result |
+| 13.15–13.25 | Budget, contract, launch | Ready workers |
+| 13.25–14.00 | Workers and handoffs | Code for review |
+| 14.00–14.15 | Integration, checks, results | What worked + cost |
 | 14.15–14.30 | Q&A | Questions |
 
 </div>
@@ -827,30 +819,49 @@ TIMING: 1 menit.
 <div class="visual">
 
 <div class="card">
-<strong>Backup if a worker is slow:</strong>
-<p>Show the planner's message log and the blocked state. Do not hide it.</p>
+<strong>Stop feature work at 14.00</strong>
+<p>Reduce scope if needed. Keep 15 minutes for integration and results.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-Agenda. Ini waktu webinar 90 menit. Sekitar 45 menit untuk demo dan integrasi, sisanya cerita dan Q&A.
-Jika waktu kurang, potong pemeriksaan tambahan, bukan integrasi dan check utama.
+Jembatan dari pitch ke demo. P1–P10 berjumlah 14,5 menit; sisa 30 detik untuk transisi ini.
+Slide 12–16 dipakai sambil menyiapkan demo selama 10 menit. Setelah slide 16, pindah ke Amp dan mulai worker.
+Slide 17–21 adalah referensi saat worker berjalan, bukan lima langkah presentasi wajib sebelum launch.
+Mulai integrasi paling lambat 14.00. Jika terlambat, kurangi jumlah fitur yang diterima, bukan waktu pemeriksaan.
 -->
 
 ---
 
-<div class="qa">
+<div class="slide full">
+<div>
 
-# Live Demo
+<span class="eyebrow">Live demo · Three useful improvements</span>
 
-<p class="subtitle">Runner only. No Orbs. Three bounded tasks in one repository.</p>
+## One site. Three clear owners.
+
+<div class="full-table">
+
+| Worker | Useful result | Acceptance boundary |
+| ------ | ------------- | ------------------- |
+| T1 · Blog | Find posts by category | Compose with `/blog`, `/blog/en`, `/blog/id`; preserve URLs and date order |
+| T2 · Atlas | Browse curated topic groups | Link to blog categories; inspired by [yegge.ai/atlas](https://yegge.ai/atlas), not a graph or classifier |
+| T3 · AMA | Ask a question on this site | Replace the dead homepage link; first-party form and private storage |
 
 </div>
 
+<p class="caption">Blog and Atlas share a category contract. AMA can proceed separately after its storage decision.</p>
+
+</div>
+</div>
+
 <!--
-Section break. Turunkan ekspektasi: ini demo alur kerja, bukan benchmark.
+TIMING: 1 menit. Tunjukkan kebutuhan pengguna dulu, bukan nama file.
+Blog saat ini belum punya categories. UI arsip bersama ada di BlogArchiveList.tsx.
+Atlas adalah daftar topik pilihan yang membantu pembaca mencari tulisan. Tidak perlu mesin klasifikasi atau visualisasi graph.
+AMA mengganti link tanyaaja.in di homepage. Pemiliknya T3, termasuk edit app/routes/_index.tsx.
 -->
 
 ---
@@ -858,29 +869,36 @@ Section break. Turunkan ekspektasi: ini demo alur kerja, bukan benchmark.
 <div class="slide">
 <div>
 
-<span class="eyebrow">Demo Rules</span>
+<span class="eyebrow">Before launch · Budget</span>
 
-## What we do not do today
+## Choose the cap before the calls
 
-- no Orbs, and no self-hosted Orbs
-- no production writes and no deploys
-- no new Cloudflare resources without my approval
-- no shared port, database, or browser profile between workers
-- no result claimed before its check runs
+- **Extra spend cap:** ___, chosen live
+- **Review / rescue reserve:** ___, within the cap
+- **Subscription allowance:** ___
+- **Stop:** 14.00 WIB, or at the budget limit
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>Why these rules?</strong>
-<p>They keep the run repeatable and make the cost record clear.</p>
+<strong>Count the whole run</strong>
+<p>Planner + workers + review + rescue + paid tools.</p>
+</div>
+
+<div class="card">
+<strong>Check each billing source</strong>
+<p>Amp credits, linked subscriptions, or provider API bills. Runner time is separate.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-Aturan demo. Sebutkan satu per satu dengan singkat.
+TIMING: 2 menit. Isi angka dan mata uang di catatan run di layar sebelum memulai panggilan berbayar. Angka kosong bukan izin belanja.
+Zain memilih batas biaya tambahan dan bagian untuk review/rescue. Catat langganan yang sudah dibayar dan batas penggunaannya secara terpisah; jangan menganggap langganan gratis atau mengubah token menjadi dolar tanpa dasar.
+Periksa routing dan saldo sebelum launch, pada setiap handoff, dan sebelum rescue. Hentikan dispatch baru sebelum sisa anggaran habis. Catatan usage bisa terlambat; batas ini aturan operasional, bukan jaminan hard billing cap.
+Jika sumber tagihan tidak dapat diperiksa, kurangi scope atau berhenti. Tidak ada Orb, deploy, atau penulisan data produksi hari ini.
 -->
 
 ---
@@ -888,59 +906,107 @@ Aturan demo. Sebutkan satu per satu dengan singkat.
 <div class="slide full">
 <div>
 
-<span class="eyebrow">Cost Model</span>
+<span class="eyebrow">Before launch · Shared contract</span>
 
-## What we record for each layer
+## Give Blog and Atlas the same starting point
 
 <div class="full-table">
 
-| Layer | Role | Model choice | Record |
-| ----- | ---- | ------------ | ------ |
-| Planner | scopes tasks and reviews | GPT-6.1 Sol or Sonnet/Opus 5.5 | usage per thread |
-| Workers | bounded edits and checks | Haiku 5.5 or GPT-6 Luna | usage per thread |
-| Rescue | only when a worker is blocked | planner model | usage per thread |
-| Compute | runner machine | own runner, no Orbs | runner time |
-| Human | your review time | none | count it, not billed |
+| Agree first | Deliver before parallel edits |
+| ----------- | ----------------------------- |
+| Category names and slugs | One shared taxonomy and post schema |
+| `categories: string[]` | Readable metadata, with defaults for existing posts |
+| `?category=<slug>` | Same filter contract on all three blog routes |
+| Empty / unknown category | Defined behavior and language-specific messages |
 
 </div>
 
-<p class="caption">No prices on this slide. We fill in usage from Amp usage records after the run.</p>
+<p class="caption">T0 prepares and checks a foundation commit. Start T1 and T2 worktrees from it; each worker confirms the same revision.</p>
 
 </div>
 </div>
 
 <!--
-Tabel biaya. Model cost dan compute cost dipisah.
-Jangan memberi angka harga di slide. Angka diisi dari catatan penggunaan setelah demo.
+TIMING: 3 menit, sambil planner menyiapkan kontrak. Bentuk categories adalah usulan demo, bukan field yang sudah ada.
+T0 menyiapkan kontrak plus kode dasar yang bisa dibaca kedua worker: schema, taxonomy, parsing/default metadata. Periksa sebelum membuat worktree T1 dan T2 dari commit lokal yang sama. Sebut SHA sebenarnya di pesan handoff, bukan contoh palsu.
+Setelah handoff, T1 memiliki posts.ts untuk pekerjaan kategori berikutnya. T2 membaca kontrak, tidak mengubah model. Perubahan kontrak harus dikoordinasikan.
+Jika worktree sudah ada, kirim commit prasyarat dan minta worker menerapkannya serta mengonfirmasi revisi sebelum lanjut. Di checkout berbeda, transfer file atau commit secara eksplisit. Pesan tentang file tidak membuat file itu muncul di checkout lain.
+Kalau fondasi belum siap, Atlas menunggu; AMA bisa berjalan setelah keputusan storage. Jangan pura-pura semua pekerjaan independen.
 -->
 
 ---
 
-<div class="slide wide-left">
+<div class="slide tight wide-left">
 <div>
 
-<span class="eyebrow">Setup</span>
+<span class="eyebrow">Before launch · AMA scope</span>
 
-## Models and runner
+## A private question form, not a platform
 
-- **Planner:** Amp mode `gpt61s` (GPT-6.1 Sol, listed at high effort; no Medium mode is listed), or Claude Code with `model:claude-opus-5-5`
-- **Workers:** Amp mode `gpt6l` (GPT-6 Luna), or Claude Code with `model:claude-haiku-5-5`
-- **Executor:** runner `zains`, one worktree per worker
+- Replace the homepage link and store questions privately.
+- Server validation: required text and length limit.
+- States: idle, sending, sent, failed.
+- Basic abuse controls: hidden field, rate and size limits.
+- No accounts, public feed, or admin dashboard.
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>Selected models shown on screen</strong>
-<p>Each thread header shows the model used. We read it out loud.</p>
+<strong>The site stays on Vercel</strong>
+<p>Worker + D1 is a storage candidate, not a decision or a provisioned service.</p>
+</div>
+
+<div class="card">
+<strong>Zain approves external resources</strong>
+<p>Test locally first. Private storage is not a promise of absolute anonymity.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-Setup model. Sebutkan model dan mode yang dipakai untuk setiap thread.
-Catatan: mode `gpt61s` terdaftar sebagai high effort, bukan Medium. Sebut ini apa adanya. Jangan klaim Medium.
+TIMING: 1 menit. Sampaikan syarat ini sebelum T3 dimulai. T3 memiliki homepage app/routes/_index.tsx, route AMA, endpoint, dan storage lokal untuk pengujian.
+Planner boleh merekomendasikan storage, tetapi Zain yang menyetujui layanan eksternal baru. Worker + D1 belum diputuskan dan belum diprovisikan.
+Pilih jalur lokal yang bisa diuji. Jika keputusan storage belum ada, T3 bisa menyiapkan form dan kontrak endpoint; status integrasi storage tetap belum selesai.
+Jangan menjanjikan anonimitas mutlak: layanan bisa mempunyai log dan metadata. Data pertanyaan tidak menjadi feed publik.
+-->
+
+---
+
+<div class="slide">
+<div>
+
+<span class="eyebrow">Launch · Open Amp now</span>
+
+## Strong planner. Bounded workers.
+
+- **Planner:** GPT-6.1 Sol in Medium, or Claude Code with Sonnet / Opus 5.5.
+- **Workers:** Haiku 5.5 or GPT-6 Luna.
+- **Runtime:** runner `zains`; one worktree per worker. No Orbs.
+
+</div>
+<div class="visual">
+
+<div class="card">
+<strong>Read the actual selection</strong>
+<p>Mode, model, reasoning effort, and billing route. Confirm before the first message.</p>
+</div>
+
+<div class="card">
+<strong>Launch after the handoff</strong>
+<p>Budget, foundation revision, ownership, and checks are ready.</p>
+</div>
+
+</div>
+</div>
+
+<!--
+TIMING: 2 menit. Pilih model pada UI dan tunjukkan routing. Medium adalah posisi Dial; model dan reasoning effort bisa disetel terpisah. Jangan menyimpulkan effort dari raw mode key.
+Dokumentasi ChatGPT Only preset menempatkan GPT-6.1 Sol pada Medium. Tuning, ketersediaan, dan subscription pengguna tetap harus diperiksa live.
+Catatan teknis bila perlu: raw gpt61s tidak sama dengan memilih Medium yang ditune. GPT-6 Luna tersedia lewat gpt6l. Claude Code memakai external-agent:claude-code dengan model:claude-haiku-5-5 atau model:claude-opus-5-5; pilih effort yang tersedia pada UI.
+Claude subscription hanya berlaku pada mode Claude Code, bukan native Amp dengan raw model Claude. ChatGPT subscription dan BYOK mengikuti routing. Tool pendukung masih bisa memakai kredit Amp.
+Mulai worker sekarang. Slide 17–21 berikutnya adalah referensi yang dibuka saat runtime atau menjawab pertanyaan. Kembali ke slide 22 pada 14.00.
 -->
 
 ---
@@ -948,63 +1014,61 @@ Catatan: mode `gpt61s` terdaftar sebagai high effort, bukan Medium. Sebut ini ap
 <div class="slide full">
 <div>
 
-<span class="eyebrow">Three Tasks</span>
+<span class="eyebrow">Runtime reference · Ownership</span>
 
-## Tasks for the workers
+## Assign files and runtime resources
 
 <div class="full-table">
 
-| Task | Goal | Key files |
-| ---- | ---- | --------- |
-| 1 · Blog category filters | Filters compose with the existing language routes | `app/models/posts.ts`, `app/components/BlogArchiveList.tsx`, `app/routes/_layout.blog_*.tsx` |
-| 2 · Atlas page | Curated topical navigation, inspired by [yegge.ai/atlas](https://yegge.ai/atlas). Not a graph. | New route; reads post metadata |
-| 3 · First-party AMA form | Replace the dead tanyaaja.in link with a question form and private storage | `app/routes/_index.tsx`, new route and API |
+| Thread | Owns | Port proposal | Data / browser |
+| ------ | ---- | ------------- | -------------- |
+| T0 · Planner | Foundation, contract decisions, integration | 5173 | Combined checks |
+| T1 · Blog | `posts.ts`, `BlogArchiveList.tsx`, blog routes | 5174 | Fixture posts; own session |
+| T2 · Atlas | New Atlas route; reads shared post model | 5175 | Read-only posts; own session |
+| T3 · AMA | `_index.tsx`, AMA route, API and private storage | 5176 | Own local state; own session |
 
 </div>
 
-<p class="caption">Cloudflare Worker + D1 is a candidate for task 3. It is not decided and not provisioned.</p>
+<p class="caption">Confirm free ports and machine capacity. T1 owns post-model edits after the foundation handoff; T2 asks before contract changes.</p>
 
 </div>
 </div>
 
 <!--
-Tiga task. Ini tugas demo yang akan dikerjakan nanti. Slide ini tidak mengimplementasikan apa pun.
-Task 1 dan 2 bergantung pada nama kategori dan bentuk data yang sama. Itu sebabnya kontrak harus dibuat dulu.
+Referensi saat worker berjalan. Bukan slide yang harus dibacakan sebelum launch.
+Path lengkap: app/models/posts.ts, app/components/BlogArchiveList.tsx, app/routes/_index.tsx. T1 hanya blog, T2 hanya Atlas, T3 hanya homepage dan AMA.
+Planner mengubah model hanya untuk fondasi sebelum handoff. Setelahnya, perubahan bersama diputuskan lewat pesan dan diterapkan satu pemilik.
+Port adalah usulan, bukan klaim sudah kosong. Periksa proses yang berjalan. Pisahkan browser session dan data lokal; jangan arahkan worker ke database produksi.
 -->
 
 ---
 
-<div class="slide tight">
+<div class="slide full">
 <div>
 
-<span class="eyebrow">Shared Contract</span>
+<span class="eyebrow">Runtime reference · Messages</span>
 
-## The planner fixes this before any worker starts
-
-- **Category slugs:** one list, owned by the planner.
-- **Post shape:** `categories: string[]` in `app/models/posts.ts`.
-- **Filter URL:** `?category=<slug>` on `/blog`, `/blog/en`, `/blog/id`.
-- **Empty state:** one message per language.
-
-
-</div>
-<div class="visual">
+## A question can prevent three wrong edits
 
 <div class="term">
-<span class="dim">// contract v1 · owner: planner</span><br/>
-<span class="dim">categories:</span> string[]<br/>
-<span class="dim">url:</span> ?category=&lt;slug&gt;<br/>
-<span class="dim">empty:</span> per-language message
+<span class="dim">T0 → T1 + T2 · handoff</span><br/>
+Start from the foundation commit I supplied. Confirm the revision and category schema before editing.<br/><br/>
+<span class="dim">T2 → T0 · dependency</span><br/>
+Atlas needs an engineering group. Should it use an existing category or a new slug?<br/><br/>
+<span class="dim">T0 → T1 + T2 · decision</span><br/>
+Use the existing category. Keep the URL contract. T2 owns the display label.
 </div>
+
+<p class="caption">Example exchange. Messages coordinate work; they do not automatically sync working copies.</p>
 
 </div>
 </div>
 
 <!--
-Kontrak bersama. Ini bagian yang mencegah konflik antar worker.
-Tanyakan ke peserta: apa yang terjadi jika dua worker memakai nama kategori berbeda untuk topik yang sama?
-Catatan: ini hanya contoh bentuk. Slug final ditentukan planner di awal sesi.
-Branch bisa lulus sendiri dan tetap gagal setelah digabung.
+Tunjukkan satu pesan nyata di Amp jika ada. Contoh ini memperlihatkan pertanyaan, keputusan, dan dependensi, bukan sekadar laporan DONE.
+Pesan bisa berisi kode, tetapi tidak otomatis menyinkronkan checkout. Gunakan commit lokal yang tersedia di worktree terkait, atau transfer file secara eksplisit untuk checkout terpisah.
+Hasil akhir worker harus menyebut branch, revisi, file, check yang benar-benar dijalankan, serta hal yang belum selesai.
+Jika BLOCKED, cari penyebab: akses, kredensial, runtime, model, kontrak, atau keputusan baru. Jangan otomatis menaikkan model.
 -->
 
 ---
@@ -1012,37 +1076,7 @@ Branch bisa lulus sendiri dan tetap gagal setelah digabung.
 <div class="slide full">
 <div>
 
-<span class="eyebrow">Ownership</span>
-
-## Who owns which files, ports, and data
-
-<div class="full-table">
-
-| Thread | Task | Owns | Must not touch | Port | Test data |
-| ------ | ---- | ---- | -------------- | ---- | --------- |
-| T0 Planner | Contract, integration | contract file, merge | feature code | 5173 | none |
-| T1 Blog | Category filters | posts model, archive component, blog routes | `_index.tsx` | 5174 | fixture posts |
-| T2 Atlas | Atlas page | new atlas route | blog routes, posts model | 5175 | read-only posts |
-| T3 AMA | Question form | new AMA route and API | blog and atlas files | 5176 | local state dir |
-
-</div>
-
-<p class="caption">Ports are proposals. The planner confirms them before the workers start.</p>
-
-</div>
-</div>
-
-<!--
-Kepemilikan. Setiap thread punya file, port, dan data uji sendiri.
-Port 5173–5176 adalah usulan. Planner yang memutuskan sebelum worker mulai.
--->
-
----
-
-<div class="slide full">
-<div>
-
-<span class="eyebrow">Trade-offs</span>
+<span class="eyebrow">Runtime reference · Trade-offs</span>
 
 ## Worktrees isolate source edits. Nothing else.
 
@@ -1069,30 +1103,39 @@ Trade-off. Worktree memisahkan kode, bukan sumber daya. Tekankan bagian kanan.
 
 ---
 
-<div class="slide full">
+<div class="slide">
 <div>
 
-<span class="eyebrow">Messages</span>
+<span class="eyebrow">Runtime reference · Orbs</span>
 
-## Messages carry context, not code
+## Why I stayed with runners
 
-<div class="term">
-<span class="dim">planner → T2</span><br/>
-Contract v1 is in the contract file. Your port is 5175. Reply to T0 with branch, changed files, and checks.<br/><br/>
-<span class="dim">T2 → planner</span><br/>
-BLOCKED: Atlas needs slug `engineering`. Not in contract v1. Waiting for your decision.<br/><br/>
-<span class="dim">T1 → planner</span><br/>
-DONE: branch and file list sent. Checks: report attached.
+I explored self-hosted Orbs in Palka.
+
+The workspace-scoped setup did not fit my Personal workflow, so I stayed with runners.
+
+Orbs remain useful when runtime isolation is worth the cost and setup.
+
+</div>
+<div class="visual">
+
+<div class="card">
+<strong>Self-hosted Orbs</strong>
+<p>Provider registration is workspace-scoped. An individual can create a free workspace.</p>
 </div>
 
-<p class="caption">Format examples. They show the message shape, not a result.</p>
+<div class="card">
+<strong>Compute still has a cost</strong>
+<p>You pay for your infrastructure. Today we use runners, with no Orbs.</p>
+</div>
 
 </div>
 </div>
 
 <!--
-Contoh pesan. Pesan BLOCKED adalah sinyal yang baik, bukan kegagalan.
-Worker tidak mengubah kontrak sendiri. Worker bertanya ke pemilik kontrak.
+Cerita pribadi, sekitar 1 menit saat worker berjalan. Saya pernah mengeksplorasi self-hosted Orbs di Palka, tetapi pola workspace tidak cocok dengan workflow Personal saya. Jadi saya tetap memakai runner.
+Itu pilihan workflow saya, bukan berarti individu dilarang memakai self-hosted Orbs atau harus membayar paket tim.
+Dokumentasi menyebut provider didaftarkan pada workspace, workspace individu bisa gratis, dan biaya infrastruktur tetap ditanggung sendiri.
 -->
 
 ---
@@ -1128,13 +1171,10 @@ rex -S zains-rex …
 <!--
 TIMING: 1 menit; ambil dari bagian demo, bukan menambah durasi sesi.
 Rex menyediakan akses mesin. Thread Amp membagi kepemilikan pekerjaan. Keduanya saling melengkapi.
-Zain memakai skill dan MCP Rex. Contoh yang kita baca membuktikan jalur skill + CLI, bukan panggilan MCP.
-Dalam satu thread, agent menjalankan perintah konfigurasi di najmis, vikas, dan zains lewat sesi terminal Rex.
-Sesi terminal Rex bukan thread Amp baru. Akses remote memakai rute Rex yang sudah dikonfigurasi.
-Contoh ini membuktikan akses lintas mesin tanpa thread Amp per mesin, bukan bukti seluruh sinkronisasi selesai.
-Aktivasi konfigurasi di tiga mesin belum terverifikasi lengkap. Tidak ada pengukuran penghematan token atau dolar.
-Hindari klaim nol token: perintah dan output tetap masuk konteks. Yang dihindari adalah setup konteks thread berulang.
-Ini bukan isolasi runtime: port dan layanan bersama tetap harus dikelola pada setiap mesin.
+Saya memakai skill dan MCP Rex. Contoh ini memakai skill dan CLI: lokal di najmis, lalu rex -S vikas-rex dan rex -S zains-rex dari satu thread Amp.
+Sesi terminal Rex bukan thread Amp baru. Kita tidak perlu mengulang setup thread hanya untuk pindah mesin.
+Perintah dan output tetap memakai token. Contoh ini tentang akses mesin, bukan angka penghematan atau laporan aktivasi seluruh konfigurasi.
+Port dan layanan pada tiap mesin tetap perlu dikelola.
 Sumber: https://ampcode.com/threads/T-01a167ae-4ce8-723b-9500-aeb67e905e5b
 -->
 
@@ -1145,94 +1185,32 @@ Sumber: https://ampcode.com/threads/T-01a167ae-4ce8-723b-9500-aeb67e905e5b
 
 <span class="eyebrow">Integration</span>
 
-## Integrate, then check the combined branch
+## Combine the code. Check the result.
 
-1. Merge the contract, then T1, T2, T3.
-2. Run typecheck and build on the combined branch.
-3. Check each category on each language route, with empty states.
-4. Check that every Atlas link resolves.
-5. Check AMA: valid, empty, too long, rate limit.
+1. Integrate ready branches from the same foundation.
+2. Run typecheck and build together.
+3. Test category × language, order, and empty states.
+4. Follow every Atlas link.
+5. Test AMA input, storage, errors, and abuse controls.
 
 
 </div>
 <div class="visual">
 
 <div class="card">
-<strong>Matrix to fill in:</strong>
-<p>category × language, with pass or fail and the reason.</p>
+<strong>14.00 · Stop adding features</strong>
+<p>Accept only the work that passes combined checks. Keep unfinished work separate.</p>
 </div>
 
 </div>
 </div>
 
 <!--
-Integrasi. Ini paling penting: tiap cabang bisa lulus sendiri, tapi gagal setelah digabung.
--->
-
----
-
-<div class="slide wide-left">
-<div>
-
-<span class="eyebrow">Task 3 · AMA</span>
-
-## Small and honest
-
-- **Validation:** required text, length limit, checked on the server.
-- **Submission states:** idle, sending, sent, failed.
-- **Basic abuse controls:** hidden field, rate limit, size limit.
-- **Not included:** public feed, accounts, admin dashboard.
-
-**Private is not anonymous.** We do not promise absolute anonymity.
-
-</div>
-<div class="visual">
-
-<div class="card">
-<strong>Hosting</strong>
-<p>The site stays on Vercel. A Cloudflare Worker + D1 is only a candidate for this one endpoint.</p>
-</div>
-
-</div>
-</div>
-
-<!--
-AMA minimal. Jangan sebut "anonim" sebagai janji. Sebut "privat" dan jelaskan batasnya.
--->
-
----
-
-<div class="slide tight">
-<div>
-
-<span class="eyebrow">Orbs</span>
-
-## What Orbs isolate, and what they do not
-
-- Amp-hosted Orbs isolate each thread's runtime environment.
-- Orbs do not fix merge conflicts or shared external services.
-- Self-hosted Orbs register per workspace. Individuals can create a free workspace.
-- Infrastructure costs stay with you.
-
-</div>
-<div class="visual">
-
-<div class="card">
-<strong>Personal experience</strong>
-<p>In Palka I tried self-hosted Orbs. Workspace-scoped setup did not fit my personal workflow. This is my report, not checked here.</p>
-</div>
-
-<div class="card">
-<strong>Today</strong>
-<p>No Orbs at all.</p>
-</div>
-
-</div>
-</div>
-
-<!--
-Orbs. Jangan bilang self-hosted Orbs butuh tim berbayar. Dokumen sekarang bilang: gratis sampai 29 Oktober 2026, dan tetap gratis di paket Hobby, Individual, dan Teams setelahnya. Biaya infrastruktur tetap ditanggung sendiri.
-Pengalaman Palka adalah cerita saya, belum saya cek ulang.
+Pada 14.00, hentikan penambahan fitur dan minta status tiap worker. Lindungi 15 menit sampai 14.15 untuk integrasi, hasil, biaya, dan penutup.
+Integrasikan hanya perubahan siap dari fondasi yang sama. Jalankan pnpm run typecheck dan pnpm run build.
+Blog: kategori pada /blog, /blog/en, /blog/id; URL tulisan dan urutan tanggal tetap; kategori kosong/tidak dikenal sesuai kontrak.
+Atlas: setiap grup dan link menuju filter yang benar. AMA: input valid, kosong, terlalu panjang, error storage, rate/size limit, hidden field, dan tidak ada pembacaan publik atas pertanyaan.
+Uji gabungan, bukan hanya status lulus tiap branch. Jika storage eksternal belum disetujui, tunjukkan jalur lokal dan catat bagian produksi belum siap. Tidak melakukan deploy.
 -->
 
 ---
@@ -1240,28 +1218,97 @@ Pengalaman Palka adalah cerita saya, belum saya cek ulang.
 <div class="slide full">
 <div>
 
-<span class="eyebrow">Evidence</span>
+<span class="eyebrow">After the demo · Actual results</span>
 
-## One usage record per thread
+## What can we accept from this run?
 
 <div class="full-table">
 
-| Thread | Model (mode or feature) | Runner | Start → end | Usage (Amp record) | Checks | Result |
-| ------ | ----------------------- | ------ | ----------- | ------------------ | ------ | ------ |
-| T0 Planner | | `zains` | | | | |
-| T1 Blog | | `zains` | | | | |
-| T2 Atlas | | `zains` | | | | |
-| T3 AMA | | `zains` | | | | |
+| Task | Combined check evidence | Outcome / remaining work |
+| ---- | ----------------------- | ------------------------ |
+| Blog categories | Fill from the live run | Pending |
+| Curated Atlas | Fill from the live run | Pending |
+| Private AMA | Fill from the live run | Pending |
 
 </div>
 
-<p class="caption">Blank until the run. Empty cells are a result too.</p>
+<p class="caption">Show the result, one useful thread exchange, and the checks. Mark each task accepted, partial, or blocked.</p>
 
 </div>
 </div>
 
 <!--
-Catatan bukti. Isi tabel setelah demo, dari halaman usage Amp dan hasil check. Jangan isi dari ingatan.
+Bagian hasil baru dibuka setelah menjalankan demo dan pemeriksaan gabungan. Isi dari layar, bukan dari ingatan.
+Pending adalah status persiapan slide. Saat live, ganti secara lisan atau di catatan run dengan accepted, partial, atau blocked beserta alasannya.
+Tunjukkan satu perbaikan yang bekerja dan satu pesan yang membantu keputusan. Jika belum ada fitur selesai, tunjukkan status dan hambatan yang sebenarnya.
+Ini bukan perbandingan dollar terkontrol dengan run Royal. Jangan mengubah satu run menjadi klaim persentase penghematan.
+-->
+
+---
+
+<div class="slide full">
+<div>
+
+<span class="eyebrow">After the demo · Usage and billing</span>
+
+## Count planning, review, and rescue too
+
+<div class="full-table">
+
+| Role | Model / effort | Usage measured | Billing source | Extra charge |
+| ---- | -------------- | -------------- | -------------- | ------------ |
+| T0 · Plan + review | Record live | Record live | Record live | Confirm / unknown |
+| T1 · Blog | Record live | Record live | Record live | Confirm / unknown |
+| T2 · Atlas | Record live | Record live | Record live | Confirm / unknown |
+| T3 · AMA | Record live | Record live | Record live | Confirm / unknown |
+| Rescue / paid tools | Record if used | Record if used | Record if used | Confirm / unknown |
+
+</div>
+
+<p class="caption">Also record existing plan fees, subscription limits, runner time, and human review time. Unknown charges are not zero.</p>
+
+</div>
+</div>
+
+<!--
+Isi model dan effort aktual, bukan yang semula direncanakan. Catat waktu mulai/akhir di catatan run. Usage measured berisi satuan dan sumber yang tersedia, misalnya token, kredit, atau pemakaian kuota; bukan otomatis nilai dolar.
+Billing source: kredit Amp, Claude subscription melalui Claude Code, ChatGPT subscription, atau provider BYOK. Periksa penggunaan Amp dan halaman provider/langganan sesuai routing.
+Biaya bulanan yang sudah dibayar tetap disebutkan terpisah. Jangan membagi biaya langganan per task tanpa metode alokasi yang disepakati. Jangan menjumlahkan kuota dengan dolar.
+Jika review/rescue ada di T0, tandai included in T0 agar tidak dihitung dua kali. Jika ada thread tambahan, catat terpisah. Hitung juga tool pendukung yang memakai kredit Amp.
+Bandingkan biaya tambahan terkonfirmasi dengan cap di awal. Jika tagihan belum muncul, sebut provisional/unknown. Tidak ada angka penghematan pasti tanpa baseline Royal yang sebanding.
+-->
+
+---
+
+<div class="slide">
+<div>
+
+<span class="eyebrow">Take this home</span>
+
+## You do not need my budget
+
+One useful task. A chosen limit. A clear check.
+
+Pay for decisions. Use cheaper workers for clear tasks.
+
+**Let Amp threads ask, coordinate, and report.**
+
+</div>
+<div class="visual">
+
+<blockquote>
+
+Saving does not mean everything must be cheap. It means choosing what is worth paying for.
+
+</blockquote>
+
+</div>
+</div>
+
+<!--
+Penutup setelah hasil dan biaya, sebelum Q&A. Hubungkan hasil aktual dengan janji awal tanpa memaksakan semua tugas sukses.
+Kalian tidak perlu anggaran saya. Mulai dari satu tugas yang berguna, batas biaya yang kalian pilih, dan pemeriksaan yang jelas.
+Hemat bukan berarti semua harus murah. Hemat berarti tahu bagian mana yang layak dibayar.
 -->
 
 ---
@@ -1273,6 +1320,7 @@ Catatan bukti. Isi tabel setelah demo, dari halaman usage Amp dan hasil check. J
 
 <div class="refs">
 
+- Amp — [The Dial](https://ampcode.com/docs/the-dial), [Pricing](https://ampcode.com/docs/pricing), [Agent to Agent](https://ampcode.com/docs/orbs/agent-to-agent)
 - Amp — [Orbs](https://ampcode.com/docs/orbs) and [Self-Hosted Orbs](https://ampcode.com/docs/orbs/self-hosted)
 - SWE Growth — [Coding Agent Benchmark agenda](https://swegrowth.id/agenda/coding-agent-workflow-using-amp-with-royal-vs-frugal-mode)
 - Dan Roam — [The Pop-Up Pitch](https://www.danroam.com/) (this talk's storyline)
@@ -1287,9 +1335,11 @@ Catatan bukti. Isi tabel setelah demo, dari halaman usage Amp dan hasil check. J
 
 <blockquote>
 
-Messages carry context.
+Choose the budget.
 
-Checks carry proof.
+Connect the work.
+
+Check the result.
 
 </blockquote>
 
@@ -1297,7 +1347,7 @@ Checks carry proof.
 </div>
 
 <!--
-Referensi. Tutup dengan dua kalimat ini.
+Referensi untuk dibaca setelah sesi. Pilihan model, routing, dan harga dapat berubah; lihat dokumentasi saat memilih.
 -->
 
 ---
@@ -1323,5 +1373,6 @@ Referensi. Tutup dengan dua kalimat ini.
 </div>
 
 <!--
-Q&A, sekitar 15 menit. Pertanyaan yang sering muncul: biaya Orb, pilihan model, dan kenapa tidak ada benchmark resmi.
+Q&A, 14.15–14.30 WIB. Buka pertanyaan tentang biaya, pilihan model, pembagian tugas, atau pesan antar thread.
+QR menuju URL publik deck. Revisi terbaru tersedia setelah deployment; gunakan HTML lokal untuk presentasi sebelum itu.
 -->
