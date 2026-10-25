@@ -206,6 +206,24 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "royal-vs-frugal-amp-2026",
+    date: "2026-10-25",
+    title: "Royal vs Frugal Amp",
+    description:
+      "A coding agent workflow demo: a planner coordinating cheaper workers on a runner, without Orbs.",
+    event: "SWE Growth Webinar",
+    resources: [
+      {
+        href: "/royal-vs-frugal-amp.html",
+        label: "Open slides",
+      },
+      {
+        href: "https://swegrowth.id/agenda/coding-agent-workflow-using-amp-with-royal-vs-frugal-mode",
+        label: "Event link",
+      },
+    ],
+  },
+  {
     slug: "you-dont-need-cli-2026",
     date: "2026-09-26",
     title: "You don't need CLI",
