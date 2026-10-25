@@ -1,0 +1,127 @@
+---
+meta:
+  - title: "Agent Paralel, QA Masih Antre — AI Tools Digest #39"
+  - name: description
+    content: "Self-hosted Orbs, biaya model, RAM laptop, dan review hasil agent. Rangkuman dari grup AI Tools SWE GROWTH, 18–25 Oktober 2026."
+  - author: Zain Fathoni
+  - date: "2026-10-25"
+  - property: og:title
+    content: "Agent Paralel, QA Masih Antre — AI Tools Digest #39"
+  - property: og:description
+    content: "Self-hosted Orbs, biaya model, RAM laptop, dan review hasil agent. Rangkuman dari grup AI Tools SWE GROWTH, 18–25 Oktober 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-oct-18-oct-25-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-39.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Agent Paralel, QA Masih Antre — AI Tools Digest #39"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Agent Paralel, QA Masih Antre — AI Tools Digest #39
+
+Mas Zahid sudah menjalankan beberapa main agent secara paralel. Yang kemudian terasa repot justru koordinasinya: port bentrok, resource rebutan, dan hasil kerja yang tetap harus diperiksa manusia. *“Yes yg sulit coordinate between agent nya”*, katanya.
+
+Ini yang paling menarik buat saya dari obrolan kita sepanjang 18–25 Oktober. Link model baru tetap deras, tapi percakapan yang panjang malah soal menjalankan agent tanpa bikin environment berantakan. Ditambah satu keluhan yang rasanya makin familiar: agent bisa nulis lebih cepat daripada tim bisa review. 😅
+
+## Orbs masuk homelab, urusan lifecycle ikut masuk
+
+[Amp](https://ampcode.com) merilis [self-hosted Orbs](https://ampcode.com/news/self-hosted-orbs) minggu ini. Compute-nya kita sediakan sendiri. Provider menerjemahkan permintaan spawn, pause, dan delete dari Amp menjadi operasi di infrastruktur kita. Jadi jangan membacanya sebagai semua kebutuhan infra langsung beres setelah menjalankan satu command.
+
+Bedanya dengan sekadar remote ke komputer yang sama cukup terasa ketika task mulai paralel. [Orbs](https://ampcode.com/what-are-orbs) menyediakan environment per thread, sehingga pekerjaan tidak harus berbagi filesystem dan port yang sama. Dari situ diskusi kita langsung turun ke persoalan sehari-hari: service mana yang perlu hidup, kapan database di-seed, lalu apa yang terjadi saat environment tidur.
+
+Mas Restu sudah mencoba di homelab dengan mesin 4vCPU/16GB. Ia juga menjelaskan custom Docker runner yang dipakainya dan rencana menambah dukungan systemd. Setup itu masih punya detail yang perlu diperhatikan: ia memakai Workspace, setelah sebelumnya tidak bisa menyelesaikan konfigurasi di akun Personal. Saya juga kepentok perpindahan ini karena masih punya free credits yang tidak bisa dibawa ke Workspace.
+
+Mas Zahid menanyakan pause/resume dan seeding untuk data kantor yang besar. Jawabannya tidak cukup dengan memastikan container berhasil start. Dokumentasi self-hosted menunjukkan provider menangani operasi lifecycle; cara menyimpan data dan membangunkan kembali environment tetap perlu diuji sesuai implementasi masing-masing.
+
+Menurut saya, coba satu task beserta service dan seed datanya sampai selesai dulu. Kalau resume saja belum bisa dipercaya, menambah jumlah agent akan menambah pekerjaan menjaga infra.
+
+## Bawa subscription itu ada jalurnya
+
+Mas Joni mulai lebih sering memakai Amp setelah menghubungkan [Claude Code](https://code.claude.com/docs/en/overview). Di sisi lain, Mas Arif sudah berhasil memakai Custom URL tetapi modelnya belum muncul di pilihan Dial. Ini dua kebutuhan yang sekilas mirip, padahal jalur konfigurasinya berbeda.
+
+Untuk Claude subscription, Amp punya [mode Claude Code khusus](https://ampcode.com/news/use-your-claude-plan) yang menggunakan Claude Agent SDK. Itu tidak berarti subscription tersebut berubah menjadi API universal untuk setiap mode dan komponen agent. Untuk custom provider, Mas Restu membagikan pengalaman yang lebih spesifik: *“Dial Mode ini aku pakai custom provider. terus untuk configure Dialnya minta ke Puck.”*
+
+Pertanyaan pemakaian subscription di harness lain juga muncul dari pengguna [Google Antigravity](https://antigravity.google/terms). Saya tidak menganggap jawaban singkat di chat sebagai jaminan akun aman. Cek dokumentasi integrasi dan ketentuan paket yang benar-benar dipakai; koneksi berhasil belum menjawab soal penggunaan yang didukung.
+
+Kalau mau memindahkan workflow, pastikan dulu jalurnya jelas. Sayang kalau penghematan paket malah dibayar dengan kehilangan akses di tengah pekerjaan.
+
+## Model murah: kuota lega belum tentu cepat selesai
+
+Mas Agung menyukai [GLM](https://z.ai) 5.3 Flash, sambil mempertanyakan apakah token plan-nya justru lebih mahal dalam hitungannya. Mas Luthfi A masih menanyakan kecepatannya. Mas Michael melaporkan hasil berbeda tergantung provider yang dipakai. Obrolan seperti ini lebih berguna buat saya daripada daftar ranking tanpa konteks task.
+
+[MiniMax](https://www.minimax.io) juga mendapat tempat. Mas Iqbal cenderung menyukainya berdasarkan pengalaman sejak M2. Sementara itu, link rilis Flash dan Pro terus dibagikan. Preferensi ini belum menjadi benchmark bersama: belum ada task identik, kondisi sama, lalu hasil yang kita ukur bareng.
+
+[CommandCode](https://commandcode.ai) dibahas dari sisi kuota. Mas Michael menilai kuotanya lebih melimpah dalam pengalamannya, tetapi memberi catatan: *“tapi beberapa kelemahan commandcode tpsnya kadang lemot tapi masih bisa dimaklumi”*. Buat pekerjaan yang tidak ditunggu langsung, mungkin itu kompromi yang oke. Buat debugging sambil duduk menatap layar, rasanya bisa berbeda.
+
+Dan selera model memang tidak seragam. Mas Agung bilang, *“tapi untuk daily task/driver GPT masih paling oke sih”*, merujuk model [OpenAI](https://openai.com). Saya sendiri membagikan [perbandingan Haiku dan DeepSeek dari Mas Ariya](https://dekontaminasi.substack.com/p/claude-haiku-55-vs-deepseek-v41-flash) sebagai bacaan tambahan untuk task yang lebih sederhana.
+
+Yang perlu dicatat waktu mencoba model murah: berapa lama sampai perubahan bisa dipakai, termasuk revisinya. Token murah yang perlu banyak putaran belum tentu menghemat waktu kita.
+
+## UX enak bisa tetap bikin laptop ngos-ngosan
+
+Mbak Eka mencoba [Orca](https://www.onorca.dev/) dan suka UX-nya dibanding [herdr](https://herdr.dev), tetapi merasa aplikasinya berat. Bahkan dua tab saja sudah terasa berbeda dari setup sebelumnya. Mas Riza Rohman punya pengalaman lain: *“udah pake 3 bulanan ini, sempet coba2 yg lain, akhirnya selalu balik lagi. saking enaknya orchestratornya.”*
+
+Saya suka dua pendapat ini berdampingan. Nyaman dipakai dan ringan di mesin memang dua hal yang perlu dinilai sendiri-sendiri. Kita belum punya pengukuran RAM terkontrol di percakapan ini, jadi belum ada alasan menyimpulkan satu penyebab untuk semua orang.
+
+Mas Fajri mengingatkan hal yang mudah kelewat: *“Setiap terminal yang aktif mengkonsumsi memory, jadi perhatikan teminal yang udah kebuka tetapi lupa di close”*. Kadang yang perlu dibereskan dulu justru session yang sudah tidak dipakai.
+
+Sebelum pindah ADE karena tampilan demo, coba dengan jumlah terminal dan agent yang biasa kamu jalankan. Mesin yang harus dipakai kerja seharian punya toleransi berbeda dari mesin untuk mencoba tool sebentar.
+
+## QA yang harus mengejar, bukan cuma agent-nya
+
+Mas Zahid cerita timnya masih mentok di QA serta review dan keputusan leader. Ia juga mulai lebih banyak memeriksa PR dan screenshot, dengan rules detection pada setupnya membantu menegur hasil coding yang salah. Ini pengalaman workflow pribadi, bukan janji bahwa memasang tool yang sama otomatis menghilangkan kebutuhan review.
+
+Mas Michael membagikan tulisan [Agentic Verification](https://addyo.substack.com/p/agentic-verification). Judulnya pas dengan persoalan yang kita alami: setelah agent menghasilkan diff, siapa yang memastikan perubahan itu benar-benar bekerja? Screenshot bisa membantu untuk UI, tetapi perilaku error dan alur yang tidak kelihatan tetap perlu diperiksa.
+
+Obrolan proses kerja lalu sampai ke standup meeting. Ketika Mas Oshi bertanya apa yang dikerjakan scrum master sekarang, Mas Zahid menjawab, *“Meeting tiap pagi sama agent agent nya. 🤣 🤣 🤣 🙈 🙈”*
+
+Lucu, tapi ada pekerjaan nyata di baliknya. Saya ingin PR dari agent membawa bukti yang bisa dicek reviewer: test yang dijalankan, hasilnya, dan alur UI yang dicoba. Itu lebih membantu daripada sekadar pesan bahwa task sudah selesai.
+
+## ⚡ Quick Hits
+
+- **Kontribusi open source.** Diskusi [issue Bridgeplay](https://github.com/raymondchins/Bridgeplay/issues/79) memancing percakapan soal kredit dan rebranding. Mbak Eka mengingatkan untuk membaca issue langsung. Saya sengaja tidak mengubah komentar chat menjadi kesimpulan tentang siapa melanggar apa.
+- **Ajakan ikut membangun.** Mas Zikrul mengajak yang ingin berkontribusi ke open source untuk mengikuti UAT platform dari SWE Growth. Menarik karena ada jalur partisipasi selain mencoba aplikasi baru.
+- **Tycho.** Mas Didik memperkenalkan [Tycho](https://usetycho.com) sebagai produk yang sedang dibuatnya. Di percakapan minggu ini baru sebatas perkenalan, belum review pengguna.
+- **Royal vs Frugal.** Minggu ini kita juga membagikan [materi perbandingan workflow Amp](https://www.zainfathoni.com/royal-vs-frugal-amp.html) dan agenda sesi 25 Oktober. Saya tidak menganggap pengumuman acara sebagai bukti semua skenario demonya sudah berhasil dijalankan.
+
+Link baru bisa disimpan dulu. Untuk yang menyentuh workflow kerja, saya lebih tertarik mencoba satu kebutuhan nyata sebelum memutuskan migrasi.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Uji satu environment [self-hosted Orbs](https://ampcode.com/news/self-hosted-orbs) sampai pause dan resume, termasuk database serta service pendukungnya.
+2. Kalau ingin membawa Claude subscription ke Amp, ikuti [jalur Claude Code mode](https://ampcode.com/news/use-your-claude-plan), lalu cek batas mode yang memang tersedia.
+3. Tambahkan bukti verifikasi ke PR agent. [Bacaan Agentic Verification](https://addyo.substack.com/p/agentic-verification) bisa jadi bahan untuk membenahi checklist review tim.
+4. Pilih satu task representatif untuk membandingkan model. Pakai [tulisan Haiku vs DeepSeek](https://dekontaminasi.substack.com/p/claude-haiku-55-vs-deepseek-v41-flash) sebagai referensi, lalu catat hasil dari codebase sendiri.
+
+Saya akan mulai dari bukti di PR. Kalau review masih antre, menambah agent belum tentu membuat pekerjaan lebih cepat sampai ke pengguna.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Zahid**: koordinasi agent, bottleneck QA, dan candaan standup.
+- **Mas Restu**: pengalaman homelab, self-hosted Orbs, dan custom Dial.
+- **Mas Joni** dan **Mas Arif**: pengalaman serta pertanyaan integrasi Amp.
+- **Mas Agung**: preferensi model dan hitungan biaya GLM.
+- **Mas Luthfi A** dan **Mas Iqbal**: pertanyaan latency serta pengalaman model alternatif.
+- **Mas Michael**: trade-off CommandCode dan bacaan verifikasi.
+- **Mbak Eka**, **Mas Riza Rohman**, dan **Mas Fajri**: UX orchestrator versus resource mesin.
+- **Mas Oshi**: pertanyaan tentang proses kerja bersama agent.
+- **Mas Zikrul**: ajakan kontribusi open source.
+- **Mas Didik**: perkenalan Tycho.
+
+Terima kasih sudah membagikan bagian yang masih repot juga. Pengalaman seperti itulah yang membantu kita memilih apa yang benar-benar perlu dicoba.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 25 Oktober 2026*
