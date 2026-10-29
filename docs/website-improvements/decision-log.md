@@ -237,4 +237,5 @@ Thread links:
 - **Fix:** attach a native load listener before checking for an already-loaded API. Remove that listener during cleanup. Keep the existing widget-ID guard and token resets.
 - **Review:** the High/Fast reviewer found no new source blocker. Its component probes cover delayed and early API loads, duplicate events, cleanup, and reset behavior.
 - **Checks:** the same browser reproduction passes after the fix. The full simulated flow passes two consecutive sends, exact local D1 rows, Unicode boundaries, and duplicate-token rejection. TypeScript, 15 Worker tests, and the build pass.
-- **Limit:** these checks do not prove real Turnstile success. Check the new production deployment separately.
+- **Deployment:** [fix commit 6d56309](https://github.com/zainfathoni/zainf/commit/6d56309d273c0cd17e9a2de564408af132aa2a17) is pushed. Deployment `dpl_GviHT2MHfVNWFCVy39U3twnPERuj` is READY on the production domains. All 26 HTTP checks pass again. The inspected light capture shows the real widget and full form.
+- **Limit:** the headless browser did not obtain a token after its native checkbox click. No successful production send is claimed. Two normal-browser sends on the same page and their exact D1 rows remain to be checked.

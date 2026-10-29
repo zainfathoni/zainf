@@ -34,6 +34,7 @@ Other documents in this folder:
 - Production HTTP smoke: 26 of 26 pass, including all 18 filter combinations, cover HTML, Atlas counts, sitemap, fresh AMA IDs, the production site key, and a real invalid-token 403 with no stale success message. The checked public HTML and 21 JavaScript assets contain no production shared secret. Artifacts: `.amp/in/artifacts/production-release/`.
 - Production captures of the blog, Atlas desktop/mobile, article cover, and AMA initial state were inspected. Light theme is confirmed in the DOM. No overflow was found at 1280 or 390 pixels. Atlas images show only their named viewports, not the full page.
 - A real successful Turnstile flow remains a production verification gate. The first headless browser run reached the real human checkbox but got no token, so no success was claimed. Local simulated results do not close this gap.
+- The reviewed [script-load fix](https://github.com/zainfathoni/zainf/commit/6d56309d273c0cd17e9a2de564408af132aa2a17) is deployed as `dpl_GviHT2MHfVNWFCVy39U3twnPERuj`. It fixes a reproduced race when the API loads after hydration. The delayed-load browser regression and full simulated flow pass. All 26 production HTTP checks pass again. New production captures were inspected: the real widget and full AMA form are visible in light mode, but the headless human check still gives no token. Two normal-browser sends and exact D1 row checks remain open.
 
 ## Status words
 

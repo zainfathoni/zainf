@@ -97,7 +97,8 @@ The website is deployed at `https://www.zainfathoni.com` from
 Vercel has `AMA_WORKER_URL`, `AMA_SUBMISSION_SECRET`, and `TURNSTILE_SITE_KEY`
 for production only. The shared secret is stored as a Secret. No AMA values are
 set for previews. The production deployment is
-`dpl_8eDpSweEnHZUrumAdeXoBYmbMVjt`.
+`dpl_GviHT2MHfVNWFCVy39U3twnPERuj`, from the
+[script-load fix](https://github.com/zainfathoni/zainf/commit/6d56309d273c0cd17e9a2de564408af132aa2a17).
 
 Production HTTP checks pass: 26 of 26, including distinct form IDs, the production
 site key, and an invalid real token returning 403 without a stale success banner.
@@ -117,6 +118,13 @@ The actual-route browser test failed before the fix and passed after it, with
 delayed API delivery, two consecutive simulated sends, two exact local D1 rows,
 Unicode boundaries, and duplicate-token rejection. These are local simulated
 checks, not real Turnstile acceptance. TypeScript, 15 Worker tests, and build pass.
+
+After deployment, all 26 production HTTP checks pass again. The real widget is
+visible with the full form in light mode. A native checkbox click in the headless
+browser did not obtain a token. No successful production send is claimed.
+The remaining check needs a normal browser: send two test questions on the same
+page, without a reload or failed attempt between them, then check those exact
+questions in D1. Do not read unrelated private questions.
 
 For a new environment, use this setup order:
 
