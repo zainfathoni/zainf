@@ -1,0 +1,165 @@
+# Ask Me Anything (/ama)
+
+## Architecture
+
+```text
+Browser /ama form
+  -> Vercel React Router action (same-origin POST, honeypot, body cap)
+  -> Cloudflare Worker POST /questions (shared secret, rate limit, Turnstile, validation)
+  -> D1 table questions (id, question, created_at)
+```
+
+The Worker is write-only. It has no read route. Read and delete questions in the
+Cloudflare D1 dashboard or with Wrangler `d1 execute` against the remote database.
+
+## Configuration
+
+| Where | Name | Purpose |
+| --- | --- | --- |
+| Vercel | `AMA_WORKER_URL` | Full Worker URL ending in `/questions`. |
+| Vercel | `AMA_SUBMISSION_SECRET` | Shared bearer secret. Must equal the Worker value. |
+| Vercel | `TURNSTILE_SITE_KEY` | Public Turnstile site key for the widget. |
+| Worker secret | `AMA_SUBMISSION_SECRET` | Shared bearer secret. |
+| Worker secret | `TURNSTILE_SECRET_KEY` | Turnstile secret key. |
+| Worker secret | `TURNSTILE_EXPECTED_HOSTNAME` | Exact production hostname, such as the site domain. |
+| Worker var | `TURNSTILE_EXPECTED_ACTION` | `ama`. Set in `wrangler.jsonc`. |
+| Worker binding | `AMA_DB` | Production D1 database `zainf-ama`. Its ID is in `wrangler.jsonc`. |
+| Worker binding | `AMA_RATE_LIMITER` | 20 authenticated attempts per 60 seconds, key `ama-submissions`. |
+
+The rate limit is approximate and applies separately in each Cloudflare location.
+It is not a strict worldwide limit and it does not limit by visitor.
+
+## Local verification
+
+Run from the repository root. Use Node 20.19.0.
+
+```sh
+node --test workers/ama/test/ama-worker.test.mjs
+pnpm run typecheck
+pnpm run build
+```
+
+The contract tests import the Worker handler directly. They replace three
+boundaries. Nothing else is mocked.
+
+- Turnstile Siteverify: a test-only `globalThis.fetch` stub with deterministic
+  verdicts. It is not real Cloudflare behaviour.
+- D1: an in-memory fake that implements only the two bound statements the Worker
+  uses. It is not D1.
+- Rate limiter: an in-memory fake with a 20-per-key counter. It is not the
+  Cloudflare binding.
+
+Local D1 migrations and restart persistence are checked separately with
+`wrangler d1 ... --local`, as shown below. The rate-limit binding is checked only
+through the fake, so do not treat these tests as proof of Cloudflare's limiter.
+
+Local D1 checks use an ignored scratch state directory. Run from `workers/ama`:
+
+```sh
+cp .dev.vars.example .dev.vars   # local values only; never commit .dev.vars
+pnpm exec wrangler d1 migrations apply AMA_DB --local --persist-to /path/to/scratch
+pnpm exec wrangler d1 execute AMA_DB --local --persist-to /path/to/scratch \
+  --command "SELECT COUNT(*) AS n FROM questions"
+```
+
+Restarting `wrangler dev --local` with the same `--persist-to` directory keeps the rows.
+
+## Turnstile test keys: observed mismatch
+
+Cloudflare documents the dummy secret `1x0000000000000000000000000000000AA` as
+returning hostname `localhost` and action `test`. On 2026-10-25, the live
+Siteverify endpoint returned hostname `example.com`, no `action` field, and
+success for any token. The Worker requires the configured hostname and action,
+so it rejects valid-looking dummy requests. This keeps the check fail-closed.
+Do not relax the check for production. Re-test the dummy keys before relying on
+them for end-to-end local tests.
+
+## Production setup: October 30, 2026
+
+The user approved resource creation, secrets, migration, commit, push, and
+deployment. Cloudflare setup is complete. Website deployment is pending Vercel
+sign-in and production environment configuration.
+
+- D1 `zainf-ama`: `2cb785bc-92f1-4ac8-9e28-e4bd8b7e7886` (APAC).
+- Migration `0001_questions.sql` is applied and recorded in `d1_migrations`.
+- Namespace `1001` was checked against the account's existing Worker bindings.
+- A managed production Turnstile widget permits only `www.zainfathoni.com`.
+- Worker secrets are installed. Their values are not in this repository.
+- The reviewed Worker is deployed at
+  `https://zainf-ama.zain.workers.dev/questions`. Worker previews are disabled.
+- Uploaded source SHA-256:
+  `8d9d4b8555c1d56deeb4497e820d3a1e020dcfd903fd0c563a478373191340d7`.
+- Production denial checks passed: public GET 405, unauthenticated POST 401,
+  authenticated invalid input 400, real invalid Turnstile token 403. D1 has
+  zero questions after these checks.
+
+Remaining release steps:
+
+1. Set `AMA_WORKER_URL`, `AMA_SUBMISSION_SECRET`, and `TURNSTILE_SITE_KEY` in
+   Vercel for production only. The shared secret must equal the Worker value.
+2. Push the reviewed website commit and check the Vercel deployment.
+3. Prove two consecutive successful submissions with real Turnstile tokens and
+   exact D1 rows. No real successful submission has been proven yet.
+
+For a new environment, use this setup order:
+
+1. Create the D1 database `zainf-ama`. Copy the returned `database_id` into `workers/ama/wrangler.jsonc`.
+2. Confirm that namespace `1001` is unique for this Cloudflare account, or change it.
+3. Create the Turnstile widget for the production hostname. Put the site key in Vercel as `TURNSTILE_SITE_KEY`.
+4. Set Worker secrets: `AMA_SUBMISSION_SECRET`, `TURNSTILE_SECRET_KEY`, `TURNSTILE_EXPECTED_HOSTNAME`.
+5. Apply the migration to the remote database: `pnpm exec wrangler d1 migrations apply AMA_DB --remote`.
+6. Deploy the Worker: `pnpm exec wrangler deploy`.
+7. Set Vercel variables `AMA_WORKER_URL`, `AMA_SUBMISSION_SECRET`, and `TURNSTILE_SITE_KEY`.
+8. Confirm `/ama` is excluded from prerendering in `react-router.config.ts`. The coordinator integrated this on main. Without it, one loader UUID and site key would be baked into static HTML.
+
+Preview deployments must not use production D1 or production secrets.
+
+## Rejected bodies are drained, not canceled
+
+When a request body exceeds 32 KiB, the action reads and discards the rest of
+the body, then returns 413. It does not cancel the body stream early. The
+Node adapter (`@remix-run/node-fetch-server` 0.9.0) closes the same stream when
+the request ends. A close after an early cancel throws "Controller is already
+closed" in an unhandled listener and crashes the dev process. Memory stays
+bounded, because nothing is buffered after the limit. Check this with a
+chunked request (no Content-Length) and a Content-Length request over the
+limit, then confirm `/ama` still returns 200.
+
+## Known framework behaviour: cross-origin POST
+
+A POST with a mismatched `Origin` header returns HTTP 500, not the action's 403.
+React Router's CSRF check throws before the route action runs. This protection is
+kept. The action's own 403 path is not reached for this case. For that denied case,
+the proof must show zero rows and zero Siteverify or Worker calls.
+
+## Proof boundaries
+
+- Browser flows on the shared server use a Miniflare harness on port 8788. Only the
+  outbound Siteverify call is simulated. The harness rejects any other outbound URL.
+- The real Worker on port 8787 uses real Siteverify. Its dummy-key result is a
+  documented mismatch, so it proves fail-closed behaviour only, not success.
+- A stored success row is proven only through the simulated Siteverify path. It is
+  not proof of real Cloudflare acceptance.
+- The October 30 review check on port 8789 also simulates the widget API. It
+  enforces single-use tokens at the Siteverify boundary and uses real local D1.
+  Native browser input passed Unicode length boundaries. Two consecutive sends
+  stored two exact questions without a reload or intervening error. A reused
+  token was rejected, kept the question and ID, and showed no success banner.
+  These checks do not replace the real production success check.
+
+## Success and question length
+
+After a successful send, the new submission ID clears the question field and
+resets the existing Turnstile widget. Each failed attempt also resets the widget.
+Tokens are single-use; a successful send must not leave a consumed token for the
+next question.
+
+Browser validation and server validation count Unicode code points after
+trimming. Native `minLength` and `maxLength` count UTF-16 units, so they are not
+used. For example, 1999 ASCII characters plus one emoji are 2000 valid characters.
+
+## Privacy
+
+Questions are private when the Worker receives them. An edited question and an
+answer may be published later. Hosting and security providers can process
+connection data. The Worker does not log questions, tokens, secrets, or raw IP addresses.

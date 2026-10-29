@@ -4,8 +4,54 @@ import { formatDate } from "~/utils/format-date";
 import { ArrowLeftIcon } from "./Icons";
 import { PostLanguageBadge } from "./PostLanguageBadge";
 
-export function PostHeader(props: MdxAttributes) {
-  const post = extractPostAttributes(props);
+const SITE_ORIGIN = "https://www.zainfathoni.com";
+
+function getMetaContent(attributes: MdxAttributes, property: string) {
+  return attributes.meta.find((entry) => entry.property === property)?.content;
+}
+
+function getCoverSrc(content: unknown) {
+  if (typeof content !== "string" || content.trim() === "") {
+    return;
+  }
+
+  const value = content.trim();
+  if (value.startsWith("/") && !value.startsWith("//")) {
+    return value;
+  }
+
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:") {
+      return;
+    }
+    if (url.origin === SITE_ORIGIN) {
+      return `${url.pathname}${url.search}${url.hash}`;
+    }
+    return value;
+  } catch {
+    return;
+  }
+}
+
+function getPositiveDimension(content: unknown) {
+  const value = Number(content);
+  return Number.isFinite(value) && value > 0 ? value : undefined;
+}
+
+export function PostHeader(props: MdxAttributes & { showCover?: boolean }) {
+  const { showCover = true, ...attributes } = props;
+  const post = extractPostAttributes(attributes);
+  const coverSrc = showCover
+    ? getCoverSrc(getMetaContent(attributes, "og:image"))
+    : undefined;
+  const coverAlt = getMetaContent(attributes, "og:image:alt");
+  const coverWidth = getPositiveDimension(
+    getMetaContent(attributes, "og:image:width"),
+  );
+  const coverHeight = getPositiveDimension(
+    getMetaContent(attributes, "og:image:height"),
+  );
   return (
     <>
       <Link
@@ -30,6 +76,16 @@ export function PostHeader(props: MdxAttributes) {
           {post.title}
         </h1>
       </header>
+      {coverSrc && (
+        <img
+          src={coverSrc}
+          alt={typeof coverAlt === "string" ? coverAlt : ""}
+          width={coverWidth}
+          height={coverHeight}
+          loading="eager"
+          className="mt-8 h-auto w-full rounded-xl"
+        />
+      )}
     </>
   );
 }

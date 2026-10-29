@@ -1,5 +1,9 @@
 import clsx from "clsx";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
+import {
+  postTypeOptions,
+  type PostTypeFilter,
+} from "~/models/post-types";
 import type { Post, PostLanguage } from "~/models/posts";
 import { formatDate } from "~/utils/format-date";
 import { Card } from "./Card";
@@ -7,11 +11,42 @@ import { PostLanguageBadge } from "./PostLanguageBadge";
 
 type ArchiveFilter = PostLanguage | "all";
 
-const archiveFilters: Array<{ key: ArchiveFilter; label: string; to: string }> = [
-  { key: "all", label: "All posts", to: "/blog" },
+const languageFilters: Array<{ key: ArchiveFilter; label: string; to: string }> = [
+  { key: "all", label: "All languages", to: "/blog" },
   { key: "en", label: "English", to: "/blog/en" },
   { key: "id", label: "Bahasa Indonesia", to: "/blog/id" },
 ];
+
+const typeFilters: Array<{ key: PostTypeFilter; label: string }> = [
+  { key: "all", label: "All types" },
+  ...postTypeOptions,
+];
+
+function buildArchiveHref(
+  path: string,
+  params: URLSearchParams,
+  type: PostTypeFilter,
+) {
+  const next = new URLSearchParams(params);
+
+  if (type === "all") {
+    next.delete("type");
+  } else {
+    next.set("type", type);
+  }
+
+  const query = next.toString();
+  return query ? `${path}?${query}` : path;
+}
+
+function filterPillClass(isActive: boolean) {
+  return clsx(
+    "rounded-full px-3 py-1.5 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500",
+    isActive
+      ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
+      : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
+  );
+}
 
 function Excerpt({ post }: { post: Post }) {
   return (
@@ -44,43 +79,84 @@ function Excerpt({ post }: { post: Post }) {
 export function BlogArchiveList({
   posts,
   currentFilter,
+  currentType,
 }: {
   posts: Post[];
   currentFilter: ArchiveFilter;
+  currentType: PostTypeFilter;
 }) {
+  const [searchParams] = useSearchParams();
+  const basePath =
+    languageFilters.find((filter) => filter.key === currentFilter)?.to ??
+    "/blog";
+
   return (
     <>
-      <nav
-        aria-label="Filter blog posts by language"
-        className="mb-12 flex flex-wrap gap-3"
-      >
-        {archiveFilters.map((filter) => {
-          const isActive = filter.key === currentFilter;
+      <div className="mb-12 space-y-6">
+        <nav aria-label="Filter blog posts by language">
+          <p className="mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            Language
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {languageFilters.map((filter) => {
+              const isActive = filter.key === currentFilter;
 
-          return (
+              return (
+                <Link
+                  key={filter.key}
+                  to={buildArchiveHref(filter.to, searchParams, currentType)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={filterPillClass(isActive)}
+                >
+                  {filter.label}
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+        <nav aria-label="Filter blog posts by article type">
+          <p className="mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            Article type
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {typeFilters.map((filter) => {
+              const isActive = filter.key === currentType;
+
+              return (
+                <Link
+                  key={filter.key}
+                  to={buildArchiveHref(basePath, searchParams, filter.key)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={filterPillClass(isActive)}
+                >
+                  {filter.label}
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+      </div>
+      {posts.length === 0 ? (
+        <p className="text-base text-zinc-600 dark:text-zinc-400">
+          No posts match this language and type.{" "}
+          {currentType !== "all" && (
             <Link
-              key={filter.key}
-              to={filter.to}
-              aria-current={isActive ? "page" : undefined}
-              className={clsx(
-                "rounded-full px-3 py-1.5 text-sm font-medium transition",
-                isActive
-                  ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-                  : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
-              )}
+              to={buildArchiveHref(basePath, searchParams, "all")}
+              className="font-medium text-zinc-900 underline dark:text-zinc-100"
             >
-              {filter.label}
+              Show all types
             </Link>
-          );
-        })}
-      </nav>
-      <section className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-        <div className="flex max-w-3xl flex-col space-y-16">
-          {posts.map((post) => (
-            <Excerpt key={post.slug} post={post} />
-          ))}
-        </div>
-      </section>
+          )}
+        </p>
+      ) : (
+        <section className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+          <div className="flex max-w-3xl flex-col space-y-16">
+            {posts.map((post) => (
+              <Excerpt key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }

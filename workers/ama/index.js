@@ -1,0 +1,203 @@
+// Write-only intake for the /ama form. The Vercel action calls POST /questions
+// with a shared secret. This Worker verifies Turnstile, then stores the question
+// in D1. It never returns or logs stored content.
+
+const MAX_BODY_BYTES = 32 * 1024;
+const MIN_QUESTION_LENGTH = 10;
+const MAX_QUESTION_LENGTH = 2000;
+const MAX_TOKEN_LENGTH = 2048;
+const RATE_LIMIT_KEY = "ama-submissions";
+const SITEVERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function json(body, status) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "cache-control": "no-store",
+    },
+  });
+}
+
+function isConfigured(env) {
+  return Boolean(
+    env.AMA_DB &&
+      env.AMA_RATE_LIMITER &&
+      env.AMA_SUBMISSION_SECRET &&
+      env.TURNSTILE_SECRET_KEY &&
+      env.TURNSTILE_EXPECTED_HOSTNAME &&
+      env.TURNSTILE_EXPECTED_ACTION,
+  );
+}
+
+function sameText(actual, expected) {
+  const a = new TextEncoder().encode(actual);
+  const b = new TextEncoder().encode(expected);
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a[i] ^ b[i];
+  return diff === 0;
+}
+
+// Reads the body as a stream so an oversized request is cut off at the limit.
+async function readBody(request) {
+  if (!request.body) return "";
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder();
+  let total = 0;
+  let text = "";
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > MAX_BODY_BYTES) {
+      await reader.cancel();
+      return null;
+    }
+    text += decoder.decode(value, { stream: true });
+  }
+  return text + decoder.decode();
+}
+
+function parseSubmission(text) {
+  let payload;
+  try {
+    payload = JSON.parse(text);
+  } catch {
+    return null;
+  }
+  if (!payload || typeof payload !== "object") return null;
+
+  const { id, question, turnstileToken } = payload;
+  if (typeof id !== "string" || !UUID_PATTERN.test(id)) return null;
+  if (typeof question !== "string") return null;
+
+  const trimmed = question.trim();
+  const length = [...trimmed].length;
+  if (length < MIN_QUESTION_LENGTH || length > MAX_QUESTION_LENGTH) return null;
+
+  if (
+    typeof turnstileToken !== "string" ||
+    turnstileToken === "" ||
+    turnstileToken.length > MAX_TOKEN_LENGTH
+  ) {
+    return null;
+  }
+
+  return { id, question: trimmed, turnstileToken };
+}
+
+// Returns "ok", "rejected" for a failed challenge, or "unavailable" when the
+// check cannot complete. Any non-ok result fails closed.
+async function verifyTurnstile(token, env) {
+  const form = new URLSearchParams({
+    secret: env.TURNSTILE_SECRET_KEY,
+    response: token,
+  });
+
+  let response;
+  try {
+    response = await fetch(SITEVERIFY_URL, { method: "POST", body: form });
+  } catch {
+    return "unavailable";
+  }
+  if (!response.ok) return "unavailable";
+
+  const result = await response.json().catch(() => null);
+  if (!result) return "unavailable";
+
+  if (result.success !== true) {
+    return result["error-codes"]?.includes("invalid-input-secret")
+      ? "unavailable"
+      : "rejected";
+  }
+  if (
+    result.hostname !== env.TURNSTILE_EXPECTED_HOSTNAME ||
+    result.action !== env.TURNSTILE_EXPECTED_ACTION
+  ) {
+    return "rejected";
+  }
+  return "ok";
+}
+
+// Returns 201 when stored, 200 when this same ID already holds this same
+// question (an earlier attempt succeeded), 409 when the ID holds a different
+// question, and 503 when D1 fails.
+async function storeQuestion(env, { id, question }) {
+  try {
+    await env.AMA_DB.prepare(
+      "INSERT INTO questions (id, question, created_at) VALUES (?, ?, ?)",
+    )
+      .bind(id, question, new Date().toISOString())
+      .run();
+    return 201;
+  } catch (error) {
+    if (!String(error?.message).includes("UNIQUE constraint failed")) {
+      return 503;
+    }
+  }
+
+  const existing = await env.AMA_DB.prepare(
+    "SELECT question FROM questions WHERE id = ?",
+  )
+    .bind(id)
+    .first()
+    .catch(() => undefined);
+  if (existing === undefined) return 503;
+  return existing?.question === question ? 200 : 409;
+}
+
+export default {
+  async fetch(request, env) {
+    if (!isConfigured(env)) return json({ error: "unavailable" }, 503);
+
+    if (new URL(request.url).pathname !== "/questions") {
+      return json({ error: "not_found" }, 404);
+    }
+    if (request.method !== "POST") {
+      return json({ error: "method_not_allowed" }, 405);
+    }
+
+    const authorization = request.headers.get("authorization") ?? "";
+    if (
+      !sameText(authorization, `Bearer ${env.AMA_SUBMISSION_SECRET}`)
+    ) {
+      return json({ error: "unauthorized" }, 401);
+    }
+
+    // Counts every authenticated attempt before the Turnstile call.
+    const { success } = await env.AMA_RATE_LIMITER.limit({
+      key: RATE_LIMIT_KEY,
+    });
+    if (!success) return json({ error: "rate_limited" }, 429);
+
+    const mediaType = request.headers
+      .get("content-type")
+      ?.split(";")[0]
+      .trim()
+      .toLowerCase();
+    if (mediaType !== "application/json") {
+      return json({ error: "unsupported_media_type" }, 415);
+    }
+
+    const text = await readBody(request);
+    if (text === null) return json({ error: "payload_too_large" }, 413);
+
+    const submission = parseSubmission(text);
+    if (!submission) return json({ error: "invalid" }, 400);
+
+    const verdict = await verifyTurnstile(submission.turnstileToken, env);
+    if (verdict === "unavailable") return json({ error: "unavailable" }, 503);
+    if (verdict === "rejected") {
+      return json({ error: "challenge_failed" }, 403);
+    }
+
+    const status = await storeQuestion(env, submission);
+    if (status >= 500) return json({ error: "unavailable" }, status);
+    if (status === 409) return json({ error: "conflict" }, status);
+    return json({ ok: true }, status);
+  },
+};

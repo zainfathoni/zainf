@@ -43,6 +43,7 @@ export function loader() {
     { loc: `${SITE_URL}/projects`, changefreq: "monthly" },
     { loc: `${SITE_URL}/uses`, changefreq: "monthly" },
     { loc: `${SITE_URL}/about`, changefreq: "monthly" },
+    { loc: `${SITE_URL}/atlas`, changefreq: "monthly" },
   ];
 
   const blogEntries: SitemapEntry[] = getAllPosts().map((post) => ({

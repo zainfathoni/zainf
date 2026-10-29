@@ -139,6 +139,7 @@ function MobileNavigation(props: JSX.IntrinsicAttributes & ContainerProps) {
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/talks">Talks</MobileNavItem>
                 <MobileNavItem href="/uses">Uses</MobileNavItem>
+                <MobileNavItem href="/atlas">Atlas</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -194,6 +195,7 @@ function DesktopNavigation(
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/talks">Talks</NavItem>
         <NavItem href="/uses">Uses</NavItem>
+        <NavItem href="/atlas">Atlas</NavItem>
       </ul>
     </nav>
   );

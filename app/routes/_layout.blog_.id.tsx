@@ -1,6 +1,15 @@
-import { data, useLoaderData, type MetaFunction } from "react-router";
+import {
+  data,
+  useLoaderData,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+} from "react-router";
 import { BlogArchiveList } from "~/components/BlogArchiveList";
 import { SimpleLayout } from "~/components/SimpleLayout";
+import {
+  filterPostsByType,
+  normalizePostTypeFilter,
+} from "~/models/post-types";
 import { getPostsByLanguage } from "~/models/posts";
 
 export const meta: MetaFunction = () => [
@@ -13,19 +22,26 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-export function loader() {
-  return data(getPostsByLanguage("id"));
+export function loader({ request }: LoaderFunctionArgs) {
+  const type = normalizePostTypeFilter(
+    new URL(request.url).searchParams.get("type"),
+  );
+
+  return data({
+    posts: filterPostsByType(getPostsByLanguage("id"), type),
+    type,
+  });
 }
 
 export default function Component() {
-  const posts = useLoaderData<typeof loader>();
+  const { posts, type } = useLoaderData<typeof loader>();
 
   return (
     <SimpleLayout
       title="Tulisan berbahasa Indonesia."
       intro="Arsip tulisan yang saya terbitkan langsung dalam Bahasa Indonesia."
     >
-      <BlogArchiveList posts={posts} currentFilter="id" />
+      <BlogArchiveList posts={posts} currentFilter="id" currentType={type} />
     </SimpleLayout>
   );
 }

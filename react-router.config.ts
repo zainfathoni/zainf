@@ -1,7 +1,14 @@
 import type { Config } from "@react-router/dev/config";
 import { vercelPreset } from "@vercel/react-router/vite";
 
-const nonPrerenderablePaths = new Set(["/action/set-theme", "/talk"]);
+const nonPrerenderablePaths = new Set([
+  "/action/set-theme",
+  "/talk",
+  "/blog",
+  "/blog/en",
+  "/blog/id",
+  "/ama",
+]);
 
 export default {
   ssr: true,
@@ -14,8 +21,8 @@ export default {
       (path) => !nonPrerenderablePaths.has(path),
     );
 
-    // Pre-render all static route paths discovered from route definitions,
-    // excluding action/redirect-only endpoints that do not render documents.
+    // Keep action/redirect endpoints, query-sensitive archives, and the AMA
+    // form's per-request configuration and submission ID out of static output.
     return [...new Set(staticPagePaths)];
   },
   presets: [vercelPreset()],

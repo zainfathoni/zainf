@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "zainf-ama",
+  "main": "index.js",
+  "compatibility_date": "2025-09-02",
+  "d1_databases": [
+    {
+      "binding": "AMA_DB",
+      "database_name": "zainf-ama",
+      "database_id": "2cb785bc-92f1-4ac8-9e28-e4bd8b7e7886",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Namespace 1001 was checked against the account's existing Worker bindings.
+  "ratelimits": [
+    {
+      "name": "AMA_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 20, "period": 60 }
+    }
+  ],
+  "vars": {
+    "TURNSTILE_EXPECTED_ACTION": "ama"
+  }
+}

@@ -44,7 +44,7 @@ function Appearance({
   additionalResources?: Array<{ href: string; label: string }>;
 }) {
   return (
-    <Card as="article" id={id}>
+    <Card as="article" id={id} className="scroll-mt-24">
       <Card.Title as="h3" to={href}>
         {title}
       </Card.Title>

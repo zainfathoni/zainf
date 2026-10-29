@@ -157,16 +157,11 @@ function AskMeAnything({ email }: { email?: string }) {
         <span className="ml-3">Ask Me Anything</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Anonymously ask me any questions you might have, and I&apos;ll try my
-        best to answer them publicly.
+        Ask me any question you might have, and I&apos;ll try my best to answer
+        it publicly.
       </p>
-      <ButtonLink
-        href="https://tanyaaja.in/p/zain"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 flex-none"
-      >
-        Ask me anonymously
+      <ButtonLink href="/ama" className="mt-4 flex-none">
+        Ask me a question
       </ButtonLink>
       <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
         I used to share my answers in Twitter/X. But now I publish them as
