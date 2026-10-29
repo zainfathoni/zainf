@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import {
   Form,
   data,
@@ -138,6 +138,7 @@ export default function Ama() {
 
   // Explicit rendering works on direct loads and client navigation. The api.js
   // auto-render does not reliably run for this route, so render once the script is ready.
+  const scriptRef = useRef<HTMLScriptElement>(null);
   const widgetRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const renderWidget = useCallback(() => {
@@ -147,11 +148,14 @@ export default function Ama() {
       action: "ama",
     });
   }, [siteKey]);
-  // Render only after hydration: the script load sets state, and effects run after hydration.
-  const [scriptReady, setScriptReady] = useState(false);
+  // Hydrated server-rendered scripts can miss React's onLoad handler. Listen on
+  // the script itself, and also handle an API that loaded before hydration.
   useEffect(() => {
-    if (scriptReady || window.turnstile) renderWidget();
-  }, [scriptReady, renderWidget]);
+    const script = scriptRef.current;
+    script?.addEventListener("load", renderWidget);
+    renderWidget();
+    return () => script?.removeEventListener("load", renderWidget);
+  }, [renderWidget]);
 
   // A Turnstile token can be used only once. A new ID after success and every
   // failed attempt must obtain a fresh token before the next question is sent.
@@ -167,10 +171,10 @@ export default function Ama() {
       intro="Send me a question and I’ll try to answer it publicly. This form asks only for your question."
     >
       <script
+        ref={scriptRef}
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         async
         defer
-        onLoad={() => setScriptReady(true)}
       />
       <div className="max-w-xl">
         {sent && !errorMessage ? (

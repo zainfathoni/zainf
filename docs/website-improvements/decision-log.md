@@ -203,7 +203,7 @@ Thread links:
 - **Historical status:** approval was absent at the October 26 snapshot.
 - **Later user approval:** "Yes, release all four—create production resources, configure secrets, migrate, commit, push, and deploy."
 - **Condition:** the user required a High-mode Fast review on the same runner before release and permitted infrastructure preparation during review.
-- **Current status:** approved. Cloudflare production setup is complete. Vercel production configuration and website deployment remain pending sign-in.
+- **Current status:** approved. Production resources, migration, secrets, Vercel configuration, website push, and deployment are complete. Real successful Turnstile verification remains open.
 
 ## D-22 Release review and two AMA fixes
 
@@ -221,5 +221,20 @@ Thread links:
 - **Decision:** use APAC D1 `zainf-ama`, a managed Turnstile widget for exactly `www.zainfathoni.com`, and Worker `zainf-ama` on the account's `zain.workers.dev` subdomain. Keep strict hostname and action checks.
 - **Result:** D1 is created and migration `0001_questions.sql` is applied. All Worker secrets are installed. The reviewed Worker source is deployed, with a checked SHA-256 match and preserved secret bindings. Worker previews are disabled.
 - **Verification:** GET 405, unauthenticated POST 401, authenticated invalid input 400, and real invalid Turnstile token 403. Production D1 has zero questions after denial checks.
-- **Vercel:** the connector has no environment-variable write tool, and the local CLI needs sign-in. The user has the device approval link. Do not push `main` before configuring the three production-only AMA values, because a push triggers production deployment.
-- **Status:** Cloudflare ready; website release pending Vercel sign-in. Real successful Turnstile submissions and exact production rows remain unproven.
+- **Vercel:** the user completed CLI sign-in. The three AMA values are set only for production; the shared secret is a Secret. Preview has no AMA values. The website was pushed only after configuration.
+- **Status:** production setup complete. Real successful Turnstile submissions and exact production rows remain unproven.
+
+## D-24 Website deployment and public checks
+
+- **Release:** [feature commit 48551e2](https://github.com/zainfathoni/zainf/commit/48551e2624921a0f3f795a2bc81e781aade512ab) is pushed to `main`. Vercel deployment `dpl_8eDpSweEnHZUrumAdeXoBYmbMVjt` is READY, with `www.zainfathoni.com` and the apex domain assigned.
+- **Checks:** all 26 production HTTP checks pass. The production shared secret is absent from three checked public HTML routes and 21 referenced JavaScript assets. Production screenshots of blog filters, Atlas desktop/mobile, the latest article cover, and AMA initial state were inspected.
+- **Limit:** the first headless AMA run reached the real checkbox but obtained no token. No real successful submission is claimed from that run. A later browser setup check failed because a saved theme cookie overrode the requested light preference; it is invalid test evidence, not a source defect.
+- **Status:** all four features are deployed. The remaining verification gate is two consecutive real Turnstile submissions and their exact D1 rows. Do not confuse deployment success with this unproven path.
+
+## D-25 Turnstile script-load race
+
+- **Observed failure:** the actual route did not mount its widget when the API script arrived after hydration. A deterministic browser test recorded an available API, zero widget renders, and an empty container.
+- **Fix:** attach a native load listener before checking for an already-loaded API. Remove that listener during cleanup. Keep the existing widget-ID guard and token resets.
+- **Review:** the High/Fast reviewer found no new source blocker. Its component probes cover delayed and early API loads, duplicate events, cleanup, and reset behavior.
+- **Checks:** the same browser reproduction passes after the fix. The full simulated flow passes two consecutive sends, exact local D1 rows, Unicode boundaries, and duplicate-token rejection. TypeScript, 15 Worker tests, and the build pass.
+- **Limit:** these checks do not prove real Turnstile success. Check the new production deployment separately.

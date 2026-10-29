@@ -77,8 +77,9 @@ them for end-to-end local tests.
 ## Production setup: October 30, 2026
 
 The user approved resource creation, secrets, migration, commit, push, and
-deployment. Cloudflare setup is complete. Website deployment is pending Vercel
-sign-in and production environment configuration.
+deployment. Cloudflare setup and Vercel production configuration are complete.
+The website is deployed at `https://www.zainfathoni.com` from
+[`48551e2`](https://github.com/zainfathoni/zainf/commit/48551e2624921a0f3f795a2bc81e781aade512ab).
 
 - D1 `zainf-ama`: `2cb785bc-92f1-4ac8-9e28-e4bd8b7e7886` (APAC).
 - Migration `0001_questions.sql` is applied and recorded in `d1_migrations`.
@@ -93,13 +94,29 @@ sign-in and production environment configuration.
   authenticated invalid input 400, real invalid Turnstile token 403. D1 has
   zero questions after these checks.
 
-Remaining release steps:
+Vercel has `AMA_WORKER_URL`, `AMA_SUBMISSION_SECRET`, and `TURNSTILE_SITE_KEY`
+for production only. The shared secret is stored as a Secret. No AMA values are
+set for previews. The production deployment is
+`dpl_8eDpSweEnHZUrumAdeXoBYmbMVjt`.
 
-1. Set `AMA_WORKER_URL`, `AMA_SUBMISSION_SECRET`, and `TURNSTILE_SITE_KEY` in
-   Vercel for production only. The shared secret must equal the Worker value.
-2. Push the reviewed website commit and check the Vercel deployment.
-3. Prove two consecutive successful submissions with real Turnstile tokens and
-   exact D1 rows. No real successful submission has been proven yet.
+Production HTTP checks pass: 26 of 26, including distinct form IDs, the production
+site key, and an invalid real token returning 403 without a stale success banner.
+The checked public HTML and 21 referenced JavaScript assets do not contain the
+production shared secret.
+
+Remaining verification: prove two consecutive successful submissions with real
+Turnstile tokens and exact D1 rows. The first headless run reached the real human
+checkbox but did not obtain a token. It made no successful submission. The local
+simulation is not a substitute for this check.
+
+The first deployment also exposed a script-load race. When the Turnstile API
+arrived after hydration, React's script load handler did not render the widget.
+A native script load listener fixes this race and also handles an API that is
+already loaded. The High/Fast follow-up review found no source blocker.
+The actual-route browser test failed before the fix and passed after it, with
+delayed API delivery, two consecutive simulated sends, two exact local D1 rows,
+Unicode boundaries, and duplicate-token rejection. These are local simulated
+checks, not real Turnstile acceptance. TypeScript, 15 Worker tests, and build pass.
 
 For a new environment, use this setup order:
 

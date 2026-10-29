@@ -2,10 +2,10 @@
 
 This record shows the requirements, decisions, ownership, proof, and delivery state of the four website improvements. It uses data from the project threads, the source code, and the proof artifacts.
 
-- **Current release state (October 30):** the user approved all four releases. The High/Fast review found two AMA issues; both are fixed and the follow-up found no source blocker. Local native-browser checks passed with simulated single-use tokens. Production D1, migration, Turnstile widget, Worker secrets, and Worker deployment are complete. Vercel production configuration and website deployment are pending sign-in. Real Turnstile success is still unproven.
+- **Current release state (October 30):** all four features are deployed at [www.zainfathoni.com](https://www.zainfathoni.com). The High/Fast review and both AMA fixes are complete. Production resources, migration, secrets, and production-only Vercel settings are configured. All 26 production HTTP checks pass. Real Turnstile success is still unproven; see the verification limit below.
 - **Historical UI snapshot:** Record updated 2026-10-26, 15:50 WIB (Mac clock, Asia/Jakarta). An earlier label "02:15 WIB" was a wrong logical label: the final smoke it covers ran at 2026-10-26T08:38:44Z (15:38 WIB). First version at 2026-10-25, 14:50 WIB. **UI accepted, with no open UI issues:** blog option B, article covers, the talk-link fix, Atlas (whole feature), and AMA. Final build and built-artifact smoke passed locally. Nothing was committed or deployed at that snapshot.
 - **Original proof base:** [`72ebe1d`](https://github.com/zainfathoni/zainf/commit/72ebe1d7e55820fc6247a82d8fdbe287bc5afb83) ("Add Royal vs Frugal Amp slides (#119)"). The October 26 proof and map use this base. See the release preparation update below for the current local base.
-- **Delivery state:** website push and deployment remain pending. The Cloudflare Worker is deployed, but it is not yet connected to the production website. See Git history for the commit state.
+- **Delivery state:** [feature commit 48551e2](https://github.com/zainfathoni/zainf/commit/48551e2624921a0f3f795a2bc81e781aade512ab) is pushed to `main` and deployed. The production website calls the deployed Cloudflare Worker. No preview environment has the production AMA values.
 - **Visual map:** [process-map.html](process-map.html), the historical October 26 UI snapshot. It does not show the October 30 production setup. Open it in a browser. It needs no network.
 
 Other documents in this folder:
@@ -30,8 +30,10 @@ Other documents in this folder:
 - Native local browser checks passed: two consecutive sends without reload or error, two exact local D1 rows, a reset after each send, and a later duplicate-token rejection with the same ID, retained question, and no success banner. Nine native Unicode boundary cases passed, including 1999 ASCII characters plus one emoji. Both the widget API and Siteverify were simulated. Artifacts: `.amp/in/artifacts/release-review/`.
 - Production D1 `zainf-ama` is provisioned in APAC, migration `0001_questions.sql` is applied, and the production Turnstile widget permits only `www.zainfathoni.com`. Worker secrets are installed. The reviewed Worker is deployed at `https://zainf-ama.zain.workers.dev/questions`, with previews disabled. [AMA configuration](../ama.md) records the database ID and uploaded source hash.
 - Production Worker checks passed: GET 405, unauthenticated POST 401, authenticated invalid body 400, invalid real Turnstile token 403. The database still has zero questions.
-- Vercel sign-in is needed to set the three AMA production-only environment values. Do not push the website before those values are set: the linked `main` push starts production deployment. Preview deployments must not use the production secret or database.
-- A real successful Turnstile flow remains a production verification gate. Local simulated results do not close it.
+- Vercel sign-in is complete. The three AMA values are set for production only; the shared secret is stored as a Secret. The feature commit was pushed after configuration. Deployment `dpl_8eDpSweEnHZUrumAdeXoBYmbMVjt` is READY and has the production domain aliases.
+- Production HTTP smoke: 26 of 26 pass, including all 18 filter combinations, cover HTML, Atlas counts, sitemap, fresh AMA IDs, the production site key, and a real invalid-token 403 with no stale success message. The checked public HTML and 21 JavaScript assets contain no production shared secret. Artifacts: `.amp/in/artifacts/production-release/`.
+- Production captures of the blog, Atlas desktop/mobile, article cover, and AMA initial state were inspected. Light theme is confirmed in the DOM. No overflow was found at 1280 or 390 pixels. Atlas images show only their named viewports, not the full page.
+- A real successful Turnstile flow remains a production verification gate. The first headless browser run reached the real human checkbox but got no token, so no success was claimed. Local simulated results do not close this gap.
 
 ## Status words
 
@@ -45,7 +47,7 @@ This record uses these status words. Each status is a separate step. A later sta
 | Verified (local) | A check ran and passed on this machine. The record names the check and its limits. |
 | Proof in progress | A worker collects browser proof on the shared dev server. The run is not complete. |
 | Invalid | A run that the team discarded. Do not use it as evidence. |
-| Deployed | The Cloudflare AMA Worker has this status. The website does not. |
+| Deployed | All four website features and the Cloudflare AMA Worker have this status. Verification limits still apply. |
 
 ## Threads
 
@@ -79,12 +81,15 @@ Process requirements from the user:
 
 ## Workstream summary
 
+Proof in this table is the October 26 snapshot. The deployment column is updated
+for October 30. The current release checks above use the latest article totals.
+
 | Workstream | Decided | Implemented | Verified (local) | Browser proof on 4173 | Deployed |
 |---|---|---|---|---|---|
-| Blog type filters | Yes. Five types and language. Option B labels. | Yes, in `main` and `zainf-blog`, with option B. | Final build passed. Built artifact (4178): 18 of 18 combinations, labels, empty states. | Checks pass (24 + 14 + 1). **UI accepted.** No valid recording. | No |
-| Atlas | Yes. Grouped content navigation. | Yes, in `main` and `zainf-atlas`, with the fragment fix and shared `postTypeOptions`. | Final build passed. Built artifact (4178): Atlas, talks, sitemap. | 31 pass, 0 fail; fragment fix and final viewport series. **UI accepted (whole feature).** The UI owner inspected 6 of 14 final frames; the worker inspected the other 8. | No |
-| Article covers | Yes. Use existing OG metadata. | Yes, in `main` and `zainf-article-images`. Fixture route removed. | 53 of 53 posts, 7 of 7 fixtures. Built artifact (4178): cover HTML, `/cover-check` 404. | **UI accepted.** | No |
-| AMA | Yes. Vercel action, Worker, private D1. | Yes, in `main` and `zainf-ama`, with the drain fix, clear-on-success fix, and banner guard. | 15 of 15 mock tests. Final build passed. Built artifact (4178): 56-check smoke includes the stale-banner guard and oversize 413 then 200. | HTTP 56 PASS. Final native pass. **UI accepted (local).** Siteverify simulated; a real external Turnstile success is not proven. | No |
+| Blog type filters | Yes. Five types and language. Option B labels. | Yes, in `main` and `zainf-blog`, with option B. | Final build passed. Built artifact (4178): 18 of 18 combinations, labels, empty states. | Checks pass (24 + 14 + 1). **UI accepted.** No valid recording. | Yes |
+| Atlas | Yes. Grouped content navigation. | Yes, in `main` and `zainf-atlas`, with the fragment fix and shared `postTypeOptions`. | Final build passed. Built artifact (4178): Atlas, talks, sitemap. | 31 pass, 0 fail; fragment fix and final viewport series. **UI accepted (whole feature).** The UI owner inspected 6 of 14 final frames; the worker inspected the other 8. | Yes |
+| Article covers | Yes. Use existing OG metadata. | Yes, in `main` and `zainf-article-images`. Fixture route removed. | 53 of 53 posts, 7 of 7 fixtures. Built artifact (4178): cover HTML, `/cover-check` 404. | **UI accepted.** | Yes |
+| AMA | Yes. Vercel action, Worker, private D1. | Yes, in `main` and `zainf-ama`, with the drain fix, clear-on-success fix, and banner guard. | 15 of 15 mock tests. Final build passed. Built artifact (4178): 56-check smoke includes the stale-banner guard and oversize 413 then 200. | HTTP 56 PASS. Final native pass. **UI accepted (local).** Siteverify simulated; a real external Turnstile success is not proven. | Yes; real success verification open |
 
 ### Blog type filters
 
@@ -274,5 +279,5 @@ The earlier October 26 record required separate approval. The user later said:
 "Yes, release all four—create production resources, configure secrets, migrate,
 commit, push, and deploy." The user also required a High-mode Fast review on the
 same runner before release and allowed infrastructure preparation during review.
-That review and its follow-up are complete. Cloudflare setup is complete; Vercel
-sign-in, website deployment, and real successful Turnstile verification remain.
+That review and its follow-up are complete. Production setup, push, and deployment
+are complete. Real successful Turnstile verification remains open.

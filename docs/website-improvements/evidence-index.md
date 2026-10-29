@@ -6,10 +6,10 @@ Root: `/Users/zain/Code/GitHub/zainfathoni/zainf` (shown as `.` below).
 
 ## Limits of this evidence
 
-- All browser proof uses a local dev server on port 4173. It is not production.
+- The October 26 browser proof uses a local dev server on port 4173. The October 30 production checks are listed separately.
 - The AMA contract tests use a stubbed Siteverify, an in-memory D1, and an in-memory rate limiter. They are not end-to-end proof.
 - The AMA harness on port 8788 uses real local D1 and replaces Siteverify. It does not prove a real Turnstile success.
-- The production Worker denial checks below prove rejection paths only. No real successful Turnstile submission is proven. The website is not yet deployed.
+- The production Worker denial checks below prove rejection paths only. No real successful Turnstile submission is proven. All four website features are deployed; that does not close the remaining success-path verification.
 
 ## October 30 release checks
 
@@ -23,7 +23,13 @@ Root: `/Users/zain/Code/GitHub/zainfathoni/zainf` (shown as `.` below).
 | Fresh built-artifact HTTP smoke | 24 of 24 pass on port 4180, after the review fixes. All 18 blog combinations, latest cover, Atlas counts, sitemap, missing fixture route, and AMA fail-closed/stale-banner behavior. Atlas remains prerendered; blog archives and AMA do not. | `.amp/in/artifacts/release-review/artifact-smoke.txt` |
 | Production Worker denials | GET 405, unauthenticated POST 401, authenticated invalid body 400, real invalid token 403. This uses the deployed Worker and real Siteverify, not the simulation. | `.amp/in/artifacts/release-prep/production-worker-denials.json` |
 | Production D1 and migration | After denial checks: zero questions. `d1_migrations` contains `0001_questions.sql`. | Cloudflare API read; database ID and uploaded source SHA-256 are in [AMA setup](../ama.md). |
-| Vercel and real success | Pending CLI sign-in, production-only environment setup, website push/deployment, and real Turnstile success with exact stored rows. | No success claim. |
+| Vercel deployment | Production-only AMA configuration is set; preview has none. Feature commit is pushed. Deployment `dpl_8eDpSweEnHZUrumAdeXoBYmbMVjt` is READY with the production aliases. | [Feature commit](https://github.com/zainfathoni/zainf/commit/48551e2624921a0f3f795a2bc81e781aade512ab) |
+| Production HTTP smoke | 26 of 26 pass: all 18 filter combinations, latest cover HTML, Atlas counts, sitemap, distinct AMA IDs, production site key, real invalid token 403, no stale success banner. | `.amp/in/artifacts/production-release/http-smoke.txt` |
+| Public production secret scan | Exact shared secret absent from three checked HTML routes and all 21 referenced JavaScript assets. This is not a scan of every website response. | `.amp/in/artifacts/production-release/public-secret-scan.json` |
+| Production page captures | Blog filters, article cover, Atlas desktop/mobile, and AMA were inspected. Light theme and no overflow were checked in the DOM at 1280 and 390 pixels. Atlas captures are viewport crops, not whole-page evidence. | `.amp/in/artifacts/production-release/`, `first-auto-wait-results.json` |
+| Real Turnstile success | Still unproven. The first headless run reached the human checkbox but got no token. A later theme-cookie setup failure is invalid. The next attempt also got no token; a click without a visible widget triggered empty-field browser validation. No successful send is claimed. | `browser-results.json`, `INVALID-theme-cookie-run.txt`; the local simulation is not real production success proof. |
+| Delayed API script regression | The actual route failed before the native-listener fix: API present, zero renders, empty container. The same browser scenario passes after the fix. Full simulated flow also passes two consecutive sends, exact local rows, Unicode boundaries, and duplicate rejection. High/Fast source review found no blocker. | `.amp/in/artifacts/production-release/script-load-before.txt`, `script-load-after.txt`, `delayed-load-full-flow.txt` |
+| Widget fix checks | TypeScript, 15 Worker tests, and build pass. | `.amp/in/artifacts/production-release/widget-fix-worker-tests.txt`, `widget-fix-build.log` |
 
 ## Coordinator checks
 
