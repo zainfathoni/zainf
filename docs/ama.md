@@ -36,9 +36,9 @@ It is not a strict worldwide limit and it does not limit by visitor.
 **Delivery state:** the website inbox and private Worker read endpoint are
 deployed. Open `https://www.zainfathoni.com/admin/ama`. The read secret, session
 key, owner ID, canonical origin, and dedicated GitHub OAuth values are set for
-production only. The OAuth client secret is stored as a Secret. Real owner
-sign-in and sign-out still need user verification. No question data or database
-schema was changed for the inbox.
+production only. The OAuth client secret is stored as a Secret. The user
+confirmed real owner sign-in, the two stored questions, and sign-out on October
+30, 2026. No question data or database schema was changed for the inbox.
 
 Open `/admin/ama`, or select **Owner inbox** below the public AMA form. Sign in
 with GitHub. Only the configured immutable numeric GitHub user ID is accepted;
@@ -54,6 +54,11 @@ no Domain. Encryption binds each cookie to its purpose and configured origin.
 GitHub tokens are used only during login and are not stored. A copied session
 cookie remains valid until expiry or session-key rotation; sign-out is not central
 revocation. Preview deployments are disabled for this login.
+
+The separate `SESSION_SECRET` signs only the `my_remix_theme` light/dark cookie.
+It was rotated to a new random value and stored as a Vercel Secret for
+Development, Preview, and Production on October 30, 2026. This resets old theme
+cookies; it does not change inbox authentication or `AMA_SESSION_KEY`.
 
 The inbox document and loader responses use private/no-store headers and noindex.
 Admin and auth routes are excluded from prerendering. Every inbox loader checks
@@ -87,8 +92,10 @@ failure display, sign-out method and origin checks, the public form, deployment
 protection, and the canonical-domain redirect. Private responses are no-store
 and noindex. The read secret and session key were absent from checked public
 responses and 12 referenced JavaScript assets. A browser click reached GitHub's
-sign-in page for **Zainf AMA Inbox**. This does not prove the token exchange or
-owner session; real owner sign-in, inbox read, and sign-out remain unverified.
+sign-in page for **Zainf AMA Inbox**. These automated checks do not prove the
+token exchange or owner session. The user then completed the real sign-in,
+inbox-read, and sign-out check and reported that it works. That browser session
+was not recorded; no GitHub token or session cookie was captured.
 
 For local work, an explicit loopback HTTP origin is allowed only outside
 production and uses separate non-`__Host-` cookie names. The local preview uses
