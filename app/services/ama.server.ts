@@ -1,5 +1,5 @@
-// Server-side helpers for the /ama form. The Vercel action forwards each question
-// to the write-only AMA Worker with a shared secret. Turnstile is verified there.
+// Server-side AMA helpers. Submissions and private inbox reads use separate
+// Worker credentials. The Worker verifies Turnstile for submissions only.
 
 export const AMA_MAX_BODY_BYTES = 32 * 1024;
 
@@ -50,5 +50,35 @@ export async function postAmaQuestion(input: {
     return response.status;
   } catch {
     return 503;
+  }
+}
+
+export type AmaInboxPage = {
+  questions: { id: string; question: string; created_at: string }[];
+  nextCursor: string | null;
+};
+
+// The route must authorize the owner before calling this server-only helper.
+export async function readAmaInbox(
+  cursor: string | null,
+): Promise<AmaInboxPage | null> {
+  const workerUrl = process.env.AMA_WORKER_URL;
+  const secret = process.env.AMA_READ_SECRET;
+  if (!workerUrl || !secret) return null;
+  try {
+    const url = new URL(workerUrl);
+    url.pathname = "/admin/questions";
+    url.search = "";
+    if (cursor) url.searchParams.set("cursor", cursor);
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${secret}` },
+      redirect: "error",
+      cache: "no-store",
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!response.ok) return null;
+    return (await response.json()) as AmaInboxPage;
+  } catch {
+    return null;
   }
 }

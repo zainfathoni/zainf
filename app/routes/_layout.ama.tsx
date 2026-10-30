@@ -80,7 +80,10 @@ export async function action({ request }: ActionFunctionArgs) {
     .trim()
     .toLowerCase();
   if (mediaType !== "application/x-www-form-urlencoded") {
-    return fail(415, "This form could not be read. Reload the page and try again.");
+    return fail(
+      415,
+      "This form could not be read. Reload the page and try again.",
+    );
   }
 
   const body = await readAmaBody(request);
@@ -113,7 +116,12 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   if (!turnstileToken) {
-    return fail(403, "Complete the security check and try again.", id, rawQuestion);
+    return fail(
+      403,
+      "Complete the security check and try again.",
+      id,
+      rawQuestion,
+    );
   }
 
   const status = await postAmaQuestion({ id, question, turnstileToken });
@@ -190,7 +198,12 @@ export default function Ama() {
           <div className="hidden" aria-hidden="true">
             <label>
               Leave this field empty
-              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </label>
           </div>
           <div>
@@ -242,15 +255,23 @@ export default function Ama() {
             </p>
           ) : null}
           <div ref={widgetRef} />
-          <Button type="submit" disabled={pending || !siteKey} className="w-full">
+          <Button
+            type="submit"
+            disabled={pending || !siteKey}
+            className="w-full"
+          >
             {pending ? "Sending…" : "Send question"}
           </Button>
         </Form>
         <p className="mt-8 text-sm text-zinc-600 dark:text-zinc-400">
           Your question is private when I receive it. If I answer it, I may
           publish an edited version of the question and my answer. Hosting and
-          security providers can process connection data when you use this
-          page.
+          security providers can process connection data when you use this page.
+        </p>
+        <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+          <a href="/admin/ama" className="underline underline-offset-4">
+            Owner inbox
+          </a>
         </p>
       </div>
     </SimpleLayout>

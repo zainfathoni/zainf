@@ -1,11 +1,13 @@
-// Write-only intake for the /ama form. The Vercel action calls POST /questions
+// Private intake and owner inbox for the /ama form. The action calls POST /questions
 // with a shared secret. This Worker verifies Turnstile, then stores the question
-// in D1. It never returns or logs stored content.
+// in D1. GET /admin/questions requires a separate read secret. Never log content.
 
 const MAX_BODY_BYTES = 32 * 1024;
 const MIN_QUESTION_LENGTH = 10;
 const MAX_QUESTION_LENGTH = 2000;
 const MAX_TOKEN_LENGTH = 2048;
+const PAGE_SIZE = 50;
+const MAX_CURSOR_LENGTH = 256;
 const RATE_LIMIT_KEY = "ama-submissions";
 const SITEVERIFY_URL =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -40,6 +42,73 @@ function sameText(actual, expected) {
   let diff = 0;
   for (let i = 0; i < a.length; i++) diff |= a[i] ^ b[i];
   return diff === 0;
+}
+
+function parseCursor(cursor) {
+  if (
+    !cursor ||
+    cursor.length > MAX_CURSOR_LENGTH ||
+    !/^[A-Za-z0-9_-]+$/.test(cursor)
+  ) return null;
+
+  try {
+    const value = JSON.parse(atob(cursor.replace(/-/g, "+").replace(/_/g, "/")));
+    if (!Array.isArray(value) || value.length !== 2) return null;
+    const [createdAt, id] = value;
+    if (
+      typeof createdAt !== "string" ||
+      !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(createdAt) ||
+      new Date(createdAt).toISOString() !== createdAt ||
+      typeof id !== "string" ||
+      !UUID_PATTERN.test(id)
+    ) return null;
+    return value;
+  } catch {
+    return null;
+  }
+}
+
+function encodeCursor({ created_at, id }) {
+  return btoa(JSON.stringify([created_at, id]))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+}
+
+async function readQuestions(request, env, url) {
+  if (!env.AMA_DB || !env.AMA_READ_SECRET) {
+    return json({ error: "unavailable" }, 503);
+  }
+  const authorization = request.headers.get("authorization") ?? "";
+  if (!sameText(authorization, `Bearer ${env.AMA_READ_SECRET}`)) {
+    return json({ error: "unauthorized" }, 401);
+  }
+  if (request.method !== "GET") {
+    return json({ error: "method_not_allowed" }, 405);
+  }
+
+  const rawCursor = url.searchParams.get("cursor");
+  const cursor = rawCursor === null ? null : parseCursor(rawCursor);
+  if (rawCursor !== null && !cursor) return json({ error: "invalid" }, 400);
+
+  try {
+    const statement = cursor
+      ? env.AMA_DB.prepare(
+          "SELECT id, question, created_at FROM questions WHERE created_at < ? OR (created_at = ? AND id < ?) ORDER BY created_at DESC, id DESC LIMIT ?",
+        ).bind(cursor[0], cursor[0], cursor[1], PAGE_SIZE + 1)
+      : env.AMA_DB.prepare(
+          "SELECT id, question, created_at FROM questions ORDER BY created_at DESC, id DESC LIMIT ?",
+        ).bind(PAGE_SIZE + 1);
+    const result = await statement.all();
+    if (!result.success) return json({ error: "unavailable" }, 503);
+    const questions = result.results.slice(0, PAGE_SIZE);
+    const nextCursor = result.results.length > PAGE_SIZE
+      ? encodeCursor(questions[questions.length - 1])
+      : null;
+    return json({ questions, nextCursor }, 200);
+  } catch {
+    return json({ error: "unavailable" }, 503);
+  }
 }
 
 // Reads the body as a stream so an oversized request is cut off at the limit.
@@ -152,9 +221,13 @@ async function storeQuestion(env, { id, question }) {
 
 export default {
   async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === "/admin/questions") {
+      return readQuestions(request, env, url);
+    }
     if (!isConfigured(env)) return json({ error: "unavailable" }, 503);
 
-    if (new URL(request.url).pathname !== "/questions") {
+    if (url.pathname !== "/questions") {
       return json({ error: "not_found" }, 404);
     }
     if (request.method !== "POST") {

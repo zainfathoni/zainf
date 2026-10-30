@@ -18,7 +18,10 @@ export default {
   routeDiscovery: { mode: "initial" },
   prerender: async ({ getStaticPaths }) => {
     const staticPagePaths = getStaticPaths().filter(
-      (path) => !nonPrerenderablePaths.has(path),
+      (path) =>
+        !nonPrerenderablePaths.has(path) &&
+        !path.startsWith("/admin/") &&
+        !path.startsWith("/auth/"),
     );
 
     // Keep action/redirect endpoints, query-sensitive archives, and the AMA

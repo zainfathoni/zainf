@@ -9,8 +9,10 @@ Browser /ama form
   -> D1 table questions (id, question, created_at)
 ```
 
-The Worker is write-only. It has no read route. Read and delete questions in the
-Cloudflare D1 dashboard or with Wrangler `d1 execute` against the remote database.
+The submission endpoint is write-only. The owner inbox adds a separate read
+endpoint, protected by its own secret. The public browser never receives either
+Worker secret. Deletion is available only through the Cloudflare D1 dashboard or
+Wrangler; the inbox does not publish, edit, or delete questions.
 
 ## Configuration
 
@@ -29,25 +31,94 @@ Cloudflare D1 dashboard or with Wrangler `d1 execute` against the remote databas
 The rate limit is approximate and applies separately in each Cloudflare location.
 It is not a strict worldwide limit and it does not limit by visitor.
 
+## Private owner inbox
+
+**Delivery state:** the private Worker read endpoint is deployed and verified.
+The website inbox is ready for deployment. Its read secret, session key, owner
+ID, canonical origin, and dedicated GitHub OAuth values are set for production
+only. The OAuth client secret is stored as a Secret. Real owner sign-in and
+sign-out still need verification after deployment. No question data or database
+schema was changed for the inbox.
+
+Open `/admin/ama`, or select **Owner inbox** below the public AMA form. Sign in
+with GitHub. Only the configured immutable numeric GitHub user ID is accepted;
+the login name and email are not used for authorization. The page shows the
+newest 50 questions first, with an **Older questions** link and WIB timestamps.
+**Refresh** returns to the newest questions. **Sign out** clears the browser's
+login cookies. Question text is displayed as text, never as HTML.
+
+The design follows Cukup's owner-only dashboard: random OAuth state, S256 PKCE,
+an encrypted ten-minute OAuth cookie, and an encrypted seven-day session cookie.
+Production cookies use `__Host-`, Secure, HttpOnly, SameSite=Lax, and Path=/, with
+no Domain. Encryption binds each cookie to its purpose and configured origin.
+GitHub tokens are used only during login and are not stored. A copied session
+cookie remains valid until expiry or session-key rotation; sign-out is not central
+revocation. Preview deployments are disabled for this login.
+
+The inbox document and loader responses use private/no-store headers and noindex.
+Admin and auth routes are excluded from prerendering. Every inbox loader checks
+the owner session before calling the Worker. `GET /admin/questions` independently
+requires `AMA_READ_SECRET`, not the submission secret. It returns only bounded,
+cursor-paginated results. No database migration is needed.
+
+Additional production configuration:
+
+| Where | Name | Purpose |
+| --- | --- | --- |
+| Vercel | `AMA_GITHUB_CLIENT_ID` | Dedicated GitHub OAuth app client ID. |
+| Vercel secret | `AMA_GITHUB_CLIENT_SECRET` | Dedicated app secret; do not reuse Cukup credentials. |
+| Vercel | `AMA_GITHUB_OWNER_ID` | `6315466`, checked against GitHub's public `zainfathoni` profile. |
+| Vercel secret | `AMA_SESSION_KEY` | Canonical base64url-encoded random 32-byte AES key. No fallback key. |
+| Vercel and Worker secret | `AMA_READ_SECRET` | Separate high-entropy read credential, different from `AMA_SUBMISSION_SECRET`. |
+| Vercel | `AMA_ADMIN_ORIGIN` | Defaults to `https://www.zainfathoni.com`; must be an exact origin, with no trailing slash. |
+
+Register the OAuth app with homepage `https://www.zainfathoni.com` and callback
+`https://www.zainfathoni.com/auth/github/callback`. No repository or email scopes
+are requested. Configure all inbox values for production only. Set the Worker
+read secret, deploy the reviewed Worker, then deploy the website. Do not log or
+paste secrets into GitHub, shell history, or chat.
+
+For local work, an explicit loopback HTTP origin is allowed only outside
+production and uses separate non-`__Host-` cookie names. The local preview uses
+synthetic questions and simulated GitHub responses. It does not establish real
+GitHub consent or production cookie behavior. Test the real owner login, a
+different account's rejection, inbox read, pagination, and sign-out after setup.
+
 ## Local verification
 
 Run from the repository root. Use Node 20.19.0.
 
 ```sh
-node --test workers/ama/test/ama-worker.test.mjs
+pnpm test
 pnpm run typecheck
 pnpm run build
 ```
 
-The contract tests import the Worker handler directly. They replace three
-boundaries. Nothing else is mocked.
+The 30 tests cover login and inbox route handlers, private Worker reads, and
+existing submissions. Login tests simulate GitHub token and user responses and
+the Worker read response. They check numeric-owner authorization, PKCE, invalid
+OAuth state, tampered and expired cookies, preview denial, and sign-out checks.
+They do not establish real GitHub consent or deployed cookie behavior.
+
+The Worker contract tests import its handler directly. They replace three
+boundaries. Nothing else is mocked in those tests.
 
 - Turnstile Siteverify: a test-only `globalThis.fetch` stub with deterministic
   verdicts. It is not real Cloudflare behaviour.
-- D1: an in-memory fake that implements only the two bound statements the Worker
+- D1: an in-memory fake that implements only the bound statements the Worker
   uses. It is not D1.
 - Rate limiter: an in-memory fake with a 20-per-key counter. It is not the
   Cloudflare binding.
+
+On October 30, 2026, all 30 tests, TypeScript, and the production build passed.
+Standards and spec/security reviews found no blocking source issue. The built
+client has no admin or auth prerender directory. The deployed Worker source
+SHA-256 is `77a82e2ee979e3eefd5938b91601d8c12b92064d5e3f7206a648f8f682e2d948`.
+Production reads with no credential or a wrong credential return 401; malformed
+cursors return 400. An authorized read returned the two existing questions.
+Their content was not included in the check report. The existing submission
+endpoint still rejects public GET and unauthenticated POST. All seven Worker
+bindings, including the existing submission secrets, were preserved.
 
 Local D1 migrations and restart persistence are checked separately with
 `wrangler d1 ... --local`, as shown below. The rate-limit binding is checked only

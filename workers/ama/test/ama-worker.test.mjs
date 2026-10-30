@@ -4,7 +4,7 @@
 // The handler is imported directly. Only two dependencies are faked:
 // - global fetch, for Turnstile Siteverify (a test-only stub; the live dummy keys
 //   return hostname "example.com" and no action, so they cannot prove the success path);
-// - D1, with a minimal in-memory fake that understands the two bound statements the
+// - D1, with a minimal in-memory fake that understands the bound statements the
 //   Worker uses. Real local D1 migrations and restart persistence are checked with
 //   `wrangler d1 ... --local` as documented in docs/ama.md.
 
@@ -14,6 +14,7 @@ import { randomUUID } from "node:crypto";
 import worker from "../index.js";
 
 const SECRET = "test-submission-secret";
+const READ_SECRET = "test-inbox-read-secret";
 const PASS_SECRET = "turnstile-test-pass-secret";
 const BAD_SECRET = "turnstile-test-bad-secret";
 const SPENT_SECRET = "turnstile-test-spent-secret";
@@ -24,12 +25,15 @@ const URL_UNDER_TEST = "https://ama.example.test/questions";
 class FakeD1 {
   rows = new Map();
   broken = false;
+  prepareCalls = 0;
 
   prepare(sql) {
+    this.prepareCalls++;
     return {
       bind: (...args) => ({
         run: async () => this.exec(sql, args),
         first: async () => this.exec(sql, args),
+        all: async () => this.exec(sql, args),
       }),
     };
   }
@@ -45,6 +49,18 @@ class FakeD1 {
     if (sql.startsWith("SELECT question FROM questions WHERE id")) {
       const row = this.rows.get(args[0]);
       return row ? { question: row.question } : null;
+    }
+    if (sql.startsWith("SELECT id, question, created_at FROM questions")) {
+      const [createdAt, , id] = args;
+      const results = [...this.rows.values()]
+        .filter(row => !sql.includes("WHERE") || row.created_at < createdAt ||
+          (row.created_at === createdAt && row.id < id))
+        .sort((a, b) => {
+          if (a.created_at !== b.created_at) return a.created_at < b.created_at ? 1 : -1;
+          return a.id < b.id ? 1 : a.id > b.id ? -1 : 0;
+        })
+        .slice(0, args.at(-1));
+      return { success: true, results };
     }
     throw new Error(`unexpected SQL in fake: ${sql}`);
   }
@@ -121,6 +137,146 @@ function validPayload(overrides = {}) {
     ...overrides,
   };
 }
+
+function readInbox(env, { secret = READ_SECRET, cursor } = {}) {
+  const url = new URL("https://ama.example.test/admin/questions");
+  if (cursor !== undefined) url.searchParams.set("cursor", cursor);
+  return worker.fetch(new Request(url, {
+    headers: secret === null ? {} : { authorization: `Bearer ${secret}` },
+  }), env);
+}
+
+function inboxRow(number, created_at = "2026-10-30T12:00:00.000Z") {
+  return {
+    id: `00000000-0000-4000-8000-${number.toString(16).padStart(12, "0")}`,
+    question: `Private question ${number}`,
+    created_at,
+  };
+}
+
+describe("AMA Worker: private inbox", () => {
+  test("missing, wrong, and submission credentials cannot query or disclose the inbox", async () => {
+    const env = makeEnv({ AMA_READ_SECRET: READ_SECRET });
+    const row = inboxRow(1);
+    env.AMA_DB.rows.set(row.id, row);
+    const before = siteverifyCalls;
+
+    for (const secret of [null, "wrong", SECRET]) {
+      const response = await readInbox(env, { secret });
+      assert.equal(response.status, 401);
+      assert.deepEqual(await response.json(), { error: "unauthorized" });
+      assert.equal(response.headers.get("cache-control"), "no-store");
+    }
+    assert.equal(env.AMA_DB.prepareCalls, 0);
+    assert.equal(siteverifyCalls, before);
+  });
+
+  test("missing read secret or database fails closed without falling back to write credentials", async () => {
+    for (const overrides of [
+      { AMA_READ_SECRET: undefined },
+      { AMA_READ_SECRET: "" },
+      { AMA_READ_SECRET: READ_SECRET, AMA_DB: undefined },
+    ]) {
+      const env = makeEnv(overrides);
+      for (const secret of [READ_SECRET, SECRET]) {
+        const response = await readInbox(env, { secret });
+        assert.equal(response.status, 503);
+        assert.deepEqual(await response.json(), { error: "unavailable" });
+      }
+      if (env.AMA_DB) assert.equal(env.AMA_DB.prepareCalls, 0);
+    }
+  });
+
+  test("read-only configuration returns private content without Turnstile or write configuration", async () => {
+    const env = { AMA_DB: new FakeD1(), AMA_READ_SECRET: READ_SECRET };
+    const row = inboxRow(1);
+    env.AMA_DB.rows.set(row.id, row);
+    const before = siteverifyCalls;
+    const response = await readInbox(env);
+
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { questions: [row], nextCursor: null });
+    assert.equal(response.headers.get("cache-control"), "no-store");
+    assert.equal(response.headers.get("access-control-allow-origin"), null);
+    assert.equal(siteverifyCalls, before);
+  });
+
+  test("pages newest first with equal timestamps, asymmetric IDs, and no omissions or duplicates", async () => {
+    const env = makeEnv({ AMA_READ_SECRET: READ_SECRET });
+    const newest = inboxRow(1, "2026-10-31T00:00:00.000Z");
+    const oldest = inboxRow(999, "2026-10-29T00:00:00.000Z");
+    const tied = Array.from({ length: 55 }, (_, i) => inboxRow(i + 10));
+    // Neither insertion order nor ID-only ordering matches the expected order.
+    for (const row of [oldest, ...tied, newest]) env.AMA_DB.rows.set(row.id, row);
+
+    const response = await readInbox(env);
+    assert.equal(response.status, 200);
+    const first = await response.json();
+    assert.equal(first.questions.length, 50);
+    assert.equal(typeof first.nextCursor, "string");
+    assert.ok(first.nextCursor.length > 0);
+    assert.deepEqual(first.questions, [newest, ...tied.slice(6).reverse()]);
+
+    // A newer arrival must not shift the second page as it would with offsets.
+    const arrival = inboxRow(2, "2026-11-01T00:00:00.000Z");
+    env.AMA_DB.rows.set(arrival.id, arrival);
+    const nextResponse = await readInbox(env, { cursor: first.nextCursor });
+    assert.equal(nextResponse.status, 200);
+    const second = await nextResponse.json();
+    assert.deepEqual(second, { questions: [...tied.slice(0, 6).reverse(), oldest], nextCursor: null });
+  });
+
+  test("exactly 50 rows have no next cursor and an empty inbox returns an empty page", async () => {
+    const env = makeEnv({ AMA_READ_SECRET: READ_SECRET });
+    const emptyResponse = await readInbox(env);
+    assert.equal(emptyResponse.status, 200);
+    assert.deepEqual(await emptyResponse.json(), { questions: [], nextCursor: null });
+
+    const rows = Array.from({ length: 50 }, (_, i) => inboxRow(i + 1));
+    for (const row of rows) env.AMA_DB.rows.set(row.id, row);
+    const response = await readInbox(env);
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { questions: [...rows].reverse(), nextCursor: null });
+  });
+
+  test("malformed cursors return 400 without querying or returning private content", async () => {
+    const env = makeEnv({ AMA_READ_SECRET: READ_SECRET });
+    const row = inboxRow(1);
+    env.AMA_DB.rows.set(row.id, row);
+    const encode = value => Buffer.from(JSON.stringify(value)).toString("base64url");
+    const cursors = [
+      "", "a".repeat(257), "%not-base64", "a",
+      Buffer.from("not JSON").toString("base64url"),
+      encode(null), encode({}), encode([]),
+      encode([row.created_at, row.id, "extra"]),
+      encode(["not-a-date", row.id]),
+      encode(["2026-02-30T12:00:00.000Z", row.id]),
+      encode(["2026-10-30", row.id]),
+      encode([123, row.id]),
+      encode([row.created_at, "not-a-uuid"]),
+      encode([row.created_at, 123]),
+    ];
+
+    for (const cursor of cursors) {
+      const response = await readInbox(env, { cursor });
+      assert.equal(response.status, 400, cursor);
+      assert.deepEqual(await response.json(), { error: "invalid" });
+    }
+    assert.equal(env.AMA_DB.prepareCalls, 0);
+  });
+
+  test("a D1 outage returns 503 without any stored questions", async () => {
+    const env = makeEnv({ AMA_READ_SECRET: READ_SECRET });
+    const row = inboxRow(1);
+    env.AMA_DB.rows.set(row.id, row);
+    env.AMA_DB.broken = true;
+    const response = await readInbox(env);
+
+    assert.equal(response.status, 503);
+    assert.deepEqual(await response.json(), { error: "unavailable" });
+    assert.equal(response.headers.get("cache-control"), "no-store");
+  });
+});
 
 describe("AMA Worker: accepted submissions", () => {
   test("stores the trimmed question and returns no stored content", async () => {
