@@ -105,10 +105,11 @@ site key, and an invalid real token returning 403 without a stale success banner
 The checked public HTML and 21 referenced JavaScript assets do not contain the
 production shared secret.
 
-Remaining verification: prove two consecutive successful submissions with real
-Turnstile tokens and exact D1 rows. The first headless run reached the real human
-checkbox but did not obtain a token. It made no successful submission. The local
-simulation is not a substitute for this check.
+Production success verification is complete. The user reported two consecutive
+successful sends. A read-only D1 query for those two exact question texts returned
+one row each, with distinct IDs, at 2026-10-30 11:40:31 and 11:40:38 WIB.
+The question text is kept only in the private evidence artifact, not this record.
+The user's browser session was not recorded, and its tokens were not captured.
 
 The first deployment also exposed a script-load race. When the Turnstile API
 arrived after hydration, React's script load handler did not render the widget.
@@ -121,10 +122,8 @@ checks, not real Turnstile acceptance. TypeScript, 15 Worker tests, and build pa
 
 After deployment, all 26 production HTTP checks pass again. The real widget is
 visible with the full form in light mode. A native checkbox click in the headless
-browser did not obtain a token. No successful production send is claimed.
-The remaining check needs a normal browser: send two test questions on the same
-page, without a reload or failed attempt between them, then check those exact
-questions in D1. Do not read unrelated private questions.
+browser did not obtain a token. That earlier run remains unsuccessful; the later
+user-assisted check above closes the real production success gate.
 
 For a new environment, use this setup order:
 
