@@ -33,11 +33,11 @@ It is not a strict worldwide limit and it does not limit by visitor.
 
 ## Private owner inbox
 
-**Delivery state:** the private Worker read endpoint is deployed and verified.
-The website inbox is ready for deployment. Its read secret, session key, owner
-ID, canonical origin, and dedicated GitHub OAuth values are set for production
-only. The OAuth client secret is stored as a Secret. Real owner sign-in and
-sign-out still need verification after deployment. No question data or database
+**Delivery state:** the website inbox and private Worker read endpoint are
+deployed. Open `https://www.zainfathoni.com/admin/ama`. The read secret, session
+key, owner ID, canonical origin, and dedicated GitHub OAuth values are set for
+production only. The OAuth client secret is stored as a Secret. Real owner
+sign-in and sign-out still need user verification. No question data or database
 schema was changed for the inbox.
 
 Open `/admin/ama`, or select **Owner inbox** below the public AMA form. Sign in
@@ -77,6 +77,18 @@ Register the OAuth app with homepage `https://www.zainfathoni.com` and callback
 are requested. Configure all inbox values for production only. Set the Worker
 read secret, deploy the reviewed Worker, then deploy the website. Do not log or
 paste secrets into GitHub, shell history, or chat.
+
+The October 30 inbox release is
+[`7ca0fb4`](https://github.com/zainfathoni/zainf/commit/7ca0fb4025ee007cee0bea29356ddfeadb7954d2),
+Vercel deployment `dpl_F1Mj3R4irAQmQkYewEmnAHrZfvuX`. All 13 production HTTP
+checks passed: anonymous document/data responses and forged-cookie denial,
+OAuth redirect with the exact callback and PKCE, invalid-state denial, login
+failure display, sign-out method and origin checks, the public form, deployment
+protection, and the canonical-domain redirect. Private responses are no-store
+and noindex. The read secret and session key were absent from checked public
+responses and 12 referenced JavaScript assets. A browser click reached GitHub's
+sign-in page for **Zainf AMA Inbox**. This does not prove the token exchange or
+owner session; real owner sign-in, inbox read, and sign-out remain unverified.
 
 For local work, an explicit loopback HTTP origin is allowed only outside
 production and uses separate non-`__Host-` cookie names. The local preview uses
