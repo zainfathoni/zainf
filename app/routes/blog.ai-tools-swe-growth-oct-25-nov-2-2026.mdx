@@ -1,0 +1,125 @@
+---
+meta:
+  - title: "Review Nggak Selesai, Token Duluan Habis — AI Tools Digest #40"
+  - name: description
+    content: "Code review yang melebar, pembagian kerja agent, dan Amp di Android. Rangkuman dari grup AI Tools SWE GROWTH, 25 Okt–2 Nov 2026."
+  - author: Zain Fathoni
+  - date: "2026-11-02"
+  - lang: id
+  - property: og:title
+    content: "Review Nggak Selesai, Token Duluan Habis — AI Tools Digest #40"
+  - property: og:description
+    content: "Code review yang melebar, pembagian kerja agent, dan Amp di Android. Rangkuman dari grup AI Tools SWE GROWTH, 25 Okt–2 Nov 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-oct-25-nov-2-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-40.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Review Nggak Selesai, Token Duluan Habis — AI Tools Digest #40"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Review Nggak Selesai, Token Duluan Habis — AI Tools Digest #40
+
+Agent sudah selesai ngerjain task. Lalu kita minta review, muncul temuan baru, diperbaiki, di-review lagi. Kok tiketnya malah nambah terus? Minggu ini Mas Abdan cerita pernah bikin loop `/verify` dan `/code-review` setiap selesai task. Ujungnya: “yang abis tokennya”. 😅
+
+Dari obrolan 25 Oktober sampai pagi 2 November, ini yang paling nyangkut buat saya. Kita makin lancar menyuruh agent bekerja, tapi menentukan kapan pekerjaannya cukup masih perlu dipikirkan sendiri.
+
+## Code review perlu batas selesai
+
+Mas Abdan awalnya bertanya tentang [Claude Code](https://code.claude.com/docs/en/overview): apakah setiap task harus diakhiri dengan skill review? Pengalamannya, selalu muncul bug atau rekomendasi perbaikan, bahkan pekerjaan baru yang melebar dari tiket awal.
+
+Jawabannya ternyata beragam. Mas Didik memberi batas satu putaran untuk temuan review, lalu lanjut setelah perbaikan. Mas Fatih memilih review independen menjelang PR; kalau sempat, ia memakai model berbeda untuk cross-review. Mas Iqbal mengingatkan supaya temuan dipilih berdasarkan dampak dan kondisi aplikasi yang benar-benar mungkin terjadi.
+
+Mas Zahid lebih tegas: “Biasanya minimal P1 P0 wajib fix”. Temuan sisanya ia pertimbangkan untuk backlog, bukan otomatis dimasukkan ke pekerjaan yang sedang berjalan.
+
+Ada masalah scope juga. Mas Arif membandingkan hasil review dan mendapati model ikut membahas kode di luar perubahan: “yg Sonnet tuh kadang malah code yg ga termasuk changes di review jg 😅”. Saya sendiri pernah menganulir temuan AI saat review PR karena edge case yang dia bayangkan tidak mungkin terjadi di aplikasi kami.
+
+Buat saya, ini alasan untuk menuliskan scope review: diff mana yang diperiksa, perilaku apa yang harus tetap jalan, dan bukti apa yang diperlukan sebelum sebuah temuan disebut bug. Temuan kritis tetap harus ditangani; saran tambahan bisa menunggu. Kalau agent terus mengusulkan pekerjaan baru, jangan otomatis anggap semua usul itu syarat untuk merge.
+
+## Planner, orchestrator, dan worker mulai dipisah
+
+Mas Didik membuka diskusi pembagian model untuk planning dan implementasi. Mas Fatih menjelaskan kebiasaannya memakai Opus untuk planning, lalu memilih GPT Sol atau Haiku untuk eksekusi, dengan Sonnet sebagai orchestrator. Nama model di sini mengikuti percakapan mereka; ini pengalaman pemakaian, bukan benchmark antarmodel.
+
+Yang menarik, menambahkan orchestrator tidak membuat plan hilang. Mas Fatih tetap menyimpan dokumen plan yang sudah dipecah per task. Mas Didik juga memilih session baru sebelum orchestration supaya konteks planning sebelumnya tidak memenuhi percakapan kerja.
+
+Mas Abdan kemudian membawa [dokumentasi agent teams](https://code.claude.com/docs/en/agent-teams) ke diskusi. Pertanyaannya belum selesai: kapan koordinasi antarsession lebih berguna daripada plan yang kita pecah sendiri dan eksekusi subagent secara terarah? Dokumentasi resminya menjelaskan model team lead dan teammate, tetapi itu belum menjawab pilihan workflow terbaik untuk setiap repo.
+
+Mas Didik sudah membagikan [demo orchestration dengan Tycho](https://youtu.be/BYEsbkojxHo), sambil meminta masukan use case untuk video berikutnya. Ini bahan yang lebih enak buat dievaluasi: lihat task-nya, lihat hasilnya, lalu bandingkan dengan cara kerja kita sendiri.
+
+Saya akan mulai dari satu task yang batasnya jelas. Kalau hasil worker masih sering perlu ditebak maksudnya, menambah worker hanya akan memperbanyak hal yang harus diperiksa.
+
+## Amp sampai Android, tagihannya tetap perlu dilihat
+
+[Amp](https://ampcode.com) muncul lagi lewat [rilis Android](https://ampcode.com/news/amp-on-android). Saya membagikannya karena akhirnya teman-teman pengguna Android bisa ikut mencoba dari smartphone. Mas Muhammad lalu cerita sedang mempelajari runner, Orbs, dan Amp Android: “Enak sih, wkwk.”
+
+Ada juga [pengumuman personal self-hosted Orbs](https://ampcode.com/news/personal-self-hosted-orbs), yang membuat saya bisa melanjutkan eksperimen dari personal account. Mas Iqbal tertarik memakai server yang sudah ia punya. Obrolannya cepat bergeser ke biaya: kalau subscription sudah disambungkan, bagian mana yang masih memakai credits Amp?
+
+Mas Muhammad menemukan usage untuk web extract dan menanyakan hal yang sama. Dalam percakapan itu saya menjelaskan bahwa tool call tersebut memakai credits. Jadi, saat mencoba workflow baru, saya tetap ingin melihat halaman Cost & Usage pada thread, bukan hanya melihat apakah task-nya berhasil.
+
+Mas Restu memberi sudut pandang yang masuk akal: kalau kebutuhannya hanya Claude, aplikasi bawaannya beserta fitur remote bisa lebih cocok. Saya juga menyarankan subscription langsung untuk anggaran terbatas, ketimbang menganggap saldo credits API dan subscription bulanan sebagai hal yang setara. Harga dan allowance bisa berubah; cek paket yang berlaku sebelum bayar.
+
+Untuk repo tim, ada pekerjaan rumah lain: visibility thread dan kebijakan data. [Security reference Amp](https://ampcode.com/security) jadi bacaan yang dibagikan minggu ini. Self-hosted runner tidak boleh langsung kita artikan sebagai jaminan semua percakapan dan data ikut tinggal di server sendiri. Sebelum menyambungkan repo kantor, pastikan pengaturan aksesnya sesuai kebutuhan tim.
+
+## Browser use: coba jalur yang lebih kecil dulu
+
+[Tern](https://stencil.so/tern) muncul sebagai opsi yang dicoba Mas Michael. Di bagian lain diskusi, ia membedakan kebutuhan lingkungan development terintegrasi dengan multiplexer terminal; ia masih memakai kombinasi tool karena fungsi keduanya tidak persis sama.
+
+Mas Riza Rohman menawarkan alternatif yang lebih ringan, [Playwriter](https://playwriter.dev/): “saya udah lama pake itu so far aman. dia extension chrome + cli”. Deskripsi resminya juga menempatkan Playwriter sebagai extension dan CLI untuk mengontrol browser yang sudah kita gunakan. Pernyataan aman tadi adalah pengalaman Mas Riza Rohman, bukan audit keamanan.
+
+Mas Zahid kemudian membagikan [Yet Another Browser](https://yetanotherbrowser.com/) dari demo integrasi dengan Tern. Sementara itu, Mas Didik menanggapi ramainya pilihan browser: “hmm apakah ini saatnya bikin browsermu sendiri? 🤔”
+
+Saya belum merasa semua orang perlu mengganti browser atau seluruh lingkungan development. Coba satu alur yang selama ini merepotkan: buka aplikasi lokal, jalankan interaksi, lalu periksa hasilnya. Dari situ baru kelihatan apakah extension cukup atau kita memang butuh lingkungan yang lebih terintegrasi.
+
+## ⚡ Quick Hits
+
+- Mas Zikrul mengumumkan [Open Source Contribution Platform SWE GROWTH](https://oss.swegrowth.id), dengan [source code builders](https://github.com/swegrowthid/builders). Ada tempat untuk mulai kontribusi dan melaporkan kendala, bukan hanya bertukar link tool.
+- Mas Andri membagikan [awesome-opencode](https://github.com/awesome-opencode/awesome-opencode#plugins), kumpulan plugin untuk [OpenCode](https://opencode.ai). Pilih yang menyelesaikan kebutuhan nyata; daftar panjang belum tentu berarti semuanya perlu dipasang.
+- Mas Michael membagikan [Impeccable](https://github.com/pbakaus/impeccable) dan [BeautifulRust](https://github.com/morganlinton/BeautifulRust). Keduanya bahan eksplorasi, bukan hasil pengujian saya.
+- Mas Dedy ikut merangkum demam nama workflow dengan pertanyaan, “kerehorestack ada ?” Setelah banyak nama stack lewat, pertanyaan paling berguna tetap: bagian mana yang benar-benar membantu pekerjaan kita?
+
+Link yang lewat jauh lebih banyak daripada yang sanggup kita coba. Saya pilih menyisihkan waktu untuk satu eksperimen kecil dulu, lalu menyimpan hasilnya supaya minggu depan tidak mengulang dari nol.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Di PR berikutnya, batasi review ke diff dan minta bukti jalur bug. Pisahkan temuan kritis dari saran backlog sebelum meminta agent memperbaiki semuanya.
+2. Bandingkan satu task dengan workflow biasa dan [agent teams](https://code.claude.com/docs/en/agent-teams). Catat waktu review dan biaya, bukan cuma kecepatan agent menulis kode.
+3. Kalau memakai [Amp Android](https://ampcode.com/news/amp-on-android), coba satu task kecil dan periksa Cost & Usage setelahnya. Jangan mulai dari repo kantor sebelum mengecek kebijakan datanya.
+4. Uji [Playwriter](https://playwriter.dev/) pada aplikasi lokal untuk melihat apakah browser use bisa masuk ke alur verifikasi yang sudah ada.
+5. Cari satu issue di [builders SWE GROWTH](https://github.com/swegrowthid/builders) yang bisa dikerjakan atau direproduksi. Laporan bug yang jelas juga kontribusi.
+
+Pilih satu saja dulu. Saya lebih penasaran dengan hasil percobaan yang bisa diulang daripada screenshot banyak agent sedang sibuk.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Abdan**: pengalaman review loop yang melebar.
+- **Mas Didik**: batas review, konteks orchestration, demo Tycho, dan obrolan browser.
+- **Mas Fatih**: pembagian peran model dan review menjelang PR.
+- **Mas Iqbal**: prioritas temuan serta rencana self-hosting.
+- **Mas Zahid**: severity bug dan referensi browser.
+- **Mas Arif**: pengingat agar review tidak keluar dari diff.
+- **Mas Muhammad**: pengalaman mencoba Amp dan pertanyaan biaya tool call.
+- **Mas Restu**: alternatif memakai aplikasi bawaan.
+- **Mas Michael**: referensi tool dan pengalaman Tern.
+- **Mas Riza Rohman**: pengalaman memakai Playwriter.
+- **Mas Zikrul**: peluncuran platform kontribusi open source.
+- **Mas Andri**: referensi plugin OpenCode.
+- **Mas Dedy**: pertanyaan penting tentang kerehorestack.
+- **Zain**: pengalaman review manual dan eksperimen Amp.
+
+Terima kasih buat pengalaman yang dibagikan, termasuk bagian yang belum beres. Justru itu yang paling membantu saat kita mencoba workflow sendiri.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 2 November 2026*
