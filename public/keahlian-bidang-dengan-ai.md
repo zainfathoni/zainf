@@ -192,18 +192,21 @@ style: |
 TIMING: 0:00–0:40 (40 detik). Target seluruh naskah 4:30; cadangan 30 detik. Durasi belum diuji lewat pembacaan langsung.
 ALUR: Common ground dan coming problem. Nyatakan langkah adopsi AI di kampus, lalu mulai cerita dari kebutuhan manusia, bukan daftar fitur.
 
+PANDUAN WAKTU (bukan untuk dibaca):
+Bagian bertanda [OPSIONAL] pada slide 3–6 boleh dilewati jika waktu menipis. Penanda bukan naskah lisan. Jika hanya terlambat sedikit, lewati bagian opsional yang belum terucap; tidak perlu kembali ke slide sebelumnya. Naskah lengkap tetap 493 kata; tanpa empat bagian opsional menjadi 452 kata. Pengurangan 41 kata menghemat sekitar 20,5 detik pada 120 kata/menit, bukan hasil latihan terukur. Pertahankan bagian lain, terutama contoh A/B, data fiktif, pengalaman Mas Ibam, tanggung jawab manusia, contoh lintas jurusan, dan ajakan penutup.
+
 NASKAH:
 Saya Zain, dari Vibe From Cafe.
 
-Kampus bisa mulai mengadopsi AI lewat tugas membuat alat, lalu menguji hasilnya dengan keahlian bidang.
+Kampus dapat mulai mengadopsi AI melalui tugas membuat alat, lalu menguji hasilnya dengan keahlian bidang.
 
-Mulainya dari masalah, bukan pilihan aplikasi.
+Mulailah dari masalah, bukan pilihan aplikasi.
 
-Saya ambil contoh Perkara AI, yang dibangun Ibrahim Arief, atau Mas Ibam.
+Contohnya adalah Perkara AI yang dibangun Ibrahim Arief, atau Mas Ibam.
 
-Waktu menghadapi perkaranya, tim hukum Mas Ibam harus mempelajari ribuan halaman berkas. Tapi waktu, biaya, dan orangnya terbatas.
+Saat menghadapi perkaranya, tim hukum Mas Ibam harus mempelajari ribuan halaman berkas. Namun, waktu, biaya, dan jumlah anggota tim terbatas.
 
-Bayangkan kita ada di posisi itu. Berkasnya sebanyak ini, sebentar lagi harus siap sidang. Mulai dari mana?
+Bayangkan kita berada di posisi itu. Berkas sangat banyak, jadwal sidang semakin dekat. Harus mulai dari mana?
 
 SUMBER (bukan untuk dibaca):
 https://x.com/ibamarief/status/2029735414303707470
@@ -217,19 +220,19 @@ Keterbatasan tim menurut cerita Mas Ibam dan pengumuman Ririe/Mas Ibam. Visual b
 
 <div class="comparison">
 <div class="panel untraced">
-<h3>Jawaban saja</h3>
+<h3>Hanya jawaban</h3>
 <p>Terlihat rapi.<br>Terdengar meyakinkan.</p>
 <div class="ink"></div><div class="ink short"></div>
-<p class="question">Sumbernya<br>di mana?</p>
+<p class="question">Di mana<br>sumbernya?</p>
 </div>
 <div class="panel">
-<h3>Yang dibutuhkan tim hukum</h3>
+<h3>Kebutuhan tim hukum</h3>
 <div class="checks">
-<div class="check">Siapa bilang apa?</div>
-<div class="check">Cocok dengan keterangan lain?</div>
+<div class="check">Siapa menyampaikan apa?</div>
+<div class="check">Sesuai dengan keterangan lain?</div>
 <div class="check">Apa yang perlu ditanyakan di sidang?</div>
 </div>
-<span class="citation">Bisa kembali ke berkas dan halaman asal</span>
+<span class="citation">Dapat ditelusuri ke berkas dan halaman asal</span>
 </div>
 </div>
 <p class="illustration-label">Ilustrasi kebutuhan, bukan keluaran chatbot atau Perkara AI.</p>
@@ -240,26 +243,26 @@ TIMING: 0:40–1:20 (40 detik).
 ALUR: False hope. Jawaban cepat saja tidak memenuhi kebutuhan.
 
 NASKAH:
-Mas Ibam sempat mencoba memasukkan berkasnya ke chatbot. Menurut ceritanya, hasilnya belum bisa diandalkan. Ada informasi yang salah, bahkan dikarang oleh AI.
+Mas Ibam sempat mencoba memasukkan berkasnya ke chatbot. Menurut ceritanya, hasilnya belum dapat diandalkan. Ada informasi yang salah, bahkan dikarang oleh AI.
 
-Dalam perkara hukum, jawaban yang kelihatannya meyakinkan bisa merugikan orang.
+Dalam perkara hukum, jawaban yang tampak meyakinkan dapat merugikan orang.
 
-Padahal, yang dibutuhkan tim hukum bukan cuma ringkasan.
+Padahal, tim hukum tidak hanya membutuhkan ringkasan.
 
-Mereka perlu tahu: saksi ini bilang apa? Cocok nggak dengan keterangan saksi lain? Bagian mana yang perlu ditanyakan di sidang?
+Mereka perlu mengetahui: apa yang disampaikan saksi ini? Apakah sesuai dengan keterangan saksi lain? Bagian mana yang perlu ditanyakan di sidang?
 
-Dan kalau AI bilang ada masalah, harus bisa dicek: “Sebentar, ini sumbernya di mana?”
+Jika AI menunjukkan adanya masalah, hasilnya harus dapat diperiksa: “Di mana sumbernya?”
 
 SUMBER (bukan untuk dibaca):
 https://x.com/ibamarief/status/2029735414303707470
 https://x.com/ibamarief/status/2085661462207582466 — konteks lanjutan: Mas Ibam menjelaskan kesalahan OCR pada dokumen padat teks dan penggunaan gabungan model. Ini berbeda dari kegagalan chatbot pada cerita awal. Angka 5.000+ halaman di unggahan ini bukan angka sistem awal. Pengamatan "near zero" bukan jaminan tanpa halusinasi atau hasil audit independen.
 https://perkara.ai
-Pengalaman Mas Ibam, bukan benchmark semua chatbot. Situs resmi menjelaskan penelusuran sumber dan mengakui AI bisa keliru. Visual ini bukan rekonstruksi keluaran asli.
+Pengalaman Mas Ibam, bukan benchmark semua chatbot. Situs resmi menjelaskan penelusuran sumber dan mengakui AI dapat keliru. Visual ini bukan rekonstruksi keluaran asli.
 -->
 
 ---
 
-## Bukan cuma pakai. Bisa bikin.
+## Tidak hanya memakai. Juga membuat.
 
 <p class="lead">Perkara AI · dibangun Mas Ibam dengan bantuan Claude Code</p>
 <div class="product">
@@ -280,19 +283,21 @@ TIMING: 1:20–2:00 (40 detik).
 ALUR: Audacious reality. AI membantu membangun alat baru sesuai kebutuhan, bukan hanya memakai aplikasi yang tersedia.
 
 NASKAH:
-Dari kebutuhan itu, Mas Ibam membangun sistem sendiri, dibantu Claude Code.
+Dari kebutuhan itu, Mas Ibam membangun sistem sendiri dengan bantuan Claude Code.
 
 Menurut unggahannya, sistem awal ini menganalisis lebih dari empat ribu tujuh ratus halaman dan memetakan hampir sembilan ribu keterangan.
 
-Hasilnya dipakai tim hukum untuk membantu menyiapkan pertanyaan pemeriksaan silang. Sistem itu kemudian berkembang menjadi Perkara AI.
+Hasilnya digunakan tim hukum untuk membantu menyiapkan pertanyaan pemeriksaan silang. Sistem itu kemudian berkembang menjadi Perkara AI.
 
-Bukan cuma membaca banyak berkas.
+[OPSIONAL — bukan untuk dibaca: lewati bagian ini jika waktu menipis; 6 kata.]
+Manfaatnya tidak sebatas membaca banyak berkas.
+[AKHIR OPSIONAL — bukan untuk dibaca.]
 
-Mas Ibam tidak berhenti di memakai aplikasi yang tersedia. Dengan bantuan AI, dia juga membangun aplikasi baru, yang lebih sesuai dengan masalah yang sedang dihadapi.
+Mas Ibam tidak berhenti pada penggunaan aplikasi yang tersedia. Dengan bantuan AI, beliau membangun aplikasi baru yang sesuai dengan masalah yang dihadapi.
 
 SUMBER DAN ASET (bukan untuk dibaca):
 https://x.com/ibamarief/status/2029735414303707470 — 4.700+ halaman dan 8.900+ keterangan, menurut Mas Ibam; bukan hasil audit independen, bukan jumlah saksi atau total terbaru produk.
-https://x.com/ibamarief/status/2031702030008610911 — bantuan Claude Code. Jangan memakai klaim 30x sebagai produktivitas terbukti.
+https://x.com/ibamarief/status/2031702030008610911 — bantuan Claude Code. Jangan menggunakan klaim 30x sebagai produktivitas terbukti.
 https://x.com/ibamarief/status/2078851449585639774 — pengembangan lanjutan untuk banding yang saat itu masih berjalan, menggabungkan dokumen, keterangan tertulis, dan transkrip rekaman sidang. Jangan mengubah karakterisasi penulis menjadi klaim bahwa AI memenangkan atau menyelesaikan perkara.
 https://x.com/ibamarief/status/2085209794890387488 — konteks desain pipeline dokumen yang efisien, bukan sekadar menyerahkan semuanya ke LLM. Teks unggahan asli terverifikasi sebagai kutipan pada unggahan 7 Agustus: https://x.com/ibamarief/status/2085661462207582466. Perbandingan biaya dan akurasi adalah estimasi/klaim Mas Ibam, bukan benchmark independen; tidak ditambahkan ke naskah.
 https://x.com/ibamarief/status/2114332828326580447 — berkembang menjadi Perkara AI.
@@ -303,12 +308,12 @@ Mas Ibam engineer berpengalaman. Jangan menyatakan AI menyelesaikan perkara, mem
 
 ---
 
-## Siapa yang tahu hasilnya bagus?
+## Siapa yang dapat menilai hasilnya?
 
 <div class="criteria">
 <div class="criterion"><p class="index">01</p><h3>Benar</h3><p>Sumber dan maknanya tepat?</p></div>
-<div class="criterion"><p class="index">02</p><h3>Relevan</h3><p>Membantu persoalan yang dihadapi?</p></div>
-<div class="criterion"><p class="index">03</p><h3>Bisa diperiksa</h3><p>Alasannya bisa ditelusuri?</p></div>
+<div class="criterion"><p class="index">02</p><h3>Relevan</h3><p>Menjawab persoalan yang dihadapi?</p></div>
+<div class="criterion"><p class="index">03</p><h3>Dapat diperiksa</h3><p>Alasannya dapat ditelusuri?</p></div>
 </div>
 <p class="taste"><em>Taste</em> tumbuh dari pemahaman bidang.</p>
 <p class="responsibility">AI membantu. Tanggung jawab menilai tetap pada manusia.</p>
@@ -319,27 +324,29 @@ TIMING: 2:00–2:50 (50 detik).
 ALUR: We can do this. Jembatan dari aplikasi ke peran pendidikan: taste sebagai penilaian berdasarkan pemahaman bidang.
 
 NASKAH:
-Tapi, aplikasi yang bagus itu seperti apa?
+Namun, seperti apa aplikasi yang baik?
 
-Kalau di hukum, tentu bukan sekadar tampilannya rapi atau jawabannya panjang.
+[OPSIONAL — bukan untuk dibaca: lewati bagian ini jika waktu menipis; 12 kata.]
+Dalam hukum, tentu bukan sekadar tampilan yang rapi atau jawaban yang panjang.
+[AKHIR OPSIONAL — bukan untuk dibaca.]
 
-Sumbernya benar nggak? Dua keterangan ini memang bertentangan, atau cuma kelihatannya begitu? Pertanyaan ini membantu pembelaan, atau malah tidak relevan?
+Apakah sumbernya benar? Apakah dua keterangan ini memang bertentangan, atau hanya tampak demikian? Apakah pertanyaannya membantu pembelaan, atau tidak relevan?
 
-Kemampuan menilai seperti ini yang saya maksud dengan taste. Kita paham bidangnya, jadi kita tahu apa yang perlu diperiksa.
+Kemampuan menilai inilah yang saya maksud dengan taste. Dengan memahami bidangnya, kita mengetahui apa yang perlu diperiksa.
 
-Pengetahuan hukum dan kemampuan teknis bekerja bersama. AI membantu, tapi tanggung jawab menilai tetap pada manusia.
+Pengetahuan hukum dan kemampuan teknis bekerja bersama. AI membantu, tetapi tanggung jawab menilai tetap pada manusia.
 
-Bukan cuma mengajari mahasiswa memakai Perkara AI. Kita bisa melatih mereka membuat alat dari masalah di bidangnya sendiri.
+Tujuannya bukan sekadar mengajarkan penggunaan aplikasi. Kita dapat melatih mahasiswa membuat alat untuk masalah di bidangnya sendiri.
 
 CATATAN (bukan untuk dibaca):
-Kerangka pedagogis pembicara, bukan kutipan atau temuan penelitian. Taste bukan sekadar selera visual dan tidak menggantikan engineering, pengujian, atau keamanan data. FAQ perkara.ai mengakui AI bisa keliru dan keputusan hukum tetap pada manusia.
+Kerangka pedagogis pembicara, bukan kutipan atau temuan penelitian. Taste bukan sekadar selera visual dan tidak menggantikan engineering, pengujian, atau keamanan data. FAQ perkara.ai mengakui AI dapat keliru dan keputusan hukum tetap pada manusia.
 -->
 
 ---
 
 <!-- _class: classroom -->
 
-## Bikin alatnya. Uji pemahamannya.
+## Buat alatnya. Uji pemahamannya.
 
 <p class="task">Tugas: buat aplikasi pembanding keterangan saksi dengan bantuan AI.</p>
 <div class="work">
@@ -364,7 +371,7 @@ Kerangka pedagogis pembicara, bukan kutipan atau temuan penelitian. Taste bukan 
 </div>
 <div class="teacher">
 <p class="meta">Pertanyaan dosen · nilai alasan, sumber, dan hasil uji</p>
-<p class="prompt">“Kalau B bisa melihat pintu depan, apa yang perlu kamu periksa lagi?”</p>
+<p class="prompt">“Jika B dapat melihat pintu depan, apa yang perlu Anda periksa lagi?”</p>
 </div>
 <div class="source">Simulasi kelas · semua data dan rujukan fiktif · bukan kasus atau fitur Perkara AI.</div>
 
@@ -373,20 +380,24 @@ TIMING: 2:50–3:40 (50 detik). Jangan membacakan semua teks visual atau menamba
 ALUR: Langkah konkret dan early benefits. Mahasiswa membangun alat sekaligus melatih penilaian bidang.
 
 NASKAH:
-Di kelas hukum, dosen memberi dua keterangan fiktif: A melihat Raka masuk lewat pintu depan; B menjaga pintu belakang dan tidak melihatnya.
+Di kelas hukum, dosen memberikan dua keterangan fiktif: A melihat Raka masuk melalui pintu depan; B menjaga pintu belakang dan tidak melihatnya.
 
 Mahasiswa membuat aplikasi pembanding dengan AI, menyertakan sumber, tanpa harus menulis kodenya sendiri.
 
-Setelah jadi, dosen bisa bertanya: “Kalau B bisa melihat pintu depan, apa yang perlu kamu periksa lagi?”
+Setelah selesai, dosen dapat bertanya: “Jika B dapat melihat pintu depan, apa yang perlu Anda periksa lagi?”
 
-Mahasiswa harus menjelaskan alasannya, mengecek hasilnya, lalu memperbaiki alatnya. Jadi, bukan cuma aplikasinya yang berkembang. Pemahamannya juga dilatih.
+Mahasiswa harus menjelaskan alasannya, memeriksa hasilnya, lalu memperbaiki alatnya.
 
-Tidak perlu langsung membuat sistem sekelas Perkara AI. Mas Ibam sendiri engineer berpengalaman. Kita mulai kecil, pakai data fiktif, dan hasilnya bisa diperiksa.
+[OPSIONAL — bukan untuk dibaca: lewati bagian ini jika waktu menipis; 9 kata.]
+Jadi, bukan hanya aplikasinya yang berkembang. Pemahamannya juga dilatih.
+[AKHIR OPSIONAL — bukan untuk dibaca.]
+
+Tidak perlu langsung membuat sistem sekelas Perkara AI. Mas Ibam adalah engineer berpengalaman. Kita mulai dari lingkup kecil, menggunakan data fiktif, dengan hasil yang dapat diperiksa.
 
 CATATAN (bukan untuk dibaca):
-Pertanyaan dosen diselaraskan dengan visual terbaru. Sesuai review, pembukaan memperkenalkan A/B secara lisan; dua paragraf pengganti tetap 35 kata. Naskah keseluruhan 494 kata, dipangkas dari 526 kata; jumlah per slide: 74, 74, 77, 91, 93, 85. Pada 120 kata/menit ditambah 20 detik jeda, perkiraan 4:27; ini perhitungan, bukan durasi pembacaan terukur. Jangan membacakan teks kecil sumber atau isi cuplikan slide 3.
+Pertanyaan dosen diselaraskan dengan visual terbaru. Pembukaan memperkenalkan A/B secara lisan; dua paragraf pertama tetap 35 kata. Naskah keseluruhan 493 kata setelah penyesuaian bahasa untuk dosen; jumlah per slide: 75, 72, 76, 88, 96, 86. Pada 120 kata/menit ditambah 20 detik jeda, perkiraan 4:27; ini perhitungan, bukan durasi pembacaan terukur. Jangan membacakan teks kecil sumber atau isi cuplikan slide 3.
 Semua tokoh, waktu, keterangan, dan halaman adalah simulasi buatan. Ini contoh hasil yang diharapkan, bukan aplikasi yang telah dibuat/diuji, bukan fitur Perkara AI, dan bukan program VFC yang berjalan.
-Dua keterangan belum cukup untuk menyatakan kontradiksi. Kalaupun B dapat melihat pintu depan, masih perlu memeriksa apakah ia benar-benar mengamatinya pada waktu relevan, jangkauan pandang, dan keadaan pengamatan. Jangan memberi vonis otomatis.
+Dua keterangan belum cukup untuk menyatakan kontradiksi. Sekalipun B dapat melihat pintu depan, masih perlu memeriksa apakah ia benar-benar mengamatinya pada waktu relevan, jangkauan pandang, dan keadaan pengamatan. Jangan memberi vonis otomatis.
 -->
 
 ---
@@ -415,21 +426,23 @@ TIMING: 3:40–4:30 (50 detik). Target selesai 4:30, simpan cadangan 30 detik da
 ALUR: Call to action dan long win. Buka untuk semua jurusan, bukan hanya hukum atau informatika.
 
 NASKAH:
-Dan ini bukan cuma untuk jurusan hukum.
+Pendekatan ini tidak terbatas pada jurusan hukum.
 
-Di ekonomi, mahasiswa bisa membuat simulasi usaha. Di pendidikan, mereka bisa membuat latihan yang memberi petunjuk sesuai kesalahan murid.
+Di ekonomi, mahasiswa dapat membuat simulasi usaha. Di pendidikan, mereka dapat membuat latihan yang memberikan petunjuk sesuai kesalahan murid.
 
-Kampus bisa mencoba satu dosen, satu tugas, satu masalah dulu.
+Kampus dapat memulai dengan satu dosen, satu tugas, dan satu masalah.
 
-Beri ruang untuk membuat, menguji, lalu memperbaiki. Yang dinilai bukan cuma aplikasinya jadi, tapi juga alasan dan hasil pengujiannya.
+Berikan ruang untuk membuat, menguji, lalu memperbaiki. Penilaian tidak hanya mencakup aplikasi yang selesai, tetapi juga alasan dan hasil pengujiannya.
 
-Dengan AI, mahasiswa tidak harus berhenti sebagai pengguna alat. Mereka bisa belajar jadi pembuat.
+[OPSIONAL — bukan untuk dibaca: lewati bagian ini jika waktu menipis; 14 kata.]
+Dengan AI, mahasiswa tidak harus berhenti sebagai pengguna alat. Mereka dapat belajar menjadi pembuat.
+[AKHIR OPSIONAL — bukan untuk dibaca.]
 
-Tugas pendidikan: membantu mereka tahu apa yang perlu dibuat, dan bagaimana menilai apakah hasilnya benar-benar berguna.
+Peran pendidikan: membantu mereka menentukan apa yang perlu dibuat, dan menilai apakah hasilnya benar-benar berguna.
 
 CATATAN (bukan untuk dibaca):
 Contoh ekonomi dan pendidikan adalah usulan, bukan program atau keberhasilan terukur. VFC hanya identitas pembicara, bukan pokok presentasi atau janji kemitraan.
-QR menuju URL produksi yang diharapkan: https://www.zainfathoni.com/keahlian-bidang-dengan-ai.html. Domain mengikuti canonical di app/root.tsx; path mengikuti sumber di public/ dan tautan app/models/talks.ts. Ini bukan URL preview atau tweet. Pada pemeriksaan 6 November 2026 URL mengembalikan HTTP 404; perlu deploy sebelum materi tersedia di sana. QR dibuat dengan qrcode Python, koreksi kesalahan M, quiet zone 4 modul, hitam di atas putih; 224 × 224 piksel pada slide. Naskah lisan tidak berubah dan tidak perlu membacakan URL.
+QR menuju deck: https://www.zainfathoni.com/keahlian-bidang-dengan-ai.html. Domain mengikuti canonical di app/root.tsx; path mengikuti sumber di public/ dan tautan app/models/talks.ts. Ini bukan URL preview atau tweet. Versi sebelumnya sudah tersedia di produksi; revisi bahasa ini belum dipublikasikan. QR dibuat dengan qrcode Python, koreksi kesalahan M, quiet zone 4 modul, hitam di atas putih; 224 × 224 piksel pada slide. Tidak perlu membacakan URL.
 Struktur cerita diadaptasi dari Dan Roam, The Pop-Up Pitch, sebagaimana deck /talks sebelumnya: https://www.danroam.com/
 Konteks acara: https://luma.com/bzgxstpt — Rembug JogjaDevs: Pendidikan dan Industri Teknologi Informasi di Era AI, 7 November 2026. Batas lima menit berasal dari brief Zain, bukan ketentuan di halaman publik.
 -->
