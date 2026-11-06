@@ -206,6 +206,29 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "keahlian-bidang-dengan-ai-2026",
+    date: "2026-11-07",
+    title: "Dari Keahlian Bidang Menjadi Solusi dengan AI",
+    description:
+      "Cerita Perkara AI dan langkah awal pendidikan lintas jurusan untuk membuat, menguji, dan menilai solusi dengan AI.",
+    event:
+      "Rembug JogjaDevs: Pendidikan dan Industri Teknologi Informasi di Era AI",
+    resources: [
+      {
+        href: "/keahlian-bidang-dengan-ai.html",
+        label: "Open slides",
+      },
+      {
+        href: "/keahlian-bidang-dengan-ai.pdf",
+        label: "Download PDF",
+      },
+      {
+        href: "https://luma.com/bzgxstpt",
+        label: "Event link",
+      },
+    ],
+  },
+  {
     slug: "royal-vs-frugal-amp-2026",
     date: "2026-10-25",
     title: "Royal vs Frugal Amp",
