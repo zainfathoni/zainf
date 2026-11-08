@@ -9,6 +9,42 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "gdg-devfest-2026-jogjakarta",
+    date: "2026-11-08",
+    title: "How I Shipped More Without Reading My Code",
+    description:
+      "A production case study: AI agents wrote a whole feature, and I did not read the diff. Which checks caught the bugs, which missed them, and the skills I still train.",
+    event: "GDG DevFest Jogjakarta 2026",
+    resources: [
+      {
+        href: "https://zainf.dev/fest-2026",
+        label: "Open slides",
+      },
+      {
+        href: "https://gdg.community.dev/events/details/google-gdg-jogjakarta-presents-devfest-jogjakarta-2026/",
+        label: "Event link",
+      },
+    ],
+  },
+  {
+    slug: "gdg-devfest-2025-jogjakarta",
+    date: "2025-12-14",
+    title: "Responsible Vibe Coding: Gemini as Your Sous-Chef",
+    description:
+      "Vibe coding without turning off your brain: work with AI as your sous-chef, and keep the head chef's judgement at every junction.",
+    event: "GDG DevFest Jogjakarta 2025",
+    resources: [
+      {
+        href: "https://zainf.dev/fest-2025",
+        label: "Open slides",
+      },
+      {
+        href: "https://gdg.community.dev/events/details/google-gdg-jogjakarta-presents-devfest-jogjakarta-2025-2/",
+        label: "Event link",
+      },
+    ],
+  },
+  {
     slug: "idsw-2025",
     date: "2025-11-23",
     title: "Raising Children Who Outthink the Machines",
