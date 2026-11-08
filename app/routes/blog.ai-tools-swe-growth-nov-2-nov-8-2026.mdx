@@ -1,0 +1,130 @@
+---
+meta:
+  - title: "Spaces Makin Rapi, Kuota Makin Dihitung — AI Tools Digest #41"
+  - name: description
+    content: "Amp Spaces, Herdr desktop, pengalaman kuota coding agent, dan batas aman eksperimen. Rangkuman dari grup AI Tools SWE GROWTH, 2–8 Nov 2026."
+  - author: Zain Fathoni
+  - date: "2026-11-08"
+  - property: og:title
+    content: "Spaces Makin Rapi, Kuota Makin Dihitung — AI Tools Digest #41"
+  - property: og:description
+    content: "Amp Spaces, Herdr desktop, pengalaman kuota coding agent, dan batas aman eksperimen. Rangkuman dari grup AI Tools SWE GROWTH, 2–8 Nov 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-nov-2-nov-8-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-41.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Spaces Makin Rapi, Kuota Makin Dihitung — AI Tools Digest #41"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Spaces Makin Rapi, Kuota Makin Dihitung — AI Tools Digest #41
+
+Baru merasa nyaman dengan cara mengatur coding agent, muncul fitur baru yang bikin saya mikir ulang. Minggu ini [Amp](https://ampcode.com) merilis Spaces, sementara saya masih senang memindah-mindahkan child thread sesuai kebutuhan. Lebih terstruktur kedengarannya bagus. Pas dicocokkan dengan kebiasaan sendiri, ternyata belum tentu langsung cocok. 😅
+
+Di grup AI Tools SWE GROWTH sepanjang 2–8 November, urusan memilih tool juga makin praktis: kuotanya cukup sampai mana, enak dipakai di laptop sendiri atau tidak, dan agent-nya bisa menyelesaikan kerjaan sampai dites atau cuma menghasilkan kode.
+
+## Amp Spaces: saya suka idenya, belum tentu suka batasnya
+
+[Pengumuman resmi Spaces](https://ampcode.com/news/spaces) menjelaskan percakapan dengan satu agent yang mengatur agent-agent lain. Kita memberi pekerjaan dari satu tempat, lalu agent itu membuat dan mengoordinasikan threads. Ini cocok dengan masalah yang makin sering muncul: threads sudah banyak, siapa mengerjakan apa mulai sulit diikuti.
+
+Mas Oshi menghubungkannya dengan Projects di [GitHub](https://github.com). Mas Didik menangkap perubahan yang sama dari sisi navigasi: *“oh, jadi lebih formal ya strukturnya dan navigasinya”*. Saya setuju, tetapi kebiasaan saya sedikit berbeda.
+
+Selama ini saya punya parent thread per pekan. Kalau pekerjaan berlanjut ke pekan berikutnya, child thread bisa ikut pindah. Kalau parent bermasalah, saya bikin pengganti, semacam orang tua asuh. Spaces menambahkan struktur yang lebih tetap karena terikat project. Respons saya waktu itu: *“Iya Mas, tapi untuk kebutuhan saya jadi malah terlalu restriktif. 😅”*
+
+Mas Iqbal justru senang orkestrasi makin banyak tersedia di dalam Amp, termasuk pengalamannya menghubungkan pekerjaan antar-server, Orbs, dan runner. Perspektif ini masuk akal juga: makin sedikit komponen luar yang harus dirawat, makin ringan setup-nya. Meski demikian, keterikatan Space ke project jangan disalahartikan sebagai bukti isolasi akses; dalam percobaan saya, threads masih bisa berkomunikasi dengan threads di luar project-nya.
+
+Ada pembaruan lain yang lebih mudah langsung saya pahami manfaatnya: [integrasi GitLab](https://ampcode.com/news/gitlab). Dokumentasi resminya mencakup repository hosted maupun self-managed, serta komentar review dan hasil CI yang kembali ke thread pengerjaan. Mas Restu juga membagikan [Artifacts](https://ampcode.com/news/artifacts), dengan komentar *“fitur baru ni. gak perlu lagi share thread di Amp.”*
+
+Buat saya, langkah berikutnya menguji satu project kecil di Spaces sambil mempertahankan workflow lama. Saya ingin tahu dulu apakah pekerjaan lintas pekan jadi lebih mudah diurus, sebelum memindahkan semuanya.
+
+## Herdr desktop dan pertanyaan tentang laptop sendiri
+
+[Herdr](https://herdr.dev/) ramai dibahas sejak awal pekan. Mas Garseta ingin mencoba setelah sebelumnya kurang cocok dengan tool lain. Mas Aksal langsung bertanya apakah versi desktop menyediakan browser view. Mas Muhammad menanyakan hubungan Core dengan App dan kemungkinan koneksi ke server.
+
+Mas Michael menyukai pengalaman desktop-nya dan bercerita bahwa alternatif yang ia pakai sebelumnya terasa berat di laptopnya. Namun, pertanyaan Mas Muhammad tentang pemisahan Core dan App belum langsung menghasilkan jawaban yang pasti. Percakapan awal itu masih eksplorasi, jadi saya tidak akan menjadikannya panduan arsitektur remote.
+
+Yang menarik, situs Herdr memang memisahkan App, Core, layout, dan mods. Pengguna bisa menyesuaikan tampilan, sementara agent dapat meminta bantuan agent lain dan menerima laporannya. Di grup juga muncul [mods komunitas SWE GROWTH](https://github.com/swegrowthid/sweg-herdr-mods). Pilihan untuk mengutak-atik lingkungan kerja kelihatan jadi daya tarik tersendiri.
+
+Mas Zahid memberi pertanyaan yang bagus saat orang mulai antusias berpindah: *“Apa yg buat lebih enak daripada tern?”* Pertanyaan sederhana itu layak dibawa ke setiap percobaan tool baru. Coba satu pekerjaan yang biasa kita kerjakan, di mesin yang biasa kita pakai, baru lihat apakah perpindahannya memang mengurangi kerepotan.
+
+## Kuota: pengalaman bagus belum tentu berlaku di akun sebelah
+
+Perbandingan [Codex](https://openai.com/codex/) dengan [Claude Code](https://code.claude.com/docs/en/overview) minggu ini banyak datang dari pengalaman kerja sehari-hari. Mas Fatih bercerita bahwa pilihan favoritnya bergeser setelah ia merasakan perubahan kecepatan dan daya tahan kuota. Kesimpulan pribadinya cukup tegas: *“kalo ditanya, harus pilih 1, saya dengan yakin akan pilih GPT”*.
+
+Ia membandingkan pekerjaan frontend dan backend, termasuk prototype UI. Dalam pengalamannya, Terra 6.1 terasa lebih cepat dan kuotanya lebih awet. Tetapi ia sendiri menyebut perkiraannya kasar. Paket, model, effort, kompleksitas pekerjaan, dan riwayat context berbeda-beda; angka perbandingannya tidak bisa diperlakukan sebagai benchmark universal atau jaminan limit terbaru.
+
+Mas Agung merasakan kuota Codex lebih tahan lama juga, tetapi menambahkan keluhan yang penting: *“modelnya sering stop tengah jalan njir”*. Buat orang yang ingin meninggalkan agent bekerja, berhenti di tengah task bisa lebih mengganggu daripada angka token yang terlihat hemat.
+
+Di sisi [GitHub Copilot](https://github.com/features/copilot/plans), Mas Oshi membagikan testimoni tentang Fusion. Ia melaporkan monthly spending turun dari 3.8x menjadi 1.6x dengan workload yang menurutnya sama, tanpa merasa kualitas hasil menurun. Ini pengalaman pribadi Mas Oshi, bukan pengujian independen atau janji penghematan untuk semua pengguna.
+
+Saya lebih tertarik mencatat biaya per task yang benar-benar selesai, berikut jumlah intervensinya. Kalau harus terus menyuruh lanjut, selisih kuota yang kelihatan menarik bisa habis dibayar waktu kita sendiri.
+
+## DeepSeek: jalur akses ikut menentukan pengalaman
+
+[DeepSeek](https://deepseek.com) dan [OpenCode](https://opencode.ai) membawa percakapan kuota ke pilihan API langsung versus langganan. Mas Luthfi ingin opsi langganan karena khawatir biaya per token. Mas Abdan bertanya bagaimana membandingkan budget yang sama di provider resmi dan OpenCode.
+
+Mas Michael membedakan dua hal: kuota dari paket langganan bisa menarik, sementara efisiensi token dan kecepatan lewat harness atau provider lain belum tentu sama. Ia juga melaporkan cache hit tinggi dalam setup-nya. Saya membacanya sebagai hasil satu konfigurasi, bukan angka yang otomatis kita dapat setelah instalasi.
+
+Menjelang akhir pekan, Mas Muhammad membawa keluhan yang lebih mendesak: *“Opencode lg banyak timeout ya deepseek nya”*. Mas Michael membagikan tautan yang ia tafsirkan terkait penambahan GPU, tetapi dari chat saja kita belum bisa memastikan penyebab timeout. Mas Azmi menanggapinya dengan *“nunggu cheapseek part selanjutnya 😀”*.
+
+Kalau ingin membandingkan jalur akses, jalankan task serupa dan catat waktu respons, retry, serta biaya akhirnya. Paket murah yang sering timeout mungkin tetap berguna sebagai cadangan, tetapi belum tentu nyaman dijadikan jalur utama.
+
+## Agent bilang aman, apakah cukup?
+
+Obrolan tentang take-home test berbahaya memunculkan pertanyaan dari Mas Yustar: bagaimana kalau repository di-clone lalu direview AI dulu, sebelum dijalankan? Ia kemudian merangkum kekhawatirannya sendiri: *“Nah iya si. Ai nya blg aman trnyta ada malware wasalam uda”*.
+
+Angka kerugian dan dugaan insiden yang beredar di tautan grup belum saya verifikasi. Yang layak dibawa pulang dari percakapannya adalah batas kepercayaan saat bereksperimen: hasil review agent tidak otomatis membuat kode asing aman dijalankan, apalagi di mesin kerja yang menyimpan akses penting.
+
+Di percakapan terpisah tentang database, Mas Abdan bertanya bagaimana agent di Orb bisa melakukan testing. Jawaban saya memakai database dengan seed data yang bisa dijalankan di environment tersebut. Itu juga memberi pertanyaan praktis untuk menilai cloud agent: apakah ia bisa menjalankan dependency yang dibutuhkan test kita?
+
+Untuk eksperimen berikutnya, saya ingin environment uji yang terpisah dengan data contoh. Agent perlu kesempatan menjalankan test yang nyata, tanpa harus mendapat akses ke data produksi.
+
+## ⚡ Quick Hits
+
+- **Design skill:** Mas Iqbal menanyakan skill desain untuk Amp. [Impeccable](https://github.com/pbakaus/impeccable) dibagikan sebagai bahan percobaan. Dari pengalaman saya, referensi visual yang jelas tetap membantu; jangan berharap memasang skill saja langsung menyelesaikan semua masalah UI.
+- **Menulis pengalaman setup:** Mas Didik membagikan [Build Your Own X Stack](https://didik.id/2026/11/03/build-your-own-x-stack/). Ini pas dengan diskusi kita yang terus berganti kombinasi tool.
+- **Bahan bacaan model:** Mas Michael membagikan [Don't Call It a Decision Model](https://typesafe.ai/blog/dont-call-it-a-decision-model). Bacaan tambahan untuk percakapan tentang model khusus, di luar coding agent sehari-hari.
+- **Sharing komunitas:** Mas Zikrul menyiapkan sesi bersama Mas Zahid tentang evolusi tool, routing per peran, effort, worktree, memory, dan quality gate. Daftar topiknya sendiri sudah bisa dipakai untuk mengecek bagian setup kita yang belum pernah dievaluasi.
+
+Saya akan mulai dari satu catatan setup yang bisa diulang orang lain. Itu lebih berguna daripada daftar panjang tool yang pernah saya instal tetapi sudah lupa alasan memilihnya.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Uji [Spaces](https://ampcode.com/news/spaces) di satu project kecil. Catat bagaimana handoff dan pekerjaan lintas pekan ditangani sebelum migrasi penuh.
+2. Coba [Herdr](https://herdr.dev/) dengan task harian di laptop sendiri. Periksa kenyamanan navigasi dan penggunaan resource, bukan hanya screenshot layout-nya.
+3. Bandingkan jalur [DeepSeek](https://deepseek.com) dengan task dan batas biaya yang sama. Masukkan retry serta timeout ke catatan hasil.
+4. Coba satu skill dari [Impeccable](https://github.com/pbakaus/impeccable) dengan referensi desain yang sama seperti sebelumnya, lalu bandingkan hasil dan jumlah revisinya.
+
+Pilih satu yang paling dekat dengan hambatan kerja sekarang. Tidak perlu mengganti seluruh stack dalam satu akhir pekan.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Didik:** navigasi Spaces, tulisan tentang stack, dan pertanyaan seputar coding agent.
+- **Mas Oshi:** perbandingan struktur project dan pengalaman biaya Fusion.
+- **Mas Iqbal:** orkestrasi Amp dan kebutuhan design skill.
+- **Mas Restu:** membagikan Artifacts.
+- **Mas Garseta, Mas Aksal, dan Mas Muhammad:** eksplorasi Herdr serta pengalaman timeout.
+- **Mas Zahid:** pertanyaan pembanding workflow dan materi sharing setup.
+- **Mas Fatih dan Mas Agung:** pengalaman kuota, kecepatan, dan agent yang berhenti di tengah pekerjaan.
+- **Mas Luthfi, Mas Abdan, Mas Michael, dan Mas Azmi:** jalur akses DeepSeek, percobaan tool, dan humor di sela troubleshooting.
+- **Mas Yustar:** batas kepercayaan terhadap review keamanan oleh AI.
+- **Mas Zikrul:** mengumpulkan pertanyaan menjadi agenda sharing komunitas.
+- **Zain:** pengalaman mengatur threads dan kebutuhan environment testing.
+
+Pengalaman mereka berbeda-beda; detail mesin, paket, dan task itulah yang membuat percakapannya berguna saat kita menentukan percobaan berikutnya.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 8 November 2026*
