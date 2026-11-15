@@ -1,0 +1,136 @@
+---
+meta:
+  - title: "Dial Hilang, Workflow Ikut Berubah — AI Tools Digest #42"
+  - name: description
+    content: "Amp mengganti Dial, kuota habis karena prompt, dan pengalaman Devin yang berbeda-beda. Rangkuman dari grup AI Tools SWE GROWTH, 8–15 November 2026."
+  - author: Zain Fathoni
+  - date: "2026-11-15"
+  - lang: id
+  - property: og:title
+    content: "Dial Hilang, Workflow Ikut Berubah — AI Tools Digest #42"
+  - property: og:description
+    content: "Amp mengganti Dial, kuota habis karena prompt, dan pengalaman Devin yang berbeda-beda. Rangkuman dari grup AI Tools SWE GROWTH, 8–15 November 2026."
+  - property: og:url
+    content: "https://www.zainfathoni.com/blog/ai-tools-swe-growth-nov-8-nov-15-2026"
+  - property: og:image
+    content: "https://www.zainfathoni.com/assets/blog-og-ai-tools-digest-42.png"
+  - property: og:image:width
+    content: "1200"
+  - property: og:image:height
+    content: "630"
+  - property: og:image:alt
+    content: "Dial Hilang, Workflow Ikut Berubah — AI Tools Digest #42"
+  - name: twitter:card
+    content: summary_large_image
+
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# Dial Hilang, Workflow Ikut Berubah — AI Tools Digest #42
+
+Baru selesai membiasakan diri dengan mode, menulis skills yang menyebut mode itu, lalu pilihan modenya dihapus. Begitulah minggu ini bersama [Amp](https://ampcode.com). 😅
+
+Tapi obrolan kita sepanjang 8–15 November justru banyak berhenti di persoalan yang lebih dekat: kenapa kuota cepat habis, perlu berapa banyak konteks untuk satu tugas, dan apakah pindah harness betulan membantu pekerjaan sehari-hari. Model baru tetap lewat di timeline. Yang bikin percakapannya panjang adalah pengalaman setelah tombol Run ditekan.
+
+## Dial pergi, siapa yang bayar jadi lebih jelas
+
+[Amp mengumumkan penggantian Dial dengan model selector](https://ampcode.com/news/bye-bye-dial) pada 12 November. Model dan effort sekarang bisa dipilih, termasuk diganti di tengah thread. Selector juga memperlihatkan sumber tagihannya: subscription, API key, atau kredit Amp.
+
+Buat yang sebelumnya bergantung pada abstraksi low sampai ultra, perubahan ini terasa di instruksi yang sudah terlanjur ditulis. Mas Dedy merangkumnya dengan, *no more "create a low mode thread to handle this scope" 🥲*. Saya juga mesti menyesuaikan skills yang masih nempel ke Mode Dials.
+
+Ada alasan praktis di balik perubahan itu. Saat beberapa subscription bisa dipakai dalam satu tempat, label medium tidak cukup menjelaskan uangnya keluar dari mana. Menurut pengumuman resminya, system prompt dan tools tetap disesuaikan untuk tiap model. Jadi memilih model di Amp tidak berarti harness-nya mendadak sama dengan semua aplikasi lain.
+
+Pengalaman Mbak Eka menarik di sini. Setelah mencoba dengan model dan instruksi yang sama, katanya, *Dengan model & instruksi yg sama, kayak responnya lebih "enak"(?) daripada Claude Code*. [Claude Code](https://code.claude.com/docs/en/overview) tetap jadi pembandingnya, tetapi ini pengalaman beliau, bukan hasil benchmark terkontrol. Saya sendiri ikut mengiyakan di obrolan.
+
+Yang masih perlu diperhatikan: pindah model di tengah thread juga punya biaya. Dokumentasi Amp menyebut cache prompt milik masing-masing model; model baru membaca ulang thread tanpa cache pada pergantian itu. Kalau sedang menghemat, jangan cuma lihat harga model tujuannya. Periksa juga panjang thread yang dibawa pindah.
+
+## Kuota habis gara-gara instruksi yang terlalu ambisius
+
+Mas Azam menemukan penyebab yang cukup relatable: permintaan pixel perfect, 60fps, dan make no mistakes membuat agent mengejar verifikasi yang luas. Bahkan aplikasi dengan input suara dan output audio ikut dites sampai muncul suara tengah malam.
+
+Komentarnya setelah melihat perilaku itu: *pantesan tengah malem tiba'' ada suara sendiri, karena ini app ada input suara dan output audio, lagi ngetest ternyata bang klod 🤣*, kata Mas Azam. Hasilnya memang minim revisi menurut beliau, tapi waktu dan kuotanya ikut terkuras.
+
+Obrolan lanjut ke pemisahan planning dan execution. Mas Michael menyarankan mematangkan plan dulu, lalu memilih model pelaksana yang sesuai. Mas Zahid menambahkan perlunya memetakan wireframe per screen sebelum mengeksekusi migrasi mobile ke web. Usulan itu lebih mudah dicoba daripada berharap agent otomatis memilih model termurah untuk semua langkah.
+
+Buat saya, ini pengingat untuk menulis acceptance criteria yang konkret. Sebut screen mana yang harus cocok, interaksi mana yang harus diuji, dan batas perubahan yang diizinkan. Untuk alur penting, tes tetap dibutuhkan; kita tidak perlu mengubah pelajaran soal boros kuota menjadi anjuran melewati verifikasi.
+
+Keluhan lain muncul waktu Mas Fajri mencoba planning sekaligus execution dengan model Fable 5.2 yang sedang dibahas: *Fable 5.2 disuruh bikin plan sama execution kenceng amat (progress dan quota habis) 🤣*. Itu laporan pemakaian beliau, bukan pengukuran biaya yang bisa langsung dipakai untuk memperkirakan tagihan orang lain.
+
+Kalau kuota terus habis, coba audit satu thread yang paling mahal: bagian mana yang memang diminta, dan bagian mana yang muncul karena instruksinya terlalu luas?
+
+## Banyak direktori boleh, konteks tetap harus dipilih
+
+Pertanyaan Mas Abdan tentang project, runner lokal, dan Orb membuka obrolan yang lebih berguna daripada sekadar membandingkan nama model. Satu runner yang menemukan banyak direktori memang nyaman. Tapi apakah semua direktori itu perlu dibaca dalam satu tugas?
+
+Mas Didik mengingatkan, *apapun tool-nya, saya biasanya menghindari setup project yang multi direktori gitu. Takut agentnya memakan konteks terlalu banyak 🍖*. Mas Abdan kemudian menjelaskan bahwa runner-nya menemukan banyak direktori, sementara thread tetap diarahkan ke direktori spesifik. Jadi discovery lintas direktori dan memasukkan seluruh konteks ke satu thread perlu dibedakan.
+
+Saya sendiri menjelaskan kegunaan project untuk discovery: ketika project sudah disambungkan, menyuruh agent melihat contoh di project lain jadi lebih gampang. Mas Didik memilih mendelegasikan pencarian supaya agent mengambil konteks yang diperlukan saja. Mas Indra juga membagikan [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) sebagai opsi pencarian berbasis struktur kode.
+
+Repo itu menyediakan code intelligence berbasis graph. Belum ada pengukuran bersama di percakapan ini yang membuktikan berapa token bisa dihemat, jadi jangan langsung menganggap memasang MCP otomatis menyelesaikan masalah konteks.
+
+Mulai dari instruksi yang bisa diperiksa: cari implementasi rujukan, kembalikan file yang relevan, baru putuskan apa yang perlu dibaca lebih jauh. Ukur hasilnya pada tugas yang biasa kamu kerjakan sebelum menambah lapisan tooling lagi.
+
+## Devin: sama-sama SWE, pengalaman kecepatannya beda
+
+[Devin](https://devin.ai) kembali ramai karena dipakai sebagai alternatif saat kuota lain menunggu reset. Mas VeryCoolApps menunjukkan eksperimen dengan SWE-2 Flash dan menyebutnya kencang; beliau juga memakai Devin sambil menunggu kuota Claude pulih.
+
+Tapi Mas Zahid punya pengalaman berbeda dengan SWE-2: lambat pada percobaan sebelumnya. Mas Fajri membalas, *Masa?
+Kemaren saya coba lancar aja mas SWE 2 Max*. Mas Zahid kemudian menjelaskan bahwa beliau belum mencoba ulang. Kita belum punya basis untuk menyimpulkan satu laporan membatalkan yang lain: varian, effort, dan waktu percobaannya pun perlu dicatat.
+
+Mas Iqbal tertarik pada kombinasi model di Devin, tetapi terang-terangan bilang perhitungannya belum dicoba. Bagian itu penting dipertahankan. Rencana workflow yang terlihat lega di atas kertas belum sama dengan pengalaman menjalankannya seminggu.
+
+[Dokumentasi model Devin](https://docs.devin.ai/cli/models) menjelaskan pilihan model, reasoning level, dan Fusion yang memasangkan lead model dengan sidekick lebih hemat. Sementara itu, obrolan soal [DeepSeek](https://www.deepseek.com) memperlihatkan variasi konsumsi yang besar. Mas Kasjful melaporkan sekitar $20 sebulan untuk pemakaiannya yang dibayari kantor; angka itu bukan tarif paket atau jaminan biaya untuk tugas kita.
+
+Kalau mau membandingkan, jalankan tugas kecil yang sama, catat varian model dan effort, lalu periksa hasil serta tagihannya. Klaim cepat dan murah baru berguna kalau beban kerjanya ikut disebut.
+
+## ⚡ Quick Hits dari yang benar-benar dipakai
+
+- **Direktori komunitas ikut dibenahi.** Mas Didik sempat kesulitan menemukan katalog tools. Mas Arif menindaklanjuti masukan wording dan UX di [AI SWE Growth](https://ai.swegrowth.id/). Mas Michael kemudian membagikan pembaruan voting tools dan login memakai akun SWE Growth. Pembaca bisa ikut vote berdasarkan pengalaman, bukan cuma nama yang paling sering muncul.
+
+- **Motion skills sudah ada contoh penggunaannya.** Mas Kasjful membagikan hasil yang menurut beliau dibuat kurang dari 15 menit dengan effectcraft-cli, lalu memasukkannya ke [entri Effectcraft Motion Skills](https://ai.swegrowth.id/entry/?s=effectcraft-motion-skills). Itu durasi percobaan beliau; kompleksitas video lain tentu bisa berbeda.
+
+- **Integrasi harness juga dikerjakan dari dalam komunitas.** Mas Didik membagikan [PR dukungan DeepSeek di Tycho](https://github.com/firewalker06/tycho/pull/347) sambil mencari gambaran penggunaan normalnya. Pertanyaan soal biaya di sini datang dari kebutuhan implementasi yang konkret.
+
+- **Security audit mulai diberi pekerjaan.** Mas Fajri mencoba swarm sub-agent untuk audit per repo. Sebelumnya, beliau juga melaporkan satu percobaan [0.security](https://0.security/) menghabiskan sekitar $2 dari kredit yang diterima. Hasil audit tetap perlu ditinjau sebelum agent diberi tugas memperbaiki temuannya.
+
+Humornya tetap ada. Setelah obrolan panjang tentang beberapa engineer bernama Can, Mbak Eka menimpali, *Namanya aja `Can` bukan `Cannot`*. Lumayan buat jeda dari pembahasan kuota. 😅
+
+Dari semua link yang lewat, contoh pemakaian dan umpan balik seperti ini yang paling ingin saya simpan: ada sesuatu yang bisa dicoba ulang, ada batasannya, dan ada orang yang bisa ditanya soal pengalamannya.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Baca [perubahan model selector Amp](https://ampcode.com/news/bye-bye-dial), cek sumber billing, lalu perbarui instruksi yang masih menyebut Dial atau low-mode thread.
+
+2. Ambil satu tugas rutin untuk membandingkan konfigurasi model di [Devin](https://docs.devin.ai/cli/models). Catat model, effort, waktu, biaya, dan hasil review; hindari membandingkan dua pekerjaan yang berbeda.
+
+3. Kalau agent terlalu banyak membaca repo, perjelas batas direktori dan tugas pencariannya dulu. Baru evaluasi [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) bila kebutuhan pencarian strukturnya memang ada.
+
+4. Beri vote untuk tools yang benar-benar sudah dipakai di [direktori AI SWE Growth](https://ai.swegrowth.id/tools/). Tambahkan pengalaman yang bisa membantu pembaca berikutnya memilih.
+
+Saya akan mulai dari merapikan instruksi lama. Lebih gampang melihat dampaknya daripada mengganti seluruh workflow sekaligus.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Dedy:** perubahan instruksi setelah Dial dihapus.
+- **Mbak Eka:** pengalaman membandingkan harness dan humor Can.
+- **Mas Azam:** pelajaran dari instruksi UI dan konsumsi kuota.
+- **Mas Fajri:** percobaan model, kecepatan SWE, dan security audit.
+- **Mas Abdan:** pertanyaan tentang project, runner, dan batas direktori.
+- **Mas Didik:** pengelolaan konteks, discovery katalog, dan integrasi Tycho.
+- **Mas Indra:** referensi code intelligence untuk pencarian repo.
+- **Mas Michael:** pembaruan tools, pemisahan planning dan execution, serta direktori komunitas.
+- **Mas Zahid:** wireframe sebelum execution dan pembanding pengalaman SWE.
+- **Mas VeryCoolApps:** eksperimen SWE-2 Flash sambil menunggu reset.
+- **Mas Iqbal:** pertimbangan kombinasi model dan biaya sebelum berlangganan.
+- **Mas Kasjful:** pengalaman biaya DeepSeek dan contoh motion skills.
+- **Mas Arif:** tindak lanjut UX serta ajakan voting tools komunitas.
+
+Terima kasih sudah membagikan apa yang berhasil dan apa yang belum; detail seperti itulah yang membuat eksperimen minggu depan lebih terarah.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 15 November 2026*
