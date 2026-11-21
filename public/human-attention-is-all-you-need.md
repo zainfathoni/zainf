@@ -214,13 +214,16 @@ style: |
   .tl-shot { margin: 10px 0 0; }
   .tl-shot img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 10px; }
   .tl-shot figcaption { margin-top: 4px; font-size: 15px; color: var(--muted); }
-  .est { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 14px; align-items: start; }
-  .est .card + .card { margin-top: 8px; }
+  .est { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 6px; align-items: start; }
+  .est .card + .card { margin-top: 6px; }
+  .est .card strong { display: block; font-size: 20px; line-height: 1.2; }
+  .est .card p { line-height: 1.3; }
+  .est .card small { font-size: 15px; color: var(--muted); }
   .stacked.tight { justify-content: flex-start; }
   .est .card strong { font-size: 22px; }
   .est .small-list li { font-size: 22px; }
   .est .card { padding: 10px 16px; }
-  .est .card p { font-size: 19px; }
+  .est .card p { font-size: 18px; }
 
   /* P10: Cukup's explainer video. The PDF prints the poster frame. */
   /* Large media slide: a short text column and a big video or screenshot. */
@@ -2736,8 +2739,8 @@ TIMING: 2 menit · mulai sekitar 11:18.
 <div class="cards">
 
 <div class="card">
-<strong>Open source</strong>
-<p>Read its rules, change them, and run your own copy. Works with Amp. Find it at cukup.dev.</p>
+<strong>Open source · Amp only · One owner per install</strong>
+<p><a href="https://cukup.dev">cukup.dev</a> · <a href="https://github.com/zainfathoni/cukup">github.com/zainfathoni/cukup</a><br><small>Self-hosting tested only on my own install.</small></p>
 </div>
 
 <div class="card">
@@ -2800,7 +2803,7 @@ TIMING: 1 menit · selesai sekitar 11:23 · sisa sekitar 2 menit sebagai margin.
 - Thariq, [post on P0 and full attention](https://x.com/trq212/status/2112219173288120531) (19 October 2026)
 - Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762) (2017, title reference only)
 - Daniel Kahneman, [Thinking, Fast and Slow](https://www.penguin.co.uk/books/56314/thinking-fast-and-slow-by-kahneman-daniel/9780141033570) (2011)
-- [cukup.dev](https://cukup.dev): Cukup, open source, with a 1 min 38 s explainer video
+- [cukup.dev](https://cukup.dev) and [github.com/zainfathoni/cukup](https://github.com/zainfathoni/cukup): Cukup, open source, Amp only, one owner per install, with a 1 min 38 s explainer video
 
 </div>
 
