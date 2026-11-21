@@ -214,7 +214,10 @@ style: |
   .tl-shot { margin: 10px 0 0; }
   .tl-shot img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 10px; }
   .tl-shot figcaption { margin-top: 4px; font-size: 15px; color: var(--muted); }
-  .est { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 6px; align-items: start; }
+  .est { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 6px; align-items: stretch; }
+  .est .limits { display: flex; align-items: center; }
+  .est .limits .small-list { margin: 0; padding-left: 24px; }
+  .est .limits .small-list li + li { margin-top: 10px; }
   .est .card + .card { margin-top: 6px; }
   .est .card strong { display: block; font-size: 20px; line-height: 1.2; }
   .est .card p { line-height: 1.3; }
@@ -2728,7 +2731,7 @@ TIMING: 2 menit · mulai sekitar 11:18.
 <figure class="tl-shot"><img src="assets/human-attention-cukup-timeline.png" alt="Cukup Activity timeline, demo data: one day from 00:00 to 24:00 with a few recorded blocks in the morning, 2h 30m in total."><figcaption>Cukup Activity timeline · one day · demo data</figcaption></figure>
 
 <div class="est">
-<div>
+<div class="card limits">
 
 <ul class="small-list">
 <li>It does not measure attention, quality, productivity, burnout or your worth.</li>
