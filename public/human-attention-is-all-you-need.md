@@ -118,6 +118,214 @@ style: |
     align-items: center;
   }
 
+  /* P5: Thariq's post as a screenshot, given the wider column so its text stays readable. */
+  .slide.p0 {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+  }
+
+  .slide.p0 .visual { padding: 18px; }
+
+  .slide.p0 img.post {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+
+  /* Small segue card under a P7 slide's text: a pointer to related work, not a new point. */
+  .segue {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fafafa;
+  }
+
+  .segue img {
+    width: 200px;
+    border-radius: 8px;
+  }
+
+  .segue p {
+    grid-column: auto;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.35;
+    color: #374151;
+  }
+
+  .segue p:only-child { grid-column: 1 / -1; }
+
+
+  .segue b {
+    display: block;
+    font-size: 19px;
+    color: var(--text);
+  }
+
+  /* "This can wait" joke slide: dark purple with a sunset band; the headline is the focus. */
+  section.gta { color: #fdf2f8; }
+  section.gta::after, section.gta footer { color: #c4b5fd; }
+
+  section.gta .sunset {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 38%;
+    background: linear-gradient(180deg, rgba(30, 11, 51, 0) 0%, rgba(236, 72, 153, 0.55) 55%, rgba(249, 115, 22, 0.85) 100%);
+  }
+
+  .gta-slide {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: 36px;
+    align-items: center;
+    height: 100%;
+  }
+
+  .gta-slide img.post {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
+  }
+
+  .gta-slide .caption { color: #e9d5ff; }
+
+  .gta-slide .eyebrow { color: #f9a8d4; }
+
+  .gta-slide h2 {
+    font-size: 54px;
+    line-height: 1.05;
+    color: #fff;
+  }
+
+  .gta-slide h2::after { background: linear-gradient(90deg, #ec4899, #f97316); }
+
+  /* Working Time slide: one real timeline crop across the slide, then the limits and cards. */
+  .tl-shot { margin: 10px 0 0; }
+  .tl-shot img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 10px; }
+  .tl-shot figcaption { margin-top: 4px; font-size: 15px; color: var(--muted); }
+  .est { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 14px; align-items: start; }
+  .est .card + .card { margin-top: 8px; }
+  .stacked.tight { justify-content: flex-start; }
+  .est .card strong { font-size: 22px; }
+  .est .small-list li { font-size: 22px; }
+  .est .card { padding: 10px 16px; }
+  .est .card p { font-size: 19px; }
+
+  /* P10: Cukup's explainer video. The PDF prints the poster frame. */
+  /* Large media slide: a short text column and a big video or screenshot. */
+  .showcase {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 36px;
+    align-items: center;
+    height: 100%;
+  }
+
+  .showcase h2 { font-size: 46px; }
+
+  .showcase > video,
+  .showcase > img,
+  .showcase > p > img {
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Group photo slide: the photo fills the slide; the dashed box holds its place until then. */
+  .photo-slide {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .photo-slide .photo-todo,
+  .photo-slide img {
+    flex: 1;
+    margin: 14px 0 22px;
+    border-radius: 16px;
+  }
+
+  .photo-slide img { width: 100%; min-height: 0; object-fit: cover; }
+
+  .photo-todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px dashed var(--red);
+    background: #fef2f2;
+    color: #991b1b;
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  /* Alan/Ben audience moment: both lists readable from the back; the takeaway is one fragment. */
+  .asch h2 { font-size: 50px; }
+
+  .asch .people {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 18px;
+  }
+
+  .asch .person {
+    padding: 14px 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fafafa;
+  }
+
+  .asch .person b {
+    display: block;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 34px;
+  }
+
+  .asch .person p { margin: 6px 0 0; font-size: 26px; line-height: 1.35; font-weight: 600; }
+
+  .asch .prompts { margin: 18px 0 0; font-size: 28px; font-weight: 700; line-height: 1.35; }
+
+  .asch ul { list-style: none; margin: 12px 0 0; padding: 0; }
+
+  .asch .reveal {
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #9a3412;
+  }
+
+  /* The first two traits light up with the reveal; before it, every trait looks alike.
+     box-shadow pads the highlight without moving the text. The PDF prints the revealed state. */
+  .asch mark { padding: 0; border-radius: 4px; background: #fed7aa; box-shadow: 0 0 0 4px #fed7aa; color: #9a3412; transition: all 300ms; }
+  .asch:has(li[data-bespoke-marp-fragment="inactive"]) mark { background: transparent; box-shadow: none; color: inherit; }
+
+  .asch .credit { margin: 10px 0 0; font-size: 15px; color: var(--muted); }
+
+  .cukvid blockquote { margin: 0 0 16px; }
+  .cukvid blockquote p { font-size: 30px; }
+
+  .cukvid video {
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #fdf3df;
+  }
+
   .slide.wide-left {
     grid-template-columns: 1.12fr 0.88fr;
   }
@@ -172,6 +380,12 @@ style: |
     margin: 0 0 14px;
     font-size: 22px;
     color: #374151;
+  }
+
+  .nw { white-space: nowrap; }
+
+  .bio-card .nw {
+    white-space: nowrap;
   }
 
   .visual {
@@ -465,6 +679,47 @@ style: |
     background: #fafafa;
   }
 
+  /* One large key line in a text column: the P5 budget cue and the P6 focus cue. */
+  .keyline {
+    margin: 0 0 16px;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .aside .tagline {
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a3412;
+  }
+
+  .keysub {
+    margin: -12px 0 14px;
+    font-size: 21px;
+    color: #374151;
+  }
+
+  .keysub span {
+    margin-left: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .keyline span {
+    margin-left: 10px;
+    font-family: ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--muted);
+  }
+
   .aside p {
     margin: 8px 0 0;
     font-size: 21px;
@@ -530,7 +785,7 @@ style: |
     font-size: 23px;
   }
 
-  /* Three-week lanes: the same equal block per week, so the diagram shows no amounts. */
+  /* Three-week story: measured cards on top, a hand-drawn story sketch below. */
   .weeks {
     display: grid;
     grid-template-columns: 330px repeat(3, 1fr);
@@ -558,20 +813,6 @@ style: |
     line-height: 1.2;
   }
 
-  .weeks .blk {
-    height: 26px;
-    border-radius: 9px;
-    border: 2px solid #111827;
-  }
-
-  .blk.in { background: #fed7aa; }
-  .blk.amp { background: #bfdbfe; }
-  .blk.rev { background: var(--accent); }
-  .blk.open {
-    background: repeating-linear-gradient(135deg, #fff 0 8px, #d1d5db 8px 16px);
-  }
-  .blk.late { background: #374151; }
-
   .weeks.mini {
     grid-template-columns: 190px repeat(3, 1fr);
     gap: 6px 8px;
@@ -581,9 +822,215 @@ style: |
 
   .weeks.mini .wk { font-size: 13px; }
   .weeks.mini .lane { font-size: 15px; }
-  .weeks.mini .blk { height: 16px; border-width: 1.5px; border-radius: 6px; }
+
+  /* Story sketch under the measured cards: one track per week, aligned with the cards.
+     Segment positions show the order of the story (issues arrive, Amp works, results wait
+     for my check, late evenings) and are drawn by hand, not measured. */
+  .weeks .tl {
+    position: relative;
+    height: 14px;
+    border-radius: 4px;
+    background: #eef0f3;
+  }
+
+  .weeks .tl i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 4px;
+  }
+
+  .tl.in i { background: #fdba74; }
+  .tl.amp i { background: #93c5fd; }
+  .tl.rev i { background: var(--accent); }
+  .tl.open i { background: repeating-linear-gradient(135deg, #fff 0 6px, #c4c8cf 6px 12px); }
+  .tl.late i { background: #374151; }
+  .tl .x0w6 { left: 0%; width: 6%; }
+  .tl .x0w8 { left: 0%; width: 8%; }
+  .tl .x0w46 { left: 0%; width: 46%; }
+  .tl .x0w100 { left: 0%; width: 100%; }
+  .tl .x4w4 { left: 4%; width: 4%; }
+  .tl .x6w4 { left: 6%; width: 4%; }
+  .tl .x6w6 { left: 6%; width: 6%; }
+  .tl .x8w14 { left: 8%; width: 14%; }
+  .tl .x10w4 { left: 10%; width: 4%; }
+  .tl .x10w10 { left: 10%; width: 10%; }
+  .tl .x14w6 { left: 14%; width: 6%; }
+  .tl .x14w14 { left: 14%; width: 14%; }
+  .tl .x22w4 { left: 22%; width: 4%; }
+  .tl .x22w10 { left: 22%; width: 10%; }
+  .tl .x22w20 { left: 22%; width: 20%; }
+  .tl .x26w12 { left: 26%; width: 12%; }
+  .tl .x30w4 { left: 30%; width: 4%; }
+  .tl .x30w6 { left: 30%; width: 6%; }
+  .tl .x34w16 { left: 34%; width: 16%; }
+  .tl .x40w4 { left: 40%; width: 4%; }
+  .tl .x44w6 { left: 44%; width: 6%; }
+  .tl .x44w12 { left: 44%; width: 12%; }
+  .tl .x46w54 { left: 46%; width: 54%; }
+  .tl .x48w4 { left: 48%; width: 4%; }
+  .tl .x50w6 { left: 50%; width: 6%; }
+  .tl .x50w12 { left: 50%; width: 12%; }
+  .tl .x52w14 { left: 52%; width: 14%; }
+  .tl .x58w4 { left: 58%; width: 4%; }
+  .tl .x62w4 { left: 62%; width: 4%; }
+  .tl .x62w12 { left: 62%; width: 12%; }
+  .tl .x66w6 { left: 66%; width: 6%; }
+  .tl .x66w14 { left: 66%; width: 14%; }
+  .tl .x66w20 { left: 66%; width: 20%; }
+  .tl .x72w6 { left: 72%; width: 6%; }
+  .tl .x76w4 { left: 76%; width: 4%; }
+  .tl .x80w10 { left: 80%; width: 10%; }
+  .tl .x80w16 { left: 80%; width: 16%; }
+  .tl .x84w6 { left: 84%; width: 6%; }
+  .tl .x90w4 { left: 90%; width: 4%; }
+  .tl .x92w6 { left: 92%; width: 6%; }
+  .tl .x94w6 { left: 94%; width: 6%; }
+  .tl .x96w4 { left: 96%; width: 4%; }
+  .weeks.mini .tl { height: 10px; border-radius: 3px; }
+  .weeks.mini .tl i { border-radius: 3px; }
 
   .weeks .dim { opacity: 0.25; }
+
+  /* Measured row: Recorded Working Time from the Cukup dashboard (Work track, full ISO weeks),
+     redrawn as dark cards. All bars share one 0-70h scale, so the weeks compare honestly;
+     the dashed mark is the personal 40h goal. One muted colour: no good/bad signal. */
+  .weeks.story {
+    grid-template-columns: 340px repeat(3, 1fr);
+    gap: 5px 16px;
+    padding: 12px 22px;
+  }
+
+  .weeks.story .lane {
+    font-size: 18px;
+  }
+
+  .weeks .lane.mine {
+    color: #9a3412;
+    font-weight: 800;
+  }
+
+  /* The question the story ends on, visible so the speaker needs no notes. */
+  .weeks .ask2 {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .weeks .ask2 span { color: var(--muted); font-weight: 600; }
+
+  .weeks .meas {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .weeks .meas small {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .weeks .ctx {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #d1d5db;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .wcard {
+    padding: 10px 14px 9px;
+    border: 1px solid #6b5f52;
+    border-radius: 14px;
+    background: #231d19;
+    color: #f4ecdc;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  .wcard .k {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c9bfae;
+  }
+
+  .wcard b {
+    display: block;
+    margin-top: 2px;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 32px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    color: #f4ecdc;
+  }
+
+  .wcard .bar {
+    position: relative;
+    display: block;
+    height: 14px;
+    margin-top: 8px;
+    border: 1px solid #c9bfae;
+    border-radius: 5px;
+    background: #3a322b;
+  }
+
+  .wcard .bar i {
+    display: block;
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    background: #8f8577;
+  }
+
+  .wcard.w1 .bar i { width: 84%; }   /* 58h 48m / 70h */
+  .wcard.w2 .bar i { width: 88.6%; } /* 62h 2m / 70h */
+  .wcard.w3 .bar i { width: 48%; }   /* 33h 35m / 70h */
+
+  .wcard .bar::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    left: 57.14%; /* 40h / 70h */
+    border-left: 2px dashed #f4ecdc;
+  }
+
+  .wcard .goal {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #c9bfae;
+  }
+
+  .weeks.mini.story {
+    grid-template-columns: 150px repeat(3, 1fr);
+    gap: 4px 8px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+  }
+
+  .weeks.mini.story .lane { font-size: 13px; }
+
+  .weeks.mini .meas { font-size: 14px; }
+  .weeks.mini .meas small { font-size: 12px; margin-top: 2px; }
+  .weeks.mini .ctx { margin-top: 4px; padding-top: 6px; font-size: 11px; }
+  .weeks.mini .wcard { padding: 6px 9px 7px; border-radius: 10px; }
+  .weeks.mini .wcard .k { font-size: 10px; }
+  .weeks.mini .wcard b { font-size: 19px; }
+  .weeks.mini .wcard .bar { height: 8px; margin-top: 5px; border-radius: 3px; }
+  .weeks.mini .wcard .bar::after { top: -3px; bottom: -3px; }
 
   /* One contrast per element: the response to leave, and the response to try. */
   .vs {
@@ -646,15 +1093,32 @@ style: |
 
   .tdd p {
     margin: 0;
+  }
+
+  /* Each line is a Marp fragment: "Test" shows on the first key press, "Token" on the second.
+     "Test" is struck only once "Token" is visible; the PDF prints the final, struck state. */
+  .tdd ul {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+  }
+
+  .tdd li {
+    margin: 0;
     font-size: 23px;
+    line-height: 1.35;
     white-space: nowrap;
   }
 
   .tdd del {
     color: var(--muted);
-    text-decoration-color: var(--red);
-    text-decoration-thickness: 3px;
-    margin-right: 8px;
+    text-decoration: line-through var(--red) 3px;
+    transition: color 300ms, text-decoration-color 300ms;
+  }
+
+  .tdd li:has(+ li[data-bespoke-marp-fragment="inactive"]) del {
+    color: var(--text);
+    text-decoration-color: transparent;
   }
 
   .tdd ins {
@@ -662,6 +1126,227 @@ style: |
     text-decoration: none;
     font-weight: 800;
     color: #9a3412;
+  }
+
+  /* TDD proof: the real Amp notice from the thread that made this deck. Each cue is a
+     fragment and lights its own box on the screenshot; the PDF prints both boxes. */
+  .token-slide {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 32px;
+    align-items: center;
+    height: 100%;
+  }
+
+  .token-slide h2 { margin: 8px 0 0; font-size: 46px; }
+
+  .tk-clock {
+    margin: 10px 0 4px;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .tk-clock small {
+    display: block;
+    margin-top: 6px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--muted);
+  }
+
+  .tk-text ul { list-style: none; margin: 14px 0 0; padding: 0; }
+  .tk-text li { margin: 0 0 10px; font-size: 24px; font-weight: 700; line-height: 1.25; }
+  .tk-text .punch2 { color: #9a3412; }
+  .tk-text .q3 { display: block; padding-top: 10px; border-top: 2px solid var(--line); font-size: 22px; color: var(--text); }
+
+  .shot { position: relative; }
+  .shot img { display: block; width: 100%; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+
+  .shot .hl {
+    position: absolute;
+    border: 4px solid var(--accent);
+    border-radius: 14px;
+    box-shadow: 0 0 0 4px rgba(242, 140, 40, 0.25);
+    transition: opacity 300ms;
+  }
+
+  .shot .h1 { left: 1.5%; top: 53.5%; width: 97%; height: 29.5%; }
+  .shot .h2 { left: 7.6%; top: 84.2%; width: 38.6%; height: 11.8%; }
+
+  /* I did not click "Use Megawatt Instead": cross it out instead of ringing it. */
+  .shot .hl.h2 {
+    border: 0;
+    box-shadow: none;
+    background:
+      linear-gradient(to top right, transparent calc(50% - 3px), var(--red) calc(50% - 3px), var(--red) calc(50% + 3px), transparent calc(50% + 3px)),
+      linear-gradient(to bottom right, transparent calc(50% - 3px), var(--red) calc(50% - 3px), var(--red) calc(50% + 3px), transparent calc(50% + 3px));
+  }
+
+  .token-slide:has(li:nth-child(1)[data-bespoke-marp-fragment="inactive"]) .h1,
+  .token-slide:has(li:nth-child(2)[data-bespoke-marp-fragment="inactive"]) .h2 {
+    opacity: 0;
+  }
+
+  /* Silent handoff card after Q&A. Clarence's picture replaces the card later. */
+  section.tbc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tbc-card {
+    margin: 0;
+    padding: 18px 40px;
+    border: 4px solid #f4ecdc;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #f4ecdc;
+  }
+
+  /* Handoff: Clarence's slide (added when his export arrives) gets "つづく" in the
+     bottom-right corner, the anime "to be continued" mark. */
+  .tsuzuku {
+    position: absolute;
+    right: 40px;
+    bottom: 28px;
+    margin: 0;
+    padding: 4px 18px;
+    background: rgba(17, 24, 39, 0.85);
+    color: #fff;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    border-radius: 8px;
+  }
+
+  /* Doomscroll joke: three screenshots stacked like a feed. Marp reveals each list item on a
+     key press in the HTML deck; the PDF prints all three, with X in front. */
+  .feed-slide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feed-slide h2::after {
+    margin: 18px 0 0;
+  }
+
+  .feed {
+    position: relative;
+    flex: 1;
+    margin-top: 14px;
+  }
+
+  .feed ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .feed li {
+    position: absolute;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .feed li + li {
+    margin-top: 0;
+  }
+
+  .feed li img {
+    display: block;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.18);
+    background: #fff;
+  }
+
+  .feed li:nth-child(1) { left: 0; top: 0; }
+  .feed li:nth-child(1) img { width: 450px; }
+
+  .feed li:nth-child(2) { left: 240px; top: 44px; }
+  .feed li:nth-child(2) img { width: 450px; }
+
+  .feed li:nth-child(3) { right: 0; top: 70px; }
+  .feed li:nth-child(3) img { width: 560px; }
+
+  /* On-stage cues: the setup is visible before the first reveal; each screenshot brings its
+     own short meaning cue; the punchline is part of the X item, so it never shows before X. */
+  .setup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .setup span {
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+  }
+
+  .setup span:last-child {
+    background: #fff7ed;
+    color: #9a3412;
+  }
+
+  /* "Work everywhere" lands with the CVE screenshot, not before it. The PDF has no inactive
+     fragments, so it prints the full line. */
+  .feed-slide:has(.feed li:nth-child(3)[data-bespoke-marp-fragment="inactive"]) .setup .late {
+    visibility: hidden;
+  }
+
+  .setup i {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .feed .say {
+    margin-left: 8px;
+    padding: 3px 12px;
+    border-radius: 8px;
+    background: var(--text);
+    color: #fff;
+    font-size: 21px;
+    font-weight: 800;
+  }
+
+  .feed .punch {
+    position: absolute;
+    right: 0;
+    top: -262px;
+    width: 400px;
+    line-height: 1.1;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-align: right;
+    color: var(--red);
+  }
+
+  .feed .src {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 3px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--muted);
+  }
+
+  .feed .src b {
+    color: var(--text);
   }
 
   .vs .to p + p {
@@ -738,7 +1423,310 @@ style: |
 
   .handoff p {
     margin: 4px 0 0;
-    font-size: 23px;
+    font-size: 22px;
+  }
+
+  /* Joke openers for Stage 5 and Stage 8: one big line, then short reveals. */
+  .opener {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .opener .big1 {
+    margin: 18px 0 0;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--text);
+  }
+
+  .opener .big1 i { font-style: normal; color: var(--accent); }
+
+  .opener .vnotes {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .opener .vnotes span {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #ecfdf5;
+    border: 1.5px solid #6ee7b7;
+    color: #065f46;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+  }
+
+  .opener .clock {
+    margin: 14px 0 0;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 120px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .opener .beats ul {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+  }
+
+  .opener .beats li {
+    margin: 0 0 14px;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #9a3412;
+  }
+
+  .opener .beats li + li {
+    margin-top: 0;
+    color: var(--text);
+  }
+
+  .opener .quoteline { font-style: italic; }
+
+  .opener .bsub {
+    display: block;
+    margin-top: 4px;
+    font-family: ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #374151;
+  }
+
+  .opener .bsub small { font-size: 17px; font-weight: 600; color: var(--muted); }
+
+  /* Figure 6 (Kahneman ch. 7): the same middle mark reads as B or 13 by context. The mark is
+     highlighted once its reveal is active; the printed PDF shows the highlight. */
+  .fig6 .rows {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  /* The sentence sits between the rows, as a distraction before the reveal. */
+  .fig6 .rows p.mid {
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+  .fig6 .rows p {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 88px;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  /* All six characters are drawn in one hand: same stroke, height and frame as the mark. */
+  .fig6 .rows img.hw {
+    height: 0.8em;
+    width: auto;
+    margin: 0 0.04em;
+    vertical-align: -0.04em;
+  }
+
+  .fig6 .glyph {
+    display: inline-block;
+    margin: 0 0.12em;
+    padding: 0 6px;
+    border-radius: 12px;
+    padding: 0 10px;
+    outline: 4px solid var(--accent);
+    outline-offset: 4px;
+    background: #fff7ed;
+  }
+
+  /* One drawn mark, used twice: a plain stroke and two detached rounded lobes, no flag or foot. */
+  .fig6 .glyph img {
+    display: inline-block;
+    height: 0.8em;
+    width: auto;
+    vertical-align: -0.04em;
+  }
+
+  .fig6:has(li [class="hl"]) .glyph { transition: outline-color 300ms, background 300ms; }
+  .fig6:has(li[data-bespoke-marp-fragment="inactive"] .hl) .glyph {
+    outline-color: transparent;
+    background: transparent;
+  }
+
+  .fig6 .beats ul { margin-top: 22px; }
+  .fig6 .beats li { font-size: 34px; }
+  .fig6 .beats li:nth-child(2) { color: var(--muted); }
+  .fig6 .banks { display: inline-flex; gap: 36px; align-items: center; }
+  .fig6 .banks .bk { display: inline-flex; align-items: center; gap: 12px; color: var(--text); }
+  .fig6 .banks img { height: 72px; }
+
+  /* "bank" gets a hand-drawn-style ring when the two meanings appear. */
+  .fig6 .bankword { position: relative; }
+  .fig6 .bankword::after {
+    content: "";
+    position: absolute;
+    inset: -6px -12px;
+    border: 4px solid var(--accent);
+    border-radius: 50%;
+    transform: rotate(-3deg);
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  .fig6:has(li:nth-child(2)[data-bespoke-marp-fragment="inactive"]) .bankword::after { opacity: 0; }
+
+  .fig6 .credit {
+    margin: 6px 0 0;
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* Stage 9: the leave week. Work is a planned goal (usual 40h, 16h with three days off);
+     Play is a limit; today and this week ask different questions. Neutral colours only. */
+  .stacked.tight h2 { font-size: 52px; }
+  .stacked.tight h2::after { margin: 10px 0 12px; }
+  .cuk-intro { margin: 0 0 10px; font-size: 24px; line-height: 1.3; }
+  .cuk .box .dw { font-size: 20px; }
+  .cuk .box .dw b { font-size: 16px; }
+  .cuk .box .leave .g b { font-size: 32px; }
+  .cuk .caption { margin-top: 6px; }
+
+  .cuk {
+    display: grid;
+    grid-template-columns: 1.75fr 1fr;
+    gap: 14px;
+  }
+
+  .cuk .box {
+    padding: 12px 18px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fafafa;
+  }
+
+  .cuk .box.wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .cuk .tag {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #374151;
+  }
+
+  .cuk p { margin: 0; }
+  .cuk .fine { margin-top: 6px; font-size: 16px; color: var(--muted); }
+  .cuk .big { margin-top: 10px; font-size: 24px; font-weight: 700; line-height: 1.25; }
+  .cuk .dw { font-size: 24px; }
+  .cuk .dw b {
+    margin-right: 10px;
+    padding: 2px 12px;
+    border-radius: 999px;
+    background: var(--text);
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .cuk .shots figure { margin: 0; }
+  .cuk .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .cuk .pair img { display: block; width: 100%; }
+  .cuk .pair img.tg { width: 56%; margin-bottom: 4px; }
+  .cuk .dwrow { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .cuk .dwrow .dw + .dw { margin-top: 8px; }
+  .cuk .pair figcaption { margin-top: 4px; font-size: 17px; font-weight: 700; }
+
+  .leave {
+    display: grid;
+    grid-template-columns: auto 26px auto;
+    gap: 12px;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .leave .g {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .leave .g b {
+    display: block;
+    font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
+    font-size: 38px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .leave .g.usual b { color: var(--muted); }
+  .leave .to { font-size: 26px; color: var(--accent); text-align: center; }
+
+  .leave .days {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+  }
+
+  .leave .days span {
+    padding: 4px 0;
+    border: 1.5px solid #374151;
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .leave .days span b {
+    display: block;
+    font-size: 19px;
+    color: var(--text);
+  }
+
+  .leave .days span.off {
+    border-style: dashed;
+    border-color: #9ca3af;
+    background: transparent;
+  }
+
+  .leave .days span.off b { color: #9ca3af; }
+
+  /* Stage 6 example: two Amp threads side by side inside the one Amp step. */
+  .handoff .par {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .handoff .par span {
+    padding: 8px 12px;
+    border: 1.5px solid var(--blue);
+    border-radius: 12px;
+    background: #fff;
+    font-size: 19px;
+    line-height: 1.2;
+  }
+
+  .handoff .par small {
+    display: block;
+    color: var(--muted);
+    font-size: 15px;
   }
 
   .handoff .arrow {
@@ -854,15 +1842,17 @@ style: |
       from { clip-path: inset(0 100% 0 0); }
     }
 
-    /* Stage 3: the weeks fill in one after another, to the same size. */
-    .weeks:not(.mini) .blk {
+    /* Stage 3: the measured weeks appear one after another and their bars grow to the real
+       totals; the story lanes come in after them. */
+    .weeks.story:not(.mini) .wcard { animation: ha-fade 400ms ease-out both; }
+    .weeks.story:not(.mini) .wcard .bar i {
       transform-origin: left center;
-      animation: ha-grow 550ms ease-out both;
+      animation: ha-grow 700ms ease-out both;
     }
-    .weeks:not(.mini) .wk { animation: ha-fade 400ms ease-out both; }
-    .weeks:not(.mini) :nth-child(4n+2) { animation-delay: 300ms; }
-    .weeks:not(.mini) :nth-child(4n+3) { animation-delay: 1100ms; }
-    .weeks:not(.mini) :nth-child(4n+4) { animation-delay: 1900ms; }
+    .weeks.story:not(.mini) .w1, .weeks.story:not(.mini) .w1 .bar i { animation-delay: 300ms; }
+    .weeks.story:not(.mini) .w2, .weeks.story:not(.mini) .w2 .bar i { animation-delay: 1100ms; }
+    .weeks.story:not(.mini) .w3, .weeks.story:not(.mini) .w3 .bar i { animation-delay: 1900ms; }
+    .weeks.story:not(.mini) .ctx ~ * { animation: ha-fade 500ms ease-out 2700ms both; }
 
     /* Mindfulness: the other lanes fade back, the two to notice stay. */
     .weeks .dim { animation: ha-dim 700ms ease-in-out 500ms both; }
@@ -904,9 +1894,8 @@ style: |
     .steps3 div:nth-child(2) { animation-delay: 3500ms; }
     .steps3 div:nth-child(3) { animation-delay: 3700ms; }
 
-    /* TDD joke: "Test" is struck out, then "Token" drops in. */
-    .tdd del { animation: ha-strike 400ms ease-in 900ms both; }
-    .tdd ins { animation: ha-drop 400ms ease-out 1400ms both; }
+    /* TDD joke: "Token" drops in when its fragment is revealed. */
+    .tdd li[data-bespoke-marp-fragment="active"] ins { animation: ha-drop 400ms ease-out both; }
   }
 ---
 
@@ -932,7 +1921,7 @@ style: |
 
 Senior Software Engineer at BookThatApp, based in Yogyakarta, Indonesia.
 
-Community builder (Ketua [VibeFromCafe.id](https://vibefromcafe.id)) · Agentic Engineering Practitioner.
+<span class="nw">Community builder</span> <span class="nw">(Ketua <a href="https://vibefromcafe.id">VibeFromCafe.id</a>)</span><br><span class="nw">Agentic Engineering Practitioner</span>
 
 <https://zainfathoni.com>
 
@@ -941,16 +1930,8 @@ Community builder (Ketua [VibeFromCafe.id](https://vibefromcafe.id)) · Agentic 
 </div>
 
 <!--
-P1 — Title Page · Clarity.
-TIMING: 1 menit · mulai 10:55 · pindah ke P2 sekitar 10:56.
-
-SAY:
-"AI bisa membantu kita mengerjakan lebih banyak hal, tapi apakah semua hal itu layak mendapat perhatian kita?"
-
-Judulnya plesetan dari paper "Attention Is All You Need" (2017). Talk ini bukan tentang Transformer, dan tidak menyamakan attention mesin dengan attention manusia.
-
-DRAFT — Zain:
-Hubungan dengan talk "You Don't Need CLI": setup lokal yang hilang membuat delegasi lebih mudah, tapi tidak memilih pekerjaan mana yang penting. Ceritakan perubahan itu hanya kalau sesuai dengan pengalaman Zain sendiri. Ini pertanyaan lanjutan, bukan penolakan terhadap agent paralel.
+P1 — Title Page
+TIMING: 45 detik (15 detik dipakai slide screenshot TDD) · mulai 10:55 · pindah ke P2 sekitar 10:55:45.
 -->
 
 ---
@@ -965,7 +1946,11 @@ Hubungan dengan talk "You Don't Need CLI": setup lokal yang hilang membuat deleg
 We hoped AI would make the work lighter and leave time for the task that matters.
 
 <div class="tdd">
-<p><span class="acronym">TDD</span> = <del>Test</del><ins>Token</ins>-Driven Development</p>
+<p class="acronym">TDD =</p>
+
+* <del>Test</del>-Driven Development
+* <ins>Token</ins>-Driven Development
+
 </div>
 
 </div>
@@ -989,19 +1974,63 @@ Have several running agents ever made you busy, but not closer to the one task t
 </div>
 
 <!--
-P2 — Common Ground · Trust.
+P2 — Common Ground
 TIMING: 1 menit · stage 1–2 selesai sekitar 10:57.
-
-SAY:
-"Kita memakai AI supaya pekerjaan lebih ringan dan ada ruang untuk hal yang penting, bukan supaya setiap waktu luang terisi tugas baru."
-Lelucon (sekitar 10 detik, masih di dalam 1 menit P2): "Dulu TDD itu Test-Driven Development. Sekarang kadang rasanya jadi Token-Driven Development." Beri jeda untuk tawa, lalu lanjut.
-Lalu tanyakan pertanyaan di slide. Tunggu sebentar.
-
-LIMITS:
-Leluconnya menertawakan kebiasaan kita bersama, bukan menyindir orang atau tim tertentu. Jangan jelaskan leluconnya.
-Ajak orang mengenali pengalaman ini, tapi jangan menganggap semua orang di ruangan mengalaminya. Jangan menyimpulkan apa pun dari jumlah tangan yang naik.
 -->
 
+---
+
+<div class="token-slide">
+<div class="tk-text">
+
+<span class="eyebrow">P2 · Common Ground</span>
+
+## Token-Driven Development, last night
+
+<p class="tk-clock">23:58<small>Amp, making this deck</small></p>
+
+* <span class="cue">My tokens ran out.</span>
+* <span class="cue punch2">I said cukup and continued in the morning.</span>
+* <span class="cue q3">Money made it easy to stop. What if money stops being the limit?</span>
+
+</div>
+<div class="shot">
+<img src="assets/human-attention-token-limit.png" alt="Amp thread titled IDSW 2026, Att..., waiting for comments on GitHub PR #127, with a notice: BookThatApp reached its limit. BookThatApp returned an out-of-usage error. You can deactivate this connection and use your Megawatt subscription. Buttons: Use Megawatt Instead, Retry.">
+<span class="hl h1"></span>
+<span class="hl h2"></span>
+</div>
+</div>
+
+<!--
+P2 (lanjutan) — bukti TDD dari semalam
+TIMING: sekitar 15 detik · waktunya diambil dari P1 (1 menit → 45 detik), jadi target penutup 11:23 tidak bergeser.
+-->
+
+---
+
+<div class="feed-slide">
+
+<span class="eyebrow">P2 · Common Ground</span>
+
+## I only wanted a short break
+
+<p class="setup"><span>First, learn to use AI well</span><i>→</i><span>Work from anywhere</span><i class="late">→</i><span class="late">Work everywhere</span></p>
+
+<div class="feed">
+
+* <span class="src"><b>Threads</b> · @naikleveldgnahwy</span><span class="say">Get rich with AI</span> ![Threads post by @naikleveldgnahwy about a friend who makes money with AI-made English lessons](assets/human-attention-feed-threads.png)
+* <span class="src"><b>Instagram</b> · @hmpgeoupi</span><span class="say">A debate in my feed</span> ![Instagram post by @hmpgeoupi pushing back on the Ring of Fire claim](assets/human-attention-feed-instagram.png)
+* <span class="src"><b>X</b> · @mustafasegf (swear word censored)</span> ![X post by @mustafasegf, swear word censored, quoting cve.now: CRITICAL, Linux kernel: 12 new CVEs](assets/human-attention-feed-x.png) <span class="punch">I came for a break.<br>I got more work.</span>
+
+</div>
+
+</div>
+
+<!--
+P2 (lanjutan) — setup singkat, lalu lelucon doomscroll tiga ketukan
+TIMING: 30–35 detik (setup sekitar 12 detik + lelucon 20–25 detik) · mulai sekitar 10:57 · cerita P3 mulai sekitar 10:57:35. Waktunya diambil dari slide P3 lanjutan (Yegge), jadi target penutup 11:23 tidak bergeser.
+Sumber: https://www.tempo.co/lingkungan/benarkah-cincin-api-pemicu-kebakaran-hutan-dan-lahan--2300648 · https://www.threads.com/@naikleveldgnahwy/post/Da-Gp5_CVAZ/ · https://www.instagram.com/p/DeqWjCEE2WX/ · https://x.com/mustafasegf/status/2123718131361464620
+-->
 ---
 
 <div class="stacked">
@@ -1010,30 +2039,28 @@ Ajak orang mengenali pengalaman ini, tapi jangan menganggap semua orang di ruang
 
 ## I still had to check what Amp made
 
-For three weeks, a colleague was on leave and I also took the new issues.
+Covering for a colleague on leave: three weeks of new issues, with Amp helping.
 
-<div class="weeks">
-<div></div><div class="wk">Week 1</div><div class="wk">Week 2</div><div class="wk">Week 3</div>
-<div class="lane">New issues come in</div><div class="blk in"></div><div class="blk in"></div><div class="blk in"></div>
-<div class="lane">Amp helps with the work</div><div class="blk amp"></div><div class="blk amp"></div><div class="blk amp"></div>
-<div class="lane">Results I must understand and check</div><div class="blk rev"></div><div class="blk rev"></div><div class="blk rev"></div>
-<div class="lane">Earlier work, still open</div><div class="blk open"></div><div class="blk open"></div><div class="blk open"></div>
-<div class="lane">Working late</div><div class="blk late"></div><div class="blk late"></div><div class="blk late"></div>
+<div class="weeks story">
+<div class="meas">Recorded working time<small>Cukup, Work track. Dashed line: my 40h personal goal. It counts hours only.</small></div>
+<div class="wcard w1"><span class="k">Week 1</span><b>58h 48m</b><span class="bar"><i></i></span></div>
+<div class="wcard w2"><span class="k">Week 2</span><b>62h 2m</b><span class="bar"><i></i></span></div>
+<div class="wcard w3"><span class="k">Week 3</span><b>33h 35m</b><span class="bar"><i></i></span></div>
+<div class="ctx">Story sketch · anonymized · bar lengths are not measured</div>
+<div class="lane">New issues kept coming</div><div class="tl in"><i class="x4w4"></i><i class="x30w4"></i><i class="x62w4"></i></div><div class="tl in"><i class="x6w4"></i><i class="x22w4"></i><i class="x40w4"></i><i class="x58w4"></i><i class="x76w4"></i><i class="x90w4"></i></div><div class="tl in"><i class="x10w4"></i><i class="x48w4"></i></div>
+<div class="lane">Amp helped with the work</div><div class="tl amp"><i class="x8w14"></i><i class="x34w16"></i><i class="x66w14"></i></div><div class="tl amp"><i class="x10w10"></i><i class="x26w12"></i><i class="x44w12"></i><i class="x62w12"></i><i class="x80w10"></i><i class="x94w6"></i></div><div class="tl amp"><i class="x0w6"></i><i class="x14w14"></i><i class="x52w14"></i></div>
+<div class="lane mine">I still had to check the results</div><div class="tl rev"><i class="x22w10"></i><i class="x50w12"></i><i class="x80w16"></i></div><div class="tl rev"><i class="x0w8"></i><i class="x22w20"></i><i class="x46w54"></i></div><div class="tl rev"><i class="x0w46"></i><i class="x66w20"></i></div>
+<div class="lane">Earlier work stayed open</div><div class="tl open"><i class="x0w100"></i></div><div class="tl open"><i class="x0w100"></i></div><div class="tl open"><i class="x0w100"></i></div>
+<div class="lane">I worked late</div><div class="tl late"><i class="x44w6"></i><i class="x72w6"></i><i class="x92w6"></i></div><div class="tl late"><i class="x14w6"></i><i class="x30w6"></i><i class="x50w6"></i><i class="x66w6"></i><i class="x84w6"></i><i class="x96w4"></i></div><div class="tl late"><i class="x6w6"></i><i class="x30w6"></i></div>
+
+<div class="ask2"><span>With Amp helping,</span> how much can I still handle well?</div>
 </div>
-
-<p class="caption">Anonymized personal account. The bars are illustrative, not measured.</p>
 
 </div>
 
 <!--
-P3 — Coming Problem · Fear. Cerita pribadi Zain (sudah disetujui, dianonimkan).
-TIMING: 1,5 menit · mulai sekitar 10:57.
-
-SAY:
-"Waktu seorang rekan sedang cuti, selama tiga minggu saya ikut menangani masalah baru yang terus masuk. Saya pakai Amp untuk membantu mengerjakannya. Tapi hasil yang sudah datang tetap perlu saya pahami dan periksa, sementara pekerjaan sebelumnya belum semua beres. Saya terus bekerja sampai larut malam. Pada minggu ketiga, saya jatuh sakit. Pertanyaannya bukan cuma: seberapa banyak yang bisa dibantu Amp? Tapi juga: seberapa banyak yang masih bisa saya tangani dengan baik?"
-
-LIMITS:
-Bagian sakit hanya diucapkan, tidak ada di slide. Ceritakan sebagai urutan kejadian, bukan sebab-akibat: jangan bilang Amp atau beban kerja terbukti membuat sakit. Jangan sebut nama rekan, tim, perusahaan, tanggal, PR, atau pelanggan. Diagram ini ilustrasi: blok tiap minggu sama besar dan tidak menunjukkan jumlah. Tidak ada data Cukup dari tiga minggu itu; jangan sebut angka waktu kerja.
+P3 — Coming Problem
+TIMING: 1,5 menit · mulai sekitar 10:57:35, setelah setup dan lelucon doomscroll.
 -->
 
 ---
@@ -1071,15 +2098,8 @@ I strongly believe in pacing AI outputs to human speeds.
 </div>
 
 <!--
-P3 (lanjutan) — dari cerita ke pola umum.
-TIMING: 1,5 menit · stage 3–4 selesai sekitar 11:01.
-
-SAY:
-"Saat AI menulis kode, kita masih perlu memilih arah, memahami perubahan, dan memeriksa hasilnya."
-Contoh luar, singkat saja: "Steve Yegge bercerita dari sisi lain: agent-nya membuat pemain kewalahan dengan fitur dan akuntannya kewalahan dengan email. Hasil AI juga harus diterima dan ditangani orang lain."
-
-LIMITS:
-Cerita utama stage 3 adalah cerita Zain; Yegge hanya contoh pendukung, bukan cerita kedua. Ini pengalaman dan pendapat Yegge, bukan temuan riset. Kutipan di slide berasal dari post-nya (sudah dibaca penuh 14 Nov 2026). Cerita di talk-nya ada di sekitar 9:38–10:15; kata-kata persisnya di rekaman belum dicek. Jangan kembali ke Yegge di stage 7–9.
+P3 (lanjutan) — dari cerita ke pola umum
+TIMING: sekitar 50 detik (dipotong sekitar 35 detik untuk setup dan lelucon doomscroll) · stage 3–4 tetap selesai sekitar 11:01.
 -->
 
 ---
@@ -1112,45 +2132,109 @@ At the end of the day:
 </div>
 
 <!--
-P4 — Emotional Win · Hope.
+P4 — Emotional Win
 TIMING: 1 menit · pindah ke P5 sekitar 11:01.
-
-SAY:
-"Bayangkan menutup laptop dengan memahami hasil pekerjaan yang penting, tahu apa yang masih tersisa, dan bisa berhenti tanpa harus menyelesaikan semuanya hari ini."
-
-LIMITS:
-Ini pengalaman yang diharapkan, bukan hasil yang sudah tercapai. Tujuannya peduli pada pekerjaan dan orangnya, bukan output maksimal dalam jam yang lebih sedikit.
 -->
 
 ---
 
-<div class="slide wide-left">
+<div class="opener">
+
+<span class="eyebrow">P5 · False Hope</span>
+
+<p class="big1">5 agents done <i>→</i> 5 voice notes</p>
+
+<div class="vnotes"><span>▶ ▁▃▅▂▆▃</span><span>▶ ▂▅▃▆▂▄</span><span>▶ ▃▂▆▄▁▅</span><span>▶ ▅▃▁▄▆▂</span><span>▶ ▂▆▄▂▅▃</span></div>
+
+<div class="beats">
+
+* You still hear them one by one.
+* <span class="budget">Attention has a budget.</span> <span class="bsub">Careful checking (System 2) takes effort.<br><small>Kahneman’s metaphor · <em>Thinking, Fast and Slow</em>, ch. 1–2</small></span>
+
+</div>
+
+</div>
+
+<!--
+P5 pembuka — lelucon voice note, lalu anggaran perhatian
+TIMING: sekitar 15 detik lelucon + 25 detik anggaran, di dalam 3 menit P5 (mulai sekitar 11:01). Menggantikan kalimat pembuka P5 yang lama.
+-->
+
+---
+
+<div class="opener fig6">
+
+<span class="eyebrow">P5 · False Hope</span>
+
+<div class="rows">
+<p><img class="hw" src="assets/human-attention-fig6-A.svg" alt="A"><span class="glyph"><img src="assets/human-attention-fig6-mark.svg" alt="Ambiguous mark that reads as B or 13"></span><img class="hw" src="assets/human-attention-fig6-C.svg" alt="C"></p>
+<p class="mid">“Ann approached the <span class="bankword">bank</span>.”</p>
+<p><img class="hw" src="assets/human-attention-fig6-1.svg" alt="1"><img class="hw" src="assets/human-attention-fig6-2.svg" alt="2"><span class="glyph"><img src="assets/human-attention-fig6-mark.svg" alt="Ambiguous mark that reads as B or 13"></span><img class="hw" src="assets/human-attention-fig6-1.svg" alt="1"><img class="hw" src="assets/human-attention-fig6-4.svg" alt="4"></p>
+</div>
+
+<div class="beats">
+
+* <span class="hl">Both rows use the same middle mark. The context chose how you read it.</span>
+* <span class="banks"><span class="bk"><img src="assets/human-attention-riverbank.svg" alt="Illustration of a riverbank">Riverbank</span><span class="bk"><img src="assets/human-attention-financial-bank.svg" alt="Illustration of a bank building">Financial bank</span></span>
+
+</div>
+
+<p class="credit">Redrawn from Daniel Kahneman, <em>Thinking, Fast and Slow</em>, ch. 7, Fig. 6.</p>
+
+</div>
+
+<!--
+P5 — Figure 6 Kahneman: konteks membentuk tafsiran
+TIMING: 15–20 detik, di dalam 3 menit P5. Waktunya dari kalimat gorila yang dihapus dan pengantar WYSIATI yang dipendekkan.
+-->
+
+---
+
+<div class="asch">
+
+<span class="eyebrow">P5 · False Hope</span>
+
+## Meet Alan and Ben
+
+<div class="people">
+<div class="person"><b>Alan</b><p><mark>intelligent · industrious</mark> · impulsive · critical · stubborn · envious</p></div>
+<div class="person"><b>Ben</b><p><mark>envious · stubborn</mark> · critical · impulsive · industrious · intelligent</p></div>
+</div>
+
+<p class="prompts">What’s your first impression?<br>Who would you elect to lead? Who would you hire?</p>
+
+* <span class="reveal">Same traits. Reverse order.</span>
+
+<p class="credit">Trait lists from Solomon Asch (1946), Experiment VI, as cited in Kahneman, <i>Thinking, Fast and Slow</i>, ch. 7. The questions are for this room; Asch did not test them.</p>
+
+</div>
+
+<!--
+P5 — Alan dan Ben (Asch 1946, Kahneman ch. 7): urutan membentuk kesan pertama. Slide berikutnya (Mindik) tentang menilai dengan bukti yang belum lengkap.
+TIMING: sekitar 20 detik, di dalam 3 menit P5.
+-->
+
+---
+
+<div class="slide p0">
 <div>
 
 <span class="eyebrow">P5 · False Hope</span>
 
 ## A better setup cannot choose for you
 
-More agents and a better workflow remove friction. They cannot choose **your P0**.
+Choosing **your P0** is still your job.
 
 <div class="aside">
 
-<span class="pill">Kahneman · WYSIATI · ch. 7</span>
-
-<p><strong>“What you see is all there is.”</strong> So ask: <strong>What evidence is missing from this convincing answer?</strong></p>
+<p><span class="tagline">WYSIATI · Kahneman ch. 7</span>“Will Mindik be a good leader? She is intelligent and strong…” <em>and corrupt and cruel.</em><br><strong>What evidence would change your mind?</strong></p>
 
 </div>
 
 </div>
 <div class="visual">
 
-<span class="pill">Thariq · 19 October 2026</span>
-
-<blockquote>
-
-most of the stuff you're doing wont really matter- what's your P0? what would it look like if you gave it your full attention?
-
-</blockquote>
+<img class="post" src="assets/human-attention-thariq-p0.png" alt="Post by Thariq (@trq212), 19 October 2026: I think most people multi-tasking with agents could benefit from slowing down. Most of the stuff you're doing won't really matter. What's your P0? What would it look like if you gave it your full attention?">
 
 <p class="quote-source">P0: the most important priority now. <a href="https://x.com/trq212/status/2112219173288120531">x.com/trq212</a></p>
 
@@ -1158,18 +2242,8 @@ most of the stuff you're doing wont really matter- what's your P0? what would it
 </div>
 
 <!--
-P5 — False Hope · Sobering Reality.
-TIMING: 3 menit · mulai sekitar 11:01 (P6 menjadi 3 menit; stage 5–6 tetap 6 menit).
-
-SAY:
-"Setup yang lebih baik bisa mengurangi kerepotan, tapi tidak bisa menentukan pekerjaan mana yang pantas kita kerjakan."
-Bacakan post Thariq secara lengkap: "I think most people multi-tasking with agents could benefit from slowing down. Most of the stuff you're doing won't really matter. What's your P0? What would it look like if you gave it your full attention?"
-Lalu tanya: "Kalau hanya satu pekerjaan yang benar-benar perlu perhatian saya sekarang, apa itu?" Beri jeda.
-WYSIATI: "Kahneman punya istilah: what you see is all there is. Jawaban yang runtut bisa membuat kita lupa bertanya apa yang tidak ada di sana. Lima agent bisa memberi lima jawaban yang meyakinkan, tapi itu tidak memberi kita lima perhatian. Jadi sebelum menerima jawaban itu, tanyakan: bukti apa yang tidak ada di jawaban yang meyakinkan ini?"
-
-LIMITS:
-Post Thariq adalah pemicu diskusi, bukan bukti riset bahwa kerja paralel selalu gagal. Teks kutipan disalin dari catatan Zain; belum dicek ulang dengan post aslinya.
-WYSIATI: definisi dari Thinking, Fast and Slow bab 7 ("A Machine for Jumping to Conclusions"), sudah dicek. Studi aslinya (Brenner, Koehler & Tversky 1996) memakai kasus hukum, bukan teks AI; penerapan ke review AI adalah usulan talk ini. Jawaban yang lancar bisa saja benar. Jangan sebut "lazy System 2", jangan menyebut developer yang kewalahan malas, dan jangan bilang kerja paralel menguras "tangki" System 2 yang tetap. Agent paralel tidak sama dengan penilaian manusia yang paralel; itu ilustrasi, bukan hasil ukur. System 1 dan System 2 adalah istilah penjelas, bukan dua bagian otak.
+P5 — False Hope
+TIMING: 3 menit · mulai sekitar 11:01 (P6 menjadi 3 menit; stage 5–6 tetap 6 menit). Slide pembuka (voice note dan anggaran perhatian) dan Figure 6 masuk di dalam 3 menit ini.
 -->
 
 ---
@@ -1198,15 +2272,8 @@ Give the right work **enough** attention, even if some agents sit idle.
 </div>
 
 <!--
-P6 — Audacious Reality · Gusto.
+P6 — Audacious Reality
 TIMING: 1 menit (dipendekkan karena WYSIATI di P5).
-
-SAY:
-"Tujuannya bukan membuat semua agent sibuk, melainkan memberi pekerjaan yang tepat perhatian yang cukup."
-Bandingkan dua pertanyaan pertama. Kartu ketiga hanya mengingatkan P3 dalam satu kalimat; jangan ulang cerita Yegge.
-
-LIMITS:
-Kerja paralel bukan masalahnya. Prioritas penting tetap perlu titik berhenti.
 -->
 
 ---
@@ -1220,31 +2287,27 @@ Kerja paralel bukan masalahnya. Prioritas penting tetap perlu titik berhenti.
 
 A check can pass on a result that nobody needs. **Taste** is how you decide if it is useful.
 
+<p class="keyline">The agents worked in parallel on one problem, and I made one decision.</p>
+
+<p class="caption">From one of my own Amp sessions, anonymized.</p>
+
 </div>
 <div class="visual">
 
 <div class="handoff">
-<div class="you"><strong>You</strong><p>Choose what matters and what “enough” means.</p></div>
+<div class="you"><strong>You · one question</strong><p>Is a bigger environment worth it?</p></div>
 <div class="arrow">↓</div>
-<div class="ai"><strong>Amp</strong><p>Execution, exploration, candidates, drafts, checks.</p></div>
+<div class="ai"><strong>Amp · two threads in parallel</strong><div class="par"><span>Benchmark A<small>same setup</small></span><span>Benchmark B<small>same setup</small></span></div></div>
 <div class="arrow">↓</div>
-<div class="you"><strong>You</strong><p>Judge if it is good enough. Own the result.</p></div>
+<div class="you"><strong>You · one decision</strong><p>Are faster starts worth the higher cost?</p></div>
 </div>
 
 </div>
 </div>
 
 <!--
-P6 (lanjutan) — argumen delegasi. Slide ini menggantikan judul lama stage 7.
+P6 (lanjutan) — argumen delegasi
 TIMING: 2 menit · stage 5–6 selesai sekitar 11:07.
-
-SAY:
-"Kita bisa menyerahkan sebagian pelaksanaan dan eksplorasi kepada AI, sambil tetap menentukan tujuan, menilai hasil, dan bertanggung jawab atas keputusan kita."
-Tunjuk diagram: keputusan ada di awal dan di akhir; Amp ada di tengah.
-
-OPTIONAL:
-Contoh Yegge di talk-nya (sekitar 24:10–24:48): agent membuat kandidat artwork dan visualizer, dia yang memilih. Transkrip sudah dicek, rekaman belum. Jangan ikut klaimnya bahwa implementasi gratis atau AI tidak bisa kreatif.
-Quote "You are paying somebody else to think about the problem" (YouTube SI3N8MCQHfo, sekitar 45:40) belum diverifikasi; jangan dipakai sebelum dicek.
 -->
 
 ---
@@ -1256,21 +2319,25 @@ Quote "You are paying somebody else to think about the problem" (YouTube SI3N8MC
 
 ## When the review falls behind, we judge ourselves
 
-Looking back at those three weeks, with Kristin Neff's self-compassion.
+Looking back at those weeks with Kristin Neff's self-compassion:<br>**<span class="nw">mindfulness ·</span> <span class="nw">common humanity ·</span> <span class="nw">self-kindness</span>**
 
 
 </div>
 <div class="visual">
 
-<span class="pill">A reflection, not what I did then</span>
+<span class="pill">A reflection from today</span>
 
-<div class="weeks mini">
-<div></div><div class="wk">W1</div><div class="wk">W2</div><div class="wk">W3</div>
-<div class="lane">New issues</div><div class="blk in"></div><div class="blk in"></div><div class="blk in"></div>
-<div class="lane">Amp helps</div><div class="blk amp"></div><div class="blk amp"></div><div class="blk amp"></div>
-<div class="lane">Still to check</div><div class="blk rev"></div><div class="blk rev"></div><div class="blk rev"></div>
-<div class="lane">Earlier work</div><div class="blk open"></div><div class="blk open"></div><div class="blk open"></div>
-<div class="lane">Working late</div><div class="blk late"></div><div class="blk late"></div><div class="blk late"></div>
+<div class="weeks mini story">
+<div class="meas">Recorded working time<small>Cukup · dashed = 40h personal goal</small></div>
+<div class="wcard w1"><span class="k">W1</span><b>58h 48m</b><span class="bar"><i></i></span></div>
+<div class="wcard w2"><span class="k">W2</span><b>62h 2m</b><span class="bar"><i></i></span></div>
+<div class="wcard w3"><span class="k">W3</span><b>33h 35m</b><span class="bar"><i></i></span></div>
+<div class="ctx">Story sketch · not measured</div>
+<div class="lane">New issues</div><div class="tl in"><i class="x4w4"></i><i class="x30w4"></i><i class="x62w4"></i></div><div class="tl in"><i class="x6w4"></i><i class="x22w4"></i><i class="x40w4"></i><i class="x58w4"></i><i class="x76w4"></i><i class="x90w4"></i></div><div class="tl in"><i class="x10w4"></i><i class="x48w4"></i></div>
+<div class="lane">Amp helps</div><div class="tl amp"><i class="x8w14"></i><i class="x34w16"></i><i class="x66w14"></i></div><div class="tl amp"><i class="x10w10"></i><i class="x26w12"></i><i class="x44w12"></i><i class="x62w12"></i><i class="x80w10"></i><i class="x94w6"></i></div><div class="tl amp"><i class="x0w6"></i><i class="x14w14"></i><i class="x52w14"></i></div>
+<div class="lane mine">Still to check</div><div class="tl rev"><i class="x22w10"></i><i class="x50w12"></i><i class="x80w16"></i></div><div class="tl rev"><i class="x0w8"></i><i class="x22w20"></i><i class="x46w54"></i></div><div class="tl rev"><i class="x0w46"></i><i class="x66w20"></i></div>
+<div class="lane">Earlier work open</div><div class="tl open"><i class="x0w100"></i></div><div class="tl open"><i class="x0w100"></i></div><div class="tl open"><i class="x0w100"></i></div>
+<div class="lane">Working late</div><div class="tl late"><i class="x44w6"></i><i class="x72w6"></i><i class="x92w6"></i></div><div class="tl late"><i class="x14w6"></i><i class="x30w6"></i><i class="x50w6"></i><i class="x66w6"></i><i class="x84w6"></i><i class="x96w4"></i></div><div class="tl late"><i class="x6w6"></i><i class="x30w6"></i></div>
 </div>
 
 <div class="vs">
@@ -1282,17 +2349,8 @@ Looking back at those three weeks, with Kristin Neff's self-compassion.
 </div>
 
 <!--
-P7 — We Can Do This · Courage. Bagian utama talk: respons yang manusiawi.
+P7 — We Can Do This
 TIMING: 1 menit untuk pembuka · mulai sekitar 11:07 · stage 7 selesai sekitar 11:15.
-
-SAY:
-"Tadi kita bicara tentang menjaga penilaian kita saat memakai AI. Tapi ada jebakan lain. Saat kita belum sanggup memeriksa semua hasilnya, kita bisa malah menyalahkan diri sendiri. Menjaga tanggung jawab bukan berarti memperlakukan diri kita seperti mesin."
-"Kalau saya melihat kembali tiga minggu tadi, pertanyaannya bukan: kenapa saya tidak bisa kerja lebih keras? Pertanyaannya: bagaimana saya bisa menjaga pekerjaan itu tanpa mengabaikan diri sendiri? Tiga unsur ini membantu saya memikirkan respons yang bisa saya pilih. Bukan berarti waktu itu saya sudah melakukannya."
-"Tiga unsur itu dari self-compassion: mindfulness, common humanity, dan self-kindness."
-
-LIMITS:
-Ini refleksi dan pilihan ke depan, bukan klaim tentang apa yang Zain lakukan waktu itu. Diagram kecil sama dengan diagram di stage 3: ilustrasi, bukan jumlah.
-Sumber: definisi resmi Kristin Neff (self-compassion.org, dicek 20 Nov 2026). Kalimat Indonesia adalah parafrase dan penerapan yang diusulkan, bukan kutipan dan bukan intervensi yang teruji. Buku dan edisi Neff yang dimaksud belum dikonfirmasi. Kahneman bukan sumber kerangka ini.
 -->
 
 ---
@@ -1308,16 +2366,24 @@ Sumber: definisi resmi Kristin Neff (self-compassion.org, dicek 20 Nov 2026). Ka
 
 See what is hard right now, without ignoring it or making it bigger.
 
+<div class="segue">
+<p><b>Review by video</b>Next: an explainer an agent made for me.</p>
+</div>
+
 </div>
 <div class="visual">
 
-<div class="weeks mini">
-<div></div><div class="wk">W1</div><div class="wk">W2</div><div class="wk">W3</div>
-<div class="lane dim">New issues</div><div class="blk in dim"></div><div class="blk in dim"></div><div class="blk in dim"></div>
-<div class="lane dim">Amp helps</div><div class="blk amp dim"></div><div class="blk amp dim"></div><div class="blk amp dim"></div>
-<div class="lane">Still to check</div><div class="blk rev"></div><div class="blk rev"></div><div class="blk rev"></div>
-<div class="lane dim">Earlier work</div><div class="blk open dim"></div><div class="blk open dim"></div><div class="blk open dim"></div>
-<div class="lane">Working late</div><div class="blk late"></div><div class="blk late"></div><div class="blk late"></div>
+<div class="weeks mini story">
+<div class="meas">Recorded working time<small>Cukup · dashed = 40h personal goal</small></div>
+<div class="wcard w1"><span class="k">W1</span><b>58h 48m</b><span class="bar"><i></i></span></div>
+<div class="wcard w2"><span class="k">W2</span><b>62h 2m</b><span class="bar"><i></i></span></div>
+<div class="wcard w3"><span class="k">W3</span><b>33h 35m</b><span class="bar"><i></i></span></div>
+<div class="ctx">Story sketch · not measured</div>
+<div class="lane dim">New issues</div><div class="tl in dim"><i class="x4w4"></i><i class="x30w4"></i><i class="x62w4"></i></div><div class="tl in dim"><i class="x6w4"></i><i class="x22w4"></i><i class="x40w4"></i><i class="x58w4"></i><i class="x76w4"></i><i class="x90w4"></i></div><div class="tl in dim"><i class="x10w4"></i><i class="x48w4"></i></div>
+<div class="lane dim">Amp helps</div><div class="tl amp dim"><i class="x8w14"></i><i class="x34w16"></i><i class="x66w14"></i></div><div class="tl amp dim"><i class="x10w10"></i><i class="x26w12"></i><i class="x44w12"></i><i class="x62w12"></i><i class="x80w10"></i><i class="x94w6"></i></div><div class="tl amp dim"><i class="x0w6"></i><i class="x14w14"></i><i class="x52w14"></i></div>
+<div class="lane mine">Still to check</div><div class="tl rev"><i class="x22w10"></i><i class="x50w12"></i><i class="x80w16"></i></div><div class="tl rev"><i class="x0w8"></i><i class="x22w20"></i><i class="x46w54"></i></div><div class="tl rev"><i class="x0w46"></i><i class="x66w20"></i></div>
+<div class="lane dim">Earlier work open</div><div class="tl open dim"><i class="x0w100"></i></div><div class="tl open dim"><i class="x0w100"></i></div><div class="tl open dim"><i class="x0w100"></i></div>
+<div class="lane">Working late</div><div class="tl late"><i class="x44w6"></i><i class="x72w6"></i><i class="x92w6"></i></div><div class="tl late"><i class="x14w6"></i><i class="x30w6"></i><i class="x50w6"></i><i class="x66w6"></i><i class="x84w6"></i><i class="x96w4"></i></div><div class="tl late"><i class="x6w6"></i><i class="x30w6"></i></div>
 </div>
 
 <div class="vs">
@@ -1329,15 +2395,31 @@ See what is hard right now, without ignoring it or making it bigger.
 </div>
 
 <!--
-P7.1 — Mindfulness.
+P7
 TIMING: 1,5 menit.
+-->
 
-SAY:
-"Mindfulness di sini bukan perintah untuk fokus lebih keras. Kita mencoba melihat kesulitan yang sedang ada tanpa mengabaikan atau membesar-besarkannya. Kalau saya pakai tiga minggu tadi: saya bisa mengakui bahwa saya bekerja sampai larut dan masih ada hasil yang perlu saya periksa, tanpa menghakimi diri sendiri. Itu berbeda dari menyimpulkan: saya developer yang buruk. Mungkin konteksnya kurang. Mungkin tugasnya terlalu luas. Mungkin saya perlu jeda. Belum tentu jawabannya menambah agent."
-Pertanyaan praktis: "Apa yang sedang sulit, dan apa yang belum saya ketahui?"
+---
 
-LIMITS:
-Ini refleksi, bukan klaim tentang apa yang Zain lakukan waktu itu. Diagram menyorot dua jalur yang perlu diakui; jalur lain tetap ada, hanya diredupkan. Antrean review saja tidak membuktikan stres atau kewalahan.
+<div class="showcase">
+<div>
+
+<span class="eyebrow">P7 · 1 of 3</span>
+
+## Review by video
+
+An agent turned a feature into a 16-minute briefing with 22 chapters. Here I skim it in 12 seconds.
+
+<p class="caption">From my DevFest talk: <a class="nw" href="https://zainf.dev/fest-2026">zainf.dev/fest-2026</a></p>
+
+</div>
+<video src="assets/human-attention-review-explainer.mp4" poster="assets/human-attention-review-explainer-poster.jpg" controls preload="metadata" playsinline aria-label="Silent 12-second skim through the chapters of an agent-made feature briefing"></video>
+</div>
+
+<!--
+P7.1 (lanjutan)
+TIMING: sekitar 15 detik, di dalam 1,5 menit P7.1; putar beberapa detik saja.
+Sumber: https://zainf.dev/fest-2026
 -->
 
 ---
@@ -1353,28 +2435,63 @@ Ini refleksi, bukan klaim tentang apa yang Zain lakukan waktu itu. Diagram menyo
 
 Everyone makes mistakes, has limits, and needs help sometimes.
 
+<div class="segue">
+<p><b>Navigate the AI shift together</b>Next: Vibe From Cafe, a community I lead.</p>
+</div>
+
 </div>
 <div class="visual">
 
 <div class="vs">
 <div class="from"><span class="label">Isolation</span><p>“Everyone else keeps up. Only I can't.”</p></div>
 <div class="down">↓</div>
-<div class="to"><span class="label">Common humanity</span><p>“Needing help while I cover someone's work is not a personal failure.”</p></div>
+<div class="to"><span class="label">Common humanity</span><p>“Other people also need help when they cover someone's work.”</p></div>
 </div>
 
 </div>
 </div>
 
 <!--
-P7.2 — Common humanity.
+P7
 TIMING: 1,5 menit.
+-->
 
-SAY:
-"Saat kesulitan, kita bisa merasa cuma kita yang tidak sanggup. Orang lain kelihatannya bisa menjalankan banyak agent dan tetap produktif. Tapi kita tidak melihat seluruh pengalaman mereka. Membuat kesalahan, punya keterbatasan, dan membutuhkan bantuan adalah bagian dari menjadi manusia. Saat menggantikan pekerjaan rekan yang cuti, butuh bantuan bukan kegagalan pribadi. Bukan berarti pengalaman semua orang sama. Bukan juga berarti beban kerja yang tidak masuk akal harus diterima."
-Pertanyaan praktis: "Apakah saya sedang mengubah kesulitan ini menjadi bukti bahwa hanya saya yang tidak layak?"
+---
 
-LIMITS:
-Refleksi, bukan klaim bahwa Zain waktu itu meminta bantuan. Jangan pakai polling penonton atau cerita Yegge untuk mendiagnosis ruangan.
+<div class="showcase">
+<div>
+
+<span class="eyebrow">P7 · 2 of 3</span>
+
+## Navigate the AI shift together
+
+Vibe From Cafe, a community I lead, has chapters in Indonesian cities and Kuala Lumpur.
+
+<p class="caption"><a href="https://vibefromcafe.id">vibefromcafe.id</a></p>
+
+</div>
+<img src="assets/human-attention-vfc-chapters.png" alt="Vibe From Cafe website, Our Chapters: Jogja, Solo, Bandung, Surabaya-Malang, Kuala Lumpur and Jakarta">
+</div>
+
+<!--
+P7.2 (lanjutan)
+TIMING: sekitar 15 detik, di dalam 1,5 menit P7.2.
+Sumber: https://vibefromcafe.id (screenshot dari preview https://bce71bf3.vibefromcafe.pages.dev/, 21 Nov 2026)
+-->
+
+---
+
+<div class="photo-slide">
+
+<span class="eyebrow">P7 · 2 of 3 · Vibe From Cafe</span>
+
+<div class="photo-todo">Add event photo: Vibe From Cafe members</div>
+
+</div>
+
+<!--
+P7.2 (lanjutan) — foto bersama anggota Vibe From Cafe; isyarat untuk melambai. Ganti kotak ini dengan foto setelah diambil.
+TIMING: sekitar 5 detik, di dalam 1,5 menit P7.2.
 -->
 
 ---
@@ -1408,17 +2525,32 @@ A colleague cannot yet explain a risky change. What would you tell them?
 </div>
 
 <!--
-P7.3 — Self-kindness.
+P7
 TIMING: 1,5 menit.
+-->
 
-SAY:
-"Kalau rekan kita bilang dia belum memahami perubahan yang berisiko, apakah kita akan bilang: kamu harus bisa mengejar kecepatan mesin? Atau kita akan membantu mencari langkah yang masuk akal? Kita bisa menawarkan dukungan yang sama kepada diri sendiri."
-"Kalau menghadapi situasi seperti itu lagi, saya bisa bilang ke tim: ini yang perlu saya tangani hari ini, ini yang bisa menunggu, dan ini yang perlu bantuan untuk diperiksa."
-"Pilihannya tidak selalu berhenti bekerja. Yang berubah adalah cara kita mengambil keputusan: bukan karena harus membuktikan nilai diri lewat jumlah output, tetapi karena peduli pada pekerjaan dan orang yang mengerjakannya."
-Pertanyaan praktis: "Dukungan atau batas apa yang saya butuhkan sekarang?"
+---
 
-LIMITS:
-Pilihan untuk lain kali, bukan klaim tentang yang Zain lakukan waktu itu. Kebaikan pada diri sendiri tetap menjaga standar kualitas. Beban kerja, jumlah orang, dan ekspektasi yang tidak aman mungkin perlu respons tim, bukan hanya jeda pribadi. Ini bukan pengganti bantuan profesional.
+<!-- _class: gta -->
+<!-- _backgroundColor: "#1e0b33" -->
+
+<div class="gta-slide">
+<div>
+
+<span class="eyebrow">P7 · 3 of 3</span>
+
+## Work can wait, and so can IDSW, now that GTA VI is out
+
+<p class="caption">DM with Bagas Naufal Insani, IDSW 2025 panelist. Cropped.</p>
+
+</div>
+<img class="post" src="assets/human-attention-dm-gta.png" alt="DM: Zain asks Bagas if he is coming to IDSW this weekend. Bagas bought a ticket but may get hooked on GTA VI. Zain replies: watch out, you might meet Gibran there.">
+</div>
+<div class="sunset"></div>
+
+<!--
+P7
+TIMING: sekitar 15 detik, diambil dari 1,5 menit P7.3; target penutup 11:23 tidak bergeser.
 -->
 
 ---
@@ -1455,18 +2587,30 @@ Pilihan untuk lain kali, bukan klaim tentang yang Zain lakukan waktu itu. Kebaik
 </div>
 
 <!--
-P7 — refleksi opsional, lalu tanggung jawab dan transisi.
+P7 — refleksi opsional, lalu tanggung jawab dan transisi
 TIMING: 1 menit refleksi (opsional) + 1,5 menit transisi · stage 7 selesai sekitar 11:15. Kalau terlambat dari jadwal, lewati refleksi.
+-->
 
-SAY (refleksi, opsional):
-"Kalau berkenan, pilih satu kesulitan kerja yang ringan untuk dipikirkan. Tidak perlu diceritakan ke siapa pun. Apa yang sedang sulit? Bisakah saya mengakuinya tanpa menyerang diri sendiri? Dukungan atau batas apa yang masuk akal untuk langkah berikutnya?"
-Beri jeda hening. Peserta boleh hanya mendengarkan.
+---
 
-SAY (tanggung jawab dan transisi):
-"Kita tetap perlu memeriksa hasil dan bertanggung jawab atas keputusan kita. Kalau ada risiko yang belum diperiksa, jangan menyebutnya selesai. Catat yang masih terbuka, siapa yang perlu tahu, dan langkah berikutnya. Tapi pekerjaan yang belum selesai juga bukan ukuran nilai diri kita. Dari sini, pertanyaan 'sudah cukup?' bukan cuma tentang jumlah tugas yang beres. Ini juga pertanyaan tentang apa yang dibutuhkan pekerjaan dan apa yang kita butuhkan sebagai manusia."
+<div class="opener">
 
-LIMITS:
-Jangan minta peserta bercerita. Jangan menjanjikan hasil psikologis. Ini satu-satunya tempat yang menjelaskan beda antara pekerjaan yang belum selesai dan keputusan berhenti; P8 dan P9 hanya memakainya.
+<span class="eyebrow">P8 · Call To Action</span>
+
+<p class="clock">4:59 PM</p>
+
+<div class="beats">
+
+* <span class="quoteline">“Sekalian deh, satu lagi…”</span>
+* Before one more: where is <strong>enough</strong>?
+
+</div>
+
+</div>
+
+<!--
+P8 pembuka — lelucon "sekalian"
+TIMING: sekitar 15 detik, di dalam 3 menit P8 (mulai sekitar 11:15). Menggantikan kalimat pembuka P8 yang lama.
 -->
 
 ---
@@ -1493,8 +2637,8 @@ Jangan minta peserta bercerita. Jangan menjanjikan hasil psikologis. Ini satu-sa
 
 <div class="steps3">
 <div><b>1</b>Choose <strong>one</strong> priority</div>
-<div><b>2</b>Define <strong>enough</strong>: the outcome and the evidence</div>
-<div><b>3</b>Set a time or energy point to <strong>check again</strong></div>
+<div><b>2</b><strong>Enough for the work</strong>: the evidence it needs</div>
+<div><b>3</b><strong>Enough for me</strong>: when I stop and recheck</div>
 </div>
 
 <p class="caption">Try it in your next session.</p>
@@ -1502,96 +2646,90 @@ Jangan minta peserta bercerita. Jangan menjanjikan hasil psikologis. Ini satu-sa
 </div>
 
 <!--
-P8 — Call to Action · Commitment.
+P8 — Call to Action
 TIMING: 3 menit · mulai sekitar 11:15 · selesai sekitar 11:18.
-
-SAY:
-"Pada sesi kerja berikutnya, pilih satu prioritas, tentukan seperti apa hasil yang cukup, dan putuskan kapan akan meninjau ulang atau berhenti sebelum menambah tugas."
-Jalankan diagram dari kiri ke kanan dengan satu contoh singkat. Tunjuk garis putus-putus: kalau belum cukup, atau batas waktu/energi sudah lewat, kembali ke Notice, bukan langsung menambah tugas.
-"Saat meninjau ulang, pakai lagi tiga pertanyaan tadi."
-
-LIMITS:
-Jangan mengajar ulang tiga unsur self-compassion; cukup tunjuk kembali. Tiga unsur itu cara merespons kesulitan di sepanjang urutan, bukan checklist output tambahan. "Enough" punya dua sisi: hasil dan bukti yang dibutuhkan pekerjaan, serta batas waktu atau energi kita. Ajakan ini tidak butuh Cukup atau tool tertentu.
 -->
 
 ---
 
-<div class="stacked">
+<div class="stacked tight">
 
 <span class="eyebrow">P9 · Early Benefits</span>
 
 ## Make room to pause
 
-**Cukup** means “enough” in Indonesian. It estimates Working Time from Amp turns, as a prompt to pause before you take on more.
+<p class="cuk-intro">Attention is limited. Before the next task: what needs it now, and what can wait? <strong>Cukup</strong> (“enough”) reminds me to ask.</p>
 
-<div class="visual">
-
-![Synthetic Working Time example: three Amp agent turns, each followed by 15 minutes, merged into two Working Time blocks](assets/human-attention-working-time-synthetic.png)
-
+<div class="cuk">
+<div class="shots">
+<span class="tag">Cukup · demo data</span>
+<div class="pair">
+<figure><img class="tg" src="assets/human-attention-cukup-work-toggle.png" alt="Cukup Track toggle set to Work"><img src="assets/human-attention-cukup-work-today.png" alt="Cukup dashboard, demo data: Track set to Work. Today 1h 45m, 6h 15m remaining, goal 8h."><figcaption>Work · a goal to plan with</figcaption></figure>
+<figure><img class="tg" src="assets/human-attention-cukup-play-toggle.png" alt="Cukup Track toggle set to Play"><img src="assets/human-attention-cukup-play-today.png" alt="Cukup dashboard, demo data: Track set to Play. Today 1h 30m, 30m past the soft limit, soft limit 1h, upper limit 2h."><figcaption>Play · a limit to stay under</figcaption></figure>
 </div>
-
-<p class="caption">From cukup.dev · synthetic example, not real activity.</p>
+<p class="caption">Cukup shows recorded time. Attention and quality stay yours to judge.</p>
+</div>
+<div class="box">
+<span class="tag">My leave week · Work goal</span>
+<div class="leave">
+<div class="g usual">Usual<b>40h</b></div>
+<div class="to">→</div>
+<div class="g">3 days off<b>16h</b></div>
+<div class="days"><span class="off">Mon<b>0</b></span><span class="off">Tue<b>0</b></span><span>Wed<b>8</b></span><span>Thu<b>8</b></span><span class="off">Fri<b>0</b></span></div>
+</div>
+<p class="fine">A plan, set before any hours are recorded. Play hours count separately.</p>
+<div class="dwrow">
+<p class="dw"><b>Today</b> Is this enough?</p>
+<p class="dw"><b>This week</b> Is the plan still realistic?</p>
+</div>
+</div>
+</div>
 
 </div>
 
 <!--
-P9 — Early Benefits · Reward.
+P9 — Early Benefits
 TIMING: 2 menit · mulai sekitar 11:18.
-
-SAY:
-"Latihan ini tidak butuh aplikasi khusus. Cukup adalah salah satu cara untuk mengingatkan kita mengambil jeda itu. Bukan alarm bahwa kita kurang produktif, dan bukan izin yang harus kita tunggu sebelum boleh beristirahat."
-"Cukup membuat waktu kerja terlihat sebagai pengingat untuk berhenti sejenak dan mempertimbangkan apakah kita perlu mengambil tugas berikutnya."
-Jelaskan gambar: Working Time adalah perkiraan dari turn agent Amp, ditambah 15 menit setelah tiap turn. Turn yang tumpang tindih dihitung sekali.
-
-DEMO:
-Tampilkan view live hanya kalau demo gate sudah lulus: setup terdokumentasi diuji dari checkout baru tanpa akun Zain, dan datanya aman untuk demo. Kalau belum, pakai contoh sintetis di slide ini. Dashboard cukup.dev hanya untuk pemilik; jangan tampilkan data pribadi.
-
-LIMITS:
-Jangan kembali ke cerita Yegge dan jangan mengajar ulang tiga unsur self-compassion di sini. Latihan berhenti ini usulan talk ini, bukan saran Yegge dan bukan efek Cukup yang terbukti.
 -->
 
 ---
 
-<div class="slide wide-left">
-<div>
+<div class="stacked tight">
 
 <span class="eyebrow">P9 · Early Benefits</span>
 
 ## Working Time is only an estimate
 
+<figure class="tl-shot"><img src="assets/human-attention-cukup-timeline.png" alt="Cukup Activity timeline, demo data: one day from 00:00 to 24:00 with a few recorded blocks in the morning, 2h 30m in total."><figcaption>Cukup Activity timeline · one day · demo data</figcaption></figure>
+
+<div class="est">
+<div>
+
 <ul class="small-list">
-<li>It does not measure attention, quality or value.</li>
-<li>It is not a productivity score, a burnout signal or a measure of your worth.</li>
+<li>It does not measure attention, quality, productivity, burnout or your worth.</li>
 <li>Reading and thinking away from Amp do not show up.</li>
 </ul>
 
 </div>
-<div class="visual">
+<div class="cards">
 
 <div class="card">
-<strong>Status on cukup.dev · checked 21 Nov 2026</strong>
-<p>Amp only. Personal dashboard, no signup. Open-source release in preparation: the source is not public yet, and there is no release date.</p>
+<strong>Open source</strong>
+<p>Read its rules, change them, and run your own copy. Works with Amp. Find it at cukup.dev.</p>
 </div>
 
 <div class="card">
 <strong>You can ask without Cukup</strong>
-<p>Before the next task: is this enough for today?</p>
+<p>Before the next task: continue, narrow the scope, ask for help, or stop for this session?</p>
 </div>
 
+</div>
 </div>
 </div>
 
 <!--
-P9 (lanjutan) — batas dan status.
+P9 (lanjutan) — batas dan status
 TIMING: 2 menit · stage 9 selesai sekitar 11:22.
-
-SAY:
-Jangan baca daftar ini satu per satu; sebut intinya: "Yang ditampilkan adalah waktu kerja, bukan ukuran perhatian, kualitas, atau kemampuan kita."
-Lalu pilih langkah: "Lanjut, kurangi lingkup pekerjaan, minta bantuan, atau cukup untuk sesi ini."
-
-LIMITS:
-Cek ulang status di cukup.dev dan repo GitHub tepat sebelum talk. Per 21 Nov 2026, github.com/zainfathoni/cukup belum publik (404). Jangan bilang Cukup sudah open source atau bisa di-install. Cukup tidak mengukur kapasitas rekan atau pelanggan; itu perlu dicek langsung dengan mereka. Waktu kerja yang tercatat tidak membuktikan kewalahan berkurang.
-Belum ada cerita nyata tentang hasil setelah jeda dengan Cukup; jangan menceritakannya. Tidak ada total waktu kerja historis yang terverifikasi; jangan sebut angka, dan jangan hubungkan Cukup dengan cerita tiga minggu di stage 3.
 -->
 
 ---
@@ -1601,14 +2739,12 @@ Belum ada cerita nyata tentang hasil setelah jeda dengan Cukup; jangan mencerita
 
 <span class="eyebrow">P10 · Long Win</span>
 
-## Machine capacity is not a human limit
+## Set your limit by what you can handle well
 
 Start the next task because it matters to you.
 
-Cukup's open-source release is in preparation, so others can read its rules, change them and run their own copy.
-
 </div>
-<div class="visual">
+<div class="visual cukvid">
 
 <blockquote>
 
@@ -1616,19 +2752,16 @@ Let AI help you do the work. Keep the decision to say: cukup.
 
 </blockquote>
 
+<video src="assets/human-attention-cukup-explainer.mp4" poster="assets/human-attention-cukup-explainer-poster.jpg" controls preload="metadata" playsinline aria-label="Cukup explainer video, 1 minute 38 seconds, narrated with English captions"></video>
+
+<p class="caption">Watch the 1 min 38 s explainer at <a href="https://cukup.dev">cukup.dev</a>. Synthetic data.</p>
+
 </div>
 </div>
 
 <!--
-P10 — The Long Win · True Aspiration.
+P10 — The Long Win
 TIMING: 1 menit · selesai sekitar 11:23 · sisa sekitar 2 menit sebagai margin.
-
-SAY:
-"Biarkan AI membantu kita bekerja, tapi keputusan tentang apa yang penting dan kapan sudah cukup tetap milik kita."
-Kembali ke pertanyaan pembuka: bisa menjalankan satu agent lagi bukan alasan untuk memulai tugas lagi.
-
-LIMITS:
-Jelaskan alasan open source (bisa diperiksa, diadaptasi, di-host sendiri) tanpa ajakan instalasi. Tutup dengan keputusan manusia untuk bilang "cukup", bukan janji output yang lebih besar.
 -->
 
 ---
@@ -1645,7 +2778,7 @@ Jelaskan alasan open source (bisa diperiksa, diadaptasi, di-host sendiri) tanpa 
 - Thariq, [post on P0 and full attention](https://x.com/trq212/status/2112219173288120531) (19 October 2026)
 - Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762) (2017, title reference only)
 - Daniel Kahneman, [Thinking, Fast and Slow](https://www.penguin.co.uk/books/56314/thinking-fast-and-slow-by-kahneman-daniel/9780141033570) (2011)
-- [cukup.dev](https://cukup.dev): Cukup, open-source release in preparation
+- [cukup.dev](https://cukup.dev): Cukup, open source, with a 1 min 38 s explainer video
 
 </div>
 
@@ -1653,8 +2786,7 @@ Jelaskan alasan open source (bisa diperiksa, diadaptasi, di-host sendiri) tanpa 
 </div>
 
 <!--
-Slide referensi. Tampilkan sebentar saja, atau lewati dan biarkan di slide yang dibagikan.
-Kahneman (Thinking, Fast and Slow) dicantumkan karena pertanyaan WYSIATI ada di slide P5. Dia bukan sumber kerangka self-compassion.
+Slide referensi
 -->
 
 ---
@@ -1666,7 +2798,7 @@ Kahneman (Thinking, Fast and Slow) dicantumkan karena pertanyaan WYSIATI ada di 
 
 <div class="links">
 
-<p><a href="https://www.zainfathoni.com/human-attention-is-all-you-need.html">zainfathoni.com/human-attention-is-all-you-need.html</a></p>
+<p><a href="https://zainf.dev/idsw-2026">zainf.dev/idsw-2026</a></p>
 <p><a href="https://cukup.dev">cukup.dev</a></p>
 
 </div>
@@ -1675,12 +2807,25 @@ Kahneman (Thinking, Fast and Slow) dicantumkan karena pertanyaan WYSIATI ada di 
 
 </div>
 
-![QR code for zainfathoni.com/human-attention-is-all-you-need.html](assets/human-attention-is-all-you-need-qr.png)
+![QR code for zainf.dev/idsw-2026](assets/human-attention-is-all-you-need-qr.png)
 
 </div>
 
 <!--
-Q&A.
-Belum dikonfirmasi apakah Q&A masuk dalam slot 30 menit. Kalau masuk, hanya ada sekitar 2 menit margin setelah 11:23; sesi berakhir 11:25 WIB.
-QR mengarah ke URL slide yang baru aktif setelah deploy.
+Q&A
+-->
+
+---
+
+<!-- _paginate: false -->
+<!-- _footer: "" -->
+<!-- _class: tbc -->
+<!-- _backgroundColor: "#111827" -->
+
+<p class="tbc-card">TO BE CONTINUED</p>
+
+<p class="tsuzuku" lang="ja">つづく</p>
+
+<!--
+Handoff ke Clarence. Gambar dari Clarence menggantikan kartu TO BE CONTINUED di slide ini; つづく tetap di pojok kanan bawah.
 -->

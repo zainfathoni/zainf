@@ -1,0 +1,53 @@
+<svg viewBox="0 67.56 1254 1162.88" xmlns="http://www.w3.org/2000/svg" width="1254" height="1162.88">
+  <title>Classic bank building with gold coin</title>
+  <g id="bank">
+    <path id="facade" fill="#A79F96" d="M100 572H1152V1119H100Z" />
+    <g id="pediment">
+      <path fill="#263F60" d="M24 493Q28 485 43 475L603 124Q626 109 649 124L1210 475Q1234 490 1230 513Q1226 541 1197 542H55Q27 542 22 520Q18 506 24 493Z" />
+      <path fill="#B8AFA4" d="M77 532L614 202Q626 194 638 202L1175 532Z" />
+      <circle cx="623" cy="389" r="136" fill="#FFC334" />
+      <g id="coin-mark" fill="none" stroke="#AA760E" stroke-linecap="round">
+        <path d="M624 293V484" stroke-width="27" />
+        <path d="M665 333C641 312 607 312 589 331C574 347 580 368 601 378L643 394C667 403 674 423 659 441C640 464 601 457 577 441" stroke-width="37" stroke-linejoin="round" />
+      </g>
+    </g>
+    <rect id="entablature" x="46" y="531" width="1160" height="77" rx="33" fill="#D6CBBD" />
+    <g id="openings" fill="#263F60">
+      <path id="left-window" d="M224 942V804A72 72 0 0 1 368 804V942Z" />
+      <path id="right-window" d="M886 942V804A72 72 0 0 1 1030 804V942Z" />
+      <path id="door" d="M504 1097V845A122 122 0 0 1 748 845V1097Z" />
+    </g>
+    <g id="mullions" fill="none" stroke="#A79F96" stroke-width="15">
+      <path d="M295 731V943M222 838H369" />
+      <path d="M958 731V943M884 838H1032" />
+      <path d="M629 722V1097" />
+    </g>
+    <g id="door-handles" fill="#FFC334">
+      <rect x="578" y="895" width="26" height="78" rx="13" />
+      <rect x="656" y="895" width="26" height="78" rx="13" />
+    </g>
+    <g id="columns" fill="#D6CBBD">
+      <g id="column-left">
+        <path d="M102 651H201V1065H102Z" />
+        <rect x="68" y="617" width="167" height="55" rx="25" />
+        <rect x="68" y="1045" width="167" height="57" rx="26" />
+      </g>
+      <g id="column-middle-left">
+        <path d="M389 651H488V1065H389Z" />
+        <rect x="358" y="617" width="169" height="55" rx="25" />
+        <rect x="357" y="1045" width="167" height="57" rx="26" />
+      </g>
+      <g id="column-middle-right">
+        <path d="M766 651H863V1065H766Z" />
+        <rect x="729" y="617" width="169" height="55" rx="25" />
+        <rect x="733" y="1045" width="165" height="57" rx="26" />
+      </g>
+      <g id="column-right">
+        <path d="M1051 651H1151V1065H1051Z" />
+        <rect x="1016" y="617" width="168" height="55" rx="25" />
+        <rect x="1016" y="1045" width="168" height="57" rx="26" />
+      </g>
+    </g>
+    <rect id="foundation" x="22" y="1097" width="1209" height="85" rx="39" fill="#B8AFA4" />
+  </g>
+</svg>
