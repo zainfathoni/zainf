@@ -1161,6 +1161,25 @@ style: |
 
   .tk-text ul { list-style: none; margin: 14px 0 0; padding: 0; }
   .tk-text li { margin: 0 0 10px; font-size: 24px; font-weight: 700; line-height: 1.25; }
+  .slide.judge h2 { font-size: 46px; }
+  .slide.judge h2::after { margin: 12px 0 14px; }
+  .slide.judge > div:first-child > p { margin: 0 0 12px; font-size: 24px; line-height: 1.3; }
+  .slide.judge .keyline { font-size: 24px; margin-bottom: 8px; }
+  .slide.judge .caption { margin: 0; }
+
+  /* P6: the Kahneman ch. 22 cue beside Taste. */
+  .taste-cue {
+    margin: 0 0 14px;
+    padding: 8px 14px;
+    border-left: 4px solid var(--accent);
+    background: #fff7ed;
+    border-radius: 0 10px 10px 0;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .taste-cue small { display: block; margin-top: 2px; font-size: 14px; font-weight: 600; color: var(--muted); }
+
   .tk-text .punch2 { color: #9a3412; }
   .tk-text .q3 { display: block; padding-top: 10px; border-top: 2px solid var(--line); font-size: 22px; color: var(--text); }
 
@@ -2278,7 +2297,7 @@ TIMING: 1 menit (dipendekkan karena WYSIATI di P5).
 
 ---
 
-<div class="slide wide-left">
+<div class="slide wide-left judge">
 <div>
 
 <span class="eyebrow">P6 · Audacious Reality</span>
@@ -2286,6 +2305,8 @@ TIMING: 1 menit (dipendekkan karena WYSIATI di P5).
 ## Let Amp execute while you keep the judgment
 
 A check can pass on a result that nobody needs. **Taste** is how you decide if it is useful.
+
+<p class="taste-cue">Practice builds judgment when patterns repeat and feedback is quick and clear.<small>Kahneman, <i>Thinking, Fast and Slow</i>, ch. 22</small></p>
 
 <p class="keyline">The agents worked in parallel on one problem, and I made one decision.</p>
 
@@ -2308,6 +2329,7 @@ A check can pass on a result that nobody needs. **Taste** is how you decide if i
 <!--
 P6 (lanjutan) — argumen delegasi
 TIMING: 2 menit · stage 5–6 selesai sekitar 11:07.
+Sumber: Kahneman, Thinking, Fast and Slow, ch. 22 (intuisi ahli: lingkungan yang teratur dan feedback yang cepat dan jelas).
 -->
 
 ---
@@ -2828,4 +2850,5 @@ Q&A
 
 <!--
 Handoff ke Clarence. Gambar dari Clarence menggantikan kartu TO BE CONTINUED di slide ini; つづく tetap di pojok kanan bawah.
+Saat gambar Clarence tampil: "Nanti Clarence bakal nunjukin gimana dia melatih penilaian itu waktu review UI."
 -->
