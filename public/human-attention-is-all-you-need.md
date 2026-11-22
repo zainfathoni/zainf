@@ -1230,6 +1230,20 @@ style: |
   .tbc-recall small { display: block; margin-top: 10px; font-size: 18px; font-weight: 600; color: #c9bfae; }
   .tbc-next { margin: 28px 0 0; font-size: 26px; font-weight: 600; color: #fdba74; }
 
+  /* Slide 30 with Clarence's prototypes slide: the audience judges it before his talk. */
+  .tbc-test { display: flex; align-items: center; gap: 40px; width: 100%; }
+  .tbc-test img { width: 700px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+  .tbc-test .tbc-side { flex: 1; text-align: left; }
+  .tbc-test .tbc-card { font-size: 26px; padding: 8px 18px; border-width: 3px; }
+  .tbc-ask { margin: 28px 0 0; font-size: 44px; font-weight: 800; line-height: 1.15; color: #fff; }
+  .tbc-ask small { display: block; margin-top: 14px; font-size: 30px; font-weight: 700; color: #fdba74; }
+  .tbc-test .tbc-recall { margin-top: 28px; font-size: 20px; font-weight: 600; color: #e5dccb; }
+  .tbc-test .tbc-recall small { font-size: 15px; margin-top: 6px; }
+  .tbc-credit { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+  .tbc-test .tbc-credit img { width: 60px; height: 60px; border-radius: 50%; box-shadow: none; border: 2px solid #fdba74; }
+  .tbc-credit p { margin: 0; font-size: 17px; line-height: 1.35; color: #c9bfae; }
+  .tbc-credit b { color: #fff; }
+
   section.tbc {
     display: flex;
     align-items: center;
@@ -2862,15 +2876,21 @@ Q&A
 <!-- _class: tbc -->
 <!-- _backgroundColor: "#111827" -->
 
-<div class="tbc-wrap">
+<div class="tbc-test">
+<div>
+<img src="assets/human-attention-clarence-prototypes.jpg" alt="Clarence's slide: Prototype, like a lot. Three booking-screen prototypes, A, B and C, with C checked">
+<div class="tbc-credit"><img src="assets/human-attention-clarence.jpg" alt="Clarence"><p><b>Clarence</b> · Design Engineer at fireflies.ai<br>Slide from his IDSW 2026 talk, shared for this handoff</p></div>
+</div>
+<div class="tbc-side">
 <p class="tbc-card">TO BE CONTINUED</p>
-<p class="tbc-recall">Practice builds judgment when patterns repeat and feedback is quick and clear.<small>From slide 13 · Kahneman, <i>Thinking, Fast and Slow</i>, ch. 22</small></p>
-<p class="tbc-next">Next: Clarence shows how he trains that judgment in UI review.</p>
+<p class="tbc-ask">Which one would you pick?<small>How would you judge it?</small></p>
+<p class="tbc-recall">Practice builds judgment when patterns repeat and feedback is quick and clear.<small>Slide 13 · Kahneman, <i>Thinking, Fast and Slow</i>, ch.&nbsp;22</small></p>
+</div>
 </div>
 
 <p class="tsuzuku" lang="ja">つづく</p>
 
 <!--
-Handoff ke Clarence. Slide ini sudah lengkap tanpa gambar Clarence. Kalau gambarnya datang, gambar itu bisa menggantikan kotak di tengah atau tampil di sampingnya; つづく tetap di pojok kanan bawah.
+Handoff ke Clarence. Gambar: slide 23 Clarence (prototipe A, B, C). Tujuannya menguji audiens, jangan bocorkan jawabannya. Tanya: kalian pilih yang mana? Bagaimana kalian menilainya? Biarkan audiens menjawab sebentar, lalu serahkan ke Clarence.
 Ucapkan: "Nanti Clarence bakal nunjukin gimana dia melatih penilaian itu waktu review UI."
 -->
