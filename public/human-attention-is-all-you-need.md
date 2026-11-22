@@ -250,32 +250,19 @@ style: |
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
   }
 
-  /* Group photo slide: the photo fills the slide; the dashed box holds its place until then. */
   .photo-slide {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  .photo-slide .photo-todo,
   .photo-slide img {
     flex: 1;
+    width: 100%;
+    min-height: 0;
     margin: 14px 0 22px;
     border-radius: 16px;
-  }
-
-  .photo-slide img { width: 100%; min-height: 0; object-fit: cover; }
-
-  .photo-todo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 4px dashed var(--red);
-    background: #fef2f2;
-    color: #991b1b;
-    font-size: 40px;
-    font-weight: 800;
-    text-align: center;
+    object-fit: cover;
   }
 
   /* Alan/Ben audience moment: both lists readable from the back; the takeaway is one fragment. */
@@ -2535,14 +2522,14 @@ Sumber: https://vibefromcafe.id (screenshot dari preview https://bce71bf3.vibefr
 
 <div class="photo-slide">
 
-<span class="eyebrow">P7 · 2 of 3 · Vibe From Cafe</span>
+<span class="eyebrow">P7 · 2 of 3 · Vibe From Cafe · Give us a wave!</span>
 
-<div class="photo-todo">Add event photo: Vibe From Cafe members</div>
+<img src="assets/human-attention-vfc-group.jpg" alt="Vibe From Cafe members at IDSW 2026, holding up phones with the community logo">
 
 </div>
 
 <!--
-P7.2 (lanjutan) — foto bersama anggota Vibe From Cafe; isyarat untuk melambai. Ganti kotak ini dengan foto setelah diambil.
+P7.2 (lanjutan) — foto bersama anggota Vibe From Cafe; isyarat untuk melambai.
 TIMING: sekitar 5 detik, di dalam 1,5 menit P7.2.
 -->
 
