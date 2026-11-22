@@ -1217,7 +1217,19 @@ style: |
     opacity: 0;
   }
 
-  /* Silent handoff card after Q&A. Clarence's picture replaces the card later. */
+  /* Handoff after Q&A: works without Clarence's picture; it recalls the slide 13 point. */
+  .tbc-wrap { max-width: 1000px; text-align: center; }
+  .tbc-wrap .tbc-card { display: inline-block; font-size: 56px; }
+  .tbc-recall {
+    margin: 40px 0 0;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+  }
+  .tbc-recall small { display: block; margin-top: 10px; font-size: 18px; font-weight: 600; color: #c9bfae; }
+  .tbc-next { margin: 28px 0 0; font-size: 26px; font-weight: 600; color: #fdba74; }
+
   section.tbc {
     display: flex;
     align-items: center;
@@ -2850,11 +2862,15 @@ Q&A
 <!-- _class: tbc -->
 <!-- _backgroundColor: "#111827" -->
 
+<div class="tbc-wrap">
 <p class="tbc-card">TO BE CONTINUED</p>
+<p class="tbc-recall">Practice builds judgment when patterns repeat and feedback is quick and clear.<small>From slide 13 · Kahneman, <i>Thinking, Fast and Slow</i>, ch. 22</small></p>
+<p class="tbc-next">Next: Clarence shows how he trains that judgment in UI review.</p>
+</div>
 
 <p class="tsuzuku" lang="ja">つづく</p>
 
 <!--
-Handoff ke Clarence. Gambar dari Clarence menggantikan kartu TO BE CONTINUED di slide ini; つづく tetap di pojok kanan bawah.
-Saat gambar Clarence tampil: "Nanti Clarence bakal nunjukin gimana dia melatih penilaian itu waktu review UI."
+Handoff ke Clarence. Slide ini sudah lengkap tanpa gambar Clarence. Kalau gambarnya datang, gambar itu bisa menggantikan kotak di tengah atau tampil di sampingnya; つづく tetap di pojok kanan bawah.
+Ucapkan: "Nanti Clarence bakal nunjukin gimana dia melatih penilaian itu waktu review UI."
 -->
