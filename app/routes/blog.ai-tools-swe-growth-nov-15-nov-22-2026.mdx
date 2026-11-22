@@ -1,0 +1,93 @@
+---
+meta:
+  - title: "PR Makin Banyak, Review Tetap Jalan — AI Tools Digest #43"
+  - name: description
+    content: "Orkestrasi agent, test drive sebelum langganan, dan harapan Gemini lintas harness. Rangkuman dari grup AI Tools SWE GROWTH, 15–22 Nov 2026."
+  - author: Zain Fathoni
+  - date: "2026-11-22"
+---
+
+import { PostHeader } from "~/components/PostHeader";
+
+export const meta = () => attributes.meta;
+
+<PostHeader {...attributes} />
+
+# PR Makin Banyak, Review Tetap Jalan — AI Tools Digest #43
+
+Minggu ini kita banyak ngomongin cara memperbanyak hasil kerja agent. Tapi pengalaman Mas Naufaldi justru membawa obrolan balik ke biaya: “Beh, PR banyak tapi token cepet habis, paling related into terkait UI, dan Flow.” Orkestrasi jalan, PR bertambah, manusia masih harus memeriksa apakah hasilnya memang sesuai yang diminta.
+
+Dari percakapan 15–22 November, itu yang paling menarik buat saya. Pilihan model dan harness makin banyak, tetapi alasan untuk menambah satu lagi langganan harus lebih jelas daripada sekadar penasaran.
+
+## Orkestrasi yang berguna, skill yang tumpang tindih
+
+Mas Naufaldi cerita memakai [T3 Code](https://t3.codes) untuk orkestrasi, termasuk checking lewat browser dan emulator. Ia melihat manfaat di workflow UI, sambil mengingatkan perlunya merapikan plan dan issue supaya kerja agent tidak melebar. Review manusia tetap diperlukan untuk menentukan bagian UI mana yang benar-benar perlu diperiksa.
+
+Mas Michael sempat memakai T3 dan menyukai UX-nya, tetapi kemudian menghapusnya setelah berpindah ke [Amp Code](https://ampcode.com). Dua pengalaman itu bisa sama-sama masuk akal. Nyaman dipakai tidak otomatis berarti perlu dipertahankan dalam semua setup.
+
+Di sisi lain, saya share perdebatan soal Poteto mode di Amp. Mas nulad menimpali: “sebenarnya verification-nya poteto-mode sama irrefutable proof-nya thorsten sebelas-duabelas sih IMO”. Saya sendiri mulai mengurangi pemakaian skill bukti E2E buatan sendiri ketika kebutuhan yang sama sudah ditangani harness.
+
+[Tautan yang jadi bahan obrolan](https://x.com/sqs/status/2122881764167479398) ini menarik karena menyentuh kebiasaan kita mengoleksi skill. Sebelum menambah prosedur verifikasi, cek dulu apa yang sudah dikerjakan tool-nya. Kalau dua lapis menguji hal yang sama, waktu dan tokennya mungkin lebih berguna untuk memeriksa perilaku yang belum teruji.
+
+## Murah per token, lama sampai selesai
+
+Mas Sh memberi contoh yang lebih dekat dengan keseharian: “Sekarang sebenarnya sudah pakai $1 cmd + ngeteng DeepSeek, cuma kadang ngerjain tasknya muter2 lama... Mungkin skill issues juga 😅”. Ia sedang menimbang apakah perlu berlangganan layanan lain.
+
+Balasan Mbak Eka praktis: coba [CommandCode](https://commandcode.ai), bandingkan model [Anthropic](https://anthropic.com) dengan [Gemini](https://gemini.google.com) pada pekerjaan yang sama, lalu lihat hasil dan usage-nya. Ini saran eksperimen dari percakapan, bukan janji bahwa paket tertentu pasti paling hemat. Harga yang disebut di chat pun perlu dicek lagi di penyedianya.
+
+Mbak Eka menutup dengan “(Reply sepanjang ini gak ngasih jawaban 😝)”. Menurut saya justru itu jawabannya: kita belum punya cukup informasi tentang task, standar hasil, dan toleransi menunggu untuk memilihkan satu langganan buat semua orang.
+
+[DeepSeek](https://deepseek.com) tetap banyak disebut untuk budget terbatas. Tapi bila satu tugas harus diulang berkali-kali, biaya akhirnya mencakup waktu menunggu dan review. Saya lebih tertarik mencatat berapa lama sampai perubahan bisa diterima daripada membandingkan harga token sendirian.
+
+Mas Oshi merangkum risiko terlalu nyaman dengan satu setup: “Kalo sudah ketemu, teruslah mencari.. karena tiap bulan keluar yg baru, workflow lama jd basi 😅”. Cukup sisakan satu task pembanding yang bisa dipakai lagi ketika ingin mencoba model baru; tidak perlu membongkar workflow setiap ada pengumuman.
+
+## Langganan sudah ada, harness-nya belum tentu cocok
+
+Antusiasme Gemini terasa dari banyaknya tautan pengumuman yang dibawa Mas Michael. Namun buat Mas Dias, dukungan harness memengaruhi keputusan berlangganan. Mas Iqbal bahkan bilang, “Nungguuuin amp support gemini wkwk”. Itu harapan pengguna, bukan bukti integrasinya sudah tersedia.
+
+Pertanyaan Mas Zahid tentang membawa login subscription ke aplikasi sendiri memicu diskusi panjang. Mas Indra, Mas Iqbal, dan Mas Michael membedakan SDK, mekanisme login, serta jalur integrasi. Ada koreksi di tengah obrolan, jadi saya tidak menjadikannya panduan umum tentang izin provider.
+
+Pegangan konkretnya adalah [halaman resmi Amp tentang penggunaan paket Claude](https://ampcode.com/news/use-your-claude-plan), yang dibagikan Mas Indra. Dukungan untuk satu produk tidak bisa langsung digeneralisasi ke aplikasi lain. Sebelum memindahkan langganan, cek jalur yang benar-benar didukung untuk harness yang akan dipakai; kemampuan login saja belum menjawab seluruh pertanyaannya.
+
+## ⚡ Quick Hits
+
+- **Open weight perlu dibedakan dari open source.** Mas Riza Fahmi mengoreksi istilah yang kita pakai: “model-model ini termasuk deepsek dkk bukan model open source, tapi model open weight ✌️”. Ia membagikan [Tiga Golongan LLM](https://dekontaminasi.substack.com/p/tiga-golongan-llm) untuk memperjelas bedanya.
+
+- **[Inkling Small 2](https://x.com/rizafahmi22/status/2123192012459688320) layak masuk antrean eksperimen.** Review Mas Riza Fahmi diteruskan Mas Michael, lalu Mas Riza Fahmi menambahkan: “Potensial sekali model yg satu ini. Layak di eksplorasi lebih lanjut”. Saya belum menarik kesimpulan perbandingan performa dari percakapan ini.
+
+- **Memory bukan sekadar tumpukan skill.** Mas Aksal membagikan [AI Memory](https://github.com/akitaonrails/ai-memory) saat membahas sharing session. Ia dan Mas Michael membedakan kebutuhan menyimpan riwayat percakapan dari knowledge atau prosedur di skill. Tool ini masih bahan eksplorasi dalam rangkuman ini.
+
+- **Voice command boleh dicicil.** Mbak Eka menjelaskan, “Misal kepikiran 2 kalimat, dictate.” Setelah itu ia berpikir lagi, melanjutkan list, lalu merapikan dengan keyboard. Buat yang tidak nyaman ngomong satu prompt panjang, cara ini terasa lebih masuk akal.
+
+- **Bacaan untuk repo besar.** Mas Michael membagikan tulisan [Sourcegraph tentang monorepo code search untuk coding agents](https://sourcegraph.com/blog/monorepo-code-search-ai-coding-agents). Simpan untuk saat agent kesulitan menemukan kode yang relevan, bukan hanya saat ingin mengganti model.
+
+Quick hits minggu ini memberi beberapa eksperimen kecil. Pilih yang menjawab masalah nyata di workflow sekarang; sisanya aman masuk bookmark dulu.
+
+## ✅ Yang Perlu Dicoba Minggu Ini
+
+1. Ambil satu task nyata, jalankan di dua model melalui [CommandCode](https://commandcode.ai), lalu catat biaya, waktu selesai, jumlah koreksi, dan hasil review. Jangan cuma menilai jawaban pertama.
+2. Jika memakai [Amp](https://ampcode.com), audit skill verifikasi tambahan. Pertahankan yang memeriksa hal berbeda, lalu uji apakah pengurangannya tetap menghasilkan bukti yang cukup.
+3. Baca [dukungan paket Claude di Amp](https://ampcode.com/news/use-your-claude-plan) sebelum mencoba jalur subscription lintas harness. Jangan memakai diskusi chat sebagai pengganti ketentuan resmi.
+4. Bila masalahnya kehilangan konteks antar-session, eksplorasi [AI Memory](https://github.com/akitaonrails/ai-memory) di repo non-sensitif dan cek apa yang benar-benar tersimpan.
+
+Hasil eksperimen yang paling berguna minggu depan mungkin sederhana: satu task selesai dengan lebih sedikit koreksi, pada biaya yang bisa kita pertahankan.
+
+## 👥 Kontributor Minggu Ini
+
+- **Mas Naufaldi:** pengalaman orkestrasi T3, token, dan review UI.
+- **Mas nulad:** perbandingan prinsip verifikasi Poteto mode dan Amp.
+- **Mas Michael:** pengalaman berpindah harness, tautan model, serta diskusi integrasi dan memory.
+- **Mas Sh:** contoh konkret trade-off budget dan task yang berputar lama.
+- **Mbak Eka:** cara test drive model dan penggunaan voice command bertahap.
+- **Mas Oshi:** pengingat bahwa workflow terus berubah.
+- **Mas Dias:** dukungan harness sebagai pertimbangan berlangganan.
+- **Mas Iqbal:** harapan dukungan Gemini dan diskusi integrasi.
+- **Mas Zahid:** pertanyaan subscription untuk aplikasi sendiri.
+- **Mas Indra:** membagikan sumber resmi penggunaan paket Claude di Amp.
+- **Mas Riza Fahmi:** koreksi istilah open weight dan eksplorasi Inkling.
+- **Mas Aksal:** referensi memory untuk sharing session.
+
+Terima kasih sudah berbagi pengalaman yang belum tentu mulus. Justru detail biaya, keterbatasan, dan koreksi di tengah percakapan yang membuat eksperimen berikutnya lebih terarah.
+
+*Ditulis dari dalam grup, bukan dari luar.*
+*Zain Fathoni, dengan bantuan [Bro Pro 🚔](https://ark.zainf.dev/#prowl), [Kang Re 📼](https://ark.zainf.dev/#rewind), dan [Lek Jack 🛠️](https://ark.zainf.dev/#wheeljack) — 22 November 2026*
