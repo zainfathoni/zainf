@@ -1545,30 +1545,40 @@ style: |
 
   /* Figure 6 (Kahneman ch. 7): the same middle mark reads as B or 13 by context. The mark is
      highlighted once its reveal is active; the printed PDF shows the highlight. */
-  .fig6 .rows {
+  .fig6 .panels {
     display: flex;
-    flex-direction: column;
     gap: 14px;
     margin-top: 14px;
   }
 
-  /* The sentence sits between the rows, as a distraction before the reveal. */
-  .fig6 .rows p.mid {
+  .fig6 .panels p.mid {
+    flex-grow: 0.9;
     font-family: "Space Grotesk", ".SF NS", ui-sans-serif, system-ui, sans-serif;
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: uppercase;
   }
 
-  .fig6 .rows p {
+  .fig6 .panels p {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
+    padding: 28px 16px;
+    border: 2px solid var(--text);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 88px;
     line-height: 1;
     color: var(--text);
   }
 
+  .fig6 .panels p:last-child { flex-grow: 1.25; }
+
   /* All six characters are drawn in one hand: same stroke, height and frame as the mark. */
-  .fig6 .rows img.hw {
+  .fig6 .panels img.hw {
     height: 0.8em;
     width: auto;
     margin: 0 0.04em;
@@ -2202,15 +2212,15 @@ TIMING: sekitar 15 detik lelucon + 25 detik anggaran, di dalam 3 menit P5 (mulai
 
 <span class="eyebrow">P5 · False Hope</span>
 
-<div class="rows">
+<div class="panels">
 <p><img class="hw" src="assets/human-attention-fig6-A.svg" alt="A"><span class="glyph"><img src="assets/human-attention-fig6-mark.svg" alt="Ambiguous mark that reads as B or 13"></span><img class="hw" src="assets/human-attention-fig6-C.svg" alt="C"></p>
-<p class="mid">“Ann approached the <span class="bankword">bank</span>.”</p>
+<p class="mid"><span>Ann<br>approached<br>the <span class="bankword">bank</span>.</span></p>
 <p><img class="hw" src="assets/human-attention-fig6-1.svg" alt="1"><img class="hw" src="assets/human-attention-fig6-2.svg" alt="2"><span class="glyph"><img src="assets/human-attention-fig6-mark.svg" alt="Ambiguous mark that reads as B or 13"></span><img class="hw" src="assets/human-attention-fig6-1.svg" alt="1"><img class="hw" src="assets/human-attention-fig6-4.svg" alt="4"></p>
 </div>
 
 <div class="beats">
 
-* <span class="hl">Both rows use the same middle mark. The context chose how you read it.</span>
+* <span class="hl">Both sequences use the same middle mark. The context chose how you read it.</span>
 * <span class="banks"><span class="bk"><img src="assets/human-attention-riverbank.svg" alt="Illustration of a riverbank">Riverbank</span><span class="bk"><img src="assets/human-attention-financial-bank.svg" alt="Illustration of a bank building">Financial bank</span></span>
 
 </div>

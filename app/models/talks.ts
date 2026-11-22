@@ -9,6 +9,28 @@ export type Talk = {
 
 export const conferences: Talk[] = [
   {
+    slug: "idsw-2026",
+    date: "2026-11-22",
+    title: "(Human) Attention is All You Need",
+    description:
+      "AI can help us do more. We still choose what deserves our attention, what to delegate, and when to stop.",
+    event: "Indonesia Software Developer Conference 2026",
+    resources: [
+      {
+        href: "/human-attention-is-all-you-need.html",
+        label: "Open slides",
+      },
+      {
+        href: "/human-attention-is-all-you-need.pdf",
+        label: "Download PDF",
+      },
+      {
+        href: "https://idsw.dev/",
+        label: "Event link",
+      },
+    ],
+  },
+  {
     slug: "gdg-devfest-2026-jogjakarta",
     date: "2026-11-08",
     title: "How I Shipped More Without Reading My Code",
