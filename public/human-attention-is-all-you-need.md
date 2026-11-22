@@ -1237,8 +1237,6 @@ style: |
   .tbc-test .tbc-card { font-size: 26px; padding: 8px 18px; border-width: 3px; }
   .tbc-ask { margin: 28px 0 0; font-size: 44px; font-weight: 800; line-height: 1.15; color: #fff; }
   .tbc-ask small { display: block; margin-top: 14px; font-size: 30px; font-weight: 700; color: #fdba74; }
-  .tbc-test .tbc-recall { margin-top: 28px; font-size: 20px; font-weight: 600; color: #e5dccb; }
-  .tbc-test .tbc-recall small { font-size: 15px; margin-top: 6px; }
   .tbc-credit { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
   .tbc-test .tbc-credit img { width: 60px; height: 60px; border-radius: 50%; box-shadow: none; border: 2px solid #fdba74; }
   .tbc-credit p { margin: 0; font-size: 17px; line-height: 1.35; color: #c9bfae; }
@@ -2883,14 +2881,13 @@ Q&A
 </div>
 <div class="tbc-side">
 <p class="tbc-card">TO BE CONTINUED</p>
-<p class="tbc-ask">Which one would you pick?<small>How would you judge it?</small></p>
-<p class="tbc-recall">Practice builds judgment when patterns repeat and feedback is quick and clear.<small>Slide 13 · Kahneman, <i>Thinking, Fast and Slow</i>, ch.&nbsp;22</small></p>
+<p class="tbc-ask">If agents do the work, where does your attention go?<small>Next: Clarence, <i>Frontend Job is Dying</i></small></p>
 </div>
 </div>
 
 <p class="tsuzuku" lang="ja">つづく</p>
 
 <!--
-Handoff ke Clarence. Gambar: slide 23 Clarence (prototipe A, B, C). Tujuannya menguji audiens, jangan bocorkan jawabannya. Tanya: kalian pilih yang mana? Bagaimana kalian menilainya? Biarkan audiens menjawab sebentar, lalu serahkan ke Clarence.
+Handoff ke Clarence. Gambar: slide 23 Clarence (prototipe A, B, C). Tanya: kalau agent yang mengerjakan, perhatian kalian ke mana? Jangan jawab, lalu serahkan ke Clarence (Frontend Job is Dying).
 Ucapkan: "Nanti Clarence bakal nunjukin gimana dia melatih penilaian itu waktu review UI."
 -->
