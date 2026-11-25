@@ -708,19 +708,29 @@ Minta dua contoh pekerjaan di balik acara sekolah yang jarang terlihat. Bahas me
 
 ---
 
-<div class="opener">
+<div class="slide">
+<div>
 
 <p class="tag">P4 · Emotional Win</p>
 
-## “Aku lihat karyamu. Mau bantu kami juga?”
+## Coba cari <span class="nw">“Zain Fathoni”.</span>
 
-<p class="sub">Bayangkan seseorang bisa langsung paham apa yang kamu kerjakan dan tahu cara mengajakmu bekerja sama.</p>
+<p class="pull">Bukti apa yang kalian temukan tentang pekerjaan saya?</p>
 
+</div>
+<div class="visual">
+<div class="stack">
+<div class="card"><span class="label">Cari</span><p class="file">🔍 Zain Fathoni</p></div>
+<div class="card warm"><span class="label">Sebutkan satu contoh</span><p>Apa yang kamu buka? Apa yang ditunjukkannya tentang pekerjaan saya?</p></div>
+<div class="card gap"><span class="label">Bukan bukti</span><p>Urutan di hasil pencarian. Yang dihitung adalah isi yang bisa dibuka dan dicek.</p></div>
+</div>
+<p class="caption">Kalau pencarian tidak jalan: buka <strong>zainfathoni.com</strong>.</p>
+</div>
 </div>
 
 <!--
 P4 · Emotional win / hope · 3 menit
-Ini situasi yang kita bayangkan, bukan testimoni. Ajak siswa berpikir: lebih ingin diajak ke proyek seperti apa, dan oleh siapa? Minta mereka sebutkan ke teman di sebelah. Terima jawaban seperti bikin poster, bantu acara, atau merapikan data, tanpa perlu nama jabatan.
+Minta dua atau tiga peserta yang memegang HP mencari "Zain Fathoni" selama 60 detik. Tanyakan: "Bukti apa yang kalian temukan tentang pekerjaan saya?" Minta satu orang menyebutkan satu contoh yang dia buka, lalu apa yang ditunjukkan contoh itu. Misalnya, slide talk menunjukkan topik yang saya jelaskan, dan artikel menunjukkan apa yang saya pelajari. Kalau ada yang menyebut "muncul paling atas", arahkan kembali: urutan hasil pencarian bukan bukti, isi yang bisa dibuka dan dicek itulah buktinya. Kalau hasilnya tentang orang lain atau tidak relevan, katakan saja. Kalau sinyal lemah atau pencarian tidak jalan, buka zainfathoni.com di layar dan tanyakan hal yang sama. Tutup dengan harapan: "Bayangkan suatu hari orang menemukan satu karyamu seperti ini, paham apa yang kamu kerjakan, lalu mengajakmu bekerja sama."
 -->
 
 ---
@@ -1117,21 +1127,23 @@ Contoh memakai bahasa pemula dengan sengaja. Minta satu sukarelawan mengganti �
 
 <p class="tag">P7 · 3 of 4 · Buat profil</p>
 
-## Pilih satu tempat untuk menampilkan karya.
+## Mulai dari karya, bukan dari website.
 
 <div class="visual grid three">
-<div class="card"><span class="label">LinkedIn</span><p>Profil singkat dan tautan karya untuk kenalan profesional.</p></div>
-<div class="card"><span class="label">GitHub</span><p>Proyek kode atau analisis, dengan petunjuk singkat untuk melihat hasilnya.</p></div>
-<div class="card"><span class="label">Behance</span><p>Karya visual dan contoh proses desain.</p></div>
+<div class="card good"><span class="label">Cukup untuk hari ini</span><p>Satu dokumen yang bisa dibagikan, berisi satu karya terbaik dalam lima baris.</p></div>
+<div class="card"><span class="label">Opsional · website</span><p>AI mempermudah halaman pertama, tapi tidak tahu apa yang kamu kerjakan dan apa yang berubah.</p></div>
+<div class="card"><span class="label">Opsional · domain pribadi</span><p>Alamat yang tetap untuk karyamu. Bukan jaminan peringkat Google lebih tinggi.</p></div>
 </div>
 
-<p class="keyline">Draf dokumen pribadi cukup untuk hari ini. Cek batas usia platform, izin, dan data pribadi sebelum berbagi.</p>
+<p class="keyline">Lembar latihan tidak perlu <strong>website, akun, pembelian, atau publikasi</strong>.</p>
+
+<p class="caption">Nanti, saat siap: LinkedIn, GitHub, atau Behance. Cek batas usia, izin, dan data pribadi.</p>
 
 </div>
 
 <!--
-P7 · Kanal dan keamanan · 3 menit
-Tidak perlu mendaftar atau mengunggah karya hari ini. Gunakan satu dokumen privat atau catatan. Jaga nomor pribadi, lokasi rinci, foto orang lain, dan data sekolah yang tidak boleh dibagikan. Saat siap, cek akses tautan dengan izin yang sesuai, bukan dengan membuat semua dokumen publik.
+P7 · Mulai dari karya · 3 menit
+Ucapkan aturannya pelan-pelan: mulai dari karya, bukan dari website. Untuk hari ini, satu dokumen sederhana yang bisa dibagikan dengan satu contoh karya yang kuat sudah cukup. Website dan domain pribadi adalah alat tambahan, bukan syarat. AI memang membuat halaman pertama lebih mudah dibuat, tetapi AI tidak tahu apa yang sebenarnya kamu kerjakan dan apa yang berubah. Bagian itu harus kamu tulis dengan jujur. Domain memberi karyamu alamat yang tetap, tetapi tidak menjanjikan peringkat Google yang lebih tinggi. Tegaskan: lembar latihan tidak meminta website, akun, pembelian, atau publikasi. Jaga nomor pribadi, lokasi rinci, foto orang lain, dan data sekolah yang tidak boleh dibagikan. Saat siap, cek akses tautan dengan izin yang sesuai, bukan dengan membuat semua dokumen publik.
 -->
 
 ---
