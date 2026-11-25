@@ -614,7 +614,7 @@ Angkat tangan: siapa yang sudah punya satu bidang yang ingin dicoba? Siapa yang 
 
 ## Tes kerja pertama saya: perbaiki error.
 
-<p>Sambil kuliah, saya melamar jadi programmer paruh waktu di sebuah software house di Bandung.</p>
+<p>Tahun 2013, sambil kuliah, saya melamar jadi programmer paruh waktu di QUN (Qiwary Usaha Nusantara), sebuah software house di Bandung.</p>
 
 </div>
 <div class="visual">
@@ -628,8 +628,7 @@ Angkat tangan: siapa yang sudah punya satu bidang yang ingin dicoba? Siapa yang 
 
 <!--
 P2 · Tes kerja pertama · 2 menit
-Ceritakan bahwa skill Anda waktu itu masih minim, tetapi tes masuknya sederhana: compile proyek open source Java dan perbaiki error-nya. Anda diterima. Sambungkan ke kalimat ToR: panitia membuat acara ini karena industri membutuhkan bukti. Tanyakan: kalau besok ada tes seperti itu di bidangmu, karya apa yang bisa kamu tunjukkan? Sumber: 7 Pelajaran, Pelajaran #2.
-[KONFIRMASI] Tahun dan nama perusahaan bila mau disebut (deck 2017 menulis Qiwary Usaha Nusantara, 2013). Jangan bilang tidak ada wawancara kalau Anda tidak yakin.
+Ceritakan bahwa pada 2013 skill Anda masih minim. Selain wawancara, tes masuk di QUN sederhana: compile proyek open source Java dan perbaiki error-nya. Anda diterima dan bekerja di QUN dari 2013 sampai 2014. Sambungkan ke kalimat ToR: panitia membuat acara ini karena industri membutuhkan bukti. Tanyakan: kalau besok ada tes seperti itu di bidangmu, karya apa yang bisa kamu tunjukkan? Sumber: 7 Pelajaran, Pelajaran #2.
 -->
 
 ---
