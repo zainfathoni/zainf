@@ -713,24 +713,24 @@ Minta dua contoh pekerjaan di balik acara sekolah yang jarang terlihat. Bahas me
 
 <p class="tag">P4 · Emotional Win</p>
 
-## Coba cari <span class="nw">“Zain Fathoni”.</span>
+## Cari <span class="nw">“Zain Fathoni”</span> <span class="nw">di Google.</span>
 
 <p class="pull">Bukti apa yang kalian temukan tentang pekerjaan saya?</p>
 
 </div>
 <div class="visual">
 <div class="stack">
-<div class="card"><span class="label">Cari</span><p class="file">🔍 Zain Fathoni</p></div>
+<div class="card"><span class="label">Cari</span><p class="file">Google · 🔍 Zain Fathoni</p></div>
 <div class="card warm"><span class="label">Sebutkan satu contoh</span><p>Apa yang kamu buka? Apa yang ditunjukkannya tentang pekerjaan saya?</p></div>
 <div class="card gap"><span class="label">Bukan bukti</span><p>Urutan di hasil pencarian. Yang dihitung adalah isi yang bisa dibuka dan dicek.</p></div>
 </div>
-<p class="caption">Kalau pencarian tidak jalan: buka <strong>zainfathoni.com</strong>.</p>
+<p class="caption">Pencarian gagal: buka <strong>zainfathoni.com</strong>. Tanpa internet: buka screenshot yang sudah disimpan.</p>
 </div>
 </div>
 
 <!--
 P4 · Emotional win / hope · 3 menit
-Minta dua atau tiga peserta yang memegang HP mencari "Zain Fathoni" selama 60 detik. Tanyakan: "Bukti apa yang kalian temukan tentang pekerjaan saya?" Minta satu orang menyebutkan satu contoh yang dia buka, lalu apa yang ditunjukkan contoh itu. Misalnya, slide talk menunjukkan topik yang saya jelaskan, dan artikel menunjukkan apa yang saya pelajari. Kalau ada yang menyebut "muncul paling atas", arahkan kembali: urutan hasil pencarian bukan bukti, isi yang bisa dibuka dan dicek itulah buktinya. Kalau hasilnya tentang orang lain atau tidak relevan, katakan saja. Kalau sinyal lemah atau pencarian tidak jalan, buka zainfathoni.com di layar dan tanyakan hal yang sama. Tutup dengan harapan: "Bayangkan suatu hari orang menemukan satu karyamu seperti ini, paham apa yang kamu kerjakan, lalu mengajakmu bekerja sama."
+Siapkan sebelum acara: screenshot hasil pencarian Google untuk "Zain Fathoni" dan salinan halaman zainfathoni.com yang disimpan di laptop, supaya bisa dibuka tanpa internet. Saat sesi, minta dua atau tiga peserta yang memegang HP mencari "Zain Fathoni" di Google selama 60 detik. Tanyakan: "Bukti apa yang kalian temukan tentang pekerjaan saya?" Minta satu orang menyebutkan satu contoh yang dia buka, lalu apa yang ditunjukkan contoh itu. Misalnya, slide talk menunjukkan topik yang saya jelaskan, dan artikel menunjukkan apa yang saya pelajari. Kalau ada yang menyebut "muncul paling atas", arahkan kembali: urutan hasil pencarian bukan bukti, isi yang bisa dibuka dan dicek itulah buktinya. Kalau hasilnya tentang orang lain atau tidak relevan, katakan saja. Kalau internet jalan tetapi pencarian tidak membantu, buka zainfathoni.com di layar. Kalau tidak ada internet sama sekali, buka screenshot atau salinan halaman yang sudah disimpan. Tanyakan hal yang sama. Tutup dengan harapan: "Bayangkan suatu hari orang menemukan satu karyamu seperti ini, paham apa yang kamu kerjakan, lalu mengajakmu bekerja sama."
 -->
 
 ---
@@ -859,7 +859,7 @@ Bedakan makna ikigai yang luas dari alat refleksi karier modern. Ceritakan bahwa
 <span class="lap" style="left:298px;top:298px">Vokasi</span>
 <span class="core" style="left:220px;top:220px">Ikigai</span>
 </div>
-<p class="caption">Diagram tujuan dari Andrés Zuzunaga (2012). Marc Winn (2014) menaruh kata “ikigai” di tengahnya.</p>
+<p class="caption">Diagram “tujuan” Andrés Zuzunaga. Marc Winn (2014) menaruh kata “ikigai” di tengah.</p>
 </div>
 </div>
 
@@ -1082,7 +1082,7 @@ Tunjukkan lima bagian dari ToR. Tidak perlu angka besar. Hasil bisa berupa hal y
 <div class="row"><b>2. Peran:</b><span>Apa yang saya kerjakan sendiri atau bersama tim?</span></div>
 <div class="row"><b>3. Proses:</b><span>Apa keputusan penting yang saya buat?</span></div>
 <div class="row"><b>4. Hasil:</b><span>Apa yang berubah atau apa yang saya pelajari?</span></div>
-<div class="row"><b>5. Tautan atau lampiran:</b><span>Bukti apa yang boleh saya bagikan?</span></div>
+<div class="row"><b>5. Tautan atau lampiran:</b><span>Link, foto, atau file. Bukti offline boleh, cukup ditunjukkan langsung.</span></div>
 </div>
 </div>
 
@@ -1093,6 +1093,7 @@ Tunjukkan lima bagian dari ToR. Tidak perlu angka besar. Hasil bisa berupa hal y
 <!--
 P7 · Latihan lisan · 3 menit
 Minta pasangan bergantian memilih satu karya dan menceritakannya dalam 30 detik. Jika belum ada karya, pakai contoh rencana dan sebutkan apa yang belum diketahui. Minta pendengar mengulang peran pembicara dengan satu kalimat. Jika masih kabur, tambah satu kata kerja dan satu contoh keputusan.
+Untuk baris kelima, tegaskan: bukti tidak harus berupa link publik. Foto di galeri HP, file di laptop, atau hasil cetak yang bisa ditunjukkan secara pribadi sudah dihitung. Jika belum ada yang tersimpan, tulis apa yang akan dikumpulkan, misalnya foto karya atau file akhir, atau siapa yang bisa ditanya, misalnya pembina atau panitia. Jangan menampilkan nama atau kontak orang lain sebagai bukti publik tanpa izin.
 -->
 
 ---
