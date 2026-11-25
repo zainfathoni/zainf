@@ -371,6 +371,57 @@ style: |
     background: var(--accent);
   }
 
+  /* Ikigai explainer: four labelled circles and the overlaps. */
+  .ikigai-key { display: grid; gap: 10px; margin-top: 4px; }
+  .ikigai-key div {
+    display: grid;
+    grid-template-columns: 22px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+  .ikigai-key i { width: 22px; height: 22px; border-radius: 50%; }
+  .ikigai-key em { display: block; color: var(--muted); font-size: 16px; font-style: normal; }
+  .ikigai-key b { color: var(--accent-ink); font-size: 15px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .c-love { background: #fed7aa; }
+  .c-good { background: #bfdbfe; }
+  .c-need { background: #bbf7d0; }
+  .c-paid { background: #fecaca; }
+  .ikigai-venn { position: relative; width: 440px; height: 440px; margin: 0 auto; }
+  .ikigai-venn i {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+  .ikigai-venn i.c-love { left: 90px; top: 0; }
+  .ikigai-venn i.c-good { left: 0; top: 90px; }
+  .ikigai-venn i.c-need { left: 180px; top: 90px; }
+  .ikigai-venn i.c-paid { left: 90px; top: 180px; }
+  .ikigai-venn span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1.15;
+  }
+  .ikigai-venn .outer { white-space: nowrap; font-size: 18px; font-weight: 700; color: var(--text); }
+  .ikigai-venn .lap { font-size: 15px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--body); }
+  .ikigai-venn .core {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+  }
   /* Slide 14: an upload with no context. */
   .file {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
@@ -763,8 +814,48 @@ Ceritakan perpindahan dari developer ke manajer di Xtremax dan kembali ke jalur 
 </div>
 
 <!--
-P7 · We can do this / courage · 4 menit
+P7 · We can do this / courage · 2 menit
 Bedakan makna ikigai yang luas dari alat refleksi karier modern. Ceritakan bahwa hobi tidak harus jadi sumber penghasilan. Hari ini tujuannya memilih arah yang layak dicoba, bukan menemukan satu jawaban untuk seumur hidup. Sumber ada di slide terakhir.
+-->
+
+---
+
+<div class="slide">
+<div>
+
+<p class="tag">P7 · We Can Do This · Diagram Ikigai</p>
+
+## Empat lingkaran, empat pertanyaan.
+
+<div class="ikigai-key">
+<div><i class="c-love"></i><span>Yang kamu suka<em>what you love</em></span><b>Minat</b></div>
+<div><i class="c-good"></i><span>Yang kamu kuasai<em>what you are good at</em></span><b>Kemampuan</b></div>
+<div><i class="c-need"></i><span>Yang dibutuhkan orang<em>what the world needs</em></span><b>Kebutuhan</b></div>
+<div><i class="c-paid"></i><span>Yang bisa memberi penghasilan<em>what you can be paid for</em></span><b>Peluang</b></div>
+</div>
+
+
+</div>
+<div class="visual">
+<div class="ikigai-venn" aria-label="Diagram empat lingkaran: suka, kuasai, dibutuhkan, dan penghasilan. Irisannya passion, misi, profesi, dan vokasi. Ikigai ada di tengah.">
+<i class="c-love"></i><i class="c-good"></i><i class="c-need"></i><i class="c-paid"></i>
+<span class="outer" style="left:220px;top:52px">Suka</span>
+<span class="outer" style="left:56px;top:220px">Kuasai</span>
+<span class="outer" style="left:384px;top:220px">Dibutuhkan</span>
+<span class="outer" style="left:220px;top:388px">Penghasilan</span>
+<span class="lap" style="left:142px;top:142px">Passion</span>
+<span class="lap" style="left:298px;top:142px">Misi</span>
+<span class="lap" style="left:142px;top:298px">Profesi</span>
+<span class="lap" style="left:298px;top:298px">Vokasi</span>
+<span class="core" style="left:220px;top:220px">Ikigai</span>
+</div>
+<p class="caption">Diagram tujuan dari Andrés Zuzunaga (2012). Marc Winn (2014) menaruh kata “ikigai” di tengahnya.</p>
+</div>
+</div>
+
+<!--
+P7 · Diagram Ikigai · 3 menit
+Tunjuk satu lingkaran demi satu lingkaran dan sebut label di kanan: minat, kemampuan, kebutuhan, peluang. Empat label ini yang akan kalian isi di lembar latihan. Lalu tunjuk irisannya. Suka dan kuasai = passion. Suka dan dibutuhkan = misi. Kuasai dan bisa dibayar = profesi. Dibutuhkan dan bisa dibayar = vokasi. Di tengah, semuanya bertemu. Jelaskan dengan jujur: diagram ini awalnya diagram "tujuan" dari Andrés Zuzunaga. Marc Winn menaruh kata ikigai di tengahnya pada 2014. Di Jepang, ikigai bisa sesederhana jalan pagi atau merawat kebun. Jadi kita pakai diagram ini sebagai alat bantu, bukan rumus. Untuk siswa SMA/SMK, lingkaran penghasilan boleh berupa tanda kecil: diminta lagi, dipilih jadi panitia, atau dapat order kecil.
 -->
 
 ---
@@ -787,7 +878,7 @@ Bedakan makna ikigai yang luas dari alat refleksi karier modern. Ceritakan bahwa
 </div>
 
 <!--
-P7 · Empat pertanyaan · 5 menit
+P7 · Empat pertanyaan · 4 menit
 Minta peserta bedakan tindakan dari label: “suka video” bisa berarti menulis naskah, merekam, atau menyunting. Untuk kemampuan, cari bukti, misalnya teman mengandalkanmu untuk merapikan materi. Untuk peluang, cari brief, peran magang, atau cara kerja orang di bidang itu. Tandai dugaan, jangan mengarang bukti.
 -->
 
@@ -1195,6 +1286,7 @@ Ulangi pertanyaan pertama: kalau seseorang ingin mengajakmu ikut proyek, apa yan
 - Zain Fathoni · [7 Pelajaran yang Saya Peroleh Selama Berkarir di Dunia IT](https://pejuangkode.com/7-pelajaran-yang-saya-peroleh-selama-berkarir-di-dunia-it-6d17ba5de79e)
 - Dan Roam · [The Pop-Up Pitch](https://www.danroam.com/10ppdownload)
 - Sartore dkk. · [Ikigai dan perbedaannya dengan diagram empat pertanyaan](https://pmc.ncbi.nlm.nih.gov/articles/PMC10936145/)
+- Marc Winn · [Ikigai: where the four circle venn diagram came from](https://theviewinside.me/ikigai)
 
 </div>
 
