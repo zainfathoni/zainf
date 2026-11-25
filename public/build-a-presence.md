@@ -601,8 +601,35 @@ Buka dengan pertanyaan: Kalau seseorang mau mengajak kalian ikut proyek, apa yan
 </div>
 
 <!--
-P2 · Common ground / trust · 3 menit
+P2 · Common ground / trust · 2 menit
 Angkat tangan: siapa yang sudah punya satu bidang yang ingin dicoba? Siapa yang masih bingung? Katakan kedua jawaban wajar. Ceritakan singkat asumsi Anda di ITB: staf dan manajer terasa seperti urutan nilai, padahal jenis pekerjaannya berbeda.
+-->
+
+---
+
+<div class="slide">
+<div>
+
+<p class="tag">P2 · Common Ground</p>
+
+## Tes kerja pertama saya: perbaiki error.
+
+<p>Sambil kuliah, saya melamar jadi programmer paruh waktu di sebuah software house di Bandung.</p>
+
+</div>
+<div class="visual">
+<div class="stack">
+<div class="card"><span class="label">Tugasnya</span><p>Compile satu proyek open source berbahasa Java. Perbaiki error yang muncul.</p></div>
+<div class="card warm"><span class="label">Pelajarannya</span><p>Orang yang mau bekerja sama denganmu ingin melihat apa yang bisa kamu kerjakan.</p></div>
+</div>
+<p class="caption">Talenta punya potensi. Industri membutuhkan bukti. <strong>(ToR Career Lab)</strong></p>
+</div>
+</div>
+
+<!--
+P2 · Tes kerja pertama · 2 menit
+Ceritakan bahwa skill Anda waktu itu masih minim, tetapi tes masuknya sederhana: compile proyek open source Java dan perbaiki error-nya. Anda diterima. Sambungkan ke kalimat ToR: panitia membuat acara ini karena industri membutuhkan bukti. Tanyakan: kalau besok ada tes seperti itu di bidangmu, karya apa yang bisa kamu tunjukkan? Sumber: 7 Pelajaran, Pelajaran #2.
+[KONFIRMASI] Tahun dan nama perusahaan bila mau disebut (deck 2017 menulis Qiwary Usaha Nusantara, 2013). Jangan bilang tidak ada wawancara kalau Anda tidak yakin.
 -->
 
 ---
@@ -642,7 +669,7 @@ Minta dua contoh pekerjaan di balik acara sekolah yang jarang terlihat. Bahas me
 </div>
 
 <!--
-P4 · Emotional win / hope · 4 menit
+P4 · Emotional win / hope · 3 menit
 Ini situasi yang kita bayangkan, bukan testimoni. Ajak siswa berpikir: lebih ingin diajak ke proyek seperti apa, dan oleh siapa? Minta mereka sebutkan ke teman di sebelah. Terima jawaban seperti bikin poster, bantu acara, atau merapikan data, tanpa perlu nama jabatan.
 -->
 
@@ -808,7 +835,7 @@ Perkenalkan Naya sebagai contoh rekaan yang akan muncul lagi. Tanyakan: kalau du
 </div>
 
 <!--
-P7 · Contoh lintas bidang · 4 menit
+P7 · Contoh lintas bidang · 3 menit
 Minta pasangan memilih satu contoh atau mengusulkan versi sendiri. Satu orang menyebutkan apa yang dibuat, satu orang memperjelas siapa pemakai dan apa yang perlu diamati. Bidang di luar digital pun bisa memakai pola ini, misalnya tata letak meja registrasi atau petunjuk antrean.
 -->
 
@@ -833,8 +860,8 @@ Minta pasangan memilih satu contoh atau mengusulkan versi sendiri. Satu orang me
 </div>
 
 <!--
-P7 · Belajar sesuai kebutuhan · 3 menit
-Ambil gagasan just-in-time learning dan prinsip dasar dari materi Software Engineer Unggulan. Contoh pribadi: saat konflik Git menghambat tim, Anda mempelajari dasarnya, mengajarkannya, lalu tim mengubah cara kerja. Untuk siswa, cukup satu pertanyaan yang ingin dijawab lewat percobaan.
+P7 · Belajar sesuai kebutuhan · 2 menit
+Ambil gagasan just-in-time learning dan prinsip dasar dari materi Software Engineer Unggulan. Untuk siswa, cukup satu pertanyaan yang ingin dijawab lewat percobaan. Contoh pribadi soal Git datang sebentar lagi, sebagai contoh cerita karya lima baris.
 -->
 
 ---
@@ -861,6 +888,34 @@ Ambil gagasan just-in-time learning dan prinsip dasar dari materi Software Engin
 <!--
 P7 · Inventaris karya · 3 menit
 Beri 60 detik untuk mencatat satu karya yang sudah pernah dibuat dan peran sendiri di sana. Jika belum punya karya yang cocok, pilih satu percobaan kecil. Untuk karya tim, sebutkan kontribusi rekan dan minta izin sebelum membagikan hasil bersama.
+-->
+
+---
+
+<div class="stacked tight">
+
+<p class="tag">P7 · 2 of 4 · Cerita nyata</p>
+
+## Karya saya: satu long weekend, satu slide.
+
+<div class="visual done">
+<div class="story">
+<div class="row"><b>Konteks:</b><span>Tujuh backend developer, sering Git conflict. Satu conflict pernah makan setengah hari.</span></div>
+<div class="row"><b>Peran:</b><span>Saya memimpin tim itu.</span></div>
+<div class="row"><b>Proses:</b><span>Saya pelajari Git sampai dasarnya, lalu membuat slide dan menjelaskannya ke tim.</span></div>
+<div class="row"><b>Hasil:</b><span>Conflict lebih jarang. Biasanya selesai kurang dari setengah jam.</span></div>
+<div class="row"><b>Tautan:</b><span><a href="https://zainf.dev/git-best-practices">zainf.dev/git-best-practices</a></span></div>
+</div>
+</div>
+
+<p class="caption">Bukan proyek besar. Tapi karena ada slide-nya, saya masih bisa menunjukkannya hari ini.</p>
+
+</div>
+
+<!--
+P7 · Contoh nyata Git · 3 menit
+Ceritakan singkat: tim tujuh backend developer, kode sering conflict, pernah setengah hari untuk satu Git conflict. Anda memakai satu long weekend untuk belajar dari Git Tower, Atlassian, Think Like (a) Git, dan "A successful Git branching model", lalu membuat slide dan menjelaskannya ke teman sekantor. Sampaikan hasilnya sebagai pengamatan tim, bukan angka yang diukur. Tekankan: lima baris ini berlaku untuk karya apa pun. Lalu: "Sekarang kita coba pada karya Naya." Sumber: 7 Pelajaran, Pelajaran #4–#5.
+[KONFIRMASI] Buka tautannya di browser sebelum acara. zainf.dev/git-best-practices mengarah ke file OneDrive yang menolak pengecekan otomatis.
 -->
 
 ---
@@ -936,7 +991,7 @@ Tunjukkan lima bagian dari ToR. Tidak perlu angka besar. Hasil bisa berupa hal y
 </div>
 
 <!--
-P7 · Latihan lisan · 4 menit
+P7 · Latihan lisan · 3 menit
 Minta pasangan bergantian memilih satu karya dan menceritakannya dalam 30 detik. Jika belum ada karya, pakai contoh rencana dan sebutkan apa yang belum diketahui. Minta pendengar mengulang peran pembicara dengan satu kalimat. Jika masih kabur, tambah satu kata kerja dan satu contoh keputusan.
 -->
 
