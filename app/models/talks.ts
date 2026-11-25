@@ -264,6 +264,24 @@ export const conferences: Talk[] = [
 
 export const meetups: Talk[] = [
   {
+    slug: "gsih-career-lab-jogja-2026",
+    date: "2026-11-26",
+    title: "Build a Presence to Kickstart Your Career",
+    description:
+      "Temukan arah, buat bukti karya, dan bantu orang lain memahami kontribusimu.",
+    event: "GSIH Career Lab Jogja",
+    resources: [
+      {
+        href: "/build-a-presence.html",
+        label: "Open slides",
+      },
+      {
+        href: "/build-a-presence.pdf",
+        label: "Download PDF",
+      },
+    ],
+  },
+  {
     slug: "keahlian-bidang-dengan-ai-2026",
     date: "2026-11-07",
     title: "Dari Keahlian Bidang Menjadi Solusi dengan AI",
@@ -333,6 +351,46 @@ export const meetups: Talk[] = [
       {
         href: "/fundamental-computer-science-ai-era.html",
         label: "Open slides",
+      },
+    ],
+  },
+  {
+    slug: "diskusi-openclaw-jogja-2026",
+    date: "2026-04-11",
+    title: "Daily Wins",
+    description:
+      "Cerita nyata dari dua bulan pertama pakai OpenClaw: 13 kasus penggunaan dari Bab 8.",
+    event: "Diskusi OpenClaw — Pertama di Jogja (Devcode.ai × Jetorbit)",
+    resources: [
+      {
+        href: "/daily-wins.html",
+        label: "Open slides",
+      },
+      {
+        href: "/daily-wins.pdf",
+        label: "Download PDF",
+      },
+    ],
+  },
+  {
+    slug: "exabytes-developer-club-2026",
+    date: "2026-04-09",
+    title: "Agentic Engineering",
+    description:
+      "Realita, strategi, dan praktik membangun dengan coding agents untuk tim produk dan bisnis digital.",
+    event: "Exabytes Developer Club 2026",
+    resources: [
+      {
+        href: "/agentic-engineering.html",
+        label: "Open slides",
+      },
+      {
+        href: "/agentic-engineering.pdf",
+        label: "Download PDF",
+      },
+      {
+        href: "https://www.exabytes.co.id/events/acara/powering-the-next-generation-web-with-ai-secure-digital-identity-scalable-infrastructure",
+        label: "Event link",
       },
     ],
   },
@@ -565,6 +623,20 @@ export const meetups: Talk[] = [
       {
         href: "https://zainf.dev/bedah-praktek-3",
         label: "Watch video",
+      },
+    ],
+  },
+  {
+    slug: "rumah-coding-cerdas-2021",
+    date: "2021-06-26",
+    title: "Cara Menyiapkan Diri Menjadi Software Engineer Unggulan",
+    description:
+      "Pengalaman karier, keunggulan jalur teknis, dan tips meniti karier bagi lulusan SMA/SMK dan mahasiswa yang ingin masuk industri IT.",
+    event: "Webinar Teknologi Rumah Coding Cerdas",
+    resources: [
+      {
+        href: "https://zainf.dev/se-unggulan",
+        label: "Open slides",
       },
     ],
   },
