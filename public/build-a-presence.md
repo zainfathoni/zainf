@@ -1005,7 +1005,6 @@ Beri 60 detik untuk mencatat satu karya yang sudah pernah dibuat dan peran sendi
 <!--
 P7 · Contoh nyata Git · 3 menit
 Ceritakan singkat: tim tujuh backend developer, kode sering conflict, pernah setengah hari untuk satu Git conflict. Anda memakai satu long weekend untuk belajar dari Git Tower, Atlassian, Think Like (a) Git, dan "A successful Git branching model", lalu membuat slide dan menjelaskannya ke teman sekantor. Sampaikan hasilnya sebagai pengamatan tim, bukan angka yang diukur. Tekankan: lima baris ini berlaku untuk karya apa pun. Lalu: "Sekarang kita coba pada karya Naya." Sumber: 7 Pelajaran, Pelajaran #4–#5.
-[KONFIRMASI] Buka tautannya di browser sebelum acara. zainf.dev/git-best-practices mengarah ke file OneDrive yang menolak pengecekan otomatis.
 -->
 
 ---
