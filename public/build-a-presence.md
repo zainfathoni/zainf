@@ -422,6 +422,10 @@ style: |
     font-size: 22px;
     font-weight: 700;
   }
+  /* Openers with an illustration on the right half. */
+  .opener.art h2 { font-size: 60px; max-width: 560px; }
+  .opener.art .sub { max-width: 540px; font-size: 26px; }
+  .opener.art .aside { max-width: 540px; font-size: 22px; }
   /* Slide 14: an upload with no context. */
   .file {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
@@ -760,7 +764,11 @@ Tunggu jawaban sebelum memberi contoh. Foto, sertifikat, dan bio bisa membantu o
 
 ---
 
-<div class="opener">
+<!-- _footer: "26 November 2026 | GSIH Career Lab Jogja" -->
+
+![bg right:48% contain](assets/build-a-presence-try-first.jpg)
+
+<div class="opener art">
 
 <p class="tag">P6 · Audacious Reality</p>
 
@@ -1173,7 +1181,11 @@ Sambungkan ke fokus kerja remote dalam ToR tanpa mengklaim bahwa satu portofolio
 
 ---
 
-<div class="opener">
+<!-- _footer: "26 November 2026 | GSIH Career Lab Jogja" -->
+
+![bg right:48% contain](assets/build-a-presence-one-week.jpg)
+
+<div class="opener art">
 
 <p class="tag">P8 · Call To Action</p>
 
@@ -1214,7 +1226,11 @@ Rumuskan dua target yang bisa diperiksa. Contoh: ada satu video dan satu catatan
 
 ---
 
-<div class="opener">
+<!-- _footer: "26 November 2026 | GSIH Career Lab Jogja" -->
+
+![bg right:48% contain](assets/build-a-presence-growing-proof.jpg)
+
+<div class="opener art">
 
 <p class="tag">P10 · Long Win</p>
 
