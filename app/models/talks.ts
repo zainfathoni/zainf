@@ -269,7 +269,8 @@ export const meetups: Talk[] = [
     title: "Build a Presence to Kickstart Your Career",
     description:
       "Temukan arah, buat bukti karya, dan bantu orang lain memahami kontribusimu.",
-    event: "GSIH Career Lab Jogja",
+    event:
+      "Career Lab: Jadi Talent Incaran Industri, Sebelum Ijazah Terbit! · Garuda Sparks Innovation Hub, Yogyakarta",
     resources: [
       {
         href: "/build-a-presence.html",
