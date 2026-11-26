@@ -640,6 +640,30 @@ Buka dengan pertanyaan: Kalau seseorang mau mengajak kalian ikut proyek, apa yan
 
 ---
 
+<div class="stacked tight">
+
+<p class="tag">P1 · Perkenalan · Perjalanan saya</p>
+
+## Dari salah jurusan ke Senior Software Engineer.
+
+<div class="visual grid three">
+<div class="card"><span class="label">2008 · ITB</span><p>Kuliah Teknik Informatika. Lulus 2014, di batas akhir.</p></div>
+<div class="card"><span class="label">2013 · QUN, Bandung</span><p>Programmer paruh waktu, sambil kuliah.</p></div>
+<div class="card"><span class="label">2015 · Xtremax</span><p>Software Developer, lalu Software Development Manager.</p></div>
+<div class="card"><span class="label">2017 · Bukalapak</span><p>Kembali ke jalur teknis sebagai Software Engineer.</p></div>
+<div class="card"><span class="label">Ninja Van · Singapura</span><p>Senior Software Engineer, enam tahun di Singapura.</p></div>
+<div class="card warm"><span class="label">Sekarang · Yogyakarta</span><p>Senior Software Engineer di BookThatApp, kerja jarak jauh.</p></div>
+</div>
+
+</div>
+
+<!--
+P1 · Perkenalan · 1 menit
+Bacakan cepat dari kiri ke kanan, jangan berhenti lama di tiap kartu. Intinya: saya tidak mulai dari posisi yang jelas. Saya pernah merasa salah jurusan, lulus di batas akhir, mencoba jadi manajer, lalu kembali ke jalur teknis. Setiap langkah meninggalkan bukti yang bisa saya tunjukkan. Itu yang akan kita bahas hari ini.
+-->
+
+---
+
 <div class="slide">
 <div>
 
@@ -661,6 +685,7 @@ Angkat tangan: siapa yang sudah punya satu bidang yang ingin dicoba? Siapa yang 
 -->
 
 ---
+
 
 <div class="slide">
 <div>
@@ -733,7 +758,7 @@ Minta dua contoh pekerjaan di balik acara sekolah yang jarang terlihat. Bahas me
 </div>
 
 <!--
-P4 · Emotional win / hope · 3 menit
+P4 · Emotional win / hope · 2 menit
 Cadangan: tiga tautan kecil di bawah kartu. "zainfathoni.com" membuka situs (perlu internet). Tanpa internet, "hasil Google" membuka tangkapan hasil pencarian Google untuk "Zain Fathoni" (26 November 2026), dan "halaman situs" membuka tangkapan zainfathoni.com (25 November 2026). Keduanya tetap terbuka kalau HTML dibuka dari folder lokal bersama folder assets. Saat sesi, minta dua atau tiga peserta yang memegang HP mencari "Zain Fathoni" di Google selama 60 detik. Tanyakan: "Bukti apa yang kalian temukan tentang pekerjaan saya?" Minta satu orang menyebutkan satu contoh yang dia buka, lalu apa yang ditunjukkan contoh itu. Misalnya, slide talk menunjukkan topik yang saya jelaskan, dan artikel menunjukkan apa yang saya pelajari. Kalau ada yang menyebut "muncul paling atas", arahkan kembali: urutan hasil pencarian bukan bukti, isi yang bisa dibuka dan dicek itulah buktinya. Kalau hasilnya tentang orang lain atau tidak relevan, katakan saja. Kalau internet jalan tetapi pencarian tidak membantu, buka zainfathoni.com di layar. Kalau tidak ada internet sama sekali, buka screenshot atau salinan halaman yang sudah disimpan. Tanyakan hal yang sama. Tutup dengan harapan: "Bayangkan suatu hari orang menemukan satu karyamu seperti ini, paham apa yang kamu kerjakan, lalu mengajakmu bekerja sama."
 -->
 
