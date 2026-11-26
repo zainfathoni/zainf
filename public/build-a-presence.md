@@ -1279,9 +1279,9 @@ Ulangi pertanyaan pertama: kalau seseorang ingin mengajakmu ikut proyek, apa yan
 
 # Tanya jawab
 
-- Kalau belum punya portofolio, mulai dari mana?
-- Kalau minatku banyak, bagaimana memilih percobaan pertama?
-- Kalau karya tim tidak boleh dipublikasikan, apa yang bisa saya ceritakan?
+* Kalau belum punya portofolio, mulai dari mana?
+* Kalau minatku banyak, bagaimana memilih percobaan pertama?
+* Kalau karya tim tidak boleh dipublikasikan, apa yang bisa saya ceritakan?
 
 <div class="sign-row">
 <p class="link"><a href="https://www.zainfathoni.com/">zainfathoni.com</a></p>
