@@ -640,30 +640,6 @@ Buka dengan pertanyaan: Kalau seseorang mau mengajak kalian ikut proyek, apa yan
 
 ---
 
-<div class="stacked tight">
-
-<p class="tag">P1 · Perkenalan · Perjalanan saya</p>
-
-## Dari salah jurusan ke Senior Software Engineer.
-
-<div class="visual grid three">
-<div class="card"><span class="label">2008 · ITB</span><p>Kuliah Teknik Informatika. Lulus 2014, di batas akhir.</p></div>
-<div class="card"><span class="label">2013 · QUN, Bandung</span><p>Programmer paruh waktu, sambil kuliah.</p></div>
-<div class="card"><span class="label">2015 · Xtremax</span><p>Software Developer, lalu Software Development Manager.</p></div>
-<div class="card"><span class="label">2017 · Bukalapak</span><p>Kembali ke jalur teknis sebagai Software Engineer.</p></div>
-<div class="card"><span class="label">Ninja Van · Singapura</span><p>Senior Software Engineer, enam tahun di Singapura.</p></div>
-<div class="card warm"><span class="label">Sekarang · Yogyakarta</span><p>Senior Software Engineer di BookThatApp, kerja jarak jauh.</p></div>
-</div>
-
-</div>
-
-<!--
-P1 · Perkenalan · 1 menit
-Bacakan cepat dari kiri ke kanan, jangan berhenti lama di tiap kartu. Intinya: saya tidak mulai dari posisi yang jelas. Saya pernah merasa salah jurusan, lulus di batas akhir, mencoba jadi manajer, lalu kembali ke jalur teknis. Setiap langkah meninggalkan bukti yang bisa saya tunjukkan. Itu yang akan kita bahas hari ini.
--->
-
----
-
 <div class="slide">
 <div>
 
@@ -682,6 +658,30 @@ Bacakan cepat dari kiri ke kanan, jangan berhenti lama di tiap kartu. Intinya: s
 <!--
 P2 · Common ground / trust · 2 menit
 Angkat tangan: siapa yang sudah punya satu bidang yang ingin dicoba? Siapa yang masih bingung? Katakan kedua jawaban wajar. Ceritakan singkat asumsi Anda di ITB: staf dan manajer terasa seperti urutan nilai, padahal jenis pekerjaannya berbeda.
+-->
+
+---
+
+<div class="stacked tight">
+
+<p class="tag">P2 · Common Ground · Perjalanan saya</p>
+
+## Dari salah jurusan ke Senior Software Engineer.
+
+<div class="visual grid three">
+<div class="card"><span class="label">2008 · ITB</span><p>Kuliah Teknik Informatika. Lulus 2014, di batas akhir.</p></div>
+<div class="card"><span class="label">2013 · QUN, Bandung</span><p>Programmer paruh waktu, sambil kuliah.</p></div>
+<div class="card"><span class="label">2015 · Xtremax</span><p>Software Developer, lalu Software Development Manager.</p></div>
+<div class="card"><span class="label">2017 · Bukalapak</span><p>Kembali ke jalur teknis sebagai Software Engineer.</p></div>
+<div class="card"><span class="label">Ninja Van · Singapura</span><p>Senior Software Engineer, enam tahun di Singapura.</p></div>
+<div class="card warm"><span class="label">Sekarang · Yogyakarta</span><p>Senior Software Engineer di BookThatApp, kerja jarak jauh.</p></div>
+</div>
+
+</div>
+
+<!--
+P2 · Perjalanan karier · 1 menit
+Bacakan cepat dari kiri ke kanan, jangan berhenti lama di tiap kartu. Intinya: saya tidak mulai dari posisi yang jelas. Saya pernah merasa salah jurusan, lulus di batas akhir, mencoba jadi manajer, lalu kembali ke jalur teknis. Setiap langkah meninggalkan bukti yang bisa saya tunjukkan. Itu yang akan kita bahas hari ini.
 -->
 
 ---
