@@ -615,7 +615,7 @@ style: |
 
 <p class="subtitle">Temukan arah. Buat karya. Tunjukkan kontribusimu.</p>
 
-<p class="meta">26 November 2026 · 09.40 WIB · GSIH Jogja, STMM “MMTC” Yogyakarta</p>
+<p class="meta">26 November 2026 · GSIH Jogja, STMM “MMTC” Yogyakarta</p>
 
 </div>
 <div class="bio-card">
